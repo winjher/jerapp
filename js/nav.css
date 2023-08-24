@@ -1,0 +1,51 @@
+* {
+padding: 0;
+margin: 0;
+max-width: 100%;
+overflow-x: hidden;
+position: relative;
+display: block;
+}
+.item::after {
+content: "";
+position: absolute;
+top: xyz;
+left: xyz;
+... properties you want;
+}
+.text {
+height: XYZvh;
+}
+.background {
+position: relative;
+}
+.background img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+position: absolute;
+top:0;
+left:0;
+}
+.parent {
+height: /*something similar to child's font size*/;
+overflow-y: hidden;
+display: block;
+}
+.parent .child {
+animation-name: appear;
+animation-duration: ...s;
+}
+@keyframes appear {
+  from { transform: translateY(/* parent's height*/) }
+  to {   transform: translateY(0)}
+}
+cript>
+
+/**the minimal CSS we need:**/
+#navigation {
+ display: none;
+}
+#navigation.opened {
+display: block;
+}
