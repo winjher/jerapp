@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My Items</title>
+</head>
+<body>
+<div class="col-lg-6 col-md-6 col-xl-6 container " >
+    <form class="form-control" action="" method="get">
+        <h2>My Items</h2>
+        <button type="button" class="btn btn-sm btn-primary">Add Items</button><br>
+        <label for="title">Title:</label>
+        <select name="larvae" id="larvae" class="form-select form-select-sm" aria-label=".form-select-sm example"  onchange="changeLanguage(this.value)">
+           <option value="Choose" selected="selected">Selected</option>
+           <option value="leaves">Get leaves</option>
+           <option value="flowers">Get flowers</option>
+           <option value="sleeve">Clean sleeve</option>
+           <option value="bhouse">Clean the butterfly house</option>
+           <option value="pupae">Pick up pupae</option>
+            <option value="eggs">Pick up eggs</option>
+           <option value="bottle">Clean the bottle water and refill</option>
+           <option value="larvae">Check active larvae</option>
+           <option value="instars">Choose the same instars and transfer</option>                      
+       </select>
+        <label for="">Description</label><br>
+        <div class="col-xl-12">
+        <textarea class="form-control" name="message" rows="5" cols="50"></textarea><br>
+       </div>
+    
+
+         <label for="">Butterfly</label><br>
+         <select name="butterfly" id="butterfly" class="form-select form-select-sm" aria-label=".form-select-sm example"  onchange="changeLanguage(this.value)">
+           <option value="Choose" selected="selected">Selected</option>
+           <option value="but_1">Graphium agamemnon</option>
+           <option value="but_2">Attacus atlas</option>
+           <option value="but_3">Cethosia biblis</option>
+           <option value="but_4">Hypolimnas bolina</option>
+           <option value="but_5">Chilasa clytia</option>
+           <option value="but_6">Danaus chrysippus</option>
+           <option value="but_7">Papilio demoleus</option>
+           <option value="but_8">Graphium doson</option>
+           <option value="but_9">Pachliopta kotzebuea</option>
+           <option value="but_10">Idea leuconoe</option>
+           <option value="but_11">Papilio lowi</option>
+           <option value="but_12">Samia luzonica</option>
+           <option value="but_13">Papilio palinurus</option>
+           <option value="but_14">Papilio polytes</option>
+           <option value="but_15">Papilio rumanzovia</option>
+           <option value="but_16">Atrophaneura semperi</option>
+           <option value="but_17">Parthenos sylvia</option>
+           <option value="but_18">Troides rhadamantus</option>
+           <option value="but_19">Appias nero</option>
+           <option value="but_20">Cepora aspaisa</option>
+           <option value="but_21">Hebomoia glaucippe</option>
+           <option value="but_22">Butterfly22</option>
+           <option value="but_23">Butterfly23</option>
+           <option value="but_24">Butterfly24</option>
+           <option value="but_25">Butterfly25</option>
+         </select>
+   
+         <label for="">Date</label>
+             <input type="date" name="" id="" class="form-select form-select-sm" aria-label=".form-select-sm example" >
+         </form>
+         <br><br>
+         <button type="button" class="btn btn-sm btn-primary">Save</button>
+</div>
+</body>
+</html>

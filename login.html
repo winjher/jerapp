@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CRM</title>
+</head>
+<body style="height:1500px">
+
+   
+    <hr>
+  <form action="#" method="GET" id="login" class="form-control">
+    <div class="col-lg-12 col-md-6 col-sm-3 col-xl-4 text-center ">
+      <h2>Login</h2>
+      <fieldset>
+        <label>
+          Username:<br>
+          <input type="text" name="username" required><br>
+        </label><label>
+          Password:<br>
+          <input type="password" name="password" required><br>
+        </label>
+
+    </div>
+   
+    </fieldset>
+    <div class="submitsAndHiddens">
+      <button>Submit</button>
+      <a href="#">Forgot Password?</a>
+      <p>
+        If you do not have an existing account,
+        <a href="register.html">Register Now!</a>
+      </p>
+    </div>
+  </form>
+
+    <hr>
+ <script>
+    (function(d) {
+        "use strict"
+      })(document);
+      
+      for (var input of d.querySelectorAll('input[type="password"]')) {
+        input.classList.add('passwordShowHide');
+        var button = input.parentNode.insertBefore(
+          d.createElement('button'),
+          input.nextElementSibling
+        );
+        button.textContent = "\uD83D\uDC41";
+        button.title = "Show / Hide Password";
+        button.type = "button"; // remember, default is SUBMIT!
+        button.onclick = passwordShowHide;
+      }
+      
+      //WALK THE BLOODY DOM!
+      function passwordShowHide(event) {
+        var input = event.currentTarget.previousElementSibling;
+        input.type = input.type === "text" ? "password" : "text";
+        input.focus();
+      } 
+      </script>
+</body>
+</html>

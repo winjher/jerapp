@@ -1,0 +1,52 @@
+    <button class="navbar-toggler" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    </nav>
+    <div class="container-fluid" id="body">
+        <div class="row">
+            <div class="col-sm-2 p-3 bg-secondary sidebar">
+                <div class="card text-center" 
+                     style="width:auto">
+                    <span class="card-img-top fakeimg bg-info p-5" 
+                          src=""
+                          alt="Card image"></span>
+                    <div class="card-body ">
+                        <h4 class="card-title">Sticky sidebar</h4>
+                        <p class="card-text ">Bootstrap 4</p>
+                        <a href=
+"https://getbootstrap.com/docs/4.3/getting-started/introduction/"
+                           class="btn btn-primary"
+                           target="_blank">See Features</a>
+                    </div>
+                </div>
+                <hr class="d-sm-none">
+                <form>
+  
+                    <input type="range" 
+                           class="custom-range"
+                           id="customRange"
+                           name="points1">
+                </form>
+                <hr class="d-sm-none">
+  
+            </div>
+            <div class="col-sm-10 p-4">
+                <h1 class="text-success font-weight-bold text-center">
+GeeksforGeeks</h1>
+                <br> Bootstrap is a free and open-source tool collection
+       </div>
+        </div>
+    </div>
+<script>
+    $(document).ready(function() {
+        $("#filter").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#body *").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

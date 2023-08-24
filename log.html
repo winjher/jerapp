@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+     #login {
+  flex:1 0 auto;
+  overflow:hidden;
+  width:100%;
+  max-width:20em;
+  background:#DEF;
+  border-radius:0.5em;
+  box-shadow:0.1em 0.25em 0.5em #0004;
+}
+#login h2 {
+  padding:0.4em 0.8em;
+  font-size:1.25em;
+  background:#048;
+  color:#FFF;
+}
+#login fieldset {
+  padding:1em;
+  border:none;
+}
+#login label {
+  display:block;
+  padding-bottom:1em;
+}
+#login input {
+  box-sizing:border-box;
+  float:left;
+  width:100%;
+  padding:0.25em 0.5em;
+  margin:0.25em 0 1em;
+  border:1px solid #5AF;
+  border-radius:0.25em;
+}
+#login .submitsAndHiddens {
+  padding:0 1em;
+}
+#login .submitsAndHiddens button {
+  float:right;
+  box-sizing:border-box;
+  padding:0.25em 1em;
+  margin-top:-0.25em;
+  background:#ACE;
+  border:1px solid #5AF;
+  border-radius:0.25em;
+  box-shadow:
+    inset 0 1em 1em #FFF8;
+  transition:background 0.3s;
+}
+#login .submitsAndHiddens button:focus,
+#login .submitsAndHiddens button:hover {
+  background:#8BF;
+}
+#login p {
+  clear:both;
+  text-align:center;
+  padding:1em 0;
+}
+
+    </style>
+</head>
+<body>
+  <form action="#" method="GET" id="login">
+    <h2>Login</h2>
+    <fieldset>
+      <label>
+        Username:<br>
+        <input type="text" name="username" required><br>
+      </label><label>
+        Password:<br>
+        <input type="password" name="password" required><br>
+      </label>
+    </fieldset>
+    <div class="submitsAndHiddens">
+      <button>Submit</button>
+      <a href="#">Forgot Password?</a>
+      <p>
+        If you do not have an existing account,
+        <a href="#">Register Now!</a>
+      </p>
+    </div>
+  </form>
+<script> (function(d) {
+  "use strict"
+})(document);
+
+for (var input of d.querySelectorAll('input[type="password"]')) {
+  input.classList.add('passwordShowHide');
+  var button = input.parentNode.insertBefore(
+    d.createElement('button'),
+    input.nextElementSibling
+  );
+  button.textContent = "\uD83D\uDC41";
+  button.title = "Show / Hide Password";
+  button.type = "button"; // remember, default is SUBMIT!
+  button.onclick = passwordShowHide;
+}
+
+//WALK THE BLOODY DOM!
+function passwordShowHide(event) {
+  var input = event.currentTarget.previousElementSibling;
+  input.type = input.type === "text" ? "password" : "text";
+  input.focus();
+} // passwordShowHide
+
+Style tag 
+d.head.appendChild(d.createElement("style")).textContent =``;00
+
+d.head.appendChild(d.createElement("style")).textContent =`
+  @media screen {
+    .passwordShowHide + button {
+      position:relative;
+      float:left;
+      width:1.6em;
+      margin-left:-1.6em;
+      padding:0.45em 0;
+      font-size:1.25em;
+      line-height:1.2em;
+      text-align:center;
+      border:none;d
+      background:transparent;
+      transition:transform 0.3s;
+      transform-origin:center;
+    }
+    .passwordShowHide + button:focus {
+      outline:none;
+      font-weight:bold;
+      text-shadow:
+        0 0 0.2em #5AF;
+    }
+    .passwordShowHide + button:hover {
+      transform:scale(1.5);
+    }
+    .passwordShowHide[type="text"] + button:after {
+      content:"\\2215";
+      position:absolute;
+      left:0;
+      top:0.45em;
+      width:1.6em;
+      text-align:center;
+      text-shadow:
+        -0.1em 0 0 #FFF,
+        0.1em 0 0 #FFF;
+      color:#F00;
+    }
+  }
+`;
+
+</script>
+</body>
+</html>

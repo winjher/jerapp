@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css"> 
+        #groupNotice {display: none} 
+    </style>
+</head>
+<body>
+    <script type="text/javascript"> 
+        var amountNotice = 0;
+        
+        function notice(options)	
+        {						
+            amountNotice = parseInt(options);
+            calculateTotal(); 
+        }	
+        
+        function calculateTotal()
+        {
+            totalAmount = amountNotice;
+            document.getElementById("total").value = totalAmount.toFixed(2); 	
+        }	 
+        
+        function toggle(chkbox, group, associatedValues) 
+        { 
+            var visSetting;
+            if (chkbox.checked == true)
+                 document.getElementById(group).style.display =  "inline"; 
+            else
+            {
+                document.getElementById(group).style.display =  "none";
+                uncheckRadio(associatedValues);
+            } 
+            document.getElementById(group).style.display = visSetting; 
+        } 
+        
+        function uncheckRadio(associatedValues)
+        {
+        
+            for(var i = 0; i < document.getElementById(associatedValues).length; i++)
+            {
+                if (associatedValues[i].checked == true)
+                    associatedValues[i].checked == false;
+            }
+                calculateTotal(); 
+        }
+        </script>
+        
+        
+      
+        
+        <input type="button" onClick="calculateTotal()" value="Calculate"><br>
+        <div id="groupNotice">
+            <b>Required Notice</b>:&nbsp;&nbsp;
+            <input type="radio" name="Note" onClick="notice(this.value)" value="0"> None
+            <input type="radio" name="Note" onClick="notice(this.value)" value="2"> Prior Day ($2)
+            <input type="radio" name="Note" onClick="notice(this.value)" value="2"> Prior Call ($2)<br>
+        </div>
+        <form name="CostEstimate" method="post" action="calculator.php">
+        <input type="checkbox" onclick="toggle(this, 'groupNotice', 'Note'); display('groupNotice','inline')" name="Notice" value=""> Notice
+        </form>
+        
+</body>
+</html>

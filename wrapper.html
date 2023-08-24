@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+<style>
+  .flex-wrapper {
+    display: flex;
+  }
+  .item {
+    width: 2000px;
+  }
+  .row {
+    display: flex;
+    gap: 16px;
+  }
+  .raised.item {
+    z-index: 2;
+    background: hotpink;
+  }
+
+</style>
+
+</head>
+<body>
+<div class="item">
+<img src="picture.png">
+</div>
+
+<div class="flex-wrapper">
+  <div class="item">
+ 
+  </div>
+</div>
+   <ul class="row">
+  <li class="item"><img src="picture.png"> </li>
+  <li class="raised item"><img src="./picture.png"> </li>
+  <li class="item"><img src="./picture.png"> </li>
+</ul>
+
+</body>
+</html>

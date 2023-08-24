@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>Movie</title>
+	<script type="text/javascript">
+		function ticketOrder()
+		{
+			var cost;
+			var ticket;
+			 if(document.movieTicket.radTicket[0].checked)
+			{
+				ticket=document.movieTicket.radTicket[0].value;
+				ticket=parseInt(ticket);
+				cost=cost*ticket;
+
+			}
+			 if(document.movieTicket.radTicket[1].checked)
+			{
+				ticket=document.movieTicket.radTicket[1].value;
+				ticket=parseInt(ticket);
+				cost=cost*ticket;
+
+			}
+
+			if(document.movieTicket.radReward[0].checked)
+			{
+				cost=document.movieTicket.radReward[0].value;
+				cost=parseInt(cost);
+			}
+			else if(document.movieTicket.radReward[1].checked)
+			{
+				cost=document.movieTicket.radReward[1].value;
+				cost=parseInt(cost);
+			}
+			if(document.movieTicket.chkPopcorn.checked)
+			{
+				var popcorn=document.movieTicket.chkPopcorn.value;
+				popcorn=parseInt(popcorn);
+				cost=cost+popcorn;
+			}
+			if(document.movieTicket.chkSoda.checked)
+			{
+				var soda=document.movieTicket.chkSoda.value;
+				soda=parseInt(soda);
+				cost=cost+soda;
+			}
+			if(document.movieTicket.chkCandy.checked)
+			{
+				var candy=document.movieTicket.chkCandy.value;
+				candy=parseInt(candy);
+				cost=cost+candy;
+			}
+			alert(cost*ticket);
+
+		}
+	</script>
+</head>
+<body>
+	<div id="Header">
+	<h2>The Chicago Movie Palace</h2>
+	</div>
+<form name="movieTicket">
+	How many tickets would you like to order?<br />
+
+	1 Ticket<input type="radio" name="radTicket" value="1" /><br />
+	2 Tickets<input type="radio" name="radTicket" value="2" /><br />
+	3 Tickets<input type="radio" name="radTicket" value="3" /><br />
+	4 Tickets<input type="radio" name="radTicket" value="4" /><br />
+	5 Tickets<input type="radio" name="radTicket" value="5" /><br />
+
+	Are you a member of our theater?<br />
+
+	Yes<input type="radio" name="radReward" value="8" /><br />
+	No<input type="radio" name="radReward" value="10" /><br />
+
+	Would you like any food or drinks with your movie?<br />
+	Popcorn ($4)<input type="checkbox" name="chkPopcorn" value="4" /><br />
+
+	Soda ($3)<input type="checkbox" name="chkSoda" value="3" /><br />
+	Candy ($3)<input type="checkbox" name="chkCandy" value="3" /><br />
+
+	Which movie would you like to see?
+	<select name="selUpcomingMovie">
+	<option value="Immortals">Immortals</option>
+	<option value="J Edgar">J Edgar</option>
+	<option value="Sherlock Holmes:A Game of Shadows" >Sherlock Holmes:A Game of Shadows</option>
+	</select>
+
+	<p><input type="button" name="btnSubmit" value="Order Tickets" onclick="ticketOrder()" /></p>
+</form>
+
+</body>
+</html>

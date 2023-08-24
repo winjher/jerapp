@@ -1,0 +1,189 @@
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102016867-3"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+
+    <link rel="stylesheet" href="/storage/emulated/0/documents/css/mystyle.css">
+
+    <link rel="stylesheet" href="/storage/emulated/0/documents/css/iconbar.css" />
+    <link rel="stylesheet" href="/Jerwin folder/apps/js/myscript.js">
+
+
+    <meta charset="UTF-8">
+
+    <title>Image Classification of BUTTERFLIES</title>
+
+</head>
+
+
+<body>
+
+    
+ 
+
+    <header class="text-center">
+        <main id="page-content" class="">
+            <div class="prism">
+            </div>
+        
+            
+          <p id="browser-warning" class="alert alert-warning small mt-2" style="display: none;">
+            <strong> <i class="fas fa-exclamation-triangle"></i> You are using a web browser that may not support image downloads.</strong>
+            Please use a <a target="_blank" href="/help/a/what-web-browsers-are-supported">recommended browser</a> or proceed at your own risk.
+          </p>
+        
+        <div class="upload-page-wrapper" data-first-signin="false"></div>
+        
+        <div class="dropzone-enabled"></div>
+        
+          </main>
+    <h1>Image Classifier for Eggs</h1>
+
+    </header>
+
+    <div>
+
+			<input type="file" name="file" onChange={changeHandler} />
+
+			<div>
+
+				<button onClick={handleSubmission}>Submit</button>
+
+			</div>
+
+		</div>
+
+<form autocomplete="off">
+
+    <div class="if input-wrapper">
+
+        <input
+
+            data-size="larger"
+
+            type="file"
+
+            class="if file-upload"
+
+            accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+            id="if-file-upload-2"
+
+            placeholder="Please upload your CV"
+
+        />
+
+        <label for="if-file-upload-2" class="if button secondary">
+
+            <span class="if icon ui data-upload blue"></span>Upload your CV
+
+        </label>
+
+    </div>
+
+
+<h2>Click "Choose File" to Add an Image</h2
+
+    <div>
+
+                <h1>Image classification using MobileNet model</h1>
+
+    </div>
+
+
+    <div class="grid-container">
+
+      <div class="card-deck">
+
+
+                <div class="card text-center">
+
+                    <div class="card-block">
+
+                                        <input type='file' id='getval'/>
+
+
+                      
+
+
+
+            
+
+                    </div>
+
+                    <div class="card-footer">                    <img id="image" src="http://placehold.it/180" alt="the image"/>
+
+        <p>That's
+
+            <span id="result">... </span> with a confidence of
+
+            <span id="probability"></span>
+
+        </p>
+
+                    </div>
+
+            </div>
+
+        
+
+       </div>
+
+                    
+
+    </div>
+
+ </form>
+
+ 
+
+<div class="card-deck">
+
+    
+
+
+    <div class="card-text">
+
+
+
+    <div class="card-block">
+
+            <input type='file' id='getval'/>
+
+            <div class="card-body">
+
+                    <img id="image" src="http://placehold.it/180" alt="the image"/>
+
+            </div>
+
+
+    </div>
+
+    <div class="card-footer">
+
+        <p>That's
+
+            <span id="result">... </span> with a confidence of
+
+            <span id="probability"></span>
+
+        </p>
+
+    </div>
+
+
+    </div>
+
+    
+
+</div>
+
+    <script src="C:/Users/Admin/Desktop/data/Jerwin folder/apps/js/myscript.js"></script>
+
+</body>
+
+</html>
+
