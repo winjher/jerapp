@@ -56,7 +56,15 @@ li{
   /*color: white;  White text color */
   font-size: 8px bold; /* Increased font size */
 }
-
+.icon-size{
+  height: auto ;
+  width: auto;
+}
+.icon-size-center
+{
+  height: 400px;
+  width: 400px;
+}
 .icon-bar a:hover {
   background-color: #ff4500; /* Add a hover color */
   padding: 8px 0
@@ -72,10 +80,7 @@ li{
   background-color: rgb(18, 116, 9);
   text-decoration: none;
 }
-.icon-size{
-  height: auto ;
-  width: auto;
-}
+
 .object {
   height: auto ;
   width: auto;
