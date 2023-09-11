@@ -1,18 +1,29 @@
 :root{
-  var(--color-)
-}
+  --color-green:#5cb85c;
+  --color-grey:#F5F5DC;
+  --color-orange:#ff4500; 
+  --color-white:#f2f3f4;
+  --color-blue:#007bff;
 
+  --bs-gutter-x:.75rem ;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+}
 body{
   margin: 0;
   height: 1800px;
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: #F5F5DC;
+  background-color: var(--color-grey);
 }
 
 h3 { 
   font-size: 20px;
-  color: green; 
+  color:var(--color-green); 
   /*border: 2em solid purple;*/
   
 }
@@ -21,10 +32,12 @@ form{
     display: flex;
     flex-wrap: wrap;
 }
+
 li{
     list-style: none;
 }
 
+/* This refer to login */
 .email, .name {
     flex: 1 0 140px;
 }
@@ -40,38 +53,75 @@ li{
   margin-left: 5px;
 }
 
+/* imagbackground */
+.imagebackground {
+  background-image: url(icon/bgbutterfly.jpg);
+  /* background-image: linear-gradient(to bottom right, #305170, #6DFC6B); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 50px 50px 0px 0px;
+  background-blend-mode: overlay;
+}
+
 /*navbutton*/
+.img-fluid {
+  width: 60px;
+  height: 60px;
+  padding: 10px 10px 10px 10px;
+  align-items: center;
+  display:flex-direction;
+  flex-direction: space;
+  justify-content: center;
+}
+
+/*This refer to the navigation fixed-button at the bottom*/
 .icon-bar {
   width: 100%; /* Full-width */
-  background-color: #F5F5DC; /* Dark-grey background */
+  background-color: var(--color-grey); /* Dark-grey background */
   overflow: auto; /* Overflow due to float */
 }
 
 .icon-bar a {
   float: left; /* Float links side by side */
   text-align: center; /* Center-align text */
-  width: 20%; /* Equal width (5 icons with 25% width each = 100%) */
-  padding: 2px 0; /* Some top and bottom padding */
+  width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
+  padding: 1px 0; /* Some top and bottom padding */
   transition: all 0.3s ease; /* Add transition for hover effects */
   /*color: white;  White text color */
-  font-size: 8px bold; /* Increased font size */
+  font-size: 6px bold; /* Increased font size */
+  text-decoration: none;
 }
+
+
+.collapse{
+
+}
+.navbar-collapse{
+
+}
+
 .icon-size{
   height: auto ;
   width: auto;
 }
+
 .icon-size-center
 {
   height: 400px;
   width: 400px;
 }
+
 .icon-bar a:hover {
-  background-color: #ff4500; /* Add a hover color */
-  padding: 8px 0
+  background-color: var(--color-orange); /* Add a hover color */
+  padding: 6px 0
 }
 
 .active {
-  background-color: #f2f3f4; /* Add an active/current color */
+  background-color: var(--color-green); /* Add an active/current color */
+  padding: 6px 0
 }
 /*
 .icon-bar {
@@ -114,7 +164,7 @@ li{
 */
 
 
-.text-decoration-none a:hover {
+a:hover {
   text-decoration: none;
 }
 .bg-blue{
@@ -156,29 +206,7 @@ img:hover {
 card-img:hover {
   transform: scale(1.35);
 }
-/*<!------imagbackground------>*/
-.imagebackground {
-  background-image: url(icon/bgbutterfly.jpg);
-  /* background-image: linear-gradient(to bottom right, #305170, #6DFC6B); */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  width: 100%;
-  height: auto;
-  border-radius: 50px 50px 0px 0px;
-  background-blend-mode: overlay;
-}
 
-/*navbutton*/
-.img-fluid {
-  width: 60px;
-  height: 60px;
-  padding: 10px 10px 10px 10px;
-  align-items: center;
-  display:flex-direction;
-  flex-direction: space;
-  justify-content: center;
-}
 
     input[type=button], input[type=btn]
     {
