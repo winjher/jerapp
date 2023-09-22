@@ -4,6 +4,7 @@
   --color-orange: #ff4500;
   --color-white: #f2f3f4;
   --color-blue: #007bff;
+  
 
   --bs-gutter-x: .75rem;
 }
@@ -137,8 +138,8 @@ li {
 }
 
 .icon-bar a:hover {
+    /* Add a hover color */
   background-color: var(--color-orange);
-  /* Add a hover color */
   padding: 6px 0
 }
 
