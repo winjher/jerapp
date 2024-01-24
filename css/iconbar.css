@@ -4,21 +4,85 @@
   --color-orange: #ff4500;
   --color-white: #f2f3f4;
   --color-blue: #007bff;
-  
-
+  --color-iris: #4D5AE5;
+  --color-navyblue: #2E2F42;
+  --color-white: #FFFFFF;
+  --color-cornflower: #E7E9FC;
+  --color-ocean: #404BBF;
+  --color-cloud: #F4F4FD;
+  --color-dairy: #FCFCFC;
+  --color-slate: #434455;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
   --bs-gutter-x: .75rem;
+
+  --font-family-open-sans: 'Open sans', san-serif;
+  --font-family-roboto: 'Roboto', san-serif;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 
-* {
+
+
+*,
+*::before,
+*::after {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-
 }
-.container{
+
+
+.btn-submit {
+  color: white;
+  background-color: #191970;
+  border-style: none;
+  border-radius: 4px;
+}
+
+
+.btn-reset {
+  color: black;
+  background-color: #fd7e14;
+}
+
+
+.btn-reset,
+.btn-submit {
+  padding: 6px;
+  border-style: none;
+  border-radius: 4px;
+  padding: 6px;
+  font: var(bs-font-sans-serif);
+}
+
+
+
+.container {
   margin: auto;
   width: 1158;
 }
+
 .container,
 .container-fluid,
 .container-lg,
@@ -38,7 +102,6 @@
 }
 
 body {
-
   background-color: var(--color-grey);
 }
 
@@ -63,12 +126,12 @@ li {
 .name {
   flex: 1 0 140px;
 }
-
+/* wala pa logo */
 .logo {
   width: 40px;
   height: 40px;
 }
-
+/* wala */
 .lep {
   width: 40px;
   height: 40px;
@@ -138,9 +201,9 @@ li {
 }
 
 .icon-bar a:hover {
-    /* Add a hover color */
+  /* Add a hover color */
   background-color: var(--color-orange);
-  padding: 6px 0
+  padding: 3px 0
 }
 
 .active {
@@ -171,7 +234,7 @@ li {
 }
 .icon-bar a {
   float: left;
-  width: 14.28%;
+  width: 14.28%; //if 7 icons
   align-items: center;
   text-align: center;
   padding: 2.5px 0;
@@ -189,15 +252,15 @@ li {
 }
 */
 
-
+/* anong part */
 a:hover {
   text-decoration: none;
 }
-
+/* anong part */
 .bg-blue {
   background-color: rgb(81, 191, 255);
 }
-
+/* anong part */
 img {
   height: 8vmin;
   width: fit-content;
@@ -205,13 +268,13 @@ img {
   cursor: pointer;
   transition: .5s;
 }
-
+/* anong part */
 img:hover {
   transform: scale(1.35);
   color: blue;
   filter: drop-shadow(4px 4px 8px #999999);
 }
-
+/* anong part */
 .item {
   background: url(/storage/emulated/0/documents/images/imgbg.jpg) no-repeat;
   -webkit-text-fill-color: transparent;
@@ -223,7 +286,7 @@ img:hover {
 .card-body {
   object-fit: none;
 }
-
+/*classification*/
 .card-img {
   height: 100px;
   width: 100px;
@@ -232,12 +295,12 @@ img:hover {
   transition: .5s;
 
 }
-
+/*classification*/
 .card-img:hover {
   transform: scale(1.35);
 }
 
-
+/* anong part */
 input[type=button],
 input[type=btn] {
   background-color: #007bff;
@@ -248,8 +311,9 @@ input[type=btn] {
   text-decoration: none;
   margin: 2px 2px;
   cursor: pointer;
+  border-color: #0d6efd;
 }
-
+/* anong part */
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -261,7 +325,7 @@ input[type=btn] {
   padding-bottom: 20px;
 }
 
-
+/* anong part */
 
 .card {
   /* position: relative;
@@ -282,6 +346,7 @@ input[type=btn] {
   padding: 16px;
 }
 
+/* anong part */
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
