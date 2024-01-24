@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <title>LARVAL DISEASE PREDICTION</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .border img {
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+		
+    </style>
+    <script>
+        
+  /* Upload Preview */
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function () {
+        $('.image-section').show();
+        $('#btn-predict').show();
+        $('#result').text('');
+        $('#result').hide();
+		$('#result1').text('');
+        $('#result1').hide();
+		
+        readURL(this);
+    });
+
+    // Predict
+    $('#btn-predict').click(function () {
+        var form_data = new FormData($('#upload-file')[0]);
+		
+	
+
+        // Show loading animation
+        $(this).hide();
+        $('.loader').show();
+
+        // Make prediction by calling api /predict
+        $.ajax({
+            type: 'POST',
+            url: '/predict',
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            async: true,
+            success: function (data,data1) {
+                // Get and display the result
+                $('.loader').hide();
+                $('#result').fadeIn(600);
+                $('#result').text(' Result:  ' + data);
+				console.log('success')
+				
+               
+			
+				
+            },
+        });
+		
+    });
+
+
+
+    </script>
+</head>
+
+<body background="{% static 'images/icon/bgbutterfly.jpg' %}">
+    {% include 'lepidoptera/nav-bar.html' %}
+    {% block pagecontent %}
+  
+    <div>
+        <h1 style="text-align:center;font-size:4rem ">Larval Disease & Get Cure</h1>
+    </div>
+
+   <br>
+   <br>
+
+    <div class="container my-2">
+        <div class="row mb-5">
+            <input class="custom-file-input" type='file' id='getval'/>
+            <div class="col-sm" style="margin-bottom: 23px;">
+                <input class="custom-file-input" class="custom-file-input" type='file' id='getval' multiple/>
+                <span class="border border-primary">
+                    <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                    <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
+                    <img src="http://placehold.it/180" alt="User Image" style="width:500px;height:500px;">
+                </span>
+            </div>
+
+            <div class="col-sm">
+
+                <div>
+                    <h1 style="padding: 15px; background-color: rgb(15, 15, 15); color: white;"
+                        class="text-center mb-5 content-h1 rounded">
+                        {{pred_output}} </h1>
+                </div>
+                <div class="card-footer">
+                    <p>That's
+                        <span id="result">... </span> with a confidence of
+                        <span id="probability"></span>
+                    </p>
+                </div>
+                <div class="details">
+					
+					<h4><b> Treatment : </b> </h4>
+                    <h6>
+
+
+                        
+                        Larvae that have Trichogramma diseases require immediate attention before the disease takes over. Thoroughly dissect all species to prevent viral infections. Separate healthy larvae from the sick larvae. Clean the larval cabinet regularly. Transfer away to the safest cabinet like a new place for propagation. Heat the former cabinet of the larvae. 
+.</br></br>
+                        
+
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {% endblock %}
+</body>
+<script src="{% static 'js/myscript.js' %}"></script>
+</html>

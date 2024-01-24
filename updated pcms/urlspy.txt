@@ -1,0 +1,52 @@
+from django.contrib import admin
+from . import views
+from django.http import HttpResponse
+# from django.conf.urls import url
+from django.urls import include, path
+from django.conf.urls.static import static
+
+urlpatterns = [
+    # Notice the URL has been named
+    path('', views.index, name='index'), 
+    path(r'^classify/$', views.classify, name='classify'),
+    path(r'^base/$', views.base, name='base'),
+    path(r'^data/$', views.data, name='data'),
+    path(r'^dashboard/$', views.dashboard, name='dashboard'),
+    path(r'^butterfly/$', views.butterfly, name='butterfly'),
+    path(r'^covnet/$', views.covnet, name='covnet'),
+    path(r'^navbar/$', views.navbar, name='navbar'),
+    path(r'^weather/$', views.weather, name='weather'),
+    path(r'^main/$', views.main, name='main'),
+    path(r'^result/$', views.result, name='result'),
+    path(r'^resnet/$', views.restnet, name='restnet'),
+    path(r'^objectmeasurement/$', views.objectmeasurement, name='objectmeasurement'),
+    path(r'^objectidentifier/$', views.objectidentifier, name='objectidentifier'),
+    path(r'^adddevice/$', views.adddevice, name='adddevice'), 
+    path(r'^butterfly/$', views.butterfly, name='butterfly'),
+    path(r'^camera/$', views.camera, name='camera'),
+    path(r'^butterfly_identifier/$', views.butterfly_identifier, name='butterfly_identifier'),
+    path(r'^classify/$', views.classify, name='classify'),
+    path(r'^user/$', views.user, name='user'),
+    path(r'^skipper/$', views.skipper, name='skipper'),
+    path(r'^signup/$', views.SignUp, name='signup'),
+    path(r'^login/$', views.LogIn, name='login'),
+    path(r'^Logout/$', views.Logout, name='Logout'),
+    path(r'^manage_farm/$', views.manage_farm, name='manage_farm'),
+    path(r'^moth/$', views.moth, name='moth'),
+    path(r'^My_Farm/$', views.My_Farm, name='My_Farm'),
+    path(r'^manage/$', views.manage, name='manage'),
+    path(r'^create_farm_home/$', views.create_farm_home, name='create_farm_home'),
+    path(r'^join_home/$', views.join_home, name='join_home'),
+    path(r'^proper_care/$', views.proper_care, name='proper_care'),
+    path(r'^pClassify/$', views.pClassify, name='pClassify'),
+    path(r'^cats/$', views.cats, name='cats'),
+    path(r'^eggs/$', views.eggs, name='eggs'),
+    path(r'^larvalPrediction/$', views.larvalPrediction, name='larvalPrediction'),
+    path(r'^LarvaeTrichogrammaDisease/$', views.LarvaeTrichogrammaDisease, name='LarvaeTrichogrammaDisease'),
+    url('predictImage', views.predictImage,name="predictImage"),
+    url('viewDatabase', views.viewDatabase,name="viewDatabase"),
+]
+
+
+
+urlpatterns += static(settings.MEDIA_URL,documnet_root=settings.MEDIA_ROOT)
