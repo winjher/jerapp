@@ -23,26 +23,26 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body >
-
+{% include 'lepidoptera/nav-bar.html' %}
 {% block pagecontent %}
       
 <div id="" class="container">
     
-<a href="{% url 'index' %}">
-  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 
-</a>
-<h1>Manage Farm</h1>
+
+  
+<h1<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"> Manage Farm</h1></span> 
+    
 
            <p>
                
-              <a href=" {% url 'My_Farm' %}">My Farm</a>
+              <a href=" /storage/emulated/0/documents/betterfly_nav/My_Farm.html">My Farm</a>
             </p>    
 <div class="card">
     <form class="" action="" method="get" accept-charset="utf-8">
         
     
-  <button type="submit" class="form-control"> <a href="{% url 'create_farm_home' %}">Create Home</a></button>
-  <button type="submit" class="form-control"> <a href="{% url 'join_home' %}">Join Home</a></button>
+  <button type="submit" class="form-control"> <a href=" /storage/emulated/0/documents/betterfly_nav/create_farm_home.html">Create Home</a></button>
+  <button type="submit" class="form-control"> <a href=" /storage/emulated/0/documents/betterfly_nav/join_home.html">Join Home</a></button>
 
     </form>
   </div>

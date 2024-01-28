@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>LARVAL DISEASE PREDICTION</title>
 
     <style>
@@ -22,7 +27,6 @@
             border-radius: 15px;
             border: 2px solid black;
         }
-		
     </style>
 </head>
 
@@ -34,8 +38,8 @@
         <h1 style="text-align:center;font-size:4rem">Larval Disease & Get Cure</h1>
     </div>
 
-   <br>
-   <br>
+    <br>
+    <br>
 
 
     <div class="container my-2">
@@ -43,8 +47,9 @@
 
             <div class="col-sm" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img src="{{url_for('static',filename = 'images/Tomato___Bacterial_spot.JPG' )}}" alt="User Image" style="width:500px;height:500px;">
-                    
+                    <img src="{{url_for('static',filename = 'images/Tomato___Bacterial_spot.JPG' )}}" alt="User Image"
+                        style="width:500px;height:500px;">
+
 
                 </span>
             </div>
@@ -57,15 +62,18 @@
                         {{pred_output}} </h1>
                 </div>
                 <div class="details">
-					
-					<h4><b> Treatment : </b> </h4>
+
+                    <h4><b> Treatment : </b> </h4>
                     <h6>
 
 
-                        
-                        Larvae that have Baculoviruses diseases require immediate attention before the disease takes over. Thoroughly dissect all species to prevent viral infections. Separate healthy larvae from the sick larvae. Clean the larval cabinet regularly. Transfer away to the safest cabinet like a new place for propagation. Heat the former cabinet of the larvae. 
-.</br></br>
-                        
+
+                        Larvae that have Baculoviruses diseases require immediate attention before the disease takes
+                        over. Thoroughly dissect all species to prevent viral infections. Separate healthy larvae from
+                        the sick larvae. Clean the larval cabinet regularly. Transfer away to the safest cabinet like a
+                        new place for propagation. Heat the former cabinet of the larvae.
+                        </br></br>
+
 
                     </h6>
                 </div>
@@ -74,6 +82,30 @@
 
 
     </div>
+    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+    <nav class="navbar navbar-expand-sm fixed-bottom">
+        <div class="icon-bar">
+            <div class="icon-size">
+                <a href="lepidoptera.html"><img src="./icon/butterfly.png" width="200"></a>
+            </div>
+            <div class="icon-size">
+                <a href="alarm.html"><img src="./icon/alarm.png" width="200"></a>
+            </div>
+            <div class="icon-size">
+                <a class="active " href="index.html"><img src="./icon/Homey.png" width="200"></a>
+            </div>
+            <div class="icon-size">
+                <a href="classify.html"><img src="./icon/semanticsegmentation.png" width="200"></a>
+            </div>
+            <div class="icon-size">
+                <a href="map.html"><img src="./icon/globe.png" width="200"></a>
+            </div>
+        </div>
+    </nav>
+    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+
+    <script src="./jquery-3.6.0.slim.min.js"> </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

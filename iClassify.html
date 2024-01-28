@@ -6,11 +6,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
 
-    <link rel="stylesheet" href="/storage/emulated/0/documents/css/mystyle.css">
-
-    <link rel="stylesheet" href="/storage/emulated/0/documents/css/iconbar.css" />
-    <link rel="stylesheet" href="/Jerwin folder/apps/js/myscript.js">
-
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <meta charset="UTF-8">
 
@@ -21,169 +25,179 @@
 
 <body>
 
-    
- 
+
+
 
     <header class="text-center">
         <main id="page-content" class="">
             <div class="prism">
             </div>
-        
-            
-          <p id="browser-warning" class="alert alert-warning small mt-2" style="display: none;">
-            <strong> <i class="fas fa-exclamation-triangle"></i> You are using a web browser that may not support image downloads.</strong>
-            Please use a <a target="_blank" href="/help/a/what-web-browsers-are-supported">recommended browser</a> or proceed at your own risk.
-          </p>
-        
-        <div class="upload-page-wrapper" data-first-signin="false"></div>
-        
-        <div class="dropzone-enabled"></div>
-        
-          </main>
-    <h1>Image Classifier for Eggs</h1>
+
+
+            <p id="browser-warning" class="alert alert-warning small mt-2" style="display: none;">
+                <strong> <i class="fas fa-exclamation-triangle"></i> You are using a web browser that may not support
+                    image downloads.</strong>
+                Please use a <a target="_blank" href="/help/a/what-web-browsers-are-supported">recommended browser</a>
+                or proceed at your own risk.
+            </p>
+
+            <div class="upload-page-wrapper" data-first-signin="false"></div>
+
+            <div class="dropzone-enabled"></div>
+
+        </main>
+        <h1>Image Classifier for Eggs</h1>
 
     </header>
 
     <div>
 
-			<input type="file" name="file" onChange={changeHandler} />
+        <input type="file" name="file" onChange={changeHandler} />
 
-			<div>
+        <div>
 
-				<button onClick={handleSubmission}>Submit</button>
+            <button onClick={handleSubmission}>Submit</button>
 
-			</div>
-
-		</div>
-
-<form autocomplete="off">
-
-    <div class="if input-wrapper">
-
-        <input
-
-            data-size="larger"
-
-            type="file"
-
-            class="if file-upload"
-
-            accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-
-            id="if-file-upload-2"
-
-            placeholder="Please upload your CV"
-
-        />
-
-        <label for="if-file-upload-2" class="if button secondary">
-
-            <span class="if icon ui data-upload blue"></span>Upload your CV
-
-        </label>
+        </div>
 
     </div>
 
+    <form autocomplete="off">
 
-<h2>Click "Choose File" to Add an Image</h2
+        <div class="if input-wrapper">
 
-    <div>
+            <input data-size="larger" type="file" class="if file-upload"
+                accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                id="if-file-upload-2" placeholder="Please upload your CV" />
 
-                <h1>Image classification using MobileNet model</h1>
+            <label for="if-file-upload-2" class="if button secondary">
 
-    </div>
+                <span class="if icon ui data-upload blue"></span>Upload your CV
+
+            </label>
+
+        </div>
 
 
-    <div class="grid-container">
+        <h2>Click "Choose File" to Add an Image</h2 <div>
 
-      <div class="card-deck">
+        <h1>Image classification using MobileNet model</h1>
+
+        </div>
+
+
+        <div class="grid-container">
+
+            <div class="card-deck">
 
 
                 <div class="card text-center">
 
                     <div class="card-block">
 
-                                        <input type='file' id='getval'/>
-
-
-                      
+                        <input type='file' id='getval' />
 
 
 
-            
+
+
+
+
 
                     </div>
 
-                    <div class="card-footer">                    <img id="image" src="http://placehold.it/180" alt="the image"/>
+                    <div class="card-footer"> <img id="image" src="http://placehold.it/180" alt="the image" />
 
-        <p>That's
+                        <p>That's
 
-            <span id="result">... </span> with a confidence of
+                            <span id="result">... </span> with a confidence of
 
-            <span id="probability"></span>
+                            <span id="probability"></span>
 
-        </p>
+                        </p>
 
                     </div>
 
-            </div>
-
-        
-
-       </div>
-
-                    
-
-    </div>
-
- </form>
-
- 
-
-<div class="card-deck">
-
-    
+                </div>
 
 
-    <div class="card-text">
-
-
-
-    <div class="card-block">
-
-            <input type='file' id='getval'/>
-
-            <div class="card-body">
-
-                    <img id="image" src="http://placehold.it/180" alt="the image"/>
 
             </div>
 
 
+
+        </div>
+
+    </form>
+
+
+
+    <div class="card-deck">
+
+
+
+
+        <div class="card-text">
+
+
+
+            <div class="card-block">
+
+                <input type='file' id='getval' />
+
+                <div class="card-body">
+
+                    <img id="image" src="http://placehold.it/180" alt="the image" />
+
+                </div>
+
+
+            </div>
+
+            <div class="card-footer">
+
+                <p>That's
+
+                    <span id="result">... </span> with a confidence of
+
+                    <span id="probability"></span>
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
     </div>
+    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+    <nav class="navbar navbar-expand-sm fixed-bottom">
+        <div class="icon-bar">
+            <div class="icon-size">
+                <a href="lepidoptera.html"><img src="./icon/butterfly.png" width="200"></a>
+            </div>
+            <div class="icon-size">
+                <a href="alarm.html"><img src="./icon/alarm.png" width="200"></a>
+            </div>
+            <div class="icon-size">
+                <a class="active " href="index.html"><img src="./icon/Homey.png" width="200"></a>
+            </div>
+            <div class="icon-size">
+                <a href="classify.html"><img src="./icon/semanticsegmentation.png" width="200"></a>
+            </div>
+            <div class="icon-size">
+                <a href="map.html"><img src="./icon/globe.png" width="200"></a>
+            </div>
+        </div>
+    </nav>
+    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
 
-    <div class="card-footer">
-
-        <p>That's
-
-            <span id="result">... </span> with a confidence of
-
-            <span id="probability"></span>
-
-        </p>
-
-    </div>
-
-
-    </div>
-
-    
-
-</div>
-
-    <script src="C:/Users/Admin/Desktop/data/Jerwin folder/apps/js/myscript.js"></script>
+    <script src="./jquery-3.6.0.slim.min.js"> </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="C:/hw/jerapps/js/myscript.js"></script>
 
 </body>
 
 </html>
-
