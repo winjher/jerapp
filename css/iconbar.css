@@ -1,119 +1,20 @@
-:root {
-  --color-green: #5cb85c;
-  --color-grey: #F5F5DC;
-  --color-orange: #ff4500;
-  --color-white: #f2f3f4;
-  --color-blue: #007bff;
-  --color-iris: #4D5AE5;
-  --color-navyblue: #2E2F42;
-  --color-white: #FFFFFF;
-  --color-cornflower: #E7E9FC;
-  --color-ocean: #404BBF;
-  --color-cloud: #F4F4FD;
-  --color-dairy: #FCFCFC;
-  --color-slate: #434455;
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
-  --bs-white: #fff;
-  --bs-gray: #6c757d;
-  --bs-gray-dark: #343a40;
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-dark: #212529;
-  --bs-gutter-x: .75rem;
-
-  --font-family-open-sans: 'Open sans', san-serif;
-  --font-family-roboto: 'Roboto', san-serif;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-}
-
-
-
-*,
-*::before,
-*::after {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-
-.btn-submit {
-  color: white;
-  background-color: #191970;
-  border-style: none;
-  border-radius: 4px;
-}
-
-
-.btn-reset {
-  color: black;
-  background-color: #fd7e14;
-}
-
-
-.btn-reset,
-.btn-submit {
-  padding: 6px;
-  border-style: none;
-  border-radius: 4px;
-  padding: 6px;
-  font: var(bs-font-sans-serif);
-}
-
-
-
-.container {
-  margin: auto;
-  width: 1158;
-}
-
-.container,
-.container-fluid,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, .75rem);
-  padding-left: var(--bs-gutter-x, .75rem);
-  margin-right: auto;
-  margin-left: auto;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  justify-items: center;
-
-}
-
 body {
-  background-color: var(--color-grey);
+  margin: 0;
+  height: 1800px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #F5F5DC;
 }
 
 h3 {
   font-size: 20px;
-  color: var(--color-green);
+  color: green;
   /*border: 2em solid purple;*/
 
 }
 
 form {
-  display: flex;
+  display: row;
   flex-wrap: wrap;
 }
 
@@ -121,17 +22,16 @@ li {
   list-style: none;
 }
 
-/* This refer to login */
 .email,
 .name {
   flex: 1 0 140px;
 }
-/* wala pa logo */
+
 .logo {
   width: 40px;
   height: 40px;
 }
-/* wala */
+
 .lep {
   width: 40px;
   height: 40px;
@@ -139,7 +39,138 @@ li {
   margin-left: 5px;
 }
 
-/* imagbackground */
+/*navbutton*/
+.icon-bar {
+  width: 100%;
+  /* Full-width */
+  background-color: #F5F5DC;
+  /* Dark-grey background */
+  overflow: auto;
+  /* Overflow due to float */
+}
+
+.icon-bar a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 20%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+.icon-bar a:hover {
+  background-color: #ff4500;
+  /* Add a hover color */
+}
+
+.active {
+  background-color: #f2f3f4;
+  /* Add an active/current color */
+}
+
+/*
+.icon-bar {
+  width: 200%;
+  height: 50px;
+  background-color: rgb(18, 116, 9);
+  text-decoration: none;
+}
+.icon-size{
+  height: auto ;
+  width: auto;
+}
+.object {
+  height: auto ;
+  width: auto;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: 5px;
+
+}
+.object-size{
+    height: 80px;
+    width: 90px;
+}
+.icon-bar a {
+  float: left;
+  width: 14.28%;
+  align-items: center;
+  text-align: center;
+  padding: 2.5px 0;
+  transition: all 0.3s ease;
+  color: rgb(6, 250, 18);
+  border: none;
+
+}
+
+.icon-bar a:hover {
+  background-color: #00FF6C;
+  height: 50px;
+  width: 50px;
+  text-decoration: none;
+}
+*/
+
+.active {
+  background-color: Blue;
+
+}
+
+.text-decoration-none a:hover {
+  text-decoration: none;
+}
+
+.bg-blue {
+  background-color: rgb(81, 191, 255);
+}
+
+img {
+  height: 8vmin;
+  width: fit-content;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+}
+
+img:hover {
+  transform: scale(1.35);
+  color: blue;
+  filter: drop-shadow(4px 4px 8px #999999);
+}
+
+.item {
+  background-image: url(/images/imgbg.jpg) no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+
+/*classification*/
+.card-body {
+  object-fit: none;
+}
+
+.card-img {
+  height: 100px;
+  width: 100px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+
+}
+
+card-img:hover {
+  transform: scale(1.35);
+}
+
+/*<!------imagbackground------>*/
 .imagebackground {
   background-image: url(icon/bgbutterfly.jpg);
   /* background-image: linear-gradient(to bottom right, #305170, #6DFC6B); */
@@ -163,144 +194,6 @@ li {
   justify-content: center;
 }
 
-/*This refer to the navigation fixed-button at the bottom*/
-.icon-bar {
-  width: 100%;
-  /* Full-width */
-  background-color: var(--color-grey);
-  /* Dark-grey background */
-  overflow: auto;
-  /* Overflow due to float */
-}
-
-.icon-bar a {
-  float: left;
-  /* Float links side by side */
-  text-align: center;
-  /* Center-align text */
-  width: 20%;
-  /* Equal width (5 icons with 20% width each = 100%) */
-  padding: 1px 0;
-  /* Some top and bottom padding */
-  transition: all 0.3s ease;
-  /* Add transition for hover effects */
-  /*color: white;  White text color */
-  font-size: 6px bold;
-  /* Increased font size */
-  text-decoration: none;
-}
-
-.icon-list-item {
-  height: auto;
-  width: auto;
-}
-
-.icon-size-center {
-  height: 400px;
-  width: 400px;
-}
-
-.icon-bar a:hover {
-  /* Add a hover color */
-  background-color: var(--color-orange);
-  padding: 3px 0
-}
-
-.active {
-  background-color: var(--color-green);
-  /* Add an active/current color */
-  padding: 6px 0
-}
-
-/*
-.icon-bar {
-  width: 200%;
-  height: 50px;
-  background-color: rgb(18, 116, 9);
-  text-decoration: none;
-}
-
-.object {
-  height: auto ;
-  width: auto;
-  align-items: center;
-  margin-right: 5px;
-  margin-left: 5px;
-
-}
-.object-size{
-    height: 80px;
-    width: 90px;
-}
-.icon-bar a {
-  float: left;
-  width: 14.28%; //if 7 icons
-  align-items: center;
-  text-align: center;
-  padding: 2.5px 0;
-  transition: all 0.3s ease;
-  color: rgb(6, 250, 18);
-  border: none;
-
-}
-
-.icon-bar a:hover {
-  background-color: #00FF6C;
-  height: 50px;
-  width: 50px;
-  text-decoration: none;
-}
-*/
-
-/* anong part */
-a:hover {
-  text-decoration: none;
-}
-/* anong part */
-.bg-blue {
-  background-color: rgb(81, 191, 255);
-}
-/* anong part */
-img {
-  height: 8vmin;
-  width: fit-content;
-  aspect-ratio: 1;
-  cursor: pointer;
-  transition: .5s;
-}
-/* anong part */
-img:hover {
-  transform: scale(1.35);
-  color: blue;
-  filter: drop-shadow(4px 4px 8px #999999);
-}
-/* anong part */
-.item {
-  background: url(/storage/emulated/0/documents/images/imgbg.jpg) no-repeat;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
-
-/*classification*/
-.card-body {
-  object-fit: none;
-}
-/*classification*/
-.card-img {
-  height: 100px;
-  width: 100px;
-  aspect-ratio: 1;
-  cursor: pointer;
-  transition: .5s;
-
-}
-/*classification*/
-.card-img:hover {
-  transform: scale(1.35);
-}
-
-/* anong part */
 input[type=button],
 input[type=btn] {
   background-color: #007bff;
@@ -311,9 +204,8 @@ input[type=btn] {
   text-decoration: none;
   margin: 2px 2px;
   cursor: pointer;
-  border-color: #0d6efd;
 }
-/* anong part */
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -325,10 +217,27 @@ input[type=btn] {
   padding-bottom: 20px;
 }
 
-/* anong part */
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, .75rem);
+  padding-left: var(--bs-gutter-x, .75rem);
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  justify-items: center;
 
-.card {
-  /* position: relative;
+}
+
+.card-identifier {
+  /* 
+  position: relative;
   display: flex;
   flex-direction: column;
   display: table;
@@ -344,10 +253,10 @@ input[type=btn] {
   margin-bottom: 20px;
   padding-top: 20px;
   padding: 16px;
+  display: flex;
 }
 
-/* anong part */
-.card {
+*/ .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -509,16 +418,27 @@ body {
   animation: r 12s cubic-bezier(.5, -0.2, .5, 1.2) infinite;
 }
 
-/* @keyframes r {
-  0%, 3% {transform: var(--_t) rotate(0deg); }
+@keyframes r {
+
+  0%,
+  3% {
+    transform: var(--_t) rotate(0deg);
+  }
+
   @for $i from 1 to $n {
-    #{($i/$n)*100 - 2}%, 
+
+    #{($i/$n)*100 - 2}%,
     #{($i/$n)*100 + 3}% {
       transform: var(--_t) rotate(#{($i / $n) * -360}deg);
-    }  
+    }
   }
-  98%, 100% { transform: var(--_t) rotate(-360deg); }
-} */
+
+  98%,
+  100% {
+    transform: var(--_t) rotate(-360deg);
+  }
+}
+
 /*photos*/
 .panel {
   padding-bottom: 10px;
@@ -541,6 +461,8 @@ article {
   height: 40vh;
 }
 
+
+/* article */
 .base {
   background: url(cake.jpg) 50%/ cover;
 }
@@ -550,6 +472,7 @@ article {
   background: hsla(0, 0%, 97%, .25);
   backdrop-filter: blur(5px);
 }
+
 
 /* 3d carousel */
 .gallery {
@@ -581,6 +504,7 @@ article {
 
 }
 
+
 /*camera*/
 
 .grid {
@@ -606,4 +530,21 @@ article {
 
 .active-slider {
   display: block;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  /* background-color: DarkSalmon; */
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px;
+  /* Vertically center the text there */
+  background-color: #f5f5f5;
+  /*background-color: red;*/
+
 }
