@@ -56,7 +56,7 @@ html,body {
   height: 1800px;
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color:var(--bs-cyan);
+  background-color:var(--dark: #05152E);
 }
 .snowflake {
   color: #fff;
