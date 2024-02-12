@@ -12,6 +12,14 @@
   --color-cloud: #F4F4FD;
   --color-dairy: #FCFCFC;
   --color-slate: #434455;
+
+  --dark: #05152E;
+  --darker: #1F2937;
+  --darkest: #001E3C;
+  --grey: #6B7280;
+  --pink: #EC4899;
+  --purple: #8B5CF6;
+  --light: #EEE;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -34,6 +42,7 @@
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
   --bs-gutter-x: .75rem;
+
 
   --font-family-open-sans: 'Open sans', san-serif;
   --font-family-roboto: 'Roboto', san-serif;
