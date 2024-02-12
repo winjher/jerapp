@@ -18,7 +18,44 @@
 /bootstrap-5.0.2-dist/css/style.css">
   <link rel="stylesheet" href="bootstrap
 /bootstrap-5.0.2-dist/css/article.css">
+<style>
+   
+/*navbutton*/
+.icon-bar {
+  width: 100%;
+  /* Full-width */
+  background-color: #F5F5DC;
+  /* Dark-grey background */
+  overflow: auto;
+  /* Overflow due to float */
+}
 
+.icon-bar-home a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 50%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+.icon-bar-home a:hover {
+  background-color: #ff4500;
+  /* Add a hover color */
+}
+
+.active {
+  background-color: #f2f3f4;
+  /* Add an active/current color */
+}
+</style>
 </head>
 
 <body style="height: 500;">
@@ -164,12 +201,12 @@
  
   <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
   <nav class="navbar navbar-expand-sm fixed-bottom">
-    <div class="icon-bar">
+    <div class="icon-bar-home">
       <div class="icon-size">
         <a href="index.html"><img src="./icon/butterfly.png" width="200">Home</a>
       </div>
       <div class="icon-size">
-        <a href="farm.html">Farm<img src="./icon/alarm.png" width="200"></a>
+        <a href="farm.html"><img src="./icon/alarm.png" width="200">Farm</a>
       </div>
       
   </nav>
