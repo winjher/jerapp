@@ -52,12 +52,13 @@
     <h2>Click "Choose File" to Add an Image</h2>
 
     <!-- Container for image classification result -->
-    <div class="imageResult" id="imageResult"></div>
+    
 
     <div class="imageInput">
         <input type="file" oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
     </div>
 
+<div class="imageResult" id="imageResult"></div>
     <!-- Container for the uploaded image -->
     <img class="uploadedImage" id="uploadedImage" />
 
