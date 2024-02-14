@@ -1,9 +1,17 @@
-
+//transfer learning
 let mobilenet;
+let classifier;
 let video;
 let label="";
-let ukeButton;
-let whistleButton;
+
+let butterflyButton;
+let larvaeButton;
+let pupaeButton;
+let eggsButton;
+let pupaedefectsButton;
+let healthypupaeButton;
+let larvaldiseaseButton;
+let healthylarvaeButton;
 let trainButton;
 
 function createImg(){
@@ -24,12 +32,16 @@ function modelReady(){
     console.log("Model is Ready!!");
     mobilenet.predict(gotResults);
 }
+function videoReady(){
+    console.log("video is Ready!!");
+    
+}
 
 function gotResults(error,results){
     if(error){
         console.error(error);
     }else{
-        console.log(results)
+        //console.log(results)
         label= result;
         classifier.classify(gotResults);
       
@@ -42,18 +54,49 @@ function setup(){
     video=createCapture(VIDEO)
     video.hide();
     background(0);
-    mobilenet= ml5.imageClassifier("MobileNet", video,modelReady);
-    classifier=mobilenet.classification()
+    mobilenet= ml5.featureExtractor("MobileNet", video,modelReady);
+    classifier=mobilenet.classification(video,videoReady);
 
-    ukeButton=createButton('ukulele');
-    ukeButton.mousePressed(function(){
-        classifier.addImage('ukulele');
+    butterflyButton=createButton('butterfly');
+    butterflyButton.mousePressed(function(){
+        classifier.addImage('butterfly');
     });
 
-    whistleButton=createButton('whistle');
-    whistleButton.mousePressed(function(){
-        classifier.addImage('whistle');
+    larvaeButton=createButton('larvae');
+    larvaeButton.mousePressed(function(){
+        classifier.addImage('larvae');
     });
+    
+    pupaeButton=createButton('pupae');
+    pupaeButton.mousePressed(function(){
+        classifier.addImage('pupae');
+    });
+
+    larvaldiseaseButton=createButton('larval disease');
+    larvaldiseaseButton.mousePressed(function(){
+        classifier.addImage('larval disease');
+    });
+    
+    pupaedefectsButton=createButton('pupae defects');
+    pupaedefectsButton.mousePressed(function(){
+        classifier.addImage('pupae defects');
+    });
+
+    eggsButton=createButton('eggs');
+    eggsButton.mousePressed(function(){
+        classifier.addImage('eggs');
+    });
+    
+    healthylarvaeButton=createButton('healthy larvae');
+    healthylarvaeButton.mousePressed(function(){
+        classifier.addImage('healthy larvae');
+    });
+
+    healthypupaeButton=createButton('healthy pupae');
+    healthypupaeButton.mousePressed(function(){
+        classifier.addImage('healthy pupae');
+    });
+    
     trainButton=createButton('train');
     trainButton.mousePressed(function(){
         classifier.train(whileTraining);
