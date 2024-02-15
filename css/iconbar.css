@@ -317,7 +317,7 @@ img {
 }
 
 img:hover {
-  transform: scale(1.35);
+  /*transform: scale(1.35);*/
   color: blue;
   filter: drop-shadow(4px 4px 8px #999999);
 }
