@@ -164,13 +164,13 @@
                  <div>
                   <button type="submit" class="btn-submit" id="btn-home">
                      <a class="nav-link" href="index.html">Back</a></button>
-                  <button type="submit" class="btn-reset" onclick= "myFunction() " value="Reset Form">Reset</button>
+                  <button type="submit" class="btn-reset" onclick= "myReset() " value="Reset Form">Reset</button>
                  </div>
             </div>
         </div>
     </div>
     <script>
-       function myFunction() {
+       function myReset() {
   
           
         // Create a variable containing the result container
@@ -191,7 +191,7 @@
                 element.innerHTML = error;
             } else {
                 let num = results[0].confidence * 100;
-                element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % ";
+                element.innerHTML = results[0].label + ",   Confidence: " + num.toFixed(0) + " % ";
             }
         }
     </script>
