@@ -164,7 +164,7 @@
                  <div>
                   <button type="submit" class="btn-submit" id="btn-home">
                      <a class="nav-link" href="index.html">Back</a></button>
-                  <button type="submit" class="btn-reset" >Reset</button>
+                  <button type="submit" class="btn-reset" onclick= "myFunction() " value="Reset Form">Reset</button>
                  </div>
             </div>
         </div>
@@ -196,7 +196,10 @@
         }
     </script>
 <script>
-document.getElementById("myform").reset();</script>
+function myFunction() {
+  document.getElementById("myForm").reset();
+}
+</script>
 </body>
 
 
