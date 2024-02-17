@@ -1,0 +1,19 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <py-env>
+        - paths:
+          - /object-detection.py
+      </py-env>
+    </head>
+
+  <body>
+    <h1>Let's detect object</h1>
+    <b>Doe's lucky number is <label id="lucky"></label></b>
+    <py-script>
+      from example import generate_random_number
+      pyscript.write('lucky', generate_random_number())
+    </py-script>
+  </body>
+</html>
