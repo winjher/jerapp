@@ -20,6 +20,56 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+<style>
+/*navbutton*/
+.icon-bar-home {
+  width: 100%;
+  /* Full-width */
+  background-color: #F5F5DC;
+  /* Dark-grey background */
+  overflow: auto;
+  /* Overflow due to float */
+}
+
+.icon-bar-home a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 50%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+.icon-bar-home a:hover {
+  background-color: #ff4500;
+  /* Add a hover color */
+}
+
+.icon-bar-home .active {
+  background-color: var(--bs-purple);
+  /* Add an active/current color */
+}
+
+.icon-size{
+  height: auto ;
+  width: auto;
+}
+  li{
+    list-style:none;
+  }
+h2{
+   text-align:center;
+}
+</style>
+</style>
 </head>
 <body >
 {% include 'lepidoptera/nav-bar.html' %}
