@@ -245,6 +245,7 @@ li {
 .icon-bar a:hover {
   background-color: #ff4500;
   /* Add a hover color */
+  border-radius:2px;
 }
 
 .active {
