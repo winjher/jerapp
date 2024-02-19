@@ -249,7 +249,7 @@ li {
 }
 
 .active {
-  background-color: #f2f3f4;
+  background-color: var(--bs-yellow);
   /* Add an active/current color */
 }
 
