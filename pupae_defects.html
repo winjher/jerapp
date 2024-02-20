@@ -84,9 +84,7 @@
     }
     .btn-detail {
         color: yellow;
-        background-color:#fd7e14;
-
-
+        background-color:val(--bs-green);
     }
 
     .btn-reset,
@@ -169,13 +167,12 @@
             <div class="imageResult" id="imageResult"></div> 
             <div class="panel-footer">
                  <div>
-                  <button type="submit" class="btn-submit" id="btn-home">
-                     <a class="nav-link" href="index.html">Back</a></button>
-                  <button type="submit" class="btn-reset" onclick ="myReset()" valuee = "Reset Form">Reset</button>
+                    <button type="submit" class="btn-submit" id="btn-home">
+                      <a class="nav-link" href="index.html">Back</a></button>
+                    <button type="submit" class="btn-reset" onclick ="myReset()" valuee = "Reset Form">Reset</button>
+                    <button type="submit" class="btn-detail" onclick ="myDetails()" value = "Details Form">
+                      <a class="nav-link" href="proper_care.html">Details</a></button>
                  </div>
-
-<button type="submit" class="btn-detail" onclick ="myDetails()" value = "Details Form"><a class="nav-link" href="proper_care.html">Details</a></button>
-                    </div>
         </div>
     </div>
     <script>
