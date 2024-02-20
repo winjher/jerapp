@@ -150,6 +150,11 @@
                 </span>
             </div>
                  <div class="imageResult" id="imageResult"></div> 
+                        <div class="row">
+                                <div class="col-12">
+                                        <div class="progress progress-bar progress-bar-striped progress-bar-animated mb-2">Loading Model</div>
+                                </div>
+                        </div>
             <div class="panel-footer">           
               
                  <div>
@@ -174,7 +179,7 @@
 
             // Scan the uploaded image
             classifier.classify(document.getElementById("uploadedImage"), imageScanResult)
-            element.innerHTML = "...";
+            element.innerHTML = "Loading ...";
         }
 
         // Check for errors and display the results if there aren't any
