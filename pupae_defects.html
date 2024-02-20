@@ -82,7 +82,7 @@
 
 
     }
-    .btn-details {
+    .btn-detail {
         color: yellow;
         background-color:#fd7e14;
 
@@ -90,7 +90,7 @@
     }
 
     .btn-reset,
-    .btn-submit, btn-details {
+    .btn-submit, btn-detail {
         border-style: none;
         border-radius: 4px;
         padding: 6px;
@@ -188,7 +188,7 @@
 
             // Scan the uploaded image
             classifier.classify(document.getElementById("uploadedImage"), imageScanResult)
-            element.innerHTML = "waiting...";
+            element.innerHTML = "Loading...";
         }
 
         // Check for errors and display the results if there aren't any
