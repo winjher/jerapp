@@ -99,4 +99,88 @@
             height:auto;
             margin-left: 25%;
         }
-    
+ /*index*/
+ .card-list{
+    width: 200px;
+    border:1px solid;
+    border-color:blue;
+    text-align: center;
+    border-radius:5px;
+    margin: 20px 20px 10px 20px;
+    background-color: yellow;
+    gap:10px;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.card-image-top-center{
+    justify-content:center;
+    align-items:center;
+}
+.card-dev-list{
+    width: 240px;
+    border:1px solid;
+    border-color:orange;
+    text-align: center;
+    border-radius:5px;
+    margin: 20px 20px 10px 20px;
+    background-color: white;
+    gap:10px;
+
+   
+}
+.card-home .card-dev{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*navbutton*/
+.icon-bar-home {
+  width: 100%;
+  /* Full-width */
+  background-color: #F5F5DC;
+  /* Dark-grey background */
+  overflow: auto;
+  /* Overflow due to float */
+}
+
+.icon-bar-home a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 50%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+.icon-bar-home a:hover {
+  background-color: yellow;
+  /* Add a hover color */
+}
+
+.icon-bar-home .active {
+  background-color:yellow;
+  border-color:orange;
+  /*background-color: var(--bs-purple);*/
+  /* Add an active/current color */
+}
+
+.icon-size{
+  height: auto ;
+  width: auto;
+}
+li{
+    list-style:none;
+  }
+h2{
+   text-align:center;
+}
+
+
