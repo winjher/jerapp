@@ -123,9 +123,9 @@ h2 {
     background-color: white;
     gap:10px;
 }
-.card-home .card-dev{
-    display: flex;
-    flex-wrap: wrap;
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 /*navbutton home*/
