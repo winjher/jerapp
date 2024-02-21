@@ -1,4 +1,4 @@
-:root {
+::root {
   --color-green: #5cb85c;
   --color-grey: #F5F5DC;
   --color-orange: #ff4500;
@@ -363,7 +363,6 @@ img:hover {
 }
 /*<!------imagbackground------>*/
 .imagebackground {
-  background-image: url(icon/bgbutterfly.jpg);
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
   background-repeat: no-repeat;
   background-attachment: fixed;
