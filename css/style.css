@@ -61,11 +61,11 @@
     background-color:var(--bs-green);
 }
 .btn-reset,
-.btn-submit, .btn-detail .btn-back {
+.btn-submit, .btn-detail, .btn-back {
     border-style: none;
     border-radius: 4px;
     padding: 6px;
-    font: var(bs-font-sans-serif);
+    font: var(--bs-font-sans-serif);
 }
   
 /* Set styles for HTML elements */
@@ -104,7 +104,7 @@ h2 {
     border-radius:5px;
     margin: 20px 20px 10px 20px;
     background-color: yellow;
-    gap:10px;
+    gap:5px;
     display: flex;
     flex-wrap: wrap;
    
