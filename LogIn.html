@@ -20,7 +20,7 @@ min-height: 100vh;
 background: #0c0116;
 }
 
-.form {
+.login-form {
 position: relative;
 padding: 60px 15px;
 width: 270px;
@@ -82,33 +82,33 @@ transition: 0.4s;
 background: #c907c9;
 }
 
-.form span {
+.login-form span {
 position: absolute;
 height: 50%;
 width: 50%;
 
 }
 
-.form span:nth-child(1) {
+.login-form span:nth-child(1) {
 background: #ffda05;
 top: 0;
 left: -48%;
 animation: 5s span1 infinite linear;
 animation-delay: 1s;
 }
-.form span:nth-child(2) {
+.login-form span:nth-child(2) {
 background: #00a800;
 bottom: 0;
 right: -48%;
 animation: 5s span2 infinite linear;
 }
-.form span:nth-child(3) {
+.login-form span:nth-child(3) {
 background: #800080;
 right: -48%;
 top: 0px;
 animation: 5s span3 infinite linear;
 }
-.form span:nth-child(4) {
+.login-form span:nth-child(4) {
 background: #ff0000;
 bottom: 0;
 right: -48%;
@@ -210,7 +210,7 @@ animation-delay: 1s;
     <title>Login</title>
   </head>
   <body>
-    <form action="" class="form">
+    <form action="" class="login-form" onsubmit="return validateForm()" method="post">
       <span></span>
       <span></span>
       <span></span>
@@ -218,12 +218,29 @@ animation-delay: 1s;
       <div class="form-inner">
         <h2>LOGIN</h2>
         <div class="content">
+
           <input class="input" type="text" placeholder="Username" />
           <input class="input" type="password" placeholder="Password" />
-          <button class="btn">LOGIN</button></div>
+          <input class="input" type="submit" value="Submit" />
+          <!-- <button class="btn" value="Submit">LOGIN</button> -->
+        </div>
       </div>
-
-
     </form>
+
+    <script>
+      function validateForm() {
+      let x = document.forms["login-form"]["Username"].value;
+      if (x == "") {
+        alert("Username must be filled out");
+        return false;
+      }
+      let y = document.forms["login-form"]["Password"].value;
+      if (y == "") {
+        alert("Password must be filled out");
+        return false;
+      }
+    }
+    </script>
+    
   </body>
 </html>
