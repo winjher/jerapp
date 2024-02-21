@@ -16,6 +16,111 @@
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js">
 </script> 
 </head>
+
+<style>
+    ::root {
+        --color-iris: #4D5AE5;
+        --color-navyblue: #2E2F42;
+        --color-white: #FFFFFF;
+        --color-cornflower: #E7E9FC;
+        --color-ocean: #404BBF;
+        --color-cloud: #F4F4FD;
+        --color-dairy: #FCFCFC;
+        --color-slate: #434455;
+        --bs-blue: #0d6efd;
+        --bs-indigo: #6610f2;
+        --bs-purple: #6f42c1;
+        --bs-pink: #d63384;
+        --bs-red: #dc3545;
+        --bs-orange: #fd7e14;
+        --bs-yellow: #ffc107;
+        --bs-green: #198754;
+        --bs-teal: #20c997;
+        --bs-cyan: #0dcaf0;
+        --bs-white: #fff;
+        --bs-gray: #6c757d;
+        --bs-gray-dark: #343a40;
+        --bs-primary: #0d6efd;
+        --bs-secondary: #6c757d;
+        --bs-success: #198754;
+        --bs-info: #0dcaf0;
+        --bs-warning: #ffc107;
+        --bs-danger: #dc3545;
+        --bs-light: #f8f9fa;
+        --bs-dark: #212529;
+        --font-family-open-sans: 'Open sans', san-serif;
+        --font-family-roboto: 'Roboto', san-serif;
+        --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    }
+
+
+
+
+    *,
+    *::before,
+    *::after {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .btn-back {
+        color:var(--color-cloud);
+        background-color: #191970;
+    }
+
+    .btn-submit {
+        color: var(--color-cloud);
+        background-color: #191970;
+    }
+
+
+    .btn-reset {
+        color: black;
+        background-color:#fd7e14;
+
+
+    }
+
+
+    .btn-reset,
+    .btn-submit, .btn-back {
+        border-style: none;
+        border-radius: 4px;
+        padding: 6px;
+        font: var(bs-font-sans-serif);
+    }
+    
+        /* Set styles for HTML elements */
+        h1,
+        h2 {
+            font-family: arial;
+            text-align: center;
+        }
+
+        .imageInput {
+            width: 100%;
+            text-align: center;
+        }
+
+        .imageResult {
+            font-family: arial;
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            color: red;
+        }
+
+        .uploadedImage {
+            padding-top: 20px;
+            width: 50%;
+            height:auto;
+            margin-left: 25%;
+        }
+    
+</style>
 <body>
     <div class="container">
         <h2>Butterfly Pupae Apps</h2>
