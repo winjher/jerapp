@@ -55,14 +55,11 @@
 .btn-reset {
     color: black;
     background-color:#fd7e14;
-
-
 }
 .btn-detail {
     color: var(--bs-gray);
     background-color:var(--bs-green);
 }
-
 .btn-reset,
 .btn-submit, .btn-detail {
     border-style: none;
@@ -70,15 +67,14 @@
     padding: 6px;
     font: var(bs-font-sans-serif);
 }
-
-    
+  
 /* Set styles for HTML elements */
 h1,
 h2 {
     font-family: arial;
     text-align: center;
 }
-
+/*ml5*/
 .imageInput {
     width: 100%;
     text-align: center;
@@ -126,15 +122,13 @@ h2 {
     margin: 20px 20px 10px 20px;
     background-color: white;
     gap:10px;
-
-   
 }
 .card-home .card-dev{
     display: flex;
     flex-wrap: wrap;
 }
 
-/*navbutton*/
+/*navbutton home*/
 .icon-bar-home {
   width: 100%;
   /* Full-width */
