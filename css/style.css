@@ -49,9 +49,9 @@
 
 /*apps*/
 .btn-back {
-    color: white;
+    color:var(--color-cloud);
     background-color: #191970;
-}
+    
 .btn-reset {
     color: black;
     background-color:#fd7e14;
@@ -61,7 +61,7 @@
     background-color:var(--bs-green);
 }
 .btn-reset,
-.btn-submit, .btn-detail {
+.btn-submit, .btn-detail .btn-back {
     border-style: none;
     border-radius: 4px;
     padding: 6px;
