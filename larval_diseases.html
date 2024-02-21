@@ -69,7 +69,10 @@
         box-sizing: border-box;
     }
 
-
+    .btn-back {
+        color:var(--color-cloud);
+        background-color: #191970;
+    
     .btn-submit {
         color: white;
         background-color: #191970;
@@ -89,7 +92,7 @@
 
 
     .btn-reset,
-    .btn-submit, .btn-detail {
+    .btn-submit, .btn-detail .btn-back{
         border-style: none;
         border-radius: 4px;
         padding: 6px;
@@ -174,7 +177,7 @@
                 <label for=""> <a href="Larvae Trichogramma Disease.html" >
 Treatments: </a></label>
                  <div>
-                  <button type="submit" class="btn-submit" id="btn-home">
+                  <button type="submit" class="btn-back" id="btn-home">
                      <a class="nav-link" href="index.html">Back</a></button>
                   <button type="submit" class="btn-reset" onclick= "myReset() " value = "Reset Form">Reset</button>
                  
