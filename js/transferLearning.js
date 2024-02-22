@@ -57,9 +57,9 @@ function setup(){
     mobilenet= ml5.featureExtractor("MobileNet", video,modelReady);
     classifier=mobilenet.classification(video,videoReady);
 
-    butterflyButton=createButton('butterfly');
-    butterflyButton.mousePressed(function(){
-        classifier.addImage('butterfly');
+    eggsButton=createButton('eggs');
+    eggsButton.mousePressed(function(){
+        classifier.addImage('eggs');
     });
 
     larvaeButton=createButton('larvae');
@@ -72,6 +72,11 @@ function setup(){
         classifier.addImage('pupae');
     });
 
+    butterflyButton=createButton('butterfly');
+    butterflyButton.mousePressed(function(){
+        classifier.addImage('butterfly');
+    });
+
     larvaldiseaseButton=createButton('larval disease');
     larvaldiseaseButton.mousePressed(function(){
         classifier.addImage('larval disease');
@@ -80,11 +85,6 @@ function setup(){
     pupaedefectsButton=createButton('pupae defects');
     pupaedefectsButton.mousePressed(function(){
         classifier.addImage('pupae defects');
-    });
-
-    eggsButton=createButton('eggs');
-    eggsButton.mousePressed(function(){
-        classifier.addImage('eggs');
     });
     
     healthylarvaeButton=createButton('healthy larvae');
