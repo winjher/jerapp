@@ -1,0 +1,23 @@
+
+/*ml5*/
+.imageInput {
+    width: 100%;
+    text-align: center;
+}
+
+.imageResult {
+    font-family: arial;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+}
+
+.uploadedImage {
+    padding-top: 20px;
+    width: 50%;
+    height:auto;
+    margin-left: 25%;
+}
+
+
