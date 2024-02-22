@@ -1,5 +1,4 @@
-nav-bar.html
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
  
@@ -24,11 +23,11 @@ nav-bar.html
 </head>
  
 <body>
-    {% block pagecontent %}
+    
 <section>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'dashboard' %}">APPS</a>
+            <a class="navbar-brand" href="index.html">APPS</a>
             
             <img src="/storage/emulated/0/documents/images/8i8.png">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -43,7 +42,7 @@ nav-bar.html
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             My Project</a>
                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/storage/emulated/0/documents/betterfly_nav/manage_farm.html">Create Project</a>
+                        <a class="dropdown-item" href="manage_farm.html">Create Project</a>
                        </div>
                     </li>
  
@@ -83,13 +82,13 @@ nav-bar.html
                         <a class="nav-link" href="rate.html">Evaluate</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{% url 'dashboard' %}">Predict</a>
+                        <a class="nav-link" href="predict.html">Predict</a>
                     </li>
                 </ul>
             </div>
     </nav>
 </section>
-{% endblock %}
+
 
 <div id="" class="container">
     
@@ -111,13 +110,13 @@ nav-bar.html
 
     
 
-      <div id="" class="grid-container">
+      <div id="pcms" class="grid-container">
       
          <div class="card" style="width:140px">
             
             <div class="card-body">
-                   <a href="/storage/emulated/0/documents/betterfly_nav/but_house.html"  >            
-                <img class="card-img" src="/storage/emulated/0/documents/images/Butterfly_icon.png" style="100%"/> 
+                   <a href="but_house.html"  >            
+                <img class="card-img" src="icon/Butterfly_icon.png" style="100%"/> 
                 <h6 class="card-title">Butterfly</h6>
                    </a>
             </div>
@@ -129,7 +128,7 @@ nav-bar.html
             
             <div class="card-body">
                  <a href="/storage/emulated/0/documents/betterfly_nav/puparium.html" >                
-                <img class="card-img" src="/storage/emulated/0/documents/images/pupa.png" style="100%"/> 
+                <img class="card-img" src="icon/pupa.png" style="100%"/> 
                 <h6 class="card-title">Pupae</h6>
                  </a>
             </div>
@@ -138,8 +137,8 @@ nav-bar.html
         <div class="card" style="width:140px">
             
             <div class="card-body">
-                <a href="/storage/emulated/0/documents/betterfly_nav/cats.html">           
-                <img class="card-img" src="/storage/emulated/0/documents/images/larvae.png" style="100%"/> 
+                <a href="cats.html">           
+                <img class="card-img" src="icon/larvae.png" style="100%"/> 
                 <h6 class="card-title">Cats</h6>
                 </a>
             </div>
@@ -148,8 +147,8 @@ nav-bar.html
         <div class="card" style="width:140px">
             
             <div class="card-body">
-                <a href="/storage/emulated/0/documents/betterfly_nav/eggs.html">                  
-                <img class="card-img" src="/storage/emulated/0/documents/images/eggs.png" style="100%"/> 
+                <a href="eggs.html">                  
+                <img class="card-img" src="/icon/eggs.png" style="100%"/> 
                 <h6 class="card-title">Eggs</h6>
                 </a>
             </div>
@@ -159,7 +158,7 @@ nav-bar.html
             
             <div class="card-body">
   
-                <img class="card-img" src="/storage/emulated/0/documents/images/anomaly.png" style="100%"/>
+                <img class="card-img" src="/icon/anomaly.png" style="100%"/>
 
                 <h6 class="card-title">Defects</h6>
 
@@ -172,7 +171,7 @@ nav-bar.html
             
             <div class="card-body">
                                    
-                <img class="card-img" src="/storage/emulated/0/documents/images/disease.png" style="100%"/> 
+                <img class="card-img" src="/icon/disease.png" style="100%"/> 
                 <h6 class="card-title">Diseases</h6>
 
             </div>
@@ -182,7 +181,7 @@ nav-bar.html
             
             <div class="card-body">
                                    
-                <img class="card-img" src="/storage/emulated/0/documents/images/plants.png" style="100%"/> 
+                <img class="card-img" src="/icon/plants.png" style="100%"/> 
                 <h6 class="card-title">Hostplants</h6>
 
             </div>
@@ -194,7 +193,7 @@ nav-bar.html
             
             <div class="card-body">
                                    
-                <img class="card-img" src="/storage/emulated/0/documents/images/spider.png" style="100%"/> 
+                <img class="card-img" src="/icon/spider.png" style="100%"/> 
                 <h6 class="card-title">Predators</h6>
 
             </div>
@@ -208,16 +207,17 @@ nav-bar.html
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
     <div class="icon-bar">
-        <a class="active " href="index.html"><img src = "icon\home2.png"></a>
+ 
         <a href="lepidoptera.html"><img src = "icon\butterfly2.png"></a>
         <a href="proper_care.html"><img src = "icon\detect.png"></a>
+       <a class="active " href="index.html"><img src = "icon\home2.png"></a>
         <a href="alarm.html"><img src = "icon\plants.png"></a>
         <a href="map.html"><img src = "icon\globe.png"></a>
       </div>
   </nav>
 </section>
 <hr>
-<script src="/storage/emulated/0/documents/js/myscript.js"></script>
+<script src="js/myscript.js"></script>
 <script src="jquery-3.6.0.slim.min.js"> </script>
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>
