@@ -50,7 +50,7 @@
 /*apps*/
 
 .btn-detail {
-    color: var(--color-cloud);
+    color: var(--bs-white);
     background-color: #198754;
 }
 .btn-back {
@@ -109,12 +109,10 @@ h2 {
  .card-app-list{
     width: 200px;
     border:1px solid;
-    border-color:blue;
+    border-color: blue;
     text-align: center;
     border-radius:5px;
-    background-color: yellow;
-    display: flex;
-    flex-wrap: wrap; 
+    background-color: #fff;
 }
 
 .card-dev-list{
@@ -124,12 +122,14 @@ h2 {
     text-align: center;
     border-radius:5px;
     margin: 20px 20px 10px 20px;
-    background-color: white;
+    background-color: #fff;
     gap:10px;
 }
 dl, ol, ul {
     margin-top: 0;
     margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap; 
 }
 
 /*navbutton home*/
