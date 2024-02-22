@@ -50,6 +50,7 @@ function gotResults(error,results){
 
 
 function setup(){
+    const newDiv = document.createElement("div");
     createCanvas(320,270);
     video=createCapture(VIDEO)
     video.hide();
