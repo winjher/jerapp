@@ -2,7 +2,7 @@
 let mobilenet;
 let classifier;
 let video;
-let label="";
+let label="test";
 
 let butterflyButton;
 let larvaeButton;
