@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Classifier</title>
+</head>
+<style type="text/css" media="all">
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 4px;
+
+
+    }
+
+
+    .login .signup-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4px;
+    }
+
+
+    .register {
+        display: inline-block;
+        flex-direction: column;
+        align-items: center;
+        padding: 4px;
+    }
+
+
+    hr {
+        color: white;
+    }
+
+
+    .buttons {
+        justify-content: center;
+        margin-right: auto;
+        margin-right: auto;
+    }
+
+
+    /* submit button */
+    .btn {
+        border: solid 3px;
+        border-radius: 30px;
+        background-color: green;
+        font-style: arial;
+        font-weight: bold;
+        border-color: red;
+    }
+
+
+    .btn-close,
+    .btn-reset,
+    .btn-signup {
+        border: solid 3px;
+        border-radius: 30px;
+        background-color: orange;
+        font-weight: bold;
+        border-color: green;
+        justify-content: center;
+    }
+
+
+    .btn,
+    .btn-close,
+    .btn-reset,
+    .btn-signup {
+        background-color: #052c08;
+        color: #ffe;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px;
+        border: solid 1px #f06d06;
+        background-clip: content-box;
+        height: 35px;
+        width: 120px;
+        align-items: center;
+    }
+
+
+    .cards-list {
+        z-index: 0;
+        width: 100%;
+        display: flex;
+        /*justify-content: space-around;*/
+        flex-wrap: wrap;
+    }
+
+
+    input[file] {
+        align-items: center;
+    }
+
+
+    .card {
+        margin: 30px auto;
+        width: 300px;
+        height: 300px;
+        border-radius: 40px;
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        transition: 0.4s;
+        background-color: yellow;
+
+
+    }
+
+
+    .card-register,
+    .card-classify {
+        /* margin: 30px auto; */
+        width: 300px;
+        height: 330px;
+        border-radius: 40px;
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        transition: 0.4s;
+        linear-gradient(90deg, #edc0bf 0,#c4caef 8%);
+        justify-items: center;
+    }
+
+
+    .card .card_image {
+        width: inherit;
+        height: inherit;
+        border-radius: 40px;
+    }
+
+
+    .card .card_image img {
+        width: inherit;
+        height: inherit;
+        border-radius: 40px;
+        object-fit: cover;
+    }
+
+
+    .card .card_title {
+        text-align: center;
+        border-radius: 0px 0px 40px 40px;
+    }
+
+
+    h3,
+    h2,
+    h1,
+    .buttons {
+        padding: 8px;
+        align-content: center;
+        text-align: center;
+    }
+
+
+    .upload {
+        margin: 30px auto;
+        width: 280px;
+        height: 150px;
+        border-radius: 0px;
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+
+    .augment-card {
+        margin: 30px auto;
+        width: 280px;
+        height: 150px;
+        border-radius: 0px;
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+
+    li {
+        text-decoration: none;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+</style>
+
+
+<body>
+    <div id="product-list">
+        <script type="text/javascript" charset="utf-8">
+            products.js
+        </script>
+    </div>
+    
+    <ul class="cards-list">
+        <li>
+            <div class="card-classify">
+                <div class="card-augment">
+                    <div class="card_title">
+                        <h2>
+                            Object Detection
+                        </h2>
+                        <hr />
+                        <div class="augment-card">
+                            <form name="testform" class="aug">
+                                <label>Percentage
+                                    <input type="range" min="0" max="100" name="blur" />
+                                </label>
+                                <label>Classes
+                                    <input type="range" min="0" max="100" name="brightness" />
+                                </label>
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn">Submit</button>
+                            <button type="submit" class="btn-close">Close</button>
+                        </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card-classify">
+                <div class="card-upload">
+                    <div class="card_title">
+                        <h3>
+                            Scan Butterfly
+                        </h3>
+                        <hr />
+                        <div id="" class="upload">
+                            <label for="Upload picture" class="drop-files">Drop files here or</label>
+                            <input type="file" name="Select file" id="Select file" value="" />
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn">Submit</button>
+                            <button type="submit" class="btn-reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card-classify">
+                <div class="card-augment">
+                    <div class="card_title">
+                        <h2>
+                            Classification
+                        </h2>
+                        <hr />
+                        <div class="augment-card">
+                            <form name="testform" class="aug">
+
+
+                                <label>Precision
+                                    <input type="range" min="0" max="100" name="blur" />
+                                </label>
+                                <label>Recall
+                                    <input type="range" min="0" max="100" name="brightness" />
+                                </label>
+                             
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn">Submit</button>
+                            <button type="submit" class="btn-close">Close</button>
+                        </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card-classify">
+                <div class="card-upload">
+                    <div class="card_title">
+                        <h3>
+                            Scan pupa defects
+                        </h3>
+                        <hr />
+                        <div id="" class="upload">
+                            <label for="Upload picture" class="drop-files">Drop files here or</label>
+                            <input type="file" name="Select file" id="Select file" value="" />
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn">Submit</button>
+                            <button type="submit" class="btn-reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card-classify">
+                <div class="card-augment">
+                    <div class="card_title">
+                        <h2>
+                            Augmentation
+                        </h2>
+
+
+                        <hr />
+                        <div class="augment-card">
+                            <form name="testform" class="aug">
+
+
+                                <label id="size">Blur
+                                    <input type="range" min="0" max="100" name="blur"  oninput="document.getElementById('fontsize').innerHTML = this.value + 'px'; 
+        changeFontRange(this.value);"">
+                                </label>
+                                <label>Brightness
+                                    <input type="range" min="0" max="100" name="brightness" />
+                                </label>
+                                <label>Contrast
+                                    <input type="range" min="0" max="100" name="contrast" />
+                                </label>
+                                <label>Greyscale
+                                    <input type="range" min="0" max="100" name="greyscale" />
+                                </label>
+                                <label>Opacity
+                                    <input type="range" min="0" max="100" name="opacity" />
+                                </label>
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn">Submit</button>
+                            <button type="submit" class="btn-close">Close</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card-classify">
+                <div class="card-upload">
+                    <div class="card_title">
+                        <h3>
+                            Scan pupa defects
+                        </h3>
+                        <hr />
+                        <div id="" class="upload">
+                            <label for="Upload picture" class="drop-files">Drop files here or</label>
+                            <input type="file" name="Select file" id="Select file" value="" />
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="btn">Submit</button>
+                            <button type="submit" class="btn-reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+  <script type="text/javascript" charset="utf-8">
+      const changeFontRange= (size) => {
+    document.getElementById('size').setAttribute('style', 'font-size: ' + size + 'px');
+  }
+  </script>
+
+    <script>
+        function checkFirstName() {
+            const firstName = document.getElementById("firstName").value;
+            if (!firstName) {
+                alert("Too bad for you");
+            }
+        }
+    </script>
+    <script type="text/javascript" charset="utf-8">
+
+
+    </script>
+</body>
+
+
+</html>
+
