@@ -118,6 +118,9 @@ h2 {
 }
 .img-apps{
     text-align: center;
+    border: qpx solid;
+    border-radius: 50px;
+    margin-top: -.10px;
     
 }
 .card-app-list-item{
