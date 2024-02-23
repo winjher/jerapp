@@ -54,7 +54,7 @@
     background-color: #198754;
 }
 .btn-back {
-    color:var(--color-cloud);
+    color:var(--bs-white);
     background-color: #191970;
 }
 
