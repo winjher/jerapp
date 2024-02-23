@@ -114,7 +114,10 @@ h2 {
     border-radius:5px;
     background-color: #fff;
 }
-
+.img-apps,
+.text-apps{
+    align-items:center;
+}
 .card-app-list-item{
     width: auto;
     border:1px solid;
