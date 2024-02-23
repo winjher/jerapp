@@ -118,6 +118,8 @@ h2 {
 }
 .img-apps{
     text-align:center;
+    margin-top: 1rem;
+    margin-right: 5rem
 }
 .card-app-list-item{
     width: 180px;
