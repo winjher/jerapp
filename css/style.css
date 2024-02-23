@@ -118,8 +118,8 @@ h2 {
 }
 .img-apps{
     text-align: center;
-    border: qpx solid;
-    border-radius: 50px;
+    border: 1px solid;
+    border-radius: 5px;
     margin-top: -.10px;
     
 }
