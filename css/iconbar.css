@@ -188,6 +188,7 @@ html,body {
 .btn-apps{
   border:none;
   width: 80px;
+  background-color: #f2f3f4;
 }
 h3 {
   font-size: 20px;
