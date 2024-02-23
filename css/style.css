@@ -116,9 +116,8 @@ h2 {
     display: flex;
     flex-wrap: wrap; 
 }
-.img-apps,
-.text-apps{
-    align-items:center;
+.img-apps{
+    text-align:center;
 }
 .card-app-list-item{
     width: 180px;
@@ -184,6 +183,4 @@ dl, ol, ul {
 li{
     list-style:none;
   }
-h2{
-   text-align:center;
-}
+
