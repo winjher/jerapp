@@ -116,20 +116,20 @@ h2 {
 }
 
 .card-app-list-item{
-    width: 240px;
+    width: 200px;
     border:1px solid;
     border-color:orange;
     text-align: center;
     border-radius:5px;
     margin: 20px 20px 10px 20px;
     background-color: #fff;
-    gap:10px;
+    display: flex;
+    flex-wrap: wrap; 
 }
 dl, ol, ul {
     margin-top: 0;
     margin-bottom: 1rem;
-    display: flex;
-    flex-wrap: wrap; 
+    
 }
 
 /*navbutton home*/
