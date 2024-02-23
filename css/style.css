@@ -107,7 +107,7 @@ h2 {
 
  /*index*/
  .card-app-list{
-    width: 200px;
+    width: auto;
     border:1px solid;
     border-color: blue;
     text-align: center;
