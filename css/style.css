@@ -50,11 +50,11 @@
 /*apps*/
 
 .btn-detail {
-    color: var(--bs-white);
+    color: #fff;
     background-color: #198754;
 }
 .btn-back {
-    color:var(--bs-white);
+    color:#fff;
     background-color: #191970;
 }
 
