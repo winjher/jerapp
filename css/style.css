@@ -116,7 +116,7 @@ h2 {
 }
 
 .card-app-list-item{
-    width: 200px;
+    width: auto;
     border:1px solid;
     border-color:orange;
     text-align: center;
