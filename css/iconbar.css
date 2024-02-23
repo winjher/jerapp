@@ -182,7 +182,9 @@ html,body {
   -webkit-animation-delay: 4s, 2.5s;
   animation-delay: 4s, 2.5s;
 }
-
+.card-title{
+  text-decoration: none;
+}
 h3 {
   font-size: 20px;
   color: green;
