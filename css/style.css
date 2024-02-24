@@ -278,5 +278,15 @@ body  {
   background-color: #cccccc;
 }
 
+.btn-info,
+.btn-care,
+.btn-culture{
+    border-style: none;
+    border-radius: 4px;
+    padding: 6px;
+    font: var(bs-font-sans-serif);
+    color: var(--color-navyblue);
+    background-color:#fd7e14;   
+}
 
      
