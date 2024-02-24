@@ -240,3 +240,16 @@ li{
     margin-right: auto;
 
 }
+
+.btn-diagnose {
+    margin:10px;
+    text-align: center;
+    align-items: center;
+    background-color: #198754;
+    border-radius: 20px;
+    border: none;
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f3f4f5;
+}
