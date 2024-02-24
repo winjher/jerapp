@@ -253,3 +253,8 @@ li{
     margin-right: auto;
     color: #f3f4f5;
 }
+
+.diagnose-div{
+    height: auto;
+    width: auto;
+}
