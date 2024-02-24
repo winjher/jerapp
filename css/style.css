@@ -173,6 +173,7 @@ dl, ol, ul {
 .icon-bar-home .active {
   background-color:yellow;
   border-color:orange;
+  border-radius: 0 2px 0 2px;
   /*background-color: var(--bs-purple);*/
   /* Add an active/current color */
 }
@@ -212,12 +213,14 @@ li{
 
 .icon-bar-garden a:hover {
   background-color: yellow;
+
   /* Add a hover color */
 }
 
 .icon-bar-garden .active {
   background-color:yellow;
   border-color:orange;
+  border-radius: 0 2px 0 2px;
   /*background-color: var(--bs-purple);*/
   /* Add an active/current color */
 }
