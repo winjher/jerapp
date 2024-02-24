@@ -257,4 +257,6 @@ li{
 .diagnose-div{
     height: auto;
     width: auto;
+    background-image:;
+    background-color: #f3f4f4;
 }
