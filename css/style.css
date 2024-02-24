@@ -225,4 +225,18 @@ li{
 .icon-size{
   height: auto ;
   width: auto;
-    
+}
+
+.btn-save-larvae,
+.center-save{
+    margin:10px;
+    text-align: center;
+    align-items: center;
+    background-color: #f3f4f5;
+    border-radius: 20px;
+    border: none;
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
