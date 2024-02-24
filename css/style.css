@@ -226,9 +226,8 @@ li{
   height: auto ;
   width: auto;
 }
-
-.btn-save-larvae,
-.center-save{
+.btn-save,
+.btn-save-larvae{
     margin:10px;
     text-align: center;
     align-items: center;
@@ -241,6 +240,15 @@ li{
 
 }
 
+.center-save{
+    text-align: center;
+    align-items: center;
+    background-color: #f3f4f5;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+
+}
 .btn-diagnose {
     margin:10px;
     text-align: center;
