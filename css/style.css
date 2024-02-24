@@ -257,6 +257,11 @@ li{
 .diagnose-div{
     height: auto;
     width: auto;
-    background-image:;
+    
     background-color: #f3f4f4;
+}
+
+body  {
+  background-image: url("background.png");
+  background-color: #cccccc;
 }
