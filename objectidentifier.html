@@ -85,53 +85,86 @@
  
  <hr/>  
 <header class="text-center">
-    <h2 class="display-8">Your Match Identifier Apps</h2>
+    <h2 class="display-8">Hostplants Identification Apps</h2>
 </header>
-<div class="row icon-boxes">
 
-    <section class="container-fluid">
-        <div id="intro-section" class="row">
-            <div class="col-xl-6 text-center">
-                <div class="align-items-center">
-                    <img class="img-fluid" src="icon/hosplant.png"/><br>
-                    <a href="http://" class="btn btn-default"><h2 class="display-6">Plants</h2></a>
-                </div>
-            </div>
-            
-            <div class="col-xl-6 text-center">
-                <div class="align-items-center">
-                    <img class="img-fluid" src="icon/butterfly.png" /><br>
-                    <a href="http://" class="btn btn-default"> <h2 class="display-6">Butterfly</h2></a>
-                </div>
-            </div>
-        </div>
-</div>
-</section>
 
 <div class="container">     
          <h3>Hostplant</h3>       
+       <div class="panel-body">
+ <div class="container diagnose-div">  
+                  <div class="center-save">
+                     <button type="submit" class="btn-experts" onclick = "mySaveItems()" value= "My Save Form"><h5>+Save</h5>
+                      </button>     
+                  </div> 
+             </div>
+    </div>
+    <div class="container">     
+         <h3>Host plants </h3>       
         <div class="panel panel-default"> 
 
             <div class="panel-heading">
-   <button type="submit" class="btn-reset" onclick = "myHealthInfo()" value= "Basic health Info Form">Basic Info
+   <button type="submit" class="btn-info" onclick = "myHealthInfo()" value= "Basic Stages Form">Basic Info
              </button>
-             <button type="submit" class="btn-reset" onclick = "myCare()" value= "Care Form">Care
+             <button type="submit" class="btn-type" onclick = "myHostplantTypes()" value= "Hostplants Type Form">Type of Plants
              </button>
-             <button type="submit" class="btn-reset" onclick = "myCulture()" value= "Diagnose Form">Culture
-             </button>
+             
 
             </div>
-            <div class="panel-body">
-              Characteristics
+             <div class="panel-body">
+              Type of Indicators
                 <div class="col-sm" >
-                   Continue 
-                </div>
+                   <li>Trees</li>
+                   <li>Veins</li>     
+                   <li>Shrubs</li>
+                   <li>Fruit bearing</li>  
+           
+              </div>
             </div>
+          <div class="panel-footer">
+                Learn more
          </div>
      </div> 
 
-<div class="center-save">
-                     <button type="submit" class="btn-save-larvae" onclick = "mySaveItem()" value= "Save Info Form">+&nbsp;Save
+   </div> 
+
+
+ </div> 
+             <div class="container diagnose-div">  
+                  <div class="center-save">
+                     <button type="submit" class="btn-experts" onclick = "myExperts()" value= "Ask Experts Form"><h5>Ask Experts</h5>
+                      </button>     
+                  </div> 
+             </div>
+ </div>
+ <div class="container">    
+
+     <div class="container diagnose-div">     
+         <h3>Ask the Experts</h3>       
+        <div class="panel panel-default"> 
+
+            <div class="panel-heading">
+
+            </div>
+            <div class="panel-body">
+
+                <div class="col-sm" >
+                   <img src="icon$/bgbutterfly.jpg">Stages Classification 
+                </div>
+            </div>
+            <div class="panel-footer">
+             Learn More
+            </div>
+         </div>
+
+      </div> 
+</div>
+
+ 
+
+    <div class="container diagnose-div">       
+       <div class="center-save">
+                     <button type="submit" class="btn-save" onclick = "mySaveItem()" value= "Save Info Form">+&nbsp;Save
                       </button>     
                   </div>     
     
