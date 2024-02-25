@@ -244,6 +244,10 @@ li{
     margin-right: auto;
   }
 
+.save-background{
+    background-color: #198754;
+}
+
 .center-save{
     text-align: center;
     align-items: center;
@@ -254,9 +258,12 @@ li{
     margin-right: auto;
 }
 
-.save-background{
-    background-color: #198754;
+.diagnose-div{
+    height: auto;
+    width: auto;
+    background-color: #f3f4f4;
 }
+
 .btn-diagnose {
     margin:10px;
     text-align: center;
@@ -283,11 +290,7 @@ li{
     color: #f3f4f5;
 }
 
-.diagnose-div{
-    height: auto;
-    width: auto;
-    background-color: #f3f4f4;
-}
+
 
 body  {
   background-image: url("icon/bgbutterfly.jpg");
