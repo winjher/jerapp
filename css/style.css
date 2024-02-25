@@ -117,9 +117,13 @@ h2 {
 }
 .img-apps{
     text-align: center;
-    margin-top: -0.10prem;
+    margin-right:auto;
+    margin-left:auto;
+    margin:10px;
     
 }
+
+
 .card-app-list-item{
     width: 180px;
     border:1px solid;
@@ -132,6 +136,36 @@ h2 {
     margin-right: auto;
     
 }
+
+.head-apps{
+    text-align: left;
+    margin-right:auto;
+    margin-left:auto;
+    margin:10px;
+    background-color:#c3c4c4;
+    border-radius:4px 0 0 4px;
+}
+
+
+.body-apps{
+    text-align: left;
+    margin-right:auto;
+    margin-left:auto;
+    margin:10px;
+    background-color:#f4f5f5
+    border-color:orange;    
+}
+
+.foot-apps{
+    text-align: left;
+    margin-right:auto;
+    margin-left:auto;
+    margin:10px;
+    background-color:#c3c4c4;
+    border-radius:0 4px 4px 0;
+}
+
+
 dl, ol, ul {
     margin-top: 0;
     margin-bottom: 1rem;
