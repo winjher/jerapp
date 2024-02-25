@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Butterfly Larval Diseases Classification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <!-- Include the ml5.js library -->
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" /> 
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+</script> 
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js">
+</script> 
+
+
+</head>
+
+<style>
+    ::root {
+        --color-iris: #4D5AE5;
+        --color-navyblue: #2E2F42;
+        --color-white: #FFFFFF;
+        --color-cornflower: #E7E9FC;
+        --color-ocean: #404BBF;
+        --color-cloud: #F4F4FD;
+        --color-dairy: #FCFCFC;
+        --color-slate: #434455;
+        --bs-blue: #0d6efd;
+        --bs-indigo: #6610f2;
+        --bs-purple: #6f42c1;
+        --bs-pink: #d63384;
+        --bs-red: #dc3545;
+        --bs-orange: #fd7e14;
+        --bs-yellow: #ffc107;
+        --bs-green: #198754;
+        --bs-teal: #20c997;
+        --bs-cyan: #0dcaf0;
+        --bs-white: #fff;
+        --bs-gray: #6c757d;
+        --bs-gray-dark: #343a40;
+        --bs-primary: #0d6efd;
+        --bs-secondary: #6c757d;
+        --bs-success: #198754;
+        --bs-info: #0dcaf0;
+        --bs-warning: #ffc107;
+        --bs-danger: #dc3545;
+        --bs-light: #f8f9fa;
+        --bs-dark: #212529;
+        --font-family-open-sans: 'Open sans', san-serif;
+        --font-family-roboto: 'Roboto', san-serif;
+        --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    }
+
+
+
+
+    *,
+    *::before,
+    *::after {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .btn-back {
+        color:var(--color-cloud);
+        background-color: #191970;
+    }
+
+    .btn-submit {
+        color: var(--color-cloud);
+        background-color: #191970;
+    }
+
+.btn-save-larvae,
+.center-save{
+    margin:10px;
+    text-align: center;
+    align-items: center;
+    background-color: #f3f4f5;
+    border-radius: 20px;
+    border: none;
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+    .btn-reset {
+        color: black;
+        background-color:#fd7e14;
+
+
+    }
+
+
+    .btn-reset,
+    .btn-submit, .btn-back {
+        border-style: none;
+        border-radius: 4px;
+        padding: 6px;
+        font: var(bs-font-sans-serif);
+    }
+
+        /* Set styles for HTML elements */
+        h1,
+        h2 {
+            font-family: arial;
+            text-align: center;
+        }
+
+        .imageInput {
+            width: 100%;
+            text-align: center;
+        }
+
+        .imageResult {
+            font-family: arial;
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            color: red;
+        }
+
+        .uploadedImage {
+            padding-top: 20px;
+            width: 50%;
+            height:auto;
+            margin-left: 25%;
+        }
+
+</style>
+<body>
+    <div class="container">
+        <h2>Butterfly Larvae Apps</h2>
+        <hr>
+        <h3>Larval Diseases Prediction</h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">Select Larvae Image</div>
+            <div class="panel-body">
+            <div class="col-sm" style="margin-bottom: 23px;">
+                <form action="" method="get" accept-charset="utf-8" id="myForm">
+    <div class="imageInput">
+        <input type="file" oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
+    </div>
+    <!-- Container for the uploaded image -->
+    <img class="uploadedImage" id="uploadedImage" />
+    <div class="imageScanResult">
+        <output type="file" name="result" for="a b"></output>
+    </div>
+<div class="imageResult" id="imageResult"></div>   
+             </form>               
+                <br>
+                <span class="border border-primary">
+                    <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                    <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
+
+                </span>
+            </div>
+             <div class="imageResult" id="imageResult"></div> 
+            </div>
+            <div class="panel-footer">
+
+            <form id=“myDetailForm>
+                <label for=""> <a href="Larvae Trichogramma Disease.html" >
+Treatments: </a></label>
+                 <div>
+                  <button type="submit" class="btn-back" id="btn-home">
+                     <a class="nav-link" href="index.html">Back</a></button>
+                  <button type="submit" class="btn-reset" onclick= "myReset() " value = "Reset Form">Reset</button>
+
+                 </div>               
+              </form>
+             </div>
+
+
+       </div>
+
+    </div>
+<div class="container"> 
+                  <div class="center-save">
+                     <button type="submit" class="btn-save" onclick = "mySaveHostplants()" value= "Save Hostplants Info Form">+&nbsp;Save to my host plants
+                      </button>     
+                  </div>    
+         </div>  
+
+    <div class="container"> 
+
+
+             <div class="container diagnose-div">  
+                  <div class="center-save"> 
+ <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">         
+<button type="submit" class="btn-diagnose" onclick= "myDiagnose() " value = "Diagnose Form"><a class="nav-link" href="Larvae Trichogramma Disease.html"><h5>Get Diagnose</h4></a>
+</button>
+    </div>
+</div>
+         <h3>Host Plants</h3>       
+        <div class="panel panel-default"> 
+
+            <div class="panel-heading">
+   <button type="submit" class="btn-info" onclick = "myHealthInfo()" value= "Basic health Info Form"> <a href="imagefruit.html">
+Basic Info</a>
+             </button>
+             <button type="submit" class="btn-care" onclick = "myCare()" value= "Care Form"> <a href="care.html">
+Care</a>
+             </button>
+             <button type="submit" class="btn-culture" onclick = "myCulture()" value= "Culture Form">Culture
+             </button>
+
+            </div>
+            <div class="panel-body">
+              Characteristics
+                <div class="col-sm" >
+                   Image Fruits 
+                </div>
+            </div>
+          <div class="panel-footer">
+                   Learn more
+         </div>
+     </div> 
+ </div>  
+    <div class="container">
+     <div class="container diagnose-div">     
+                  <div class="center-save">
+                     <button type="submit" class="btn-experts" onclick = "myExperts()" value= "Ask Experts Form"><h5>Ask Experts</h5>
+                      </button>     
+                  </div>     
+        </div> 
+     </div>   
+     <div class="container">     
+         <h3>Ask the Experts</h3>       
+        <div class="panel panel-default"> 
+
+            <div class="panel-heading">
+
+            </div>
+            <div class="panel-body">
+
+                <div class="col-sm" >
+                     <div class="container-fluid">
+    <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="200px">
+                </div>
+               Care manager 
+                </div>
+            </div>
+            <div class="panel-footer">
+Type of Host plants 
+            </div>
+         </div>
+     </div>
+
+
+
+<!----------------------------- Fixed Bottom Menu section--------------------------------------------->   
+<nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
+    <div class="icon-bar">
+        <a href="lepidoptera.html"><img src = "icon\butterfly2.png"></a>
+        <a href="alarm.html"><img src = "icon\plants.png"></a>
+        <a class="active " href="index.html"><img src = "icon\home2.png"></a>
+        <a href="classify.html"><img src = "icon\detect.png"></a>        
+        <a href="map.html"><img src = "icon\globo.png"></a>
+      </div>
+  </nav>
+
+
+    <script>
+        // Create a variable containing the result container
+        const element = document.getElementById("imageResult");
+
+        function startImageScan() {
+            // Create a variable to initialize the ml5.js image classifier with MobileNet
+            const classifier = ml5.imageClassifier('MobileNet');
+
+            // Scan the uploaded image
+            classifier.classify(document.getElementById("uploadedImage"), imageScanResult)
+            element.innerHTML = "loading...";
+        }
+
+        // Check for errors and display the results if there aren't any
+        function imageScanResult(error, results) {
+            if (error) {
+                element.innerHTML = error;
+            } else {
+                let num = results[0].confidence * 100;
+                element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % " + "\n" + " Larvae that have Tachinid flies diseases require immediate attention before the disease takes over. Usually, a single larva develops inside an individual host insect. Many tachinid larvae almost totally consume the host insect before they bore out of the host to pupate and complete the. Reducing the use of insecticides and providing sources of food like dills, parsley, clover and other herbs are the most efficient ways to conserve Trachinid flies in agricultural ecosystems (Ellis; Bradley, 1996: pp. 328-329)";
+            }
+        }
+    </script>
+
+<script>
+function myReset() {
+  document.getElementById("myForm").reset();
+}
+function myDetail(){
+    if(pred){
+}else if (pred){
+  document.getElementById().innerHTML=..;
+ console.log()
+}
+}else{
+ console log()
+}
+</script>
+</body>
+</html>
