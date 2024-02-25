@@ -239,18 +239,20 @@ li{
     width:300px;
     margin-left: auto;
     margin-right: auto;
-
-}
+  }
 
 .center-save{
     text-align: center;
     align-items: center;
-    background-color: #198754;
+    background-color: #f3f4f5;
     border: none;
-    border-radius: 0px;
+    border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
+}
 
+.save-background{
+    background-color: #198754;
 }
 .btn-diagnose {
     margin:10px;
