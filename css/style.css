@@ -246,6 +246,8 @@ li{
 
 .save-background{
     background-color: #198754;
+    text-align: center;
+    align-items: center;
 }
 
 .center-save{
