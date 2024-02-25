@@ -253,6 +253,7 @@ li{
     align-items: center;
     background-color: #f3f4f5;
     border: none;
+    width:300px;
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -268,7 +269,7 @@ li{
     margin:10px;
     text-align: center;
     align-items: center;
-    background-color: #198754;
+    background-color: #dc3545;
     border-radius: 20px;
     border: none;
     width:300px;
@@ -290,8 +291,8 @@ li{
     color: #f3f4f5;
 }
 
-#myBtn{
-    color:#f3f4f5;
+.myBtn{
+    color:#dc3545;
     border: none;
     border-radius: 3px; 
 }
