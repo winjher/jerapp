@@ -246,7 +246,7 @@ li{
 
 .save-background{
     border:1 px solid;
-    border-color: #198754;
+    background-color: #198754;
     text-align: center;
     align-items: center;
     width:300px;
