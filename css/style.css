@@ -229,7 +229,10 @@ li{
   width: auto;
 }
 .btn-save,
-.btn-save-larvae{
+.btn-save-eggs,
+.btn-save-larvae,
+.btn-save-pupae,
+.btn-save-butterfly{
     margin:10px;
     text-align: center;
     align-items: center;
