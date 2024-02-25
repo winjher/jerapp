@@ -67,7 +67,6 @@
     background-color:#fd7e14;
 }
 
-
 .btn-reset,
 .btn-submit, 
 .btn-back,
@@ -292,7 +291,8 @@ body  {
 
 .btn-info,
 .btn-care,
-.btn-culture{
+.btn-culture,
+.btn-type{
     border-style: none;
     border-radius: 4px;
     padding: 6px;
