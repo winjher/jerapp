@@ -290,7 +290,11 @@ li{
     color: #f3f4f5;
 }
 
-
+.myBtn{
+    color:#f3f4f5;
+    border: none;
+    border-radius: 3px; 
+}
 
 body  {
   background-image: url("icon/bgbutterfly.jpg");
