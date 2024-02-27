@@ -363,5 +363,7 @@ body  {
     color: var(--color-navyblue);
     background-color:#fd7e14;   
 }
-
-     
+.image-diagnose{
+    height:auto;
+    margin-top: 10px;
+}
