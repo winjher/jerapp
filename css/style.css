@@ -161,8 +161,9 @@ h2 {
     margin-left:auto;
     margin:10px;
     background-color:#c3c4c4;
-    border-radius:4px 0 0 4px;
-    color:#212222;    
+    border-radius:4px 4px 0 0;
+    color:#ffc107;  
+    border-color:#fd7401;  
 }
 
 
@@ -182,7 +183,7 @@ h2 {
     margin-left:auto;
     margin:10px;
     background-color:#c3c4c4;
-    border-radius:0 4px 4px 0;
+    border-radius:0 0 4px 4px;
 }
 
 
