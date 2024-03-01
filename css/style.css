@@ -119,14 +119,28 @@ h2 {
     display: flex;
     flex-wrap: wrap; 
 }
-.img-apps{
+
+.img-apps-butterfly,
+.img-apps-diseases,
+.img-apps-stages,
+.img-apps-defects{
     text-align: center;
     margin-right:auto;
     margin-left:auto;
-    margin:10px;
-    
+    margin:10px; 
 }
-
+.img-apps-butterfly{
+    background-color:#FCFCFC;
+}
+.img-apps-stages{
+    background-color:#20c997;    
+}
+.img-apps-diseases{
+    background-color:#fd7e14;    
+}
+.img-apps-defects{
+    background-color:#E7E9FC;      
+}
 
 .card-app-list-item{
     width: 180px;
