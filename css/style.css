@@ -131,15 +131,23 @@ h2 {
 }
 .img-apps-butterfly{
     background-color: #ffc107;
+    padding-bottom:20px;
+    padding-top:20px;
 }
 .img-apps-stages{
-    background-color:#20c997;    
+    background-color:#20c997;  
+    padding-bottom:20px;
+    padding-top:20px;  
 }
 .img-apps-diseases{
-    background-color:#fd7e14;    
+    background-color:#fd7e14;   
+    padding-bottom:20px;
+    padding-top:20px; 
 }
 .img-apps-defects{
-    background-color:#E7E9FC;      
+    background-color:#E7E9FC;   
+    padding-bottom:20px;
+    padding-top:20px;   
 }
 
 .card-app-list-item{
