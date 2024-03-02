@@ -166,6 +166,7 @@ h2 {
     color:#ffc107;  
     border-color:#fd7401;  
     padding-bottom:20px;
+    padding-top:20px;
 }
 
 
@@ -184,9 +185,10 @@ h2 {
     margin-right:auto;
     margin-left:auto;
     margin:10px;
-    background-color:#d63384;
+    background-color:#E7E9FC;
     border-radius:0 0 4px 4px;
     padding-top:20px;
+    padding-bottom:20px;
 }
 
 
