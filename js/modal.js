@@ -26,7 +26,7 @@ window.onclick = function(event) {
 }
 
 
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModalPupae");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtnLarvae");
@@ -52,7 +52,7 @@ window.onclick = function(event) {
 }
 
 
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModalLarvae");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtnPupae");
@@ -77,7 +77,7 @@ window.onclick = function(event) {
   }
 }
 
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModalEggs");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtnEggs");
@@ -103,7 +103,7 @@ window.onclick = function(event) {
 }
 
 
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModalDefects");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtnDiseases");
@@ -129,7 +129,7 @@ window.onclick = function(event) {
 }
 
 
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModalDiseases");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtnDefects");
@@ -155,7 +155,7 @@ window.onclick = function(event) {
 }
 
 
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModalHostplants");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtnHostplants");
@@ -180,7 +180,7 @@ window.onclick = function(event) {
   }
 }
 
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModalPredators");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtnPredators");
