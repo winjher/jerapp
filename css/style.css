@@ -80,6 +80,9 @@
     border-radius: 4px;
     padding: 6px;
     font: var(bs-font-sans-serif);
+    margin:5px;
+    margin-right:auto;
+    margin-left:auto;
     }
   
 /* Set styles for HTML elements */
