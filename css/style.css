@@ -374,7 +374,14 @@ li{
     color: #f3f4f5;
 }
 
-#myBtn{
+#myBtn,
+#myBtnLarvae,
+#myBtnPupae,
+#myBtnEggs,
+#myBtnDiseases,
+#myBtnDefects,
+#myBtnHostplants,
+#myBtnPredators{
     color:#dc3545;
     border: none;
     border-radius: 3px; 
