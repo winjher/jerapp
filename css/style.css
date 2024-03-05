@@ -70,7 +70,8 @@
     color: var(--color-navyblue);
     background-color:#fd7e14;
 }
-
+.details-button,
+.care-button,
 .btn-reset,
 .btn-submit, 
 .btn-back,
