@@ -154,6 +154,17 @@ h2 {
     padding-top:20px;   
 }
 
+
+.image-container {
+  width: 300px;
+  filter: grayscale(100%);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
 .card-app-list-item{
     width: 180px;
     border:1px solid;
