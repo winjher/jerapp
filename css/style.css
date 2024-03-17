@@ -122,7 +122,8 @@ h2 {
     background-color: #fff;
     display: flex;
     flex-wrap: wrap; 
-    margin:5px;
+    margin-top:15px;
+    margin-bottom:15px;
 }
 
 .img-apps-butterfly,
