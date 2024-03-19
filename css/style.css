@@ -47,8 +47,9 @@
 }
 
 .circle{
-    padding:0;
+    padding-bottom:0;
     background-color:gray;
+    margin-bottom:0;
 }
 
 @media screen and (max-width: 600px) {
