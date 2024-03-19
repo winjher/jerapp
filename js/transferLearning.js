@@ -57,7 +57,7 @@ function setup(){
     background(0);
     mobilenet= ml5.featureExtractor("MobileNet", video,modelReady);
     classifier=mobilenet.classification(video,videoReady);
-
+    console.log("\nTraing Data");
     eggsButton=createButton('eggs');
     eggsButton.mousePressed(function(){
         classifier.addImage('eggs');
