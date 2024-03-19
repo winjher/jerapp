@@ -510,8 +510,11 @@ body  {
     color: var(--color-navyblue);
     background-color:#fd7e14;  
 }
-
-
+.btn-icon{
+   margin-left:auto;
+   margin-rightt:auto;
+   margin:20px;   
+}
 
 
 
