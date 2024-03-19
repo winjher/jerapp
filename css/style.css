@@ -46,11 +46,7 @@
     box-sizing: border-box;
 }
 
-.circle{
-    padding-bottom:0;
-    background-color:gray;
-    margin-bottom:0;
-}
+
 
 @media screen and (max-width: 600px) {
   input[type=text] {
@@ -149,9 +145,13 @@ h2 {
 
 
 
- 
+/*index*/ 
 
-
+.circle{
+    padding-bottom:0;
+    background-color:#404BBF;
+    margin-bottom:0;
+}
 
 .img-apps-butterfly,
 .img-apps-diseases,
@@ -192,7 +192,7 @@ h2 {
   height: auto;
 }
 
-/*index*/
+
  .card-app-list{
     margin: 0px;
     width: auto;
