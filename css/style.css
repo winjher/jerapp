@@ -131,6 +131,7 @@ h2 {
 
  /*index*/
  .card-app-list{
+    margin: 0px;
     width: auto;
     border:1px solid;
     border-color: blue;
@@ -183,6 +184,7 @@ h2 {
   width: 100%;
   height: auto;
 }
+
 .card-app-list-item{
     width: 180px;
     border:1px solid;
@@ -216,10 +218,6 @@ h2 {
 
 
 
-
-
-
-
 .body-apps{
     text-align: center;
     margin-right:auto;
@@ -243,11 +241,6 @@ h2 {
     padding-top:20px;
     padding-bottom:20px;
 }
-
-
-
-
-
 
 
 
