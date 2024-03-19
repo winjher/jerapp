@@ -1,5 +1,4 @@
-
-::root {
+ :root {
     --color-iris: #4D5AE5;
     --color-navyblue: #2E2F42;
     --color-white: #FFFFFF;
@@ -47,11 +46,17 @@
     box-sizing: border-box;
 }
 
+
+
+
 /*apps*/
 .garden{
-   margin:right:-4rem;
-   margin-bottom:1rem;
+   margin-right:-4rem;
+   margin-bottom: 1 rem;
 }
+
+
+
 
 .btn-detail {
     color: #f2f3f4;
@@ -62,10 +67,13 @@
     background-color: #191970;
 }
 
-    .btn-submit {
-        color: var(--color-cloud);
-        background-color: #191970;
-    }
+
+
+
+.btn-submit {
+    color: var(--color-cloud);
+    background-color: #191970;
+}
 .btn-reset {
     color: var(--color-navyblue);
     background-color:#fd7e14;
@@ -73,7 +81,7 @@
 .details-button,
 .care-button,
 .btn-reset,
-.btn-submit, 
+.btn-submit,
 .btn-back,
 .btn-detail{
     border-style: none;
@@ -84,7 +92,7 @@
     margin-right:auto;
     margin-left:auto;
     }
-  
+ 
 /* Set styles for HTML elements */
 h1,
 h2 {
@@ -97,6 +105,9 @@ h2 {
     text-align: center;
 }
 
+
+
+
 .imageResult {
     font-family: arial;
     width: 100%;
@@ -105,12 +116,18 @@ h2 {
     color: red;
 }
 
+
+
+
 .uploadedImage {
     padding-top: 20px;
     width: 50%;
     height:auto;
     margin-left: 25%;
 }
+
+
+
 
  /*index*/
  .card-app-list{
@@ -121,9 +138,12 @@ h2 {
     border-radius:5px;
     background-color: #fff;
     display: flex;
-    flex-wrap: wrap; 
-    
+    flex-wrap: wrap;
+   
 }
+
+
+
 
 .img-apps-butterfly,
 .img-apps-diseases,
@@ -132,43 +152,42 @@ h2 {
     text-align: center;
     margin-right:auto;
     margin-left:auto;
-    margin:10px; 
+    margin:10px;
     padding-bottom:20px;
     padding-top:20px;
 }    
-}
+
+
+
+
 .img-apps-butterfly{
     background-color: #ffc107;
-    
+}
 .img-apps-stages{
     background-color:#20c997;  
-    
+   
 }
 .img-apps-diseases{
-    background-color:#fd7e14;   
-    
+    background-color:#fd7e14;  
+   
 }
 .img-apps-defects{
-    background-color:#E7E9FC;   
-    
+    background-color:#E7E9FC;  
+   
 }
-
-
 .image-container {
   width: 300px;
   filter: grayscale(100%);
 }
-
 .image-container img {
   width: 100%;
   height: auto;
 }
-
 .card-app-list-item{
     width: 180px;
     border:1px solid;
     border-color:orange;
-    background-color:#ffc107;           
+    background-color:#ffc107;          
     border-radius:15px;
     margin: 15px 15px 15px 15px;
     background-color: #fff;
@@ -177,6 +196,9 @@ h2 {
     color:#212222;  
     text-align: center;    
 }
+
+
+
 
 .head-apps{
     text-align: center;
@@ -192,15 +214,24 @@ h2 {
 }
 
 
+
+
+
+
+
+
 .body-apps{
     text-align: center;
     margin-right:auto;
     margin-left:auto;
     margin:10px;
-    background-color:#f4f5f5
+    background-color:#185d5d;
     border-color:orange;  
     color:#212222;  
 }
+
+
+
 
 .foot-apps{
     text-align: center;
@@ -214,11 +245,20 @@ h2 {
 }
 
 
+
+
+
+
+
+
 dl, ol, ul {
     margin-top: 0;
     margin-bottom: 1rem;
-    
+   
 }
+
+
+
 
 /*navbutton home*/
 .icon-bar-home {
@@ -229,6 +269,9 @@ dl, ol, ul {
   overflow: auto;
   /* Overflow due to float */
 }
+
+
+
 
 .icon-bar-home a {
   float: left;
@@ -246,10 +289,16 @@ dl, ol, ul {
   /* Increased font size */
 }
 
+
+
+
 .icon-bar-home a:hover {
   background-color: yellow;
   /* Add a hover color */
 }
+
+
+
 
 .icon-bar-home .active {
   background-color:yellow;
@@ -259,14 +308,20 @@ dl, ol, ul {
   /* Add an active/current color */
 }
 
+
+
+
 .icon-size{
   height: auto ;
   width: auto;
-    
+   
 }
 li{
     list-style:none;
   }
+
+
+
 
 .icon-bar-garden {
   width: 100%;
@@ -292,11 +347,20 @@ li{
   /* Increased font size */
 }
 
+
+
+
 .icon-bar-garden a:hover {
   background-color: yellow;
 
+
+
+
   /* Add a hover color */
 }
+
+
+
 
 .icon-bar-garden .active {
   background-color:yellow;
@@ -305,6 +369,9 @@ li{
   /*background-color: var(--bs-purple);*/
   /* Add an active/current color */
 }
+
+
+
 
 .icon-size{
   height: auto ;
@@ -327,6 +394,9 @@ li{
     margin-right: auto;
   }
 
+
+
+
 .save-background{
     border:1 px solid;
     background-color: #f3f4f5;
@@ -338,6 +408,9 @@ li{
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
 
 .ask-experts{
     text-align: center;
@@ -352,11 +425,17 @@ li{
     border-radius:5px;
 }
 
+
+
+
 .diagnose-div{
     height: auto;
     width: auto;
     background-color: #f3f4f4;
 }
+
+
+
 
 .btn-diagnose {
     margin:10px;
@@ -371,6 +450,9 @@ li{
     color: #f3f4f5;
 }
 
+
+
+
 .btn-experts{
     margin:10px;
     text-align: center;
@@ -384,6 +466,9 @@ li{
     color: #f3f4f5;
 }
 
+
+
+
 #myBtn,
 #myBtnLarvae,
 #myBtnPupae,
@@ -392,15 +477,19 @@ li{
 #myBtnDefects,
 #myBtnHostplants,
 #myBtnPredators{
-    color:#dc3545;
+    color:#107a07;
     border: none;
-    border-radius: 3px; 
+    border-radius: 3px;
 }
+
+
+
 
 body  {
   background-image: url("icon/bgbutterfly.jpg");
   background-color: #cccccc;
 }
+
 
 .btn-info,
 .btn-care,
@@ -411,9 +500,20 @@ body  {
     padding: 6px;
     font: var(bs-font-sans-serif);
     color: var(--color-navyblue);
-    background-color:#fd7e14;   
+    background-color:#fd7e14;  
 }
 .image-diagnose{
     height:auto;
     margin-top: 10px;
+    padding: 6px;
+    font: var(bs-font-sans-serif);
+    color: var(--color-navyblue);
+    background-color:#fd7e14;  
 }
+
+
+
+
+
+
+
