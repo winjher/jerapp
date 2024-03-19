@@ -166,7 +166,9 @@ h2 {
 }    
 
 
-
+.container-apps{
+    background-color: #212529;
+}
 
 .img-apps-butterfly{
     background-color: #ffc107;
