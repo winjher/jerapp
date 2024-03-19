@@ -46,6 +46,9 @@
     box-sizing: border-box;
 }
 
+.circle{
+    padding:0px;
+}
 
 @media screen and (max-width: 600px) {
   input[type=text] {
