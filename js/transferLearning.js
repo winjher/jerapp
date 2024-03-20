@@ -51,14 +51,15 @@ function gotResults(error,results){
 
 function setup(){
     const newDiv = document.createElement("div");
+    var br = document.createElement('br');
+    obj.appendChild(br);
     createCanvas(320,270);
     video=createCapture(VIDEO)
     video.hide();
     background(0);
     mobilenet= ml5.featureExtractor("MobileNet", video,modelReady);
     classifier=mobilenet.classification(video,videoReady);
-    var br = document.createElement('br');
-    obj.appendChild(br);
+   
     console.log("\nTraining Data");
     eggsButton=createButton('eggs');
     eggsButton.mousePressed(function(){
