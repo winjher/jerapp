@@ -350,7 +350,9 @@ img:hover {
   transition: .5s;
 
 }
-
+.card-text:last-child {
+    margin-bottom: 80px;
+}
 .card-img:hover {
   transform: scale(1.35);
 }
