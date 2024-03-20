@@ -359,6 +359,10 @@ img:hover {
     margin-bottom: 80px;
     text-decoration: none;
 }
+.bg-info {
+    background-color: #0dcaf0 !important;
+    margin: 30px;
+}
 a {
     color: #0d6efd;
     text-decoration: none;
