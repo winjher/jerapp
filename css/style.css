@@ -198,10 +198,10 @@ h2 {
     margin: 0px;
     width: auto;
     text-align: center;
-   /* border:1px solid;
+    border:1px solid;
     border-color: blue;
     border-radius:5px;
-    background-color: #fff; */
+    background-color: #fff;
     display: flex;
     flex-wrap: wrap;
    
@@ -209,7 +209,7 @@ h2 {
 
 
 .card-app-list-item{
-    width: 180px;
+    width: 200px;
     border:1px solid;
     border-color:orange;
     background-color:#ffc107;          
