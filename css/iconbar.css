@@ -326,8 +326,7 @@ img {
 .img-fluid {
     width: 100px;
     height: 100px;
-    padding: 10px 10px 10px 10px;
-    text-decoration: none;
+    padding: 10px 10px 10px 10px;   
 }
 
 img:hover {
@@ -358,6 +357,11 @@ img:hover {
 }
 .card-text:last-child {
     margin-bottom: 80px;
+    text-decoration: none;
+}
+a {
+    color: #0d6efd;
+    text-decoration: none;
 }
 .card-img:hover {
   transform: scale(1.35);
