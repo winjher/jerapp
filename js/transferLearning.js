@@ -57,8 +57,8 @@ function setup(){
     background(0);
     mobilenet= ml5.featureExtractor("MobileNet", video,modelReady);
     classifier=mobilenet.classification(video,videoReady);
-var br = document.createElement('br');
-obj.appendChild(br);
+    var br = document.createElement('br');
+    obj.appendChild(br);
     console.log("\nTraining Data");
     eggsButton=createButton('eggs');
     eggsButton.mousePressed(function(){
