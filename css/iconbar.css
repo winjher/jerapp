@@ -323,6 +323,11 @@ img {
   cursor: pointer;
   transition: .5s;
 }
+.img-fluid {
+    width: 100px;
+    height: 100px;
+    padding: 10px 10px 10px 10px;
+}
 
 img:hover {
   /*transform: scale(1.35);*/
