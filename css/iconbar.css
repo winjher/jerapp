@@ -327,6 +327,7 @@ img {
     width: 100px;
     height: 100px;
     padding: 10px 10px 10px 10px;
+    text-decoration: none;
 }
 
 img:hover {
