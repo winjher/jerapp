@@ -177,6 +177,17 @@ h2 {
     text-align: left;    
 }
 
+.setting-apps{
+    text-align: left;
+    margin-right:auto;
+    margin-left:auto;
+    margin:1px;
+    background-color:#E7E9FC;
+    padding:20px;
+    
+}
+
+
 .img-apps-butterfly{
     background-color: #ffc107;
 }
@@ -192,6 +203,8 @@ h2 {
     background-color:#E7E9FC;  
    
 }
+
+
 .image-container {
   width: 300px;
   filter: grayscale(100%);
