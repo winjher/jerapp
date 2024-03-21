@@ -166,8 +166,15 @@ h2 {
 }    
 
 
-.container-apps{
-    
+.container-apps-logout{
+    margin: 0px;
+    width: auto;
+    text-align: center;    
+}
+.container-apps-setting {
+    margin: 0px;
+    width: auto;
+    text-align: left;    
 }
 
 .img-apps-butterfly{
