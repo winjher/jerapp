@@ -1,7 +1,7 @@
 {
     "id":"1",
     "title":"Explore Butterfly Classification",
-    "image":,
+    "image":".jpg",
     "apps":"Butterfly Identifier Apps",
     "imageA":"",
     "imageB":"",
@@ -11,7 +11,7 @@
 {
     "id":"2",
     "title":"Explore Stages of Butterfly",
-    "image":,
+    "image":".jpg",
     "apps":"Butterfly Stages Apps",
     "imageA":"",
     "imageB":"",
@@ -21,7 +21,7 @@
 {
     "id":"3",
     "title":"Explore Larval Diseases",
-    "image":,
+    "image":".jpg",
     "apps":"Larval Disease Apps",
     "imageA":,
     "imageB":,
@@ -31,7 +31,7 @@
 {
     "id":"4",
     "title":"Explore Pupae Defects",
-    "image":,
+    "image":".jpg",
     "apps":"Pupae Defects Apps",
     "imageA":,
     "imageB":,
@@ -41,7 +41,7 @@
 {
     "id":"5",
     "title":"Explore Hostplants Classification",
-    "image":,
+    "image":".jpg",
     "apps":"Hostplants Identifier Apps",
     "imageA":,
     "imageB":,
@@ -51,7 +51,7 @@
 {
     "id":"6",
     "title":"Explore Predators Classification",
-    "image":,
+    "image":".jpg",
     "apps":"Predators Identifier Apps",
     "imageA":,
     "imageB":,
