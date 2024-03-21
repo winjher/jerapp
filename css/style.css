@@ -168,12 +168,12 @@ h2 {
 
 .container-apps-logout{
     margin: 0px;
-    width: auto;
+    width: 300px;
     text-align: center;    
 }
 .container-apps-setting {
     margin: 0px;
-    width: auto;
+    width: 300px;
     text-align: left;    
 }
 
@@ -181,6 +181,7 @@ h2 {
     text-align: left;
     margin-right:auto;
     margin-left:auto;
+    width:100%;
     margin:1px;
     background-color:#E7E9FC;
     padding:20px;
