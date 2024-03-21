@@ -317,7 +317,7 @@ dl, ol, ul {
 
 
 .icon-bar-home .active {
-  background-color:yellow;
+  background-color:#d63384;
   border-color:orange;
   border-radius: 0 2px 0 2px;
   /*background-color: var(--bs-purple);*/
