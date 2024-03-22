@@ -72,6 +72,63 @@
 }
 
 
+div 
+.apps-but{
+    height: 400px;
+    width: 100%;
+    background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"), 
+    background-repeat: no-repeat, no-repeat;
+    background-position: right, left;  
+ }
+
+
+div 
+.apps-stages{
+    height: 400px;
+    width: 100%;
+    background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"), 
+    background-repeat: no-repeat, no-repeat;
+    background-position: right, left;  
+ }
+
+
+div 
+.apps-diseasea{
+    height: 400px;
+    width: 100%;
+    background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"), 
+    background-repeat: no-repeat, no-repeat;
+    background-position: right, left;  
+ }
+
+
+div 
+.apps-defects{
+    height: 400px;
+    width: 100%;
+    background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"), 
+    background-repeat: no-repeat, no-repeat;
+    background-position: right, left;  
+ }
+
+div 
+.apps-hp{
+    height: 400px;
+    width: 100%;
+    background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"), 
+    background-repeat: no-repeat, no-repeat;
+    background-position: right, left;  
+ }
+
+
+div 
+.apps-pre{
+    height: 400px;
+    width: 100%;
+    background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"), 
+    background-repeat: no-repeat, no-repeat;
+    background-position: right, left;  
+ }
 
 
 .btn-detail {
