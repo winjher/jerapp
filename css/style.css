@@ -448,7 +448,7 @@ dl, ol, ul {
   /* Increased font size */
 }
 
-.icon-bar-pm a {
+.icon-bar-lg a {
   float: left;
   /* Float links side by side */
   text-align: center;
@@ -480,7 +480,7 @@ dl, ol, ul {
   /* Increased font size */
 }
 
-.icon-bar-lg a {
+.icon-bar-pm a {
   float: left;
   /* Float links side by side */
   text-align: center;
