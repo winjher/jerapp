@@ -619,6 +619,10 @@ body  {
 }
 
 
-
+form:focus-within {
+  background: #ff7300;
+  color: black;
+  padding: 10px;
+}
 
 
