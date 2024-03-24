@@ -363,7 +363,13 @@ dl, ol, ul {
 
 
 /*navbutton home*/
-.icon-bar-home {
+.icon-bar-home,
+.icon-bar-xs,
+.icon-bar-sm,
+.icon-bar-pm,
+.icon-bar-md,
+.icon-bar-lg
+.icon-bar-xl {
   width: 100%;
   /* Full-width */
   background-color: #F5F5DC;
