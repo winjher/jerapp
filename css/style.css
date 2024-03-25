@@ -72,7 +72,7 @@
 }
 
 
-div 
+div, 
 .apps-but{
     height: 100%;
     width: 100%;
@@ -82,7 +82,7 @@ div
  }
 
 
-div 
+div, 
 .apps-stages{
     height: 100%;
     width: 100%;
@@ -92,7 +92,7 @@ div
  }
 
 
-div 
+div, 
 .apps-disease{
     height: 100%;
     width: 100%;
@@ -102,7 +102,7 @@ div
  }
 
 
-div 
+div, 
 .apps-defects{
     height: 100%;
     width: 100%;
@@ -111,7 +111,7 @@ div
     background-position: right, left;  
  }
 
-div 
+div, 
 .apps-hp{
     height: 100%;
     width: 100%;
@@ -121,7 +121,7 @@ div
  }
 
 
-div 
+div, 
 .apps-pre{
     height: 100%;
     width: 100%;
