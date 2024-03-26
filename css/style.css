@@ -665,3 +665,21 @@ label:focus-within {
   color: red;
   font-size: 1.6em;
 }
+
+
+.btn,
+    .btn-close,
+    .btn-reset,
+    .btn-signup {
+        background-color: #052c08;
+        color: #ffe;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px;
+        border: solid 1px #f06d06;
+        background-clip: content-box;
+        height: 35px;
+        width: 120px;
+        align-items: center;
+    }
+
