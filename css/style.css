@@ -657,7 +657,7 @@ form:focus-within {
 label {
   display: block;
   margin-right: 10px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 label:focus-within {
@@ -666,7 +666,7 @@ label:focus-within {
   font-size: 1.6em;
 }
 
-
+/*
 .btn,
     .btn-close,
     .btn-reset,
@@ -683,3 +683,4 @@ label:focus-within {
         align-items: center;
     }
 
+*/
