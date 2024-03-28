@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,7 +92,7 @@
     width:300px;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
     .btn-reset {
         color: black;
@@ -107,7 +109,7 @@
         padding: 6px;
         font: var(bs-font-sans-serif);
     }
-    
+
         /* Set styles for HTML elements */
         h1,
         h2 {
@@ -134,7 +136,7 @@
             height:auto;
             margin-left: 25%;
         }
-    
+
 </style>
 <body>
     <div class="container">
@@ -166,7 +168,7 @@
              <div class="imageResult" id="imageResult"></div> 
             </div>
             <div class="panel-footer">
-                 
+
             <form id=“myDetailForm>
                 <label for=""> <a href="Larvae Trichogramma Disease.html" >
 Treatments: </a></label>
@@ -174,14 +176,14 @@ Treatments: </a></label>
                   <button type="submit" class="btn-back" id="btn-home">
                      <a class="nav-link" href="index.html">Back</a></button>
                   <button type="submit" class="btn-reset" onclick= "myReset() " value = "Reset Form">Reset</button>
-       
+
                  </div>               
                  </form>
              </div>
-  
-          
+
+
        </div>
-             
+
     </div>
          <div class="container"> 
               <div class="diagnose-div">     
@@ -191,7 +193,7 @@ Treatments: </a></label>
                   </div>   
               </div> 
          </div>  
- 
+
     <div class="container"> 
              <div class="diagnose-div">  
                   <div class="center-save">
@@ -203,9 +205,9 @@ Treatments: </a></label>
     </div>
       <div class="container"> 
          <h3>Larvae Health</h3>  
-  
+
         <div class="panel panel-default"> 
-         
+
             <div class="panel-heading">
    <button type="submit" class="btn-info" onclick = "myHealthInfo()" value= "Basic health Info Form"> <a href="TailedJay.html">
 Basic Info</a>
@@ -217,12 +219,41 @@ Care</a>
              </button>
 
             </div>
-            <div class="panel-body">
-              Characteristics
-                <div class="col-sm" >
-                   Larval Diseases 
-                </div>
-            </div>
+           <div class="panel-body">
+
+          <h5>Basic Information
+          </h5> 
+               <div class="col-sm" >
+           <ul>
+              <li><h6>Common Name</h6></li>
+              <li><h6>Scientific Name
+</h6></li>
+              <li><h6>Year discovered
+</h6></li>
+              <li><h6>Sub-family
+</h6></li>
+              <li><h6>Domain
+</h6></li>
+              <li><h6>Kingdom
+</h6></li>
+              <li><h6>Phylum
+</h6></li>
+              <li><h6>Class
+</h6></li>
+              <li><h6>Family
+</h6></li>
+              <li><h6>Genus
+</h6></li>
+              <li><h6>Species
+</h6></li>
+              <li><h6>Larval Disseases   
+</h6></li>
+
+           </ul>   
+               </div>
+
+          </div>
+     </div>
           <div class="panel-footer">
                    Learn more
          </div>
@@ -239,12 +270,12 @@ Care</a>
      <div class="container">     
          <h3>Ask the Experts</h3>       
         <div class="panel panel-default"> 
-         
+
             <div class="panel-heading">
 
             </div>
             <div class="panel-body">
-            
+
                 <div class="col-sm" >
                      <div class="container-fluid">
     <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="200px">
@@ -297,5 +328,3 @@ function myDetail(){
 </script>
 </body>
 </html>
-
-
