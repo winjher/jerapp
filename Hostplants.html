@@ -1,29 +1,24 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Butterfly Host Plants Classification</title>
+    <title>Butterfly Hostplants Classification</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
     <!-- Include the ml5.js library -->
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" /> 
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
 </script> 
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js">
 </script> 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./css/iconbar.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/card-classifier.css">
+
 
 </head>
 
@@ -145,13 +140,12 @@
 </style>
 <body>
     <div class="container">
-        <h2>Butterfly Host Plants Apps</h2>
+        <h2>Butterfly Hostplants Apps</h2>
         <hr>
-        <h3>Host Plants Prediction</h3>
-          <div class="panel panel-default"> 
-
-            <div class="panel-heading">Select Host Plants Image</div>
-            <div class="body-apps">
+        <h3>Hostplants Prediction</h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">Select Hostplants Image</div>
+            <div class="panel-body">
             <div class="col-sm" style="margin-bottom: 23px;">
                 <form action="" method="get" accept-charset="utf-8" id="myForm">
     <div class="imageInput">
@@ -163,10 +157,11 @@
         <output type="file" name="result" for="a b"></output>
     </div>
 <div class="imageResult" id="imageResult"></div>   
-                            
+<!----------------------------- Fixed Bottom Menu section--------------------------------------------->      </form>               
                 <br>
                 <span class="border border-primary">
-                    
+                    <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                    <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
 
                 </span>
             </div>
@@ -175,36 +170,46 @@
             <div class="panel-footer">
 
             <form id=“myDetailForm>
-                
+                <label for=""> <a href="Larvae Trichogramma Disease.html" >
+Treatments: </a></label>
                  <div>
                   <button type="submit" class="btn-back" id="btn-home">
                      <a class="nav-link" href="index.html">Back</a></button>
                   <button type="submit" class="btn-reset" onclick= "myReset() " value = "Reset Form">Reset</button>
 
                  </div>               
-              </form>
+                 </form>
              </div>
 
 
        </div>
 
     </div>
-<div class="container"> 
+         <div class="container"> 
+              <div class="diagnose-div">     
                   <div class="center-save">
-                     <button type="submit" class="btn-save" onclick = "mySaveHostplants()" value= "Save Hostplants Info Form">+&nbsp;Save to my host plants
+                     <button type="submit" class="btn-save" onclick = "mySaveLarvae()" value= "Save Larvae Info Form">+&nbsp;Save to my Hostplants
                       </button>     
-                  </div>    
+                  </div>   
+              </div> 
          </div>  
- </div> 
 
-<div class="container"> 
-             <div class="container diagnose-div">  
-    
-         <h3>Host Plants</h3>       
+    <div class="container"> 
+             <div class="diagnose-div">  
+                  <div class="center-save">
+ <img class="image-diagnose" src="icon/bgbutterfly.jpg" alt="" srcset="" height="auto" width="300px">         
+<button type="submit" class="btn-diagnose" onclick= "myDiagnose() " value = "Diagnose Form"><a class="nav-link" href="Larvae Trichogramma Disease.html"><h5>Get Diagnose</h4></a>
+</button>
+                  </div>
+            </div>
+    </div>
+      <div class="container"> 
+         <h3>Hostplants Health</h3>  
+
         <div class="panel panel-default"> 
 
             <div class="panel-heading">
-   <button type="submit" class="btn-info" onclick = "myHealthInfo()" value= "Basic health Info Form"> <a href="imagefruit.html">
+   <button type="submit" class="btn-info" onclick = "myHealthInfo()" value= "Basic health Info Form"> <a href="TailedJay.html">
 Basic Info</a>
              </button>
              <button type="submit" class="btn-care" onclick = "myCare()" value= "Care Form"> <a href="care.html">
@@ -215,18 +220,47 @@ Care</a>
 
             </div>
             <div class="panel-body">
-              Characteristics
-                <div class="col-sm" >
-                   Image Fruits 
-                </div>
-            </div>
+
+          <h5>Basic Information
+          </h5> 
+               <div class="col-sm" >
+           <ul>
+              <li><h6>Common Name</h6></li>
+              <li><h6>Scientific Name
+</h6></li>
+              <li><h6>Year discovered
+</h6></li>
+              <li><h6>Sub-family
+</h6></li>
+              <li><h6>Domain
+</h6></li>
+              <li><h6>Kingdom
+</h6></li>
+              <li><h6>Phylum
+</h6></li>
+              <li><h6>Class
+</h6></li>
+              <li><h6>Family
+</h6></li>
+              <li><h6>Genus
+</h6></li>
+              <li><h6>Species
+</h6></li>
+              <li><h6>Buttetfly   
+</h6></li>
+
+           </ul>   
+               </div>
+
+          </div>
+     </div>
           <div class="panel-footer">
                    Learn more
          </div>
      </div> 
  </div>  
     <div class="container">
-     <div class="container diagnose-div">     
+     <div class="diagnose-div">     
                   <div class="center-save">
                      <button type="submit" class="btn-experts" onclick = "myExperts()" value= "Ask Experts Form"><h5>Ask Experts</h5>
                       </button>     
@@ -250,25 +284,10 @@ Care</a>
                 </div>
             </div>
             <div class="panel-footer">
-Type of Host plants 
+Type of diseases 
             </div>
          </div>
      </div>
-
-
-
-<!----------------------------- Fixed Bottom Menu section--------------------------------------------->   
-<nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
-    <div class="icon-bar">
-        <a href="lepidoptera.html"><img src = "icon\butterfly2.png"></a>
-        <a href="alarm.html"><img src = "icon\plants.png"></a>
-        <a class="active " href="index.html"><img src = "icon\home2.png"></a>
-        <a href="classify.html"><img src = "icon\detect.png"></a>        
-        <a href="map.html"><img src = "icon\globo.png"></a>
-      </div>
-  </nav>
-
-
     <script>
         // Create a variable containing the result container
         const element = document.getElementById("imageResult");
@@ -307,9 +326,5 @@ function myDetail(){
  console log()
 }
 </script>
-
-
- <script src="./jquery-3.6.0.slim.min.js"> </script>
- <script src="./js/bootstrap.bundle.min.js">
 </body>
 </html>
