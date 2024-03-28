@@ -1,4 +1,5 @@
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -245,8 +246,6 @@ Care</a>
 </h6></li>
               <li><h6>Species
 </h6></li>
-              <li><h6>Kingdom
-</h6></li>
               <li><h6>Hostplant   
 </h6></li>
 
@@ -286,7 +285,7 @@ Care</a>
                 </div>
             </div>
             <div class="panel-footer">
-Type of diseases 
+Type of Butterflies 
             </div>
          </div>
      </div>
@@ -309,7 +308,7 @@ Type of diseases
                 element.innerHTML = error;
             } else {
                 let num = results[0].confidence * 100;
-                element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % " + "\n" + " Larvae that have Tachinid flies diseases require immediate attention before the disease takes over. Usually, a single larva develops inside an individual host insect. Many tachinid larvae almost totally consume the host insect before they bore out of the host to pupate and complete the. Reducing the use of insecticides and providing sources of food like dills, parsley, clover and other herbs are the most efficient ways to conserve Trachinid flies in agricultural ecosystems (Ellis; Bradley, 1996: pp. 328-329)";
+                element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % " + "\n";
             }
         }
     </script>
