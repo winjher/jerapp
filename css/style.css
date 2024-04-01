@@ -72,9 +72,10 @@
 }
 
 .profile-image{
-    margin-left: 0px;
-    
-    
+    margin-left: 0px; 
+}
+.name-profile{
+    margin-top: 40px;
 }
 .acct-profile{
     text-align-last: left;
