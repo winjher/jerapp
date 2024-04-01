@@ -786,7 +786,7 @@ li{
 }
 .premium-monthly,
 .premium-yearly,
-.premium-lifetime, a:hover {
+.premium-lifetime, btn:hover {
   background-color: yellow;
   
 @media screen and (max-width: 992px) {
