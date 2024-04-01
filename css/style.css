@@ -56,6 +56,8 @@
     width: 100%;
     padding: 12px;
   }
+
+
   input[type=text] {
     border: 1px solid #ccc;
     margin: 20px;
@@ -727,3 +729,70 @@ label:focus-within {
     }
 
 */
+
+/* premium */
+ul,
+h2{
+    text-align:center;
+}
+
+li{
+    list-style: none;
+    text-align: center;
+}
+.premium-monthly{
+    color: rgb(13, 14, 13);
+    padding: 15px;
+    background-color: aquamarine;
+    border-radius: 20px;
+    font-size: larger;
+    text-align:center;
+    width: 260px;  
+    margin-bottom:12px;      
+}
+.premium-yearly{
+    color: green;
+    padding: 15px;
+    background-color: #ffc107;
+    border-radius: 20px;
+    font-size: larger;
+    text-align:center;  
+    width: 260px;      
+    margin-bottom:12px;
+    }
+.premium-lifetime{
+    color: green;
+    padding: 15px;
+    background-color: #ffc107;
+    border-radius: 20px;
+    font-size: larger;
+    text-align:center;  
+    width: 260px;   
+    margin-bottom:12px;
+     
+    }
+.btn-continue{
+    color: rgb(230, 244, 230);
+    padding: 20px;
+    background-color:#d63384;
+    color:#ffc107;  
+    border-color:#fd7401;  
+    border-radius: 35px;
+    width: 220px;
+    text-align:center;
+    }
+. premium -uprade{
+    text-align:center;
+}
+
+
+  
+@media screen and (max-width: 992px) {
+body {
+    background-color: rgb(119, 119, 230);
+  }
+       
+  }
+.col-sm{
+    justify-content: center;
+}
