@@ -71,6 +71,47 @@
    margin-bottom: 1 rem;
 }
 
+.profile-image{
+    margin-left: 0px;
+    
+    
+}
+.acct-profile{
+    text-align-last: left;
+    display: flex;
+    flex: wrap;
+    height: 180px;
+}
+.img-profile{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 50px;
+    margin-left: 20px;
+    
+}
+.profile-info{
+    text-align: left;
+    margin-block: 0px;
+    display: block;
+    margin-bottom: 1em;
+    padding:5px;
+    
+}
+.support{
+    margin-left: 20px;
+}
+.list-support{
+    
+}
+.list-support-item{
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
 
  
 
