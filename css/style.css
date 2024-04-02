@@ -77,12 +77,12 @@
     margin: 0px;
     width: auto;
     text-align: center;
-    border:1px solid;
+    border:1px solid;
     border-radius:5px;
     background-color: #fff;
     display: flex;
     flex-wrap: wrap;
-    background-color: linear-gradient(to      bottom right, #305170, #6DFC6B);
+    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
 }
 .profile-image{
     margin-left: 0px;
@@ -95,6 +95,8 @@
     display: flex;
     flex: wrap;
     height: 180px;
+    border-radius: 5px;
+    border:1px solid;
 }
 .img-profile{
     width: 80px;
