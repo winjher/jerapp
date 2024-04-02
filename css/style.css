@@ -85,10 +85,11 @@
 .profile-image{
     margin-left: 30px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;
+}
 
-    
-    
+.story{
+    margin-top:20px;
 }
 .acct-profile{
     text-align-last: left;
