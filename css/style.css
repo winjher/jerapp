@@ -97,6 +97,9 @@
     height: 180px;
     border-radius: 5px;
     border:1px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+ 
 }
 .img-profile{
     width: 80px;
@@ -112,7 +115,7 @@
     margin-block: 0px;
     display: block;
     margin-top: 50px;
-
+    margin-left: 25px;
     
 }
 .support{
