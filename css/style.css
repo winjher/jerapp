@@ -108,9 +108,9 @@
     border-radius: 50px 50px 50px 50px;
     margin-top: 25px;
     margin: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border-color: blue;
+    /* margin-left: auto; */
+    /* margin-right: 10px; */
+    /* border-color: blue; */
 }
 .profile-info{
     text-align: left;
