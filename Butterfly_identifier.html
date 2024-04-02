@@ -36,15 +36,15 @@
 
 </head>
 <body>
-    {% block pagecontent %}
+    
     
 <!-------------------------------Nav bar section-------------------------------------------->
 <section>
           <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'dashboard' %}">APPS</a>
+            <a class="navbar-brand" href="dashboard.html">APPS</a>
             
-            <img src="{% static '/images/8i8.png' %}">
+            <img src="/images/8i8.png">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -271,27 +271,27 @@
     <div class="icon-bar btn btn-info">
         
         <div class="icon-size">
-            <a href="{% url 'home' %}"><img src="{% static '/images/home2.png' %}">
+            <a href="index.html"><img src="icon/home2.png">
                             <label for="" class="icon-size">
             </a>
         </div>
         <div class="icon-size">
-            <a href="/storage/emulated/0/documents/betterfly_nav/Butterfly_identifier.html"><img src="{% static '/images/butterfly3.png' %}">
+            <a href="Butterfly_identifier.html"><img src="images/butterfly3.png">
                             <label for="" class="icon-size">
             </a>
         </div>
         <div class="icon-size">
-            <a href="{% url 'classify' %}"><img src="{% static '/images/classify4.png' %}">
+            <a href="classify.html"><img src="icon/classify4.png">
                             <label for="" class="icon-size">
             </a>
         </div>
         <div class="icon-size">
-            <a href="{% url 'proper_care'%}"><img src=" {% static '/images/task.png' %}">
+            <a href="proper_care.htmo"><img src="images/task.png">
             <label for="task">
             </a>
         </div>
         <div class="icon-size">
-            <a href="/storage/emulated/0/documents/betterfly_nav/user.html"><img src="{%  static '/images/user.png'%}">
+            <a href="user.html"><img src="icon/user.png">
             <label for="user" class="icon-size">
             </a>
         </div>
@@ -300,7 +300,7 @@
 </nav>
     <hr>
 <script src="https://code.jquery.com/jquery-3.6.0.js"> </script>
-<script src="/storage/emulated/0/documents/js/bundle.min.js"></script>
+<script src="js/bundle.min.js"></script>
 <hr>
     <script src="{% static 'jquery-3.6.0.slim.min.js' %}"> </script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
