@@ -77,8 +77,6 @@
     margin: 0px;
     width: auto;
     text-align: center;
-    border:1px solid;
-    border-radius:5px;
     background-color: #fff;
     display: flex;
     flex-wrap: wrap;
@@ -104,14 +102,15 @@
     margin-left: 20px;
  
 }
-.img-profile{
+.img-profile {
     width: 80px;
     height: 80px;
     border-radius: 50px 50px 50px 50px;
     margin-top: 25px;
-    margin-left: 20px;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: 10px;
     border-color: blue;
-    
 }
 .profile-info{
     text-align: left;
