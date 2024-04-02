@@ -89,7 +89,9 @@
 }
 
 .story{
-    margin-top:40px;
+    margin:10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .acct-profile{
     text-align-last: left;
