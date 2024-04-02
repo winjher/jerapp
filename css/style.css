@@ -765,7 +765,7 @@ h2{
     text-align:center;
 }
 
-li{
+.list-support-item{
     list-style: none;
     text-align: center;
 }
