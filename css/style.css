@@ -75,6 +75,7 @@
 
 .profile-image{
     margin-left: 0px;
+
     
     
 }
@@ -88,7 +89,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50px 50px 50px 50px;
-    margin-top: 0px;
+    margin-top: 25px;
     margin-left: 20px;
     
 }
@@ -96,6 +97,7 @@
     text-align: left;
     margin-block: 0px;
     display: block;
+    margin-top: 50px;
 
     
 }
