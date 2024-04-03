@@ -817,9 +817,12 @@ h2{
     padding: 12px;
     background-color:#d63384;
     border-color:#fd7401;  
-    border-radius: 35px;
-    width: 220px;
+    border-radius: 50px;
+    width: 200px;
     text-align:center;
+    height:30px;
+    font-weight: 300px;
+
     }
 . premium -uprade{
     text-align:center;
