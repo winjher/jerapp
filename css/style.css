@@ -155,7 +155,12 @@
 }
 
 
- 
+.list-plan-item{ 
+    list-style: none;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
 
 
 
