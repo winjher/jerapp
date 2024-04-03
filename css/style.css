@@ -815,7 +815,7 @@ h2{
 .btn-continue{
     color:#ffc107;  
     padding: 15px;
-    background-color:#d63384;
+    /* background-color:#d63384; */
     border-color:#fd7401;  
     border-radius: 50px;
     width: 200px;
