@@ -103,55 +103,27 @@
 
 <div class="container-fluid">
 
-    <div id="project" class="col-lg-12 text-center">
-
-        <div class="grid-template">
-            <button class="column-button"><a href="/storage/emulated/0/documents/betterfly_nav/label.html">Label</a>
-            </button>
-            <button class="column-button"><a href="/storage/emulated/0/documents/betterfly_nav/train.html">Train</a>
-            </button>
-            <button class="row-button"><a
-                    href="/storage/emulated/0/documents/betterfly_nav/evaluate.html">Evaluate</a></button>
-            <button class="row-button"><a
-                    href="/storage/emulated/0/documents/betterfly_nav/predict.html">Predict</a></button>
-        </div>
-    </div><br>
-<form action="augment">
+    
+<form action="personal">
     <div class="card col-lg-6 col-xl-6 col-md-6 col-sm-6 col-xs-6">
-        <label> Max Iteration :{{iterate}}</label><input type="text" name="" id="" class="form-control"><br>
-        <label> Training Data :{{train}}</label><input type="text" name="" id="" class="form-control"><br>
-        <label> Validation Data :{{validate}}</label><input type="text" name="" id="" class="form-control"><br>
-        <label> Augmentation :{{Augmented}}</label><input type="text" name="" id="" class="form-control">
-       <div class="card-body">
-          
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Crop 
-          </label><br />
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Rotate
-          </label><br />
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Blur
-          </label><br />
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Noise
-          </label><br />
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Flip
-          </label><br />
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Invert
-          </label>
+<div class="me-img-info">
+<img src="{% static 'images/butterfly3.png' %}">
+<span></span>
+                           
+        <label> Personal Information :{{info}}</label><br>
+</div>
+<div class="me-img-notif">
+<img src="{% static 'images/butterfly3.png' %}"> 
+<span></span>                                  <label> Notification :{{notif}}</label>
 
+</div>
+<br>
+<div class="me-img-about">
+<img src="{% static 'images/butterfly3.png' %}">
+<span></span>
+                                   <label> About :{{about}}</label><br>
+</div>
         </form>
-
-      </div>
-
-       <button type="submit">Defaults</button>
-       <button type="submit">Train</button>
-    </div>
-
-  </div>
 </div>
 </div>
 
@@ -190,37 +162,7 @@
 <section>
     <footer>
         {% block content %}  
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-                <a href="http://" class="btn">
-                    <p>Insects Connection</p>
-                  </a>
-            </div>
-            <div class="col-sm-12">
-                <a href="http://" class="btn">
-                    <p>Copyright &copy; 2022</p>
-                </a>
-            </div>
-            <div class="col-sm-12">
-                <a href="http://" class="btn">
-                    <p>Privacy | Terms and Condition</p>
-                </a>
-               
-            </div>
-            <div class="col-sm-12">
-                <a href="http://" class="btn">
-                    <p>Author: Jerwin Montellano</p>
-                </a>
-            </div>
-            <div class="col-sm-12">
-                <a href="http://" class="btn">
-                    <p>insectsconnection@gmail.com</p>
-                </a>
-            </div>
-           
-          </div>
-        </div>
+       
         
         
             <div class="grid-template">
