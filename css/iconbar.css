@@ -322,6 +322,8 @@ img {
   aspect-ratio: 1;
   cursor: pointer;
   transition: .5s;
+  mix-blend-mode: multiply;
+       
 }
 .img-fluid {
     width: 100px;
