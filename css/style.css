@@ -46,7 +46,9 @@
     box-sizing: border-box;
 }
 
-
+p {
+  margin-block-start: 1em;
+}
 
 @media screen and (max-width: 600px) {
   input[type=text] {
