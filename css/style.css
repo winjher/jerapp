@@ -800,7 +800,6 @@
  .list-plan-item {
    list-style: none;
    display: block;
-   padding: 10px;
    text-align: center;
  }
 
@@ -840,7 +839,7 @@
 
  .btn-continue {
    color: #ffc107;
-   padding: 15px;
+   height: 15px;
    /* background-color:#d63384; */
    border-color: #fd7401;
    border-radius: 50px;
