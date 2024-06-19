@@ -1,5 +1,5 @@
 {
-    "id":"1",
+    "id":1,
     "title":"Explore Butterfly Classification",
     "image":,
     "apps":"Butterfly Identifier Apps",
