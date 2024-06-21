@@ -24,12 +24,13 @@
 
     body {
         background-image: url("icon/bgbutterfly.jpg");
-        background-image: no-repeat;
-        background-color: #cccccc;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 </style>
 
-<body background="{%'static 'icon/bgbutterfly.jpg' %}">
+<body>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3>Select Your Plan</h3>
@@ -56,7 +57,11 @@
                 <form action="" method="post" enctype="multipart/form-data" action="premiumplan">
 
                     <br>
-                    <div class=""> <button type="submit" class="premium-monthly" value="Monthly">Monthly
+                    <div class=""> 
+                        <button type="submit" class="premium-weekly" value="Weekly">Weekly
+                            <span></span>$110.00
+                        </button> <br />
+                        <button type="submit" class="premium-monthly" value="Monthly">Monthly
                             <span></span>$210.00
                         </button> <br />
                         <button type="submit" class="premium-yearly" value="Yearly">Yearly <span></span>
@@ -73,9 +78,6 @@
                     </div>
                 </form>
 
-
-
-
             </div>
 
 
@@ -86,7 +88,7 @@
             <label for="" class="" id="privacy">Privacy Policy</label><br>
         </div>
     </div>
-    </div>
+
 </body>
 
 

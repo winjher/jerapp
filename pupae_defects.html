@@ -1,7 +1,7 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Butterfly Pupae Defects Classification</title>
     <meta charset="utf-8">
@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" /> 
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+        rel="stylesheet" type="text/css" />
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
-</script> 
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js">
-</script> 
+    </script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js">
+    </script>
 
 
 </head>
@@ -72,7 +73,7 @@
     }
 
     .btn-back {
-        color:var(--color-cloud);
+        color: var(--color-cloud);
         background-color: #191970;
     }
 
@@ -81,63 +82,65 @@
         background-color: #191970;
     }
 
-.btn-save-larvae,
-.center-save{
-    margin:10px;
-    text-align: center;
-    align-items: center;
-    background-color: #f3f4f5;
-    border-radius: 20px;
-    border: none;
-    width:300px;
-    margin-left: auto;
-    margin-right: auto;
+    .btn-save-larvae,
+    .center-save {
+        margin: 10px;
+        text-align: center;
+        align-items: center;
+        background-color: #f3f4f5;
+        border-radius: 20px;
+        border: none;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
 
-}
+    }
+
     .btn-reset {
         color: black;
-        background-color:#fd7e14;
+        background-color: #fd7e14;
 
 
     }
 
 
     .btn-reset,
-    .btn-submit, .btn-back {
+    .btn-submit,
+    .btn-back {
         border-style: none;
         border-radius: 4px;
         padding: 6px;
         font: var(bs-font-sans-serif);
     }
 
-        /* Set styles for HTML elements */
-        h1,
-        h2 {
-            font-family: arial;
-            text-align: center;
-        }
+    /* Set styles for HTML elements */
+    h1,
+    h2 {
+        font-family: arial;
+        text-align: center;
+    }
 
-        .imageInput {
-            width: 100%;
-            text-align: center;
-        }
+    .imageInput {
+        width: 100%;
+        text-align: center;
+    }
 
-        .imageResult {
-            font-family: arial;
-            width: 100%;
-            text-align: center;
-            text-transform: uppercase;
-            color: red;
-        }
+    .imageResult {
+        font-family: arial;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        color: red;
+    }
 
-        .uploadedImage {
-            padding-top: 20px;
-            width: 50%;
-            height:auto;
-            margin-left: 25%;
-        }
-
+    .uploadedImage {
+        padding-top: 20px;
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
+    }
 </style>
+
 <body>
 
     <!-- MENU -->
@@ -159,195 +162,213 @@
                     <li><a href="/">Home</a> </li>
                     <li><a href="viewDatabase/" class="smoothScroll">View Images</a> </li>
                 </div>
-    <div class="container">
-        <h2>Pupae Defects Apps</h2>
-        <hr>
-        <h3>Pupae Defects Prediction</h3>
-        <div class="panel panel-default">
-            <div class="panel-heading">Select Pupae Image</div>
-            <div class="panel-body">
-            <div class="col-sm" style="margin-bottom: 23px;">
-                <form action="" method="get" accept-charset="utf-8" id="myForm">
-    <div class="imageInput">
-        <input type="file" oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
-    </div>
-    <!-- Container for the uploaded image -->
-    <img class="uploadedImage" id="uploadedImage" />
-    <div class="imageScanResult">
-        <output type="file" name="result" for="a b"></output>
-    </div>
-<div class="imageResult" id="imageResult"></div>   
-<!----------------------------- Fixed Bottom Menu section--------------------------------------------->      </form>               
-                <br>
-                <span class="border border-primary">
-                    <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
-                    <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
+                <div class="container">
+                    <h2>Pupae Defects Apps</h2>
+                    <hr>
+                    <h3>Pupae Defects Prediction</h3>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Select Pupae Image</div>
+                        <div class="panel-body">
+                            <div class="col-sm" style="margin-bottom: 23px;">
+                                <form action="" method="get" accept-charset="utf-8" id="myForm">
+                                    <div class="imageInput">
+                                        <input type="file"
+                                            oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
+                                    </div>
+                                    <!-- Container for the uploaded image -->
+                                    <img class="uploadedImage" id="uploadedImage" />
+                                    <div class="imageScanResult">
+                                        <output type="file" name="result" for="a b"></output>
+                                    </div>
+                                    <div class="imageResult" id="imageResult"></div>
+                                    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+                                </form>
+                                <br>
+                                <span class="border border-primary">
+                                    <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                                    <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
 
-                </span>
-            </div>
-             <div class="imageResult" id="imageResult"></div> 
-            </div>
-            <div class="panel-footer">
+                                </span>
+                            </div>
+                            <div class="imageResult" id="imageResult"></div>
+                        </div>
+                        <div class="panel-footer">
 
-            <form id=“myDetailForm>
-                <label for=""> <a href="Larvae Trichogramma Disease.html" >
-Treatments: </a></label>
-                 <div>
-                  <button type="submit" class="btn-back" id="btn-home">
-                     <a class="nav-link" href="index.html">Back</a></button>
-                  <button type="submit" class="btn-reset" onclick= "myReset() " value = "Reset Form">Reset</button>
+                            <form id=“myDetailForm>
+                                <label for=""> <a href="Larvae Trichogramma Disease.html">
+                                        Treatments: </a></label>
+                                <div>
+                                    <button type="submit" class="btn-back" id="btn-home">
+                                        <a class="nav-link" href="index.html">Back</a></button>
+                                    <button type="submit" class="btn-reset" onclick="myReset() "
+                                        value="Reset Form">Reset</button>
 
-                 </div>               
-                 </form>
-             </div>
+                                </div>
+                            </form>
+                        </div>
 
 
-       </div>
+                    </div>
 
-    </div>
-         <div class="container"> 
-              <div class="diagnose-div">     
-                  <div class="center-save">
-                     <button type="submit" class="btn-save" onclick = "mySaveLarvae()" value= "Save Larvae Info Form">+&nbsp;Save to my Pupae
-                      </button>     
-                  </div>   
-              </div> 
-         </div>  
-
-    <div class="container"> 
-             <div class="diagnose-div">  
-                  <div class="center-save">
- <img class="image-diagnose" src="icon/bgbutterfly.jpg" alt="" srcset="" height="auto" width="300px">         
-<button type="submit" class="btn-diagnose" onclick= "myDiagnose() " value = "Diagnose Form"><a class="nav-link" href="Larvae Trichogramma Disease.html"><h5>Get Diagnose</h4></a>
-</button>
-                  </div>
-            </div>
-    </div>
-      <div class="container"> 
-         <h3>Pupae Health</h3>  
-
-        <div class="panel panel-default"> 
-
-            <div class="panel-heading">
-   <button type="submit" class="btn-info" onclick = "myHealthInfo()" value= "Basic health Info Form"> <a href="TailedJay.html">
-Basic Info</a>
-             </button>
-             <button type="submit" class="btn-care" onclick = "myCare()" value= "Care Form"> <a href="care.html">
-Care</a>
-             </button>
-             <button type="submit" class="btn-culture" onclick = "myCulture()" value= "Culture Form">Culture
-             </button>
-
-            </div>
-            <div class="panel-body">
-
-          <h5>Basic Information
-          </h5> 
-               <div class="col-sm" >
-           <ul>
-              <li><h6>Common Name</h6></li>
-              <li><h6>Scientific Name
-</h6></li>
-              <li><h6>Year discovered
-</h6></li>
-              <li><h6>Sub-family
-</h6></li>
-              <li><h6>Domain
-</h6></li>
-              <li><h6>Kingdom
-</h6></li>
-              <li><h6>Phylum
-</h6></li>
-              <li><h6>Class
-</h6></li>
-              <li><h6>Family
-</h6></li>
-              <li><h6>Genus
-</h6></li>
-              <li><h6>Species
-</h6></li>
-              <li><h6>Kingdom
-</h6></li>
-              <li><h6>Pupae Defects   
-</h6></li>
-
-           </ul>   
-               </div>
-
-          </div>
-     </div>
-          <div class="panel-footer">
-                   Learn more
-         </div>
-     </div> 
- </div>  
-    <div class="container">
-     <div class="diagnose-div">     
-                  <div class="center-save">
-                     <button type="submit" class="btn-experts" onclick = "myExperts()" value= "Ask Experts Form"><h5>Ask Experts</h5>
-                      </button>     
-                  </div>     
-        </div> 
-     </div>   
-     <div class="container">     
-         <h3>Ask the Experts</h3>       
-        <div class="panel panel-default"> 
-
-            <div class="panel-heading">
-
-            </div>
-            <div class="panel-body">
-
-                <div class="col-sm" >
-                     <div class="container-fluid">
-    <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="200px">
                 </div>
-               Care manager 
+                <div class="container">
+                    <div class="diagnose-div">
+                        <div class="center-save">
+                            <button type="submit" class="btn-save" onclick="mySaveLarvae()"
+                                value="Save Larvae Info Form">+&nbsp;Save to my Pupae
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="diagnose-div">
+                        <div class="center-save">
+                            <img class="image-diagnose" src="icon/bgbutterfly.jpg" alt="" srcset="" height="auto"
+                                width="300px">
+                            <button type="submit" class="btn-diagnose" onclick="myDiagnose() " value="Diagnose Form"><a
+                                    class="nav-link" href="Larvae Trichogramma Disease.html">
+                                    <h5>Get Diagnose</h4>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <h3>Pupae Health</h3>
+
+                    <div class="panel panel-default">
+
+                        <div class="panel-heading">
+                            <button type="submit" class="btn-info" onclick="myHealthInfo()"
+                                value="Basic health Info Form"> <a href="TailedJay.html">
+                                    Basic Info</a>
+                            </button>
+                            <button type="submit" class="btn-care" onclick="myCare()" value="Care Form"> <a
+                                    href="care.html">
+                                    Care</a>
+                            </button>
+                            <button type="submit" class="btn-culture" onclick="myCulture()" value="Culture Form">Culture
+                            </button>
+
+                        </div>
+                        <div class="panel-body">
+
+                            <h5>Basic Information
+                            </h5>
+                            <div class="col-sm">
+                                <ul>
+                                    <li>
+                                        <h6>Common Name</h6>
+                                    </li>
+                                    <li>
+                                        <h6>Scientific Name
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Year discovered
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Sub-family
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Domain
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Kingdom
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Phylum
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Class
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Family
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Genus
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Species
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Kingdom
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Pupae Defects
+                                        </h6>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        Learn more
+                    </div>
                 </div>
             </div>
-
-            <div class="panel-footer">
-Type of pupae defects 
+            <div class="container">
+                <div class="container">
+                    <div class="center-save">
+                        <button type="submit" class="btn-experts" onclick="myExperts()" value="Ask Experts Form">
+                            <h5>Ask Experts</h5>
+                        </button>
+                    </div>
+                </div>
             </div>
-         </div>
-     </div>
-    <script>
-        // Create a variable containing the result container
-        const element = document.getElementById("imageResult");
+          
 
-        function startImageScan() {
-            // Create a variable to initialize the ml5.js image classifier with MobileNet
-            const classifier = ml5.imageClassifier('MobileNet');
+            <script>
+                // Create a variable containing the result container
+                const element = document.getElementById("imageResult");
 
-            // Scan the uploaded image
-            classifier.classify(document.getElementById("uploadedImage"), imageScanResult)
-            element.innerHTML = "loading...";
-        }
+                function startImageScan() {
+                    // Create a variable to initialize the ml5.js image classifier with MobileNet
+                    const classifier = ml5.imageClassifier('MobileNet');
 
-        // Check for errors and display the results if there aren't any
-        function imageScanResult(error, results) {
-            if (error) {
-                element.innerHTML = error;
-            } else {
-                let num = results[0].confidence * 100;
-                element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % " + "\n)";
-            }
-        }
-    </script>
+                    // Scan the uploaded image
+                    classifier.classify(document.getElementById("uploadedImage"), imageScanResult)
+                    element.innerHTML = "loading...";
+                }
 
-<script>
-function myReset() {
-  document.getElementById("myForm").reset();
-}
-function myDetail(){
-    if(pred){
-}else if (pred){
-  document.getElementById().innerHTML=..;
- console.log()
-}
-}else{
+                // Check for errors and display the results if there aren't any
+                function imageScanResult(error, results) {
+                    if (error) {
+                        element.innerHTML = error;
+                    } else {
+                        let num = results[0].confidence * 100;
+                        element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % " + "\n)";
+                    }
+                }
+            </script>
+
+            <script>
+                function myReset() {
+                    document.getElementById("myForm").reset();
+                }
+                function myDetail() {
+                    if (pred) {
+                    } else if (pred) {
+                        document.getElementById().innerHTML =..;
+                        console.log()
+                    }
+                }else {
  console log()
-}
-</script>
+                }
+            </script>
 </body>
+
 </html>

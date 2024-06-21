@@ -47,7 +47,137 @@
  p {
    margin-block-start: 1em;
  }
+ html,body {
+  margin: 0;
+  height: 1800px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color:var(--dark);
+}
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+}
 
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes snowflakes-shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+}
+
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snowflakes-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+}
+.snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 10s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, 0.5s;
+  animation-delay: 6s, 0.5s;
+}
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s;
+}
+.snowflake:nth-of-type(10) {
+  left: 25%;
+  -webkit-animation-delay: 2s, 0s;
+  animation-delay: 2s, 0s;
+}
+.snowflake:nth-of-type(11) {
+  left: 65%;
+  -webkit-animation-delay: 4s, 2.5s;
+  animation-delay: 4s, 2.5s;
+}
  @media screen and (max-width: 600px) {
    input[type=text] {
      float: none;
@@ -67,12 +197,13 @@
    }
  }
 
- /*apps*/
+ /* This is for Garden page*/
  .garden {
    margin-right: -4rem;
    margin-bottom: 1 rem;
  }
 
+ /* This is for Profile Page */
  .card-app-profile {
    margin: 0px;
    width: auto;
@@ -141,16 +272,9 @@
    margin-left: 0px;
  }
 
- .list-support {}
-
- .list-support-item {
-   list-style: none;
-   display: inline-block;
-   /* margin: 10px; */
-   padding: 10px;
-   text-align: center;
+ .list-support {
+  list-style: none;
  }
-
 
  .list-support-item {
    list-style: none;
@@ -160,11 +284,7 @@
    text-align: center;
  }
 
-
-
-
-
-
+/* This is for Button in Picture */
  .btn-detail {
    color: #f2f3f4;
    background-color: #198754;
@@ -174,9 +294,6 @@
    color: #f2f3f4;
    background-color: #191970;
  }
-
-
-
 
  .btn-submit {
    color: var(--color-cloud);
@@ -210,14 +327,11 @@
    text-align: center;
  }
 
- /*ml5*/
+ /* This is fo ml5 classification*/
  .imageInput {
    width: 100%;
    text-align: center;
  }
-
-
-
 
  .imageResult {
    font-family: arial;
@@ -227,9 +341,6 @@
    color: red;
  }
 
-
-
-
  .uploadedImage {
    padding-top: 20px;
    width: 50%;
@@ -237,10 +348,7 @@
    margin-left: 25%;
  }
 
-
-
-
- /*index*/
+ /* This is for index html*/
 
  .circle {
    padding-bottom: 0;
@@ -336,7 +444,6 @@
    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
  }
 
-
  .card-app-list-item {
    width: 200px;
    border: 1px solid;
@@ -351,9 +458,6 @@
    text-align: center;
  }
 
-
-
-
  .head-apps {
    text-align: center;
    margin-right: auto;
@@ -367,9 +471,6 @@
    padding-top: 20px;
  }
 
-
-
-
  .body-apps {
    text-align: center;
    margin-right: auto;
@@ -379,9 +480,6 @@
    border-color: orange;
    color: #212222;
  }
-
-
-
 
  .foot-apps {
    text-align: center;
@@ -393,8 +491,6 @@
    padding-top: 20px;
    padding-bottom: 20px;
  }
-
-
 
  dl,
  ol,
@@ -753,7 +849,7 @@
 
 
  form:focus-within {
-   background: #ff7300;
+   background: #7bce08;
    color: black;
    padding: 10px;
  }
@@ -790,7 +886,7 @@
 
 */
 
- /* premium */
+ /* This is for premium plan */
 
  h2 {
    text-align: center;
@@ -802,6 +898,16 @@
    display: block;
    text-align: center;
  }
+ .premium-weekly {
+  color: rgb(13, 14, 13);
+  padding: 15px;
+  background-color: aquamarine;
+  border-radius: 20px;
+  font-size: larger;
+  text-align: center;
+  width: 260px;
+  margin-bottom: 12px;
+}
 
  .premium-monthly {
    color: rgb(13, 14, 13);
@@ -862,7 +968,7 @@ margin-top: 10px;
  .premium-uprade {
    text-align: center;
  }
-
+ .premium-weekly,
  .premium-monthly,
  .premium-yearly,
  .premium-lifetime,
@@ -898,3 +1004,21 @@ margin-top: 10px;
    margin-top: 25px;
    margin: 10px;
  }
+
+/* This is for moth card */
+ .card-moth {
+  height: 100px;
+  width: 100px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+  background-color: #007bff;
+  margin:20px;
+  gap: 30px;
+
+}
+
+.card-moth,
+.card-moth:hover {
+  transform: scale(1.35);
+}
