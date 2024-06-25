@@ -11,7 +11,9 @@
     <title>LARVAL DISEASE PREDICTION</title>
 
     <style>
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
@@ -20,8 +22,18 @@
         .border img {
             border-radius: 15px;
             border: 2px solid black;
+
         }
-		
+
+
+
+        body {
+            background-image: url("icon/bgbutterfly.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 600px;
+        }
     </style>
 </head>
 
@@ -33,8 +45,8 @@
         <h1 style="text-align:center;font-size:4rem">Larval Disease & Get Cure</h1>
     </div>
 
-   <br>
-   <br>
+    <br>
+    <br>
 
 
     <div class="container my-2">
@@ -42,8 +54,9 @@
 
             <div class="col-sm" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img src="{{url_for('static',filename = 'images/Tomato___Bacterial_spot.JPG' )}}" alt="User Image" style="width:500px;height:500px;">
-                    
+                    <img src="{{url_for('static',filename = 'images/Tomato___Bacterial_spot.JPG' )}}" alt="User Image"
+                        style="width:500px;height:500px;">
+
 
                 </span>
             </div>
@@ -56,15 +69,18 @@
                         {{pred_output}} </h1>
                 </div>
                 <div class="details">
-					
-					<h4><b> Treatment : </b> </h4>
+
+                    <h4><b> Treatment : </b> </h4>
                     <h6>
 
 
-                        
-                        Larvae that have Nuclear polyhedrosis diseases require immediate attention before the disease takes over. Larvae were treated with nuclear polyhedrosis virus (NPV) in the laboratory to assess whether the presence of virus could potentially explain reduced fecundity observed in declining field populations of the host.
-.</br></br>
-                        
+
+                        Larvae that have Nuclear polyhedrosis diseases require immediate attention before the disease
+                        takes over. Larvae were treated with nuclear polyhedrosis virus (NPV) in the laboratory to
+                        assess whether the presence of virus could potentially explain reduced fecundity observed in
+                        declining field populations of the host.
+                        .</br></br>
+
 
                     </h6>
                 </div>

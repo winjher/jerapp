@@ -17,7 +17,9 @@
     <title>LARVAL DISEASE PREDICTION</title>
 
     <style>
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
@@ -26,8 +28,20 @@
         .border img {
             border-radius: 15px;
             border: 2px solid black;
+
+        }
+
+
+
+        body {
+            background-image: url("icon/bgbutterfly.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 600px;
         }
     </style>
+
 </head>
 
 <body background="{{url_for('static',filename = 'images/Back.jpg')}}">

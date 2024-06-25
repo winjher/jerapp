@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -210,7 +209,7 @@
                     </div>
 
                 </div>
-                <div class="container">
+                <!-- <div class="container">
                     <div class="diagnose-div">
                         <div class="center-save">
                             <button type="submit" class="btn-save" onclick="mySaveLarvae()"
@@ -232,23 +231,23 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="container">
-                    <h3>Butterfly Health</h3>
+                    <h3>Butterfly Classification</h3>
 
                     <div class="panel panel-default">
 
                         <div class="panel-heading">
                             <button type="submit" class="btn-info" onclick="myHealthInfo()"
                                 value="Basic health Info Form"> <a href="TailedJay.html">
-                                    Basic Info</a>
+                                    Basic Information</a>
                             </button>
-                            <button type="submit" class="btn-care" onclick="myCare()" value="Care Form"> <a
+                            <!-- <button type="submit" class="btn-care" onclick="myCare()" value="Care Form"> <a
                                     href="care.html">
                                     Care</a>
                             </button>
                             <button type="submit" class="btn-culture" onclick="myCulture()" value="Culture Form">Culture
-                            </button>
+                            </button> -->
 
                         </div>
                         <div class="panel-body">
@@ -311,21 +310,44 @@
                         </div>
                     </div>
 
+                    <div class="panel panel-default">
+
+                        <div class="panel-heading">
+                            <button type="submit" class="btn-info" onclick="myHealthInfo()"
+                                value="Basic health Info Form"> <a href="TailedJay.html">
+                                    Care Management</a>
+                            </button>
+                        </div>
+                        <div class="panel-body">
+
+                            <h5>Care</h5>
+                            <div class="col-sm">
+                                <ul>
+                                    <li>
+                                        <h6>Task</h6>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
                     <div class="panel-footer">
                         <a href="experts.html"> Learn more </a>
                     </div>
                 </div>
 
                 <div class="container">
-                <div class="diagnose-div">
-                    <div class="center-save">
-                        <button type="submit" class="btn-experts" onclick="myExperts()" value="Ask Experts Form">
-                            <h5>Ask Experts</h5>
-                        </button>
+                    <div class="diagnose-div">
+                        <div class="center-save">
+                            <button type="submit" class="btn-experts" onclick="myExperts()" value="Ask Experts Form">
+                                <h5> <a href="experts.html">Ask Experts</a></h5>
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
         </section>
         <script>
             // Create a variable containing the result container

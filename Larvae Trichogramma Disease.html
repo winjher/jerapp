@@ -11,7 +11,9 @@
     <title>LARVAL DISEASE PREDICTION</title>
 
     <style>
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
@@ -20,16 +22,22 @@
         .border img {
             border-radius: 15px;
             border: 2px solid black;
+
         }
 
-body {
- background-image: url("icon/butterfly.jpg");
- background-color: #cccccc;
-}		
+
+
+        body {
+            background-image: url("icon/bgbutterfly.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 600px;
+        }
     </style>
 </head>
 
-<body background= 'images/butterfly.jpg')}}">
+<body background='images/butterfly.jpg' )}}">
 
 
 
@@ -37,8 +45,8 @@ body {
         <h1 style="text-align:center;font-size:4rem">Larval Disease & Get Cure</h1>
     </div>
 
-   <br>
-   <br>
+    <br>
+    <br>
 
 
     <div class="container my-2">
@@ -46,8 +54,9 @@ body {
 
             <div class="col-sm" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img src="{{url_for('static',filename = 'images/Tomato___Bacterial_spot.JPG' )}}" alt="User Image" style="width:500px;height:500px;">
-                    
+                    <img src="{{url_for('static',filename = 'images/Tomato___Bacterial_spot.JPG' )}}" alt="User Image"
+                        style="width:500px;height:500px;">
+
 
                 </span>
             </div>
@@ -60,15 +69,21 @@ body {
                         {{pred_output}} </h1>
                 </div>
                 <div class="details">
-					
-					<h4><b> Treatment : </b> </h4>
+
+                    <h4><b> Treatment : </b> </h4>
                     <h6>
 
 
-                        
-                        The propensity of T. bourarachae to cold storage with and without diapause induction was studied. The effect of this technique on its emergence rate and parasitic activity was investigated. The study showed that wasps of T. bourarachae treated at the induction temperature of 15 °C for 5 days can be stored at 4 ± 1 °C for more than 30 days without significant loss of their performances. By using this prestorage temperature, T. bourarachae could keep its emergence capacity (77.5%) up to 60 days of cold storage at 4 ± 1 °C. However, its parasitic activity decreased significantly (37.16%) after 45 days of cold storage. 
-.</br></br>
-                        
+
+                        The propensity of T. bourarachae to cold storage with and without diapause induction was
+                        studied. The effect of this technique on its emergence rate and parasitic activity was
+                        investigated. The study showed that wasps of T. bourarachae treated at the induction temperature
+                        of 15 °C for 5 days can be stored at 4 ± 1 °C for more than 30 days without significant loss of
+                        their performances. By using this prestorage temperature, T. bourarachae could keep its
+                        emergence capacity (77.5%) up to 60 days of cold storage at 4 ± 1 °C. However, its parasitic
+                        activity decreased significantly (37.16%) after 45 days of cold storage.
+                        .</br></br>
+
 
                     </h6>
                 </div>
