@@ -739,7 +739,9 @@
    width: auto;
    background-color: #f3f4f4;
  }
-
+.btn-puparium,
+.btn-sleeving,
+.btn-house,
  .btn-diagnose {
    margin: 10px;
    text-align: center;
