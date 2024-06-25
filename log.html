@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Login</title>
   <style>
     #login {
       flex: 1 0 auto;
@@ -20,7 +20,7 @@
     #login h2 {
       padding: 0.4em 0.8em;
       font-size: 1.25em;
-      background: #048;
+      background-color: orange;
       color: #FFF;
     }
 
@@ -40,7 +40,7 @@
       width: 100%;
       padding: 0.25em 0.5em;
       margin: 0.25em 0 1em;
-      border: 1px solid #5AF;
+      border: 1px solid rgb(240, 238, 233);
       border-radius: 0.25em;
     }
 
@@ -53,17 +53,16 @@
       box-sizing: border-box;
       padding: 0.25em 1em;
       margin-top: -0.25em;
-      background: #ACE;
-      border: 1px solid #5AF;
+      background: rgb(233, 226, 132);
+      border: 1px solid rgb(237, 64, 21);
       border-radius: 0.25em;
-      box-shadow:
-        inset 0 1em 1em #FFF8;
+      box-shadow:inset 0 1em 1em #FFF8;
       transition: background 0.3s;
     }
 
     #login .submitsAndHiddens button:focus,
     #login .submitsAndHiddens button:hover {
-      background: #8BF;
+      background: rgb(200, 179, 165);
     }
 
     #login p {
@@ -71,63 +70,7 @@
       text-align: center;
       padding: 1em 0;
     }
-  </style>
-</head>
-
-<body>
-  <section>
-    <div class="col-xl-12 text-center">
-      <form action="#" method="GET" id="login">
-        <h2>Login</h2>
-        <fieldset>
-          <label>
-            Username:<br>
-            <input type="text" name="username" required><br>
-          </label><label>
-            Password:<br>
-            <input type="password" name="password" required><br>
-          </label>
-        </fieldset>
-        <div class="submitsAndHiddens">
-          <button>Submit</button><br />
-          <a href="#">Forgot Password?</a>
-          <p>
-            If you do not have an existing account,
-            <a href="#">Register Now!</a>
-          </p>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <script> (function (d) {
-      "use strict"
-    })(document);
-
-    for (var input of d.querySelectorAll('input[type="password"]')) {
-      input.classList.add('passwordShowHide');
-      var button = input.parentNode.insertBefore(
-        d.createElement('button'),
-        input.nextElementSibling
-      );
-      button.textContent = "\uD83D\uDC41";
-      button.title = "Show / Hide Password";
-      button.type = "button"; // remember, default is SUBMIT!
-      button.onclick = passwordShowHide;
-    }
-
-    //WALK THE BLOODY DOM!
-    function passwordShowHide(event) {
-      var input = event.currentTarget.previousElementSibling;
-      input.type = input.type === "text" ? "password" : "text";
-      input.focus();
-    } // passwordShowHide
-
-Style tag
-    d.head.appendChild(d.createElement("style")).textContent = ``;00
-
-    d.head.appendChild(d.createElement("style")).textContent = `
-  @media screen {
+    @media screen {
     .passwordShowHide + button {
       position:relative;
       float:left;
@@ -137,7 +80,7 @@ Style tag
       font-size:1.25em;
       line-height:1.2em;
       text-align:center;
-      border:none;d
+      border:none;
       background:transparent;
       transition:transform 0.3s;
       transform-origin:center;
@@ -164,9 +107,66 @@ Style tag
       color:#F00;
     }
   }
-`;
 
-  </script>
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="col-xl-12 text-center">
+      <form action="#" method="GET" id="login">
+        <h2>Login</h2>
+        <fieldset>
+          <label>
+            Username:<br>
+            <input type="text" name="username" required><br>
+          </label><label>
+            Password:<br>
+            <input type="password" name="password" required><br>
+          </label>
+        </fieldset>
+        <div class="submitsAndHiddens">
+          <button>Submit</button><br />
+          <a href="#">Forgot Password?</a>
+          <p>
+            If you do not have an existing account,
+            <a href="register.html">Register Now!</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- <script> 
+  (function (d) {
+      "use strict"
+    })(document);
+
+    for (var input of d.querySelectorAll('input[type="password"]')) {
+      input.classList.add('passwordShowHide');
+      var button = input.parentNode.insertBefore(
+        d.createElement('button'),
+        input.nextElementSibling
+      );
+      button.textContent = "\uD83D\uDC41";
+      button.title = "Show / Hide Password";
+      button.type = "button"; // remember, default is SUBMIT!
+      button.onclick = passwordShowHide;
+    }
+
+    //WALK THE BLOODY DOM!
+    function passwordShowHide(event) {
+      var input = event.currentTarget.previousElementSibling;
+      input.type = input.type === "text" ? "password" : "text";
+      input.focus();
+    } // passwordShowHide
+
+    d.head.appendChild(d.createElement("style")).textContent = ``;
+
+    d.head.appendChild(d.createElement("style")).textContent = `;
+ 
+
+  </script> -->
 </body>
 
 </html>
