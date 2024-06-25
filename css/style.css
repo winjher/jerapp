@@ -769,11 +769,12 @@
  .btn-diagnose {
    margin: 10px;
    text-align: center;
+   font-size: small;
    align-items: center;
    background-color: #dc3545;
    border-radius: 20px;
    border: none;
-   width: 280px;
+   width: 100px;
    margin-left: auto;
    margin-right: auto;
    color: #f3f4f5;
