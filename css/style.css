@@ -647,9 +647,6 @@
    list-style: none;
  }
 
-
-
-
  .icon-bar-garden {
    width: 100%;
    /* Full-width */
@@ -675,20 +672,11 @@
    /* Increased font size */
  }
 
-
-
-
  .icon-bar-garden a:hover {
    background-color: yellow;
 
-
-
-
    /* Add a hover color */
  }
-
-
-
 
  .icon-bar-garden .active {
    background-color: yellow;
@@ -697,9 +685,6 @@
    /*background-color: var(--bs-purple);*/
    /* Add an active/current color */
  }
-
-
-
 
  .icon-size {
    height: auto;
@@ -723,9 +708,6 @@
    margin-right: auto;
  }
 
-
-
-
  .save-background {
    border: 1 px solid;
    background-color: #f3f4f5;
@@ -737,9 +719,6 @@
    margin-left: auto;
    margin-right: auto;
  }
-
-
-
 
  .ask-experts {
    text-align: center;
@@ -755,16 +734,11 @@
  }
 
 
-
-
  .diagnose-div {
    height: auto;
    width: auto;
    background-color: #f3f4f4;
  }
-
-
-
 
  .btn-diagnose {
    margin: 10px;
@@ -779,9 +753,6 @@
    margin-right: auto;
    color: #f3f4f5;
  }
-
-
-
 
  .btn-experts {
    margin: 10px;
