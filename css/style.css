@@ -43,10 +43,6 @@
    padding: 0px;
    box-sizing: border-box;
  }
-
- p {
-   margin-block-start: 1em;
- }
  html,body {
   margin: 0;
   height: 1800px;
@@ -54,6 +50,20 @@
   padding-bottom: 100px;
   /* background-color:var(--dark); */
 }
+
+ body {
+  background-image: url("icon/bgbutterfly.jpg");
+  background-color: #cccccc;
+}
+
+ p {
+   margin-block-start: 1em;
+ }
+ li {
+  list-style: none;
+}
+
+
 .snowflake {
   color: #fff;
   font-size: 1em;
@@ -305,6 +315,7 @@
    background-color: #fd7e14;
  }
 
+ /* buttons miscellaenous */
  .details-button,
  .care-button,
  .btn-reset,
@@ -327,7 +338,7 @@
    text-align: center;
  }
 
- /* This is fo ml5 classification*/
+ /* This is for ml5 classification*/
  .imageInput {
    width: 100%;
    text-align: center;
@@ -349,7 +360,6 @@
  }
 
  /* This is for index html*/
-
  .circle {
    padding-bottom: 0;
    margin-bottom: 0;
@@ -367,7 +377,6 @@
    padding-bottom: 10px;
    padding-top: 10px;
  }
-
 
  .container-logout {
    text-align: center;
@@ -401,10 +410,13 @@
    margin-left: 30px;
  }
 
+ .img-apps-defects,
+ .img-apps-diseases,
+ .img-apps-stages,
  .img-apps-butterfly {
    background-color: #ffc107;
  }
-
+/* 
  .img-apps-stages {
    background-color: #20c997;
 
@@ -418,7 +430,7 @@
  .img-apps-defects {
    background-color: #E7E9FC;
 
- }
+ } */
 
 
  .image-container {
@@ -519,7 +531,7 @@
  }
 
 
-
+/* icon bar home */
 
  .icon-bar-home a {
    float: left;
@@ -537,16 +549,10 @@
    /* Increased font size */
  }
 
-
-
-
  .icon-bar-home a:hover {
    background-color: yellow;
    /* Add a hover color */
  }
-
-
-
 
  .icon-bar-home .active {
    background-color: #d63384;
@@ -556,6 +562,7 @@
    /* Add an active/current color */
  }
 
+/* icon bar extra small */
  .icon-bar-xs a {
    float: left;
    /* Float links side by side */
@@ -572,7 +579,7 @@
    /* Increased font size */
  }
 
-
+/* icon bar small */
  .icon-bar-sm a {
    float: left;
    /* Float links side by side */
@@ -589,6 +596,7 @@
    /* Increased font size */
  }
 
+ /* icon bar large */
  .icon-bar-lg a {
    float: left;
    /* Float links side by side */
@@ -605,6 +613,7 @@
    /* Increased font size */
  }
 
+ /* icon bar medium */
  .icon-bar-md a {
    float: left;
    /* Float links side by side */
@@ -643,10 +652,7 @@
 
  }
 
- li {
-   list-style: none;
- }
-
+ /* icon bar garden */
  .icon-bar-garden {
    width: 100%;
    /* Full-width */
@@ -690,7 +696,7 @@
    height: auto;
    width: auto;
  }
-
+/* buttons */
  .btn-save,
  .btn-save-eggs,
  .btn-save-larvae,
@@ -733,17 +739,22 @@
    border-radius: 5px;
  }
 
-
  .diagnose-div {
    height: auto;
    width: auto;
    background-color: #f3f4f4;
  }
+
+h5,.h5{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .btn-puparium,
 .btn-sleeving,
 .btn-house,
 .btn-hatchery,
- .btn-diagnose {
+.btn-diagnose {
    margin: 10px;
    text-align: center;
    font-size: small;
@@ -752,6 +763,7 @@
    border-radius: 20px;
    border: none;
    width: 100px;
+   height: 30px;
    margin-left: auto;
    margin-right: auto;
    color: #f3f4f5;
@@ -770,9 +782,6 @@
    color: #f3f4f5;
  }
 
-
-
-
  #myBtn,
  #myBtnLarvae,
  #myBtnPupae,
@@ -785,15 +794,6 @@
    border: none;
    border-radius: 3px;
  }
-
-
-
-
- body {
-   background-image: url("icon/bgbutterfly.jpg");
-   background-color: #cccccc;
- }
-
 
  .btn-info,
  .btn-care,
@@ -915,7 +915,6 @@
    text-align: center;
    width: 260px;
    margin-bottom: 12px;
-
  }
 
  .btn-continue {
@@ -955,7 +954,6 @@ margin-top: 10px;
    body {
      background-color: #E7E9FC;
    }
-
  }
 
  .col-sm {
