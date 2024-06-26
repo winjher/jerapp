@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
+  <title>Garden</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,41 +13,99 @@
   <link rel="stylesheet" href="./css/iconbar.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/card-classifier.css">
-
-
 </head>
 
-<body style="height: 500;">
-
+<body style="height: 400;">
   <!-------------------------------Nav bar section-------------------------------------------->
   <section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Garden</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <h3>Home</h3>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-    </div>
-    <!-----------------------------Category section--------------------------------------------->
-    <div class="container-fluid col-xl-12">
-      <input type="text" placeholder="Search..">
-    </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li id="home-item" class="nav-item font-weight-bold">
+              <a class="nav-link " href="index.html">Home</a>
+            </li>
 
-    <div class="col-xl-12 text-center">
-      <ul class="card-app-list col-xl-12">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lepidoptera apps</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="lepidoptera.html">Butterfly</a>
+                <a class="dropdown-item" href="moth.html">Moth</a>
+                <a class="dropdown-item" href="skipper.html">Skipper</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Object measurements apps</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="pupae_size.html">Pupae Size</a>
+                <a class="dropdown-item" href="pupae_gender.html">Pupae Gender</a>
+                <a class="dropdown-item" href="pupae_defects.html">Pupae Defects</a>
+                <a class="dropdown-item" href="pupae_dayold.html">Pupae Day Old</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Object Identification apps</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="lepidoptera.html">Lepidoptera</a>
+                <a class="dropdown-item" href="hostplantidentifier.html">Host Plants</a>
+                <a class="dropdown-item" href="predators.html">Predators</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Match Identifier Apps</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="but-host.html">Butterfly and Hosplants</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="setting.html">Setting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://forms.gle/p4E9jNPqczh8cwVS6">Rate</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="weather.html">Weather</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      </div>
+    </nav>
+  </section>
+  <!-----------------------------Category section--------------------------------------------->
+  <div class="container-fluid col-xl-12">
+    <input type="text" placeholder="Search..">
+  </div>
 
-        <li class="card-app-list-item">
+  <div class="col-xl-12 text-center">
+    <ul class="card-app-list col-xl-12">
 
-          <h4>Butterfly House</h4>
-          <img class="imagebackground" src="images/batwing02.jpg" alt="" srcset="" width="300px">
-          <button type="submit" class="btn-house" onclick="myHouse()" value="House Form">
-            <h5>Butterfly</h5>
-          </button>
-          <!-- <button type="submit" class="btn-info" onclick="myButterflyHouseInfo()" value="Butterfly House Info Form">
+      <li class="card-app-list-item">
+
+        <h4>Butterfly House</h4>
+        <img class="imagebackground" src="images/batwing02.jpg" alt="" srcset="" width="300px">
+        <button type="submit" class="btn-house" onclick="myHouse()" value="House Form">
+          <h5>Butterfly</h5>
+        </button>
+        <!-- <button type="submit" class="btn-info" onclick="myButterflyHouseInfo()" value="Butterfly House Info Form">
             <a href="TailedJay.html">Basic Info</a>
           </button>
           <button type="submit" class="btn-care" onclick="myCare()" value="Care Form">
@@ -56,14 +114,14 @@
           <button type="submit" class="btn-culture" onclick="myCulture()" value="Culture Form">
             Culture
           </button> -->
-        </li>
-        <li class="card-app-list-item">
-          <h4>Puparium</h4>
-          <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">
-          <button type="submit" class="btn-puparium" onclick="myPuparium()" value="Puparium Form">
-            <h5>Pupae</h5>
-          </button>
-          <!-- <button type="submit" class="btn-info" onclick="myMatureLarvae()" value="MatureLarvaeForm">
+      </li>
+      <li class="card-app-list-item">
+        <h4>Puparium</h4>
+        <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">
+        <button type="submit" class="btn-puparium" onclick="myPuparium()" value="Puparium Form">
+          <h5>Pupae</h5>
+        </button>
+        <!-- <button type="submit" class="btn-info" onclick="myMatureLarvae()" value="MatureLarvaeForm">
                 Mature Larvae
                 <button type="submit" class="btn-care" onclick="myPrepupa()" value="PrepupaForm">
                   <a href="TailedJay.html"> Care
@@ -72,14 +130,14 @@
                 <button type="submit" class="btn-culture" onclick="myInstar()" value="instarForm">
                   <h6>Instar</h6>
                 </button> -->
-        </li>
-        <li class="card-app-list-item">
-          <h4>Sleeving Boxes</h4>
-          <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">
-          <button type="submit" class="btn-sleeving" onclick="mySleeving()" value="Sleeving Form">
-            <h5>Larvae</h5>
-          </button>
-          <!-- <button type="submit" class="btn-info" onclick="myButterflySleevingInfo()"
+      </li>
+      <li class="card-app-list-item">
+        <h4>Sleeving Boxes</h4>
+        <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">
+        <button type="submit" class="btn-sleeving" onclick="mySleeving()" value="Sleeving Form">
+          <h5>Larvae</h5>
+        </button>
+        <!-- <button type="submit" class="btn-info" onclick="myButterflySleevingInfo()"
           value="Butterfly Sleeving Box Info Form">
           <a href="TailedJay.html">Basic Info</a>
         </button>
@@ -89,14 +147,14 @@
         <button type="submit" class="btn-culture" onclick="myCulture()" value="Culture Form">
           Culture
         </button> -->
-        </li>
-        <li class="card-app-list-item">
-          <h4>Hatchery</h4>
-          <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">
-          <button type="submit" class="btn-hatchery" onclick="myHatchery()" value="Hatchery Form">
-            <h5>Eggs</h5>
-          </button>
-          <!-- <button type="submit" class="btn-info" onclick="myMatureLarvae()" value="MatureLarvaeForm">
+      </li>
+      <li class="card-app-list-item">
+        <h4>Hatchery</h4>
+        <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">
+        <button type="submit" class="btn-hatchery" onclick="myHatchery()" value="Hatchery Form">
+          <h5>Eggs</h5>
+        </button>
+        <!-- <button type="submit" class="btn-info" onclick="myMatureLarvae()" value="MatureLarvaeForm">
                 Mature Larvae
                 <button type="submit" class="btn-care" onclick="myPrepupa()" value="PrepupaForm">
                   <a href="TailedJay.html"> Care
@@ -105,257 +163,262 @@
                 <button type="submit" class="btn-culture" onclick="myInstar()" value="instarForm">
                   <h6>Instar</h6>
                 </button> -->
-        </li>
-      </ul>
-    </div>
-    <div class="col-xl-12 text-center">
-      <h2 class="display-8">Butterfly Culture</h2>
-      <ul class="card-app-gardenlist col-xl-12">
-        <li class="card-app-list-item">
-          <p>
-            <a href="TailedJay.html">Graphium agamemnon</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="atlasmoth.html">Attacus atlas</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="">Cethosia biblis</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Hypolimnas bolina</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Chilasa clytia</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Danaus chrysippus</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Papilio demoleus</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="commonjay.html">Graphium doson</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Pachliopta kotzebuea</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Idea leuconoe</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Papilio lowi</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Samia luzonica</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Papilio palinurus</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Papilio polytes</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Papilio rumanzovia</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Atrophaneura semperi</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="clippers.html">Parthenos sylvia</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Troides rhadamantus</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Appias nero</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Cepora aspaisa</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Hebomoia glaucippe</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Vindula dejone</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Yoma sabina</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Ideopsis vitrea</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Lexias dirtea</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Attacus lorquini</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Graphium euphrates</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Graphium sarpedon</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Pareronia valeria</a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Eurema sp </a>
-          </p>
-        </li>
-        <li class="card-app-list-item">
-          <p>
-            <a href="http://">Other</a>
-          </p>
-        </li>
-      </ul>
-    </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-xl-12 text-center">
+    <h2 class="display-8">Butterfly Culture</h2>
+    <ul class="card-app-gardenlist col-xl-12">
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="tailedjay.html">Graphium agamemnon</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="atlasmoth.html">Attacus atlas</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="RedLacewingButterfly.html">Cethosia biblis</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="GreatEggflyButterfly.html">Hypolimnas bolina</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="CommonMimeButterfly.html">Chilasa clytia</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="PlainTigerButterfly.html">Danaus chrysippus</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="CommonLimeButterfly.html">Papilio demoleus</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="commonjay.html">Graphium doson</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="PinkRoseButterfly.html">Pachliopta kotzebuea</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="PaperKiteButterfly.html">Idea leuconoe</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="GreatYellowMormonButterfly.html">Papilio lowi</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="GiantSilkMothButterfly.html">Samia luzonica</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="EmeraldSwallowtailButterfly.html">Papilio palinurus</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="CommonMormonButterfly.html">Papilio polytes</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="ScarletMormonButterfly.html">Papilio rumanzovia</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Atrophaneura semperi</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href=" GrayGlassyTigerButterfly.html">Idiopsis juventa</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="clippers.html">Parthenos sylvia</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="GoldenBirdwingButterfly.html">Troides rhadamantus</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Appias nero</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Cepora aspaisa</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Hebomoia glaucippe</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Vindula dejone</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Yoma sabina</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Ideopsis vitrea</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Lexias dirtea</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Attacus lorquini</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Graphium euphrates</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Graphium sarpedon</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Pareronia valeria</a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Eurema sp </a>
+        </p>
+      </li>
+      <li class="card-app-gardenlist-item">
+        <p>
+          <a href="http://">Other</a>
+        </p>
+      </li>
+    </ul>
+  </div>
   </section>
   <section>
     <div class="col-xl-12 text-center">
       <h2 class="display-8">Host Plants</h2>
       <ul class="card-app-gardenlist col-xl-12">
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="WingedPricklyAsh.html">Winged Prickly Ash</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="SweetPotatoVine.html">Sweet Potato Vine</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="Amuyon.html">Amuyon</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="Limeberry.html">Limeberry</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="Tetradium.html">Tetradium</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href=" IndianBirtworth.html"> Indian Birtworth</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="Calamondin.html">Calamondin</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="WildCucumber.html">Wild Cucumber</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="Crownflower.html">Crown flower</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="Bloodflower.html">Blood flower</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="Curryleaf.html">Curry leaf</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="Pomelo.html">Pomelo</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="SweetOrange.html">Sweet Orange</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="SugarApple.html">Sugar Apple</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="SweetPotatoVine.html">Sweet Potato Vine</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
             <a href="SweetPotatoVine.html">Sweet Potato Vine</a>
           </p>
         </li>
-        <li class="card-app-list-item">
+        <li class="card-app-gardenlist-item">
           <p>
-            <a href="SweetPotatoVine.html">Sweet Potato Vine</a>
+            <a href="other.html">Sweet Potato Vine</a>
           </p>
         </li>
       </ul>
@@ -365,15 +428,13 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
     <div class="icon-bar">
       <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
-      <a href="tasktodo.html"><img src="icon/plants.png"></a>
+      <a href="host_plants.html"><img src="icon/plants.png"></a>
       <a class="active " href="index.html"><img src="icon/home2.png"></a>
       <a href="classify.html"><img src="icon/detect.png"></a>
       <a href="map.html"><img src="icon/globo.png"></a>
     </div>
   </nav>
-
   <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
-
   <script src="./jquery-3.6.0.slim.min.js"> </script>
   <script src="./js/bootstrap.bundle.min.js"></script>
 </body>

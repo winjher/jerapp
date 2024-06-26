@@ -1,8 +1,7 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <title>{% block title %}ML Butterfly{% endblock %}</title>
     <meta charset="UTF-8">
@@ -16,241 +15,240 @@
     <link rel="stylesheet" href="{% static 'css/iconbar.css' %}">
     <link rel="stylesheet" href="css/iconbar.css" />
 </head>
- 
+
 <body>
     {% block pagecontent %}
-<section>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-          
-            <a class="navbar-brand" href="{% url 'dashboard' %}">User Account</a>
-            
-            <img src="{% static 'images/8i8.png' %}">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li id="home-item" class="nav-item font-weight-bold">
-                                                <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            My Farm</a>
-                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{% url 'manage_farm' %}">Manage Farm</a>
-                       </div>
-                    </li>
- 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Butterfly stages</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'butterfly_identifier' %}">Butterfly</a>
-                            <a class="dropdown-item" href="{% url 'moth' %}">Moth</a>
-                            <a class="dropdown-item" href="skipper.html">Skipper</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Classify apps</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        
-                            <a class="dropdown-item" href="hostplantidentifier.html">Host Plants</a>
-                            <a class="dropdown-item" href="predators.html">Predators</a>
-                        </div>
-                    </li>
- 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Manage apps</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
 
-                            <a class="dropdown-item" href="Pupae_identifier.html">Pupae apps</a>
-                            <a class="dropdown-item" href="{% url 'larvalPrediction' %}">Larvae apps</a>
-                            <a class="dropdown-item" href="Egg_identifier.html"> Eggs apps</a>
-                        </div>
-                    </li>
- 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Health apps</a>
-                    
-                                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="objectidentifier.html">Defects and Diseases</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="{% url 'adddevice' %}">Setting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="rate.html">Rate</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
-                    </li>
-                                        <li class="nav-item dropdown">
-                        <a class="nav-link" href="{% url 'Logout' %}">Logout</a>
-                    </li>
-                </ul>
+                <a class="navbar-brand" href="{% url 'dashboard' %}">User Account</a>
+
+                <img src="{% static 'images/8i8.png' %}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                My Farm</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'manage_farm' %}">Manage Farm</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Butterfly stages</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'butterfly_identifier' %}">Butterfly</a>
+                                <a class="dropdown-item" href="{% url 'moth' %}">Moth</a>
+                                <a class="dropdown-item" href="skipper.html">Skipper</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classify apps</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <a class="dropdown-item" href="hostplantidentifier.html">Host Plants</a>
+                                <a class="dropdown-item" href="predators.html">Predators</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Manage apps</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <a class="dropdown-item" href="Pupae_identifier.html">Pupae apps</a>
+                                <a class="dropdown-item" href="{% url 'larvalPrediction' %}">Larvae apps</a>
+                                <a class="dropdown-item" href="Egg_identifier.html"> Eggs apps</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Health apps</a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="objectidentifier.html">Defects and Diseases</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="{% url 'adddevice' %}">Setting</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rate.html">Rate</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="{% url 'Logout' %}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+    </section>
+
+    <div class="container-fluid">
+
+        <div id="project" class="col-lg-12 text-center">
+
+            <div class="grid-template">
+                <button class="column-button"><a href="label.html">Label</a>
+                </button>
+                <button class="column-button"><a href="/storage/emulated/0/documents/betterfly_nav/train.html">Train</a>
+                </button>
+                <button class="row-button"><a href="evaluate.html">Evaluate</a></button>
+                <button class="row-button"><a
+                        href="/storage/emulated/0/documents/betterfly_nav/predict.html">Predict</a></button>
             </div>
-    </nav>
-</section>
+        </div><br>
+        <form action="augment">
+            <div class="card col-lg-6 col-xl-6 col-md-6 col-sm-6 col-xs-6">
+                <label> Max Iteration :{{iterate}}</label><input type="text" name="" id="" class="form-control"><br>
+                <label> Training Data :{{train}}</label><input type="text" name="" id="" class="form-control"><br>
+                <label> Validation Data :{{validate}}</label><input type="text" name="" id="" class="form-control"><br>
+                <label> Augmentation :{{Augmented}}</label><input type="text" name="" id="" class="form-control">
+                <div class="card-body">
 
-<div class="container-fluid">
-
-    <div id="project" class="col-lg-12 text-center">
-
-        <div class="grid-template">
-            <button class="column-button"><a href="label.html">Label</a>
-            </button>
-            <button class="column-button"><a href="/storage/emulated/0/documents/betterfly_nav/train.html">Train</a>
-            </button>
-            <button class="row-button"><a
-                    href="evaluate.html">Evaluate</a></button>
-            <button class="row-button"><a
-                    href="/storage/emulated/0/documents/betterfly_nav/predict.html">Predict</a></button>
-        </div>
-    </div><br>
-<form action="augment">
-    <div class="card col-lg-6 col-xl-6 col-md-6 col-sm-6 col-xs-6">
-        <label> Max Iteration :{{iterate}}</label><input type="text" name="" id="" class="form-control"><br>
-        <label> Training Data :{{train}}</label><input type="text" name="" id="" class="form-control"><br>
-        <label> Validation Data :{{validate}}</label><input type="text" name="" id="" class="form-control"><br>
-        <label> Augmentation :{{Augmented}}</label><input type="text" name="" id="" class="form-control">
-       <div class="card-body">
-          
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Crop 
-          </label><br />
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Rotate
-          </label><br />
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Blur
-          </label><br />
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Noise
-          </label><br />
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Flip
-          </label><br />
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-          <label class="form-check-label" for="flexCheckChecked">Invert
-          </label>
+                    <label class="form-check-label" for="flexCheckChecked">Crop
+                    </label><br />
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">Rotate
+                    </label><br />
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">Blur
+                    </label><br />
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">Noise
+                    </label><br />
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">Flip
+                    </label><br />
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">Invert
+                    </label>
 
         </form>
 
-      </div>
-
-       <button type="submit">Defaults</button>
-       <button type="submit">Train</button>
     </div>
 
-  </div>
-</div>
-</div>
-
-
-{% endblock %}
-<nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
-    <div class="icon-bar">
-        
-        <div class="icon-size">
-            <a href="{% url 'index' %}"><img src="{% static 'images/home2.png'%}">
-                            <label for="" class="icon-size">
-            </a>
-        </div>
-        <div class="icon-size">
-            <a href="{% url 'butterfly_identifier' %}"><img src="{% static 'images/butterfly3.png' %}">
-                            <label for="" class="icon-size">
-            </a>
-        </div>
-        <div class="icon-size">
-            <a href="{% url 'classify' %}"><img src="{% static 'images/classify4.png' %}">
-                            <label for="" class="icon-size">
-            </a>
-        </div>
- 
-        <div class="icon-size">
-            <a href="{% url 'user' %}"><img src="{% static 'images/user.png' %}">
-            <label for="" class="icon-size">
-            </a>
-        </div>
+    <button type="submit">Defaults</button>
+    <button type="submit">Train</button>
+    </div>
 
     </div>
-</nav>
+    </div>
+    </div>
+
+
+    {% endblock %}
+    <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
+        <div class="icon-bar">
+
+            <div class="icon-size">
+                <a href="{% url 'index' %}"><img src="{% static 'images/home2.png'%}">
+                    <label for="" class="icon-size">
+                </a>
+            </div>
+            <div class="icon-size">
+                <a href="{% url 'butterfly_identifier' %}"><img src="{% static 'images/butterfly3.png' %}">
+                    <label for="" class="icon-size">
+                </a>
+            </div>
+            <div class="icon-size">
+                <a href="{% url 'classify' %}"><img src="{% static 'images/classify4.png' %}">
+                    <label for="" class="icon-size">
+                </a>
+            </div>
+
+            <div class="icon-size">
+                <a href="{% url 'user' %}"><img src="{% static 'images/user.png' %}">
+                    <label for="" class="icon-size">
+                </a>
+            </div>
+
+        </div>
+    </nav>
 
     </nav>
-</section>
-<section>
-    <footer>
-        {% block content %}  
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-                <a href="http://" class="btn">
-                    <p>Insects Connection</p>
-                  </a>
-            </div>
-            <div class="col-sm-12">
-                <a href="http://" class="btn">
-                    <p>Copyright &copy; 2022</p>
-                </a>
-            </div>
-            <div class="col-sm-12">
-                <a href="http://" class="btn">
-                    <p>Privacy | Terms and Condition</p>
-                </a>
-               
-            </div>
-            <div class="col-sm-12">
-                <a href="http://" class="btn">
-                    <p>Author: Jerwin Montellano</p>
-                </a>
-            </div>
-            <div class="col-sm-12">
-                <a href="http://" class="btn">
-                    <p>insectsconnection@gmail.com</p>
-                </a>
-            </div>
-           
-          </div>
-        </div>
-        
-        
-            <div class="grid-template">
-              <a href=""><em class="fab fa-twitter fa-2x"></em></a>
-              <a href=""><em class="fab fa-instagram fa-2x"></em></a>
-              <a href=""><em class="fab fa-facebook fa-2x"></em></a>
-              <a href=""><em class="fab fa-whatsapp fa-2x"></em></a>
-            </div>
-        </div>
-        {% endblock %}
-      </footer></section>
-<hr>
-<script src="{% static 'jquery-3.6.0.slim.min.js' %}"> </script>
-<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    </section>
+    <section>
+        <footer>
+            {% block content %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <a href="http://" class="btn">
+                            <p>Insects Connection</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="http://" class="btn">
+                            <p>Copyright &copy; 2022</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="http://" class="btn">
+                            <p>Privacy | Terms and Condition</p>
+                        </a>
 
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="http://" class="btn">
+                            <p>Author: Jerwin Montellano</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="http://" class="btn">
+                            <p>insectsconnection@gmail.com</p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="grid-template">
+                <a href=""><em class="fab fa-twitter fa-2x"></em></a>
+                <a href=""><em class="fab fa-instagram fa-2x"></em></a>
+                <a href=""><em class="fab fa-facebook fa-2x"></em></a>
+                <a href=""><em class="fab fa-whatsapp fa-2x"></em></a>
+            </div>
+            </div>
+            {% endblock %}
+        </footer>
+    </section>
+    <hr>
+    <script src="{% static 'jquery-3.6.0.slim.min.js' %}"> </script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
-   <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
-    <div class="icon-bar">
-        <a href="lepidoptera.html"><img src = "icon\butterfly2.png"></a>
-        <a href="tasktodo.html"><img src = "icon\plants.png"></a>
-        <a class="active " href="index.html"><img src = "icon\home2.png"></a>
-        <a href="classify.html"><img src = "icon\detect.png"></a>        
-        <a href="map.html"><img src = "icon\globo.png"></a>
-      </div>
-  </nav>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
+        <div class="icon-bar">
+            <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
+            <a href="host_plants.html"><img src="icon/plants.png"></a>
+            <a class="active " href="index.html"><img src="icon/home2.png"></a>
+            <a href="classify.html"><img src="icon/detect.png"></a>
+            <a href="map.html"><img src="icon/globo.png"></a>
+        </div>
+    </nav>
 
     <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
 
     <script src="./jquery-3.6.0.slim.min.js"> </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
- 
+
 </html>

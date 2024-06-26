@@ -78,35 +78,6 @@
 <body>
 
   <section>
-
-    <div class="card-app-profile">
-      <div class="acct-profile">
-          <div class="profile-image">
-              <img src="images/profileimage.jpg" class="img-profile" />
-              <div class="card-story">
-                  <h6 class="story">
-                      <a href="#">Create story</a>
-                  </h6>
-              </div>
-          </div>
-      </div>
-      <div class="profile-info ">
-          <h3 class="name-profile">Name</h3> <br />
-
-      </div>
-      <div class="profile-info ">
-          <input type="text" placeholder="Search..">
-      </div>
-  </div>
-
-  <div class="grid-template">
-      <ul class="list-support">
-          <li class="list-support-item">Friends</li>
-          <li class="list-support-item">Following</li>
-          <li class="list-support-item">Followers</li>
-          <li class="list-support-item">Visitors</li>
-      </ul>
-  </div>
     <div class="container">
 
 
@@ -129,20 +100,21 @@
       </div>
     </div>
   </section>
-  <nav class="navbar navbar-expand-sm fixed-bottom">
-    <div class="icon-bar-home active">
-      <div class="icon-size">
-        <a href="index.html"><img src="./icon/home2.png" width="200">&nbsp; Home</a>
-      </div>
-      <div class="icon-size">
-        <a href="classify.html"><img src="./icon/classify.png" width="200">&nbsp; Classify</a>
-      </div>
-
-  </nav>
   <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
+    <div class="icon-bar">
+      <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
+      <a href="host_plants.html"><img src="icon/plants.png"></a>
+      <a class="active " href="index.html"><img src="icon/home2.png"></a>
+      <a href="classify.html"><img src="icon/detect.png"></a>
+      <a href="map.html"><img src="icon/globo.png"></a>
+    </div>
+  </nav>
 
+  <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
   <script src="./jquery-3.6.0.slim.min.js"> </script>
   <script src="./js/bootstrap.bundle.min.js"></script>
+
   <script type="text/javascript" charset="utf-8">
     /*you can access the input field data and other values using the document method*/
     let myUsername = document.getElementById('username');

@@ -448,13 +448,27 @@
   width: auto;
   text-align: center;
   border: 1px solid;
-  border-color: blue;
+  border-color: rgb(255, 13, 0);
   border-radius: 5px;
   background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
-  margin-bottom: 100px;
+  padding-bottom: 0px;
+}
+
+.card-app-gardenlist-item {
+  width: 200px;
+  border: 1px solid;
+  border-color: orange;
+  /* background-color: #ffc; */
+  border-radius: 15px;
+  margin: 10px 10px 10px 10px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  color: #212222;
+  text-align: center;
 }
 
  .card-app-list {
