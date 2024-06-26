@@ -443,6 +443,20 @@
    height: auto;
  }
 
+ .card-app-gardenlist {
+  margin: 0px;
+  width: auto;
+  text-align: center;
+  border: 1px solid;
+  border-color: blue;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  margin-bottom: 100px;
+}
+
  .card-app-list {
    margin: 0px;
    width: auto;
@@ -511,9 +525,6 @@
    margin-bottom: 1rem;
 
  }
-
-
-
 
  /*navbutton home*/
  .icon-bar-home,
