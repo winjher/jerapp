@@ -1025,3 +1025,19 @@ margin-top: 10px;
   height: 4px;
   width: 4px;
 }
+
+.card-app-skipperlist-item,
+.card-app-mothlist-item,
+.card-app-butterflylist-item{
+  width: 150px;
+  height: 150px;
+  border: 1px solid;
+  border-color: orange;
+  border-radius: 15px;
+  margin: 5px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  color: #212222;
+  text-align: center;
+}
