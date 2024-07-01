@@ -513,7 +513,7 @@ body {
   animation: r 12s cubic-bezier(.5, -0.2, .5, 1.2) infinite;
 }
 
-@keyframes r {
+/* @keyframes r {
 
   0%,
   3% {
@@ -532,7 +532,7 @@ body {
   100% {
     transform: var(--_t) rotate(-360deg);
   }
-}
+} */
 
 /*photos*/
 .panel {

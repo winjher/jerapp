@@ -182,10 +182,11 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
 
     <script>
+        const name = document.getElementById("name");
+        name.style.color = "red";
         function greet(name) {
             return `Welcome ${name}.`;
         }
-
         // Calling the greet function and displaying the result in the console
         console.log(greet("Mango")); // Welcome, Mango.
 
