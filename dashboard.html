@@ -96,7 +96,7 @@
     <hr>
     <br>
     <header class="text-center">
-        <h1>You Name: Client</h1>
+        <h1 id="name">You Name: {{name}}</h1>
     </header>
     <div class="row icon-boxes">
 
@@ -131,55 +131,67 @@
     </div>
     </section>
     </div><br><br>
-  
-        <div id="intro-section" class="row">
-            <div class="col-xl-3 text-center">
-                <div>
-                    <span class="dot"></span>
-                    <a href="http://" class="btn btn-succes">
-                        <h2 class="display-8">Lepidoptera</h2>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3 text-center">
-                <div>
-                    <span class="dot"></span>
-                    <a href="http://" class="btn btn-succes">
-                        <h2 class="display-8">Gift Checks</h2>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3 text-center">
-                <div>
-                    <span class="dot"></span>
-                    <a href="http://" class="btn btn-succes">
-                        <h2 class="display-8">Monthly Points</h2>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3 text-center">
-                <div>
-                    <span class="dot"></span>
-                    <a href="http://" class="btn btn-succes">
-                        <h2 class="display-8">Yearly Points</h2>
-                    </a>
-                </div>
+
+    <div id="intro-section" class="row">
+        <div class="col-xl-3 text-center">
+            <div>
+                <span class="dot"></span>
+                <a href="http://" class="btn btn-succes">
+                    <h2 class="display-8">Lepidoptera</h2>
+                </a>
             </div>
         </div>
-    </section>
-  <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
-    <div class="icon-bar">
-      <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
-      <a href="host_plants.html"><img src="icon/plants.png"></a>
-      <a class="active " href="index.html"><img src="icon/home2.png"></a>
-      <a href="classify.html"><img src="icon/detect.png"></a>
-      <a href="map.html"><img src="icon/globo.png"></a>
+        <div class="col-xl-3 text-center">
+            <div>
+                <span class="dot"></span>
+                <a href="http://" class="btn btn-succes">
+                    <h2 class="display-8">Gift Checks</h2>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-3 text-center">
+            <div>
+                <span class="dot"></span>
+                <a href="http://" class="btn btn-succes">
+                    <h2 class="display-8">Monthly Points</h2>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-3 text-center">
+            <div>
+                <span class="dot"></span>
+                <a href="http://" class="btn btn-succes">
+                    <h2 class="display-8">Yearly Points</h2>
+                </a>
+            </div>
+        </div>
     </div>
-  </nav>
-  <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
-  <script src="./jquery-3.6.0.slim.min.js"> </script>
-  <script src="./js/bootstrap.bundle.min.js"></script>
+    </section>
+    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
+        <div class="icon-bar">
+            <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
+            <a href="host_plants.html"><img src="icon/plants.png"></a>
+            <a class="active " href="index.html"><img src="icon/home2.png"></a>
+            <a href="classify.html"><img src="icon/detect.png"></a>
+            <a href="map.html"><img src="icon/globo.png"></a>
+        </div>
+    </nav>
+    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+    <script src="./jquery-3.6.0.slim.min.js"> </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function greet(name) {
+            return `Welcome ${name}.`;
+        }
+
+        // Calling the greet function and displaying the result in the console
+        console.log(greet("Mango")); // Welcome, Mango.
+
+        // Displaying the greet function in the console without calling it
+        console.log(greet);
+    </script>
 </body>
 
 </html>
