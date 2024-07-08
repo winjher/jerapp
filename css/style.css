@@ -1055,3 +1055,14 @@ margin-top: 10px;
   padding-bottom: 25px;
   padding-top: 25px;
 }
+
+.imagebackground {
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  /* border-radius: 50px 50px 0px 0px; */
+  /* background-blend-mode: overlay; */
+}
