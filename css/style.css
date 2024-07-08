@@ -415,6 +415,7 @@
  .img-apps-stages,
  .img-apps-butterfly {
    background-color: #ffc107;
+   margin: 0px;
  }
 /* 
  .img-apps-stages {
@@ -502,7 +503,7 @@
    text-align: center;
    margin-right: auto;
    margin-left: auto;
-   margin: 10px;
+   margin: 0px;
    background-color: #d63384;
    border-radius: 4px 4px 0 0;
    color: #ffc107;
@@ -525,7 +526,7 @@
    text-align: center;
    margin-right: auto;
    margin-left: auto;
-   margin: 10px;
+   margin: 0px;
    background-color: #E7E9FC;
    border-radius: 0 0 4px 4px;
    padding-top: 20px;
