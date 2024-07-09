@@ -187,7 +187,7 @@ li {
 .bg-blue {
   background-color: rgb(81, 191, 255);
 }
-
+/*  Image property */
 img {
   height: 8vmin;
   width: fit-content;
@@ -207,12 +207,6 @@ img:hover {
   /*transform: scale(1.35);*/
   color: blue;
   filter: drop-shadow(4px 4px 8px #999999);
-}
-
-.item {
-  background-image: url(/images/imgbg.jpg) no-repeat;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
 }
 
 

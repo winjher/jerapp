@@ -349,7 +349,7 @@
    width: 100%;
    text-align: center;
    text-transform: uppercase;
-   color: red;
+   color: orangered;
  }
 
  .uploadedImage {
@@ -361,9 +361,9 @@
 
  /* This is for index html*/
  .circle {
-   padding-bottom: 0;
-   margin-bottom: 0;
-   text-align: center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: center;
  }
 
  .img-apps-butterfly,
@@ -483,7 +483,12 @@
    display: flex;
    flex-wrap: wrap;
    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
- }
+   position: relative;
+   width: 100%;
+   padding-right: 5px;
+   padding-left: 5px;
+}
+
 
  .card-app-list-item {
    width: 200px;
@@ -516,8 +521,8 @@
    text-align: center;
    margin-right: auto;
    margin-left: auto;
-   margin: 10px;
-   background-color: #185d5d;
+   margin: 0px;
+   background-color: #26a7e2;
    border-color: orange;
    color: #212222;
  }
@@ -1066,4 +1071,46 @@ margin-top: 10px;
   height: auto;
   /* border-radius: 50px 50px 0px 0px; */
   /* background-blend-mode: overlay; */
+}
+.hostplant-icon-btn{
+  border-radius: 100%;
+  background-color: rgba(228, 144, 91, 0.788);
+  border: 1px solid orange;
+  margin: 5px;
+}
+
+.stages-icon-btn{
+  border-radius: 100%;
+  background-color: rgb(157, 228, 15);
+  border: 1px solid orange;
+  margin: 5px;
+}
+
+
+.img-btn-apps-menu{
+  height: 4vmin;
+  width: fit-content;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+  mix-blend-mode: multiply;
+}
+
+.img-btn-apps-menu:hover{
+  filter: drop-shadow(4px 4px 8px #999999);
+  text-decoration: none;
+}
+/* Scientific name */
+.sci-name a:hover{
+  text-decoration: none;
+ }
+
+.sci-name{
+  text-align: center;
+   margin-right: auto;
+   margin-left: auto;
+   margin: 0px;
+   background-color: #26a7e2;
+   border-color: orange;
+   color: #212222;
 }
