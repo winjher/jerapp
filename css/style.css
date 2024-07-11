@@ -1137,7 +1137,21 @@ margin-top: 10px;
   margin-right: auto;
   color: #0ee2c5;
 }
-
+.btn-hostplant:hover,
 .btn-butterfly:hover{
  color:orange;
+}
+
+.btn-hostplant{
+  margin: 0px;
+  text-align: center;
+  font-size: small;
+  align-items: center;
+  background-color: #f3f4f5 ;
+  border: none;
+  width: 100%;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #4e3507;
 }
