@@ -1093,7 +1093,7 @@ margin-top: 10px;
 }
 
 .stages-icon-list{
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .img-btn-apps-menu{
@@ -1154,4 +1154,16 @@ margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   color: #4e3507;
+}
+.stages-icon-list,
+.hostplant-icon-list{
+  background-color: #f5f8f8;
+}
+.stages-icon-list:hover,
+.hostplant-icon-list:hover{
+  background-color: #08eded;
+  padding-bottom: 2px;
+  padding-top: 3px;
+  border-radius: 0px 0px 5px 5px;
+  margin-bottom: 0px;
 }
