@@ -1,0 +1,33 @@
+body{
+    /* background-color: aliceblue; */
+    background-image: url("./images/batwing02.jpg");
+}
+.main{
+    margin: 0 auto;
+    background-color: cadetblue;
+    text-align: center;
+    padding: 3rem;
+}
+
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    font-size: 3rem;
+}
+button{
+    padding: 1rem 2rem;
+    color: darkcyan;
+    border:#fff;
+    background-color: #fff;
+}
+p{
+    color: #fff;
+    font-size: 1.6rem
+}
+a{
+    text-decoration: none;
+}
+a:visited 
+{
+color: purple
+}
