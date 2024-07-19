@@ -1190,3 +1190,9 @@ margin-top: 10px;
   border-radius: 0px 0px 15px 15px;
   filter: drop-shadow(0px 0px 8px #999999);
 }
+
+.back-icon, .img-back-icon{
+  margin-left: auto;
+  margin-right: 50px;
+  width: 30px;
+}
