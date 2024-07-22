@@ -1071,6 +1071,7 @@ margin-top: 10px;
   background-size: cover;
   width: 100%;
   height: auto;
+
   /* border-radius: 50px 50px 0px 0px; */
   /* background-blend-mode: overlay; */
 }
@@ -1221,6 +1222,9 @@ margin-top: 10px;
   color: white;
 }
 
+p {
+    margin-block-start: -1em;
+}
 
 .stages-icon-list-home{
   background-color: #f5f8f8;
@@ -1232,7 +1236,7 @@ margin-top: 10px;
 .stages-icon-btn-home{
   border-radius: 100%;
   background-color: rgb(157, 228, 15);
-  border: 1px solid orange;
+  border: 2px solid orange;
   margin: 24px;
 }
 .stages-icon-btn-home:hover{
