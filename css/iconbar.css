@@ -222,8 +222,9 @@ img:hover {
   aspect-ratio: 1;
   cursor: pointer;
   transition: .5s;
-
+  margin-top: 25px;
 }
+
 .card-text:last-child {
     margin-bottom: 80px;
     text-decoration: none;
