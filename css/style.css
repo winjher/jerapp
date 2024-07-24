@@ -1267,3 +1267,6 @@ p {
   padding-bottom: 0px;
 }
 
+.active-center{
+  min-height: 40px;
+}

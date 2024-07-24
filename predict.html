@@ -112,38 +112,51 @@
                     <li><a href="/">Home</a> </li>
                     <li><a href="viewDatabase/" class="smoothScroll">View Images</a> </li>
                 </div>
-
-
-
-
-
                 <h3>Butterfly Identification</h3>
                 <div class="panel panel-default">
                     <div class="panel-heading">Select an Image</div>
-
                     <div class="panel-body">
-
                         <div class="col-sm" style="margin-bottom: 23px;">
-                            <form action="" method="post" enctype="multipart/form-data" action="predict">
-                                {% csrf_token %}
+                            <!-- <form action="" method="post" enctype="multipart/form-data" action="predict">
+                            
                                 <div class="col-md-4 col-sm-4">
                                     <label for="Frame">
                                         Upload Image File Here:
                                     </label>
                                     <input name="filePath" src="{{filePathName}}" class="custom-file-input" type='file'
                                         id='image' multiple />
-                                    {{filePathName}}
                                     <br>
                                 </div>
-                            </form>
-                            {% endblock %}
-
+                            </form> -->
                             <span class="border border-primary">
                                 <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
                                 <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
                                 <img src="http://placehold.it/180" alt="User Image" style="width:300px;height:300px;">
                             </span>
                         </div>
+
+                        <div class="col-sm" style="margin-bottom: 23px;">
+                            <form action="" method="get" accept-charset="utf-8" id="myForm">
+                                <div class="imageInput">
+                                    <input type="file"
+                                        oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
+                                </div>
+                                <!-- Container for the uploaded image -->
+                                <img class="uploadedImage" id="uploadedImage" />
+                                <div class="imageScanResult">
+                                    <output type="file" name="result" for="a b"></output>
+                                </div>
+                                <div class="imageResult" id="imageResult"></div>
+                                <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+                            </form>
+                            <br>
+                            <span class="border border-primary">
+                                <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                                <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
+
+                            </span>
+                        </div>
+                        <div class="imageResult" id="imageResult"></div>
                         <button type="submit" class="btn-submit" value="Submit">Submit</button>
                         <button type="submit" class="btn-reset">Reset</button>
                     </div>
@@ -151,9 +164,9 @@
                         <label for="" class="" id="result">
                             <img src="images/predict.jpg" alt="" width=30px>
                             {{classification}}</label><br>
-                        <label for="" class="" id="getval"><img
+                        <!-- <label for="" class="" id="getval"><img
                                 src="images/stages.jpg" alt="" width=30px>
-                            {{stages}}</label><br>
+                            {{stages}}</label><br> -->
                         <label for="" class="" id="probability"><img
                                 src="images/percent.jpg" alt="" width=30px>
                             {{percent}}</label><br>
@@ -226,8 +239,6 @@
                 reader.readAsDataURL(file);
             }
         }
-
-
 
         let classifier;  // Initialize the Image Classifier method with MobileNet and a callback needs to be passed.
         let img;  // A variable to hold the image we want to classify.
