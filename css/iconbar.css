@@ -189,7 +189,7 @@ li {
 }
 /*  Image property */
 img {
-  height: 8vmin;
+  height: 6vmin;
   width: fit-content;
   aspect-ratio: 1;
   cursor: pointer;

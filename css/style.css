@@ -43,12 +43,17 @@
    padding: 0px;
    box-sizing: border-box;
  }
+
+
  html,body {
   margin: 0;
   height: 1800px;
-  padding-top: 100px;
+  padding-top: 20px;
   padding-bottom: 100px;
   /* background-color:var(--dark); */
+}
+.bg-light {
+  background-color: #f8f9fa !important;
 }
 
  body {
@@ -365,6 +370,27 @@
   margin-bottom: 4px;
   text-align: center;
  }
+/*  Image property */
+img {
+  height: 6vmin;
+  width: fit-content;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+  mix-blend-mode: multiply;
+       
+}
+.img-fluid {
+    width: 100px;
+    height: 100px;
+    padding: 10px 10px 10px 10px;   
+}
+
+img:hover {
+  /*transform: scale(1.35);*/
+  color: blue;
+  filter: drop-shadow(4px 4px 8px #999999);
+}
 
  .img-apps-butterfly,
  .img-apps-diseases,
@@ -487,6 +513,7 @@
    width: 100%;
    padding-right: 5px;
    padding-left: 5px;
+   margin-top: 10px;
 }
 
 
@@ -500,7 +527,7 @@
    background-color: #fff;
    margin-left: auto;
    margin-right: auto;
-   color: #212222;
+   color: #28a745;
    text-align: center;
  }
 
@@ -800,6 +827,7 @@
    margin-left: auto;
    margin-right: auto;
    color: #f3f4f5;
+
  }
 
  .btn-experts {
@@ -1221,8 +1249,8 @@ margin-top: 10px;
   background: red;
   color: white;
 }
-
-p {
+.p-lepidoptera,
+.p-home {
     margin-block-start: -1em;
 }
 
@@ -1269,4 +1297,8 @@ p {
 
 .active-center{
   min-height: 40px;
+}
+
+.active-center a img{
+width: 200px;
 }
