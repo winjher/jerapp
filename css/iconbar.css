@@ -52,11 +52,106 @@
 }
 
 
+/* Miscellaneous */
 
-
-.card-title{
-  text-decoration: none;
+.icon-bar-home a:hover {
+  background-color: #28a745;
+  /* Add a hover color */
 }
+
+.icon-bar-home .active {
+  background-color: #d63384;
+  border-color: orange;
+  border-radius: 0 2px 0 2px;
+  /*background-color: var(--bs-purple);*/
+  /* Add an active/current color */
+}
+
+/* icon bar extra small */
+.icon-bar-xs a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 16%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+/* icon bar small */
+.icon-bar-sm a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 25%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+/* icon bar large */
+.icon-bar-lg a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 33%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+/* icon bar medium */
+.icon-bar-md a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 50%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+.icon-bar-pm a {
+  float: left;
+  /* Float links side by side */
+  text-align: center;
+  /* Center-align text */
+  width: 75%;
+  /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 10px 0;
+  /* Some top and bottom padding */
+  transition: all 0.3s ease;
+  /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold;
+  /* Increased font size */
+}
+
+
 .btn-apps{
   border:none;
   width: 80px;
@@ -175,10 +270,6 @@ li {
 }
 */
 
-.active {
-  background-color: Blue;
-
-}
 
 .text-decoration-none a:hover {
   text-decoration: none;
@@ -233,10 +324,7 @@ img:hover {
     background-color: #0dcaf0 !important;
     margin: 30px;
 }
-a {
-    color: #0d6efd;
-    text-decoration: none;
-}
+
 
 .card-moth,
 .card-img:hover {

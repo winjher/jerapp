@@ -513,7 +513,7 @@ img:hover {
    width: 100%;
    padding-right: 5px;
    padding-left: 5px;
-   margin-top: 90px;
+   margin-top: 50px;
 }
 
 
@@ -607,103 +607,6 @@ img:hover {
    /* Increased font size */
  }
 
- .icon-bar-home a:hover {
-   background-color: yellow;
-   /* Add a hover color */
- }
-
- .icon-bar-home .active {
-   background-color: #d63384;
-   border-color: orange;
-   border-radius: 0 2px 0 2px;
-   /*background-color: var(--bs-purple);*/
-   /* Add an active/current color */
- }
-
-/* icon bar extra small */
- .icon-bar-xs a {
-   float: left;
-   /* Float links side by side */
-   text-align: center;
-   /* Center-align text */
-   width: 16%;
-   /* Equal width (5 icons with 25% width each = 100%) */
-   padding: 10px 0;
-   /* Some top and bottom padding */
-   transition: all 0.3s ease;
-   /* Add transition for hover effects */
-   /*color: white;  White text color */
-   font-size: 8px bold;
-   /* Increased font size */
- }
-
-/* icon bar small */
- .icon-bar-sm a {
-   float: left;
-   /* Float links side by side */
-   text-align: center;
-   /* Center-align text */
-   width: 25%;
-   /* Equal width (5 icons with 25% width each = 100%) */
-   padding: 10px 0;
-   /* Some top and bottom padding */
-   transition: all 0.3s ease;
-   /* Add transition for hover effects */
-   /*color: white;  White text color */
-   font-size: 8px bold;
-   /* Increased font size */
- }
-
- /* icon bar large */
- .icon-bar-lg a {
-   float: left;
-   /* Float links side by side */
-   text-align: center;
-   /* Center-align text */
-   width: 33%;
-   /* Equal width (5 icons with 25% width each = 100%) */
-   padding: 10px 0;
-   /* Some top and bottom padding */
-   transition: all 0.3s ease;
-   /* Add transition for hover effects */
-   /*color: white;  White text color */
-   font-size: 8px bold;
-   /* Increased font size */
- }
-
- /* icon bar medium */
- .icon-bar-md a {
-   float: left;
-   /* Float links side by side */
-   text-align: center;
-   /* Center-align text */
-   width: 50%;
-   /* Equal width (5 icons with 25% width each = 100%) */
-   padding: 10px 0;
-   /* Some top and bottom padding */
-   transition: all 0.3s ease;
-   /* Add transition for hover effects */
-   /*color: white;  White text color */
-   font-size: 8px bold;
-   /* Increased font size */
- }
-
- .icon-bar-pm a {
-   float: left;
-   /* Float links side by side */
-   text-align: center;
-   /* Center-align text */
-   width: 75%;
-   /* Equal width (5 icons with 25% width each = 100%) */
-   padding: 10px 0;
-   /* Some top and bottom padding */
-   transition: all 0.3s ease;
-   /* Add transition for hover effects */
-   /*color: white;  White text color */
-   font-size: 8px bold;
-   /* Increased font size */
- }
-
  .icon-size {
    height: auto;
    width: auto;
@@ -737,7 +640,7 @@ img:hover {
  }
 
  .icon-bar-garden a:hover {
-   background-color: yellow;
+   background-color: rgb(0, 255, 162);
 
    /* Add a hover color */
  }
@@ -808,6 +711,9 @@ img:hover {
   margin-bottom: auto;
   color: #f6faf9;
   text-decoration: none;
+}
+.h5:hover{
+  color: orange;
 }
 
 .btn-puparium,
@@ -1254,6 +1160,12 @@ margin-top: 10px;
     margin-block-start: -1em;
 }
 
+
+.p-lepidoptera:hover,
+.p-home:hover{
+  color: orange;
+}
+
 .stages-icon-list-home{
   background-color: #f5f8f8;
   border-radius: 15px 15px 15px 15px;
@@ -1261,6 +1173,10 @@ margin-top: 10px;
   margin-bottom: 20px;
 }
 
+.h5-btn:hover,
+.h5-title{
+  color: green;
+}
 .stages-icon-btn-home{
   border-radius: 100%;
   background-color: rgb(157, 228, 15);
@@ -1318,4 +1234,30 @@ width: 200px;
 a,.farm{
   text-decoration: none;
   color: var(--color-cloud);
+}
+
+.card-title:hover{
+  text-decoration: none;
+  
+}
+
+/*navbutton*/
+.icon-bar {
+  width: 100%; /* Full-width */
+  background-color: #F5F5DC; /* Dark-grey background */
+  overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+  float: left; /* Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 20%; /* Equal width (5 icons with 25% width each = 100%) */
+  padding: 12px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  /*color: white;  White text color */
+  font-size: 8px bold; /* Increased font size */
+}
+
+.icon-bar a:hover {
+  background-color: #00FF6C55; /* Add a hover color */
 }
