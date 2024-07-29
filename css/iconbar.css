@@ -294,12 +294,6 @@ img {
     padding: 10px 10px 10px 10px;   
 }
 
-img:hover {
-  /*transform: scale(1.35);*/
-  color: blue;
-  filter: drop-shadow(4px 4px 8px #999999);
-}
-
 
 /*classification*/
 .card-moth,
@@ -393,8 +387,6 @@ input[type=btn] {
   padding-left: var(--bs-gutter-x, .75rem);
   margin-right: auto;
   margin-left: auto;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
   justify-items: center;
 
 }
