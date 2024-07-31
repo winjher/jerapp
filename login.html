@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>Login</title>
   <style>
     #login {
@@ -56,7 +57,7 @@
       background: rgb(233, 226, 132);
       border: 1px solid rgb(237, 64, 21);
       border-radius: 0.25em;
-      box-shadow:inset 0 1em 1em rgba(239, 242, 227, 0.533);
+      box-shadow: inset 0 1em 1em rgba(239, 242, 227, 0.533);
       transition: 0.3s;
     }
 
@@ -70,72 +71,80 @@
       text-align: center;
       padding: 1em 0;
     }
-    @media screen {
-    .passwordShowHide + button {
-      position:relative;
-      float:left;
-      width:1.6em;
-      margin-left:-1.6em;
-      padding:0.45em 0;
-      font-size:1.25em;
-      line-height:1.2em;
-      text-align:center;
-      border:none;
-      background:transparent;
-      transition:transform 0.3s;
-      transform-origin:center;
-    }
-    .passwordShowHide + button:focus {
-      outline:none;
-      font-weight:bold;
-      text-shadow:
-        0 0 0.2em #5AF;
-    }
-    .passwordShowHide + button:hover {
-      transform:scale(1.5);
-    }
-    .passwordShowHide[type="text"] + button:after {
-      content:"\\2215";
-      position:absolute;
-      left:0;
-      top:0.45em;
-      width:1.6em;
-      text-align:center;
-      text-shadow:
-        -0.1em 0 0 #FFF,
-        0.1em 0 0 #FFF;
-      color:#F00;
-    }
-  }
 
+    @media screen {
+      .passwordShowHide+button {
+        position: relative;
+        float: left;
+        width: 1.6em;
+        margin-left: -1.6em;
+        padding: 0.45em 0;
+        font-size: 1.25em;
+        line-height: 1.2em;
+        text-align: center;
+        border: none;
+        background: transparent;
+        transition: transform 0.3s;
+        transform-origin: center;
+      }
+
+      .passwordShowHide+button:focus {
+        outline: none;
+        font-weight: bold;
+        text-shadow:
+          0 0 0.2em #5AF;
+      }
+
+      .passwordShowHide+button:hover {
+        transform: scale(1.5);
+      }
+
+      .passwordShowHide[type="text"]+button:after {
+        content: "\\2215";
+        position: absolute;
+        left: 0;
+        top: 0.45em;
+        width: 1.6em;
+        text-align: center;
+        text-shadow:
+          -0.1em 0 0 #FFF,
+          0.1em 0 0 #FFF;
+        color: #F00;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <section>
+  <section class="col-xl-12 text-center ">
     <div class="col-xl-12 text-center">
-      <form action="#" method="GET" id="login">
-        <h2>Login</h2>
-        <fieldset>
-          <label>
-            Username:<br>
-            <input type="text" name="username" required><br>
-          </label><label>
-            Password:<br>
-            <input type="password" name="password" required><br>
-          </label>
-        </fieldset>
-        <div class="submitsAndHiddens">
-          <button>Submit</button><br />
-          <a href="#">Forgot Password?</a>
-          <p>
-            If you do not have an existing account,
-            <a href="register.html">Register Now!</a>
-          </p>
-        </div>
+      <div class="col-xl-12 text-center ">
+        <form action="#" method="GET" id="login">
+          <h2>Login</h2>
+          <fieldset>
+            <label>
+              Username:<br>
+              <input type="text" name="username" required><br>
+            </label><label>
+              Password:<br>
+              <input type="password" name="password" required><br>
+            </label>
+            <button type="submit" class="btn-care">Login</button>
+            <div>
+              <p class="text-center">
+                <a href="#">Forgot Password?</a>
+              </p>
+              <h5>
+                If you do not have an existing account,
+                <a href="register.html">Register Now!</a>
+              </h5>
+          </fieldset>
+      </div>
       </form>
     </div>
   </section>
+  </div>
+
 
   <!-- <script> 
   (function (d) {
