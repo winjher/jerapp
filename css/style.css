@@ -212,12 +212,6 @@
    }
  }
 
- /* This is for Garden page*/
- .garden {
-   margin-right: -4rem;
-   margin-bottom: 1 rem;
- }
-
  /* This is for Profile Page */
  .card-app-profile {
    margin: 0px;
@@ -237,7 +231,7 @@
  }
 
  .card-story {
-   background-color: #fff;
+   background-color: var(--bs-white);
    margin-left: auto;
    margin-right: auto;
  }
@@ -364,7 +358,7 @@
    margin-left: 25%;
  }
 
- /* This is for index html*/
+ /* This is for index old html*/
  .circle {
   margin-top: 4px;
   margin-bottom: 4px;
@@ -388,7 +382,6 @@ img {
 
 img:hover {
   /*transform: scale(1.35);*/
-  color: blue;
   filter: drop-shadow(4px 4px 8px #999999);
 }
 
@@ -403,6 +396,64 @@ img:hover {
    padding-bottom: 10px;
    padding-top: 10px;
  }
+
+ .img-apps-defects,
+ .img-apps-diseases,
+ .img-apps-stages,
+ .img-apps-butterfly {
+   background-color: #ffc107;
+   margin: 0px;
+ }
+/* 
+ .img-apps-stages {
+   background-color: #20c997;
+
+ }
+
+ .img-apps-diseases {
+   background-color: #fd7e14;
+
+ }
+
+ .img-apps-defects {
+   background-color: #E7E9FC;
+
+ } */
+
+ .head-apps {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin: 0px;
+  background-color: #d63384;
+  border-radius: 4px 4px 0 0;
+  color: #ffc107;
+  border-color: #fd7401;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.body-apps {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin: 0px;
+  background-color: #26a7e2;
+  border-color: orange;
+  color: #212222;
+}
+
+.foot-apps {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin: 0px;
+  background-color: #E7E9FC;
+  border-radius: 0 0 4px 4px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* Old index html */
 
  .container-logout {
    text-align: center;
@@ -435,30 +486,6 @@ img:hover {
    text-align: right;
    margin-left: 30px;
  }
-
- .img-apps-defects,
- .img-apps-diseases,
- .img-apps-stages,
- .img-apps-butterfly {
-   background-color: #ffc107;
-   margin: 0px;
- }
-/* 
- .img-apps-stages {
-   background-color: #20c997;
-
- }
-
- .img-apps-diseases {
-   background-color: #fd7e14;
-
- }
-
- .img-apps-defects {
-   background-color: #E7E9FC;
-
- } */
-
 
  .image-container {
    width: 300px;
@@ -527,43 +554,10 @@ img:hover {
    background-color: #fff;
    margin-left: auto;
    margin-right: auto;
-   color: #28a745;
+   color: var(--bs-teal);
    text-align: center;
  }
 
- .head-apps {
-   text-align: center;
-   margin-right: auto;
-   margin-left: auto;
-   margin: 0px;
-   background-color: #d63384;
-   border-radius: 4px 4px 0 0;
-   color: #ffc107;
-   border-color: #fd7401;
-   padding-bottom: 20px;
-   padding-top: 20px;
- }
-
- .body-apps {
-   text-align: center;
-   margin-right: auto;
-   margin-left: auto;
-   margin: 0px;
-   background-color: #26a7e2;
-   border-color: orange;
-   color: #212222;
- }
-
- .foot-apps {
-   text-align: center;
-   margin-right: auto;
-   margin-left: auto;
-   margin: 0px;
-   background-color: #E7E9FC;
-   border-radius: 0 0 4px 4px;
-   padding-top: 20px;
-   padding-bottom: 20px;
- }
 
  dl,
  ol,
@@ -712,6 +706,7 @@ img:hover {
   color: #f6faf9;
   text-decoration: none;
 }
+
 .h5:hover{
   color: orange;
 }
@@ -791,7 +786,7 @@ img:hover {
 
 
  form:focus-within {
-   background: #7bce08;
+   background: #aeb2a8;
    color: black;
    padding: 10px;
  }
@@ -805,7 +800,7 @@ img:hover {
 
  label:focus-within {
    font-weight: bold;
-   color: red;
+   color: var(--bs-teal);
    font-size: 1.6em;
  }
 
@@ -840,6 +835,7 @@ img:hover {
    display: block;
    text-align: center;
  }
+
  .premium-weekly {
   color: rgb(13, 14, 13);
   padding: 15px;
@@ -906,7 +902,7 @@ margin-top: 10px;
    margin-bottom: 10px;
  }
 
- .premium-uprade {
+ .premium-upgrade {
    text-align: center;
  }
  .premium-weekly,
@@ -977,7 +973,7 @@ margin-top: 10px;
   border-color: orange;
   border-radius: 15px;
   margin: 5px;
-  background-color: #fff;
+  background-color: var(--bs-white) #fff;
   margin-left: auto;
   margin-right: auto;
   color: #212222;
@@ -1130,8 +1126,9 @@ margin-top: 10px;
   margin-left: auto;
   margin-right: 50px;
   width: 30px;
+  height: fit-content;
 }
-
+/* notification profile  */
 .notification {
   background-color: #555;
   color: white;
@@ -1215,14 +1212,6 @@ margin-top: 10px;
   margin-top: 20px;
 }
 
-/* .active-center{
-  min-height: 40px;
-}
-
-.active-center a img{
-width: 200px;
-} */
-
 .btn-culture{
   margin-top: 4px;
   margin-bottom: -60px;
@@ -1231,31 +1220,10 @@ width: 200px;
 .btn-culture:hover,
 a,.farm{
   text-decoration: none;
-  color: var(--color-cloud);
+  color: var(--color-cornflower);
 }
 
 .card-title:hover{
   text-decoration: none;
-  
-}
-
-/*navbutton*/
-.icon-bar {
-  width: 100%; /* Full-width */
-  background-color: #F5F5DC; /* Dark-grey background */
-  overflow: auto; /* Overflow due to float */
-}
-
-.icon-bar a {
-  float: left; /* Float links side by side */
-  text-align: center; /* Center-align text */
-  width: 20%; /* Equal width (5 icons with 25% width each = 100%) */
-  padding: 12px 0; /* Some top and bottom padding */
-  transition: all 0.3s ease; /* Add transition for hover effects */
-  /*color: white;  White text color */
-  font-size: 8px bold; /* Increased font size */
-}
-
-.icon-bar a:hover {
-  background-color: #00FF6C55; /* Add a hover color */
+  margin-bottom: 0px;
 }

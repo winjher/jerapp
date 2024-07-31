@@ -33,6 +33,7 @@
         }
     </style>
 </head>
+
 <body style="height: 500;">
     <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -64,9 +65,9 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="add garden.html">
-                                    <img src="./icon/8i8.png" width="200" class="img-back-icon">Version 1.0
-                                </a>
+                            <a class="nav-link" href="add garden.html">
+                                Version 1.0
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -74,13 +75,13 @@
         </nav>
     </section>
     <div>
-        <h1 style="text-align:center;font-size:4rem">Larvae Prediction</h1>
+        <h1 style="text-align:center;font-size:4rem; margin-top: 12px">Larvae Prediction</h1>
     </div>
     <div class="container my-2">
         <div class="row mb-5">
             <div class="col-sm" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img src="images/449121412_484288060938817_4108666721494838517_n.jpg" alt="User Image" style="width:500px;height:500px;">
+                    <img src="images/larvae_commonlime.jpg" alt="User Image" style="width:500px;height:500px;">
                 </span>
             </div>
             <div class="col-sm">
@@ -91,20 +92,24 @@
                 </div>
                 <div class="card-app-list">
                     <div class="details-commonjay">
-                        <h4><b> Basic Information </b> </h4>
+                        <h4><b> Hostplant Preparation of Leaves </b> </h4>
                         <div class="panel-body">
                             <div class="col-sm">
                                 <ul>
                                     <li>
-                                        <h6>Common Name:{{common_name}}</h6>
+                                        <h6>Number of leaves:{{leaves}}</h6>
                                     </li>
                                     <li>
-                                        <h4>Hostplant Preparation
-                                        </h4>
+                                        <h6>Instar Type: {{instar}}</h6>
                                     </li>
                                     <li>
-                                        <h6>Type of Leaves:{{typeOf_leaves}}
-                                        </h6>
+                                        <h6>Type of Leaves:{{type_of_leaves}}</h6>
+                                    </li>
+                                    <li>
+                                        <h6>Estimate capacity of larvae:{{number_of_larvae}}</h6>
+                                    </li>
+                                    <li>
+                                        <h6>Health of leaves:{{health_of_leaves}}</h6>
                                     </li>
                                 </ul>
                             </div>
@@ -113,6 +118,8 @@
                 </div>
             </div>
         </div>
+        <script src="./jquery-3.6.0.slim.min.js"> </script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
