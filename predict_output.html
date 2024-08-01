@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Butterfly Image Classification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+</head>
+<style>
+    :root {
+        --color-iris: #4D5AE5;
+        --color-navyblue: #2E2F42;
+        --color-white: #FFFFFF;
+        --color-cornflower: #E7E9FC;
+        --color-ocean: #404BBF;
+        --color-cloud: #F4F4FD;
+        --color-dairy: #FCFCFC;
+        --color-slate: #434455;
+        --bs-blue: #0d6efd;
+        --bs-indigo: #6610f2;
+        --bs-purple: #6f42c1;
+        --bs-pink: #d63384;
+        --bs-red: #dc3545;
+        --bs-orange: #fd7e14;
+        --bs-yellow: #ffc107;
+        --bs-green: #198754;
+        --bs-teal: #20c997;
+        --bs-cyan: #0dcaf0;
+        --bs-white: #fff;
+        --bs-gray: #6c757d;
+        --bs-gray-dark: #343a40;
+        --bs-primary: #0d6efd;
+        --bs-secondary: #6c757d;
+        --bs-success: #198754;
+        --bs-info: #0dcaf0;
+        --bs-warning: #ffc107;
+        --bs-danger: #dc3545;
+        --bs-light: #f8f9fa;
+        --bs-dark: #212529;
+        --font-family-open-sans: 'Open sans', san-serif;
+        --font-family-roboto: 'Roboto', san-serif;
+        --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .btn-submit {
+        color: white;
+        background-color: #1111ea;
+
+    }
+
+    .btn-reset {
+        color: black;
+        background-color: #fd7e14;
+
+    }
+
+    .btn-reset,
+    .btn-submit {
+        padding: 6px;
+        border-style: none;
+        border-radius: 4px;
+        padding: 6px;
+        font: var(bs-font-sans-serif);
+    }
+
+    .panel-body,
+    .panel,
+    .panel-default {
+        background-color: #0d6efd;
+    }
+
+    .container {
+        background-color: var(--bs-cyan);
+    }
+</style>
+
+<body>
+    <!-- MENU -->
+    <header>
+        <section class="navbar nvbar-default nvbar-static-top" role="navigation" style="align-items:center ;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="nvabar-toggle" data-target="navbar-collapse">
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square">
+                            <!-- LOGO TEXT HERE -->
+                            <h2>Butterfly Identification</h2>
+                        </i></a>
+                </div>
+                <div class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="viewDatabase/" class="smoothScroll">View Images</a> </li>
+                </div>
+                <h3>Butterfly Identification</h3>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Select an Image</div>
+                    <div class="panel-body">
+                        <div class="col-sm" style="margin-bottom: 23px;">
+                            <!-- <form action="" method="post" enctype="multipart/form-data" action="predict">
+                            
+                                <div class="col-md-4 col-sm-4">
+                                    <label for="Frame">
+                                        Upload Image File Here:
+                                    </label>
+                                    <input name="filePath" src="{{filePathName}}" class="custom-file-input" type='file'
+                                        id='image' multiple />
+                                    <br>
+                                </div>
+                            </form> -->
+                            <span class="border border-primary">
+                                <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                                <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
+                                <!-- <img src="http://placehold.it/180" alt="User Image" style="width:300px;height:300px;"> -->
+                            </span>
+                        </div>
+
+                        <div class="col-sm" style="margin-bottom: 23px;">
+                            <form action="" method="get" accept-charset="utf-8" id="myForm">
+                                <div class="imageInput">
+                                    <input type="file"
+                                        oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
+                                </div>
+                                <!-- Container for the uploaded image -->
+                                <img class="uploadedImage" id="uploadedImage" />
+                                <div class="imageScanResult">
+                                    <output type="file" name="result" for="a b"></output>
+                                </div>
+                                <div class="imageResult" id="imageResult"></div>
+                                <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+                            </form>
+                            <br>
+                            <span class="border border-primary">
+                                <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                                <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
+
+                            </span>
+                        </div>
+                        <div class="imageResult" id="imageResult"></div>
+                        <div class="col-sm" style="margin-bottom: 23px;">
+                            <form action="" method="get" accept-charset="utf-8" id="myForm">
+                                <div class="imageInput">
+                                    <input type="file"
+                                        oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
+                                </div>
+                                <!-- Container for the uploaded image -->
+                                <img class="uploadedImage" id="uploadedImage" />
+                                <div class="imageScanResult">
+                                    <output type="file" name="result" for="a b"></output>
+                                </div>
+                                <div class="imageResult" id="imageResult"></div>
+                                <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+                            </form>
+                            <br>
+                            <span class="border border-primary">
+                                <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                                <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
+
+                            </span>
+                        </div>
+                        <div class="imageResult" id="imageResult"></div>
+                        <button type="submit" class="btn-submit" value="Submit">Submit</button>
+                        <button type="submit" class="btn-reset">Reset</button>
+                    </div>
+                    <div class="panel-footer">
+                        <label for="" class="" id="result">
+                            <img src="images/predict.jpg" alt="" width=30px>
+                            {{classification}}
+                        </label>
+                        <br>
+                        <!-- <label for="" class="" id="getval"><img
+                                src="images/stages.jpg" alt="" width=30px>
+                            {{stages}}</label><br> -->
+                        <label for="" class="" id="probability"><img
+                                src="images/percent.jpg" alt="" width=30px>
+                            {{percent}}</label><br>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <script src="js/sketch.js"></script>
+    <script>
+        //ml5-https://docs.google.com/document/d/1KvgFs2KiRM1nMFPcGki52sjR4gZ4_AuhBDEgBd_210U/edit
+        input = createFileInput(handleFile);
+        function handleFile(file) {
+            print(file);
+            if (file.type === 'image') {
+                img = createImg(file.data, '');
+                img.hide();
+            } else {
+                img = null;
+            }
+        }
+
+        function detectImage() {
+            detector.detect(img, function (error, results) {
+                if (error) {
+                    console.error(error);
+                }
+                for (let i = 0; i < results.length; i++) {
+                    let object = results[i];
+                    stroke(0, 255, 0);
+                    strokeWeight(4);
+                    noFill();
+                    rect(object.x + 350, object.y, object.width, object.height);
+                    noStroke();
+                    fill(255);
+                    textSize(34);
+                    text(object.label, object.x + 350, object.y);
+                    console.log(object);
+                }
+                detectImage();
+            });
+        }
+
+    </script>
+    <script>
+
+        const image = document.getElementById('image');
+        const result = document.getElementById('result');
+        const probability = document.getElementById('probability');
+        document.getElementById('getval').addEventListener('change', readURL, true);
+
+        function readURL() {
+            var file = document.getElementById("getval").files[0];
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    image.src = e.target.result;
+                    ml5.imageClassifier('MobileNet')
+                        .then(classifier => classifier.classify(image)
+                            .then(results => {
+                                result.innerText = results[0].label;
+                                probability.innerText = results[0].confidence.toFixed(4);
+
+                            })
+                        )
+
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        let classifier;  // Initialize the Image Classifier method with MobileNet and a callback needs to be passed.
+        let img;  // A variable to hold the image we want to classify.
+        // The function below will determine the specified source by comparing it with the model called MobileNet that has been prepared in advance.
+        function preload() {
+            classifier = ml5.imageClassifier('MobileNet');
+            img = loadImage('https://raw.githubusercontent.com/setapolo/fbxes/main/kit.png');
+        }
+        // The function below will determine and setup the image sizes, get the results as image.
+        function setup() {
+            createCanvas(400, 400);
+            classifier.classify(img, gotResult);
+            image(img, 0, 0);
+        }
+        // A function to run when we get any errors in console and the results.
+        function gotResult(error, results) {
+            if (error) {
+                console.error(error);
+            }
+            // The results are in an array ordered by confidence.
+            console.log(results);
+            createDiv('Label: ' + results[0].label);
+            createDiv('Confidence: ' + nf(results[0].confidence, 0, 2));
+        }
+    </script>
+</body>
+
+</html>

@@ -2,17 +2,26 @@
 <html lang="en">
 
 <head>
-    <title>Butterfly Image Classification</title>
+    <title>Butterfly Larval Diseases Classification</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <!-- Include the ml5.js library -->
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script>
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+        rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+    </script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js">
+    </script>
+
 
 </head>
+
 <style>
     :root {
         --color-iris: #4D5AE5;
@@ -52,6 +61,8 @@
     }
 
 
+
+
     *,
     *::before,
     *::after {
@@ -60,9 +71,27 @@
         box-sizing: border-box;
     }
 
+    .btn-back {
+        color: var(--color-cloud);
+        background-color: #191970;
+    }
+
     .btn-submit {
-        color: white;
-        background-color: #1111ea;
+        color: var(--color-cloud);
+        background-color: #191970;
+    }
+
+    .btn-save-larvae,
+    .center-save {
+        margin: 10px;
+        text-align: center;
+        align-items: center;
+        background-color: #f3f4f5;
+        border-radius: 20px;
+        border: none;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
 
     }
 
@@ -70,25 +99,44 @@
         color: black;
         background-color: #fd7e14;
 
+
     }
 
+
     .btn-reset,
-    .btn-submit {
-        padding: 6px;
+    .btn-submit,
+    .btn-back {
         border-style: none;
         border-radius: 4px;
         padding: 6px;
         font: var(bs-font-sans-serif);
     }
 
-    .panel-body,
-    .panel,
-    .panel-default {
-        background-color: #0d6efd;
+    /* Set styles for HTML elements */
+    h1,
+    h2 {
+        font-family: arial;
+        text-align: center;
     }
 
-    .container {
-        background-color: var(--bs-cyan);
+    .imageInput {
+        width: 100%;
+        text-align: center;
+    }
+
+    .imageResult {
+        font-family: arial;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        color: red;
+    }
+
+    .uploadedImage {
+        padding-top: 20px;
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
     }
 </style>
 
@@ -112,180 +160,229 @@
                     <li><a href="/">Home</a> </li>
                     <li><a href="viewDatabase/" class="smoothScroll">View Images</a> </li>
                 </div>
-                <h3>Butterfly Identification</h3>
-                <div class="panel panel-default">
-                    <div class="panel-heading">Select an Image</div>
-                    <div class="panel-body">
-                        <div class="col-sm" style="margin-bottom: 23px;">
-                            <!-- <form action="" method="post" enctype="multipart/form-data" action="predict">
-                            
-                                <div class="col-md-4 col-sm-4">
-                                    <label for="Frame">
-                                        Upload Image File Here:
-                                    </label>
-                                    <input name="filePath" src="{{filePathName}}" class="custom-file-input" type='file'
-                                        id='image' multiple />
-                                    <br>
-                                </div>
-                            </form> -->
-                            <span class="border border-primary">
-                                <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
-                                <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
-                                <!-- <img src="http://placehold.it/180" alt="User Image" style="width:300px;height:300px;"> -->
-                            </span>
-                        </div>
+                <div class="container">
+                    <h2>Butterfly Larvae Apps</h2>
+                    <hr>
+                    <h3>Larval Diseases Prediction</h3>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Select Larvae Image</div>
+                        <div class="panel-body">
+                            <div class="col-sm" style="margin-bottom: 23px;">
+                                <form action="" method="get" accept-charset="utf-8" id="myForm">
+                                    <div class="imageInput">
+                                        <input type="file"
+                                            oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
+                                    </div>
+                                    <!-- Container for the uploaded image -->
+                                    <img class="uploadedImage" id="uploadedImage" />
+                                    <div class="imageScanResult">
+                                        <output type="file" name="result" for="a b">
 
-                        <div class="col-sm" style="margin-bottom: 23px;">
-                            <form action="" method="get" accept-charset="utf-8" id="myForm">
-                                <div class="imageInput">
-                                    <input type="file"
-                                        oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
+                                         
+                                        </output>
+                                        
+                                    </div>
+                                    <div class="imageResult" id="imageResult"><img src="images/predict.jpg" alt="" width=30px></div>
+                                    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+                                </form>
+                                <br>
+                                <span class="border border-primary">
+                                    <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
+                                    <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
+                                </span>
+                            </div>
+                            <!-- <div class="imageResult" id="imageResult">
+                                <label for="" class="" id="result">
+                                    
+                                </label>
+                            </div> -->
+
+                        </div>
+                        <div class="panel-footer">
+
+                            <form id=“myDetailForm>
+                                <label for=""> <a href="Larvae Trichogramma Disease.html">
+                                        Treatments: </a></label>
+                                <div>
+                                    <button type="submit" class="btn-back" id="btn-home">
+                                        <a class="nav-link" href="index.html">Back</a></button>
+                                    <button type="submit" class="btn-reset" onclick="myReset() "
+                                        value="Reset Form">Reset</button>
                                 </div>
-                                <!-- Container for the uploaded image -->
-                                <img class="uploadedImage" id="uploadedImage" />
-                                <div class="imageScanResult">
-                                    <output type="file" name="result" for="a b"></output>
-                                </div>
-                                <div class="imageResult" id="imageResult"></div>
-                                <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
                             </form>
-                            <br>
-                            <span class="border border-primary">
-                                <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
-                                <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
-
-                            </span>
                         </div>
-                        <div class="imageResult" id="imageResult"></div>
-                        <div class="col-sm" style="margin-bottom: 23px;">
-                            <form action="" method="get" accept-charset="utf-8" id="myForm">
-                                <div class="imageInput">
-                                    <input type="file"
-                                        oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
-                                </div>
-                                <!-- Container for the uploaded image -->
-                                <img class="uploadedImage" id="uploadedImage" />
-                                <div class="imageScanResult">
-                                    <output type="file" name="result" for="a b"></output>
-                                </div>
-                                <div class="imageResult" id="imageResult"></div>
-                                <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
-                            </form>
-                            <br>
-                            <span class="border border-primary">
-                                <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
-                                <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
-
-                            </span>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="diagnose-div">
+                        <div class="center-save">
+                            <button type="submit" class="btn-save" onclick="mySaveLarvae()"
+                                value="Save Larvae Info Form">+&nbsp;Save to my Larvae
+                            </button>
                         </div>
-                        <div class="imageResult" id="imageResult"></div>
-                        <button type="submit" class="btn-submit" value="Submit">Submit</button>
-                        <button type="submit" class="btn-reset">Reset</button>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="diagnose-div">
+                        <div class="center-save">
+                            <button type="submit" class="btn-diagnose" onclick="myDiagnose() " value="Diagnose Form"><a
+                                    class="nav-link" href="Larvae Trichogramma Disease.html">
+                                    <h5>Get Diagnose</h4>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <h3>Larvae Health</h3>
+
+                    <div class="panel panel-default">
+
+                        <div class="panel-heading">
+                            <button type="submit" class="btn-info" onclick="myHealthInfo()"
+                                value="Basic health Info Form"> <a href="TailedJay.html">
+                                    Basic Info</a>
+                            </button>
+                            <button type="submit" class="btn-care" onclick="myCare()" value="Care Form"> <a
+                                    href="care.html">
+                                    Care</a>
+                            </button>
+                            <button type="submit" class="btn-culture" onclick="myCulture()" value="Culture Form">Culture
+                            </button>
+
+                        </div>
+                        <div class="panel-body">
+
+                            <h5>Basic Information
+                            </h5>
+                            <div class="col-sm">
+                                <ul>
+                                    <li>
+                                        <h6>Common Name</h6>
+                                    </li>
+                                    <li>
+                                        <h6>Scientific Name
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Year discovered
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Sub-family
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Domain
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Kingdom
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Phylum
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Class
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Family
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Genus
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Species
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6>Larval Diseases
+                                        </h6>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
                     </div>
                     <div class="panel-footer">
-                        <label for="" class="" id="result">
-                            <img src="images/predict.jpg" alt="" width=30px>
-                            {{classification}}</label><br>
-                        <!-- <label for="" class="" id="getval"><img
-                                src="images/stages.jpg" alt="" width=30px>
-                            {{stages}}</label><br> -->
-                        <label for="" class="" id="probability"><img
-                                src="images/percent.jpg" alt="" width=30px>
-                            {{percent}}</label><br>
+                        Learn more
                     </div>
                 </div>
             </div>
-        </section>
-    </header>
-    <script src="js/sketch.js"></script>
-    <script>
-        //ml5-https://docs.google.com/document/d/1KvgFs2KiRM1nMFPcGki52sjR4gZ4_AuhBDEgBd_210U/edit
-        input = createFileInput(handleFile);
-        function handleFile(file) {
-            print(file);
-            if (file.type === 'image') {
-                img = createImg(file.data, '');
-                img.hide();
-            } else {
-                img = null;
-            }
-        }
+            <div class="container">
+                <div class="diagnose-div">
+                    <div class="center-save">
+                        <button type="submit" class="btn-experts" onclick="myExperts()" value="Ask Experts Form">
+                            <h5>Ask Experts</h5>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h3>Ask the Experts</h3>
+                <div class="panel panel-default">
 
-        function detectImage() {
-            detector.detect(img, function (error, results) {
-                if (error) {
-                    console.error(error);
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="col-sm">
+                            <div class="container-fluid">
+                                <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="200px">
+                            </div>
+                            Care manager
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        Type of diseases
+                    </div>
+                </div>
+            </div>
+            <script>
+                // Create a variable containing the result container
+                const element = document.getElementById("imageResult");
+
+                function startImageScan() {
+                    // Create a variable to initialize the ml5.js image classifier with MobileNet
+                    const classifier = ml5.imageClassifier('MobileNet');
+
+                    // Scan the uploaded image
+                    classifier.classify(document.getElementById("uploadedImage"), imageScanResult)
+                    element.innerHTML = "loading...";
                 }
-                for (let i = 0; i < results.length; i++) {
-                    let object = results[i];
-                    stroke(0, 255, 0);
-                    strokeWeight(4);
-                    noFill();
-                    rect(object.x + 350, object.y, object.width, object.height);
-                    noStroke();
-                    fill(255);
-                    textSize(34);
-                    text(object.label, object.x + 350, object.y);
-                    console.log(object);
+
+                // Check for errors and display the results if there aren't any
+                function imageScanResult(error, results) {
+                    if (error) {
+                        element.innerHTML = error;
+                    } else {
+                        let num = results[0].confidence * 100;
+                        element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % " + "\n" + " Larvae that have Tachinid flies diseases require immediate attention before the disease takes over. Usually, a single larva develops inside an individual host insect. Many tachinid larvae almost totally consume the host insect before they bore out of the host to pupate and complete the. Reducing the use of insecticides and providing sources of food like dills, parsley, clover and other herbs are the most efficient ways to conserve Trachinid flies in agricultural ecosystems (Ellis; Bradley, 1996: pp. 328-329)";
+                    }
                 }
-                detectImage();
-            });
-        }
+            </script>
 
-    </script>
-    <script>
-
-        const image = document.getElementById('image');
-        const result = document.getElementById('result');
-        const probability = document.getElementById('probability');
-        document.getElementById('getval').addEventListener('change', readURL, true);
-
-        function readURL() {
-            var file = document.getElementById("getval").files[0];
-            if (file) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    image.src = e.target.result;
-                    ml5.imageClassifier('MobileNet')
-                        .then(classifier => classifier.classify(image)
-                            .then(results => {
-                                result.innerText = results[0].label;
-                                probability.innerText = results[0].confidence.toFixed(4);
-
-                            })
-                        )
-
-                };
-
-                reader.readAsDataURL(file);
-            }
-        }
-
-        let classifier;  // Initialize the Image Classifier method with MobileNet and a callback needs to be passed.
-        let img;  // A variable to hold the image we want to classify.
-        // The function below will determine the specified source by comparing it with the model called MobileNet that has been prepared in advance.
-        function preload() {
-            classifier = ml5.imageClassifier('MobileNet');
-            img = loadImage('https://raw.githubusercontent.com/setapolo/fbxes/main/kit.png');
-        }
-        // The function below will determine and setup the image sizes, get the results as image.
-        function setup() {
-            createCanvas(400, 400);
-            classifier.classify(img, gotResult);
-            image(img, 0, 0);
-        }
-        // A function to run when we get any errors in console and the results.
-        function gotResult(error, results) {
-            if (error) {
-                console.error(error);
-            }
-            // The results are in an array ordered by confidence.
-            console.log(results);
-            createDiv('Label: ' + results[0].label);
-            createDiv('Confidence: ' + nf(results[0].confidence, 0, 2));
-        }
-    </script>
+            <!-- <script>
+                function myReset() {
+                    document.getElementById("myForm").reset();
+                }
+                function myDetail() {
+                    if (pred) {
+                    } else if (pred) {
+                        document.getElementById().innerHTML =..;
+                        console.log()
+                    }
+                }else {
+ console log()
+                }
+            </script> -->
 </body>
 
 </html>
