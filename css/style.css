@@ -759,15 +759,14 @@ img:hover {
 
  .btn-info,
  .btn-care,
- .btn-culture,
  .btn-type {
    border-style: none;
-   border-radius: 4px;
    padding: 6px;
    font: var(bs-font-sans-serif);
    color: var(--color-navyblue);
    background-color: #fd7e14;
    cursor: pointer;
+
  }
 
  .image-diagnose {
@@ -1217,6 +1216,10 @@ margin-top: 10px;
   margin-top: 4px;
   margin-bottom: -60px;
   background-color: #20c997;
+  border-radius: 50px;
+  margin:auto;
+  margin-top: 20px;
+  border-color: darkorange;
 }
 .btn-culture:hover,
 a,.farm{
@@ -1224,7 +1227,13 @@ a,.farm{
   color: var(--color-cornflower);
 }
 
-.card-title:hover{
+.home-card-title:hover{
   text-decoration: none;
   margin-bottom: 0px;
+}
+
+.home-card-title{
+  border-radius: 50px;
+  margin-bottom: 0px;
+  margin: 20px;
 }
