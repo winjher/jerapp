@@ -364,16 +364,16 @@
   margin-bottom: 4px;
   text-align: center;
  }
-/*  Image property */
+/*  Image property nav bar fixed bottom*/
 img {
   height: 6vmin;
   width: fit-content;
   aspect-ratio: 1;
   cursor: pointer;
   transition: .5s;
-  mix-blend-mode: multiply;
-       
+  /* mix-blend-mode: multiply;    */
 }
+
 .img-fluid {
     width: 100px;
     height: 100px;
@@ -607,16 +607,6 @@ img:hover {
 
  }
 
- /* icon bar garden */
- .icon-bar-garden {
-   width: 100%;
-   /* Full-width */
-   background-color: #F5F5DC;
-   /* Dark-grey background */
-   overflow: auto;
-   /* Overflow due to float */
- }
-
  .icon-bar- a {
    float: left;
    /* Float links side by side */
@@ -632,6 +622,27 @@ img:hover {
    font-size: 8px bold;
    /* Increased font size */
  }
+
+ .icon-bar a:hover {
+  background-color: var(--bs-yellow);
+  /* Add a hover color */
+  border-radius:4px;
+}
+
+.active {
+  background-color: var(--color-green);
+  /* Add an active/current color */
+}
+
+ /* icon bar garden */
+ .icon-bar-garden {
+  width: 100%;
+  /* Full-width */
+  background-color: #F5F5DC;
+  /* Dark-grey background */
+  overflow: auto;
+  /* Overflow due to float */
+}
 
  .icon-bar-garden a:hover {
    background-color: rgb(0, 255, 162);
@@ -1018,6 +1029,8 @@ margin-top: 10px;
   background-color: rgb(157, 228, 15);
   border: 1px solid orange;
   margin: 2px;
+  background-size: cover;
+  background-position: center;
 }
 
 /* .stages-icon-btn a{
@@ -1152,7 +1165,11 @@ margin-top: 10px;
   background: red;
   color: white;
 }
-.p-lepidoptera,
+.p-lepidoptera{
+  margin: 0px;
+}
+
+
 .p-home {
     margin-block-start: -1em;
 }
@@ -1236,4 +1253,26 @@ a,.farm{
   border-radius: 50px;
   margin-bottom: 0px;
   margin: 20px;
+}
+
+.sci-name-lepidoptera{
+  text-align: center;
+   /* margin-right: auto;
+   margin-left: auto; */
+   margin: 0px 0px 0px 0px;
+   /* background-color: #0ee2c5;
+   border-color: orange;
+   color: #f3f4f5; */
+   border-radius: 0px 0px 10px 10px ;
+   width: 100%;
+}
+
+.img-lep{
+  margin-top: 0;
+  margin-bottom: 0rem;
+  font-weight: 500;
+  line-height: 1.2;
+  width: 145px;
+  height: 100px;
+  border-radius: 10px 10px 0px 0px ;
 }

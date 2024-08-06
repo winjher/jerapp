@@ -216,16 +216,7 @@ li {
   /* Increased font size */
 }
 
-.icon-bar a:hover {
-  background-color: #ff4500;
-  /* Add a hover color */
-  border-radius:4px;
-}
 
-.active {
-  background-color: var(--bs-yellow);
-  /* Add an active/current color */
-}
 
 /*
 .icon-bar {
@@ -279,7 +270,7 @@ li {
   background-color: rgb(81, 191, 255);
 }
 /*  Image property */
-img {
+/* img {
   height: 6vmin;
   width: fit-content;
   aspect-ratio: 1;
@@ -287,7 +278,7 @@ img {
   transition: .5s;
   mix-blend-mode: multiply;
        
-}
+} */
 .img-fluid {
     width: 100px;
     height: 100px;
