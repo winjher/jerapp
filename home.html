@@ -11,9 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/slider.js"></script>
-    <link rel="stylesheet" href="./css/iconbar.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="./css/card-classifier.css">
+    <link rel="stylesheet" href="css/iconbar.css">
 </head>
 
 <body style="height: 1400px; margin-bottom:300px;">
@@ -32,8 +31,8 @@
             </button>
         </div>
         <div class="slideshow-container">
-            <ul class="card-app-list-home">
-                <li class="card-app-list-item mySlides fade">
+            <ul>
+                <li class="card-app-list-item mySlides">
                     <div>
                         <div class="numbertext">1/4</div>
                         <h5 class="h5 h5-title">Butterfly House</h5>
@@ -47,7 +46,7 @@
                         </button>
                     </div>
                 </li>
-                <li class="card-app-list-item mySlides fade">
+                <li class="card-app-list-item mySlides">
                     <div>
                         <div class="numbertext">2/4</div>
                         <h5 class="h5 h5-title">Puparium</h5>
@@ -61,7 +60,7 @@
                         </button>
                     </div>
                 </li>
-                <li class="card-app-list-item mySlides fade">
+                <li class="card-app-list-item mySlides">
                     <div>
                         <div class="numbertext">3/4</div>
                         <h5 class="h5 h5-title">Sleeving Boxes</h5>
@@ -75,7 +74,7 @@
                         </button>
                     </div>
                 </li>
-                <li class="card-app-list-item mySlides fade">
+                <li class="card-app-list-item mySlides">
                     <div>
                         <div class="numbertext">4/4</div>
                         <h5 class="h5 h5-title">Sleeving Boxes</h5>
@@ -89,22 +88,22 @@
                         </button>
                     </div>
                 </li>
-         
-            </ul>
-        </div>  
-    </div>
-       <!-- Next and previous buttons -->
-       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-       <a class="next" onclick="plusSlides(1)">&#10095;</a> 
-        <br>
 
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
+            </ul>
         </div>
+    </div>
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
     </div>
     <div class="col-xl-12 text-center">
         <button class="btn-culture">
@@ -114,14 +113,16 @@
         </button>
         <div class="stages-icon-list-home ">
             <ul class="card-app-list col-xl-12 text-center">
-                <li class="card-app-list-item"> <button type="button" class="stages-icon-btn-home">
+                <li class="card-app-list-item">
+                    <button type="button" class="stages-icon-btn-home">
                         <a href="predict.html">
                             <img src="icon/eggs.png" alt="" srcset="" width="30px" class="img-btn-apps-menu-home">
                         </a>
                     </button>
                     <p class="p-home">Eggs</p>
                 </li>
-                <li class="card-app-list-item"> <button type="button" class="stages-icon-btn-home">
+                <li class="card-app-list-item">
+                    <button type="button" class="stages-icon-btn-home">
                         <a href="predict.html">
                             <img src="icon/larvae.png" alt="" srcset="" width="30px" class="img-btn-apps-menu-home">
                         </a>
@@ -146,6 +147,7 @@
                     <p class="p-home">Butterfly</p>
                 </li>
             </ul>
+
         </div>
         <button class="btn-culture">
             <h3 style="text-align:center;font-size:4rem home-card-title">
@@ -179,7 +181,7 @@
             <div class="icon-bar">
                 <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
                 <a href="host_plants.html"><img src="icon/plants.png"></a>
-                <a href="MobileNet.html"><img src="icon/camera.png" class="active-center"></a>
+                <a href="predict.html"><img src="icon/camera.png" class="active-center"></a>
                 <a href="classify.html"><img src="icon/detect.png"></a>
                 <a href="map.html"><img src="icon/globo.png"></a>
             </div>

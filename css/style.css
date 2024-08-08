@@ -1374,5 +1374,9 @@ a,.farm{
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
   position: relative; */
   width: 100%;
-  
+}
+
+ol, 
+ul {
+  padding-left: 0px; */
 }
