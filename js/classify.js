@@ -27,7 +27,7 @@ document.getElementById("myForm").reset();
 
 
 
-
+//adding  labels
 const classifier = knnClassifier.create()
 const webcamElement = document.getElementById("webcam")
 
@@ -55,7 +55,9 @@ async function app() {
   document.getElementById("butterfly").addEventListener("click", () => addExample(0))
   document.getElementById("pupae").addEventListener("click", () => addExample(1))
   document.getElementById("larvae").addEventListener("click", () => addExample(2))
-  document.getElementById("eggs").addEventListener("click", () => addExample(2))
+  document.getElementById("eggs").addEventListener("click", () => addExample(3))
+  document.getElementById("disease").addEventListener("click", () => addExample(4))
+  document.getElementById("defects").addEventListener("click", () => addExample(5))
   while (true) {
     if (classifier.getNumClasses() > 0) {
       const img = await webcam.capture()

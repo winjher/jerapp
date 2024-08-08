@@ -1378,5 +1378,10 @@ a,.farm{
 
 ol, 
 ul {
-  padding-left: 0px; */
+  padding-left: 0px;
+}
+.add-image,
+a:hover{
+  text-decoration: none;
+  color: #107a07;
 }
