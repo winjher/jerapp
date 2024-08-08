@@ -1349,8 +1349,10 @@ a,.farm{
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: var(--color-green);
 }
+
+
 
 /* Fading animation */
 .fade {
