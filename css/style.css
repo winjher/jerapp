@@ -1364,7 +1364,7 @@ a,.farm{
 }
 
 
-.card-app-list {
+.card-app-list-home {
   margin: 0px;
   width: auto;
   text-align: center;
@@ -1374,5 +1374,5 @@ a,.farm{
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
   position: relative; */
   width: 100%;
-  margin-top: 25px;
+  
 }
