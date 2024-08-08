@@ -1380,6 +1380,10 @@ ol,
 ul {
   padding-left: 0px;
 }
+
+.add-image{
+  color: #000;
+}
 .add-image,
 a:hover{
   text-decoration: none;
