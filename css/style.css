@@ -1369,12 +1369,10 @@ a,.farm{
   width: auto;
   text-align: center;
   border-radius: 5px;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
-  position: relative;
+  position: relative; */
   width: 100%;
-  padding-right: 5px;
-  padding-left: 5px;
   margin-top: 25px;
 }
