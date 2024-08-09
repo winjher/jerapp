@@ -30,7 +30,7 @@ function imageReady(){
 }
 function setup(){
     createCanvas(640,480);
-    atlas=createImg('/storage/emulated/0/Butterfly/Atlas Moth Butterfly/AA00001.jpg',imageReady);
+    atlas=createImg('Butterfly/Moth-Atlas/AA00001.jpg',imageReady);
     atlas.hide();
     background(640);
     mobilenet= ml5.imageClassifier("MobileNet", modelReady);

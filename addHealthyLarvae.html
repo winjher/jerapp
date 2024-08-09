@@ -73,9 +73,26 @@
     <div class="jumbotron">
         <div class="card-app-list">
             <div class="col-xl-12">
+                <br>
                 <div id="console"></div>
                 <!-- Add an image that we will use to test -->
-                <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+                <video autoplay playsinline muted id="webcam"></video>
+
+                <div class="">
+                    <button disabled id="flip-btn" class="btn btn-sm btn-warning">
+                        Flip Camera
+                    </button>
+                    <button id="webcam" class="btn btn-sm btn-primary">
+                        Take photo
+                    </button>
+                </div>
+                <!-- <div class="mt-3">
+                    <b>Output:</b>
+                    <br>
+                    <canvas id="canvas" class="bg-light shadow border border-5 border-success">
+                    </canvas>
+                </div> -->
+                <br>
             </div>
         </div>
         <div class="card-app-list">
@@ -85,6 +102,8 @@
                 <button id="pupae" class="btn-house">+ Pupe</button>
                 <button id="larvae" class="btn-house">+ Larvae</button>
                 <button id="eggs" class="btn-house">+ Eggs</button>
+                <button id="disease" class="btn-house">+ Disease</button>
+                <button id="defects" class="btn-house">+ Defects</button>
             </div>
         </div>
     </div>

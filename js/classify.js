@@ -56,41 +56,10 @@ async function app() {
   document.getElementById("pupae").addEventListener("click", () => addExample(1))
   document.getElementById("larvae").addEventListener("click", () => addExample(2))
   document.getElementById("eggs").addEventListener("click", () => addExample(3))
+
+//Care Management
   document.getElementById("disease").addEventListener("click", () => addExample(4))
   document.getElementById("defects").addEventListener("click", () => addExample(5))
-//class Names
-  document.getElementById("atlas").addEventListener("click", () => addExample(6))
-  document.getElementById("clippers").addEventListener("click", () => addExample(7))
-  document.getElementById("commonjay").addEventListener("click", () => addExample(8))
-  document.getElementById("commonlime").addEventListener("click", () => addExample(9))
-  document.getElementById("commonmime").addEventListener("click", () => addExample(10))
-  document.getElementById("commonmormon").addEventListener("click", () => addExample(11))
-  document.getElementById("emeraldswallowtail").addEventListener("click", () => addExample(12))
-  document.getElementById("giantsilk").addEventListener("click", () => addExample(13))
-  document.getElementById("goldenbirdwing").addEventListener("click", () => addExample(14))
-  document.getElementById("greyglassytiger").addEventListener("click", () => addExample(15))
-  document.getElementById("greateggfly").addEventListener("click", () => addExample(16))
-  document.getElementById("greatyellowmormon").addEventListener("click", () => addExample(17))
-  document.getElementById("paperkite").addEventListener("click", () => addExample(18))
-  document.getElementById("pinkrose").addEventListener("click", () => addExample(19))
-  document.getElementById("plaintiger").addEventListener("click", () => addExample(20))
-  document.getElementById("redlacewing").addEventListener("click", () => addExample(21))
-  document.getElementById("scarletmormon").addEventListener("click", () => addExample(22))
-  document.getElementById("tailedjay").addEventListener("click", () => addExample(23))
-  //types of pupae defects
-  document.getElementById("antbite").addEventListener("click", () => addExample(24))
-  document.getElementById("deformed").addEventListener("click", () => addExample(25))
-  document.getElementById("old").addEventListener("click", () => addExample(26))
-  document.getElementById("overbend").addEventListener("click", () => addExample(27))
-  document.getElementById("stetched").addEventListener("click", () => addExample(28))
-  document.getElementById("healthy").addEventListener("click", () => addExample(29))
-  //types of larval diseaasee
-  document.getElementById("npvirus").addEventListener("click", () => addExample(30))
-  document.getElementById("bvirus").addEventListener("click", () => addExample(31))
-  document.getElementById("opelek").addEventListener("click", () => addExample(32))
-  document.getElementById("tachi").addEventListener("click", () => addExample(33))
-  document.getElementById("tricho").addEventListener("click", () => addExample(34))
-  document.getElementById("healthy").addEventListener("click", () => addExample(35))
 
 
   while (true) {
@@ -101,7 +70,7 @@ async function app() {
 
       const result = await classifier.predictClass(activation)
 
-      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs"]
+      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects"]
 
       document.getElementById("console").innerText = `
                 prediction: ${classes[result.label]}\n
