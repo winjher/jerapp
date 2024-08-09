@@ -663,6 +663,11 @@ img:hover {
    width: auto;
  }
 
+ .img-classify {
+  width: 45px;
+  height: 45px;
+  padding: 10px 10px 10px 10px;
+}
 
 /* buttons */
 .btn-save, .btn-save-eggs, .btn-save-larvae, .btn-save-pupae, .btn-save-butterfly {

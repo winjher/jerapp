@@ -31,7 +31,7 @@ async function app() {
   document.getElementById("ophyte").addEventListener("click", () => addExample(33))
   document.getElementById("tachi").addEventListener("click", () => addExample(34))
   document.getElementById("tricho").addEventListener("click", () => addExample(35))
-  document.getElementById("healthy").addEventListener("click", () => addExample(36))
+  document.getElementById("healthylarvae").addEventListener("click", () => addExample(36))
 
 
   while (true) {

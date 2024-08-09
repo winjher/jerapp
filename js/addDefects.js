@@ -30,7 +30,7 @@ document.getElementById("deformed").addEventListener("click", () => addExample(2
 document.getElementById("old").addEventListener("click", () => addExample(26))
 document.getElementById("overbend").addEventListener("click", () => addExample(27))
 document.getElementById("stetched").addEventListener("click", () => addExample(28))
-document.getElementById("healthy").addEventListener("click", () => addExample(29))
+document.getElementById("healthypupae").addEventListener("click", () => addExample(29))
 
 
   while (true) {
@@ -41,7 +41,7 @@ document.getElementById("healthy").addEventListener("click", () => addExample(29
 
       const result = await classifier.predictClass(activation)
 
-      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects", "atlas","clippers","commonjay","commonlime","commonmime","commonmormon","emeraldswallowtail","giantsilk","goldenbirdwing","greyglassytiger","greateggfly","greatyellowmormon","paperkite","pinkrose","plaintiger","redlacewing","scarletmormon","tailedjay","antbite","deformed","old","overbend","stetched","healthypupae","npvirus","bvirus","opelek","opecytes","tachi","tricho","healthylarvae"]
+      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects", "Atlas","Clippers","Common Jay","Common Lime","Common Mime","Common Mormon","Emerald Swallowtail","Giant Silk","Golden Birdwing","Grey Glassy Tiger","Great Eggfly","Great Yellow Mormon","Paper Kite","Pink Rose","Plain Tiger","Red Lacewing","Scarlet Mormon","Tailed Jay","antbite","deformed","old","overbend","stetched","healthypupae","npvirus","bvirus","opelek","opecytes","tachi","tricho","healthylarvae"]
       
       document.getElementById("console").innerText = `
                 prediction: ${classes[result.label]}\n
