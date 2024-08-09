@@ -662,23 +662,23 @@ img:hover {
    height: auto;
    width: auto;
  }
+
+
 /* buttons */
- .btn-save,
- .btn-save-eggs,
- .btn-save-larvae,
- .btn-save-pupae,
- .btn-save-butterfly {
-   margin: 10px;
-   text-align: center;
-   align-items: center;
-   background-color: #ffc107;
-   border-radius: 20px;
-   border: none;
-   height: 35px;
-   width: 280px;
-   margin-left: auto;
-   margin-right: auto;
- }
+.btn-save, .btn-save-eggs, .btn-save-larvae, .btn-save-pupae, .btn-save-butterfly {
+  margin: 8px;
+  /* text-align: center;
+  align-items: center; */
+  background-color: #ffc107;
+  border-radius: 20px;
+  border: none;
+  height: 35px;
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-items: center;
+}
 
  .save-background {
    border: 1 px solid;
