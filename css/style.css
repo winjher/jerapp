@@ -526,7 +526,7 @@ img:hover {
 }
 
  .card-app-list {
-   margin: 10px;
+   margin: 0px;
    width: auto;
    text-align: center;
    border: 1px solid;
@@ -538,8 +538,8 @@ img:hover {
    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
    position: relative;
    width: 100%;
-   margin-right: auto;
-   margin-left: auto;
+   padding-right: 5px;
+   padding-left: 5px;
    margin-top: 15px;
 }
 
@@ -676,7 +676,7 @@ img:hover {
   border-radius: 20px;
   border: none;
   height: 35px;
-  min-width: 220px;
+  min-width: 120px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -1427,4 +1427,17 @@ video {
   /* mirror effect while using front cam */
   transform: scaleX(-1);
   /* mirror effect while using front cam */
+}
+.btn-classify{
+margin: 8px;
+background-color: #0fc63a;
+border-radius: 20px;
+border: none;
+height: 35px;
+min-width: 220px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+align-items: center;
+color: var(--bs-light);
 }
