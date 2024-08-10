@@ -1205,7 +1205,9 @@ margin-top: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
+.h5{
+  padding-top: 5px;
+}
 .h5-btn:hover,
 .h5-title{
   color: green;
@@ -1287,7 +1289,7 @@ a,.farm{
 }
 
 .img-lep{
-  margin-top: 5px;
+  margin-top: 2px;
   margin-bottom: 0rem;
   font-weight: 500;
   line-height: 1.2;
