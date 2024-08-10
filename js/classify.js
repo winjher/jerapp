@@ -61,24 +61,25 @@ async function app() {
   document.getElementById("disease").addEventListener("click", () => addExample(4))
   document.getElementById("defects").addEventListener("click", () => addExample(5))
  //class Names
-//  document.getElementById("atlas").addEventListener("click", () => addExample(6))
-//  document.getElementById("clippers").addEventListener("click", () => addExample(7))
-//  document.getElementById("commonjay").addEventListener("click", () => addExample(8))
-//  document.getElementById("commonlime").addEventListener("click", () => addExample(9))
-//  document.getElementById("commonmime").addEventListener("click", () => addExample(10))
-//  document.getElementById("commonmormon").addEventListener("click", () => addExample(11))
-//  document.getElementById("emeraldswallowtail").addEventListener("click", () => addExample(12))
-//  document.getElementById("giantsilk").addEventListener("click", () => addExample(13))
-//  document.getElementById("goldenbirdwing").addEventListener("click", () => addExample(14))
-//  document.getElementById("greyglassytiger").addEventListener("click", () => addExample(15))
-//  document.getElementById("greateggfly").addEventListener("click", () => addExample(16))
-//  document.getElementById("greatyellowmormon").addEventListener("click", () => addExample(17))
-//  document.getElementById("paperkite").addEventListener("click", () => addExample(18))
-//  document.getElementById("pinkrose").addEventListener("click", () => addExample(19))
-//  document.getElementById("plaintiger").addEventListener("click", () => addExample(20))
-//  document.getElementById("redlacewing").addEventListener("click", () => addExample(21))
-//  document.getElementById("scarletmormon").addEventListener("click", () => addExample(22))
-//  document.getElementById("tailedjay").addEventListener("click", () => addExample(23))
+ document.getElementById("atlas").addEventListener("click", () => addExample(6))
+ document.getElementById("batwing").addEventListener("click", () => addExample(7))
+ document.getElementById("clippers").addEventListener("click", () => addExample(8))
+ document.getElementById("commonjay").addEventListener("click", () => addExample(9))
+ document.getElementById("commonlime").addEventListener("click", () => addExample(10))
+ document.getElementById("commonmime").addEventListener("click", () => addExample(11))
+ document.getElementById("commonmormon").addEventListener("click", () => addExample(12))
+ document.getElementById("emeraldswallowtail").addEventListener("click", () => addExample(13))
+ document.getElementById("giantsilk").addEventListener("click", () => addExample(14))
+ document.getElementById("goldenbirdwing").addEventListener("click", () => addExample(15))
+ document.getElementById("greyglassytiger").addEventListener("click", () => addExample(16))
+ document.getElementById("greateggfly").addEventListener("click", () => addExample(17))
+ document.getElementById("greatyellowmormon").addEventListener("click", () => addExample(18))
+ document.getElementById("paperkite").addEventListener("click", () => addExample(19))
+ document.getElementById("pinkrose").addEventListener("click", () => addExample(20))
+ document.getElementById("plaintiger").addEventListener("click", () => addExample(21))
+ document.getElementById("redlacewing").addEventListener("click", () => addExample(22))
+ document.getElementById("scarletmormon").addEventListener("click", () => addExample(23))
+ document.getElementById("tailedjay").addEventListener("click", () => addExample(24))
 
 
   while (true) {
@@ -89,7 +90,7 @@ async function app() {
 
       const result = await classifier.predictClass(activation)
 
-      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects", "atlas","clippers","commonjay","commonlime","commonmime","commonmormon","emeraldswallowtail","giantsilk","goldenbirdwing","greyglassytiger","greateggfly","greatyellowmormon","paperkite","pinkrose","plaintiger","redlacewing","scarletmormon","tailedjay","antbite","deformed","old","overbend","stetched","healthypupae","npvirus","bvirus","opelek","opecytes","tachi","tricho","healthylarvae"]
+      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects", "atlas","batwing","clippers","commonjay","commonlime","commonmime","commonmormon","emeraldswallowtail","giantsilk","goldenbirdwing","greyglassytiger","greateggfly","greatyellowmormon","paperkite","pinkrose","plaintiger","redlacewing","scarletmormon","tailedjay","antbite","deformed","old","overbend","stetched","healthypupae","npvirus","bvirus","opelek","opecytes","tachi","tricho","healthylarvae"]
 
       document.getElementById("console").innerText = `
                 prediction: ${classes[result.label]}\n

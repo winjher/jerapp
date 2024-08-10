@@ -25,12 +25,12 @@ async function app() {
   }
 
 //types of pupae defects
-document.getElementById("antbite").addEventListener("click", () => addExample(24))
-document.getElementById("deformed").addEventListener("click", () => addExample(25))
-document.getElementById("old").addEventListener("click", () => addExample(26))
-document.getElementById("overbend").addEventListener("click", () => addExample(27))
-document.getElementById("stetched").addEventListener("click", () => addExample(28))
-document.getElementById("healthypupae").addEventListener("click", () => addExample(29))
+document.getElementById("antbite").addEventListener("click", () => addExample(25))
+document.getElementById("deformed").addEventListener("click", () => addExample(26))
+document.getElementById("old").addEventListener("click", () => addExample(27))
+document.getElementById("overbend").addEventListener("click", () => addExample(28))
+document.getElementById("stetched").addEventListener("click", () => addExample(29))
+document.getElementById("healthypupae").addEventListener("click", () => addExample(30))
 
 
   while (true) {

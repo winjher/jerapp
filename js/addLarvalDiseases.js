@@ -25,13 +25,13 @@ async function app() {
   }
 
   //types of larval diseaasee
-  document.getElementById("npvirus").addEventListener("click", () => addExample(30))
-  document.getElementById("bvirus").addEventListener("click", () => addExample(31))
-  document.getElementById("opelek").addEventListener("click", () => addExample(32))
-  document.getElementById("ophyte").addEventListener("click", () => addExample(33))
-  document.getElementById("tachi").addEventListener("click", () => addExample(34))
-  document.getElementById("tricho").addEventListener("click", () => addExample(35))
-  document.getElementById("healthylarvae").addEventListener("click", () => addExample(36))
+  document.getElementById("npvirus").addEventListener("click", () => addExample(31))
+  document.getElementById("bvirus").addEventListener("click", () => addExample(32))
+  document.getElementById("opelek").addEventListener("click", () => addExample(33))
+  document.getElementById("ophyte").addEventListener("click", () => addExample(34))
+  document.getElementById("tachi").addEventListener("click", () => addExample(35))
+  document.getElementById("tricho").addEventListener("click", () => addExample(36))
+  document.getElementById("healthylarvae").addEventListener("click", () => addExample(37))
 
 
   while (true) {
