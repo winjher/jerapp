@@ -525,6 +525,20 @@ img:hover {
   text-align: center;
 }
 
+.card-instruction-list-item {
+  width: 300px;
+  border: 1px solid;
+  border-color: orange;
+  /* background-color: #ffc; */
+  border-radius: 15px;
+  margin: 5px 15px 5px 10px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--bs-teal);
+  text-align: center;
+}
+
  .card-app-list {
    margin: 0px;
    width: auto;
@@ -558,6 +572,19 @@ img:hover {
    text-align: center;
  }
 
+ .card-classes-list-item {
+  width: 400px;
+  border: 1px solid;
+  border-color: orange;
+  /* background-color: #ffc; */
+  border-radius: 15px;
+  margin: 35px 15px 35px 15px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--bs-teal);
+  text-align: center;
+}
 
  dl,
  ol,
@@ -664,12 +691,29 @@ img:hover {
  }
 
  .img-classify {
-  width: 45px;
-  height: 45px;
+  width: 85px;
+  height: 85px;
   padding: 10px 10px 10px 10px;
 }
 
 /* buttons */
+.btn-identify{
+  background-color: #0fc63a;
+  border-radius: 20px;
+  border: none;
+  height: 45px;
+  min-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-items: center;
+  color: var(--bs-light);
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: var(--bs-gutter-x, .75rem);
+  /* padding-left: var(--bs-gutter-x, .75rem); */
+  justify-items: center;
+}
 .btn-classify{
   margin: 8px;
   background-color: #0fc63a;
@@ -1153,12 +1197,17 @@ margin-top: 10px;
   border-radius: 0px 0px 15px 15px;
   filter: drop-shadow(0px 0px 8px #999999);
 }
-
-.back-icon, .img-back-icon{
+.goto-icon{
   margin-left: auto;
-  margin-right: 50px;
   width: 30px;
   height: fit-content;
+  margin-bottom: 20px;
+}
+.back-icon, .img-back-icon{
+  margin-left: auto;
+  width: 30px;
+  height: fit-content;
+  margin-bottom: 20px;
 }
 /* Dashboard  */
 .notification {
@@ -1210,7 +1259,9 @@ margin-top: 10px;
 }
 .h5-btn:hover,
 .h5-title{
-  color: green;
+  color: rgb(235, 240, 235);
+  background-color: rgb(24, 128, 220);
+  border-radius: 14px 14px 0px 0px;
 }
 .stages-icon-btn-home{
   border-radius: 100%;
@@ -1442,4 +1493,13 @@ margin-right: auto;
 text-align: center;
 align-items: center;
 color: var(--bs-light);
+}
+
+.img-classes-icon {
+  height: 26vmin;
+  width: fit-content;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+  mix-blend-mode: multiply;
 }
