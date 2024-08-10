@@ -526,7 +526,7 @@ img:hover {
 }
 
  .card-app-list {
-   margin: 0px;
+   margin: 10px;
    width: auto;
    text-align: center;
    border: 1px solid;
@@ -538,9 +538,9 @@ img:hover {
    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
    position: relative;
    width: 100%;
-   padding-right: 5px;
-   padding-left: 5px;
-   margin-top: 25px;
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 15px;
 }
 
 
@@ -670,19 +670,33 @@ img:hover {
 }
 
 /* buttons */
-.btn-save, .btn-save-eggs, .btn-save-larvae, .btn-save-pupae, .btn-save-butterfly {
+.btn-classify{
   margin: 8px;
-  /* text-align: center;
-  align-items: center; */
-  background-color: #ffc107;
+  background-color: #0fc63a;
   border-radius: 20px;
   border: none;
   height: 35px;
-  width: 120px;
+  min-width: 220px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   align-items: center;
+  color: var(--bs-light);
+}
+.btn-save, .btn-save-eggs, .btn-save-larvae, .btn-save-pupae, .btn-save-butterfly {
+  margin: 8px;
+  /* text-align: center;
+  align-items: center; */
+  background-color: #c6980f;
+  border-radius: 20px;
+  border: none;
+  height: 35px;
+  min-width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-items: center;
+  color: var(--bs-light);
 }
 
  .save-background {
