@@ -52,10 +52,10 @@ async function app() {
     img.dispose()
   }
 
-  document.getElementById("butterfly").addEventListener("click", () => addExample(0))
-  document.getElementById("pupae").addEventListener("click", () => addExample(1))
-  document.getElementById("larvae").addEventListener("click", () => addExample(2))
-  document.getElementById("eggs").addEventListener("click", () => addExample(3))
+//   document.getElementById("butterfly").addEventListener("click", () => addExample(0))
+//   document.getElementById("pupae").addEventListener("click", () => addExample(1))
+//   document.getElementById("larvae").addEventListener("click", () => addExample(2))
+//   document.getElementById("eggs").addEventListener("click", () => addExample(3))
 
 //Care Management
   document.getElementById("disease").addEventListener("click", () => addExample(4))
