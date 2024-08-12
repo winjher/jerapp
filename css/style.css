@@ -1301,6 +1301,7 @@ margin-top: 10px;
   background-color: rgb(24, 128, 220);
   border-radius: 14px 14px 0px 0px;
   padding-bottom: 5px;
+  text-align: center;
 }
 
 .h5-btn:hover,
@@ -1309,6 +1310,7 @@ margin-top: 10px;
   background-color: rgb(24, 128, 220);
   border-radius: 0px 0px 14px 14px;
   padding-bottom: 5px;
+  text-align: center;
 }
 
 .h5-title
@@ -1569,4 +1571,22 @@ color: var(--bs-light);
   margin: 2px;
   background-size: cover;
   background-position: center;
+}
+
+b, strong {
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+.key-name{
+  color: var(--bs-gray);
+}
+.val-name{
+  color: var(--bs-gray-dark);
+  font-size: medium;
+}
+.genus{
+  font-weight: bolder;
+  font-size: large;
+  color: var(--bs-dark);
 }
