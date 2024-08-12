@@ -1300,13 +1300,25 @@ margin-top: 10px;
   color: rgb(235, 240, 235);
   background-color: rgb(24, 128, 220);
   border-radius: 14px 14px 0px 0px;
+  padding-bottom: 5px;
 }
+
+.h5-btn:hover,
+.h5-title-bottom{
+  color: rgb(235, 240, 235);
+  background-color: rgb(24, 128, 220);
+  border-radius: 0px 0px 14px 14px;
+  padding-bottom: 5px;
+}
+
+.h5-title
 .stages-icon-btn-home{
   border-radius: 100%;
   background-color: rgb(157, 228, 15);
   border: 2px solid orange;
   margin: 24px;
 }
+
 .stages-icon-btn-home:hover{
   background-color:#0ee2c5 orange;
 }
