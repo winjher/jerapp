@@ -502,9 +502,9 @@ img:hover {
   width: auto;
   text-align: center;
   border: 1px solid;
-  border-color: rgb(255, 13, 0);
+  border-color:var(--bs-white);
   border-radius: 5px;
-  background-color: #fff;
+  /* background-color: #fff; */
   display: flex;
   flex-wrap: wrap;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
@@ -547,7 +547,6 @@ img:hover {
 }
 
  .card-app-list {
-   margin: 0px;
    width: auto;
    text-align: center;
    border: 1px solid;
@@ -559,6 +558,8 @@ img:hover {
    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
    position: relative;
    width: 100%;
+   padding-top: 5px;
+   padding-bottom: 5px;
    padding-right: 5px;
    padding-left: 5px;
    margin-top: 4px;
@@ -577,6 +578,7 @@ img:hover {
    margin-right: auto;
    color: var(--bs-teal);
    text-align: center;
+   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
  }
 
   .card-classes-list-item {
@@ -590,6 +592,7 @@ img:hover {
     margin-right: auto;
     color: var(--bs-teal);
     text-align: center;
+
 }
 
 .card-classify-butterflylist-item {
@@ -804,9 +807,14 @@ img:hover {
    background-color: #f3f4f4;
  }
 
-.h5 a{
+.h5 {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.h5 a{
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: #f6faf9;
   text-decoration: none;
 }
@@ -1318,9 +1326,9 @@ margin-top: 10px;
   width: auto;
   text-align: center;
   border: 1px solid;
-  border-color: rgb(255, 13, 0);
+  border-color: var(--bs-white);
   border-radius: 5px;
-  background-color: #fff;
+  /* background-color: #fff; */
   display: flex;
   flex-wrap: wrap;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
