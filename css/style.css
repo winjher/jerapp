@@ -1553,3 +1553,20 @@ color: var(--bs-light);
   transition: .5s;
   mix-blend-mode: multiply;
 }
+.img-classes-result-icon {
+  height: 30vmin;
+  width: fit-content;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+  mix-blend-mode: multiply;
+}
+
+.stages-result-icon-btn{
+  border-radius: 100%;
+  /* background-color: rgb(157, 228, 15); */
+  border: 1px solid orange;
+  margin: 2px;
+  background-size: cover;
+  background-position: center;
+}
