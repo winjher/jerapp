@@ -1515,6 +1515,7 @@ a:hover{
   text-decoration: none;
   color: #107a07;
 }
+
 video {
   width: 192px;
   height: 192px;
@@ -1533,6 +1534,7 @@ video {
   transform: scaleX(-1);
   /* mirror effect while using front cam */
 }
+
 .btn-classify{
 margin: 8px;
 background-color: #0fc63a;
