@@ -14,14 +14,21 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/iconbar.css">
 </head>
-
+<style>
+    input[type="text"] {
+      padding: 5px;
+      width: 200px;
+      font-size: 16px;
+      border-radius: 2px;
+    }
+  </style>
 <body style="height: 1400px; margin-bottom:300px;">
     <!-----------------------------Category section--------------------------------------------->
-
     <div class="col-xl-12 text-center">
         <div class="container-fluid col-xl-12">
-            <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" type="text"
-                placeholder="Search">
+            <input type="text" id="search" placeholder="Search...">
+            <button class="btn-hatchery" onclick="search()">Search</button>
+            <p id="output"></p>
         </div>
         <div>
             <button class="btn-culture">
@@ -173,6 +180,7 @@
         <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
         <script src="static 'jquery-3.6.0.slim.min.js"> </script>
         <script src="static 'js/bootstrap.bundle.min.js"></script>
+        <script src="js/searchbar.js"></script>
 </body>
 
 </html>

@@ -813,8 +813,6 @@ img:hover {
 }
 
 .h5 a{
-  padding-top: 5px;
-  padding-bottom: 5px;
   color: #f6faf9;
   text-decoration: none;
 }
@@ -1307,9 +1305,7 @@ margin-top: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.h5{
-  padding-top: 5px;
-}
+
 .h5-btn:hover,
 .h5-title{
   color: rgb(235, 240, 235);
@@ -1598,10 +1594,12 @@ b, strong {
 .key-name{
   color: var(--bs-gray);
 }
+
 .val-name{
   color: var(--bs-gray-dark);
   font-size: medium;
 }
+
 .genus{
   font-weight: bolder;
   font-size: large;

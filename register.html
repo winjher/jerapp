@@ -38,309 +38,311 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-
-        <form class="from-control" action="">
-            <div class="col-lg-10 col-md-8 col-sm-6 col-xl-12 ">
-                <div class="container">
-                    <br>
-                    <h3 class="text-center">Registration</h3>
-                    <fieldset class="first-section">
-                        <p>What best describes you?</p>
-                        <select class="form-control" id="ddlAccount" onchange="ddlAccountSelectChanged()" required>
-                            <option>Breeder</option>
-                            <option>Purchaser</option>
-                            <option>Enthusiast</option>
-                        </select>
-                        <br />
-                        <label for="lname">Last Name</label>
-                        <input type="text" id="txtLastname" class="form-control" placeholder="Your Last Name" required>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-                        <label for="fname">First Name</label>
-                        <input type="text" id="txtFirstName" class="form-control" placeholder="Your First Name"
-                            required>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-                        <label for="mname">Middle Name</label>
-                        <input type="text" id="txtMiddleName" class="form-control" placeholder="Your Middle Name"
-                            required>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-                        <label for="Gender">Gender</label>
-                        <div>
-                            <select class="form-control" id="ddlGender" onchange="ddlGenderSelectChanged()" required>
-                                <option>Male </option>
-                                <option>Female </option>
-                                <option>Prefer not to say </option>
-                            </select>
-                        </div>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-                        <label for="Birthday">Birthday</label>
-                        <input type="date" id="txtBirthday" class="form-control" placeholder="Your Birthday" required>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-                        <label for="Email">Email</label>
-                        <input type="email" id="txtEmail" class="form-control" placeholder="Your Email" required>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
+    <div class="col-xl-12 jumbotron">
+        <div class="card-app-classification">
+            <form class="from-control" action="">
+                <div class="col-lg-10 col-md-8 col-sm-6 col-xl-12 ">
+                    <div class="container">
                         <br>
-                        <label for="Province">Country</label>
-                        <div>
-                            <select class="form-control" id="ddlCountry" onchange="ddlCountrySelectChanged()" required>
-                                <option>+63 Philippines</option>
-                                <option>+93 Afghanistan</option>
-                                <option>+355 Albania</option>
-                                <option>+213 Algeria</option>
-                                <option>+224 Angola</option>
-                                <option>+374 Armenia</option>
-                                <option>+297 Aruba</option>
-                                <option>+61 Australia</option>
-                                <option>+43 Austria</option>
-                                <option>+994 Azerbaijan</option>
-                                <option>+973 Bahrain</option>
-                                <option>+880 Bangladesh</option>
-                                <option>+375 Beelarus</option>
-                                <option>+32 Belgium</option>
-                                <option>+501 Belize</option>
-                                <option>+229 Benin</option>
-                                <option>+975 Bhutan</option>
-                                <option>+591 Bolivia</option>
-                                <option>+267 Botswana</option>
-                                <option>+55 Brazil</option>
-                                <option>+673 Brunei</option>
-                                <option>+359 Bulgaria</option>
-                                <option>+226 Burkina Faso</option>
-                                <option>+855 Cambodia</option>
-                                <option>+237 Cameron</option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                        </div>
-                        </select>
-                        <label for="Province">Province</label>
-                        <div>
-                            <select class="form-control" id="ddlProvince" onchange="ddlProvinceSelectChanged()"
-                                required>
-                                <option>Marinduque</option>
-                                <option>Agusan Del Norte</option>
-                                <option>Agusan Del Sur</option>
-                                <option>Aklan</option>
-                                <option>Albay</option>
-                                <option>Antique</option>
-                                <option>Aurora</option>
-                                <option>Basilan</option>
-                                <option>Bataan</option>
-                                <option>Batangas</option>
-                                <option>Benguet</option>
-                                <option>Biliran</option>
-                                <option>Bohol</option>
-                                <optionBukidnon>
-                                    </option>
-                                    <option>Bulacan</option>
-                                    <option>Cagayan</option>
-                                    <option>Camarines Norte</option>
-                                    <option>Camarines Sur</option>
-                                    <option>Camiguin</option>
-                                    <option>Capiz</option>
-                                    <option>Catanduanes</option>
-                                    <option>Cavite</option>
-                                    <option>Cebu</option>
-                                    <option>Compostela Valley</option>
-                                    <option>Cotabato</option>
-                                    <option>Davao Del Norte</option>
-                                    <option>Davao Del Sur</option>
-                                    <option>Davao Oriental</option>
-                                    <option>Dinagat Islands</option>
-                                    <option>Eastern Samar</option>
-                                    <option>Guimaras</option>
-                                    <option>Ifugao</option>
-                                    <option>Ilocus Norte</option>
-                                    <option>Ilocus Sur</option>
-                                    <option>Iloilo</option>
-                                    <option>Isabela</option>
-                                    <option>Kalinga</option>
-                                    <option>La Union</option>
-                                    <option>Laguna</option>
-                                    <option>Lanao Del Norte</option>
-                                    <option>Lanao Del Sur</option>
-                                    <option>Leyte</option>
-                                    <option>Maguindanao</option>
-                                    <option>Masbate</option>
-                                    <option>Metro Manila~Caloocan</option>
-                                    <option>Metro Manila~Las Pinas</option>
-                                    <option>Metro Manila~Makati</option>
-                                    <option>Metro Manila~Malabon</option>
-                                    <option>Metro Manila~Mandaluyong</option>
-                                    <option>Metro Manila~Manila</option>
-                                    <option>Metro Manila~Marikina</option>
-                                    <option>Metro Manila~Muntinlupa</option>
-                                    <option>Metro Manila~Navotas</option>
-                                    <option>Metro Manila~Paranaque</option>
-                                    <option>Metro Manila~Pasay</option>
-                                    <option>Metro Manila~Pasig</option>
-                                    <option>Metro Manila~Pateros</option>
-                                    <option>Metro Manila~Quezon City</option>
-                                    <option>Metro Manila~San Juan</option>
-                                    <option>Metro Manila~Taguig</option>
-                                    <option>Metro Manila~Valenzuela</option>
-                                    <option>Misamis Occidental</option>
-                                    <option>Misamis Oriental</option>
-                                    <option>Mountain Province</option>
-                                    <option>Negros Occidental</option>
-                                    <option>Negros Orriental</option>
-                                    <option>North Cotabato</option>
-                                    <option>Northern Samar</option>
-                                    <option>Nueva Ecija</option>
-                                    <option>Nueva Viscaya</option>
-                                    <option>Occidental Mindoro</option>
-                                    <option>Orriental Mindoro</option>
-                                    <option>Palawan</option>
-                                    <option>Pampanga</option>
-                                    <option>Pangasinan</option>
-                                    <option>Quezon</option>
-                                    <option>Quirino</option>
-                                    <option>Rizal</option>
-                                    <option>Romblon</option>
-                                    <option>Sarangani</option>
-                                    <option>Siquijor</option>
-                                    <option>Sorsogon</option>
-                                    <option>South Cotabato</option>
-                                    <option>Southern Leyte</option>
-                                    <option>Sultan Kudarat</option>
-                                    <option>Sulu</option>
-                                    <option>Surigao Del Norte</option>
-                                    <option>Surigso Del Sur</option>
-                                    <option>Tarlac</option>
-                                    <option>Tawi~Tawi</option>
-                                    <option>Western Samar</option>
-                                    <option>Zambales</option>
-                                    <option>Zamboang Del Norte</option>
-                                    <option>Zamboanga Del Sur</option>
-                                    <option>Zamboanga Sibugay</option>
-
+                        <h3 class="text-center">Registration</h3>
+                        <fieldset class="first-section">
+                            <p>What best describes you?</p>
+                            <select class="form-control" id="ddlAccount" onchange="ddlAccountSelectChanged()" required>
+                                <option>Breeder</option>
+                                <option>Purchaser</option>
+                                <option>Enthusiast</option>
                             </select>
-                        </div>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-                        <label for="City">City Municipality</label>
-                        <select class="form-control" id="ddlProvince" onchange="ddlMunicipalitySelectChanged()"
-                            required>
-                            <option>Gasan</option>
-                            <option>Boac</option>
-                            <option>Buenavista</option>
-                            <option>Mogpog</option>
-                            <option>Sta. Cruz</option>
-                            <option>Torrijos</option>
-                        </select>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-                        <label for="Barangay">Barangay</label>
-                        <select class="form-control" id="ddlbarangay" onchange="ddlMunicipalitySelectChanged()"
-                            required>
-                            <option>Antipolo</option>
-                            <option>Banyo</option>
-                            <option>Dawis</option>
-                            <option>Pinggan</option>
-                            <option>Bacongbacong</option>
-                            <option>Bognuyan</option>
-                            <option>Bachao-Ibaba</option>
-                            <option>Bachao-Ilaya</option>
-                            <option>Tabionan</option>
-                            <option>Banot</option>
-                            <option>Mahunig</option>
-                            <option>Matandang Gasan</option>
-                            <option>Barangay Uno</option>
-                            <option>Barangay Dos</option>
-                            <option>Barangay Tres</option>
-                            <option>Dili</option>
-                            <option>Pangi</option>
-                            <option>Bangbang</option>
-                            <option>Libtangin</option>
-                            <option>Cabugao</option>
-                            <option>Obong</option>
-                            <option>Masiga</option>
-                            <option>Bahi</option>
-                        </select>
-                        <!-- <input type="text" id="txtBarangay" class="form-control" placeholder="Your Barangay" required> -->
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="txtLastname" class="form-control" placeholder="Your Last Name"
+                                required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
 
-                        <label for="Telephone">Telephone Number</label>
-                        <input type="number" id="txtTelephoneNumber" class="form-control"
-                            placeholder="Your Telephone Number" required>
-                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-                        <p class="">Security Question</p>
-                        <select class="form-control" name="" id="" required>
-                            <option>What was the first butterfly you cultured?</option>
-                            <option>What butterfly do you usually culture?</option>
-                            <option>How many years you are culturing butterflies?</option>
-                            <option>What was your childhood nickname?</option>
-                            <option>What is your ideal job?</option>
-                        </select>
-                        <br />
+                            <label for="fname">First Name</label>
+                            <input type="text" id="txtFirstName" class="form-control" placeholder="Your First Name"
+                                required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
 
-                        <input type="textbox" class="form-control">
-                        <br />
-                        <div>
-                    </fieldset>
+                            <label for="mname">Middle Name</label>
+                            <input type="text" id="txtMiddleName" class="form-control" placeholder="Your Middle Name"
+                                required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
 
-                    <form action="">
+                            <label for="Gender">Gender</label>
+                            <div>
+                                <select class="form-control" id="ddlGender" onchange="ddlGenderSelectChanged()"
+                                    required>
+                                    <option>Male </option>
+                                    <option>Female </option>
+                                    <option>Prefer not to say </option>
+                                </select>
+                            </div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+                            <label for="Birthday">Birthday</label>
+                            <input type="date" id="txtBirthday" class="form-control" placeholder="Your Birthday"
+                                required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+                            <label for="Email">Email</label>
+                            <input type="email" id="txtEmail" class="form-control" placeholder="Your Email" required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <label for="Province">Country</label>
+                            <div>
+                                <select class="form-control" id="ddlCountry" onchange="ddlCountrySelectChanged()"
+                                    required>
+                                    <option>+63 Philippines</option>
+                                    <option>+93 Afghanistan</option>
+                                    <option>+355 Albania</option>
+                                    <option>+213 Algeria</option>
+                                    <option>+224 Angola</option>
+                                    <option>+374 Armenia</option>
+                                    <option>+297 Aruba</option>
+                                    <option>+61 Australia</option>
+                                    <option>+43 Austria</option>
+                                    <option>+994 Azerbaijan</option>
+                                    <option>+973 Bahrain</option>
+                                    <option>+880 Bangladesh</option>
+                                    <option>+375 Beelarus</option>
+                                    <option>+32 Belgium</option>
+                                    <option>+501 Belize</option>
+                                    <option>+229 Benin</option>
+                                    <option>+975 Bhutan</option>
+                                    <option>+591 Bolivia</option>
+                                    <option>+267 Botswana</option>
+                                    <option>+55 Brazil</option>
+                                    <option>+673 Brunei</option>
+                                    <option>+359 Bulgaria</option>
+                                    <option>+226 Burkina Faso</option>
+                                    <option>+855 Cambodia</option>
+                                    <option>+237 Cameron</option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                            </div>
+                            </select>
+                            <label for="Province">Province</label>
+                            <div>
+                                <select class="form-control" id="ddlProvince" onchange="ddlProvinceSelectChanged()"
+                                    required>
+                                    <option>Marinduque</option>
+                                    <option>Agusan Del Norte</option>
+                                    <option>Agusan Del Sur</option>
+                                    <option>Aklan</option>
+                                    <option>Albay</option>
+                                    <option>Antique</option>
+                                    <option>Aurora</option>
+                                    <option>Basilan</option>
+                                    <option>Bataan</option>
+                                    <option>Batangas</option>
+                                    <option>Benguet</option>
+                                    <option>Biliran</option>
+                                    <option>Bohol</option>
+                                    <optionBukidnon>
+                                        </option>
+                                        <option>Bulacan</option>
+                                        <option>Cagayan</option>
+                                        <option>Camarines Norte</option>
+                                        <option>Camarines Sur</option>
+                                        <option>Camiguin</option>
+                                        <option>Capiz</option>
+                                        <option>Catanduanes</option>
+                                        <option>Cavite</option>
+                                        <option>Cebu</option>
+                                        <option>Compostela Valley</option>
+                                        <option>Cotabato</option>
+                                        <option>Davao Del Norte</option>
+                                        <option>Davao Del Sur</option>
+                                        <option>Davao Oriental</option>
+                                        <option>Dinagat Islands</option>
+                                        <option>Eastern Samar</option>
+                                        <option>Guimaras</option>
+                                        <option>Ifugao</option>
+                                        <option>Ilocus Norte</option>
+                                        <option>Ilocus Sur</option>
+                                        <option>Iloilo</option>
+                                        <option>Isabela</option>
+                                        <option>Kalinga</option>
+                                        <option>La Union</option>
+                                        <option>Laguna</option>
+                                        <option>Lanao Del Norte</option>
+                                        <option>Lanao Del Sur</option>
+                                        <option>Leyte</option>
+                                        <option>Maguindanao</option>
+                                        <option>Masbate</option>
+                                        <option>Metro Manila~Caloocan</option>
+                                        <option>Metro Manila~Las Pinas</option>
+                                        <option>Metro Manila~Makati</option>
+                                        <option>Metro Manila~Malabon</option>
+                                        <option>Metro Manila~Mandaluyong</option>
+                                        <option>Metro Manila~Manila</option>
+                                        <option>Metro Manila~Marikina</option>
+                                        <option>Metro Manila~Muntinlupa</option>
+                                        <option>Metro Manila~Navotas</option>
+                                        <option>Metro Manila~Paranaque</option>
+                                        <option>Metro Manila~Pasay</option>
+                                        <option>Metro Manila~Pasig</option>
+                                        <option>Metro Manila~Pateros</option>
+                                        <option>Metro Manila~Quezon City</option>
+                                        <option>Metro Manila~San Juan</option>
+                                        <option>Metro Manila~Taguig</option>
+                                        <option>Metro Manila~Valenzuela</option>
+                                        <option>Misamis Occidental</option>
+                                        <option>Misamis Oriental</option>
+                                        <option>Mountain Province</option>
+                                        <option>Negros Occidental</option>
+                                        <option>Negros Orriental</option>
+                                        <option>North Cotabato</option>
+                                        <option>Northern Samar</option>
+                                        <option>Nueva Ecija</option>
+                                        <option>Nueva Viscaya</option>
+                                        <option>Occidental Mindoro</option>
+                                        <option>Orriental Mindoro</option>
+                                        <option>Palawan</option>
+                                        <option>Pampanga</option>
+                                        <option>Pangasinan</option>
+                                        <option>Quezon</option>
+                                        <option>Quirino</option>
+                                        <option>Rizal</option>
+                                        <option>Romblon</option>
+                                        <option>Sarangani</option>
+                                        <option>Siquijor</option>
+                                        <option>Sorsogon</option>
+                                        <option>South Cotabato</option>
+                                        <option>Southern Leyte</option>
+                                        <option>Sultan Kudarat</option>
+                                        <option>Sulu</option>
+                                        <option>Surigao Del Norte</option>
+                                        <option>Surigso Del Sur</option>
+                                        <option>Tarlac</option>
+                                        <option>Tawi~Tawi</option>
+                                        <option>Western Samar</option>
+                                        <option>Zambales</option>
+                                        <option>Zamboang Del Norte</option>
+                                        <option>Zamboanga Del Sur</option>
+                                        <option>Zamboanga Sibugay</option>
+
+                                </select>
+                            </div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <label for="City">City Municipality</label>
+                            <select class="form-control" id="ddlProvince" onchange="ddlMunicipalitySelectChanged()"
+                                required>
+                                <option>Gasan</option>
+                                <option>Boac</option>
+                                <option>Buenavista</option>
+                                <option>Mogpog</option>
+                                <option>Sta. Cruz</option>
+                                <option>Torrijos</option>
+                            </select>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <label for="Barangay">Barangay</label>
+                            <select class="form-control" id="ddlbarangay" onchange="ddlMunicipalitySelectChanged()"
+                                required>
+                                <option>Antipolo</option>
+                                <option>Banyo</option>
+                                <option>Dawis</option>
+                                <option>Pinggan</option>
+                                <option>Bacongbacong</option>
+                                <option>Bognuyan</option>
+                                <option>Bachao-Ibaba</option>
+                                <option>Bachao-Ilaya</option>
+                                <option>Tabionan</option>
+                                <option>Banot</option>
+                                <option>Mahunig</option>
+                                <option>Matandang Gasan</option>
+                                <option>Barangay Uno</option>
+                                <option>Barangay Dos</option>
+                                <option>Barangay Tres</option>
+                                <option>Dili</option>
+                                <option>Pangi</option>
+                                <option>Bangbang</option>
+                                <option>Libtangin</option>
+                                <option>Cabugao</option>
+                                <option>Obong</option>
+                                <option>Masiga</option>
+                                <option>Bahi</option>
+                            </select>
+                            <!-- <input type="text" id="txtBarangay" class="form-control" placeholder="Your Barangay" required> -->
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+                            <label for="Telephone">Telephone Number</label>
+                            <input type="number" id="txtTelephoneNumber" class="form-control"
+                                placeholder="Your Telephone Number" required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            <p class="">Security Question</p>
+                            <select class="form-control" name="" id="" required>
+                                <option>What was the first butterfly you cultured?</option>
+                                <option>What butterfly do you usually culture?</option>
+                                <option>How many years you are culturing butterflies?</option>
+                                <option>What was your childhood nickname?</option>
+                                <option>What is your ideal job?</option>
+                            </select>
+                            <br />
+
+                            <input type="textbox" class="form-control">
+                            <br />
+                            <div>
+                        </fieldset>
+
                         <div>
                             <label for="agent">
-                                <input type="checkbox"> I am an agent
+                                <input type="checkbox"><span>I am an agent</span> 
                             </label>
                             <label for="info">
-                                <input type="checkbox">Information you provide when registering will be shared with the
-                                account owner and host and can be used and shared by them in accordance with their Terms
-                                and
-                                Privacy Policy.
+                                <input type="checkbox">
+                                <span>
+                                    Information you provide when registering will be shared with
+                                    theaccount owner and host and can be used and shared by them in accordance with their
+                                    Terms and Privacy Policy. 
+                                </span> 
                             </label>
-                            <br />
                             <p>Have already an account?
                                 <a class="btn-login" href="login.html">Login</a>
                                 <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                             </p>
-                    </form>
-                </div>
-            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
     </div>
 
-    </form>
-    </div>
+
+
     <script src="jquery-3.6.0.slim.min.js"> </script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

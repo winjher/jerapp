@@ -105,7 +105,7 @@ async function app() {
 }
 //
 // camera stream video element
-let on_stream_video = document.querySelector('#capture-camera');
+let on_stream_video = document.querySelector('#camera-stream');
 // flip button element
 let flipBtn = document.querySelector('#flip-btn');
 
