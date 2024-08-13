@@ -58,8 +58,8 @@ async function app() {
 //   document.getElementById("eggs").addEventListener("click", () => addExample(3))
 
 //Care Management
-  document.getElementById("disease").addEventListener("click", () => addExample(4))
-  document.getElementById("defects").addEventListener("click", () => addExample(5))
+  // document.getElementById("disease").addEventListener("click", () => addExample(4))
+  // document.getElementById("defects").addEventListener("click", () => addExample(5))
  //class Names
  document.getElementById("atlas").addEventListener("click", () => addExample(6))
  document.getElementById("batwing").addEventListener("click", () => addExample(7))
@@ -91,7 +91,7 @@ async function app() {
       const result = await classifier.predictClass(activation)
 
       
- const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects", "atlas","batwing","clippers","commonjay","commonlime","commonmime","commonmormon","emeraldswallowtail","giantsilk","goldenbirdwing","greyglassytiger","greateggfly","greatyellowmormon","paperkite","pinkrose","plaintiger","redlacewing","scarletmormon","tailedjay","antbite","deformed","old","overbend","stetched","healthypupae","npvirus","bvirus","opelek","opecytes","tachi","tricho","healthylarvae"]
+ const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects","Atlas","Batwing","Clippers","Common Jay", "Common Lime","Common Mime","Common Mormon","Emerald Swallow Tail","Giant Silk Moth","Golden Birdwing","Grey Glassy Tiger","Great Eggfly","Great Yellow Mormon","Paper Kite","Pink Rose","Plain Tiger","Red Lacewing","Scarlet Mormon","Tailed Jay","Antbite","Deformed","Old","Overbend","Stetched","Healthy Pupae","Nuclear Polyhedrosis Virus","Baculo Viruses","Ophry Elek","Ophrycocytes","tachinids Flies","Trichogramma","Healthy Larvae"]
       document.getElementById("console").innerText = `
                 prediction: ${classes[result.label]}\n
                 probabilty: ${result.confidences[result.label]}
@@ -103,5 +103,46 @@ async function app() {
     await tf.nextFrame()
   }
 }
+//
+// camera stream video element
+let on_stream_video = document.querySelector('#webcam');
+// flip button element
+let flipBtn = document.querySelector('#flip-btn');
 
+// default user media options
+let constraints = { audio: false, video: true }
+let shouldFaceUser = true;
+
+// check whether we can use facingMode
+let supports = navigator.mediaDevices.getSupportedConstraints();
+if( supports['facingMode'] === true ) {
+  flipBtn.disabled = false;
+}
+
+let stream = null;
+
+function capture() {
+  constraints.video = {
+      width: {
+      min: 192,
+      ideal: 192,
+      max: 192,
+    },
+    height: {
+      min: 192,
+      ideal: 192,
+      max: 192
+    },
+    facingMode: shouldFaceUser ? 'user' : 'environment'
+  }
+  navigator.mediaDevices.getUserMedia(constraints)
+    .then(function(mediaStream) {
+      stream  = mediaStream;
+      on_stream_video.srcObject = stream;
+      on_stream_video.play();
+    })
+    .catch(function(err) {
+      console.log(err)
+    });
+}
 app()
