@@ -1526,8 +1526,8 @@ a:hover{
 }
 
 video {
-  width: 192px;
-  height: 192px;
+  width: 224px;
+  height: 224px;
   background: rgba(0, 0, 0, 0.2);
   -webkit-transform: scaleX(-1);
   /* mirror effect while using front cam */
@@ -1536,8 +1536,8 @@ video {
 }
 
 #canvas {
-  width: 192px;
-  height: 192px;
+  width: 224px;
+  height: 224px;
   -webkit-transform: scaleX(-1);
   /* mirror effect while using front cam */
   transform: scaleX(-1);
