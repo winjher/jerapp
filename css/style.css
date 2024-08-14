@@ -558,7 +558,6 @@ img:hover {
    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
    position: relative;
    width: 100%;
-   padding-top: 5px;
    padding-bottom: 5px;
    padding-right: 5px;
    padding-left: 5px;
@@ -932,8 +931,11 @@ img:hover {
 
  /* This is for premium plan */
 
- h2 {
+ .h2 {
    text-align: center;
+ }
+ .h5{
+  margin-top: 20px;
  }
 
  .list-plan,
@@ -1257,8 +1259,8 @@ margin-top: 10px;
   margin-left: auto;
   width: 30px;
   height: fit-content;
-  margin-bottom: 20px;
 }
+
 /* Dashboard  */
 .notification {
   background-color: #555;
