@@ -62,7 +62,7 @@
 }
 
  p {
-   margin-block-start: 1em;
+   margin: 0px;
  }
  li {
   list-style: none;
@@ -934,9 +934,6 @@ img:hover {
  .h2 {
    text-align: center;
  }
- .h5{
-  margin-top: 20px;
- }
 
  .list-plan,
  .list-plan-item {
@@ -1237,6 +1234,7 @@ margin-top: 10px;
 }
 .stages-icon-list,
 .hostplant-icon-list{
+  margin-top:10px
   background-color: #f5f8f8;
   border-radius: 0px 0px 15px 15px;
 
@@ -1291,7 +1289,7 @@ margin-top: 10px;
 
 
 .p-home {
-    margin-block-start: -1em;
+    margin:0px;
 }
 
 
