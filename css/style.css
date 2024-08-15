@@ -58,7 +58,12 @@
 
  body {
   /* background-image: url("icon/bgbutterfly.jpg"); */
-  background-color: #cccccc;
+  background-color: #cccccc; */
+  background: rgb(39, 188, 209);
+  background: linear-gradient(118deg,
+      rgba(39, 188, 209, 0.9783263647255778) 0%,
+      rgba(6, 14, 101, 1) 100%);
+  opacity: 0.9;
 }
 
  p {
@@ -1196,6 +1201,8 @@ margin-top: 10px;
   margin-right: auto;
   color: #e2910e;
   border-radius:  0px 0px 15px 15px;
+  padding-top: 4px;
+  font-size: 15px;
 }
 
 .btn-butterfly-moth{
@@ -1604,4 +1611,11 @@ b, strong {
   font-weight: bolder;
   font-size: large;
   color: var(--bs-dark);
+}
+panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  font-size: x-large;
 }
