@@ -538,6 +538,7 @@ img:hover {
   color: var(--bs-teal);
   text-align: center;
 }
+
 .card-classify{
   position: relative;
   width: 100%;
@@ -566,7 +567,7 @@ img:hover {
 
 
  .card-app-list-item {
-   width: 200px;
+   /* width: 200px; */
    border: 1px solid;
    border-color: orange;
    /* background-color: #ffc; */
