@@ -82,14 +82,21 @@
         <div class="row mb-5">
             <div class="col-sm" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img src="images/butterfly_greateggfly.jpg" alt="User Image" style="width:500px;height:500px;">
+                    <img id="imagePreview" src="images/butterfly_greateggfly.jpg" alt="User Image" style="width:500px;height:500px;">
                 </span>
             </div>
             <div class="col-sm">
                 <div>
                     <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
                         class="text-center mb-5 content-h1 rounded">
-                        {{pred_output}} </h1>
+                        <div id="predictionLabel"></div>
+                    </h1>
+                </div>
+                <div class="text-center">
+                    <input type="range" min="0" max="4" value="0" step="1" class="slider" id="predictionSlider">
+                    <!-- <div id="predictionLabel"></div> -->
+                    <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
+    
                 </div>
                 <div class="card-app-list">
                     <div class="details-commonjay">

@@ -82,70 +82,84 @@
         <div class="row mb-5">
             <div class="col-sm" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img src="images/butterfly_batwing.jpg" alt="User Image" style="width:500px;height:500px;">
+                    <img id="imagePreview" src="images/butterfly_batwing.jpg" alt="User Image" style="width:500px;height:500px;">
                 </span>
             </div>
             <div class="col-sm">
                 <div>
                     <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
                         class="text-center mb-5 content-h1 rounded">
-                        {{pred_output}} </h1>
+                        <div id="predictionLabel"></div>
+                    </h1>
+                </div>
+                <div class="text-center">
+                    <input type="range" min="0" max="4" value="0" step="1" class="slider" id="predictionSlider">
+                    <!-- <div id="predictionLabel"></div> -->
+                    <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
+    
                 </div>
                 <div class="card-app-list">
                     <div class="details-commonjay">
-                        <h4><b> Top Five Prediction </b> </h4>
+                        <h2><b> Top Five Prediction </b> </h2>
                         <div class="panel-body">
                             <div class="col-sm">
                                 <ul>
                                     <li>
                                         <div class="stages-icon-list">
                                             <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
+                                                <img src="icon/butterfly3.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
                                             </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider1">
+                                            <div id="predictionLabel1"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="stages-icon-list">
+                       
+                                            <button type="button" class="stages-icon-btn">
+                                                <img src="icon/butterfly3.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
+                                            </button>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider2">
+                                            <div id="predictionLabel2"></div>
+                                        </div>
                                     </li>
                                     <li>
                                         <div class="stages-icon-list">
                                             <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
+                                                <img src="icon/butterfly3.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
                                             </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider3">
+                                            <div id="predictionLabel3"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="stages-icon-list">
+                                         
+                                            <button type="button" class="stages-icon-btn">
+                                                <img src="icon/butterfly3.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
+                                            </button>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider4">
+                                            <div id="predictionLabel4"></div>
+                                        </div>
                                     </li>
                                     <li>
                                         <div class="stages-icon-list">
                                             <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
+                                                <img src="icon/butterfly3.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
                                             </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
-                                    </li>
-                                    <li>
-                                        <div class="stages-icon-list">
-                                            <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
-                                            </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
-                                    </li>
-                                    <li>
-                                        <div class="stages-icon-list">
-                                            <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
-                                            </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider5">
+                                            <div id="predictionLabel5"></div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -154,6 +168,7 @@
                 </div>
             </div>
         </div>
+        <script src="js/BClasses.js"></script>
         <script src="./jquery-3.6.0.slim.min.js"> </script>
         <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
