@@ -1431,6 +1431,15 @@ a,.farm{
   height: 100px;
   border-radius: 12px 12px 0px 0px ;
 }
+.add-btn{
+  border: none;
+  border-radius: 50%;
+  background-color: #0fc63a;
+  color: var(--color-white);
+  /* padding: 5px; */
+  width: 14px;
+  height: 14px;
+}
 
 /* Slideshow container */
 .slideshow-container {
