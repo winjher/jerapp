@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/slider.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iconbar.css">
+</head>
+<style>
+    input[type="text"] {
+        padding: 5px;
+        width: 200px;
+        font-size: 16px;
+        border-radius: 2px;
+    }
+</style>
+
+<body style="height: 1400px; margin-bottom:300px;">
+    <!-----------------------------Category section--------------------------------------------->
+    <div class="col-xl-12 text-center">
+        <div class="container-fluid col-xl-12">
+            <input type="text" id="search" placeholder="Search...">
+            <button class="btn-hatchery" onclick="search()">Search</button>
+            <p id="output"></p>
+        </div>
+        <div>
+            <button class="btn-culture">
+                <h3 style="text-align:center;font-size:4rem card-title">
+                    <a href="add garden.html" class="farm home-card-title">Proper Care Management</a>
+                </h3>
+            </button>
+        </div>
+        <div class="slideshow-container">
+            <ul>
+                <li class="card-app-list-item mySlides">
+                    <div>
+                        <div class="numbertext">1/4</div>
+                        <h5 class="h5 h5-title">Butterfly House</h5>
+                        <img class="imagebackground" src="images/batwing02.jpg" alt="" srcset="" width="300px">
+                        <button type="submit" class="btn-house" onclick="myHouse()" value="House Form">
+                            <h5 class="h5 h5-btn">
+                                <a href="butterfly_house.html">
+                                    Butterfly
+                                </a>
+                            </h5>
+                        </button>
+                    </div>
+                </li>
+                <li class="card-app-list-item mySlides">
+                    <div>
+                        <div class="numbertext">2/4</div>
+                        <h5 class="h5 h5-title">Puparium</h5>
+                        <img class="imagebackground" src="images/ButterflyCage.png" alt="" srcset="" width="300px">
+                        <button type="submit" class="btn-puparium" onclick="myPuparium()" value="Puparium Form">
+                            <h5 class="h5 h5-btn">
+                                <a href="puparium.html">
+                                    Puparium
+                                </a>
+                            </h5>
+                        </button>
+                    </div>
+                </li>
+                <li class="card-app-list-item mySlides">
+                    <div>
+                        <div class="numbertext">3/4</div>
+                        <h5 class="h5 h5-title">Sleeving Boxes</h5>
+                        <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">
+                        <button type="submit" class="btn-sleeving" onclick="mySleeving()" value="Sleeving Form">
+                            <h5 class="h5 h5-btn">
+                                <a href="sleeving-boxes.html">
+                                    Cabinet
+                                </a>
+                            </h5>
+                        </button>
+                    </div>
+                </li>
+                <li class="card-app-list-item mySlides">
+                    <div>
+                        <div class="numbertext">4/4</div>
+                        <h5 class="h5 h5-title">Sleeving Boxes</h5>
+                        <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="300px">
+                        <button type="submit" class="btn-sleeving" onclick="mySleeving()" value="Sleeving Form">
+                            <h5 class="h5 h5-btn">
+                                <a href="hatchery.html">
+                                    Hatchery
+                                </a>
+                            </h5>
+                        </button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+    </div>
+    <div class="col-xl-12 text-center">
+        <section>
+            <div class="col-xl-12 text-center">
+                <button class="btn-culture">
+                    <h3 style="text-align:center;font-size:4rem home-card-title">
+                        <a href="add garden.html" class="farm home-card-title">Popular Life Cycle</a>
+                    </h3>
+                </button>
+                <div class="stages-icon-list-home ">
+                    <ul class="card-app-list col-xl-12 text-center">
+                        <li class="card-app-list-item">
+                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                <a href="predict.html">
+                                    <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                        class="img-btn-apps-menu-home">
+                                </a>
+                            </button>
+                            <div class="label-text">
+                                <p class="p-home">Eggs</p>
+                            </div>
+                        </li>
+                        <li class="card-app-list-item">
+                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                <a href="predict.html">
+                                    <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                        class="img-btn-apps-menu-home">
+                                </a>
+                            </button>
+                            <div class="label-text">
+                                <p class="p-home">Larvae</p>
+                            </div>
+                        </li>
+                        <li class="card-app-list-item">
+                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                <a href="predict.html">
+                                    <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                        class="img-btn-apps-menu-home">
+                                </a>
+                            </button>
+                            <div class="label-text">
+                                <p class="p-home">Pupae</p>
+                            </div>
+                        </li>
+                        <li class="card-app-list-item">
+                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                <a href="predict.html">
+                                    <img src="icon/butterfly3.png" alt="" srcset="" width="30px"
+                                        class="img-btn-apps-menu-home">
+                                </a>
+                            </button>
+                            <div class="label-text">
+                                <p class="p-home">Butterfly</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+        </section>
+        <hr>
+
+        <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+        <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
+            <div class="icon-bar">
+                <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
+                <a href="Butterfly-Hostplants.html"><img src="icon/plants.png"></a>
+                <a href="take_picture.html"><img src="icon/camera.png" class="active-center"></a>
+                <a href="classify.html"><img src="icon/detect.png"></a>
+                <a href="map.html"><img src="icon/globo.png"></a>
+            </div>
+        </nav> -->
+        <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+        <script src="static 'jquery-3.6.0.slim.min.js"> </script>
+        <script src="static 'js/bootstrap.bundle.min.js"></script>
+        <script src="js/searchbar.js"></script>
+</body>
+
+</html>
