@@ -1,6 +1,9 @@
 {
+  "name": "my-project",
+  "version": "1.0.0",
   "dependencies": {
     "@tensorflow/tfjs": "^4.20.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "fs": "file-system"
   }
 }

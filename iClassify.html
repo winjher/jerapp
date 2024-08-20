@@ -21,19 +21,11 @@
     <title>Image Classification of BUTTERFLIES</title>
 
 </head>
-
-
 <body>
-
-
-
-
     <header class="text-center">
         <main id="page-content" class="">
-            <div class="prism">
+            <!-- <div class="card-app-butterflylist-item">
             </div>
-
-
             <p id="browser-warning" class="alert alert-warning small mt-2" style="display: none;">
                 <strong> <i class="fas fa-exclamation-triangle"></i> You are using a web browser that may not support
                     image downloads.</strong>
@@ -43,160 +35,84 @@
 
             <div class="upload-page-wrapper" data-first-signin="false"></div>
 
-            <div class="dropzone-enabled"></div>
+            <div class="dropzone-enabled"></div> -->
 
         </main>
-        <h1>Image Classifier for Eggs</h1>
-
+        <!-- <h1>Image Classifier for Eggs</h1>
     </header>
-
     <div>
-
         <input type="file" name="file" onChange={changeHandler} />
-
         <div>
-
             <button onClick={handleSubmission}>Submit</button>
-
         </div>
-
     </div>
-
-    <form autocomplete="off">
-
         <div class="if input-wrapper">
-
             <input data-size="larger" type="file" class="if file-upload"
                 accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 id="if-file-upload-2" placeholder="Please upload your CV" />
-
             <label for="if-file-upload-2" class="if button secondary">
 
                 <span class="if icon ui data-upload blue"></span>Upload your CV
-
             </label>
+        </div> -->
 
-        </div>
-
-
-        <h2>Click "Choose File" to Add an Image</h2 <div>
-
+        <h2>Click "Choose File" to Add an Image</h2>
         <h1>Image classification using MobileNet model</h1>
-
         </div>
-
-
-        <div class="grid-container">
-
-            <div class="card-deck">
-
-
-                <div class="card text-center">
-
+    
+                <div class="col-xl-12 text-center">
                     <div class="card-block">
-
                         <input type='file' id='getval' />
-
-
-
-
-
-
-
-
                     </div>
-
-                    <div class="card-footer"> <img id="image" src="http://placehold.it/180" alt="the image" />
-
+                    <div class="col-xl-12 text-center"> 
+                        <img class="img-lep" id="image" src="http://placehold.it/180" alt="the image" />
                         <p>That's
-
                             <span id="result">... </span> with a confidence of
 
                             <span id="probability"></span>
-
                         </p>
-
                     </div>
-
                 </div>
 
-
-
-            </div>
-
-
-
-        </div>
-
-    </form>
-
-
-
-    <div class="card-deck">
-
-
-
-
+    <!-- <div class="card-deck">
         <div class="card-text">
-
-
-
             <div class="card-block">
-
                 <input type='file' id='getval' />
-
                 <div class="card-body">
-
                     <img id="image" src="http://placehold.it/180" alt="the image" />
-
                 </div>
-
-
             </div>
-
             <div class="card-footer">
-
                 <p>That's
-
                     <span id="result">... </span> with a confidence of
 
                     <span id="probability"></span>
-
                 </p>
-
             </div>
-
-
         </div>
-
-
-
-    </div>
+    </div> -->
     <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
     <nav class="navbar navbar-expand-sm fixed-bottom">
-        <div class="icon-bar">
-            <div class="icon-size">
-                <a href="lepidoptera.html"><img src="./icon/butterfly.png" width="200"></a>
-            </div>
-            <div class="icon-size">
-                <a href="alarm.html"><img src="./icon/alarm.png" width="200"></a>
-            </div>
-            <div class="icon-size">
-                <a class="active " href="index.html"><img src="./icon/Homey.png" width="200"></a>
-            </div>
-            <div class="icon-size">
-                <a href="classify.html"><img src="./icon/semanticsegmentation.png" width="200"></a>
-            </div>
-            <div class="icon-size">
-                <a href="map.html"><img src="./icon/globe.png" width="200"></a>
-            </div>
-        </div>
+        <article>
+            <footer>
+                <div class="text-center">
+                    <div class="copyright">
+                        <ul>
+                            <li class="">
+                                <a class="btn" href="take_picture.html">
+                                    <h5><img src="icon/camera.png" alt=""></h5>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </footer>
+        </article>
     </nav>
     <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
 
     <script src="./jquery-3.6.0.slim.min.js"> </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="C:/hw/jerapps/js/myscript.js"></script>
+    <script src="js/myscript.js"></script>
 
 </body>
 
