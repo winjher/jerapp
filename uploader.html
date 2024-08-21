@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Upload File</title>
+    <style>
+        /* RESET & BASIC STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+        :root {
+            --white: #fff;
+            --darkblue: #1b4965;
+            --lightblue: #edf2f4;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            margin: 50px 0 150px;
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        .container {
+            max-width: 1400px;
+            padding: 0 12px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        /* TABLE STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        .table-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .table-wrapper::-webkit-scrollbar-thumb {
+            background: var(--darkblue);
+            border-radius: 40px;
+        }
+
+        .table-wrapper::::-webkit-scrollbar-track {
+            background: var(--white);
+            border-radius: 40px;
+        }
+
+        .table-wrapper table {
+            margin: 50px 0 20px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .table-wrapper table th,
+        .table-wrapper table td {
+            padding: 10px;
+            min-width: 75px;
+        }
+
+        .table-wrapper table th {
+            color: var(--white);
+            background: var(--darkblue);
+        }
+
+        .table-wrapper table tbody tr:nth-of-type(even)>* {
+            background: var(--lightblue);
+        }
+
+        .table-wrapper table td:first-child {
+            display: grid;
+            grid-template-columns: 25px 1fr;
+            grid-gap: 10px;
+            text-align: left;
+        }
+
+        .table-credits {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        /* FOOTER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .page-footer {
+            position: fixed;
+            right: 0;
+            bottom: 50px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            z-index: 1;
+            background: var(--white);
+        }
+
+        .page-footer a {
+            display: flex;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-------------------------------Nav bar section-------------------------------------------->
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Upload</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link " href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Lepidoptera apps</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Butterfly</a>
+                                <a class="dropdown-item" href="moth.html">Moth</a>
+                                <a class="dropdown-item" href="skipper.html">Skipper</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Object measurements apps</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="pupae_size.html">Pupae Size</a>
+                                <a class="dropdown-item" href="#">Pupae Gender</a>
+                                <a class="dropdown-item" href="#">Pupae Defects</a>
+                                <a class="dropdown-item" href="#">Pupae Day Old</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Object Identification apps</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Lepidoptera</a>
+                                <a class="dropdown-item" href="#">Host Plants</a>
+                                <a class="dropdown-item" href="#">Predators</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Match Identifier Apps</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Butterfly and Hosplants</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#">Setting</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rate</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#">Weather</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            </div>
+        </nav>
+    </section>
+    <!-----------------------------Category section--------------------------------------------->
+    <br>
+    <hr>
+    <h2>Upload</h2>
+    <hr>
+    <div class="container">
+        <h1>Jherwin(total Number of Upload)</h1>
+            <a href="recent.html" button class="btn btn-primary">Recent</a>
+            <a href="daily.html" button class="btn btn-primary">Daily</a>
+            <a href="monthly.html" class="btn btn-primary">Monthly</a>
+        
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Uploader Name</th>
+                        <th>Upload Reference ID</th>
+                        <th>Common Name</th>
+                        <th>%</th>
+                        <th>Upload Image</th>
+                        <th>Size</th>
+                        <th>Mime Type</th>
+                        <th>Last Modified</th>
+                        <th>Content</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-af"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>Butterfly-Lacewing</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Butterfly Class</td>
+                        <td>August 19, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-al"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>Butterfly-Lacewing</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Butterfly Class</td>
+                        <td>August 20, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-dz"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>Butterfly-Lacewing</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Butterfly Class</td>
+                        <td>August 21, 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Uploader Name</th>
+                        <th>Upload Reference ID</th>
+                        <th>Common Name</th>
+                        <th>%</th>
+                        <th>Upload Image</th>
+                        <th>Size</th>
+                        <th>Mime Type</th>
+                        <th>Last Modified</th>
+                        <th>Content</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-af"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>Overbend</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Pupae Class</td>
+                        <td>August 19, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-al"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>stretch mark</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Pupae Class</td>
+                        <td>August 20, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-dz"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>antbite</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Pupae Class</td>
+                        <td>August 21, 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Uploader Name</th>
+                        <th>Upload Reference ID</th>
+                        <th>Common Name</th>
+                        <th>%</th>
+                        <th>Upload Image</th>
+                        <th>Size</th>
+                        <th>Mime Type</th>
+                        <th>Last Modified</th>
+                        <th>Content</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-af"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>Oprycytes Elektrosis</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Larvae Class</td>
+                        <td>August 19, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-al"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>Trichogramma wasps</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Larvae Class</td>
+                        <td>August 20, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>
+                                <span class="fi fi-dz"></span>
+                            </span>
+                            <span>Jher</span>
+                        </td>
+                        <td>397648704704765081</td>
+                        <td>Baculovirus</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Larvae Class</td>
+                        <td>August 21, 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-credits">Table info by <a
+                href=""
+                target="_blank">jerapp</a></p>
+    </div>
+    <footer class="page-footer">
+        <span>made by </span>
+        <a href="https://georgemartsoukos.com/" target="_blank">
+            <img width="24" height="24" src="icon/8butterfly.png"
+                alt="George Martsoukos logo">
+        </a>
+    </footer>
+
+    <!-- <input type="file" id="inputfile" class="form-control"> -->
+    </div>
+    <script src="jquery-3.6.0.slim.min.js"> </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
