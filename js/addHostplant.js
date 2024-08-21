@@ -24,9 +24,11 @@ async function app() {
     img.dispose()
   }
 
-  document.getElementById("emptyleaf").addEventListener("click", () => addExample(37))
-  document.getElementById("enoughleaf").addEventListener("click", () => addExample(38))
-
+  document.getElementById("emptyleaf").addEventListener("click", () => addExample(16))
+  document.getElementById("enoughleaf").addEventListener("click", () => addExample(17))
+  document.getElementById("diseaseleaf").addEventListener("click", () => addExample(18))
+  document.getElementById("maturedleaf").addEventListener("click", () => addExample(19))
+  document.getElementById("softleaf").addEventListener("click", () => addExample(20))
 
   while (true) {
     if (classifier.getNumClasses() > 0) {
@@ -36,7 +38,7 @@ async function app() {
 
       const result = await classifier.predictClass(activation)
 
-      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects","Atlas","Batwing","Clippers","Common Jay", "Common Lime","Common Mime","Common Mormon","Emerald Swallow Tail","Giant Silk Moth","Golden Birdwing","Grey Glassy Tiger","Great Eggfly","Great Yellow Mormon","Paper Kite","Pink Rose","Plain Tiger","Red Lacewing","Scarlet Mormon","Tailed Jay","Antbite","Deformed","Old","Overbend","Stetched","Healthy Pupae","Nuclear Polyhedrosis Virus","Baculo Viruses","Ophrycysts Elektroscirrah","Tachinids Flies","Trichogramma Wasps","Healthy Larvae","Enough Leaf", "Empty Leaf"]
+     const classes = ["Amuyon", "Blood Flower", "Calamondin", "Crown Flower","Curry Leaf","Dutchman Pipevine","Indian Birthwort","Limeberry","Pomelo","Soursop","Sugar Apple", "Sweet Orange","Tetradium","Sweet Potato Vine","Wild Cucumber","Winged Prickly Ash","Enough Leaf", "Empty Leaf","Disease Leaf","Matured Leaf", "Soft Leaf"]
       
       document.getElementById("console").innerText = `
                 prediction: ${classes[result.label]}\n
