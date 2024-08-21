@@ -1684,3 +1684,35 @@ b, strong {
   height: 60px;
   padding: 4px;
 }
+
+.card-app-home-list {
+  width: auto;
+  text-align: center;
+  border: 1px solid;
+  border-color: rgb(234, 234, 238);
+  border-radius: 5px;
+  /* background-color: #fff; */
+  display: flex;
+  flex-wrap: wrap;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  position: relative;
+  width: 100%;
+  padding-bottom: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-top: 4px;
+}
+.card-app-home-list-item {
+  width: 200px;
+  border: 1px solid;
+  border-color: orange;
+  /* background-color: #ffc; */
+  border-radius: 15px;
+  margin: 35px 15px 35px 15px;
+  background-color: #fff;
+  /* margin-left: auto;
+  margin-right: auto; */
+  color: var(--bs-teal);
+  text-align: center;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+}
