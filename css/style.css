@@ -1173,6 +1173,7 @@ margin-top: 10px;
 .img-btn-apps-menu:hover{
   filter: drop-shadow(4px 4px 8px #999999);
   text-decoration: none;
+  overflow: var(--color-ocean);
 }
 /* Scientific name */
 .sci-name a:hover{

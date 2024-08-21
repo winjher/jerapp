@@ -1,3 +1,5 @@
+
+//adding  labels
 const classifier = knnClassifier.create()
 const webcamElement = document.getElementById("webcam")
 
@@ -22,34 +24,20 @@ async function app() {
     img.dispose()
   }
 
-//types of pupae defects
-document.getElementById("amuyon").addEventListener("click", () => addExample(0))
-document.getElementById("bloodflwr").addEventListener("click", () => addExample(1))
-document.getElementById("calamondin").addEventListener("click", () => addExample(2))
-document.getElementById("crownflwr").addEventListener("click", () => addExample(3))
-document.getElementById("curryleaf").addEventListener("click", () => addExample(4))
-document.getElementById("dutchmanpipe").addEventListener("click", () => addExample(5))
-document.getElementById("indianbirt").addEventListener("click", () => addExample(6))
-document.getElementById("limeberry").addEventListener("click", () => addExample(7))
-document.getElementById("pomelo").addEventListener("click", () => addExample(8))
-document.getElementById("soursop").addEventListener("click", () => addExample(9))
-document.getElementById("sugarapple").addEventListener("click", () => addExample(10))
-document.getElementById("sweetorange").addEventListener("click", () => addExample(11))
-document.getElementById("sweetpotato").addEventListener("click", () => addExample(12))
-document.getElementById("tetradium").addEventListener("click", () => addExample(13))
-document.getElementById("wildcucumber").addEventListener("click", () => addExample(14))
-document.getElementById("wingedprickly").addEventListener("click", () => addExample(15))
+  document.getElementById("emptyleaf").addEventListener("click", () => addExample(37))
+  document.getElementById("enoughleaf").addEventListener("click", () => addExample(38))
 
-while (true) {
+
+  while (true) {
     if (classifier.getNumClasses() > 0) {
       const img = await webcam.capture()
 
       const activation = net.infer(img, "conv_preds")
 
       const result = await classifier.predictClass(activation)
+
+      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects","Atlas","Batwing","Clippers","Common Jay", "Common Lime","Common Mime","Common Mormon","Emerald Swallow Tail","Giant Silk Moth","Golden Birdwing","Grey Glassy Tiger","Great Eggfly","Great Yellow Mormon","Paper Kite","Pink Rose","Plain Tiger","Red Lacewing","Scarlet Mormon","Tailed Jay","Antbite","Deformed","Old","Overbend","Stetched","Healthy Pupae","Nuclear Polyhedrosis Virus","Baculo Viruses","Ophrycysts Elektroscirrah","Tachinids Flies","Trichogramma Wasps","Healthy Larvae","Enough Leaf", "Empty Leaf"]
       
-      const classes = ["Amuyon", "Blood Flower", "Calamondin", "Crown Flower","Curry Leaf","Dutchman Pipevine","Indian Birthwort","Limeberry","Pomelo","Soursop","Sugar Apple", "Sweet Orange","Tetradium","Sweet Potato Vine","Wild Cucumber","Winged Prickly Ash"]
-  
       document.getElementById("console").innerText = `
                 prediction: ${classes[result.label]}\n
                 probabilty: ${result.confidences[result.label]}
@@ -61,7 +49,7 @@ while (true) {
     await tf.nextFrame()
   }
 }
-
+//
 // camera stream video element
 let on_stream_video = document.querySelector('#camera-stream');
 // flip button element
@@ -104,3 +92,4 @@ function capture() {
     });
 }
 app()
+
