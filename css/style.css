@@ -1697,21 +1697,21 @@ b, strong {
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
   position: relative;
   width: 100%;
-  padding-bottom: 1px;
+  padding-bottom: 5px;
   padding-right: 5px;
   padding-left: 5px;
   margin-top: 4px;
 }
 .card-app-home-list-item {
-  width: 200px;
+  /* width: 170px; */
   border: 1px solid;
-  border-color: orange;
+  border-color: var(--bs-green);
   /* background-color: #ffc; */
   border-radius: 15px;
   margin: 35px 15px 35px 15px;
   background-color: #fff;
-  /* margin-left: auto;
-  margin-right: auto; */
+  margin-left: auto;
+  margin-right: auto;
   color: var(--bs-teal);
   text-align: center;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
