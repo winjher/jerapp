@@ -42,14 +42,52 @@
 </head>
 
 <body background="{{url_for('static',filename = 'images/Back.jpg')}}">
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <!-- <a href="add garden.html">
+                    <img src="icon/back-icon.png" alt="" srcset="" class="img-back-icon">
+                </a> -->
+                <a class="navbar-brand" href="plan.html">Premium</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://forms.gle/TRxTVfNoX9tgo3Ma6">
+                                Rate this apps
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="icon-size">
+                                <a class="nav-link" href="LogIn.html">Logout
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="add garden.html">
+                                Version 1.0
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
     <div>
-        <h1 style="text-align:center;font-size:4rem">Larval Disease & Get Cure</h1>
+        <h1 style="text-align:center;font-size:4rem;margin-top: 12px;">Larval Disease & Get Cure</h1>
     </div>
     <div class="container my-2">
         <div class="row mb-5">
             <div class="col-sm" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img src="{{url_for('static',filename = 'images/Tomato___Bacterial_spot.JPG' )}}" alt="User Image"
+                    <img src="" alt="User Image"
                         style="width:500px;height:500px;">
                 </span>
             </div>
@@ -57,15 +95,24 @@
                 <div>
                     <h1 style="padding: 15px; background-color: rgb(15, 15, 15); color: white;"
                         class="text-center mb-5 content-h1 rounded">
-                        {{pred_output}} </h1>
+                        Baculoviruses </h1>
                 </div>
                 <div class="details">
-                    <h4><b> Treatment : </b> </h4>
-                    <h6>
+                    <h1 style="color: white;"><b> Treatment : </b> </h1>
+                    <h6 style="color: white;">
                         Larvae that have Baculoviruses diseases require immediate attention before the disease takes
-                        over. Thoroughly dissect all species to prevent viral infections. Separate healthy larvae from
-                        the sick larvae. Clean the larval cabinet regularly. Transfer away to the safest cabinet like a
-                        new place for propagation. Heat the former cabinet of the larvae.
+                        over. 
+                        <ol>
+                            <li>Thoroughly dissect all species to prevent viral infections. Separate healthy larvae from
+                                the sick larvae.
+                            </li>
+                            <li>Clean the larval cabinet regularly. Transfer away to the safest cabinet like a
+                                new place for propagation.
+                            </li>
+                            <li>Heat the former cabinet of the larvae.</li>
+
+                        </ol>
+                          
                         </br>
                     </h6>
                 </div>
@@ -73,25 +120,7 @@
         </div>
     </div>
     <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
-    <nav class="navbar navbar-expand-sm fixed-bottom">
-        <div class="icon-bar">
-            <!-- <div class="icon-size">
-                <a href="lepidoptera.html"><img src="./icon/butterfly.png" width="200"></a>
-            </div> -->
-            <div class="icon-size">
-                <a href="alarm.html"><img src="./icon/alarm.png" width="200"></a>
-            </div>
-            <div class="icon-size">
-                <a class="active " href="index.html"><img src="./icon/Homey.png" width="200"></a>
-            </div>
-            <div class="icon-size">
-                <a href="classify.html"><img src="./icon/semanticsegmentation.png" width="200"></a>
-            </div>
-            <div class="icon-size">
-                <a href="map.html"><img src="./icon/globe.png" width="200"></a>
-            </div>
-        </div>
-    </nav>
+   
     <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
 
     <script src="./jquery-3.6.0.slim.min.js"> </script>

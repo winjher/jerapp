@@ -1321,6 +1321,7 @@ margin-top: 10px;
 .p-home {
     margin:0px;
     color: var(--color-cloud);
+    font-family: var(--font-family-roboto);
 }
 
 
