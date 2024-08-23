@@ -24,13 +24,10 @@ async function app() {
     img.dispose()
   }
 
-//types of pupae defects
-document.getElementById("antbit").addEventListener("click", () => addExample(25))
-document.getElementById("deform").addEventListener("click", () => addExample(26))
-document.getElementById("old").addEventListener("click", () => addExample(27))
-document.getElementById("bend").addEventListener("click", () => addExample(28))
-document.getElementById("stretch").addEventListener("click", () => addExample(29))
-document.getElementById("healthy").addEventListener("click", () => addExample(30))
+  //types of larval diseaasee
+  document.getElementById("infertile").addEventListener("click", () => addExample(37))
+  document.getElementById("unusualcolor").addEventListener("click", () => addExample(38))
+  document.getElementById("healthyeggs").addEventListener("click", () => addExample(39))
 
 
   while (true) {
@@ -40,8 +37,8 @@ document.getElementById("healthy").addEventListener("click", () => addExample(30
       const activation = net.infer(img, "conv_preds")
 
       const result = await classifier.predictClass(activation)
-      
-      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects","Atlas","Batwing","Clippers","Common Jay", "Common Lime","Common Mime","Common Mormon","Emerald Swallow Tail","Giant Silk Moth","Golden Birdwing","Grey Glassy Tiger","Great Eggfly","Great Yellow Mormon","Paper Kite","Pink Rose","Plain Tiger","Red Lacewing","Scarlet Mormon","Tailed Jay","Antbite","Deformed","Old","Overbend","Stetched","Healthy Pupae","Nuclear Polyhedrosis Virus","Baculo Viruses","Ophrycysts Elektroscirrah","Tachinids Flies","Trichogramma Wasps","Healthy Larvae"]
+
+      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects","Atlas","Batwing","Clippers","Common Jay", "Common Lime","Common Mime","Common Mormon","Emerald Swallow Tail","Giant Silk Moth","Golden Birdwing","Grey Glassy Tiger","Great Eggfly","Great Yellow Mormon","Paper Kite","Pink Rose","Plain Tiger","Red Lacewing","Scarlet Mormon","Tailed Jay","Antbite","Deformed","Old","Overbend","Stetched","Healthy Pupae","Nuclear Polyhedrosis Virus","Baculo Viruses","Ophrycysts Elektroscirrah","Tachinids Flies","Trichogramma Wasps","Healthy Larvae", "Infertile", "Unsual Color", "Healthy"]
   
       document.getElementById("console").innerText = `
                 prediction: ${classes[result.label]}\n
