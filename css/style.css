@@ -515,6 +515,8 @@ img:hover {
   flex-wrap: wrap;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
   padding-bottom: 0px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .card-app-gardenlist-item {
@@ -529,6 +531,22 @@ img:hover {
   margin-right: auto;
   color: #212222;
   text-align: center;
+}
+
+.card-app-feedback {
+  padding-left: 20px;
+  width: auto;
+  text-align: center;
+  border: 1px solid;
+  border-color:var(--bs-white);
+  border-radius: 10px;
+  /* background-color: #fff; */
+  display: flex;
+  flex-wrap: wrap;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  padding-bottom: 0px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .card-instruction-list-item {
