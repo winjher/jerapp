@@ -7,7 +7,6 @@
    --color-cloud: #F4F4FD;
    --color-dairy: #FCFCFC;
    --color-slate: #434455;
-   --color-cream:#F5F5DC;
    --bs-blue: #0d6efd;
    --bs-indigo: #6610f2;
    --bs-purple: #6f42c1;
@@ -15,6 +14,7 @@
    --bs-red: #dc3545;
    --bs-orange: #fd7e14;
    --bs-yellow: #ffc107;
+   --bs-cream: #F5F5DC;
    --bs-green: #198754;
    --bs-teal: #20c997;
    --bs-cyan: #0dcaf0;
@@ -516,8 +516,6 @@ img:hover {
   flex-wrap: wrap;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
   padding-bottom: 0px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 
 .card-app-gardenlist-item {
@@ -532,22 +530,6 @@ img:hover {
   margin-right: auto;
   color: #212222;
   text-align: center;
-}
-
-.card-app-feedback {
-  padding-left: 20px;
-  width: auto;
-  text-align: center;
-  border: 1px solid;
-  border-color:var(--bs-white);
-  border-radius: 10px;
-  /* background-color: #fff; */
-  display: flex;
-  flex-wrap: wrap;
-  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
-  padding-bottom: 0px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 
 .card-instruction-list-item {
@@ -1116,7 +1098,7 @@ margin-top: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 360px;
+  min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -1125,8 +1107,6 @@ margin-top: 10px;
   padding-bottom: 25px;
   padding-top: 25px;
 }
-
-
 
 .imagebackground {
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
@@ -1313,7 +1293,7 @@ margin-top: 10px;
 /* Dashboard  */
 
 .notification {
-  background-color: var(--color-cream);
+  background-color: var(--bs-cream);
   color: rgb(23, 2, 2);
   text-decoration: none;
   padding: 15px 26px;
@@ -1324,11 +1304,14 @@ margin-top: 10px;
   margin-left: 4px;
   margin-top: 4px;
   margin-bottom: 4px;
+text-align: left;
 }
+
 
 .notification:hover {
   background: var(--bs-orange);
 }
+
 
 .notification .badge {
   position: absolute;
@@ -1339,6 +1322,8 @@ margin-top: 10px;
   background: red;
   color: white;
 }
+
+
 .p-lepidoptera{
   margin: 0px;
 }
@@ -1713,6 +1698,39 @@ b, strong {
   padding: 4px;
 }
 
+.card-app-home-list {
+  width: auto;
+  text-align: center;
+  border: 1px solid;
+  border-color: rgb(234, 234, 238);
+  border-radius: 5px;
+  /* background-color: #fff; */
+  display: flex;
+  flex-wrap: wrap;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  position: relative;
+  width: 100%;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-top: 4px;
+}
+.card-app-home-list-item {
+  /* width: 170px; */
+  border: 1px solid;
+  border-color: var(--bs-green);
+  /* background-color: #ffc; */
+  border-radius: 15px;
+  margin: 10px 10px 10px 10px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--bs-teal);
+  text-align: center;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+}
+
+
 .card-app-dashboard {
   text-align: center;
   /* border: 1px solid; */
@@ -1720,26 +1738,26 @@ b, strong {
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
-  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  /* background-color: linear-gradient(to bottom right, #305170, #6DFC6B); */
   /* position: relative; */
-  width: 1200px;
+  /* width: 100%; */
   padding-bottom: 5px;
   margin-top: 4px;
-  margin-left: 20px;
+  
 }
-
-.card-app-home-list-item {
-  border: 1px solid;
-  border-color: var(--bs-green);
-  border-radius: 15px;
-  margin: 10px 10px 10px 10px;
-  background-color: #fff;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--bs-teal);
-  margin: 10px 10px 10px 10px;
+.card-dashboard {
+  margin: 0px;
+  width: 100%;
   text-align: center;
+  border: 1px solid;
+  border-color: var(--bs-white);
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  padding: 10px 10px 10px 10px;
+  backdrop-filter: blur(10px);
 }
 
 .card-dashboard-list-item{
@@ -1755,18 +1773,5 @@ b, strong {
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
 }
 
-.card-dashboard {
-  margin: 0px;
-  width: 1440px;
-  text-align: center;
-  border: 1px solid;
-  border-color: var(--bs-white);
-  border-radius: 5px;
-  /* background-color: #fff; */
-  display: flex;
-  flex-wrap: wrap;
-  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
-  padding-bottom: 10px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
+
+
