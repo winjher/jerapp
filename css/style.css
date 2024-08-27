@@ -1733,29 +1733,22 @@ b, strong {
 
 .card-app-dashboard {
   text-align: center;
-  /* border: 1px solid; */
   border-color: rgb(234, 234, 238);
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
-  /* background-color: linear-gradient(to bottom right, #305170, #6DFC6B); */
-  /* position: relative; */
-  /* width: 100%; */
   padding-bottom: 5px;
   margin-top: 4px;
-  
 }
 .card-dashboard {
+
   margin: 0px;
   width: 100%;
   text-align: center;
-  border: 1px solid;
-  border-color: var(--bs-white);
   border-radius: 5px;
-  background-color: #fff;
   display: flex;
-  flex-wrap: wrap;
-  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  position: relative;
+
   padding: 10px 10px 10px 10px;
   backdrop-filter: blur(10px);
 }
