@@ -7,6 +7,7 @@
    --color-cloud: #F4F4FD;
    --color-dairy: #FCFCFC;
    --color-slate: #434455;
+   --color-cream:#F5F5DC;
    --bs-blue: #0d6efd;
    --bs-indigo: #6610f2;
    --bs-purple: #6f42c1;
@@ -1115,7 +1116,8 @@ margin-top: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  min-width: 360px;
+
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -1123,6 +1125,19 @@ margin-top: 10px;
   border-radius: .25rem;
   padding-bottom: 25px;
   padding-top: 25px;
+}
+
+.card-app-dashboard {
+  min-width: 0;
+  width: auto;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-top: 4px;
 }
 
 .imagebackground {
@@ -1308,18 +1323,22 @@ margin-top: 10px;
 }
 
 /* Dashboard  */
+
 .notification {
-  background-color: #555;
-  color: white;
+  background-color: var(--color-cream);
+  color: rgb(23, 2, 2);
   text-decoration: none;
   padding: 15px 26px;
   position: relative;
   display: inline-block;
   border-radius: 2px;
+  width: 160px;
+  margin-left: 4px;
+  margin-top: 4px;
 }
 
 .notification:hover {
-  background: red;
+  background: var(--bs-orange);
 }
 
 .notification .badge {
@@ -1705,25 +1724,22 @@ b, strong {
   padding: 4px;
 }
 
-.card-app-home-list {
-  width: auto;
-  text-align: center;
-  border: 1px solid;
-  border-color: rgb(234, 234, 238);
-  border-radius: 5px;
-  /* background-color: #fff; */
-  display: flex;
-  flex-wrap: wrap;
-  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
-  position: relative;
-  width: 100%;
-  padding-bottom: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
-  margin-top: 4px;
-}
 .card-app-home-list-item {
   /* width: 170px; */
+  border: 1px solid;
+  border-color: var(--bs-green);
+  /* background-color: #ffc; */
+  border-radius: 15px;
+  margin: 10px 10px 10px 10px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--bs-teal);
+  text-align: center;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+}
+
+.card-dashboard-list-item{
   border: 1px solid;
   border-color: var(--bs-green);
   /* background-color: #ffc; */
