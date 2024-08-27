@@ -1715,16 +1715,17 @@ b, strong {
 
 .card-app-dashboard {
   text-align: center;
-  border: 1px solid;
+  /* border: 1px solid; */
   border-color: rgb(234, 234, 238);
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
   /* position: relative; */
-  width: 100%;
+  width: 1200px;
   padding-bottom: 5px;
   margin-top: 4px;
+  margin-left: 20px;
 }
 
 .card-app-home-list-item {
@@ -1736,6 +1737,7 @@ b, strong {
   margin-left: auto;
   margin-right: auto;
   color: var(--bs-teal);
+  margin: 10px 10px 10px 10px;
   text-align: center;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
 }
@@ -1751,4 +1753,20 @@ b, strong {
   color: var(--bs-teal);
   text-align: center;
   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+}
+
+.card-dashboard {
+  margin: 0px;
+  width: 1440px;
+  text-align: center;
+  border: 1px solid;
+  border-color: var(--bs-white);
+  border-radius: 5px;
+  /* background-color: #fff; */
+  display: flex;
+  flex-wrap: wrap;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+  padding-bottom: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
