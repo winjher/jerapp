@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/iconbar.css">
+  <link rel="stylesheet" href="css/banner.css">
   <link rel="stylesheet" href="css/style.css">
+
   <title>Login</title>
   <style>
-    #login {
+     #login {
       flex: 1 0 auto;
       overflow: hidden;
       width: 100%;
@@ -50,7 +55,7 @@
     }
 
     #login .submitsAndHiddens button {
-      float: right;
+      /* float: right; */
       box-sizing: border-box;
       padding: 0.25em 1em;
       margin-top: -0.25em;
@@ -71,7 +76,6 @@
       text-align: center;
       padding: 1em 0;
     }
-
     @media screen {
       .passwordShowHide+button {
         position: relative;
@@ -115,39 +119,45 @@
   </style>
 </head>
 
-<body>
- 
-    <div class="card-app-classification">
-      <div class="col-xl-12 text-center">
-      <form action="#" method="GET" id="login">
+<body style="height:1500px">
+
+  <hr>
+  <div class="card-app-list col-lg-12">
+    <form action="#" method="GET" id="login" class="form-control">
+      <div class="col-lg-12 text-center ">
         <h2>Login</h2>
-        <fieldset class="col-xl-12">
+        <fieldset>
+      
+          <input type="text" name="username" required>
           <label>
-            Username:<br>
-            <input type="text" name="username" required><br>
-          </label><label>
-            Password:<br>
-            <input type="password" name="password" required><br>
-          </label>
-          <button type="submit" class="btn-care">Login</button>
-          <div>
-            <p class="text-center">
-              <a href="#">Forgot Password?</a>
-            </p>
-            <h5>
+            Username:
+          </label><br>
+         
+          <input type="password" name="password" required>
+          <label>
+            Password:
+          </label><br>
+          <div class="submitsAndHiddens">
+            <button class="btn-puparium">Submit</button>
+            <br>
+            <a href="#">
+              <p>Forgot Password?</p>
+            </a>
+            <p>
               If you do not have an existing account,
-              <a href="register.html">Register Now!</a>
-            </h5>
+              <a class="nav-link" href="create_Account.html">Create account
+              </a>
+            </p>
+          </div>
         </fieldset>
+      </div>
     </form>
   </div>
-  </div>
-     
 
 
-
-  <!-- <script> 
-  (function (d) {
+  <hr>
+  <script>
+    (function (d) {
       "use strict"
     })(document);
 
@@ -168,14 +178,8 @@
       var input = event.currentTarget.previousElementSibling;
       input.type = input.type === "text" ? "password" : "text";
       input.focus();
-    } // passwordShowHide
-
-    d.head.appendChild(d.createElement("style")).textContent = ``;
-
-    d.head.appendChild(d.createElement("style")).textContent = `;
- 
-
-  </script> -->
+    } 
+  </script>
 </body>
 
 </html>
