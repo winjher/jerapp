@@ -1,0 +1,162 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>Neural Net</title>
+    <style type="text/css" media="all">
+        label{
+    display: block;
+    padding: 10px;
+}
+a{
+    display:block;
+    margin-bottom: 20px;
+}
+.controls{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+body{
+    padding: 20px;
+}
+
+canvas{
+    outline: 2px solid #666;
+    
+}
+
+    </style>
+</head>
+
+<body>
+    
+<div class="col-lg-12 text-center">
+    <a href="#controls">Jump to controls</a>
+    <canvas id="graph" width="600" height="600"></canvas>
+   <div class="controls" id="controls">
+       <button onclick="initialise()">Initialize</button>
+       <button onclick="train()">Train</button>
+       <button onclick="classifyPoints()">Classify Points</button>
+   <button onclick="visualizeNeuronsAndWeights()">Visualize Neurons and Weights</button>
+   </div>
+   <label>Training Data Size
+       <input id="trainingDataSize" value="5000">   
+    </label>
+   <label>Training Iterations
+       <input id="trainingIterations" value="50000">   
+    </label>
+   <label>Learning Rate
+       <input id="learningRate" value="0.03">   
+    </label>
+   <label>Hidden Nodes (more than 2!)
+       <input id="hiddenNodes" value="8">   
+    </label>
+   <label>Points to Classify
+       <input id="numPoints" value="400">   
+    </label>
+</div>
+
+  <script type="text/javascript">
+
+class NeuralNetwork {
+  constructor(inputSize, hiddenSize, outputSize) {
+    this.inputSize = inputSize;
+    this.hiddenSize = hiddenSize;
+    this.outputSize = outputSize;
+    this.weightsInputToHidden = Array.from({ length: hiddenSize }, () =>
+            Array.from({ length: inputSize }, () => Math.random() * 2 - 1)
+        );
+    this.biasHidden = Array(hiddenSize).fill(0);
+    this.weightsHiddenToOutput = Array.from({ length: outputSize }, () =>
+      Array.from({ length: hiddenSize }, () => Math.random() * 2 - 1)
+    );
+    this.biasOutput = Array(outputSize).fill(0);
+    this.learningRate = document.querySelector('#learningRate').value; // Adjusted learning rate
+    this.hiddenLayer = new Array(this.hiddenSize);
+  }
+
+  feedForward(inputs) {
+    for (let i = 0; i < this.hiddenSize; i++) {
+      this.hiddenLayer[i] = 0;
+      for (let j = 0; j < this.inputSize; j++) {
+        this.hiddenLayer[i] +=
+        this.weightsInputToHidden[i][j] * inputs[j];
+      }
+      this.hiddenLayer[i] += this.biasHidden[i];
+      this.hiddenLayer[i] = sigmoid(this.hiddenLayer[i]);
+    }
+
+    const output = new Array(this.outputSize);
+    for (let i = 0; i < this.outputSize; i++) {
+      output[i] = 0;
+      for (let j = 0; j < this.hiddenSize; j++) {
+        output[i] +=
+        this.weightsHiddenToOutput[i][j] * this.hiddenLayer[j];
+      }
+      output[i] += this.biasOutput[i];
+      output[i] = sigmoid(output[i]);
+    }
+    return output;
+  }
+
+  train(inputs, target) {
+    for (let i = 0; i < this.hiddenSize; i++) {
+      this.hiddenLayer[i] = 0;
+      for (let j = 0; j < this.inputSize; j++) {
+        this.hiddenLayer[i] +=
+        this.weightsInputToHidden[i][j] * inputs[j];
+      }
+      this.hiddenLayer[i] += this.biasHidden[i];
+      this.hiddenLayer[i] = sigmoid(this.hiddenLayer[i]);
+    }
+
+    const output = new Array(this.outputSize);
+    for (let i = 0; i < this.outputSize; i++) {
+      output[i] = 0;
+      for (let j = 0; j < this.hiddenSize; j++) {
+        output[i] += this.weightsHiddenToOutput[i][j] * this.hiddenLayer[j];
+      }
+      output[i] += this.biasOutput[i];
+      output[i] = sigmoid(output[i]);
+    }
+
+    const errorsOutput = new Array(this.outputSize);
+    const errorsHidden = new Array(this.hiddenSize);
+
+    for (let i = 0; i < this.outputSize; i++) {
+      errorsOutput[i] = target[i] - output[i];
+      for (let j = 0; j < this.hiddenSize; j++) {
+        this.weightsHiddenToOutput[i][j] +=
+          this.learningRate *
+          errorsOutput[i] *
+          output[i] *
+          (1 - output[i]) *
+          this.hiddenLayer[j];
+        }
+        this.biasOutput[i] += this.learningRate * errorsOutput[i];
+      }
+
+      for (let i = 0; i < this.hiddenSize; i++) {
+        errorsHidden[i] = 0;
+        for (let j = 0; j < this.outputSize; j++) {
+          errorsHidden[i] += this.weightsHiddenToOutput[j][i] * errorsOutput[j];
+        }
+        this.biasHidden[i] += this.learningRate * errorsHidden[i];
+        for (let j = 0; j < this.inputSize; j++) {
+          this.weightsInputToHidden[i][j] +=
+          this.learningRate *
+          errorsHidden[i] *
+          this.hiddenLayer[i] *
+          (1 - this.hiddenLayer[i]) *
+          inputs[j];
+        }
+      }
+   }
+}
+
+
+  </script>
+</body>
+</html>
