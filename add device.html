@@ -17,8 +17,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-</head>
 
+</head>
+<style>
+  .mobile {
+    display: none;
+}
+
+.not-mobile {
+    display: block;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile {
+        display: block;
+    }
+    .not-mobile {
+        display: none;
+    }
+}
+
+</style>
 <body>
 
   <header class="text-center">
@@ -44,16 +63,16 @@
     </table>
 
   </header>
-  <!-- <div class="container-fluid">
-        <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="">
-      </div> -->
+
   <hr>
   <div class="container">
-    
+    <b class="mobile">Detected device is a mobile.</b>
+    <b class="not-mobile">Detected device is not a mobile.</b>
+
 
     <!-- Trigger/Open The Modal -->
     <button id="myBtn">Open Devices</button>
-
+    
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
@@ -125,6 +144,20 @@
         }
       }
     </script>
+      <script>
+        function isMobileDevice() {
+        return window
+          .matchMedia("only screen and (max-width: 760px)").matches;
+      }
+      if (isMobileDevice()) {
+        document.write("<b>Detected device is a mobile.</b>");
+      } else {
+        document
+          .write("<b>Detected device is not a mobile.</b>");
+      }
+      
+      </script>
+      <script src="js/isMobileDevice.js"></script>
   </div>
 
 

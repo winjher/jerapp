@@ -566,9 +566,8 @@ img:hover {
    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
    position: relative;
    width: 100%;
-   padding-bottom: 5px;
-   padding-right: 5px;
-   padding-left: 5px;
+   /* padding-right: 5px;
+   padding-left: 5px; */
    margin-top: 4px;
 }
 
@@ -1671,8 +1670,8 @@ b, strong {
   margin: 0px;
   background-color: hsl(135, 71%, 43%);
   border-radius: 0 0 15px 15px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
 }
 .img-stages-home-icon {
   /* height: 26vmin; */
@@ -1748,23 +1747,42 @@ b, strong {
   border-radius: 5px;
   display: flex;
   position: relative;
-
-  padding: 10px 10px 10px 10px;
+  /* padding: 10px 10px 10px 10px; */
   backdrop-filter: blur(10px);
 }
 
 .card-dashboard-list-item{
-  border: 1px solid;
-  border-color: var(--bs-green);
-  border-radius: 15px;
-  margin: 10px 10px 10px 10px;
-  background-color: #fff;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--bs-teal);
-  text-align: center;
-  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+    /* width: 200px; */
+    border: 1px solid;
+    border-color: orange;
+    /* background-color: #ffc; */
+    border-radius: 15px;
+    margin: 5px 5px 5px 5px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--bs-teal);
+    text-align: center;
+    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
 }
 
+.img-btn-apps-menu-dashboard {
+  height: 8vmin;
+  width: fit-content;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+  mix-blend-mode: multiply;
+  text-align: center;
+}
+
+.label-text-dashboard {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin: 0px;
+  background-color: hsl(135, 71%, 43%);
+  border-radius: 0 0 15px 15px;
+}
 
 
