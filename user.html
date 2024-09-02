@@ -1,10 +1,8 @@
-
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
  
 <head>
-    <title>{% block title %}ML Butterfly{% endblock %}</title>
+    <title>User</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +16,7 @@
 </head>
  
 <body>
-    {% block pagecontent %}
+
 <section>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
@@ -133,7 +131,7 @@
 </div>
 
  <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
+    <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
         <div class="icon-bar">
             <a class="active " href="index.html"><img src="icon\Homey.png"></a>
             <a href="lepidoptera.html"><img src="icon\butterfly.png"></a>
@@ -141,13 +139,29 @@
             <a href="identifier.html"><img src="icon\semanticsegmentation.png"></a>
             <a href="map.html"><img src="icon\globe.png"></a>
         </div>
-    </nav>
-/*
+    </nav> -->
 
-{% endblock %}
+</section>
+<section>
+    <footer>
+
+       
+        
+        
+            <div class="grid-template">
+              <a href="www.twitter.com"><em class="fab fa-twitter fa-2x"></em></a>
+              <a href="www.instagram.com"><em class="fab fa-instagram fa-2x"></em></a>
+              <a href="www.facebook.com"><em class="fab fa-facebook fa-2x"></em></a>
+              <a href="www.whatsup.com"><em class="fab fa-whatsapp fa-2x"></em></a>
+            </div>
+        </div>
+
+      </footer></section>
+<hr>
+
+<!-- 
 <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
     <div class="icon-bar">
-        
         <div class="icon-size">
             <a href="{% url 'index' %}"><img src="{% static 'images/home2.png'%}">
                             <label for="" class="icon-size">
@@ -163,33 +177,14 @@
                             <label for="" class="icon-size">
             </a>
         </div>
- 
         <div class="icon-size">
             <a href="{% url 'user' %}"><img src="{% static 'images/user.png' %}">
             <label for="" class="icon-size">
             </a>
         </div>
-
     </div>
-</nav>
-*/
-</section>
-<section>
-    <footer>
-        {% block content %}  
-       
-        
-        
-            <div class="grid-template">
-              <a href=""><em class="fab fa-twitter fa-2x"></em></a>
-              <a href=""><em class="fab fa-instagram fa-2x"></em></a>
-              <a href=""><em class="fab fa-facebook fa-2x"></em></a>
-              <a href=""><em class="fab fa-whatsapp fa-2x"></em></a>
-            </div>
-        </div>
-        {% endblock %}
-      </footer></section>
-<hr>
+</nav> -->
+
 <script src="{% static 'jquery-3.6.0.slim.min.js' %}"> </script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
