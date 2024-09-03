@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <title>Butterfly Prediction</title>
 
     <style>
@@ -100,68 +102,112 @@
                 </div>
                 <div class="card-app-list">
                     <div class="details-commonjay">
-                        <h4><b> Top Five Prediction </b> </h4>
+                        <h4><b> Butterfly-Giant Silkmoth </b> </h4>
                         <div class="panel-body">
                             <div class="col-sm">
                                 <ul>
                                     <li>
                                         <div class="stages-icon-list">
                                             <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
+                                                <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
                                             </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider1">
+                                            <div id="commonName"></div>
+                                        </div>
                                     </li>
                                     <li>
                                         <div class="stages-icon-list">
                                             <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
+                                                <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
                                             </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider2">
+                                            <div id="predictionLabel2"></div>
+                                        </div>
                                     </li>
                                     <li>
                                         <div class="stages-icon-list">
                                             <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
+                                                <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
                                             </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
-                                    </li>
-                                    <li>
-                                        <div class="stages-icon-list">
-                                            <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
-                                            </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
-                                    </li>
-                                    <li>
-                                        <div class="stages-icon-list">
-                                            <button type="button" class="stages-icon-btn">
-                                              <img src="icon/butterfly3.png" alt="" srcset="" width="30px" class="img-btn-apps-menu stages-icon-btn">
-                                            </button>
-                                            <h6>
-                                                <input type="range" name="percent" id="result" min="1" max="100">
-                                            </h6>
-                                          </div>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider3">
+                                            <div id="predictionLabel3"></div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
-
+                            
                         </div>
+                        
                     </div>
+                    <p>Appearance Features</p>
+                        <table style:border="1">
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                            <tr>
+                                <td>Body Length</td>
+                                <td id="size"></td>
+                            </tr>
+                            <tr>
+                                <td>Body Width</td>
+                                <td id="width"></td>
+                            </tr>
+                            <tr>
+                                <td>Wing Stand</td>
+                                <td id="stand"></td>
+                            </tr>
+                            <tr>
+                                <td>Wingspan</td>
+                                <td id="span"></td>
+                            </tr>
+                        </table>
+                       
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus reiciendis aperiam iure itaque maxime quos?</p>
+                    <div class="text-center">
+                        <a href="home.html" class="notification">
+                            <i class="fas fa-home"></i><span> Home</span>
+                        </a>
+                        <a href="www.facebook.com" class="notification">
+                            <i class="fas fa-share"></i><span> Share</span>
+                        </a>
+                       <a href="uploader.html" class="notification">
+                        <i class="fas fa-step-forward"></i><span> Continue</span>
+                       </a>
+                    </div>
+                   
                 </div>
             </div>
         </div>
+    </main>
+    <hr>
+    <footer>
+
+    </footer>
+    <script>
+        class Butterfly {
+            constructor() {
+                this.size = 3;
+                this.width = .5;
+                this.stand = 4;
+                this.span = 6;
+            }
+        }
+
+        const butterfly = new Butterfly();
+
+        document.getElementById("size").innerText = butterfly.size; // 3
+        document.getElementById("width").innerText = butterfly.width; // .5
+        document.getElementById("stand").innerText = butterfly.stand; // 4
+        document.getElementById("span").innerText = butterfly.span; // 6
+    </script>
+
         <script src="./jquery-3.6.0.slim.min.js"> </script>
         <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
