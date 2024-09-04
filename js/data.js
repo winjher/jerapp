@@ -26,17 +26,17 @@ function loadImages(dataDir) {
     images.push(imageTensor);
     
     // here we assume every folder has file with name n_flower.png
-    var daisy = files[i].toLocaleLowerCase().endsWith("daisy.png");
-    var dandelion = files[i].toLocaleLowerCase().endsWith("dandelion.png");
-    var rose = files[i].toLocaleLowerCase().endsWith("rose.png");
-    var sunflower = files[i].toLocaleLowerCase().endsWith("sunflower.png");
-    var tulip = files[i].toLocaleLowerCase().endsWith("tulip.png");
+    var butterfly = files[i].toLocaleLowerCase().endsWith("butterfly.png");
+    var pupae = files[i].toLocaleLowerCase().endsWith("pupae.png");
+    var prepupae = files[i].toLocaleLowerCase().endsWith("prepupae.png");
+    var larvae = files[i].toLocaleLowerCase().endsWith("larvae.png");
+    var eggs = files[i].toLocaleLowerCase().endsWith("eggs.png");
   
     
-    if( daisy == true){ labels.push(1)}
-    else if (dandelion == true) {labels.push(2)}
-    else if (rose == true) {labels.push(3)}
-    else if (sunflower == true) {labels.push(4)}
+    if( butterfly == true){ labels.push(1)}
+    else if (pupae == true) {labels.push(2)}
+    else if (prepupae == true) {labels.push(3)}
+    else if (larvae == true) {labels.push(4)}
     else {labels.push(0)}
 
   }
@@ -46,7 +46,7 @@ function loadImages(dataDir) {
 }
 
 /** Helper class to handle loading training and test data. */
-class FlowerDataset {
+class ButterflyDataset {
   constructor() {
     this.trainData = [];
     this.testData = [];
@@ -77,5 +77,5 @@ class FlowerDataset {
   }
 }
 
-module.exports = new FlowerDataset();
+module.exports = new ButterflyDataset();
 console.log('All done.')
