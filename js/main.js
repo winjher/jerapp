@@ -1,82 +1,15 @@
+console.log("ACADEMY OMEN IS COOL");
 
+// get element by id message
+const message = document.getElementById("message");
+const button = document.getElementById("submitBtn");
+const file = document.getElementById("file");
 
-let mobilenet;
-let classifier;
-let video;
-let label='';
-let ukeButton;
-let whistleButton;
-let trainButton;
-
-function modelReady(){
-    console.log('Model is ready!!!');
-    //mobilenet.predict(gotResults);
-}
-
-function videoReady(){
-    console.log('Video is ready!!!');
-    //mobilenet.predict(gotResults);
-}
-function gotResults(error,results){
-    if (error) {
-        console.error(error);
-    }else{
-        
-    }
-}
-function setup(){
-    createCanvas(320,270);
-    video.hide();
-    background(0);
-    mobilenet=ml5.featureExtractor('MobileNet', modelReady);
-    classifier=mobilenet.classification(video,videoReady);
-    
-    ukeButton=createButton('ukelele');
-    ukeButton.mousePressed(function(){
-        classifier.addImage('ukelele');
-    });
-    
-    whistleButton=createButton('whistle');
-    whistleButton.mousePressed(function(){
-        classifier.addImage('whistle');
-    });
-
-    trainButton=createButton('train');
-    trainButton.mousePressed(function(){
-        classifier.addImage('train');
-    });
-}
-
-function draw(){
-    background(0);
-    image(video,0,0,320,240);
-    fill(255);
-    textSize(6);
-    text(label,10,height-10);
-}
-
-
-function setup()
-{
-  createCanvas(500,450);
-  myImg=createImg('dog.jpg',onImgReady);
-  myImg.hide();
-    // Creating the mobilenet model object
-  mobilenet = ml5.imageClassifier('MobileNet',onModelReady);
-}
-function onModelReady()
-{
-  console.log("Model is ready to predict");
-  mobilenet.predict(myImg,result);  // Predict image from model
-}
-//Show result throughthis function
-function result(err,res)
-{
-  if (err) {
-    console.error(err);
+// if button is clicked, check the file input
+button.addEventListener("click", function (event) {
+  if (file.files.length === 0) {
+    message.innerHTML = "No File selected, Please select a file!";
   } else {
-        console.log(res);
-        console.log(res[0].label); // get the first item
+    message.innerHTML = "Processing Image....";
   }
-}
-
+});

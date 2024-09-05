@@ -80,24 +80,24 @@ function setup(){
         classifier.addImage('butterfly');
     });
 
-    larvaldiseaseButton=createButton('larval disease');
+    larvaldiseaseButton=createButton('larvaldisease');
     larvaldiseaseButton.mousePressed(function(){
-        classifier.addImage('larval disease');
+        classifier.addImage('larvaldisease');
     });
     
-    pupaedefectsButton=createButton('pupae defects');
+    pupaedefectsButton=createButton('pupaedefects');
     pupaedefectsButton.mousePressed(function(){
-        classifier.addImage('pupae defects');
+        classifier.addImage('pupaedefects');
     });
     
-    healthylarvaeButton=createButton('healthy larvae');
+    healthylarvaeButton=createButton('healthylarvae');
     healthylarvaeButton.mousePressed(function(){
-        classifier.addImage('healthy larvae');
+        classifier.addImage('healthylarvae');
     });
 
-    healthypupaeButton=createButton('healthy pupae');
+    healthypupaeButton=createButton('healthypupae');
     healthypupaeButton.mousePressed(function(){
-        classifier.addImage('healthy pupae');
+        classifier.addImage('healthypupae');
     });
     
     trainButton=createButton('train');
