@@ -79,79 +79,118 @@
         </nav>
     </section>
     <main>
-    <div>
-        <h1 style="text-align:center;font-size:4rem;margin-top: 12px;">Butterfly Prediction</h1>
-    </div>
-    <br>
-    <br>
+        <div>
+            <h1 style="text-align:center;font-size:4rem;margin-top: 12px;">Butterfly Prediction</h1>
+        </div>
+        <br>
+        <br>
 
-    <div class="container my-2">
-        <div class="row mb-5">
-            <div class="col-sm" style="margin-bottom: 23px;">
-                <span class="border border-primary">
-                    <img id="imagePreview" src="images/butterfly_atlas.jpg" alt="User Image"
-                        style="width:500px;height:500px;">
-                </span>
-            </div>
-            <div class="col-sm">
-                <div>
-                    <h4 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
-                        class="text-center mb-5 content-h1 rounded">
-                        <div id="predictionLabel"></div>
-                    </h4>
-                </div>
-                <div class="text-center">
-                    <input type="range" min="0" max="4" value="0" step="1" class="slider" id="predictionSlider">
-                    <!-- <div id="predictionLabel"></div> -->
-                    <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
+        <div class="container my-2">
+            <div class="row mb-5">
+                <div class="col-sm" style="margin-bottom: 23px;">
+                    <ul>
+                        <li class="text-center">
+                            <!-- <div id="BclassesLabel">
 
-                </div>
-                <div class="card-app-list">
-                    <div class="details-commonjay">
-                        <h2><b> Moth Atlas </b> </h2>
-                        <div class="panel-body">
-                            <div class="col-sm">
-                                <ul>
-                                    <li>
-                                        <div class="stages-icon-list">
-                                            <button type="button" class="stages-icon-btn">
-                                                <img src="icon/pupa.png" alt="" srcset="" width="30px"
-                                                    class="img-btn-apps-menu stages-icon-btn">
-                                            </button>
-                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                id="predictionSlider1">
-                                            <div id="commonName"></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="stages-icon-list">
-                                            <button type="button" class="stages-icon-btn">
-                                                <img src="icon/larvae.png" alt="" srcset="" width="30px"
-                                                    class="img-btn-apps-menu stages-icon-btn">
-                                            </button>
-                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                id="predictionSlider2">
-                                            <div id="predictionLabel2"></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="stages-icon-list">
-                                            <button type="button" class="stages-icon-btn">
-                                                <img src="icon/eggs.png" alt="" srcset="" width="30px"
-                                                    class="img-btn-apps-menu stages-icon-btn">
-                                            </button>
-                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                id="predictionSlider3">
-                                            <div id="predictionLabel3"></div>
-                                        </div>
-                                    </li>
-                                </ul>
+                            </div> -->
+                            <span class="border border-primary">
+                                <img id="imagePreview" src="images/butterfly_atlas.jpg" alt="User Image"
+                                    style="width:400px;height:400px;">
+                            </span>
+                        </li>
+                        <li>
+                            <br>
+                            <div>
+                                <h4 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
+                                    class="text-center mb-5 content-h1 rounded">
+                                    <div id="predictionLabel"></div>
+                                    <div class="text-center">
+                                        <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                            id="predictionSlider">
+                                        <!-- <div id="predictionLabel"></div> -->
+                                        <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
+                                    </div>
                             </div>
-                            
+                            </h4>
+                        </li>
+                        <li class="text-center">
+                            <form action="" method="post">
+
+                                <h3>Completed Upload</h3>
+                                <input type="text" class="upload-input">
+                                <label for="">Name</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Upload Reference Id</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Common Name</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Percent</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Image</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Size</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Mime Type</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Last Modified</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Content</label>
+                                <input type="text" class="upload-input">
+                                <label for="">Date</label>
+                            </form>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="col-sm">
+
+                    <div class="card-app-list">
+                        <div class="details-commonjay">
+                            <h2><b> Moth Atlas </b> </h2>
+                            <div class="panel-body">
+                                <div class="col-sm">
+                                    <ul>
+                                        <li>
+                                            <div class="stages-icon-list">
+                                                <button type="button" class="stages-icon-btn">
+                                                    <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                                        class="img-btn-apps-menu stages-icon-btn">
+                                                </button>
+                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                    id="predictionSlider1">
+                                                <div id="commonName"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="stages-icon-list">
+                                                <button type="button" class="stages-icon-btn">
+                                                    <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                                        class="img-btn-apps-menu stages-icon-btn">
+                                                </button>
+                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                    id="predictionSlider2">
+                                                <div id="predictionLabel2"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="stages-icon-list">
+                                                <button type="button" class="stages-icon-btn">
+                                                    <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                                        class="img-btn-apps-menu stages-icon-btn">
+                                                </button>
+                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                    id="predictionSlider3">
+                                                <div id="predictionLabel3"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
                         </div>
-                        
-                    </div>
-                    <p>Appearance Features</p>
+                        <p>Appearance Features</p>
                         <table style:border="1">
                             <tr>
                                 <th>Property</th>
@@ -174,23 +213,26 @@
                                 <td id="span"></td>
                             </tr>
                         </table>
-                       
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus reiciendis aperiam iure itaque maxime quos?</p>
-                    <div class="text-center">
-                        <a href="home.html" class="notification">
-                            <i class="fas fa-home"></i><span> Home</span>
-                        </a>
-                        <a href="www.facebook.com" class="notification">
-                            <i class="fas fa-share"></i><span> Share</span>
-                        </a>
-                       <a href="uploader.html" class="notification">
-                        <i class="fas fa-step-forward"></i><span> Continue</span>
-                       </a>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias
+                            nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus
+                            reiciendis aperiam iure itaque maxime quos?</p>
+                        <div class="text-center">
+
+                            <a href="home.html" class="notification">
+                                <i class="fas fa-home"></i><span> Home</span>
+                            </a>
+                            <a href="www.facebook.com" class="notification">
+                                <i class="fas fa-share"></i><span> Share</span>
+                            </a>
+                            <a href="uploader.html" class="notification">
+                                <i class="fas fa-step-forward"></i><span> Continue</span>
+                            </a>
+                        </div>
+
                     </div>
-                   
                 </div>
             </div>
-        </div>
     </main>
     <hr>
     <footer>
@@ -214,10 +256,10 @@
         document.getElementById("span").innerText = butterfly.span; // 6
     </script>
 
-        <script src="js/BClasses.js"></script>
-        <script src="./jquery-3.6.0.slim.min.js"> </script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
-        <script src="script.js"></script>
+    <script src="js/BClasses.js"></script>
+    <script src="./jquery-3.6.0.slim.min.js"> </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

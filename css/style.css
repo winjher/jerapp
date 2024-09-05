@@ -1264,9 +1264,11 @@ margin-top: 10px;
   border-radius: 0px 0px 15px 15px;
 
 }
-
-.slider {
+.upload-input{
   width: 80%;
+}
+.slider {
+  width: 40%;
 }
 
 .stages-icon-list:hover,
