@@ -114,30 +114,41 @@
                             </h4>
                         </li>
                         <li class="text-center">
-                            <form action="" method="post">
-
+                            <form id="uploadForm" action="" method="post">
                                 <h3>Completed Upload</h3>
-                                <input type="text" class="upload-input">
-                                <label for="">Name</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Upload Reference Id</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Common Name</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Percent</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Image</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Size</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Mime Type</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Last Modified</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Content</label>
-                                <input type="text" class="upload-input">
-                                <label for="">Date</label>
+                                <label for="name">Name</label>
+                                <input type="text" id="name">
+                                
+                                <label for="uploadRefId">Upload Reference Id</label>
+                                <input type="text" id="uploadRefId">
+                                
+                                <label for="percent">Percent</label>
+                                <input type="text" id="percent">
+                                
+                                <label for="image">Image</label>
+                                <input type="text" id="image">
+                                
+                                <label for="size">Size</label>
+                                <input type="text" id="size">
+                                
+                                <label for="mimeType">Mime Type</label>
+                                <input type="text" id="mimeType">
+                                
+                                <label for="lastModified">Last Modified</label>
+                                <input type="text" id="lastModified">
+                                
+                                <label for="content">Content</label>
+                                <input type="text" id="content">
+                                
+                                <label for="date">Date</label>
+                                <input type="text" id="date">
+                                
+                                <label for="commonName">Common Name</label>
+                                <input type="text" id="commonName">
+                                <br>
+                                <button type="submit" class="btn-hatchery">Submit</button>
                             </form>
+                        
                         </li>
 
                     </ul>
@@ -186,9 +197,7 @@
                                         </li>
                                     </ul>
                                 </div>
-
                             </div>
-
                         </div>
                         <p>Appearance Features</p>
                         <table style:border="1">
@@ -229,7 +238,6 @@
                                 <i class="fas fa-step-forward"></i><span> Continue</span>
                             </a>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -254,6 +262,39 @@
         document.getElementById("width").innerText = butterfly.width; // .5
         document.getElementById("stand").innerText = butterfly.stand; // 4
         document.getElementById("span").innerText = butterfly.span; // 6
+    </script>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const uploadRefId = document.getElementById('uploadRefId').value;
+            const percent = document.getElementById('percent').value;
+            const image = document.getElementById('image').value;
+            const size = document.getElementById('size').value;
+            const mimeType = document.getElementById('mimeType').value;
+            const lastModified = document.getElementById('lastModified').value;
+            const content = document.getElementById('content').value;
+            const date = document.getElementById('date').value;
+            const commonName = document.getElementById('commonName').value;
+
+            // Perform validation or other logic here
+            console.log('Form submitted with values:', {
+                name,
+                uploadRefId,
+                percent,
+                image,
+                size,
+                mimeType,
+                lastModified,
+                content,
+                date,
+                commonName
+            });
+
+            // Optionally, you can submit the form data using AJAX or fetch
+        });
     </script>
 
     <script src="js/BClasses.js"></script>

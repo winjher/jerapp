@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <title>Defects Prediction</title>
 
     <style>
@@ -183,48 +185,168 @@
                         <div class="col-sm">
                             <ul>
                                 <li class="text-center">
-                                    <!-- <div id="BclassesLabel">
-
-                                    </div> -->
-                                    <form action="" method="post">
+                                    <form id="uploadForm" action="" method="post">
                                         <h3>Completed Upload</h3>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Name</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Upload Reference Id</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Common Name</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Percent</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Image</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Size</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Mime Type</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Last Modified</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Content</label>
-                                        <input type="text" class="upload-input">
-                                        <label for="">Date</label>
-                                    </form>
-                                </li>
+                                        <div class="col-lg-12">
+                                            <label for="name">Name</label>
+                                            <input type="text" id="name">
 
+                                            <label for="uploadRefId">Upload Reference Id</label>
+                                            <input type="text" id="uploadRefId">
+
+                                            <label for="commonName">Common Name</label>
+                                            <input type="text" id="commonName">
+
+                                            <label for="percent">Percent</label>
+                                            <input type="text" id="percent">
+
+                                            <label for="image">Image</label>
+                                            <input type="text" id="image">
+
+                                            <label for="size">Size</label>
+                                            <input type="text" id="size">
+
+                                            <label for="mimeType">Mime Type</label>
+                                            <input type="text" id="mimeType">
+
+                                            <label for="lastModified">Last Modified</label>
+                                            <input type="text" id="lastModified">
+
+                                            <label for="content">Content</label>
+                                            <input type="text" id="content">
+
+                                            <label for="date">Date</label>
+                                            <input type="text" id="date">
+
+                                            <label for="defects">Defects</label>
+                                            <input type="text" id="defects">
+                                        </div>
+
+                                        <br>
+                                        <button type="submit" class="btn-hatchery">Submit</button>
+                                    </form>
+                                    <!-- <table style:border="1">
+                                        <tr>
+                                            <th>Property</th>
+                                            <th>Value</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td id="name"><input type="name"></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Upload Reference ID</td>
+                                            <td id="uploadRefId"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Percent</td>
+                                            <td id="percent"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Image</td>
+                                            <td id="image"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Size</td>
+                                            <td id="size"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mime Type</td>
+                                            <td id="mimeType"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Last Modified</td>
+                                            <td id="lastModified"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Content</td>
+                                            <td id="content"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date</td>
+                                            <td id="date"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Defects</td>
+                                            <td id="defects"></td>
+                                        </tr>
+                                    </table> -->
+                                </li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div class="card-app-list">
-                <button class="defects-btn btn-hatchery">
-                    <h6>Cause</h6>
-                </button>
+            <div class="card-app-list text-center">
+                <div class="">
+                    <a href="home.html" class="notification">
+                        <i class="fas fa-home"></i><span> Home</span>
+                    </a>
+                    <a href="www.facebook.com" class="notification">
+                        <i class="fas fa-share"></i><span> Share</span>
+                    </a>
+                    <a href="uploader.html" class="notification">
+                        <i class="fas fa-step-forward"></i><span> Continue</span>
+                    </a>
+                </div>
             </div>
-
         </div>
     </div>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const uploadRefId = document.getElementById('uploadRefId').value;
+            const commonName = document.getElementById('commonName').value;
+            const percent = document.getElementById('percent').value;
+            const image = document.getElementById('image').value;
+            const size = document.getElementById('size').value;
+            const mimeType = document.getElementById('mimeType').value;
+            const lastModified = document.getElementById('lastModified').value;
+            const content = document.getElementById('content').value;
+            const date = document.getElementById('date').value;
+            const defects = document.getElementById('defects').value;
+
+            // Perform validation or other logic here
+            console.log('Form submitted with values:', {
+                name,
+                uploadRefId,
+                commonName,
+                percent,
+                image,
+                size,
+                mimeType,
+                lastModified,
+                content,
+                date,
+                defects
+            });
+
+            // Optionally, you can submit the form data using AJAX or fetch
+        });
+
+    </script>
+    <script>
+        function UploadForm(name, uploadRefId, commonName, percent, image, size, mimeType, lastModified, content, date, defects) {
+            this.name = name;
+            this.uploadRefId = uploadRefId;
+            this.commonName = commonName;
+            this.percent = percent;
+            this.image = image;
+            this.size = size;
+            this.mimeType = mimeType;
+            this.lastModified = lastModified;
+            this.content = content;
+            this.date = date;
+            this.defects = defects;
+        }
+
+        // Creating a new instance of UploadForm
+        const myUpload = new UploadForm("Sample Name", "12345", "Sample Common Name", "50%", "sample.jpg", "500KB", "image/jpeg", "2024-09-05", "Sample Content", "2024-09-05", "None");
+    </script>
     <script src="js/predictionslider.js"></script>
     <script src="./jquery-3.6.0.slim.min.js"> </script>
     <script src="./js/bootstrap.bundle.min.js"></script>

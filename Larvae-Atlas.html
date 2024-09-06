@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Larvae Prediction</title>
 
     <style>
@@ -79,47 +80,115 @@
     </div>
     <div class="container my-2">
         <div class="row mb-5">
-            <div class="col-sm" style="margin-bottom: 23px;">
+            <div class="col-sm text-center" style="margin-bottom: 23px;">
                 <span class="border border-primary">
                     <img src="images/larvae_atlas.jpg" alt="User Image" style="width:500px;height:500px;">
                 </span>
-            </div>
-            <div class="col-sm">
                 <div>
+                    <br>
                     <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
                         class="text-center mb-5 content-h1 rounded">
-                        {{pred_output}} </h1>
+                        {{pred_output}}
+                    </h1>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, commodi? Distinctio quia tempore
+                    magnam in aliquid numquam deleniti. Quae fuga sit voluptatum ut odit magnam aut at repellendus
+                    explicabo voluptate.
                 </div>
+            </div>
+
+            <div class="col-sm">
                 <div class="card-app-list">
-                    <div class="details-commonjay">
-                        <h4><b> Hostplant Preparation of Leaves </b> </h4>
-                        <div class="panel-body">
-                            <div class="col-sm">
-                                <ul>
-                                    <li>
-                                        <h6>Number of leaves:{{leaves}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Instar Type: {{instar}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Type of Leaves:{{type_of_leaves}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Estimate capacity of larvae:{{number_of_larvae}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Health of leaves:{{health_of_leaves}}</h6>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="col-sm-12">
+                        <h2><b> Hostplant Preparation of Leaves </b></h2>
+                        <form id="uploadForm" action="" method="post">
+                            <h3>Completed Upload</h3>
+                            <label for="name">Name</label>
+                            <input type="text" id="name">
+                            
+                            <label for="uploadRefId">Upload Reference Id</label>
+                            <input type="text" id="uploadRefId">
+                            
+                            <label for="percent">Percent</label>
+                            <input type="text" id="percent">
+                            
+                            <label for="commonName">Common Name</label>
+                            <input type="text" id="commonName">
+                            
+                            <label for="hostPlant">Host Plant</label>
+                            <input type="text" id="hostPlant">
+                            
+                            <label for="numLeaves">Number of Leaves</label>
+                            <input type="text" id="numLeaves">
+                            
+                            <label for="instarType">Instar Type</label>
+                            <input type="text" id="instarType">
+                            
+                            <label for="typeLeaves">Type of Leaves</label>
+                            <input type="text" id="typeLeaves">
+                            
+                            <label for="healthLeaves">Health of Leaves</label>
+                            <input type="text" id="healthLeaves">
+                            
+                            <label for="estimateCapacity">Estimate Capacity of Larvae</label>
+                            <input type="text" id="estimateCapacity">
+                            <br>
+                            <button type="submit" class="btn-hatchery">Submit</button>
+                        </form>
+                    
                     </div>
+                </div>
+                <div class="text-center">
+
+                    <a href="home.html" class="notification">
+                        <i class="fas fa-home"></i><span> Home</span>
+                    </a>
+                    <a href="www.facebook.com" class="notification">
+                        <i class="fas fa-share"></i><span> Share</span>
+                    </a>
+                    <a href="uploader.html" class="notification">
+                        <i class="fas fa-step-forward"></i><span> Continue</span>
+                    </a>
                 </div>
             </div>
         </div>
-        <script src="./jquery-3.6.0.slim.min.js"> </script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
+    </div>
+    </div>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const uploadRefId = document.getElementById('uploadRefId').value;
+            const percent = document.getElementById('percent').value;
+            const commonName = document.getElementById('commonName').value;
+            const hostPlant = document.getElementById('hostPlant').value;
+            const numLeaves = document.getElementById('numLeaves').value;
+            const instarType = document.getElementById('instarType').value;
+            const typeLeaves = document.getElementById('typeLeaves').value;
+            const healthLeaves = document.getElementById('healthLeaves').value;
+            const estimateCapacity = document.getElementById('estimateCapacity').value;
+
+            // Perform validation or other logic here
+            console.log('Form submitted with values:', {
+                name,
+                uploadRefId,
+                percent,
+                commonName,
+                hostPlant,
+                numLeaves,
+                instarType,
+                typeLeaves,
+                healthLeaves,
+                estimateCapacity
+            });
+
+            // Optionally, you can submit the form data using AJAX or fetch
+        });
+    </script>
+
+    <script src="./jquery-3.6.0.slim.min.js"> </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
