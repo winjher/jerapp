@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="range"] {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        #predictionLabel {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        #imagePreview {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 20px;
+        }
+        .common-names {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .common-names p {
+            margin: 5px 0;
+        }
+        .slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  margin: 20px 0;
+}
+
+.slide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video id="camera-stream" autoplay></video>
+<button id="flip-btn">Flip</button>
+<button id="webcam">Take Picture</button>
+<div id="imagePreview">
+    
+</div>
+        <h1>Prediction Slider</h1>
+        <label for="predictionSlider">Prediction Slider:</label>
+        <input type="range" id="predictionSlider" min="0" max="4" step="1">
+        <p id="predictionLabel">Prediction: </p>
+        <img id="imagePreview" src="" alt="Image Preview">
+        <div id="prediction-slider" class="slider">
+  <div class="slide" id="slide1"></div>
+  <div class="slide" id="slide2"></div>
+  <div class="slide" id="slide3"></div>
+  <div class="slide" id="slide4"></div>
+  <div class="slide" id="slide5"></div>
+</div>
+
+    </div>
+
+    <script>
+        const predictions = [
+            ["Moth-Atlas", 0.01],
+            ["Butterfly-Batwing", 0.01],
+            ["Butterfly-Clippers", 0.02],
+            ["Butterfly-Common Jay", 0.06],
+            ["Butterfly-Common Lime", 0.9]
+        ];
+
+        const predictionSlider = document.getElementById("predictionSlider");
+        const predictionLabel = document.getElementById("predictionLabel");
+        const imagePreview = document.getElementById("imagePreview");
+
+        predictionSlider.addEventListener("input", () => {
+            const index = predictionSlider.value;
+            const prediction = predictions[index];
+            predictionLabel.textContent = `${prediction[0]}: ${(prediction[1] * 100).toFixed(2)}%`;
+        });
+
+        // Set initial prediction label
+        predictionSlider.dispatchEvent(new Event("input"));
+
+        const classes = [
+  "Butterfly", "Pupae", "Larvae", "Eggs", "Disease", "Defects", "Atlas", "Batwing", "Clippers",
+  "Common Jay", "Common Lime", "Common Mime", "Common Mormon", "Emerald Swallow Tail", "Giant Silk Moth",
+  "Golden Birdwing", "Grey Glassy Tiger", "Great Eggfly", "Great Yellow Mormon", "Paper Kite", "Pink Rose",
+  "Plain Tiger", "Red Lacewing", "Scarlet Mormon", "Tailed Jay", "Antbite", "Deformed", "Old", "Overbend",
+  "Stretched", "Healthy Pupae", "Nuclear Polyhedrosis Virus", "Baculo Viruses", "Ophrycysts Elektroscirrah",
+  "Tachinids Flies", "Trichogramma Wasps", "Healthy Larvae"
+];
+
+async function app() {
+  console.log("Loading mobilenet...");
+
+  net = await mobilenet.load();
+  console.log("Loaded model");
+
+  const webcam = await tf.data.webcam(webcamElement);
+
+  const addExample = async (classId) => {
+    const img = await webcam.capture();
+    const activation = net.infer(img, true);
+    classifier.addExample(activation, classId);
+    img.dispose();
+  };
+
+  // Adding event listeners for different classes
+  document.getElementById("butterfly").addEventListener("click", () => addExample(0));
+  document.getElementById("pupae").addEventListener("click", () => addExample(1));
+  document.getElementById("larvae").addEventListener("click", () => addExample(2));
+  document.getElementById("eggs").addEventListener("click", () => addExample(3));
+
+  // Care Management
+  document.getElementById("disease").addEventListener("click", () => addExample(4));
+  document.getElementById("defects").addEventListener("click", () => addExample(5));
+
+  while (true) {
+    if (classifier.getNumClasses() > 0) {
+      const img = await webcam.capture();
+      const activation = net.infer(img, "conv_preds");
+      const result = await classifier.predictClass(activation);
+
+      const top5 = Array.from(result.confidences)
+        .map((confidence, index) => ({ className: classes[index], confidence }))
+        .sort((a, b) => b.confidence - a.confidence)
+        .slice(0, 5);
+
+      top5.forEach((prediction, index) => {
+        document.getElementById(`slide${index + 1}`).innerText = `${prediction.className}: ${(prediction.confidence * 100).toFixed(2)}%`;
+      });
+
+      img.dispose();
+    }
+  }
+}
+
+app();
+
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        import { saveAs } from 'file-saver';
+
+let on_stream_video = document.querySelector('#camera-stream');
+let flipBtn = document.querySelector('#flip-btn');
+let takePictureButton = document.querySelector('#webcam');
+
+// Default user media options
+let constraints = { audio: false, video: true };
+let shouldFaceUser = true;
+
+// Check whether we can use facingMode
+let supports = navigator.mediaDevices.getSupportedConstraints();
+if (supports['facingMode'] === true) {
+  flipBtn.disabled = false;
+}
+
+let stream = null;
+
+function capture() {
+  constraints.video = {
+    width: {
+      min: 192,
+      ideal: 192,
+      max: 192,
+    },
+    height: {
+      min: 192,
+      ideal: 192,
+      max: 192,
+    },
+    facingMode: shouldFaceUser ? 'user' : 'environment',
+  };
+  navigator.mediaDevices.getUserMedia(constraints)
+    .then(function (mediaStream) {
+      stream = mediaStream;
+      on_stream_video.srcObject = stream;
+      on_stream_video.play();
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
+
+flipBtn.addEventListener('click', function () {
+  if (stream == null) return;
+  // We need to flip, stop everything
+  stream.getTracks().forEach(t => {
+    t.stop();
+  });
+  // Toggle / flip
+  shouldFaceUser = !shouldFaceUser;
+  capture();
+});
+
+capture();
+
+takePictureButton.addEventListener('click', function () {
+  // Elements for taking the snapshot
+  const video = document.querySelector('video');
+  const canvas = document.createElement('canvas');
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(video, 0, 0);
+
+  // Save the image
+  canvas.toBlob((blob) => {
+    saveAs(blob, `collections/image-${Date.now()}.png`);
+  });
+});
+
+    </script>
+</body>
+</html>
