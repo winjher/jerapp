@@ -28,61 +28,105 @@ document.getElementById("myForm").reset();
 
 
 //adding  labels
-const classifier = knnClassifier.create()
-const webcamElement = document.getElementById("webcam")
+import { saveAs } from 'file-saver';
 
-let net
+const classifier = knnClassifier.create();
+const webcamElement = document.getElementById("webcam");
+const flipButton = document.getElementById("flipButton");
+const flipBackButton = document.getElementById("flipBackButton");
+const takePictureButton = document.getElementById("takePictureButton");
+
+let net;
+let isFlipped = false;
 
 async function app() {
-  console.log("Loading mobilnet...")
+  console.log("Loading mobilenet...");
 
-  net = await mobilenet.load()
+  net = await mobilenet.load();
+  console.log("Loaded model");
 
-  console.log("Loaded model")
-
-  const webcam = await tf.data.webcam(webcamElement)
+  const webcam = await tf.data.webcam(webcamElement);
 
   const addExample = async (classId) => {
-    const img = await webcam.capture()
+    const img = await webcam.capture();
+    const activation = net.infer(img, true);
+    classifier.addExample(activation, classId);
 
-    const activation = net.infer(img, true)
+    // Save the image
+    const canvas = document.createElement('canvas');
+    canvas.width = img.shape[1];
+    canvas.height = img.shape[0];
+    const ctx = canvas.getContext('2d');
+    const imageData = new ImageData(new Uint8ClampedArray(img.dataSync()), img.shape[1], img.shape[0]);
+    ctx.putImageData(imageData, 0, 0);
+    canvas.toBlob((blob) => {
+      saveAs(blob, `class-${classId}.png`);
+    });
 
-    classifier.addExample(activation, classId)
+    img.dispose();
+  };
 
-    img.dispose()
-  }
+  // Adding event listeners for different classes
+  document.getElementById("butterfly").addEventListener("click", () => addExample(0));
+  document.getElementById("pupae").addEventListener("click", () => addExample(1));
+  document.getElementById("larvae").addEventListener("click", () => addExample(2));
+  document.getElementById("eggs").addEventListener("click", () => addExample(3));
 
-  document.getElementById("butterfly").addEventListener("click", () => addExample(0))
-  document.getElementById("pupae").addEventListener("click", () => addExample(1))
-  document.getElementById("larvae").addEventListener("click", () => addExample(2))
-  document.getElementById("eggs").addEventListener("click", () => addExample(3))
+  // Care Management
+  document.getElementById("disease").addEventListener("click", () => addExample(4));
+  document.getElementById("defects").addEventListener("click", () => addExample(5));
 
-//Care Management
-  document.getElementById("disease").addEventListener("click", () => addExample(4))
-  document.getElementById("defects").addEventListener("click", () => addExample(5))
+  // Flip video feed
+  flipButton.addEventListener("click", () => {
+    isFlipped = true;
+    webcamElement.style.transform = "scaleX(-1)";
+  });
 
+  // Flip back video feed
+  flipBackButton.addEventListener("click", () => {
+    isFlipped = false;
+    webcamElement.style.transform = "scaleX(1)";
+  });
+
+  // Take picture
+  takePictureButton.addEventListener("click", async () => {
+    const img = await webcam.capture();
+    const canvas = document.createElement('canvas');
+    canvas.width = img.shape[1];
+    canvas.height = img.shape[0];
+    const ctx = canvas.getContext('2d');
+    const imageData = new ImageData(new Uint8ClampedArray(img.dataSync()), img.shape[1], img.shape[0]);
+    ctx.putImageData(imageData, 0, 0);
+    canvas.toBlob((blob) => {
+      saveAs(blob, `picture.png`);
+    });
+    img.dispose();
+  });
 
   while (true) {
     if (classifier.getNumClasses() > 0) {
-      const img = await webcam.capture()
+      const img = await webcam.capture();
+      const activation = net.infer(img, "conv_preds");
+      const result = await classifier.predictClass(activation);
 
-      const activation = net.infer(img, "conv_preds")
+      const classes = [
+        "Butterfly", "Pupae", "Larvae", "Eggs", "Disease", "Defects", "Atlas", "Batwing", "Clippers",
+        "Common Jay", "Common Lime", "Common Mime", "Common Mormon", "Emerald Swallow Tail", "Giant Silk Moth",
+        "Golden Birdwing", "Grey Glassy Tiger", "Great Eggfly", "Great Yellow Mormon", "Paper Kite", "Pink Rose",
+        "Plain Tiger", "Red Lacewing", "Scarlet Mormon", "Tailed Jay", "Antbite", "Deformed", "Old", "Overbend",
+        "Stretched", "Healthy Pupae", "Nuclear Polyhedrosis Virus", "Baculo Viruses", "Ophrycysts Elektroscirrah",
+        "Tachinids Flies", "Trichogramma Wasps", "Healthy Larvae"
+      ];
 
-      const result = await classifier.predictClass(activation)
-
-      const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects","Atlas","Batwing","Clippers","Common Jay", "Common Lime","Common Mime","Common Mormon","Emerald Swallow Tail","Giant Silk Moth","Golden Birdwing","Grey Glassy Tiger","Great Eggfly","Great Yellow Mormon","Paper Kite","Pink Rose","Plain Tiger","Red Lacewing","Scarlet Mormon","Tailed Jay","Antbite","Deformed","Old","Overbend","Stetched","Healthy Pupae","Nuclear Polyhedrosis Virus","Baculo Viruses","Ophrycysts Elektroscirrah","Tachinids Flies","Trichogramma Wasps","Healthy Larvae"]
-  
       document.getElementById("console").innerText = `
-                prediction: ${classes[result.label]}\n
-                probabilty: ${result.confidences[result.label]}
-            `
-
-      img.dispose()
+        prediction: ${classes[result.label]}\n
+        probability: ${result.confidences[result.label]}
+      `;
     }
-
-    await tf.nextFrame()
   }
 }
+
+
 
 // camera stream video element
 let on_stream_video = document.querySelector('#camera-stream');
