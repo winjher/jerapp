@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Larvae Care Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style type="text/css" media="all">
+    body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+h1 {
+  text-align: center;
+}
+#task-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#task-input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#add-task-btn {
+  padding: 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+#task-list {
+  list-style-type: none;
+  padding: 0;
+}
+.task-item {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+</style>
+<body>
+  <h1>Larvae Care Task Manager</h1>
+  <div id="task-form">
+    <input type="text" id="task-input" placeholder="Enter a new task">
+    <button id="add-task-btn">Add Task</button>
+  </div>
+  <ul id="task-list"></ul>
+  <script src="script.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      document.getElementById('add-task-btn').addEventListener('click', addTask);
+
+function addTask() {
+  const taskInput = document.getElementById('task-input');
+  const taskText = taskInput.value.trim();
+  if (taskText === '') return;
+
+  const taskList = document.getElementById('task-list');
+  const taskItem = document.createElement('li');
+  taskItem.className = 'task-item';
+  taskItem.innerHTML = `
+    <span>${taskText}</span>
+    <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+  `;
+  taskList.appendChild(taskItem);
+  taskInput.value = '';
+}
+
+function deleteTask(button) {
+  const taskItem = button.parentElement;
+  taskItem.remove();
+}
+
+  </script>
+</body>
+</html>
+
+
+

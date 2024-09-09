@@ -1,3 +1,5 @@
+
+
 // camera stream video element
 let on_stream_video = document.querySelector('#camera-stream');
 // flip button element
@@ -60,3 +62,16 @@ document.getElementById("webcam").addEventListener("click", function() {
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
 });
+
+ // Save the image
+ // import { saveAs } from 'file-saver';
+//  const canvas = document.createElement('canvas');
+//  canvas.width = img.shape[1];
+//  canvas.height = img.shape[0];
+//  const ctx = canvas.getContext('2d');
+//  const imageData = new ImageData(new Uint8ClampedArray(img.dataSync()), img.shape[1], img.shape[0]);
+//  ctx.putImageData(imageData, 0, 0);
+//  canvas.toBlob((blob) => {
+//    saveAs(blob, `class-${classId}.png`);
+//  });
+
