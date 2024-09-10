@@ -16,16 +16,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <style>
- .categoriesSideBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 120px;
-    background-color: #548235;
-    color: white;
-}
+    .categoriesSideBar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 120px;
+        background-color: #548235;
+        color: white;
+    }
 
     .categoriesSideBar ul {
         list-style-type: none;
@@ -49,12 +49,42 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
+
                     <ul class="navbar-nav ms-auto">
                         <li id="home-item" class="nav-item font-weight-bold">
-                            <a class="nav-link " href="home.html">Home</a>
+                            <a class="nav-link notification text-center" href="home.html">
+                                <i class="fas fa-home"></i><span> Home</span>
+                            </a>
                         </li>
-
-                        <li class="nav-item dropdown">
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link notification text-center" href="userprofile.html">
+                                <i class="fas fa-user"></i><span> Profile</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a href="#" class="nav-link notification text-center">
+                                <i class="fa fa-inbox" aria-hidden="true"></i><span> Inbox</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a href="#" class="nav-link notification text-center">
+                                <i class="fas fa-user-friends" aria-hidden="true"></i><span>
+                                    Social</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link notification text-center" href="setting.html">
+                                <i class="fas fa-cog" aria-hidden="true"></i><span>
+                                    Setting</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link notification text-center" href="logout.html">
+                                <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
+                                    Log out</span>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Lepidoptera apps</a>
@@ -102,12 +132,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="weather.html">Weather</a>
                         </li>
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link" href="dashboard.html">Dashboard</a>
-                        </li> -->
                         <li>
                             <h6 id="name">{{name}}</h6>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
         </nav>
@@ -123,7 +150,6 @@
                             <li class="nav-item" id="categoriesSideBar">
                                 <a class="nav-link notification" href="home.html">
                                     <i class="fas fa-home"></i><span> Home</span>
-                                    <span class="badge">3</span>
                                 </a>
                             </li>
                             <li class="nav-item" id="categoriesSideBar">
@@ -168,10 +194,16 @@
 
                                 </a>
                             </li>
-                            <li class="nav-item" id="categoriesSideBar">
-                                <a class="nav-link notification" href="#">
-                                    <i class="fas fa-cog"></i><span> Settings</span>
-                                    <span class="badge">3</span>
+                            <li id="home-item" class="nav-item font-weight-bold">
+                                <a class="nav-link notification" href="setting.html">
+                                    <i class="fas fa-cog" aria-hidden="true"></i><span>
+                                        Setting</span>
+                                </a>
+                            </li>
+                            <li id="home-item" class="nav-item font-weight-bold">
+                                <a class="nav-link notification" href="logout.html">
+                                    <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
+                                        Log out</span>
                                 </a>
                             </li>
 
@@ -181,123 +213,122 @@
 
                 </li>
                 <li>
+
                     <div class="col-xl-12 text-center">
-                        <section>
-                            <div class="col-xl-12 text-center">
-                                <div class="stages-icon-list-home ">
-                                    <ul class="card-app-list col-xl-12 text-center">
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="addgarden.html">
-                                                    <img src="icon/Garden Icon_files/2081066-200.png" alt="" srcset="" width="20px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Garden</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="hatchery.html">
-                                                    <img src="icon/eggs.png" alt="" srcset="" width="20px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Eggs</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="sleeving-boxes.html">
-                                                    <img src="icon/larvae.png" alt="" srcset="" width="20px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Larvae</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="puparium.html">
-                                                    <img src="icon/pupa.png" alt="" srcset="" width="30px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Pupae</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="butterfly_house.html">
-                                                    <img src="icon/butterfly3.png" alt="" srcset="" width="20px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Butterfly</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="addHostplants.html">
-                                                    <img src="icon/plants.png" alt="" srcset="" width="20px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Hostplants</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="addLarvalDiseases.html">
-                                                    <img src="icon/disease.png" alt="" srcset="" width="30px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Disease</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="addDefectsPupae.html">
-                                                    <img src="icon/defects.png" alt="" srcset="" width="20px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Defects</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="predators.html">
-                                                    <img src="icon/spider.png" alt="" srcset="" width="20px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Predators</p>
-                                            </div>
-                                        </li>
-                                        <li class="card-dashboard-list-item">
-                                            <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                                                <a href="task_harvesting.html">
-                                                    <img src="icon/pupa.png" alt="" srcset="" width="20px"
-                                                        class="img-btn-apps-menu-dashboard">
-                                                </a>
-                                            </button>
-                                            <div class="label-text-dashboard">
-                                                <p class="p-home">Harvest</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                        <div class="stages-icon-list-home ">
+                            <ul class="card-app-list col-xl-12 text-center">
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="addgarden.html">
+                                            <img src="icon/Garden Icon_files/2081066-200.png" alt="" srcset=""
+                                                width="20px" class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Garden</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="hatchery.html">
+                                            <img src="icon/eggs.png" alt="" srcset="" width="20px"
+                                                class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Eggs</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="sleeving-boxes.html">
+                                            <img src="icon/larvae.png" alt="" srcset="" width="20px"
+                                                class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Larvae</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="puparium.html">
+                                            <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                                class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Pupae</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="butterfly_house.html">
+                                            <img src="icon/butterfly3.png" alt="" srcset="" width="20px"
+                                                class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Butterfly</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="addHostplants.html">
+                                            <img src="icon/plants.png" alt="" srcset="" width="20px"
+                                                class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Hostplants</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="addLarvalDiseases.html">
+                                            <img src="icon/disease.png" alt="" srcset="" width="30px"
+                                                class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Disease</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="addDefectsPupae.html">
+                                            <img src="icon/defects.png" alt="" srcset="" width="20px"
+                                                class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Defects</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="predators.html">
+                                            <img src="icon/spider.png" alt="" srcset="" width="20px"
+                                                class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Predators</p>
+                                    </div>
+                                </li>
+                                <li class="card-dashboard-list-item">
+                                    <button type="button" class="stages-icon-btn img-stages-home-icon ">
+                                        <a href="task_harvesting.html">
+                                            <img src="icon/stocks Icon_files/6986217-200.png" alt="" srcset=""
+                                                width="20px" class="img-btn-apps-menu-dashboard">
+                                        </a>
+                                    </button>
+                                    <div class="label-text-dashboard">
+                                        <p class="p-home">Harvest</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                 </li>
             </ul>
             <hr>

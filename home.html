@@ -13,6 +13,7 @@
     <script src="js/slider.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <style>
     .head {
@@ -32,7 +33,68 @@
 </style>
 
 <body style="height: 500px; margin-bottom:300px;">
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse" id="navbarNav">
+  
+                    <ul class="navbar-nav ms-auto">
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link notification text-center" href="home.html">
+                                <i class="fas fa-home"></i><span> Home</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link notification text-center" href="userprofile.html">
+                                <i class="fas fa-user"></i><span> Profile</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a href="#" class="nav-link notification text-center">
+                                <i class="fa fa-inbox" aria-hidden="true"></i><span> Inbox</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a href="#" class="nav-link notification text-center">
+                                <i class="fas fa-user-friends" aria-hidden="true"></i><span>
+                                    Social</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link notification text-center" href="setting.html">
+                                <i class="fas fa-cog" aria-hidden="true"></i><span>
+                                    Setting</span>
+                            </a>
+                        </li>
+                        <li id="home-item" class="nav-item font-weight-bold">
+                            <a class="nav-link notification text-center" href="logout.html">
+                                <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
+                                    Log out</span>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Lepidoptera apps</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="butterfly.html">Butterfly</a>
+                                <a class="dropdown-item" href="moth.html">Moth</a>
+                                <a class="dropdown-item" href="skipper.html">Skipper</a>
+                            </div>
+                        </li>
+                       
+                -->
+                    </ul>
+                </div>
+        </nav>
+    </section>
+    <br>
     <header>
         <div class="col-lg-12 head text-center">
             <img class="img-head" src="icon/8butterfly.png" alt="">
@@ -182,8 +244,8 @@
                     </li>
                     <li class="card-app-home-list-item">
                         <button type="button" class="stages-icon-btn img-stages-home-icon ">
-                            <a href="predict.html">
-                                <img src="icon/stocks Icon_files/3376837-200.png" alt="" srcset="" width="30px" class="img-btn-apps-menu-home">
+                            <a href="task.html">
+                                <img src="icon/stocks Icon_files/3030728-200.png" alt="" srcset="" width="30px" class="img-btn-apps-menu-home">
                             </a>
                         </button>
                         <div class="label-text">

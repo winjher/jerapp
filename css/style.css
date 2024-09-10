@@ -1743,7 +1743,6 @@ b, strong {
   margin-top: 4px;
 }
 .card-dashboard {
-
   margin: 0px;
   width: 100%;
   text-align: center;
@@ -1752,6 +1751,10 @@ b, strong {
   position: relative;
   /* padding: 10px 10px 10px 10px; */
   backdrop-filter: blur(10px);
+  position: relative;
+  width: 100%;
+  padding-right: 1px;
+  padding-left: 1px;
 }
 
 .card-dashboard-list-item{
