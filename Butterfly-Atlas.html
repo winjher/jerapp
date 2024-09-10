@@ -118,37 +118,37 @@
                                 <h3>Completed Upload</h3>
                                 <label for="name">Name</label>
                                 <input type="text" id="name">
-                                
+
                                 <label for="uploadRefId">Upload Reference Id</label>
                                 <input type="text" id="uploadRefId">
-                                
+
                                 <label for="percent">Percent</label>
                                 <input type="text" id="percent">
-                                
+
                                 <label for="image">Image</label>
                                 <input type="text" id="image">
-                                
+
                                 <label for="size">Size</label>
                                 <input type="text" id="size">
-                                
+
                                 <label for="mimeType">Mime Type</label>
                                 <input type="text" id="mimeType">
-                                
+
                                 <label for="lastModified">Last Modified</label>
                                 <input type="text" id="lastModified">
-                                
+
                                 <label for="content">Content</label>
                                 <input type="text" id="content">
-                                
+
                                 <label for="date">Date</label>
                                 <input type="text" id="date">
-                                
+
                                 <label for="commonName">Common Name</label>
                                 <input type="text" id="commonName">
                                 <br>
                                 <button type="submit" class="btn-hatchery">Submit</button>
                             </form>
-                        
+
                         </li>
 
                     </ul>
@@ -247,7 +247,7 @@
 
     </footer>
     <script>
-        class Butterfly {
+        class Atlas {
             constructor() {
                 this.size = 3;
                 this.width = .5;
@@ -256,7 +256,7 @@
             }
         }
 
-        const butterfly = new Butterfly();
+        const butterfly = new Atlas();
 
         document.getElementById("size").innerText = butterfly.size; // 3
         document.getElementById("width").innerText = butterfly.width; // .5
@@ -264,9 +264,9 @@
         document.getElementById("span").innerText = butterfly.span; // 6
     </script>
     <script>
-        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the form from submitting the traditional way
-            
+
             // Get form values
             const name = document.getElementById('name').value;
             const uploadRefId = document.getElementById('uploadRefId').value;

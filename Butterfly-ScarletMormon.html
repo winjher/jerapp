@@ -84,7 +84,8 @@
         <div class="row mb-5">
             <div class="col-sm" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img id="imagebackground" src="images/butterfly_scarletmormon.jpg" alt="User Image" style="width:500px;height:500px;">
+                    <img id="imagebackground" src="images/butterfly_scarletmormon.jpg" alt="User Image"
+                        style="width:500px;height:500px;">
                 </span>
             </div>
             <div class="col-sm">
@@ -98,7 +99,7 @@
                     <input type="range" min="0" max="4" value="0" step="1" class="slider" id="predictionSlider">
                     <!-- <div id="predictionLabel"></div> -->
                     <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
-    
+
                 </div>
                 <div class="card-app-list">
                     <div class="details-commonjay">
@@ -141,35 +142,37 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                     <p>Appearance Features</p>
-                        <table style:border="1">
-                            <tr>
-                                <th>Property</th>
-                                <th>Value</th>
-                            </tr>
-                            <tr>
-                                <td>Body Length</td>
-                                <td id="size"></td>
-                            </tr>
-                            <tr>
-                                <td>Body Width</td>
-                                <td id="width"></td>
-                            </tr>
-                            <tr>
-                                <td>Wing Stand</td>
-                                <td id="stand"></td>
-                            </tr>
-                            <tr>
-                                <td>Wingspan</td>
-                                <td id="span"></td>
-                            </tr>
-                        </table>
-                       
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus reiciendis aperiam iure itaque maxime quos?</p>
+                    <table style:border="1">
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>Body Length</td>
+                            <td id="size"></td>
+                        </tr>
+                        <tr>
+                            <td>Body Width</td>
+                            <td id="width"></td>
+                        </tr>
+                        <tr>
+                            <td>Wing Stand</td>
+                            <td id="stand"></td>
+                        </tr>
+                        <tr>
+                            <td>Wingspan</td>
+                            <td id="span"></td>
+                        </tr>
+                    </table>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias nulla
+                        cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus reiciendis
+                        aperiam iure itaque maxime quos?</p>
                     <div class="text-center">
                         <a href="home.html" class="notification">
                             <i class="fas fa-home"></i><span> Home</span>
@@ -177,36 +180,36 @@
                         <a href="www.facebook.com" class="notification">
                             <i class="fas fa-share"></i><span> Share</span>
                         </a>
-                       <a href="uploader.html" class="notification">
-                        <i class="fas fa-step-forward"></i><span> Continue</span>
-                       </a>
+                        <a href="uploader.html" class="notification">
+                            <i class="fas fa-step-forward"></i><span> Continue</span>
+                        </a>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
-    </main>
-    <hr>
-    <footer>
+        </main>
+        <hr>
+        <footer>
 
-    </footer>
-    <script>
-        class Butterfly {
-            constructor() {
-                this.size = 3;
-                this.width = .5;
-                this.stand = 4;
-                this.span = 6;
+        </footer>
+        <script>
+            class ScarletMormon {
+                constructor() {
+                    this.size = 3;
+                    this.width = .5;
+                    this.stand = 4;
+                    this.span = 6;
+                }
             }
-        }
 
-        const butterfly = new Butterfly();
+            const butterfly = new ScarletMormon();
 
-        document.getElementById("size").innerText = butterfly.size; // 3
-        document.getElementById("width").innerText = butterfly.width; // .5
-        document.getElementById("stand").innerText = butterfly.stand; // 4
-        document.getElementById("span").innerText = butterfly.span; // 6
-    </script>
+            document.getElementById("size").innerText = butterfly.size; // 3
+            document.getElementById("width").innerText = butterfly.width; // .5
+            document.getElementById("stand").innerText = butterfly.stand; // 4
+            document.getElementById("span").innerText = butterfly.span; // 6
+        </script>
 
         <script src="./jquery-3.6.0.slim.min.js"> </script>
         <script src="./js/bootstrap.bundle.min.js"></script>

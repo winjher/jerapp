@@ -1297,15 +1297,16 @@ margin-top: 10px;
   background-color: var(--bs-cream);
   color: rgb(23, 2, 2);
   text-decoration: none;
-  padding: 15px 26px;
+  /* padding: 15px 26px; */
   position: relative;
   display: inline-block;
   border-radius: 2px;
-  width: 160px;
-  margin-left: 4px;
+  width: 95px;
+  /* margin-left: 4px;
   margin-top: 4px;
-  margin-bottom: 4px;
-text-align: left;
+  margin-bottom: 4px; */
+  text-align: left;
+  font-size: xx-small;
 }
 
 
@@ -1331,11 +1332,11 @@ text-align: left;
 
 
 .p-home {
-    margin:0px;
-    color: var(--color-cloud);
-    font-family: var(--font-family-roboto);
+  margin: 0px;
+  color: var(--color-cloud);
+  font-family: var(--font-family-roboto);
+  font-size: xx-small;
 }
-
 
 .p-lepidoptera:hover,
 .p-home:hover{
