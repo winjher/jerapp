@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
     <title>Classifier</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card-classifier.css">
 </head>
 <style type="text/css" media="all">
     form {
@@ -121,7 +132,7 @@
         box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
         cursor: pointer;
         transition: 0.4s;
-        linear-gradient(90deg, #edc0bf 0,#c4caef 8%);
+        /* linear-gradient(90deg, #edc0bf 0,#c4caef 8%); */
         justify-items: center;
     }
 
@@ -193,7 +204,7 @@
             products.js
         </script>
     </div>
-    
+
     <ul class="cards-list">
         <li>
             <div class="card-classify">
@@ -203,7 +214,7 @@
                             Object Detection
                         </h2>
                         <hr />
-                        <div class="augment-card">
+                        <div class="card-app-list">
                             <form name="testform" class="aug">
                                 <label>Percentage
                                     <input type="range" min="0" max="100" name="blur" />
@@ -231,7 +242,7 @@
                             Scan Butterfly
                         </h3>
                         <hr />
-                        <div id="" class="upload">
+                        <div id="" class="card-app-list">
                             <label for="Upload picture" class="drop-files">Drop files here or</label>
                             <input type="file" name="Select file" id="Select file" value="" />
                         </div>
@@ -261,7 +272,7 @@
                                 <label>Recall
                                     <input type="range" min="0" max="100" name="brightness" />
                                 </label>
-                             
+
                         </div>
                         <div class="buttons">
                             <button type="submit" class="btn">Submit</button>
@@ -282,7 +293,7 @@
                             Scan pupa defects
                         </h3>
                         <hr />
-                        <div id="" class="upload">
+                        <div id="" class="card-app-list">
                             <label for="Upload picture" class="drop-files">Drop files here or</label>
                             <input type="file" name="Select file" id="Select file" value="" />
                         </div>
@@ -304,16 +315,16 @@
 
 
                         <hr />
-                        <div class="augment-card">
+                        <div class="card-app-list">
                             <form name="testform" class="aug">
 
 
                                 <label id="size">Blur
-                                    <input type="range" min="0" max="100" name="blur"  oninput="document.getElementById('fontsize').innerHTML = this.value + 'px'; 
-        changeFontRange(this.value);"">
+                                    <input type="range" min="0" max="100" name="blur" oninput="document.getElementById('fontsize').innerHTML = this.value + 'px'; 
+        changeFontRange(this.value);">
                                 </label>
                                 <label>Brightness
-                                    <input type="range" min="0" max="100" name="brightness" />
+                                    <input type=" range" min="0" max="100" name="brightness" />
                                 </label>
                                 <label>Contrast
                                     <input type="range" min="0" max="100" name="contrast" />
@@ -342,7 +353,7 @@
                             Scan pupa defects
                         </h3>
                         <hr />
-                        <div id="" class="upload">
+                        <div id="" class="card-app-list">
                             <label for="Upload picture" class="drop-files">Drop files here or</label>
                             <input type="file" name="Select file" id="Select file" value="" />
                         </div>
@@ -355,12 +366,12 @@
             </div>
         </li>
     </ul>
-    
-  <script type="text/javascript" charset="utf-8">
-      const changeFontRange= (size) => {
-    document.getElementById('size').setAttribute('style', 'font-size: ' + size + 'px');
-  }
-  </script>
+
+    <script type="text/javascript" charset="utf-8">
+        const changeFontRange = (size) => {
+            document.getElementById('size').setAttribute('style', 'font-size: ' + size + 'px');
+        }
+    </script>
 
     <script>
         function checkFirstName() {
@@ -378,4 +389,3 @@
 
 
 </html>
-

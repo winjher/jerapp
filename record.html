@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas to Video</title>
+</head>
+<body>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <video id="video" controls></video>
+    <button onclick="startRecording()">Start Recording</button>
+    <button onclick="stopRecording()">Stop Recording</button>
+    <script src="script.js"></script>
+    <script>
+        let canvas = document.getElementById('canvas');
+let video = document.getElementById('video');
+let ctx = canvas.getContext('2d');
+let mediaRecorder;
+let chunks = [];
+
+// Draw something on the canvas
+ctx.fillStyle = 'green';
+ctx.fillRect(10, 10, 150, 100);
+
+function startRecording() {
+    let stream = canvas.captureStream(30); // 30 FPS
+    mediaRecorder = new MediaRecorder(stream);
+
+    mediaRecorder.ondataavailable = function(event) {
+        if (event.data.size > 0) {
+            chunks.push(event.data);
+        }
+    };
+
+    mediaRecorder.onstop = function() {
+        let blob = new Blob(chunks, { type: 'video/webm' });
+        let url = URL.createObjectURL(blob);
+        video.src = url;
+        chunks = [];
+    };
+
+    mediaRecorder.start();
+}
+
+function stopRecording() {
+    mediaRecorder.stop();
+}
+
+    </script>
+</body>
+</html>

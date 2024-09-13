@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 10px auto;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#imageResult {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#webcam-container {
+    margin-top: 20px;
+}
+
+video {
+    border: 2px solid #000;
+    border-radius: 8px;
+}
+
+</style>
+<body>
+    <div class="container mt-3">
+        <h2>Classify Photo</h2>
+        <form id="myForm">
+            <input type="file" id="uploadedImage" accept="image/*">
+            <button type="button" onclick="startImageScan()">Scan Image</button>
+            <button type="button" onclick="myReset()">Reset</button>
+        </form>
+        <div id="imageResult"></div>
+        <div id="webcam-container">
+            <video id="webcam" autoplay playsinline width="224" height="224"></video>
+        </div>
+        <button id="saveSnapshot">Save Snapshot</button>
+        <button id="flipbtn">Flip Camera</button>
+        <div class="card-app-list">
+          
+            <h5 class="btn-butterfly h5">Please Add image</h5>
+            <button id="butterfly" class="btn-house">+ Butterfly</button>
+            <button id="pupae" class="btn-house">+ Pupae</button>
+            <button id="larvae" class="btn-house">+ Larvae</button>
+            <button id="eggs" class="btn-house">+ Eggs</button>
+            <button id="disease" class="btn-house">+ Disease</button>
+            <button id="defects" class="btn-house">+ Defects</button>
+      
+    </div>
+    </div>
+
+    <script>
+        const element = document.getElementById("imageResult");
+
+        function startImageScan() {
+            const classifier = ml5.imageClassifier('MobileNet', () => {
+                classifier.classify(document.getElementById("uploadedImage"), imageScanResult);
+                element.innerHTML = "Loading...";
+            });
+        }
+
+        function imageScanResult(error, results) {
+            if (error) {
+                element.innerHTML = error;
+            } else {
+                let num = results[0].confidence * 100;
+                element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % ";
+            }
+        }
+
+        function myReset() {
+            document.getElementById("myForm").reset();
+            element.innerHTML = "";
+        }
+
+        const classifier = knnClassifier.create();
+        const webcamElement = document.getElementById("webcam");
+
+        let net;
+
+        async function app() {
+            console.log("Loading mobilenet...");
+            net = await mobilenet.load();
+            console.log("Loaded model");
+
+            const webcam = await tf.data.webcam(webcamElement);
+
+            const addExample = async (classId) => {
+                const img = await webcam.capture();
+                const activation = net.infer(img, true);
+                classifier.addExample(activation, classId);
+                img.dispose();
+            };
+
+            document.getElementById("butterfly").addEventListener("click", () => addExample(0));
+            document.getElementById("pupae").addEventListener("click", () => addExample(1));
+            document.getElementById("larvae").addEventListener("click", () => addExample(2));
+            document.getElementById("eggs").addEventListener("click", () => addExample(3));
+            document.getElementById("disease").addEventListener("click", () => addExample(4));
+            document.getElementById("defects").addEventListener("click", () => addExample(5));
+
+            while (true) {
+                if (classifier.getNumClasses() > 0) {
+                    const img = await webcam.capture();
+                    const activation = net.infer(img, "conv_preds");
+                    const result = await classifier.predictClass(activation);
+
+                    const classes = ["Butterfly", "Pupae", "Larvae", "Eggs", "Disease", "Defects"];
+                    const className = classes[result.label];
+                    const confidence = result.confidences[result.label] * 100;
+
+                    element.innerHTML = `Prediction: ${className} <br> Confidence: ${confidence.toFixed(2)}%`;
+
+                    img.dispose();
+                }
+                await tf.nextFrame();
+            }
+        }
+
+        app();
+
+        document.getElementById("saveSnapshot").addEventListener("click", () => {
+            const canvas = document.createElement("canvas");
+            canvas.width = webcamElement.videoWidth;
+            canvas.height = webcamElement.videoHeight;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+            const dataURL = canvas.toDataURL("image/png");
+
+            const link = document.createElement("a");
+            link.href = dataURL;
+            link.download = "snapshot.png";
+            link.click();
+        });
+    </script>
+    
+    <script src="js/flip.camera.js"></script>
+</body>
+</html>
