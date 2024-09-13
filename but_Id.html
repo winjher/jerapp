@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butterfly Identification</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <style>
     body {
@@ -54,7 +55,9 @@ button:hover {
     border-radius: 5px;
     padding: 5px;
 }
-
+li{
+    list-style: none;
+}
 </style>
 <body>
     <div class="container">
@@ -63,43 +66,105 @@ button:hover {
         <button onclick="processImage()">Upload</button>
         <div id="output"></div>
     </div>
-
+    <div class="container mt-3">
+        <div class="col-xl-12 text-center">
+            <div class="accordion" id="example">
+                <div class="card bg-primary">
+                    <div class="card-header">
+                        <a class="text-light" data-toggle="collapse" href="#basicInfo">
+                            <h6 class="acordionItemHeading">Basic Information <span>+</span></h6>
+                        </a>
+                    </div>
+                    <div id="basicInfo" class="collapse show" data-parent="#example">
+                        <div class="card-body">
+                            <div class="card-app-classification">
+                                <h6 class="key-name">Marinduque known as:<span class="val-name"> {{}}</span></h6>
+                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">{{}}</i></span></h6>
+                                <h6 class="key-name">Genus:<span> <b class="genus">{{}}</b></span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="accordion" id="example">
+                <div class="card bg-primary">
+                    <div class="card-header">
+                        <a class="text-light" data-toggle="collapse" href="#desc">
+                            <h6 class="acordionItemHeading">Description <span>+</span></h6>
+                        </a>
+                    </div>
+                    <div id="desc" class="collapse" data-parent="#example">
+                        <div class="card-body">
+                            <div class="card-app-classification">
+                                <ul>
+                                    <li>
+                                        <h6 class="key-name">Body Length: <b class="val-name">{{body-length}}</b></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Body Width: <b class="val-name">{{body_width}}</b></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Wing Stand: <b class="val-name">{{wing_stand}}</b></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Wing Span: <b class="val-name">{{wing_span}}</b></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Male Colors: <b class="val-name">{{colors}}</b></h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <script>
         function processImage() {
-            const predOutput = [
-                'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime', 
-                'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail', 
-                'Butterfly-Golden Birdwing', 'Butterfly-Gray Glassy Tiger', 'Butterfly-Great Eggfly', 
-                'Butterfly-Great Yellow Mormon', 'Butterfly-Paper Kite', 'Butterfly-Plain Tiger', 
-                'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Pink Rose', 
-                'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
-            ];
+    const predOutput = [
+        'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime', 
+        'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail', 
+        'Butterfly-Golden Birdwing', 'Butterfly-Gray Glassy Tiger', 'Butterfly-Great Eggfly', 
+        'Butterfly-Great Yellow Mormon', 'Butterfly-Paper Kite', 'Butterfly-Plain Tiger', 
+        'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Pink Rose', 
+        'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
+    ];
 
-            const imgInput = document.getElementById('imageUpload');
-            const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = '';
+    const imgInput = document.getElementById('imageUpload');
+    const outputDiv = document.getElementById('output');
+    outputDiv.innerHTML = '';
 
-            if (imgInput.files && imgInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const imgElement = document.createElement('img');
-                    imgElement.src = e.target.result;
-                    imgElement.style.width = '150px';
-                    outputDiv.appendChild(imgElement);
+    if (imgInput.files && imgInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const imgElement = document.createElement('img');
+            imgElement.src = e.target.result;
+            imgElement.style.width = '150px';
+            outputDiv.appendChild(imgElement);
 
-                    const itm = Math.floor(Math.random() * predOutput.length);
-                    const percent = Math.floor(Math.random() * 100);
-                    const today = new Date();
-                    const reference = Math.floor(Math.random() * 1000000000000000);
+            const itm = Math.floor(Math.random() * predOutput.length);
+            const percent = Math.floor(Math.random() * 100);
+            const today = new Date();
+            const reference = Math.floor(Math.random() * 1000000000000000);
 
-                    outputDiv.innerHTML += `<p>Prediction: ${predOutput[itm]} (${percent}%)</p>`;
-                    outputDiv.innerHTML += `<p>Upload Reference ID: ${reference}</p>`;
-                    outputDiv.innerHTML += `<p>Date: ${today.toDateString()}</p>`;
-                };
-                reader.readAsDataURL(imgInput.files[0]);
+            const prediction = predOutput[itm];
+            if (!predOutput.includes(prediction)) {
+                outputDiv.innerHTML += `<p>Prediction: Unknown</p>`;
+            } else {
+                outputDiv.innerHTML += `<p>Prediction: ${prediction} (${percent}%)</p>`;
             }
-        }
+            outputDiv.innerHTML += `<p>Upload Reference ID: ${reference}</p>`;
+            outputDiv.innerHTML += `<p>Date: ${today.toDateString()}</p>`;
+        };
+        reader.readAsDataURL(imgInput.files[0]);
+    }
+}
+
     </script>
     <script src="js/but_ID.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
