@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Image Upload</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Butterfly Image Upload by User</h1>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Uploader Name</th>
+                        <th>Upload Reference ID</th>
+                        <th>Common Name</th>
+                        <th>%</th>
+                        <th>Upload Image</th>
+                        <th>Size</th>
+                        <th>Mime Type</th>
+                        <th>Last Modified</th>
+                        <th>Content</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jher</td>
+                        <td>397648704704765081</td>
+                        <td>Butterfly-Lacewing</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Butterfly Class</td>
+                        <td>August 19, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>Jher</td>
+                        <td>397648704704765081</td>
+                        <td>Butterfly-Lacewing</td>
+                        <td>29%</td>
+                        <td>IMG-bjjkkkhgg.jpg</td>
+                        <td>181134</td>
+                        <td>image/jpeg</td>
+                        <td>17424856897</td>
+                        <td>Butterfly Class</td>
+                        <td>August 19, 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const multer = require('multer');
+const app = express();
+const port = 3000;
+
+// Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// MongoDB connection
+mongoose.connect('mongodb://localhost:27017/butterflyDB', { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Define a schema and model for the uploads
+const uploadSchema = new mongoose.Schema({
+    uploaderName: String,
+    uploadReferenceID: String,
+    commonName: String,
+    percentage: String,
+    uploadImage: String,
+    size: Number,
+    mimeType: String,
+    lastModified: Number,
+    content: String,
+    date: String
+});
+
+const Upload = mongoose.model('Upload', uploadSchema);
+
+// Set up Multer for file uploads
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+const upload = multer({ storage: storage });
+
+// Routes
+app.post('/upload', upload.single('uploadImage'), (req, res) => {
+    const newUpload = new Upload({
+        uploaderName: req.body.uploaderName,
+        uploadReferenceID: req.body.uploadReferenceID,
+        commonName: req.body.commonName,
+        percentage: req.body.percentage,
+        uploadImage: req.file.filename,
+        size: req.file.size,
+        mimeType: req.file.mimetype,
+        lastModified: req.file.lastModified,
+        content: req.body.content,
+        date: req.body.date
+    });
+
+    newUpload.save((err) => {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(200).send('File uploaded successfully');
+        }
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+    </script>
+</body>
+</html>

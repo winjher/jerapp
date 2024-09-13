@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Host Plants</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #2e8b57;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        const lepi2host = {
+            'Batwing': ['Dutchman pipe', 'Indian Birthwort'],
+            'Atlas Moth': ['Soursop','Gmelina', 'Sugar Apple'],
+            'Red Lacewing': ['Wild Bush Passion Fruits'],
+            'Common Mime': ['Clover Cinnamon','Wild Cinnamon'],
+            'Plain Tiger': ['Crown flower', 'Giant Milkweed'],
+            'Tailed Jay': ['Avocado Tree','Soursop', 'Sugar Apple', 'Amuyon','Indian Tree'],
+            'Common Jay': ['Avocado Tree','Soursop', 'Sugar Apple', 'Amuyon','Indian Tree'],
+            'Great Eggfly': ['Sweet Potato', 'Water Spinach'],
+            'Paper Kite': ['Common Skillpod'],
+            'Pink Rose': ['Dutchman Pipe', 'Indian Birthwort'],
+            'Common Lime': ['Limeberry', 'Calamondin', 'Pomelo','Sweet Orange','Calamansi'],
+            'Emerald Swallowtail': ['Curry Leafs', 'Pink Lime-Berry Tree'],
+            'Great Yellow Mormon': ['Limeberry', 'Calamondin', 'Pomelo','Sweet Orange','Calamansi'],
+            'Common Mormon': ['Limeberry', 'Calamondin', 'Pomelo','Sweet Orange','Calamansi','Lemoncito'],
+            'Scarlet Mormon': [ 'Calamondin', 'Pomelo','Sweet Orange','Calamansi'],
+            'Giant Silk Moth': ['Gmelina Tree'],
+            'Clipper': ['Wild Cucumber'],
+            'Golden Birdwing': ['Dutchman pipe', 'Indian Birthwort'],
+        };
+
+        function updateHostplants() {
+            const butterflySelect = document.getElementById('butterfly');
+            const hostplantSelect = document.getElementById('hostplant');
+            const selectedButterfly = butterflySelect.value;
+            const hostplants = lepi2host[selectedButterfly];
+
+            hostplantSelect.innerHTML = '';
+            hostplants.forEach(hostplant => {
+                const option = document.createElement('option');
+                option.value = hostplant;
+                option.textContent = hostplant;
+                hostplantSelect.appendChild(option);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateHostplants();
+            document.getElementById('butterfly').addEventListener('change', updateHostplants);
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <h1>Select a Butterfly and its Host Plant</h1>
+        <label for="butterfly">Butterfly:</label>
+        <select id="butterfly">
+            <script>
+                const butterflies = Object.keys(lepi2host);
+                butterflies.forEach(butterfly => {
+                    const option = document.createElement('option');
+                    option.value = butterfly;
+                    option.textContent = butterfly;
+                    document.getElementById('butterfly').appendChild(option);
+                });
+            </script>
+        </select>
+        <label for="hostplant">Host Plant:</label>
+        <select id="hostplant"></select>
+    </form>
+</body>
+</html>

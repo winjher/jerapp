@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Identification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+input[type="file"] {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#output {
+    margin-top: 20px;
+}
+
+#output img {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Upload Image</h1>
+        <input type="file" id="imageUpload" accept="image/*">
+        <button onclick="processImage()">Upload</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function processImage() {
+            const predOutput = [
+                'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime', 
+                'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail', 
+                'Butterfly-Golden Birdwing', 'Butterfly-Gray Glassy Tiger', 'Butterfly-Great Eggfly', 
+                'Butterfly-Great Yellow Mormon', 'Butterfly-Paper Kite', 'Butterfly-Plain Tiger', 
+                'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Pink Rose', 
+                'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
+            ];
+
+            const imgInput = document.getElementById('imageUpload');
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+
+            if (imgInput.files && imgInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = e.target.result;
+                    imgElement.style.width = '150px';
+                    outputDiv.appendChild(imgElement);
+
+                    const itm = Math.floor(Math.random() * predOutput.length);
+                    const percent = Math.floor(Math.random() * 100);
+                    const today = new Date();
+                    const reference = Math.floor(Math.random() * 1000000000000000);
+
+                    outputDiv.innerHTML += `<p>Prediction: ${predOutput[itm]} (${percent}%)</p>`;
+                    outputDiv.innerHTML += `<p>Upload Reference ID: ${reference}</p>`;
+                    outputDiv.innerHTML += `<p>Date: ${today.toDateString()}</p>`;
+                };
+                reader.readAsDataURL(imgInput.files[0]);
+            }
+        }
+    </script>
+    <script src="js/but_ID.js"></script>
+</body>
+</html>
