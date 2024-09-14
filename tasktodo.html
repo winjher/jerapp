@@ -98,113 +98,102 @@
         </nav>
     </section>
     <!-----------------------------Category section--------------------------------------------->
-    <br>
-    <hr>
-    <!-- 
-        <div class="container-fluid">
-            <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="">
-        </div>  -->
+    <!-- <div class="container-fluid">
+        <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="Background Image">
+    </div> -->
 
-   
     <div class="container">
-        <div class="menuWrapper">
+    <div class="menuWrapper">
+        <hr>
+        <form id="add-task" class="form-control" action="" method="get">
+            <h2>To do Task</h2>
             <hr>
-
-            <form id="add-task" class="form-control" action="" method="get">
-                <h2>To do Task</h2>
-                <hr>
-                <label for="title">Title:</label>
-                <input type="text" placeholder="Add a task..." /><br><br>
-                <select name="larvae" id="larvae" class="form-select form-select-sm"
-                    aria-label=".form-select-sm example" onchange="changeLanguage(this.value)">
-                    <option value="Choose" selected="selected">Selected</option>
-                    <option value="leaves">Get leaves</option>
-                    <option value="flowers">Get flowers</option>
-                    <option value="sleeve">Clean sleeve</option>
-                    <option value="bhouse">Clean the butterfly house</option>
-                    <option value="pupae">Pick up pupae</option>
-                    <option value="eggs">Pick up eggs</option>
-                    <option value="bottle">Clean the bottled water and refill</option>
-                    <option value="larvae">Check active larvae</option>
-                    <option value="instars">Choose the same instars and transfer</option>
-                    <option value="instars">Heat the puparium</option>
-                    <option value="instars">Clean the ponds or fall</option>
-                </select>
-                <label for="">Description</label><br>
-                <div class="col-xl-12">
-                    <textarea class="form-control" name="message" rows="5" cols="50"
-                        placeholder="Description of a task..."></textarea><br>
-                </div>
-                <label for="">Batch</label><br>
-                <select name="larvae" id="larvae" class="form-select form-select-sm"
-                    aria-label=".form-select-sm example" onchange="changeLanguage(this.value)">
-                    <option value="Choose" selected="selected">Selected</option>
-                    <option value="batch_1">Batch1</option>
-                    <option value="batch_2">Batch2</option>
-                    <option value="batch_3">Batch3</option>
-                    <option value="batch_4">Batch4</option>
-                    <option value="batch_5">Batch5</option>
-                    <option value="batch_6">Batch6</option>
-                    <option value="batch_7">Batch7</option>
-                    <option value="batch_8">Batch8</option>
-                    <option value="batch_9">Batch9</option>
-                    <option value="batch_10">Batch10</option>
-                </select>
-
-                <label for="">Butterfly</label><br>
-                <select name="butterfly" id="butterfly" class="form-select form-select-sm"
-                    aria-label=".form-select-sm example" onchange="changeLanguage(this.value)">
-                    <option value="Choose" selected="selected">Selected</option>
-
-
-                    <option value="but_1">Atrophaneura semperi</option>
-                    <option value="but_2">Attacus atlas</option>
-                    <option value="but_3">Cethosia biblis</option>
-                    <option value="but_4">Chilasa clytia</option>
-                    <option value="but_5">Danaus chrysippus</option>
-                    <option value="but_6">Graphium agamemnon</option>
-                    <option value="but_7">Graphium doson</option>
-                    <option value="but_8">Idea leuconoe</option>
-                    <option value="but_9">Hypolimnas bolina</option>
-                    <option value="but_10">Pachliopta kotzebuea</option>
-                    <option value="but_11">Papilio demoleus</option>
-                    <option value="but_11">Papilio lowi</option>
-                    <option value="but_13">Papilio palinurus</option>
-                    <option value="but_14">Papilio polytes</option>
-                    <option value="but_15">Papilio rumanzovia</option>
-                    <option value="but_17">Parthenos sylvia</option>
-                    <option value="but_12">Samia luzonica</option>
-                    <option value="but_18">Troides rhadamantus</option>
-                </select>
-                <label for="">Moth</label><br>
-                <select name="butterfly" id="butterfly" class="form-select form-select-sm"
-                    aria-label=".form-select-sm example" onchange="changeLanguage(this.value)">
-                    <option value="Choose" selected="selected">Selected</option>
-                    <option value="but_19">Appias nero</option>
-                    <option value="but_20">Cepora aspaisa</option>
-                    <option value="but_21">Hebomoia glaucippe</option>
-
-                    <option value="but_23">Butterfly23</option>
-                    <option value="but_24">Butterfly24</option>
-                    <option value="but_25">Butterfly25</option>
-                </select>
-
-                <label for="">Date</label>
-                <input type="date" name="Date" id="id_date" class="form-select form-select-sm"
-                    aria-label=".form-select-sm example">
-
-                <br><br>
-
-
-                <button type="button" class="btn btn-sm btn-primary">Add Task</button>
-                <button type="button" class="btn btn-sm btn-primary">Save</button>
-
-            </form>
-
-
-            <hr>
-        </div>
+            <label for="title" >Title:</label>
+            <input class="form-control" type="text" id="title" placeholder="Add a task..." /><br><br>
+            <label for="larvae" >Task:</label>
+            <select name="larvae" id="larvae" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="Choose" selected="selected">Selected</option>
+                <option value="Get leaves">Get leaves</option>
+                <option value="Get flowers">Get flowers</option>
+                <option value="Clean sleeve box">Clean sleeve box</option>
+                <option value="Clean the butterfly house">Clean the butterfly house</option>
+                <option value="Pick up pupae">Pick up pupae</option>
+                <option value="Pick up eggs">Pick up eggs</option>
+                <option value="Clean the bottled water and refill">Clean the bottled water and refill</option>
+                <option value="Check active larvae">Check active larvae</option>
+                <option value="Choose the same instars and transfer">Choose the same instars and transfer</option>
+                <option value="Heat the puparium">Heat the puparium</option>
+                <option value="Clean the ponds or fall">Clean the ponds or fall</option>
+            </select>
+            <label for="description">Description:</label><br>
+            <textarea class="form-control" name="message" id="description" rows="5" cols="50" placeholder="Description of a task..."></textarea><br>
+            <label for="batch">Batch:</label><br>
+            <select name="batch" id="batch" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="Choose" selected="selected">Selected</option>
+                <option value="Batch1">Batch1</option>
+                <option value="Batch2">Batch2</option>
+                <option value="Batch3">Batch3</option>
+                <option value="Batch4">Batch4</option>
+                <option value="Batch5">Batch5</option>
+                <option value="Batch6">Batch6</option>
+                <option value="Batch7">Batch7</option>
+                <option value="Batch8">Batch8</option>
+                <option value="Batch9">Batch9</option>
+                <option value="Batch10">Batch10</option>
+            </select>
+            <br />
+            <label for="butterfly">Butterfly:</label><br>
+            <select name="butterfly" id="butterfly" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="Choose" selected="selected">Selected</option>
+                <option value="Atrophaneura semperi">Atrophaneura semperi</option>
+                <option value="Attacus atlas">Attacus atlas</option>
+                <option value="Cethosia biblis">Cethosia biblis</option>
+                <option value="Chilasa clytia">Chilasa clytia</option>
+                <option value="Danaus chrysippus">Danaus chrysippus</option>
+                <option value="Graphium agamemnon">Graphium agamemnon</option>
+                <option value="Graphium doson">Graphium doson</option>
+                <option value="Idea leuconoe">Idea leuconoe</option>
+                <option value="Hypolimnas bolina">Hypolimnas bolina</option>
+                <option value="Pachliopta kotzebuea">Pachliopta kotzebuea</option>
+                <option value="Papilio demoleus">Papilio demoleus</option>
+                <option value="Papilio lowi">Papilio lowi</option>
+            </select>
+            <br><br>
+            <button type="submit" class="btn-butterfly">Add Task</button>
+        </form>
+        <div id="task-list"></div>
     </div>
+</div>
+
+<script>
+document.getElementById('add-task').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const title = document.getElementById('title').value;
+    const task = document.getElementById('larvae').value;
+    const description = document.getElementById('description').value;
+    const batch = document.getElementById('batch').value;
+    const butterfly = document.getElementById('butterfly').value;
+
+    const taskList = document.getElementById('task-list');
+    const taskItem = document.createElement('div');
+    taskItem.className = 'task-item';
+    taskItem.innerHTML = `
+        <h3>${title}</h3>
+        <p><strong>Task:</strong> ${task}</p>
+        <p><strong>Description:</strong> ${description}</p>
+        <p><strong>Batch:</strong> ${batch}</p>
+        <p><strong>Butterfly:</strong> ${butterfly}</p>
+        <hr>
+    `;
+
+    taskList.appendChild(taskItem);
+
+    // Clear the form
+    document.getElementById('add-task').reset();
+});
+</script>
+
     <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
    <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
     <div class="icon-bar">
