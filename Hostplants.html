@@ -1,343 +1,385 @@
-
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Butterfly Hostplants Classification</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-    <!-- Include the ml5.js library -->
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" /> 
-    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
-    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script> 
+  <title>Butterfly Farm</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/iconbar.css">
+  <link rel="stylesheet" href="css/banner.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<style>
-    :root {
-        --color-iris: #4D5AE5;
-        --color-navyblue: #2E2F42;
-        --color-white: #FFFFFF;
-        --color-cornflower: #E7E9FC;
-        --color-ocean: #404BBF;
-        --color-cloud: #F4F4FD;
-        --color-dairy: #FCFCFC;
-        --color-slate: #434455;
-        --bs-blue: #0d6efd;
-        --bs-indigo: #6610f2;
-        --bs-purple: #6f42c1;
-        --bs-pink: #d63384;
-        --bs-red: #dc3545;
-        --bs-orange: #fd7e14;
-        --bs-yellow: #ffc107;
-        --bs-green: #198754;
-        --bs-teal: #20c997;
-        --bs-cyan: #0dcaf0;
-        --bs-white: #fff;
-        --bs-gray: #6c757d;
-        --bs-gray-dark: #343a40;
-        --bs-primary: #0d6efd;
-        --bs-secondary: #6c757d;
-        --bs-success: #198754;
-        --bs-info: #0dcaf0;
-        --bs-warning: #ffc107;
-        --bs-danger: #dc3545;
-        --bs-light: #f8f9fa;
-        --bs-dark: #212529;
-        --font-family-open-sans: 'Open sans', san-serif;
-        --font-family-roboto: 'Roboto', san-serif;
-        --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    }
+<body style="height: 1400px; margin-bottom:300px;">
+  <!-------------------------------Nav bar section-------------------------------------------->
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Butterfly Farm</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li id="home-item" class="nav-item font-weight-bold">
+              <a class="nav-link " href="home.html">Home</a>
+            </li>
 
-
-
-    *,
-    *::before,
-    *::after {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-
-    .btn-back {
-        color:var(--color-cloud);
-        background-color: #191970;
-    }
-
-    .btn-submit {
-        color: var(--color-cloud);
-        background-color: #191970;
-    }
-
-.btn-save-larvae,
-.center-save{
-    margin:10px;
-    text-align: center;
-    align-items: center;
-    background-color: #f3f4f5;
-    border-radius: 20px;
-    border: none;
-    width:300px;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-    .btn-reset {
-        color: black;
-        background-color:#fd7e14;
-
-
-    }
-
-
-    .btn-reset,
-    .btn-submit, .btn-back {
-        border-style: none;
-        border-radius: 4px;
-        padding: 6px;
-        font: var(bs-font-sans-serif);
-    }
-
-        /* Set styles for HTML elements */
-        h1,
-        h2 {
-            font-family: arial;
-            text-align: center;
-        }
-
-        .imageInput {
-            width: 100%;
-            text-align: center;
-        }
-
-        .imageResult {
-            font-family: arial;
-            width: 100%;
-            text-align: center;
-            text-transform: uppercase;
-            color: red;
-        }
-
-        .uploadedImage {
-            padding-top: 20px;
-            width: 50%;
-            height:auto;
-            margin-left: 25%;
-        }
-
-</style>
-<body>
-    <!-- MENU -->
-    <header>
-        <section class="navbar nvbar-default nvbar-static-top" role="navigation" style="align-items:center ;">
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="nvabar-toggle" data-target="navbar-collapse">
-                        <span class="icon icon-bar"></span>
-                        <span class="icon icon-bar"></span>
-                        <span class="icon icon-bar"></span>
-                    </button>
-                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square">
-                            <!-- LOGO TEXT HERE -->
-                            <h2>Butterfly Identification</h2>
-                        </i></a>
-                </div>
-                <div class="nav navbar-nav navbar-right">
-                    <li><a href="/"> <img src="./icon/8i8.png" width="200" class="img-back-icon"></a> </li>
-                    <li><a href="viewDatabase/" class="smoothScroll">View Images</a> </li>
-                </div>
-    <div class="container">
-        <h2>Butterfly Hostplants Apps</h2>
-        <hr>
-        <h3>Hostplants Prediction</h3>
-        <div class="panel panel-default">
-            <div class="panel-heading">Select Hostplants Image</div>
-            <div class="panel-body">
-            <div class="col-sm" style="margin-bottom: 23px;">
-                <form action="" method="get" accept-charset="utf-8" id="myForm">
-    <div class="imageInput">
-        <input type="file" oninput="uploadedImage.src=window.URL.createObjectURL(this.files[0]); startImageScan()">
-    </div>
-    <!-- Container for the uploaded image -->
-    <img class="uploadedImage" id="uploadedImage" />
-    <div class="imageScanResult">
-        <output type="file" name="result" for="a b"></output>
-    </div>
-<div class="imageResult" id="imageResult"></div>   
-<!----------------------------- Fixed Bottom Menu section--------------------------------------------->      </form>               
-                <br>
-                <span class="border border-primary">
-                    <!-- <img src="{% static 'images/Larval_Disease_Prediction_Trichogramma/Dataset/Train/demoleus_disease_larvae 26.jpg' %}" alt="User Image" style="width:500px;height:500px;"> -->
-                    <!-- <input class="custom-file-input" type='file' id='getval' multiple/> -->
-
-                </span>
-            </div>
-             <div class="imageResult" id="imageResult"></div> 
-            </div>
-            <div class="panel-footer">
-
-            <form id=“myDetailForm>
-                <label for=""> <a href="Larvae Trichogramma Disease.html" >
-Treatments: </a></label>
-                 <div>
-                  <button type="submit" class="btn-back" id="btn-home">
-                     <a class="nav-link" href="index.html">Back</a></button>
-                  <button type="submit" class="btn-reset" onclick= "myReset() " value = "Reset Form">Reset</button>
-
-                 </div>               
-                 </form>
-             </div>
-
-
-       </div>
-
-    </div>
-         <div class="container"> 
-              <div class="diagnose-div">     
-                  <div class="center-save">
-                     <button type="submit" class="btn-save" onclick = "mySaveLarvae()" value= "Save Larvae Info Form">+&nbsp;Save to my Hostplants
-                      </button>     
-                  </div>   
-              </div> 
-         </div>  
-
-    <div class="container"> 
-             <div class="diagnose-div">  
-                  <div class="center-save">
- <img class="image-diagnose" src="icon/bgbutterfly.jpg" alt="" srcset="" height="auto" width="300px">         
-<button type="submit" class="btn-diagnose" onclick= "myDiagnose() " value = "Diagnose Form"><a class="nav-link" href="Larvae Trichogramma Disease.html"><h5>Get Diagnose</h4></a>
-</button>
-                  </div>
-            </div>
-    </div>
-      <div class="container"> 
-         <h3>Hostplants Health</h3>  
-
-        <div class="panel panel-default"> 
-
-            <div class="panel-heading">
-   <button type="submit" class="btn-info" onclick = "myHealthInfo()" value= "Basic health Info Form"> <a href="TailedJay.html">
-Basic Info</a>
-             </button>
-             <button type="submit" class="btn-care" onclick = "myCare()" value= "Care Form"> <a href="care.html">
-Care</a>
-             </button>
-             <button type="submit" class="btn-culture" onclick = "myCulture()" value= "Culture Form">Culture
-             </button>
-
-            </div>
-            <div class="panel-body">
-
-          <h5>Basic Information
-          </h5> 
-               <div class="col-sm" >
-           <ul>
-              <li><h6>Common Name</h6></li>
-              <li><h6>Scientific Name
-</h6></li>
-              <li><h6>Year discovered
-</h6></li>
-              <li><h6>Sub-family
-</h6></li>
-              <li><h6>Domain
-</h6></li>
-              <li><h6>Kingdom
-</h6></li>
-              <li><h6>Phylum
-</h6></li>
-              <li><h6>Class
-</h6></li>
-              <li><h6>Family
-</h6></li>
-              <li><h6>Genus
-</h6></li>
-              <li><h6>Species
-</h6></li>
-              <li><h6>Buttetfly   
-</h6></li>
-
-           </ul>   
-               </div>
-
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lepidoptera apps</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="lepidoptera.html">Butterfly</a>
+                <a class="dropdown-item" href="moth.html">Moth</a>
+                <a class="dropdown-item" href="skipper.html">Skipper</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Defects and Diseases</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="addDefectsPupae.html">Pupae Defects</a>
+                <a class="dropdown-item" href="addLarvalDiseases.html">Larval Diseases </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Health</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="addHealthyButterfly.html">Healthy Butterfly</a>
+                <a class="dropdown-item" href="addHealthyPupae.html">Healthy Pupae</a>
+                <a class="dropdown-item" href="addHealthyLarvae.html">Healthy Larvae</a>
+                <a class="dropdown-item" href="addHealthyEggs.html">Healthy Eggs</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Match Identifier Apps</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="addgarden.html">Butterfly and Hosplants</a>
+                <a class="dropdown-item" href="Butterfly-Hostplants.html">Hosplants</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="setting.html">Setting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://forms.gle/p4E9jNPqczh8cwVS6">Rate</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="weather.html">Weather</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      </div>
+    </nav>
+  </section>
+  <!-----------------------------Category section--------------------------------------------->
+<hr>
+  
+  <section>
+    <div class="col-xl-12 text-center">
+      <h2 class="display-8">Butterfly Host Plants</h2>
+      <a href="task_planning.html">
+        <button class="btn-classify"><h4>Planning</h4> </button>
+      </a>
+      <a href="task_cuttinging.html">
+        <button class="btn-classify"><h4>Cutting</h4> </button>
+      </a>
+      <a href="task_managing.html">
+        <button class="btn-classify"><h4>Managing</h4> </button>
+      </a>
+      <ul class="card-app-gardenlist col-xl-12">
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-WingedPricklyAsh.html">
+            <button class="btn-hostplant">
+              <h5>Winged Prickly Ash</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
           </div>
-     </div>
-          <div class="panel-footer">
-                   Learn more
-         </div>
-     </div> 
- </div>  
-    <div class="container">
-     <div class="diagnose-div">     
-                  <div class="center-save">
-                     <button type="submit" class="btn-experts" onclick = "myExperts()" value= "Ask Experts Form"><h5>Ask Experts</h5>
-                      </button>     
-                  </div>     
-        </div> 
-     </div>   
-     <div class="container">     
-         <h3>Ask the Experts</h3>       
-        <div class="panel panel-default"> 
-
-            <div class="panel-heading">
-
-            </div>
-            <div class="panel-body">
-
-                <div class="col-sm" >
-                     <div class="container-fluid">
-    <img class="imagebackground" src="icon/bgbutterfly.jpg" alt="" srcset="" width="200px">
-                </div>
-               Care manager 
-                </div>
-            </div>
-            <div class="panel-footer">
-Type of diseases 
-            </div>
-         </div>
-     </div>
-    <script>
-        // Create a variable containing the result container
-        const element = document.getElementById("imageResult");
-
-        function startImageScan() {
-            // Create a variable to initialize the ml5.js image classifier with MobileNet
-            const classifier = ml5.imageClassifier('MobileNet');
-
-            // Scan the uploaded image
-            classifier.classify(document.getElementById("uploadedImage"), imageScanResult)
-            element.innerHTML = "loading...";
-        }
-
-        // Check for errors and display the results if there aren't any
-        function imageScanResult(error, results) {
-            if (error) {
-                element.innerHTML = error;
-            } else {
-                let num = results[0].confidence * 100;
-                element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % " + "\n" + " Larvae that have Tachinid flies diseases require immediate attention before the disease takes over. Usually, a single larva develops inside an individual host insect. Many tachinid larvae almost totally consume the host insect before they bore out of the host to pupate and complete the. Reducing the use of insecticides and providing sources of food like dills, parsley, clover and other herbs are the most efficient ways to conserve Trachinid flies in agricultural ecosystems (Ellis; Bradley, 1996: pp. 328-329)";
-            }
-        }
-    </script>
-
-<script>
-function myReset() {
-  document.getElementById("myForm").reset();
-}
-function myDetail(){
-    if(pred){
-}else if (pred){
-  document.getElementById().innerHTML=pred;
- console.log()
-}
-}
-</script>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-SweetPotatoVine.html">
+            <button class="btn-hostplant">
+              <h5>Sweet Potato Vine</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-Amuyon.html">
+            <button class="btn-hostplant">
+              <h5>Amuyon</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-Limeberry.html">
+            <button class="btn-hostplant">
+              <h5>Limeberry</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-Tetradium.html">
+            <button class="btn-hostplant">
+              <h5>Tetradium</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-IndianBirtworth.html">
+            <button class="btn-hostplant">
+              <h5>Indian Birtworth</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-Calamondin.html">
+            <button class="btn-hostplant">
+              <h5>Calamondin</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-WildCucumber.html">
+            <button class="btn-hostplant">
+              <h5>Wild Cucumber</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-Crownflower.html">
+            <button class="btn-hostplant">
+              <h5>Crown flower</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-Bloodflower.html">
+            <button class="btn-hostplant">
+              <h5>Blood flower</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-Curryleaf.html">
+            <button class="btn-hostplant">
+              <h5>Curry leaf</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-Hostplants-Pomelo.html">
+            <button class="btn-hostplant">
+              <h5>Pomelo</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-SweetOrange.html">
+            <button class="btn-hostplant">
+              <h5>Sweet Orange</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-SugarApple.html">
+            <button class="btn-hostplant">
+              <h5>Sugar Apple</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-SweetPotatoVine.html">
+            <button class="btn-hostplant">
+              <h5>Sweet Potato Vine</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-SweetPotatoVine.html">
+            <button class="btn-hostplant">
+              <h5>Sweet Potato Vine</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+        <li class="card-app-gardenlist-item">
+          <a href="Hostplants-other.html">
+            <button class="btn-hostplant">
+              <h5>Other</h5>
+            </button>
+          </a>
+          <div class="sci-name">
+            <i>Sname</i>
+          </div>
+          <div class="hostplant-icon-list">
+            <button type="button" class="hostplant-icon-btn">
+              <img src="icon/image_fruit.png" alt="" srcset="" width="30px">
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+  <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
+    <div class="icon-bar">
+      <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
+      <a href="host_plants.html"><img src="icon/plants.png"></a>
+      <a class="active " href="index.html"><img src="icon/home2.png"></a>
+      <a href="classify.html"><img src="icon/detect.png"></a>
+     <a href="userprofile.html"><img src="icon/user.png"></a>
+    </div>
+  </nav> -->
+  <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+  <script src="js/classify.js"></script>
+  <script src="./jquery-3.6.0.slim.min.js"> </script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
