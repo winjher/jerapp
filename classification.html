@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,68 +13,68 @@
 </head>
 <style>
     body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    text-align: center;
-}
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+    }
 
-h2 {
-    margin-bottom: 20px;
-}
+    h2 {
+        margin-bottom: 20px;
+    }
 
-form {
-    margin-bottom: 20px;
-}
+    form {
+        margin-bottom: 20px;
+    }
 
-input[type="file"] {
-    display: block;
-    margin: 10px auto;
-}
+    input[type="file"] {
+        display: block;
+        margin: 10px auto;
+    }
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
 
-button:hover {
-    background-color: #0056b3;
-}
+    button:hover {
+        background-color: #0056b3;
+    }
 
-#imageResult {
-    margin-top: 20px;
-    font-size: 16px;
-}
+    #imageResult {
+        margin-top: 20px;
+        font-size: 16px;
+    }
 
-#webcam-container {
-    margin-top: 20px;
-}
+    #webcam-container {
+        margin-top: 20px;
+    }
 
-video {
-    border: 2px solid #000;
-    border-radius: 8px;
-}
-
+    video {
+        border: 2px solid #000;
+        border-radius: 8px;
+    }
 </style>
+
 <body>
     <div class="container mt-3">
         <h2>Classify Image of Butterfly</h2>
@@ -89,7 +90,7 @@ video {
         <button id="saveSnapshot">Save Snapshot</button>
         <button id="flipbtn">Flip Camera</button>
         <div class="card-app-list">
-          
+
             <h5 class="btn-butterfly h5">Please Add image</h5>
             <button id="butterfly" class="btn-house">+ Butterfly</button>
             <button id="pupae" class="btn-house">+ Pupae</button>
@@ -97,13 +98,34 @@ video {
             <button id="eggs" class="btn-house">+ Eggs</button>
             <button id="disease" class="btn-house">+ Disease</button>
             <button id="defects" class="btn-house">+ Defects</button>
-      
-    </div>
+
+        </div>
     </div>
 
     <script>
+        let useFrontCamera = true;
+        let flipButton;
         const element = document.getElementById("imageResult");
 
+        function flipCamera() {
+            useFrontCamera = !useFrontCamera;
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+            }
+            const constraints = {
+                video: {
+                    facingMode: useFrontCamera ? 'user' : 'environment'
+                }
+            };
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(stream => {
+                    currentStream = stream;
+                    video.elt.srcObject = stream;
+                })
+                .catch(error => {
+                    console.error('Error accessing media devices.', error);
+                });
+        }
         function startImageScan() {
             const classifier = ml5.imageClassifier('MobileNet', () => {
                 classifier.classify(document.getElementById("uploadedImage"), imageScanResult);
@@ -185,7 +207,8 @@ video {
             link.click();
         });
     </script>
-    
-    <script src="js/flip.camera.js"></script>
+
+   
 </body>
+
 </html>

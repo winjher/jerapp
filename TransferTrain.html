@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Learning with MobileNet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #videoContainer {
+        position: relative;
+    }
+
+    #canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #labelContainer {
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Transfer Learning with MobileNet</h1>
+        <div id="videoContainer">
+            <video id="video" width="320" height="240" autoplay></video>
+            <canvas id="canvas" width="320" height="240"></canvas>
+            <div id="webcam-container">
+                <video id="webcam" autoplay playsinline width="224" height="224"></video>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="butterflyButton">Butterfly</button>
+            <button id="larvaeButton">Larvae</button>
+            <button id="pupaeButton">Pupae</button>
+            <button id="eggsButton">Eggs</button>
+            <button id="pupaedefectsButton">Pupae Defects</button>
+            <button id="healthypupaeButton">Healthy Pupae</button>
+            <button id="larvaldiseaseButton">Larval Disease</button>
+            <button id="healthylarvaeButton">Healthy Larvae</button>
+            <button id="trainButton">Train</button>
+            <button id="flipbtn">Flip Camera</button>
+        </div>
+        <div id="labelContainer">
+            <h2 id="label">Predicted Label: </h2>
+        </div>
+    </div>
+    <script>
+        let mobilenet;
+let classifier;
+let video;
+let label = "test";
+let currentStream;
+let useFrontCamera = true;
+
+let butterflyButton;
+let larvaeButton;
+let pupaeButton;
+let eggsButton;
+let pupaedefectsButton;
+let healthypupaeButton;
+let larvaldiseaseButton;
+let healthylarvaeButton;
+let trainButton;
+let flipButton;
+
+function setup() {
+    noCanvas();
+    video = createCapture(VIDEO);
+    video.size(320, 240);
+    video.hide();
+
+    mobilenet = ml5.featureExtractor('MobileNet', modelReady);
+    classifier = mobilenet.classification(video, videoReady);
+
+    butterflyButton = select('#butterflyButton');
+    butterflyButton.mousePressed(() => classifier.addImage('butterfly'));
+
+    larvaeButton = select('#larvaeButton');
+    larvaeButton.mousePressed(() => classifier.addImage('larvae'));
+
+    pupaeButton = select('#pupaeButton');
+    pupaeButton.mousePressed(() => classifier.addImage('pupae'));
+
+    eggsButton = select('#eggsButton');
+    eggsButton.mousePressed(() => classifier.addImage('eggs'));
+
+    pupaedefectsButton = select('#pupaedefectsButton');
+    pupaedefectsButton.mousePressed(() => classifier.addImage('pupaedefects'));
+
+    healthypupaeButton = select('#healthypupaeButton');
+    healthypupaeButton.mousePressed(() => classifier.addImage('healthypupae'));
+
+    larvaldiseaseButton = select('#larvaldiseaseButton');
+    larvaldiseaseButton.mousePressed(() => classifier.addImage('larvaldisease'));
+
+    healthylarvaeButton = select('#healthylarvaeButton');
+    healthylarvaeButton.mousePressed(() => classifier.addImage('healthylarvae'));
+
+    trainButton = select('#trainButton');
+    trainButton.mousePressed(() => classifier.train(whileTraining));
+
+    flipButton = select('#flipbtn');
+    flipButton.mousePressed(flipCamera);
+}
+
+function modelReady() {
+    console.log("Model is Ready!!");
+}
+
+function videoReady() {
+    console.log("Video is Ready!!");
+}
+
+function whileTraining(loss) {
+    if (loss == null) {
+        console.log("Training Complete.");
+        classifier.classify(gotResults);
+    } else {
+        console.log(loss);
+    }
+}
+
+function gotResults(error, results) {
+    if (error) {
+        console.error(error);
+    } else {
+        label = results[0].label;
+        select('#label').html(`Label: ${label}`);
+        classifier.classify(gotResults);
+    }
+}
+
+function flipCamera() {
+    useFrontCamera = !useFrontCamera;
+    if (currentStream) {
+        currentStream.getTracks().forEach(track => track.stop());
+    }
+    const constraints = {
+        video: {
+            facingMode: useFrontCamera ? 'user' : 'environment'
+        }
+    };
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then(stream => {
+            currentStream = stream;
+            video.elt.srcObject = stream;
+        })
+        .catch(error => {
+            console.error('Error accessing media devices.', error);
+        });
+}
+
+function draw() {
+    background(0);
+    image(video, 0, 0, 320, 240);
+    fill(255);
+    textSize(32);
+    text(label, 10, height - 20);
+}
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
