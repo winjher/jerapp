@@ -1780,6 +1780,7 @@ b, strong {
   transition: .5s;
   mix-blend-mode: multiply;
   text-align: center;
+  padding: 10px;
 }
 
 .label-text-dashboard {
