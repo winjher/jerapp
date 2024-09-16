@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butterfly Host Plants</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,20 +19,24 @@
             height: 100vh;
             margin: 0;
         }
+
         h1 {
             color: #2e8b57;
         }
+
         form {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
         }
+
         select {
             width: 100%;
             padding: 8px;
@@ -39,24 +47,24 @@
     </style>
     <script>
         const lepi2host = {
-            'Atlas Moth': ['Soursop','Gmelina', 'Sugar Apple'],
+            'Atlas Moth': ['Soursop', 'Gimelina', 'Sugar Apple'],
             'Batwing': ['Dutchman pipe', 'Indian Birthwort'],
             'Clipper': ['Wild Cucumber'],
-            'Common Jay': ['Avocado Tree','Soursop', 'Sugar Apple', 'Amuyon','Indian Tree'],
-            'Common Lime': ['Limeberry', 'Calamondin', 'Pomelo','Sweet Orange','Calamansi'],
-            'Common Mime': ['Clover Cinnamon','Wild Cinnamon'],
-            'Common Mormon': ['Limeberry', 'Calamondin', 'Pomelo','Sweet Orange','Calamansi','Lemoncito'],
+            'Common Jay': ['Avocado Tree', 'Soursop', 'Sugar Apple', 'Amuyon', 'Indian Tree'],
+            'Common Lime': ['Limeberry', 'Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi'],
+            'Common Mime': ['Clover Cinnamon', 'Wild Cinnamon'],
+            'Common Mormon': ['Limeberry', 'Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi', 'Lemoncito'],
             'Emerald Swallowtail': ['Curry Leafs', 'Pink Lime-Berry Tree'],
             'Great Eggfly': ['Sweet Potato', 'Water Spinach'],
-            'Great Yellow Mormon': ['Limeberry', 'Calamondin', 'Pomelo','Sweet Orange','Calamansi'],
+            'Great Yellow Mormon': ['Limeberry', 'Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi'],
             'Giant Silk Moth': ['Gmelina Tree'],
             'Golden Birdwing': ['Dutchman pipe', 'Indian Birthwort'],
             'Paper Kite': ['Common Skillpod'],
             'Pink Rose': ['Dutchman Pipe', 'Indian Birthwort'],
             'Plain Tiger': ['Crown flower', 'Giant Milkweed'],
             'Red Lacewing': ['Wild Bush Passion Fruits'],
-            'Scarlet Mormon': [ 'Calamondin', 'Pomelo','Sweet Orange','Calamansi'],
-            'Tailed Jay': ['Avocado Tree','Soursop', 'Sugar Apple', 'Amuyon','Indian Tree'],
+            'Scarlet Mormon': ['Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi'],
+            'Tailed Jay': ['Avocado Tree', 'Soursop', 'Sugar Apple', 'Amuyon', 'Indian Tree'],
         };
 
         function updateHostplants() {
@@ -80,7 +88,47 @@
         });
     </script>
 </head>
-<body>
+
+<body style="height: 500;">
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <!-- <a href="sleeving-boxes.html">
+                    <img src="icon/back-icon.png" alt="" srcset="" class="img-back-icon">
+                </a> -->
+                <a class="navbar-brand" href="plan.html">Premium</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://forms.gle/TRxTVfNoX9tgo3Ma6">
+                                Rate this apps
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="icon-size">
+                                <a class="nav-link" href="LogIn.html">Logout
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="add garden.html">
+                                Version 1.0
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
     <form>
         <h1>Select a Butterfly and its Host Plant</h1>
         <label for="butterfly">Butterfly:</label>
@@ -98,5 +146,8 @@
         <label for="hostplant">Host Plant:</label>
         <select id="hostplant"></select>
     </form>
+    <script src="./jquery-3.6.0.slim.min.js"> </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
