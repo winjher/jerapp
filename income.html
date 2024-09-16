@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Graph Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script type="text/javascript" charset="utf-8">
+        // Sample data
+const breeders = ['Breeder 1', 'Breeder 2', 'Breeder 3', 'Breeder 4', 'Breeder 5'];
+const monthlyIncome = [5000, 7000, 3000, 6000, 4000];
+const monthlyActivity = [120, 150, 100, 130, 110];
+const qualityScore = [85, 90, 75, 88, 80];
+
+// Create the bar graph
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: breeders,
+        datasets: [
+            {
+                label: 'Monthly Income',
+                data: monthlyIncome,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Monthly Activity (Hours)',
+                data: monthlyActivity,
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Quality Score',
+                data: qualityScore,
+                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }
+        ]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    </script>
+</body>
+</html>

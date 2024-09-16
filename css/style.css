@@ -879,7 +879,7 @@ img:hover {
    color: var(--color-navyblue);
    background-color: #fd7e14;
    cursor: pointer;
-
+  width: 100%;
  }
 
  .image-diagnose {
