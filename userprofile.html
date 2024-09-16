@@ -2,244 +2,322 @@
 <html lang="en">
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>Profile</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="js/slider.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/iconbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+<style>
+  .head {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(26, 218, 87, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    height: 150px;
+  }
 
-<body>
+  .img-head {
+    height: 100px;
+    width: 100px;
+  }
 
-  <div class="container">
-    <h2>
-      PROFILE SETTINGS
-    </h2>
+  .img-pcms {
+    width: 330px;
+    height: 40px;
+  }
+</style>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Name:</h3>
-      </div>
-      <div class="panel-body">
-        <img src="" alt="" srcset="">
-      </div>
-    </div>
+<body style="height: 500px; margin-bottom:300px;">
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Profile</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-        <input type="button" value="Terms of Service">
-        <input type="button" value="Legal">
-        <input type="button" value="Account Deletion">
-      </div>
-      <div class="panel-body">
-        ID:
-      </div>
-
-    </div>
-  </div>
-
-  <div class="container">
-    <form class="form-conrol" action="">
-      <h1>Create an account</h1>
-      <hr>
-      <div class="text-center">
-        <h2>New user Information</h2>
-      </div>
-
-      <hr>
-      <h3>Indicates required field</h3>
-      <hr>
-      <div class="container col-lg-12">
-
-        <p>
-        <h4>Who is creating this acount?</h4>
-        </p>
-        <select class="form-control" id="ddlAccount" onchange="ddlAccountSelectChanged()">
-          <option>Breeder</option>
-          <option>Purchaser</option>
-          <option>Enthusiast</option>
-        </select>
-        <br />
-        <label for="lname">Last Name</label>
-        <input type="text" id="txtLastname" class="form-control" placeholder="Your Last Name">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-        <label for="fname">First Name</label>
-        <input type="text" id="txtFirstName" class="form-control" placeholder="Your First Name">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-        <label for="mname">Middle Name</label>
-        <input type="text" id="txtMiddleName" class="form-control" placeholder="Your Middle Name">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-        <label for="Gender">Gender</label>
-        <div>
-          <select id="ddlGender" onchange="ddlGenderSelectChanged()" class="form-control">
-            <option>Male </option>
-            <option>Female </option>
-          </select>
+          <ul class="navbar-nav ms-auto">
+            <li id="home-item" class="nav-item font-weight-bold">
+              <a class="nav-link menu-apps-home " href="home.html">
+                <i class="fas fa-home"></i><span> Home</span>
+              </a>
+            </li>
+            <li id="home-item" class="nav-item font-weight-bold">
+              <a class="nav-link menu-apps-home" href="userprofile.html">
+                <i class="fas fa-user"></i><span> Profile</span>
+              </a>
+            </li>
+            <li id="home-item" class="nav-item font-weight-bold">
+              <a href="#" class="nav-link menu-apps-home">
+                <i class="fa fa-inbox" aria-hidden="true"></i><span> Inbox</span>
+              </a>
+            </li>
+            <li id="home-item" class="nav-item font-weight-bold">
+              <a href="#" class="nav-link menu-apps-home">
+                <i class="fas fa-user-friends" aria-hidden="true"></i><span>
+                  Social</span>
+              </a>
+            </li>
+            <li id="home-item" class="nav-item font-weight-bold">
+              <a class="nav-link menu-apps-home" href="setting.html">
+                <i class="fas fa-cog" aria-hidden="true"></i><span>
+                  Setting</span>
+              </a>
+            </li>
+            <li id="home-item" class="nav-item font-weight-bold">
+              <a class="nav-link menu-apps-home" href="logout.html">
+                <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
+                Log out</span>
+              </a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Lepidoptera apps</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="butterfly.html">Butterfly</a>
+                            <a class="dropdown-item" href="moth.html">Moth</a>
+                            <a class="dropdown-item" href="skipper.html">Skipper</a>
+                        </div>
+                    </li>
+                   
+            -->
+          </ul>
         </div>
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+    </nav>
+    <!-- <div class="container">
+      <h2>
+        PROFILE SETTINGS
+      </h2>
 
-        <label for="Birthday">Birthday</label>
-        <input type="date" id="txtBirthday" class="form-control" placeholder="Your Birthday">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-        <label for="Email">Email</label>
-        <input type="email" id="txtEmail" class="form-control" placeholder="Your Email">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
-        <br>
-
-        <label for="Province">Province</label>
-        <div>
-          <select class="form-control" id="ddlProvince" onchange="ddlProvinceSelectChanged()">
-            <option>Marinduque</option>
-            <option>Agusan Del Norte</option>
-            <option>Agusan Del Sur</option>
-            <option>Aklan</option>
-            <option>Albay</option>
-            <option>Antique</option>
-            <option>Aurora</option>
-            <option>Basilan</option>
-            <option>Bataan</option>
-            <option>Batangas</option>
-            <option>Benguet</option>
-            <option>Biliran</option>
-            <option>Bohol</option>
-            <option>Bukidnon></option>
-            <option>Bulacan</option>
-            <option>Cagayan</option>
-            <option>Camarines Norte</option>
-            <option>Camarines Sur</option>
-            <option>Camiguin</option>
-            <option>Capiz</option>
-            <option>Catanduanes</option>
-            <option>Cavite</option>
-            <option>Cebu</option>
-            <option>Compostela Valley</option>
-            <option>Cotabato</option>
-            <option>Davao Del Norte</option>
-            <option>Davao Del Sur</option>
-            <option>Davao Oriental</option>
-            <option>Dinagat Islands</option>
-            <option>Eastern Samar</option>
-            <option>Guimaras</option>
-            <option>Ifugao</option>
-            <option>Ilocus Norte</option>
-            <option>Ilocus Sur</option>
-            <option>Iloilo</option>
-            <option>Isabela</option>
-            <option>Kalinga</option>
-            <option>La Union</option>
-            <option>Laguna</option>
-            <option>Lanao Del Norte</option>
-            <option>Lanao Del Sur</option>
-            <option>Leyte</option>
-            <option>Maguindanao</option>
-            <option>Masbate</option>
-            <option>Metro Manila~Caloocan</option>
-            <option>Metro Manila~Las Pinas</option>
-            <option>Metro Manila~Makati</option>
-            <option>Metro Manila~Malabon</option>
-            <option>Metro Manila~Mandaluyong</option>
-            <option>Metro Manila~Manila</option>
-            <option>Metro Manila~Marikina</option>
-            <option>Metro Manila~Muntinlupa</option>
-            <option>Metro Manila~Navotas</option>
-            <option>Metro Manila~Paranaque</option>
-            <option>Metro Manila~Pasay</option>
-            <option>Metro Manila~Pasig</option>
-            <option>Metro Manila~Pateros</option>
-            <option>Metro Manila~Quezon City</option>
-            <option>Metro Manila~San Juan</option>
-            <option>Metro Manila~Taguig</option>
-            <option>Metro Manila~Valenzuela</option>
-            <option>Misamis Occidental</option>
-            <option>Misamis Oriental</option>
-            <option>Mountain Province</option>
-            <option>Negros Occidental</option>
-            <option>Negros Orriental</option>
-            <option>North Cotabato</option>
-            <option>Northern Samar</option>
-            <option>Nueva Ecija</option>
-            <option>Nueva Viscaya</option>
-            <option>Occidental Mindoro</option>
-            <option>Orriental Mindoro</option>
-            <option>Palawan</option>
-            <option>Pampanga</option>
-            <option>Pangasinan</option>
-            <option>Quezon</option>
-            <option>Quirino</option>
-            <option>Rizal</option>
-            <option>Romblon</option>
-            <option>Sarangani</option>
-            <option>Siquijor</option>
-            <option>Sorsogon</option>
-            <option>South Cotabato</option>
-            <option>Southern Leyte</option>
-            <option>Sultan Kudarat</option>
-            <option>Sulu</option>
-            <option>Surigao Del Norte</option>
-            <option>Surigso Del Sur</option>
-            <option>Tarlac</option>
-            <option>Tawi~Tawi</option>
-            <option>Western Samar</option>
-            <option>Zambales</option>
-            <option>Zamboang Del Norte</option>
-            <option>Zamboanga Del Sur</option>
-            <option>Zamboanga Sibugay</option>
-
-          </select>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Name:</h3>
         </div>
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-        <br />
-        <label for="City">City Municipality</label>
-        <input type="text" id="txtCityAddress" class="form-control" placeholder="Your City Address">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        <div class="panel-body">
+          <img src="" alt="" srcset="">
+        </div>
+      </div>
 
-        <label for="Barangay">Barangay</label>
-        <input type="text" id="txtBarangay" class="form-control" placeholder="Your Barangay">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      <div class="panel panel-default">
+        <div class="panel-heading">
 
-        <label for="Telephone">Telephone Number</label>
-        <input type="number" id="txtTelephoneNumber" class="form-control" placeholder="Your Telephone Number">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-        <p class="">Security Question</p>
+          <input type="button" value="Terms of Service">
+          <input type="button" value="Legal">
+          <input type="button" value="Account Deletion">
+        </div>
+        <div class="panel-body">
+          ID:
+        </div>
+
+      </div>
+    </div> -->
+    <hr>
+    <div class="container card-app-classification">
+      <form class="form-conrol" action="">
+        <h1>Create an account</h1>
         <hr>
-        <select class="form-control" name="" id="">
-          <option>What was the first butterfly you cultured?</option>
-          <option>What butterfly do you usually culture?</option>
-          <option>How many years you are culturing butterflies?</option>
-          <option>What was your childhood nickname?</option>
-          <option>What is your ideal job?</option>
-        </select>
-        <br>
-
-        <input type="text" id="txtAnswer" class="form-control">
-        <br />
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-        <br />
-
-        <div>
-          <input type="file" id="inputfile">
-          <br>
-          <button type="submit" id="btnSubmit" class="btn btn-default">
-            <a href="home.html">Submit</a>
-          </button>
+        <div class="text-center">
+          <h2>New user Information</h2>
         </div>
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-      </div>
 
-  </div>
+        <hr>
+        <h3>Indicates required field</h3>
+        <hr>
+        <div class="container col-lg-12">
 
-  </div>
-  </form>
-  <hr>
-  </div>
+          <p>
+          <h4>Who is creating this acount?</h4>
+          </p>
+          <select class="form-control" id="ddlAccount" onchange="ddlAccountSelectChanged()">
+            <option>Breeder</option>
+            <option>Purchaser</option>
+            <option>Enthusiast</option>
+          </select>
+          <br />
+          <label for="lname">Last Name</label>
+          <input type="text" id="txtLastname" class="form-control" placeholder="Your Last Name">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
 
+          <label for="fname">First Name</label>
+          <input type="text" id="txtFirstName" class="form-control" placeholder="Your First Name">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+          <label for="mname">Middle Name</label>
+          <input type="text" id="txtMiddleName" class="form-control" placeholder="Your Middle Name">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+          <label for="Gender">Gender</label>
+          <div>
+            <select id="ddlGender" onchange="ddlGenderSelectChanged()" class="form-control">
+              <option>Male </option>
+              <option>Female </option>
+            </select>
+          </div>
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+          <label for="Birthday">Birthday</label>
+          <input type="date" id="txtBirthday" class="form-control" placeholder="Your Birthday">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+          <label for="Email">Email</label>
+          <input type="email" id="txtEmail" class="form-control" placeholder="Your Email">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+          <br>
+
+          <label for="Province">Province</label>
+          <div>
+            <select class="form-control" id="ddlProvince" onchange="ddlProvinceSelectChanged()">
+              <option>Marinduque</option>
+              <option>Agusan Del Norte</option>
+              <option>Agusan Del Sur</option>
+              <option>Aklan</option>
+              <option>Albay</option>
+              <option>Antique</option>
+              <option>Aurora</option>
+              <option>Basilan</option>
+              <option>Bataan</option>
+              <option>Batangas</option>
+              <option>Benguet</option>
+              <option>Biliran</option>
+              <option>Bohol</option>
+              <option>Bukidnon></option>
+              <option>Bulacan</option>
+              <option>Cagayan</option>
+              <option>Camarines Norte</option>
+              <option>Camarines Sur</option>
+              <option>Camiguin</option>
+              <option>Capiz</option>
+              <option>Catanduanes</option>
+              <option>Cavite</option>
+              <option>Cebu</option>
+              <option>Compostela Valley</option>
+              <option>Cotabato</option>
+              <option>Davao Del Norte</option>
+              <option>Davao Del Sur</option>
+              <option>Davao Oriental</option>
+              <option>Dinagat Islands</option>
+              <option>Eastern Samar</option>
+              <option>Guimaras</option>
+              <option>Ifugao</option>
+              <option>Ilocus Norte</option>
+              <option>Ilocus Sur</option>
+              <option>Iloilo</option>
+              <option>Isabela</option>
+              <option>Kalinga</option>
+              <option>La Union</option>
+              <option>Laguna</option>
+              <option>Lanao Del Norte</option>
+              <option>Lanao Del Sur</option>
+              <option>Leyte</option>
+              <option>Maguindanao</option>
+              <option>Masbate</option>
+              <option>Metro Manila~Caloocan</option>
+              <option>Metro Manila~Las Pinas</option>
+              <option>Metro Manila~Makati</option>
+              <option>Metro Manila~Malabon</option>
+              <option>Metro Manila~Mandaluyong</option>
+              <option>Metro Manila~Manila</option>
+              <option>Metro Manila~Marikina</option>
+              <option>Metro Manila~Muntinlupa</option>
+              <option>Metro Manila~Navotas</option>
+              <option>Metro Manila~Paranaque</option>
+              <option>Metro Manila~Pasay</option>
+              <option>Metro Manila~Pasig</option>
+              <option>Metro Manila~Pateros</option>
+              <option>Metro Manila~Quezon City</option>
+              <option>Metro Manila~San Juan</option>
+              <option>Metro Manila~Taguig</option>
+              <option>Metro Manila~Valenzuela</option>
+              <option>Misamis Occidental</option>
+              <option>Misamis Oriental</option>
+              <option>Mountain Province</option>
+              <option>Negros Occidental</option>
+              <option>Negros Orriental</option>
+              <option>North Cotabato</option>
+              <option>Northern Samar</option>
+              <option>Nueva Ecija</option>
+              <option>Nueva Viscaya</option>
+              <option>Occidental Mindoro</option>
+              <option>Orriental Mindoro</option>
+              <option>Palawan</option>
+              <option>Pampanga</option>
+              <option>Pangasinan</option>
+              <option>Quezon</option>
+              <option>Quirino</option>
+              <option>Rizal</option>
+              <option>Romblon</option>
+              <option>Sarangani</option>
+              <option>Siquijor</option>
+              <option>Sorsogon</option>
+              <option>South Cotabato</option>
+              <option>Southern Leyte</option>
+              <option>Sultan Kudarat</option>
+              <option>Sulu</option>
+              <option>Surigao Del Norte</option>
+              <option>Surigso Del Sur</option>
+              <option>Tarlac</option>
+              <option>Tawi~Tawi</option>
+              <option>Western Samar</option>
+              <option>Zambales</option>
+              <option>Zamboang Del Norte</option>
+              <option>Zamboanga Del Sur</option>
+              <option>Zamboanga Sibugay</option>
+
+            </select>
+          </div>
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          <br />
+          <label for="City">City Municipality</label>
+          <input type="text" id="txtCityAddress" class="form-control" placeholder="Your City Address">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+          <label for="Barangay">Barangay</label>
+          <input type="text" id="txtBarangay" class="form-control" placeholder="Your Barangay">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+          <label for="Telephone">Telephone Number</label>
+          <input type="number" id="txtTelephoneNumber" class="form-control" placeholder="Your Telephone Number">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          <p class="">Security Question</p>
+          <hr>
+          <select class="form-control" name="" id="">
+            <option>What was the first butterfly you cultured?</option>
+            <option>What butterfly do you usually culture?</option>
+            <option>How many years you are culturing butterflies?</option>
+            <option>What was your childhood nickname?</option>
+            <option>What is your ideal job?</option>
+          </select>
+          <br>
+
+          <input type="text" id="txtAnswer" class="form-control">
+          <br />
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          <br />
+
+          <div>
+            <input type="file" id="inputfile">
+            <br>
+            <button type="submit" id="btnSubmit" class="btn-hatchery">
+              <a href="home.html">Submit</a>
+            </button>
+          </div>
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        </div>
+
+    </div>
+    <script src="jquery-3.6.0.slim.min.js"> </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -78,9 +78,11 @@ li{
                     <div id="basicInfo" class="collapse show" data-parent="#example">
                         <div class="card-body">
                             <div class="card-app-classification">
-                                <h6 class="key-name">Marinduque known as:<span class="val-name"> {{local_name}}</span></h6>
-                                <h6 class="key-name">Scientific Name:<span> <i class="val-name">{{Sci_name}}</i></span></h6>
-                                <h6 class="key-name">Genus:<span> <b class="genus">{{genus}}</b></span></h6>
+                                <h6 class="key-name">Marinduque known as:<span class="val-name" id="knownAs"></span>
+                                </h6>
+                                <h6 class="key-name">Scientific Name:<span class="val-name" id="scientificName"></span>
+                                </h6>
+                                <h6 class="key-name">Genus:<b class="genus" id="genus"></b></h6>
                             </div>
                         </div>
                     </div>
@@ -99,19 +101,29 @@ li{
                             <div class="card-app-classification">
                                 <ul>
                                     <li>
-                                        <h6 class="key-name">Body Length: <b class="val-name">{{body-length}}</b></h6>
+                                        <h6 class="key-name">Body Length: <b class="val-name" id="bodyLength"></b></h6>
                                     </li>
                                     <li>
-                                        <h6 class="key-name">Body Width: <b class="val-name">{{body_width}}</b></h6>
+                                        <h6 class="key-name">Body Width: <b class="val-name" id="bodyWidth"></b></h6>
                                     </li>
                                     <li>
-                                        <h6 class="key-name">Wing Stand: <b class="val-name">{{wing_stand}}</b></h6>
+                                        <h6 class="key-name">Wing Stand: <b class="val-name" id="wingStand"></b></h6>
                                     </li>
                                     <li>
-                                        <h6 class="key-name">Wing Span: <b class="val-name">{{wing_span}}</b></h6>
+                                        <h6 class="key-name">Wing Span: <b class="val-name" id="wingSpan"></b></h6>
                                     </li>
                                     <li>
-                                        <h6 class="key-name">Male Colors: <b class="val-name">{{colors}}</b></h6>
+                                        <h6 class="key-name">Male Colors: <b class="val-name" id="maleColors"></b></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Female Colors: <b class="val-name" id="femaleColors"></b>
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Hostplants: <b class="val-name" id="hostPlants"></b></h6>
+                                    </li>
+                                    <li></li>
+                                        <h6 class="key-name">Descriptions: <b class="val-name" id="description"></b></h6>
                                     </li>
                                 </ul>
                             </div>
@@ -162,6 +174,39 @@ li{
 }
 
     </script>
+    <script>
+        // Example data
+        
+        const butterflyCommonJay = {
+            knownAs: "Doson, Dozon",
+            scientificName: "Graphium Dozon",
+            genus: "Graphium",
+            bodyLength: "35 cm",
+            bodyWidth: "0.5 cm",
+            wingStand: "45 cm",
+            wingSpan: "60 cm",
+            maleColors: "Blue Spotted, Black",
+            femaleColors: "Blue Spotted, Black",
+            hostPlants: "Avocado Tree,Soursop, Sugar Apple, Amuyon,Indian Tree",
+            description:"Short Swallow Tail"
+        };
+
+        // Populate the HTML with the data
+        document.getElementById('knownAs').textContent = butterflyCommonJay.knownAs;
+        document.getElementById('scientificName').innerHTML = `<i>${butterflyCommonJay.scientificName}</i>`;
+        document.getElementById('genus').textContent = butterflyCommonJay.genus;
+        document.getElementById('bodyLength').textContent = butterflyCommonJay.bodyLength;
+        document.getElementById('bodyWidth').textContent = butterflyCommonJay.bodyWidth;
+        document.getElementById('wingStand').textContent = butterflyCommonJay.wingStand;
+        document.getElementById('wingSpan').textContent = butterflyCommonJay.wingSpan;
+        document.getElementById('maleColors').textContent = butterflyCommonJay.maleColors;
+        document.getElementById('femaleColors').textContent = butterflyCommonJay.femaleColors;
+        document.getElementById('hostPlants').textContent = butterflyCommonJay.hostPlants;
+        document.getElementById('description').textContent = butterflyCommonJay.description;
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/but_ID.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
