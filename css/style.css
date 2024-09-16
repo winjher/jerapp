@@ -1308,12 +1308,24 @@ margin-top: 10px;
   text-align: left;
   font-size: xx-small;
 }
-
+.menu-apps-home {
+  background-color: var(--bs-cream);
+  color: rgb(23, 2, 2);
+  text-decoration: none;
+  /* padding: 15px 26px; */
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+  width: 100%;
+  text-align: center;
+  border-color: solid 1px var(--bs-green);
+  margin: 2px;
+  padding:10px
+}
 
 .notification:hover {
   background: var(--bs-orange);
 }
-
 
 .notification .badge {
   position: absolute;

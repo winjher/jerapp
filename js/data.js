@@ -46,7 +46,7 @@ function loadImages(dataDir) {
 }
 
 /** Helper class to handle loading training and test data. */
-class ButterflyDataset {
+class butterflyCommonJayset {
   constructor() {
     this.trainData = [];
     this.testData = [];
@@ -77,5 +77,5 @@ class ButterflyDataset {
   }
 }
 
-module.exports = new ButterflyDataset();
+module.exports = new butterflyCommonJayset();
 console.log('All done.')
