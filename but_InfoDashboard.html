@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 50%; margin: auto;">
+        <canvas id="butterflyChart"></canvas>
+    </div>
+    <script>
+        // Define the commonLime array
+const commonLime = ['fat', 'orange', 'loud', 'Pachliopta kotzebuea deseileus', 'Fruhstorfer', '1911', 'Papilionidae; Papilioninae; Troidini', 'Bago, Neg. Occ.'];
+
+// Extract values from the array
+const size = commonLime[0];
+const color = commonLime[1];
+const disposition = commonLime[2];
+const species10 = commonLime[3];
+const commonName = commonLime[4];
+const yr_discovered10 = commonLime[5];
+const subspecies10 = commonLime[6];
+const place10 = commonLime[7];
+
+// Get today's date
+const today = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+// Define larvae arrays
+const larvae_kotsebuya = ["b", "c", "g"];
+const larvae_demoleus = ["coffee-colored", "nasal band", "faintly visible 2 dark bands near its posterior"];
+
+// Extract values from larvae arrays
+const color_10 = larvae_kotsebuya[0];
+const nasal_10 = larvae_kotsebuya[1];
+const posterior_10 = larvae_kotsebuya[2];
+const color_11 = larvae_demoleus[0];
+const nasal_11 = larvae_demoleus[1];
+const posterior_11 = larvae_demoleus[2];
+
+// Define other variables
+let qty = 0;
+const lepidoptera = ['Butterfly', 'Moth', 'Skipper'];
+
+// Placeholder for predicted output
+let pred_output = '';
+
+// Function to create the chart
+function createButterflyChart() {
+    const ctx = document.getElementById('butterflyChart').getContext('2d');
+    const butterflyChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Size', 'Color', 'Disposition', 'Species', 'Name', 'Year Discovered', 'Subspecies', 'Place'],
+            datasets: [{
+                label: 'Butterfly Data',
+                data: [size.length, color.length, disposition.length, species10.length, commonName.length, yr_discovered10.length, subspecies10.length, place10.length],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+// Call the function to create the chart
+createButterflyChart();
+
+    </script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
