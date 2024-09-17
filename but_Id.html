@@ -65,6 +65,8 @@ li{
         <input type="file" id="imageUpload" accept="image/*">
         <button onclick="processImage()">Upload</button>
         <div id="output"></div>
+        <button onclick="addLocation()">Add Location</button>
+        <button onclick="postData()">Post</button>
     </div>
     <div class="container mt-3">
         <div class="col-xl-12 text-center">
@@ -190,7 +192,19 @@ li{
             hostPlants: "Avocado Tree,Soursop, Sugar Apple, Amuyon,Indian Tree",
             description:"Short Swallow Tail"
         };
-
+        const butterflyData = {
+            breeder: 'Breeder 1',
+            lepidoptera: 'Butterfly',
+            commonName: 'COMMON MORMON',
+            scientificName: 'Papilio polytes',
+            discoveredByYr: 'Eschscholtz 1821',
+            family: 'Papilionidae; Papilioninae; Papilionini',
+            spotDate: new Date().toLocaleDateString(),
+            location: 'Bago, Neg. Occ.',
+            description: 'Menelaides polytes ledebouria',
+            larvalHostPlant: 'Calamondin'
+        };
+        
         // Populate the HTML with the data
         document.getElementById('knownAs').textContent = butterflyCommonJay.knownAs;
         document.getElementById('scientificName').innerHTML = `<i>${butterflyCommonJay.scientificName}</i>`;
@@ -203,6 +217,19 @@ li{
         document.getElementById('femaleColors').textContent = butterflyCommonJay.femaleColors;
         document.getElementById('hostPlants').textContent = butterflyCommonJay.hostPlants;
         document.getElementById('description').textContent = butterflyCommonJay.description;
+
+        function addLocation() {
+            const location = prompt('Enter the location:');
+            if (location) {
+                const locationElement = document.createElement('p');
+                locationElement.textContent = `Location: ${location}`;
+                document.querySelector('.container').appendChild(locationElement);
+            }
+        }
+
+        function postData() {
+            alert('Data posted successfully!');
+        }
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

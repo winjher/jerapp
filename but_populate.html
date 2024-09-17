@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Identification</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 80%;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    input[type="file"] {
+        margin: 20px 0;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #output {
+        margin-top: 20px;
+    }
+
+    #output img {
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    li {
+        list-style: none;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Upload Image</h1>
+        <input type="file" id="imageUpload" accept="image/*">
+        <button onclick="processImage()">Upload</button>
+        <div id="output"></div>
+        <button onclick="addLocation()">Add Location</button>
+        <button onclick="postData()">Post</button>
+    </div>
+    <div class="container mt-3">
+        <div class="col-xl-12 text-center">
+            <div class="accordion" id="example">
+                <div class="card bg-primary">
+                    <div class="card-header">
+                        <a class="text-light" data-toggle="collapse" href="#basicInfo">
+                            <h6 class="acordionItemHeading">Basic Information <span>+</span></h6>
+                        </a>
+                    </div>
+                    <div id="basicInfo" class="collapse show" data-parent="#example">
+                        <div class="card-body">
+                            <div class="card-app-classification">
+                                <h6 class="key-name">Marinduque known as:<span class="val-name" id="knownAs"></span></h6>
+                                <h6 class="key-name">Scientific Name:<span class="val-name" id="scientificName"></span></h6>
+                                <h6 class="key-name">Genus:<b class="genus" id="genus"></b></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="accordion" id="example">
+                <div class="card bg-primary">
+                    <div class="card-header">
+                        <a class="text-light" data-toggle="collapse" href="#desc">
+                            <h6 class="acordionItemHeading">Description <span>+</span></h6>
+                        </a>
+                    </div>
+                    <div id="desc" class="collapse" data-parent="#example">
+                        <div class="card-body">
+                            <div class="card-app-classification">
+                                <ul>
+                                    <li>
+                                        <h6 class="key-name">Body Length: <b class="val-name" id="bodyLength"></b></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Body Width: <b class="val-name" id="bodyWidth"></b></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Wing Stand: <b class="val-name" id="wingStand"></b></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="key-name">Wing Span: <b class="val-name" id="wingSpan"></b></h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const butterflyData = {
+            breeder: 'Breeder 1',
+            lepidoptera: 'Butterfly',
+            commonName: 'COMMON MORMON',
+            scientificName: 'Papilio polytes',
+            discoveredByYr: 'Eschscholtz 1821',
+            family: 'Papilionidae; Papilioninae; Papilionini',
+            spotDate: new Date().toLocaleDateString(),
+            location: 'Bago, Neg. Occ.',
+            description: 'Menelaides polytes ledebouria',
+            larvalHostPlant: 'Calamondin'
+        };
+
+        function populateData() {
+            document.getElementById('knownAs').textContent = butterflyData.commonName;
+            document.getElementById('scientificName').textContent = butterflyData.scientificName;
+            document.getElementById('genus').textContent = butterflyData.family.split(';')[2];
+            document.getElementById('bodyLength').textContent = 'N/A'; // Replace with actual data if available
+            document.getElementById('bodyWidth').textContent = 'N/A'; // Replace with actual data if available
+            document.getElementById('wingStand').textContent = 'N/A'; // Replace with actual data if available
+            document.getElementById('wingSpan').textContent = 'N/A'; // Replace with actual data if available
+        }
+
+        function processImage() {
+            const fileInput = document.getElementById('imageUpload');
+            const output = document.getElementById('output');
+            output.innerHTML = '';
+
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.width = 300;
+                    output.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function addLocation() {
+            const location = prompt('Enter the location:');
+            if (location) {
+                const locationElement = document.createElement('p');
+                locationElement.textContent = `Location: ${location}`;
+                document.querySelector('.container').appendChild(locationElement);
+            }
+        }
+
+        function postData() {
+            const data = {
+                image: document.getElementById('imageUpload').files[0],
+                location: butterflyData.location,
+                knownAs: butterflyData.commonName,
+                scientificName: butterflyData.scientificName,
+                genus: butterflyData.family.split(';')[2],
+                bodyLength: 'N/A', // Replace with actual data if available
+                bodyWidth: 'N/A', // Replace with actual data if available
+                wingStand: 'N/A', // Replace with actual data if available
+                wingSpan: 'N/A' // Replace with actual data if available
+            };
+
+            console.log('Data to post:', data);
+            alert('Data posted successfully!');
+        }
+
+        // Populate the HTML with the data on page load
+        window.onload = populateData;
+    </script>
+</body>
+</html>
