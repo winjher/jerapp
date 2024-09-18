@@ -59,6 +59,7 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+            font-size: x-small;
         }
 
         th {
@@ -90,25 +91,30 @@
         <h1>Butterfly Image Upload by User</h1>
         <!-- <button onclick="uploadImage()">Post</button> -->
         <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Uploader Name</th>
-                        <th>Upload Reference ID</th>
-                        <th>Common Name</th>
-                        <th>Percent %</th>
-                        <th>Upload Image</th>
-                        <th>Size</th>
-                        <th>Mime Type</th>
-                        <th>Last Modified</th>
-                        <th>Content</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody id="imageTableBody">
-                    <!-- Rows will be added here by JavaScript -->
-                </tbody>
-            </table>
+            <form action="" id="uploadForm">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Uploader Name</th>
+                            <th>Upload Reference ID</th>
+                            <th>Common Name</th>
+                            <th>Percent %</th>
+                            <th>Upload Image</th>
+                            <th>Size</th>
+                            <th>Mime Type</th>
+                            <th>Last Modified</th>
+                            <th>Content</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="imageTableBody">
+                        <!-- Rows will be added here by JavaScript -->
+                    </tbody>
+                </table>
+            </form>
+            
         </div>
     </div>
 
@@ -169,7 +175,7 @@
                     const uploadReferenceID = Date.now().toString();
 
                     const commonName = 'Butterfly-Clippers'; // Replace with dynamic data if needed
-                    const percent = '50'; // Replace with dynamic data if needed
+                    const percent = Math.floor(Math.random() * 100);; // Replace with dynamic data if needed
                     const uploadImage = file.name;
                     const size = file.size;
                     const mimeType = file.type;
@@ -188,6 +194,7 @@
                         <td>${lastModified}</td>
                         <td>${content}</td>
                         <td>${date}</td>
+                        <td><button onclick="deleteRow(this, ${uploadReferenceID})">Delete</button></td>
                     `;
 
                     tableBody.appendChild(newRow);
@@ -195,8 +202,23 @@
                 reader.readAsDataURL(file);
             }
         }
+        function deleteRow(button, id) {
+            // Remove the row from the table
+            const row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
 
-        
+            // Call the server to delete the row from the database
+            fetch(`/deleteButterflyImage/${id}`, {
+                method: 'DELETE'
+            }).then(response => {
+                if (response.ok) {
+                    console.log('Row deleted successfully');
+                } else {
+                    console.error('Failed to delete row');
+                }
+            });
+        }
+        document.getElementById('uploadForm').addEventListener('submit', uploadImage);
 
     </script>
 </body>
