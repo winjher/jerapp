@@ -54,6 +54,7 @@
         <table id="butterflyTable">
             <thead>
                 <tr>
+                    <th>Name</th>
                     <th>Breeder</th>
                     <th>Lepidoptera</th>
                     <th>Common Name</th>
@@ -79,7 +80,8 @@
           const today = new Date();
         const butterflyData = [
             {
-                breeder: 'Breeder 1',
+                name:'Wan',
+                type: 'Breeder 1',
                 lepidoptera: 'Butterfly',
                 commonName: 'COMMON MORMON',
                 scientificName: 'Papilio polytes',
@@ -91,10 +93,11 @@
                 larvalHostPlant: 'Calamondin'
             },
             {
-                breeder: 'Breeder 2',
+                name:'Wen',
+                type: 'Purchaser',
                 lepidoptera: 'Butterfly',
                 commonName: 'TAILED JAY',
-                scientificName: 'Graphium agamemnon agamemnon',
+                scientificName: 'Graphium agamemnon',
                 discoveredByYr: 'Linnaeus 1758',
                 family: 'Papilionidae; Papilioninae; Leptocircini',
                 spotDate: today,
@@ -103,16 +106,17 @@
                 larvalHostPlant: 'False Ashoka (Polyalthia longifolia)'
             },
             {
-                breeder: 'Breeder 3',
+                name:'Jher',
+                type: 'Enthusiast',
                 lepidoptera: 'Butterfly',
                 commonName: 'PLAIN TIGER or AFRICAN MONARCH',
-                scientificName: 'Danaus chrysippus chrysippus',
+                scientificName: 'Danaus chrysippus',
                 discoveredByYr: 'Linnaeus 1758',
                 family: 'Nymphalidae; Danainae; Danaini',
                 spotDate: today,
                 location: 'Baguio City',
-                description: '',
-                larvalHostPlant: ''
+                description: 'Orange with black ray',
+                larvalHostPlant: 'Ivory'
             }
         ];
 
@@ -137,11 +141,13 @@
             const butterflyChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['LEPIDOPTERA', 'COMMON NAME', 'SCIENTIFIC NAME', 'DISCOVERED BY AND YEAR', 'FAMILY', 'SPOT DATE', 'SPOT LOCATION', 'DESCRIPTION', 'LARVAL HOST PLANTS'],
+                    labels: ['NAME','TYPE','LEPIDOPTERA', 'COMMON NAME', 'SCIENTIFIC NAME', 'DISCOVERED BY AND YEAR', 'FAMILY', 'SPOT DATE', 'SPOT LOCATION', 'DESCRIPTION', 'LARVAL HOST PLANTS'],
                     datasets: [{
                         label: 'Butterfly Data',
                         data: [
                             butterflyData.length, 
+                            butterflyData.filter(d => d.name).length,
+                            butterflyData.filter(d => d.type).length,
                             butterflyData.filter(d => d.commonName).length, 
                             butterflyData.filter(d => d.scientificName).length, 
                             butterflyData.filter(d => d.discoveredByYr).length, 
