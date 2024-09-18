@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,41 +17,52 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+
         h1 {
             text-align: center;
             color: #333;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
             font-size: xx-small;
         }
+
         th {
             background-color: #f2f2f2;
             color: #333;
             font-size: x-small;
         }
+
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+
         tr:hover {
             background-color: #f1f1f1;
         }
-        .table-wrapper {
-    overflow-x: auto;
-}
 
+        .table-wrapper {
+            overflow-x: auto;
+        }
     </style>
 </head>
+
 <body>
     <div class="table-wrapper">
         <h1>Butterfly Data</h1>
+        <div class="text-center">
+            <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for names..">
+        </div>
         <table id="butterflyTable">
             <thead>
                 <tr>
@@ -71,16 +83,16 @@
                 <!-- Rows will be added here by JavaScript -->
             </tbody>
         </table>
-    
+
         <canvas id="butterflyChart" width="400" height="200"></canvas>
     </div>
-   
+
 
     <script>
-          const today = new Date();
+        const today = new Date();
         const butterflyData = [
             {
-                name:'Wan',
+                name: 'Wan',
                 type: 'Breeder 1',
                 lepidoptera: 'Butterfly',
                 commonName: 'COMMON MORMON',
@@ -93,7 +105,7 @@
                 larvalHostPlant: 'Calamondin'
             },
             {
-                name:'Wen',
+                name: 'Wen',
                 type: 'Purchaser',
                 lepidoptera: 'Butterfly',
                 commonName: 'TAILED JAY',
@@ -106,7 +118,7 @@
                 larvalHostPlant: 'False Ashoka (Polyalthia longifolia)'
             },
             {
-                name:'Jher',
+                name: 'Jher',
                 type: 'Enthusiast',
                 lepidoptera: 'Butterfly',
                 commonName: 'PLAIN TIGER or AFRICAN MONARCH',
@@ -141,20 +153,20 @@
             const butterflyChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['NAME','TYPE','LEPIDOPTERA', 'COMMON NAME', 'SCIENTIFIC NAME', 'DISCOVERED BY AND YEAR', 'FAMILY', 'SPOT DATE', 'SPOT LOCATION', 'DESCRIPTION', 'LARVAL HOST PLANTS'],
+                    labels: ['NAME', 'TYPE', 'LEPIDOPTERA', 'COMMON NAME', 'SCIENTIFIC NAME', 'DISCOVERED BY AND YEAR', 'FAMILY', 'SPOT DATE', 'SPOT LOCATION', 'DESCRIPTION', 'LARVAL HOST PLANTS'],
                     datasets: [{
                         label: 'Butterfly Data',
                         data: [
-                            butterflyData.length, 
+                            butterflyData.length,
                             butterflyData.filter(d => d.name).length,
                             butterflyData.filter(d => d.type).length,
-                            butterflyData.filter(d => d.commonName).length, 
-                            butterflyData.filter(d => d.scientificName).length, 
-                            butterflyData.filter(d => d.discoveredByYr).length, 
-                            butterflyData.filter(d => d.family).length, 
-                            butterflyData.filter(d => d.spotDate).length, 
-                            butterflyData.filter(d => d.location).length, 
-                            butterflyData.filter(d => d.description).length, 
+                            butterflyData.filter(d => d.commonName).length,
+                            butterflyData.filter(d => d.scientificName).length,
+                            butterflyData.filter(d => d.discoveredByYr).length,
+                            butterflyData.filter(d => d.family).length,
+                            butterflyData.filter(d => d.spotDate).length,
+                            butterflyData.filter(d => d.location).length,
+                            butterflyData.filter(d => d.description).length,
                             butterflyData.filter(d => d.larvalHostPlant).length
                         ],
                         backgroundColor: [
@@ -195,5 +207,30 @@
         populateTable();
         createButterflyChart();
     </script>
+    <script type="text/javascript" charset="utf-8">
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("butterflyTable");
+            tr = table.getElementsByTagName("tr");
+
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+    </script>
 </body>
+
 </html>
