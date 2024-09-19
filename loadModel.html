@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Classification</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+</head>
+<body>
+    <h1>Butterfly Classification</h1>
+    <input type="file" id="imageUpload" accept="image/*">
+    <button onclick="classifyImage()">Classify</button>
+    <div id="result"></div>
+
+    <script>
+        let model;
+
+        async function loadModel() {
+            model = await tf.loadLayersModel('C:/Users/jerwin/Documents/Model/pupadefectsclassifier.h5');
+            console.log("Model Loaded Successfully");
+        }
+
+        async function classifyImage() {
+            const fileInput = document.getElementById('imageUpload');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    const img = new Image();
+                    img.src = e.target.result;
+                    img.onload = async function() {
+                        const tensor = tf.browser.fromPixels(img)
+                            .resizeNearestNeighbor([128, 128])
+                            .toFloat()
+                            .div(tf.scalar(255.0))
+                            .expandDims();
+
+                        const result = await model.predict(tensor).data();
+                        const pred = tf.argMax(result).dataSync()[0];
+
+                        displayResult(pred);
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function displayResult(pred) {
+            const resultDiv = document.getElementById('result');
+            const butterflyClasses = [
+                "Butterfly-Batwing",
+                "Butterfly-Clippers",
+                "Butterfly-Common Jay",
+                "Butterfly-Common Lime",
+                "Butterfly-Common Mime",
+                "Butterfly-Common Mormon",
+                "Butterfly-Emerald Swallowtail",
+                "Butterfly-Golden Birdwing",
+                "Butterfly-Great Eggfly",
+                "Butterfly-Great Yellow Mormon",
+                "Butterfly-Grey Glassy Tiger",
+                "Butterfly-Paper Kite",
+                "Butterfly-Pink Rose",
+                "Butterfly-Plain Tiger",
+                "Butterfly-Red Lacewing",
+                "Butterfly-Scarlet Mormon",
+                "Butterfly-Tailed Jay"
+            ];
+
+            resultDiv.textContent = butterflyClasses[pred];
+        }
+
+        loadModel();
+    </script>
+</body>
+</html>
