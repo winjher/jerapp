@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Download Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .image-list {
+            margin-top: 20px;
+        }
+
+        .image-item {
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .image-item img {
+            max-width: 150px;
+            display: block;
+        }
+
+        .image-item a {
+            display: block;
+            margin-top: 5px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .image-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload and Download Images</h1>
+        <input type="file" id="imageUpload" accept="image/*" multiple>
+        <button onclick="processImages()">Upload</button>
+        <div class="image-list" id="imageList"></div>
+    </div>
+
+    <script>
+        function processImages() {
+            const fileInput = document.getElementById('imageUpload');
+            const files = fileInput.files;
+            const imageList = document.getElementById('imageList');
+            imageList.innerHTML = '';
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.src = e.target.result;
+
+                    const imageItem = document.createElement('div');
+                    imageItem.className = 'image-item';
+
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = e.target.result;
+                    downloadLink.download = file.name;
+                    downloadLink.textContent = 'Download';
+
+                    imageItem.appendChild(img);
+                    imageItem.appendChild(downloadLink);
+                    imageList.appendChild(imageItem);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    </script>
+    <script>
+        const express = require('express');
+const multer = require('multer');
+const path = require('path');
+
+const app = express();
+const port = 3000;
+
+// Set up storage engine
+const storage = multer.diskStorage({
+    destination: './uploads/',
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+// Initialize upload
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 1000000 }, // Limit file size to 1MB
+    fileFilter: function (req, file, cb) {
+        checkFileType(file, cb);
+    }
+}).single('myImage');
+
+// Check file type
+function checkFileType(file, cb) {
+    const filetypes = /jpeg|jpg|png|gif/;
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = filetypes.test(file.mimetype);
+
+    if (mimetype && extname) {
+        return cb(null, true);
+    } else {
+        cb('Error: Images Only!');
+    }
+}
+
+// Route to upload file
+app.post('/upload', (req, res) => {
+    upload(req, res, (err) => {
+        if (err) {
+            res.send(err);
+        } else {
+            if (req.file == undefined) {
+                res.send('No file selected!');
+            } else {
+                res.send(`File uploaded: ${req.file.filename}`);
+            }
+        }
+    });
+});
+
+// Start server
+app.listen(port, () => {
+    console.log(`Server started on http://localhost:${port}`);
+});
+
+    </script>
+</body>
+</html>

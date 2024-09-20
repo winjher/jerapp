@@ -18,7 +18,7 @@
                 reader.onload = function (e) {
                     const imgElement = document.createElement('img');
                     imgElement.src = e.target.result;
-                    imgElement.style.width = '250px';
+                    imgElement.style.width = '50px';
                     outputDiv.appendChild(imgElement);
 
                     // const itm = Math.floor(Math.random() * predOutput.length);
@@ -99,3 +99,8 @@
             });
         }
         document.getElementById('uploadForm').addEventListener('submit', uploadImage);
+
+
+        function myReset() {
+            document.getElementById("uploadForm").reset();
+        }

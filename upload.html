@@ -74,8 +74,12 @@
     <div class="container">
         <h5>Upload Image</h5>
         <input type="file" id="imageUpload" accept="image/*">
-        <button onclick="processImage()">Upload</button>
         <div id="output"></div>
+        <div>
+            <button class="btn-submit" onclick="processImage()">Submit</button><span></span>
+            <button class="btn-reset"  onclick="myReset()">Reset</button>
+        </div> 
+   
         <!-- <button onclick="addLocation()">Add Location</button>
         <button onclick="postData()">Post</button> -->
     </div>
