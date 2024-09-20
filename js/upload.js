@@ -8,7 +8,7 @@
                 'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
             ];
             const predLep = ['Butterfly','Moth','Skipper']
-
+            const fname=['ryan','christian','malik','james','she']
             const imgInput = document.getElementById('imageUpload');
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = '';
@@ -51,9 +51,8 @@
                     const tableBody = document.getElementById('imageTableBody');
                     const newRow = document.createElement('tr');
 
-                    const uploaderName = 'Jher'; // Replace with dynamic data if needed
+                    const uploaderName = fname[Math.floor(Math.random() * fname.length)]; // Replace with dynamic data if needed
                     const uploadReferenceID = Date.now().toString();
-
                     const commonName = predOutput[Math.floor(Math.random() * predOutput.length)]; // Replace with dynamic data if needed
                     const percent = (Math.random() * 100).toFixed(2) + '%'; // Replace with dynamic data if needed
                     const uploadImage = file.name;
@@ -102,5 +101,5 @@
 
 
         function myReset() {
-            document.getElementById("uploadForm").reset();
+            document.getElementById("imageUpload").reset();
         }

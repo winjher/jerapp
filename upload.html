@@ -76,8 +76,9 @@
         <input type="file" id="imageUpload" accept="image/*">
         <div id="output"></div>
         <div>
-            <button class="btn-submit" onclick="processImage()">Submit</button><span></span>
-            <button class="btn-reset"  onclick="myReset()">Reset</button>
+            <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
+            <button class="btn-reset"  onclick="myReset()">
+                <a href="classification.html"> Camera</a></button>
         </div> 
    
         <!-- <button onclick="addLocation()">Add Location</button>
@@ -91,8 +92,8 @@
             <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for names..">
         </div>
         <div class="table-wrapper">
-
-            <form action="" id="uploadForm">
+            <form action="" method="get" accept-charset="utf-8" id="uploadForm">
+            <!-- <form action="" id="uploadForm"> -->
                 <table id="butterflyTable">
                     <thead>
                         <tr>

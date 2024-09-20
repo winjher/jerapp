@@ -318,9 +318,14 @@
 
  .btn-reset {
    color: var(--color-navyblue);
-   background-color: #d8d225;
- }
+   /* background-color: #d8d225; */
+   background-color: #1717ed;
 
+ }
+ 
+.btn-reset a{
+  text-decoration: none;
+}
  /* buttons miscellaenous */
  .details-button,
  .care-button,
