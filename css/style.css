@@ -322,7 +322,7 @@
    background-color: #1717ed;
 
  }
- 
+
 .btn-reset a{
   text-decoration: none;
 }
@@ -1658,7 +1658,7 @@ color: var(--bs-light);
 
 b, strong {
   font-weight: bolder;
-  font-size: 12px;
+  font-size: xx-small;
 }
 
 .key-name{
