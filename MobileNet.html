@@ -1,45 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Training Model</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-    <!-- Include the ml5.js library -->
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="./css/classify.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" /> 
-    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
-    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script> 
+  <title>Training Model</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  <!-- Include the ml5.js library -->
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  <link rel="stylesheet" href="./css/classify.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet"
+    type="text/css" />
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+  <!DOCTYPE html>
+  <html lang="en">
 
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Classification</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <style type="text/css" media="all">
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #videoContainer {
+      margin-bottom: 20px;
+    }
+
+    #buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    #buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    #labelContainer {
+      margin-top: 20px;
+    }
+
+    #label {
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
+
 <body>
-    <div class="container">
-        <h2>Feature Extraction</h2>
-        <hr>
-        <div>
-          <video src="" id="webcam"></video>
-          <div>
-            <button id="train">Train</button>
-            <button id="eggs">Eggs</button>
-            <button id="larvae">Larvae</button>
-            <button id="pupae">Pupae</button>
-            <button id="butterfly">Butterfly</button>
-            <button id="larvaldisease">Larval Disease</button>
-            <button id="pupaedefects">Pupa Defects</button>
-            <button id="healthylarvae">Helathy Larvae</button>
-            <button id="healthypupae">Healthy Pupae</button>
-          </div>
-        </div>
+  <div class="container">
+    <h1>Butterfly Classification</h1>
+    <div id="videoContainer">
+      <video id="video" width="320" height="240" autoplay></video>
     </div>
+    <div id="buttons">
+      <button id="butterflyButton">Butterfly</button>
+      <button id="larvaeButton">Larvae</button>
+      <button id="pupaeButton">Pupae</button>
+      <button id="eggsButton">Eggs</button>
+      <button id="pupaedefectsButton">Pupae Defects</button>
+      <button id="healthypupaeButton">Healthy Pupae</button>
+      <button id="larvaldiseaseButton">Larval Disease</button>
+      <button id="healthylarvaeButton">Healthy Larvae</button>
+      <button id="trainButton">Train</button>
+    </div>
+    <div id="labelContainer">
+      <h2 id="label"></h2>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
+  <script src="script.js"></script>
 
-<script> // Your code will go here // open up your console - if everything loaded properly you should see the correct version number console.log('ml5 version:', ml5.version); </script> 
-</script>
-<script src="js/transferLearning.js"></script>
-<script src="js/classLep.js"></script>
-  </body>
+  <script type="text/javascript" charset="utf-8">
+    let mobilenet;
+    let classifier;
+    let video;
+    let label = "";
+
+    let butterflyButton;
+    let larvaeButton;
+    let pupaeButton;
+    let eggsButton;
+    let pupaedefectsButton;
+    let healthypupaeButton;
+    let larvaldiseaseButton;
+    let healthylarvaeButton;
+    let trainButton;
+    function whileTraining(loss) {
+      if (loss == null) {
+        console.log("Training Complete.");
+        classifier.classify(gotResults);
+      } else {
+        console.log(loss);
+      }
+    }
+    function modelReady() {
+      console.log("Model is Ready!!");
+      mobilenet.predict(gotResults);
+    }
+    function videoReady() {
+      console.log("video is Ready!!");
+    }
+    function gotResults(error, results) {
+      if (error) {
+        console.error(error);
+      } else {
+        label = results[0].label;
+        classifier.classify(gotResults);
+      }
+    }
+
+  </script>
+  <script src="js/transferLearning.js"></script>
+  <script src="js/classLep.js"></script>
+</body>
+
 </html>

@@ -41,8 +41,8 @@ async function app() {
      const classes = ["Amuyon", "Blood Flower", "Calamondin", "Crown Flower","Curry Leaf","Dutchman Pipevine","Indian Birthwort","Limeberry","Pomelo","Soursop","Sugar Apple", "Sweet Orange","Tetradium","Sweet Potato Vine","Wild Cucumber","Winged Prickly Ash","Enough Leaf", "Empty Leaf","Disease Leaf","Matured Leaf", "Soft Leaf"]
       
       document.getElementById("console").innerText = `
-                prediction: ${classes[result.label]}\n
-                probabilty: ${result.confidences[result.label]}
+                Prediction: ${classes[result.label]}\n
+                Probabilty: ${result.confidences[result.label]}
             `
 
       img.dispose()

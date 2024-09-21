@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
-<body>
+<body background="images/background/giphy.webp" style="background-blend-mode: color-burn;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Upload</a>
@@ -107,6 +107,7 @@
                             <th>Last Modified</th>
                             <th>Content</th>
                             <th>Date</th>
+                            <th>Location</th>
                             <th>Actions</th>
                             
                         </tr>
@@ -147,8 +148,44 @@
                 }
             }
         }
+    </script>
+    <script>
+      function processImage() {
+            const predOutput = [
+                { commonName: 'Butterfly-Clippers', scientificName: 'Parthenos sylvia', discoveredBy: 'Cramer, 1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia'},
+                { commonName: 'Butterfly-Common Jay', scientificName: 'Graphium doson', discoveredBy: 'C. & R. Felder, 1864', family: 'Papilionidae', larvalHostPlant: 'Annona'},
+                // Add more species here...
+            ];
+            const imgInput = document.getElementById('imageUpload');
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
 
+            if (imgInput.files && imgInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = e.target.result;
+                    outputDiv.appendChild(imgElement);
 
+                    // Simulate a prediction
+                    const randomIndex = Math.floor(Math.random() * predOutput.length);
+                    const prediction = predOutput[randomIndex];
+
+                    // Display prediction details
+                    const details = `
+                        <p>Common Name: ${prediction.commonName}</p>
+                        <p>Scientific Name: ${prediction.scientificName}</p>
+                        <p>Discovered By and Year: ${prediction.discoveredBy}</p>
+                        <p>Family: ${prediction.family}</p>
+                        <p>Larval Host Plant: ${prediction.larvalHostPlant}</p>
+                    `;
+                    outputDiv.innerHTML += details;
+                };
+                reader.readAsDataURL(imgInput.files[0]);
+            }
+        }
+
+        document.getElementById('imageUpload').addEventListener('change', processImage);
     </script>
 <script src="js/upload.js"></script>
 <script src="jquery-3.6.0.slim.min.js"> </script>
