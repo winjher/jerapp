@@ -46,10 +46,10 @@ train_datagen = ImageDataGenerator(rescale = 1./255, shear_range = 0.2, zoom_ran
 
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-training_set = train_datagen.flow_from_directory('C:/Users/Madhuri/AppData/Local/Programs/Python/Python38/Tomato_Leaf_Disease_Prediction/Dataset/train', # relative path from working directoy
+training_set = train_datagen.flow_from_directory('C:/Users/jerwin/Documents/Defects/Dataset/train', # relative path from working directoy
                                                  target_size = (128, 128),
                                                  batch_size = 6, class_mode = 'categorical')
-valid_set = test_datagen.flow_from_directory('C:/Users/Madhuri/AppData/Local/Programs/Python/Python38/Tomato_Leaf_Disease_Prediction/Dataset/val', # relative path from working directoy
+valid_set = test_datagen.flow_from_directory('C:/Users/jerwin/Documents/Defects/Dataset/val', # relative path from working directoy
                                              target_size = (128, 128), 
                                         batch_size = 3, class_mode = 'categorical')
 
@@ -69,7 +69,7 @@ with open("model1.json", "w") as json_file:
     json_file.write(classifier_json)
 # serialize weights to HDF5
     classifier.save_weights("my_model_weights.h5")
-    classifier.save("model.h5")
+    classifier.save("modeldefects.h5")
     print("Saved model to disk")
 
 '''

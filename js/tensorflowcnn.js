@@ -1,7 +1,7 @@
 const tf = require('@tensorflow/tfjs');
 const tfnode = require('@tensorflow/tfjs-node');
 
-const imageDirectory = 'path/to/image/folder'; const imageWidth = 224; const imageHeight = 224; const batchSize = 32;
+const imageDirectory = 'C:/Users/jerwin/Documents/Butterfly'; const imageWidth = 224; const imageHeight = 224; const batchSize = 32;
 const imageDataset = tfnode.data.imageDataset(imageDirectory, null, { labelFactory: (dir) => tfnode.oneHot(tfnode.tensor1d([parseInt(dir.split('/')[0])]), 10), imageShape: [imageHeight, imageWidth, 3], });
 const trainDataset = imageDataset.take(0.8 * imageDataset.size); const validationDataset = imageDataset.skip(0.8 * imageDataset.size);
 const trainData = await trainDataset .shuffle(trainDataset.size) .batch(batchSize) .prefetch(1) .cache();
@@ -46,7 +46,7 @@ const accuracy = tf.metrics.categoricalAccuracy(trueLabels, predictions);
 console.log(`Accuracy: ${accuracy.dataSync()[0]}`);
 
 // Make predictions on new images
-const newImage = await loadImage('path/to/new/image.jpg');
+const newImage = await loadImage('C:/Users/jerwin/Documents/Butterfly/new/image.jpg');
 const preprocessedImage = preprocessImage(newImage);
 const prediction = model.predict(preprocessedImage);
 console.log(prediction);
