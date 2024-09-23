@@ -25,12 +25,13 @@ async function app() {
   }
 
   //types of larval diseaasee
+  document.getElementById("undefine").addEventListener("click", () => addExample(0))
   document.getElementById("sarah").addEventListener("click", () => addExample(1))
   document.getElementById("vanessa").addEventListener("click", () => addExample(2))
   document.getElementById("don").addEventListener("click", () => addExample(3))
   document.getElementById("ira").addEventListener("click", () => addExample(4))
   document.getElementById("jerwin").addEventListener("click", () => addExample(5))
-  document.getElementById("notpeople").addEventListener("click", () => addExample(6))
+ 
 
 
   while (true) {
@@ -41,7 +42,7 @@ async function app() {
 
       const result = await classifier.predictClass(activation)
 
-      const classes = ["Sarah", "Vanessa", "Don", "Ira","Jerwin","None"]
+      const classes = ["None","Sarah", "Vanessa", "Don", "Ira","Jerwin"]
   
       document.getElementById("console").innerText = `
                 Prediction: ${classes[result.label]}\n
