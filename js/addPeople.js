@@ -41,7 +41,7 @@ async function app() {
 
       const result = await classifier.predictClass(activation)
 
-      const classes = ["Sarah", "Vanessa", "Don", "Ira","Jerwin"]
+      const classes = ["Sarah", "Vanessa", "Don", "Ira","Jerwin","None"]
   
       document.getElementById("console").innerText = `
                 Prediction: ${classes[result.label]}\n
