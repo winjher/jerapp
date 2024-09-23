@@ -86,9 +86,6 @@
             border-radius: 8px;
         }
     </style>
-
-
-
 <body background="images/background/giphy.webp" style="background-blend-mode: color-burn;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
@@ -106,7 +103,7 @@
                             <i class="fas fa-home"></i><span> Home</span>
                         </a>
                     </li>
-                    <li id="home-item" class="nav-item font-weight-bold">
+                    <!-- <li id="home-item" class="nav-item font-weight-bold">
                         <a class="nav-link menu-apps-home" href="userprofile.html">
                             <i class="fas fa-user"></i><span> Profile</span>
                         </a>
@@ -133,7 +130,46 @@
                             <i class="fas fa-cog" aria-hidden="true"></i><span>
                                 Setting</span>
                         </a>
-                    </li>
+                    </li> -->
+                    <li id="home-item" class="nav-item dropdown font-weight-bold"">  
+                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa-solid fa-bug"></i><span> Lepidoptera apps</span></a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="lepidoptera.html">Butterfly</a>
+                          <a class="dropdown-item" href="moth.html">Moth</a>
+                          <a class="dropdown-item" href="skipper.html">Skipper</a>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Defects and Diseases</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="addDefectsPupae.html">Pupae Defects</a>
+                          <a class="dropdown-item" href="addLarvalDiseases.html">Larval Diseases </a>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Health</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="addHealthyButterfly.html">Healthy Butterfly</a>
+                          <a class="dropdown-item" href="addHealthyPupae.html">Healthy Pupae</a>
+                          <a class="dropdown-item" href="addHealthyLarvae.html">Healthy Larvae</a>
+                          <a class="dropdown-item" href="addHealthyEggs.html">Healthy Eggs</a>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Match Identifier Apps</a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="lep_hosplants.html">Butterfly and Hosplants</a>
+                            <a class="dropdown-item" href="Butterfly-Hostplants.html">Hosplants</a>
+                        </div>
+                      </li>
                     <li id="home-item" class="nav-item font-weight-bold">
                         <a class="nav-link menu-apps-home" href="logout.html">
                             <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
@@ -145,6 +181,7 @@
             </div>
     </nav>
     </section>
+    <br>
     <div class="container mt-3">
         <h2>Classify Image of Butterfly</h2>
         <form id="myForm">
