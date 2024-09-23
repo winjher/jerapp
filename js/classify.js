@@ -73,7 +73,7 @@ async function app() {
       const activation = net.infer(img, "conv_preds")
 
       const result = await classifier.predictClass(activation)
-
+      const predator=[]
       const classes = ["Butterfly", "Pupae", "Larvae", "Eggs","Disease","Defects","Atlas","Batwing","Clippers","Common Jay", "Common Lime","Common Mime","Common Mormon","Emerald SwallowTail","Giant Silk Moth","Golden Birdwing","Grey Glassy Tiger","Great Eggfly","Great Yellow Mormon","Paper Kite","Pink Rose","Plain Tiger","Red Lacewing","Scarlet Mormon","Tailed Jay","Ant Bite","Deformed","Old","Overbend","Stretched","Healthy Pupae","Nuclear Polyhedrosis Virus","Baculoviruses","Ophryocystis  Elektroscirrha","Tachinid Flies","Trichogramma Wasps","Healthy Larvae","Molting","Munching","Nectaring","Ovipositing","Pudding","Pupating"]
       const class_conserve = ['Activity Molting', 'Activity Munching', 'Activity Nectaring', 'Activity Pudding', 'Butterfly-Batwing', 'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime', 'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail', 'Butterfly-Giant Silk Moth', 'Butterfly-Golden Birdwing', 'Butterfly-Great Eggfly', 'Butterfly-Great Yellow Mormon', 'Butterfly-Grey Glassy Tiger', 'Butterfly-Paper Kite', 'Butterfly-Pink Rose', 'Butterfly-Plain Tiger', 'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Tailed Jay', 'Defects Broken Wings Atlas', 'Defects Crumpled Wings Butterfly-Common Lime', 'Defects Crumpled Wings Butterfly-Tailed Jay', 'Defects Deformed Pupae-Common Lime', 'Defects Overbend Pupae-Common Lime', 'Defects Overbend Pupae-Common Mormon', 'Defects Pupae-Golden Birdwing', 'Defects Stretchedmark-Common Mormon', 'Disease Larvae Golden Birdwing', 'Disease Larvae Tachinids fly', 'Disease Larvae-Plain Tiger', 'Eggs-Common Jay', 'Eggs-Common Lime', 'Eggs-Golden Birdwing', 'Eggs-Pink Rose', 'Eggs-Plain Tiger', 'Eggs-Tailed Jay', 'Egs-Red Lacewing', 'Healthy Larvae-Golden Birdwing', 'Healthy Pupae-Common Lime', 'Healthy Pupae-Golden Birdwing', 'Larvae Common Jay', 'Larvae Instar-Common Lime', 'Larvae Instar-Golden Birdwing', 'Larvae-Atlas', 'Larvae-Clippers', 'Larvae-Common Jay', 'Larvae-Common Lime', 'Larvae-Eggs-Golden Birdwing', 'Larvae-Giant Silk Moth', 'Larvae-Golden Birdwing', 'Larvae-Paper Kite', 'Larvae-Pink Rose', 'Larvae-Plain Tiger', 'Larvae-Red Lacewing', 'Larvae-Tailed Jay', 'Moth-Atlas', 'Moth-Giant Silk', 'Old Pupae-Plain Tiger', 'Ovipositing-Tailed Jay', 'Predators Ants-Golden Birdwing', 'Prepupae Larvae-Golden Birdwing', 'Pupae-Common Jay', 'Pupae-Common Lime', 'Pupae-Golden Birdwing', 'Pupae-Golding Brdwing', 'Pupae-Paper Kite', 'Pupae-Pink Rose', 'Pupae-Plain Tiger', 'Pupae-Tailed Jay', 'Skipper-Club Silverline']
       
@@ -131,3 +131,18 @@ function capture() {
     });
 }
 app()
+
+
+// document.getElementById("saveSnapshot").addEventListener("click", () => {
+//   const canvas = document.createElement("canvas");
+//   canvas.width = webcamElement.videoWidth;
+//   canvas.height = webcamElement.videoHeight;
+//   const ctx = canvas.getContext("2d");
+//   ctx.drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+//   const dataURL = canvas.toDataURL("image/png");
+
+//   const link = document.createElement("a");
+//   link.href = dataURL;
+//   link.download = "snapshot.png";
+//   link.click();
+// });

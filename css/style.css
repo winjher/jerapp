@@ -884,7 +884,8 @@ img:hover {
    color: var(--color-navyblue);
    background-color: #fd7e14;
    cursor: pointer;
-  width: 100%;
+   width: 100%;
+   margin-left: auto;
  }
 
  .image-diagnose {
@@ -1597,15 +1598,6 @@ a:hover{
   color: #107a07;
 }
 
-video {
-  width: 240px;
-  height: 240px;
-  background: rgba(0, 0, 0, 0.2);
-  -webkit-transform: scaleX(-1);
-  /* mirror effect while using front cam */
-  transform: scaleX(-1);
-  /* mirror effect while using front cam */
-}
 
 #canvas {
   width: 224px;
@@ -1809,4 +1801,68 @@ b, strong {
   border-radius: 0 0 15px 15px;
 }
 
+button:hover {
+  background-color: #0056b3;
+}
 
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="file"] {
+  display: block;
+  margin: 10px auto;
+}
+
+button {
+  padding: 6px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: small;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#imageResult {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+#webcam-container {
+  margin-top: 20px;
+}
+
+video {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
