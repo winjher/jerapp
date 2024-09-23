@@ -1599,6 +1599,10 @@ a:hover{
   color: #107a07;
 }
 
+video {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
 
 #canvas {
   width: 224px;
@@ -1863,7 +1867,3 @@ button:hover {
   margin-top: 20px;
 }
 
-video {
-  border: 2px solid #000;
-  border-radius: 8px;
-}
