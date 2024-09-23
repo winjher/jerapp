@@ -86,6 +86,7 @@
             border-radius: 8px;
         }
     </style>
+
 <body background="images/background/giphy.webp" style="background-blend-mode: color-burn;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
@@ -132,44 +133,44 @@
                         </a>
                     </li> -->
                     <li id="home-item" class="nav-item dropdown font-weight-bold"">  
-                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fa-solid fa-bug"></i><span> Lepidoptera apps</span></a>
+                        <a class=" nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-bug"></i><span> Lepidoptera apps</span></a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="lepidoptera.html">Butterfly</a>
-                          <a class="dropdown-item" href="moth.html">Moth</a>
-                          <a class="dropdown-item" href="skipper.html">Skipper</a>
+                            <a class="dropdown-item" href="lepidoptera.html">Butterfly</a>
+                            <a class="dropdown-item" href="moth.html">Moth</a>
+                            <a class="dropdown-item" href="skipper.html">Skipper</a>
                         </div>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Defects and Diseases</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Defects and Diseases</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="addDefectsPupae.html">Pupae Defects</a>
-                          <a class="dropdown-item" href="addLarvalDiseases.html">Larval Diseases </a>
+                            <a class="dropdown-item" href="addDefectsPupae.html">Pupae Defects</a>
+                            <a class="dropdown-item" href="addLarvalDiseases.html">Larval Diseases </a>
                         </div>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Health</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Health</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="addHealthyButterfly.html">Healthy Butterfly</a>
-                          <a class="dropdown-item" href="addHealthyPupae.html">Healthy Pupae</a>
-                          <a class="dropdown-item" href="addHealthyLarvae.html">Healthy Larvae</a>
-                          <a class="dropdown-item" href="addHealthyEggs.html">Healthy Eggs</a>
+                            <a class="dropdown-item" href="addHealthyButterfly.html">Healthy Butterfly</a>
+                            <a class="dropdown-item" href="addHealthyPupae.html">Healthy Pupae</a>
+                            <a class="dropdown-item" href="addHealthyLarvae.html">Healthy Larvae</a>
+                            <a class="dropdown-item" href="addHealthyEggs.html">Healthy Eggs</a>
                         </div>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink" role="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Match Identifier Apps</a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Match Identifier Apps</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="lep_hosplants.html">Butterfly and Hosplants</a>
                             <a class="dropdown-item" href="Butterfly-Hostplants.html">Hosplants</a>
                         </div>
-                      </li>
+                    </li>
                     <li id="home-item" class="nav-item font-weight-bold">
                         <a class="nav-link menu-apps-home" href="logout.html">
                             <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
@@ -184,143 +185,150 @@
 
     <div class="jumbotron">
         <div class="card-app-list">
-    
-    <div class="container mt-3">
-        <h6 class="display-12" style="text-align:center;font-size:larger"> Classify Image of Butterfly</h6>
 
-        <form id="myForm">
-            <!-- <input type="file" id="uploadedImage" accept="image/*"> -->
-            <button type="button" onclick="startImageScan()">Scan Image</button>
-            <button type="button" onclick="myReset()">Reset</button>
-        </form>
-        <div id="imageResult"></div>
-        <div id="webcam-container">
-            <video id="webcam" autoplay playsinline width="224" height="224"></video>
-        </div>
-        <button id="saveSnapshot">Save Snapshot</button>
-        <button id="flip-btn">Flip Camera</button>
-        <div class="card-app-list">
-<br>
-            <h5 class="btn-butterfly h5">Please Add image</h5>
-            <button id="butterfly" class="btn-house">+ Butterfly</button>
-            <button id="pupae" class="btn-house">+ Pupae</button>
-            <button id="larvae" class="btn-house">+ Larvae</button>
-            <button id="eggs" class="btn-house">+ Eggs</button>
-            <button id="disease" class="btn-house">+ Disease</button>
-            <button id="defects" class="btn-house">+ Defects</button>
+            <div class="container mt-3">
+                <h6 class="display-12" style="text-align:center;font-size:larger"> Classify Image of Butterfly</h6>
 
-        </div>
-    </div>
+                <form id="myForm">
+                    <!-- <input type="file" id="uploadedImage" accept="image/*"> -->
+                    <button type="button" onclick="startImageScan()">Scan Image</button>
+                    <button type="button" onclick="myReset()">Reset</button>
+                </form>
+                <div id="imageResult"></div>
+                <div id="webcam-container">
+                    <video id="webcam" autoplay playsinline width="224" height="224"></video>
+                </div>
+                <button id="saveSnapshot">Save Snapshot</button>
+                <button id="flip-btn">Flip Camera</button>
+                <div class="card-app-list">
+                    <br>
+                    <h5 class="btn-butterfly h5">Please Add image</h5>
+                    <button id="butterfly" class="btn-house">+ Butterfly</button>
+                    <button id="pupae" class="btn-house">+ Pupae</button>
+                    <button id="larvae" class="btn-house">+ Larvae</button>
+                    <button id="eggs" class="btn-house">+ Eggs</button>
+                    <button id="disease" class="btn-house">+ Disease</button>
+                    <button id="defects" class="btn-house">+ Defects</button>
+                    <br>
+                    
 
-    <script>
-        let useFrontCamera = true;
-        let flipButton;
-        const element = document.getElementById("imageResult");
+                </div>
+                <div class="text-center">
+                       <a href="upload.html">
+                        <button>Upload</button>
+                       </a> 
+                </div>
+            </div>
 
-        function flipCamera() {
-            useFrontCamera = !useFrontCamera;
-            if (currentStream) {
-                currentStream.getTracks().forEach(track => track.stop());
-            }
-            const constraints = {
-                video: {
-                    facingMode: useFrontCamera ? 'user' : 'environment'
+            <script>
+                let useFrontCamera = true;
+                let flipButton;
+                const element = document.getElementById("imageResult");
+
+                function flipCamera() {
+                    useFrontCamera = !useFrontCamera;
+                    if (currentStream) {
+                        currentStream.getTracks().forEach(track => track.stop());
+                    }
+                    const constraints = {
+                        video: {
+                            facingMode: useFrontCamera ? 'user' : 'environment'
+                        }
+                    };
+                    navigator.mediaDevices.getUserMedia(constraints)
+                        .then(stream => {
+                            currentStream = stream;
+                            video.elt.srcObject = stream;
+                        })
+                        .catch(error => {
+                            console.error('Error accessing media devices.', error);
+                        });
                 }
-            };
-            navigator.mediaDevices.getUserMedia(constraints)
-                .then(stream => {
-                    currentStream = stream;
-                    video.elt.srcObject = stream;
-                })
-                .catch(error => {
-                    console.error('Error accessing media devices.', error);
+                function startImageScan() {
+                    const classifier = ml5.imageClassifier('MobileNet', () => {
+                        classifier.classify(document.getElementById("uploadedImage"), imageScanResult);
+                        element.innerHTML = "Loading...";
+                    });
+                }
+
+                function imageScanResult(error, results) {
+                    if (error) {
+                        element.innerHTML = error;
+                    } else {
+                        let num = results[0].confidence * 100;
+                        element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % ";
+                    }
+                }
+
+                function myReset() {
+                    document.getElementById("myForm").reset();
+                    element.innerHTML = "";
+                }
+
+                const classifier = knnClassifier.create();
+                const webcamElement = document.getElementById("webcam");
+
+                let net;
+
+                async function app() {
+                    console.log("Loading mobilenet...");
+                    net = await mobilenet.load();
+                    console.log("Loaded model");
+
+                    const webcam = await tf.data.webcam(webcamElement);
+
+                    const addExample = async (classId) => {
+                        const img = await webcam.capture();
+                        const activation = net.infer(img, true);
+                        classifier.addExample(activation, classId);
+                        img.dispose();
+                    };
+
+                    document.getElementById("butterfly").addEventListener("click", () => addExample(0));
+                    document.getElementById("pupae").addEventListener("click", () => addExample(1));
+                    document.getElementById("larvae").addEventListener("click", () => addExample(2));
+                    document.getElementById("eggs").addEventListener("click", () => addExample(3));
+                    document.getElementById("disease").addEventListener("click", () => addExample(4));
+                    document.getElementById("defects").addEventListener("click", () => addExample(5));
+
+                    while (true) {
+                        if (classifier.getNumClasses() > 0) {
+                            const img = await webcam.capture();
+                            const activation = net.infer(img, "conv_preds");
+                            const result = await classifier.predictClass(activation);
+
+                            const classes = ["Butterfly", "Pupae", "Larvae", "Eggs", "Disease", "Defects"];
+                            const className = classes[result.label];
+                            const confidence = result.confidences[result.label] * 100;
+
+                            element.innerHTML = `Prediction: ${className} <br> Confidence: ${confidence.toFixed(2)}%`;
+
+                            img.dispose();
+                        }
+                        await tf.nextFrame();
+                    }
+                }
+
+                app();
+
+                document.getElementById("saveSnapshot").addEventListener("click", () => {
+                    const canvas = document.createElement("canvas");
+                    canvas.width = webcamElement.videoWidth;
+                    canvas.height = webcamElement.videoHeight;
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+                    const dataURL = canvas.toDataURL("image/png");
+
+                    const link = document.createElement("a");
+                    link.href = dataURL;
+                    link.download = "snapshot.png";
+                    link.click();
                 });
-        }
-        function startImageScan() {
-            const classifier = ml5.imageClassifier('MobileNet', () => {
-                classifier.classify(document.getElementById("uploadedImage"), imageScanResult);
-                element.innerHTML = "Loading...";
-            });
-        }
-
-        function imageScanResult(error, results) {
-            if (error) {
-                element.innerHTML = error;
-            } else {
-                let num = results[0].confidence * 100;
-                element.innerHTML = results[0].label + "   Confidence: " + num.toFixed(0) + " % ";
-            }
-        }
-
-        function myReset() {
-            document.getElementById("myForm").reset();
-            element.innerHTML = "";
-        }
-
-        const classifier = knnClassifier.create();
-        const webcamElement = document.getElementById("webcam");
-
-        let net;
-
-        async function app() {
-            console.log("Loading mobilenet...");
-            net = await mobilenet.load();
-            console.log("Loaded model");
-
-            const webcam = await tf.data.webcam(webcamElement);
-
-            const addExample = async (classId) => {
-                const img = await webcam.capture();
-                const activation = net.infer(img, true);
-                classifier.addExample(activation, classId);
-                img.dispose();
-            };
-
-            document.getElementById("butterfly").addEventListener("click", () => addExample(0));
-            document.getElementById("pupae").addEventListener("click", () => addExample(1));
-            document.getElementById("larvae").addEventListener("click", () => addExample(2));
-            document.getElementById("eggs").addEventListener("click", () => addExample(3));
-            document.getElementById("disease").addEventListener("click", () => addExample(4));
-            document.getElementById("defects").addEventListener("click", () => addExample(5));
-
-            while (true) {
-                if (classifier.getNumClasses() > 0) {
-                    const img = await webcam.capture();
-                    const activation = net.infer(img, "conv_preds");
-                    const result = await classifier.predictClass(activation);
-
-                    const classes = ["Butterfly", "Pupae", "Larvae", "Eggs", "Disease", "Defects"];
-                    const className = classes[result.label];
-                    const confidence = result.confidences[result.label] * 100;
-
-                    element.innerHTML = `Prediction: ${className} <br> Confidence: ${confidence.toFixed(2)}%`;
-
-                    img.dispose();
-                }
-                await tf.nextFrame();
-            }
-        }
-
-        app();
-
-        document.getElementById("saveSnapshot").addEventListener("click", () => {
-            const canvas = document.createElement("canvas");
-            canvas.width = webcamElement.videoWidth;
-            canvas.height = webcamElement.videoHeight;
-            const ctx = canvas.getContext("2d");
-            ctx.drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
-            const dataURL = canvas.toDataURL("image/png");
-
-            const link = document.createElement("a");
-            link.href = dataURL;
-            link.download = "snapshot.png";
-            link.click();
-        });
-    </script>
-    <script src="jquery-3.6.0.slim.min.js"> </script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/but_ID.js"></script>
-    <script src="js/flipCamera.js"></script>
+            </script>
+            <script src="jquery-3.6.0.slim.min.js"> </script>
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/but_ID.js"></script>
+            <script src="js/flipCamera.js"></script>
 </body>
 
 </html>
