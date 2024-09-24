@@ -1605,7 +1605,7 @@ video {
 }
 
 #canvas {
-  width: 224px;
+  width: 240px;
   height: 224px;
   -webkit-transform: scaleX(-1);
   /* mirror effect while using front cam */
