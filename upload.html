@@ -151,10 +151,20 @@
         }
     </script>
     <script>
-      function processImage() {
+      function processLabel() {
             const predOutput = [
                 { commonName: 'Butterfly-Clippers', scientificName: 'Parthenos sylvia', discoveredBy: 'Cramer, 1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia'},
                 { commonName: 'Butterfly-Common Jay', scientificName: 'Graphium doson', discoveredBy: 'C. & R. Felder, 1864', family: 'Papilionidae', larvalHostPlant: 'Annona'},
+                { commonName: 'Butterfly-PLAIN TIGER or AFRICAN MONARCH', scientificName:'Danaus chrysippus', discoveredBy:'Linnaeus 1758', family: 'Nymphalidae Danainae Danaini',larvalHostPlant:'Cornflower'},
+                { commonName: 'COMMON MORMON',  scientificName:'Papilio polytes', discoveredBy:'Eschscholtz 1821',	family:'Papilionidae; Papilioninae; Papilionini',larvalHostPlant: 'Calamondin,Citrus Lemoncito,'},
+                { commonName: 'TAILED JAY',	scientificName:'𝘎𝘳𝘢𝘱𝘩𝘪𝘶𝘮 𝘢𝘨𝘢𝘮𝘦𝘮𝘯𝘰𝘯', discoveredBy:'Linnaeus 1758',	family:'Papilionidae Papilioninae Leptocircini',larvalHostPlant: 'Soursop,SUgar Apple, Amuyon'},
+                { commonName: 'GREAT EGGFLY', scientificName:'Hypolimnas bolina philippensis',  discoveredBy:'Butler 1874', family:'Nymphalidae Nymphalinae Nymphaliini',larvalHostPlant: 'Sweet Potato, Water Spinach'},
+                { commonName: 'COMMON LIME',	scientificName:'Papilio demoleus', 	discoveredBy:'Linnaeus 1758', family:'Papilionidae; Papilioninae; Papilionini',larvalHostPlant: 'Sweet Potato, Water Spinach'},
+                { commonName: 'THREE-SPOT GRASS YELLOW',	scientificName:'Eurema blanda visellia', discoveredBy:'Fruhstorfer 1910', family:'Pieridae; Coliadinae',larvalHostPlant: 'Sweet Potato, Water Spinach'},
+                { commonName: 'GRASS SKIPPER', scientificName:'Prusiana prusias matinus', discoveredBy:'Fruhstorfer 1911', family:'Hesperiidae; Hesperiinae',larvalHostPlant: 'Sweet Potato, Water Spinach'},
+                { commonName: 'RED HELEN', scientificName:'Menelaides helenus hystaspes', discoveredBy:'C.& R. Felder 1862',	family:'Papilionidae; Papilioninae; Papilionini',larvalHostPlant: 'Sweet Potato, Water Spinach'},
+                { commonName: 'ATLAS MOTH', scientificName:'Attacus Atlas',	discoveredBy:'Linnaeus 1767', family:'Saturniinae',larvalHostPlant: 'Sweet Potato, Water Spinach'},
+
                 // Add more species here...
             ];
             const imgInput = document.getElementById('imageUpload');
@@ -186,7 +196,7 @@
             }
         }
 
-        document.getElementById('imageUpload').addEventListener('change', processImage);
+        document.getElementById('imageUpload').addEventListener('change', processLabel);
     </script>
 <script src="js/upload.js"></script>
 <script src="jquery-3.6.0.slim.min.js"> </script>
