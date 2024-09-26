@@ -18,7 +18,7 @@
                 { stage: 'Drying wings', duration: '2-4 hrs' },
                 { stage: 'Adult', duration: '2-6 weeks' }
             ];
-            //const activity=['Activity Molting', 'Activity Munching', 'Activity Nectaring', 'Activity Pudding', 'Activity Pupating'];
+            const activity=['Activity Molting', 'Activity Munching', 'Activity Nectaring', 'Activity Pudding', 'Activity Pupating'];
             const defects=['Defects Broken Wings Atlas', 'Defects Crumpled Wings Butterfly-Common Lime', 'Defects Crumpled Wings Butterfly-Tailed Jay', 'Defects Deformed Pupae-Common Lime', 'Defects Overbend Pupae-Common Lime', 'Defects Overbend Pupae-Common Mormon', 'Defects Pupae-Golden Birdwing', 'Defects Stretchedmark-Common Mormon']
             const larvae=['Larvae Common Jay', 'Larvae Instar-Common Lime', 'Larvae Instar-Golden Birdwing', 'Larvae-Atlas', 'Larvae-Clippers', 'Larvae-Common Jay', 'Larvae-Common Lime', 'Larvae-Eggs-Golden Birdwing', 'Larvae-Giant Silk Moth', 'Larvae-Golden Birdwing', 'Larvae-Paper Kite', 'Larvae-Pink Rose', 'Larvae-Plain Tiger', 'Larvae-Red Lacewing', 'Larvae-Tailed Jay']
             const eggs =['Eggs-Common Jay', 'Eggs-Common Lime', 'Eggs-Golden Birdwing', 'Eggs-Pink Rose', 'Eggs-Plain Tiger', 'Eggs-Tailed Jay', 'Egs-Red Lacewing', 'Healthy Larvae-Golden Birdwing', 'Healthy Pupae-Common Lime', 'Healthy Pupae-Golden Birdwing', 'Moth-Atlas', 'Moth-Giant Silk', 'Old Pupae-Plain Tiger', 'Ovipositing-Tailed Jay', 'Predators Ants-Golden Birdwing', 'Prepupae Larvae-Golden Birdwing', 'Pupae-Common Jay', 'Pupae-Common Lime', 'Pupae-Golden Birdwing', 'Pupae-Golding Brdwing', 'Pupae-Paper Kite', 'Pupae-Pink Rose', 'Pupae-Plain Tiger', 'Pupae-Tailed Jay', 'Skipper-Club Silverline'];
@@ -26,6 +26,7 @@
             const predLep = ['Butterfly','Moth','Skipper']
             const fname=['ryan','christian','malik','james','she', 'Jao','ming','allan'] 
             const spotlocation= ['Manila Philippines','Bago Negros Occ.','Baguio City']
+            
             const imgInput = document.getElementById('imageUpload');
 
             const outputDiv = document.getElementById('output');
@@ -38,19 +39,17 @@
                 reader.onload = function (e) {
                     const imgElement = document.createElement('img');
                     imgElement.src = e.target.result;
-                    imgElement.style.width = '50px';
+                    imgElement.style.width = '200px';
+                    imgElement.style.height = '200px';
                     outputDiv.appendChild(imgElement);
                 };
                 reader.readAsDataURL(imgInput.files[0]);
             }
  
-
-            
-            
-
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function (e) {
+                   
                     const tableBody = document.getElementById('imageTableBody');
                     const newRow = document.createElement('tr');
 
@@ -67,10 +66,12 @@
                     const date = new Date().toLocaleDateString();
                     const location = spotlocation[Math.floor(Math.random() * spotlocation.length)];
 
+                     // Create the link based on the commonName
+                    const link = commonName.replace(/ /g, '') + '.html';
                     newRow.innerHTML = `
                         <td>${uploaderName}</td>
                         <td>${uploadReferenceID}</td>
-                        <td>${commonName}</td>
+                        <td><a href="${link}" target="_blank">${commonName}</a></td>           
                         <td>${percent}</td>
                         <td>${uploadImage}</td>
                         <td>${size}</td>
@@ -109,3 +110,4 @@
         function myReset() {
             document.getElementById("imageUpload").reset();
         }
+        

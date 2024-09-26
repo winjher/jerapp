@@ -50,6 +50,22 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #e0f7fa;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
     <script>
         const lepi2host = {
@@ -72,6 +88,30 @@
             'Scarlet Mormon': ['Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi'],
             'Tailed Jay': ['Avocado Tree', 'Soursop', 'Sugar Apple', 'Amuyon', 'Indian Tree'],
         };
+        document.addEventListener('DOMContentLoaded', () => {
+            const lifecycleStages = [
+                { stage: 'Egg', duration: '3-5 days' },
+                { stage: 'Molting', duration: '24-36 hrs' },
+                { stage: 'Larva', duration: '10-14 days' },
+                { stage: 'Pre-pupa', duration: '12-24 hrs' },
+                { stage: 'Pupating', duration: '3-10 minutes-1 hour' },
+                { stage: 'Chrysalis', duration: '10-12 days' },
+                { stage: 'Enclosing', duration: '1 minute' },
+                { stage: 'Drying wings', duration: '2-4 hrs' },
+                { stage: 'Adult', duration: '2-6 weeks' }
+            ];
+
+            const list = document.getElementById('lifecycle-list');
+
+            lifecycleStages.forEach(stage => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${stage.stage}: ${stage.duration}`;
+                list.appendChild(listItem);
+            });
+        });
+
+
+
 
         function updateHostplants() {
             const butterflySelect = document.getElementById('butterfly');
@@ -135,23 +175,33 @@
             </div>
         </nav>
     </section>
-    <form>
-        <h1>Select a Butterfly and its Host Plant</h1>
-        <label for="butterfly">Butterfly:</label>
-        <select id="butterfly">
-            <script>
-                const butterflies = Object.keys(lepi2host);
-                butterflies.forEach(butterfly => {
-                    const option = document.createElement('option');
-                    option.value = butterfly;
-                    option.textContent = butterfly;
-                    document.getElementById('butterfly').appendChild(option);
-                });
-            </script>
-        </select>
-        <label for="hostplant">Host Plant:</label>
-        <select id="hostplant"></select>
-    </form>
+    <section>
+        <div class="card-app-list">
+            <form>
+                <h1>Select a Butterfly and its Host Plant</h1>
+                <label for="butterfly">Butterfly:</label>
+                <select id="butterfly">
+                    <script>
+                        const butterflies = Object.keys(lepi2host);
+                        butterflies.forEach(butterfly => {
+                            const option = document.createElement('option');
+                            option.value = butterfly;
+                            option.textContent = butterfly;
+                            document.getElementById('butterfly').appendChild(option);
+                        });
+                    </script>
+                </select>
+                <label for="hostplant">Host Plant:</label>
+                <select id="hostplant"></select>
+                <div class="container">
+                    <h1>Butterfly Lifecycle</h1>
+                    <ul id="lifecycle-list"></ul>
+                </div>
+        
+            </form>
+        </div>
+    </section>
+    
     <script src="./jquery-3.6.0.slim.min.js"> </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>

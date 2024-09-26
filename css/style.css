@@ -1436,9 +1436,13 @@ margin-top: 10px;
   border-color: darkorange;
 }
 .btn-culture:hover,
-a,.farm{
+.farm{
   text-decoration: none;
   color: var(--color-cornflower);
+}
+a{
+  color: #0ee2c5;
+  text-decoration: none;
 }
 
 .home-card-title:hover{
@@ -1823,14 +1827,14 @@ button:hover {
   height: 100vh;
 } */
 
-.container {
+/* .container {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px;
   text-align: center;
-}
+} */
 
 h2 {
   margin-bottom: 20px;
@@ -1844,7 +1848,16 @@ input[type="file"] {
   display: block;
   margin: 10px auto;
 }
-
+.btn-snapshot {
+  padding: 6px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: small;
+  cursor: pointer;
+  border-radius: 5px;
+}
 button {
   /* padding: 6px 15px; */
   margin: 5px;
