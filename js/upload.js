@@ -7,6 +7,17 @@
                 'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Pink Rose',
                 'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
             ];
+            const lifecycleStages = [
+                { stage: 'Egg hatching', duration: '3-5 days' },
+                { stage: 'Molting', duration: '24-36 hrs' },
+                { stage: 'Larva', duration: '10-14 days' },
+                { stage: 'Pre-pupa hanged', duration: '12-24 hrs' },
+                { stage: 'Pupating', duration: '3-10 minutes to 1 hour' },
+                { stage: 'Chrysalis', duration: '10-12 days' },
+                { stage: 'Eclosion', duration: '1 to 5 minutes' },
+                { stage: 'Drying wings', duration: '2-4 hrs' },
+                { stage: 'Adult', duration: '2-6 weeks' }
+            ];
             //const activity=['Activity Molting', 'Activity Munching', 'Activity Nectaring', 'Activity Pudding', 'Activity Pupating'];
             const defects=['Defects Broken Wings Atlas', 'Defects Crumpled Wings Butterfly-Common Lime', 'Defects Crumpled Wings Butterfly-Tailed Jay', 'Defects Deformed Pupae-Common Lime', 'Defects Overbend Pupae-Common Lime', 'Defects Overbend Pupae-Common Mormon', 'Defects Pupae-Golden Birdwing', 'Defects Stretchedmark-Common Mormon']
             const larvae=['Larvae Common Jay', 'Larvae Instar-Common Lime', 'Larvae Instar-Golden Birdwing', 'Larvae-Atlas', 'Larvae-Clippers', 'Larvae-Common Jay', 'Larvae-Common Lime', 'Larvae-Eggs-Golden Birdwing', 'Larvae-Giant Silk Moth', 'Larvae-Golden Birdwing', 'Larvae-Paper Kite', 'Larvae-Pink Rose', 'Larvae-Plain Tiger', 'Larvae-Red Lacewing', 'Larvae-Tailed Jay']
@@ -45,6 +56,7 @@
 
                     const uploaderName = fname[Math.floor(Math.random() * fname.length)]; // Replace with dynamic data if needed
                     const uploadReferenceID = Date.now().toString();
+                    //const lifeStages= lifecycleStages[Math.floor(Math.random() * lifecycleStages.length[0])];
                     const commonName = predOutput[Math.floor(Math.random() * predOutput.length)]; // Replace with dynamic data if needed
                     const percent = (Math.random() * 100).toFixed(2) + '%'; // Replace with dynamic data if needed
                     const uploadImage = file.name;

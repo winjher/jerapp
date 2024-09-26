@@ -842,7 +842,7 @@ img:hover {
   background-color: #dc3545;
   border-radius: 20px;
   border: none;
-  /* width: 110px; */
+  width: 110px;
   height: 40px;
   margin-left: auto;
   margin-right: auto;
@@ -1197,7 +1197,7 @@ margin-top: 10px;
 }
 
 .btn-butterfly {
-  /* margin: 2px; */
+  margin: 1px;
   text-align: center;
   font-size: large;
   align-items: center;
@@ -1645,7 +1645,7 @@ color: var(--bs-light);
 }
 
 .stages-result-icon-btn{
-  border-radius: 100%;
+  border-radius: 50%;
   /* background-color: rgb(157, 228, 15); */
   border: 1px solid orange;
   margin: 2px;
@@ -1846,7 +1846,7 @@ input[type="file"] {
 }
 
 button {
-  padding: 6px 15px;
+  /* padding: 6px 15px; */
   margin: 5px;
   border: none;
   background-color: #007bff;

@@ -73,8 +73,11 @@
 </section>
     <div class="container">
         <h5>Upload Image</h5>
-        <input type="file" id="imageUpload" accept="image/*">
-        <div id="output"></div>
+        <input type="file" id="imageUpload" accept="image/*" >
+        <div class="col-xl-12 text-center"> 
+            <div id="output" class="uploadedImage" width=30px></div>
+        </div>
+        
         <div>
             <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
             <button class="btn-reset"  onclick="myReset()">
@@ -106,7 +109,7 @@
                             <th>Size</th>
                             <th>Mime Type</th>
                             <th>Last Modified</th>
-                            <th>Content</th>
+                            <th>Life Stages</th>
                             <th>Date</th>
                             <th>Location</th>
                             <th>Actions</th>
