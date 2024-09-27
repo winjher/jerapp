@@ -63,24 +63,24 @@
                     <li id="home-item" class="nav-item font-weight-bold">
                         <a class="nav-link menu-apps-home" href="logout.html">
                             <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
-                                Log out</span>
+                            Log out</span>
                         </a>
                     </li>
-                   
+
                 </ul>
             </div>
     </nav>
-</section>
+    </section>
     <div class="container">
         <h5>Upload Image</h5>
         <input type="file" id="imageUpload" accept="image/*">
         <div id="output"></div>
         <div>
             <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
-            <button class="btn-reset"  onclick="myReset()">
+            <button class="btn-reset" onclick="myReset()">
                 <a href="classification.html"> Camera</a></button>
-        </div> 
-   
+        </div>
+
         <!-- <button onclick="addLocation()">Add Location</button>
         <button onclick="postData()">Post</button> -->
     </div>
@@ -93,7 +93,7 @@
         </div>
         <div class="table-wrapper">
             <form action="" method="get" accept-charset="utf-8" id="uploadForm">
-            <!-- <form action="" id="uploadForm"> -->
+                <!-- <form action="" id="uploadForm"> -->
                 <table id="butterflyTable">
                     <thead>
                         <tr>
@@ -109,7 +109,7 @@
                             <th>Date</th>
                             <th>Location</th>
                             <th>Actions</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody id="imageTableBody">
@@ -117,16 +117,16 @@
                     </tbody>
                 </table>
             </form>
-            <button onclick="redirectToOtherPage()" class="btn-puparium">Go</button>
-   
+            <!-- <button onclick="redirectToOtherPage()" class="btn-puparium">Go</button> -->
+
 
         </div>
     </div>
-    <script>
+    <!-- <script>
         function redirectToOtherPage() {
             window.location.href = "BCommonJay.html";
         }
-    </script>
+    </script> -->
     <script type="text/javascript" charset="utf-8">
         function filterTable() {
             var input, filter, table, tr, td, i, txtValue;
@@ -150,10 +150,20 @@
         }
     </script>
     <script>
-      function processImage() {
+        function processImage() {
             const predOutput = [
-                { commonName: 'Butterfly-Clippers', scientificName: 'Parthenos sylvia', discoveredBy: 'Cramer, 1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia'},
-                { commonName: 'Butterfly-Common Jay', scientificName: 'Graphium doson', discoveredBy: 'C. & R. Felder, 1864', family: 'Papilionidae', larvalHostPlant: 'Annona'},
+                { commonName: 'Butterfly-Clippers', scientificName: 'Parthenos sylvia', discoveredBy: 'Cramer', year: '1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia' },
+                { commonName: 'Butterfly-Common Jay', scientificName: 'Graphium doson', discoveredBy: 'C. & R. Felder', year: '1864', family: 'Papilionidae', larvalHostPlant: 'Annona' },
+                { commonName: 'Butterfly-PLAIN TIGER or AFRICAN MONARCH', scientificName: 'Danaus chrysippus', discoveredBy: 'Linnaeus', year: '1758', family: 'Nymphalidae Danainae Danaini', larvalHostPlant: 'Cornflower' },
+                { commonName: 'COMMON MORMON', scientificName: 'Papilio polytes', discoveredBy: 'Eschscholtz', year: '1821', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Calamondin,Citrus Lemoncito,' },
+                { commonName: 'TAILED JAY', scientificName: '𝘎𝘳𝘢𝘱𝘩𝘪𝘶𝘮 𝘢𝘨𝘢𝘮𝘦𝘮𝘯𝘰𝘯', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae Papilioninae Leptocircini', larvalHostPlant: 'Soursop,SUgar Apple, Amuyon' },
+                { commonName: 'GREAT EGGFLY', scientificName: 'Hypolimnas bolina philippensis', discoveredBy: 'Butler', year: '1874', family: 'Nymphalidae Nymphalinae Nymphaliini', larvalHostPlant: 'Sweet Potato, Water Spinach' },
+                { commonName: 'COMMON LIME', scientificName: 'Papilio demoleus', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Sweet Potato, Water Spinach' },
+                { commonName: 'THREE-SPOT GRASS YELLOW', scientificName: 'Eurema blanda visellia', discoveredBy: 'Fruhstorfer', year: '1910', family: 'Pieridae; Coliadinae', larvalHostPlant: 'Sweet Potato, Water Spinach' },
+                { commonName: 'GRASS SKIPPER', scientificName: 'Prusiana prusias matinus', discoveredBy: 'Fruhstorfer', year: '1911', family: 'Hesperiidae; Hesperiinae', larvalHostPlant: 'Sweet Potato, Water Spinach' },
+                { commonName: 'RED HELEN', scientificName: 'Menelaides helenus hystaspes', discoveredBy: 'C.& R. Felder', year: '1862', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Sweet Potato, Water Spinach' },
+                { commonName: 'ATLAS MOTH', scientificName: 'Attacus Atlas', discoveredBy: 'Linnaeus', year: '1767', family: 'Saturniinae', larvalHostPlant: 'Sweet Potato, Water Spinach' },
+
                 // Add more species here...
             ];
             const imgInput = document.getElementById('imageUpload');
@@ -165,6 +175,8 @@
                 reader.onload = function (e) {
                     const imgElement = document.createElement('img');
                     imgElement.src = e.target.result;
+                    imgElement.style.width = '224px';
+                    imgElement.style.height = '224px';
                     outputDiv.appendChild(imgElement);
 
                     // Simulate a prediction
@@ -176,6 +188,7 @@
                         <p>Common Name: ${prediction.commonName}</p>
                         <p>Scientific Name: ${prediction.scientificName}</p>
                         <p>Discovered By and Year: ${prediction.discoveredBy}</p>
+                        <p>Family: ${prediction.year}</p>
                         <p>Family: ${prediction.family}</p>
                         <p>Larval Host Plant: ${prediction.larvalHostPlant}</p>
                     `;
@@ -187,10 +200,10 @@
 
         document.getElementById('imageUpload').addEventListener('change', processImage);
     </script>
-<script src="js/activity.js"></script>
-<script src="jquery-3.6.0.slim.min.js"> </script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/slider.js"></script>
+    <script src="js/activity.js"></script>
+    <script src="jquery-3.6.0.slim.min.js"> </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 
 </html>

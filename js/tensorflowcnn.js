@@ -1,7 +1,8 @@
 const tf = require('@tensorflow/tfjs');
 const tfnode = require('@tensorflow/tfjs-node');
 
-const imageDirectory = 'C:/Users/jerwin/Documents/Butterfly'; const imageWidth = 224; const imageHeight = 224; const batchSize = 32;
+const imageDirectory = 'C:/Users/jerwin/Documents/Butterfly'; 
+const imageWidth = 224; const imageHeight = 224; const batchSize = 32;
 const imageDataset = tfnode.data.imageDataset(imageDirectory, null, { labelFactory: (dir) => tfnode.oneHot(tfnode.tensor1d([parseInt(dir.split('/')[0])]), 10), imageShape: [imageHeight, imageWidth, 3], });
 const trainDataset = imageDataset.take(0.8 * imageDataset.size); const validationDataset = imageDataset.skip(0.8 * imageDataset.size);
 const trainData = await trainDataset .shuffle(trainDataset.size) .batch(batchSize) .prefetch(1) .cache();
