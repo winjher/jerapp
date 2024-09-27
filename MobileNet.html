@@ -5,25 +5,19 @@
   <title>Training Model</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet"
+    type="text/css" />
+    <link rel="stylesheet" href="styles.css">
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
   <!-- Include the ml5.js library -->
   <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-  <link rel="stylesheet" href="./css/classify.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet"
-    type="text/css" />
-  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-  <!DOCTYPE html>
-  <html lang="en">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Butterfly Classification</title>
-    <link rel="stylesheet" href="styles.css">
   </head>
   <style type="text/css" media="all">
     body {
@@ -73,7 +67,7 @@
   </style>
 
 <body>
-  <div class="container">
+  <!-- <div class="container">
     <h1>Butterfly Classification</h1>
     <div id="videoContainer">
       <video id="video" width="320" height="240" autoplay></video>
@@ -92,12 +86,12 @@
     <div id="labelContainer">
       <h2 id="label"></h2>
     </div>
-  </div>
+  </div> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
   <script src="script.js"></script>
 
-  <script type="text/javascript" charset="utf-8">
+  <!-- <script type="text/javascript" charset="utf-8">
     let mobilenet;
     let classifier;
     let video;
@@ -127,6 +121,7 @@
     function videoReady() {
       console.log("video is Ready!!");
     }
+
     function gotResults(error, results) {
       if (error) {
         console.error(error);
@@ -135,10 +130,22 @@
         classifier.classify(gotResults);
       }
     }
-
-  </script>
-  <script src="js/transferLearning.js"></script>
-  <script src="js/classLep.js"></script>
+    function imageReady() {
+      image(atlas, 0, 0, width, height);
+      console.log("Image is Ready!!")
+    }
+    function setup() {
+      createCanvas(640, 480);
+      atlas = createImg('Butterfly/Moth-Atlas/AA00001.jpg', imageReady);
+      atlas.hide();
+      background(640);
+      mobilenet = ml5.imageClassifier("MobileNet", modelReady);
+    }
+  </script> -->
+  <script src="js/animals.js"></script>
+  <!-- <script src="js/mobilenet.js"></script> -->
+  <!-- <script src="js/transferLearning.js"></script>
+  <script src="js/classLep.js"></script> -->
 </body>
 
 </html>
