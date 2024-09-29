@@ -1,19 +1,19 @@
 function processLabel() {
       const predInfo = [
-          { commonName: 'Butterfly-Clippers', scientificName: 'Parthenos sylvia', discoveredBy: 'Cramer',year:'1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia'},
-          { commonName: 'Butterfly-Common Jay', scientificName: 'Graphium doson', discoveredBy: 'C. & R. Felder',year:'1864', family: 'Papilionidae', larvalHostPlant: 'Annona'},
-          { commonName: 'Butterfly-PLAIN TIGER or AFRICAN MONARCH', scientificName:'Danaus chrysippus', discoveredBy:'Linnaeus',year:'1758', family: 'Nymphalidae Danainae Danaini',larvalHostPlant:'Cornflower'},
-          { commonName: 'COMMON MORMON',  scientificName:'Papilio polytes', discoveredBy:'Eschscholtz',year:'1821',	family:'Papilionidae; Papilioninae; Papilionini',larvalHostPlant: 'Calamondin,Citrus Lemoncito,'},
-          { commonName: 'TAILED JAY',	scientificName:'𝘎𝘳𝘢𝘱𝘩𝘪𝘶𝘮 𝘢𝘨𝘢𝘮𝘦𝘮𝘯𝘰𝘯', discoveredBy:'Linnaeus',year:'1758',	family:'Papilionidae Papilioninae Leptocircini',larvalHostPlant: 'Soursop,SUgar Apple, Amuyon'},
-          { commonName: 'GREAT EGGFLY', scientificName:'Hypolimnas bolina philippensis',  discoveredBy:'Butler',year:'1874', family:'Nymphalidae Nymphalinae Nymphaliini',larvalHostPlant: 'Sweet Potato, Water Spinach'},
-          { commonName: 'COMMON LIME',	scientificName:'Papilio demoleus', 	discoveredBy:'Linnaeus',year:'1758', family:'Papilionidae; Papilioninae; Papilionini',larvalHostPlant: 'Sweet Potato, Water Spinach'},
-          { commonName: 'THREE-SPOT GRASS YELLOW',	scientificName:'Eurema blanda visellia', discoveredBy:'Fruhstorfer',year:'1910', family:'Pieridae; Coliadinae',larvalHostPlant: 'Sweet Potato, Water Spinach'},
-          { commonName: 'GRASS SKIPPER', scientificName:'Prusiana prusias matinus', discoveredBy:'Fruhstorfer',year:'1911', family:'Hesperiidae; Hesperiinae',larvalHostPlant: 'Sweet Potato, Water Spinach'},
-          { commonName: 'RED HELEN', scientificName:'Menelaides helenus hystaspes', discoveredBy:'C.& R. Felder',year:'1862',	family:'Papilionidae; Papilioninae; Papilionini',larvalHostPlant: 'Sweet Potato, Water Spinach'},
-          { commonName: 'ATLAS MOTH', scientificName:'Attacus Atlas',	discoveredBy:'Linnaeus',year:'1767', family:'Saturniinae',larvalHostPlant: 'Sweet Potato, Water Spinach'},
+            { commonName: 'Butterfly-Clippers', scientificName: 'Parthenos sylvia', discoveredBy: 'Cramer', year: '1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia', lepidoptera:'Butterfly' },
+            { commonName: 'Butterfly-Common Jay', scientificName: 'Graphium doson', discoveredBy: 'C. & R. Felder', year: '1864', family: 'Papilionidae', larvalHostPlant: 'Annona',lepidoptera:'Butterfly' },
+            { commonName: 'Butterfly-Plain Tiger', scientificName: 'Danaus chrysippus', discoveredBy: 'Linnaeus', year: '1758', family: 'Nymphalidae Danainae Danaini', larvalHostPlant: 'Cornflower', lepidoptera:'Butterfly' },
+            { commonName: 'Butterfly-Common Mormon', scientificName: 'Papilio polytes', discoveredBy: 'Eschscholtz', year: '1821', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Calamondin,Citrus Lemoncito', lepidoptera:'Butterfly' },
+            { commonName: 'Butterfly-Tailed Jay', scientificName: '𝘎𝘳𝘢𝘱𝘩𝘪𝘶𝘮 𝘢𝘨𝘢𝘮𝘦𝘮𝘯𝘰𝘯', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae Papilioninae Leptocircini', larvalHostPlant: 'Soursop,SUgar Apple, Amuyon', lepidoptera:'Butterfly' },
+            { commonName: 'Butterfly-Great Eggfly', scientificName: 'Hypolimnas bolina philippensis', discoveredBy: 'Butler', year: '1874', family: 'Nymphalidae Nymphalinae Nymphaliini', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera:'Butterfly' },
+            { commonName: 'Butterfly-Common Lime', scientificName: 'Papilio demoleus', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera:'Butterfly' },
+            { commonName: 'Butterfly-Three-Spot Grass Yellow', scientificName: 'Eurema blanda visellia', discoveredBy: 'Fruhstorfer', year: '1910', family: 'Pieridae; Coliadinae', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera:'Butterfly' },
+            { commonName: 'Skipper-Grass Skipper', scientificName: 'Prusiana prusias matinus', discoveredBy: 'Fruhstorfer', year: '1911', family: 'Hesperiidae; Hesperiinae', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera:'Skipper' },
+            { commonName: 'Butterfly-Helenus Hystaspe', scientificName: 'Menelaides helenus hystaspes', discoveredBy: 'C.& R. Felder', year: '1862', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera:'Butterfly' },
+            { commonName: 'Moth-Atlas', scientificName: 'Attacus Atlas', discoveredBy: 'Linnaeus', year: '1767', family: 'Saturniinae', larvalHostPlant: 'Sugar Apple, Soursop', lepidoptera:'Moth'},
 
-          // Add more species here...
-      ];
+            // Add more species here...
+        ];
       const imgInput = document.getElementById('imageUpload');
       const outputDiv = document.getElementById('output');
       outputDiv.innerHTML = '';

@@ -74,16 +74,17 @@
     <div class="container">
         <h5>Upload Image</h5>
         <input type="file" id="imageUpload" accept="image/*" >
-        <div class="col-xl-12 text-center"> 
-            <div id="output" class="uploadedImage"></div>
-        </div>
+       
         
         <div>
             <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
             <button class="btn-reset"  onclick="myReset()">
                 <a href="classification.html"> Camera</a></button>
+                
         </div> 
-   
+        <div class="col-xl-12 text-center"> 
+            <div id="output" class="uploadedImage"></div>
+        </div>
         <!-- <button onclick="addLocation()">Add Location</button>
         <button onclick="postData()">Post</button> -->
     </div>
@@ -131,28 +132,9 @@
         }
     </script> -->
     <script type="text/javascript" charset="utf-8">
-        function filterTable() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("butterflyTable");
-            tr = table.getElementsByTagName("tr");
-
-
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
+       
     </script>
-   
+   <script src="js/labelInfo.js"></script>
 <script src="js/upload.js"></script>
 <script src="jquery-3.6.0.slim.min.js"> </script>
 <script src="js/bootstrap.bundle.min.js"></script>
