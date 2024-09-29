@@ -23,8 +23,8 @@ function processLabel() {
           reader.onload = function (e) {
               const imgElement = document.createElement('img');
               imgElement.src = e.target.result;
-              imgElement.style.width = '300px';
-              imgElement.style.height = '300px';
+              imgElement.style.width = '224px';
+              imgElement.style.height = '224px';
               outputDiv.appendChild(imgElement);
 
               // Simulate a prediction
