@@ -85,13 +85,13 @@
         <div class="col-xl-12 text-center"> 
             <div id="output" class="uploadedImage"></div>
         </div>
-        <!-- <button onclick="addLocation()">Add Location</button>
-        <button onclick="postData()">Post</button> -->
+        <button onclick="addLocation()">Add Location</button>
+        <button onclick="postData()">Post</button>
     </div>
 
     <div class="container">
         <h5>Butterfly Image Data</h5>
-        <!-- <button onclick="uploadImage()">Post</button> -->
+        <button onclick="uploadImage()">Post</button>
         <div class="text-center">
             <button class="btn-submit">Search</button>
             <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for names..">
@@ -132,7 +132,18 @@
         }
     </script> -->
     <script type="text/javascript" charset="utf-8">
-       
+       function addLocation() {
+                const location = prompt('Enter the location:');
+                if (location) {
+                    const locationElement = document.createElement('p');
+                    locationElement.textContent = `Location: ${location}`;
+                    document.querySelector('.container').appendChild(locationElement);
+                }
+            }
+
+            function postData() {
+                alert('Data posted successfully!');
+            }
     </script>
    <script src="js/labelInfo.js"></script>
 <script src="js/upload.js"></script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,56 +10,58 @@
 </head>
 <style>
     body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
 
-.container {
-    width: 80%;
-    margin: 50px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
+    .container {
+        width: 80%;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
 
-h1 {
-    color: #333;
-}
+    h1 {
+        color: #333;
+    }
 
-input[type="file"] {
-    margin: 20px 0;
-}
+    input[type="file"] {
+        margin: 20px 0;
+    }
 
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
 
-button:hover {
-    background-color: #0056b3;
-}
+    button:hover {
+        background-color: #0056b3;
+    }
 
-#output {
-    margin-top: 20px;
-}
+    #output {
+        margin-top: 20px;
+    }
 
-#output img {
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
-}
-li{
-    list-style: none;
-}
+    #output img {
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    li {
+        list-style: none;
+    }
 </style>
+
 <body>
     <div class="container">
         <h1>Upload Image</h1>
@@ -125,7 +128,7 @@ li{
                                         <h6 class="key-name">Hostplants: <b class="val-name" id="hostPlants"></b></h6>
                                     </li>
                                     <li></li>
-                                        <h6 class="key-name">Descriptions: <b class="val-name" id="description"></b></h6>
+                                    <h6 class="key-name">Descriptions: <b class="val-name" id="description"></b></h6>
                                     </li>
                                 </ul>
                             </div>
@@ -134,109 +137,127 @@ li{
                 </div>
             </div>
         </div>
-    <script>
-        function processImage() {
-    const predOutput = [
-        'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime', 
-        'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail', 
-        'Butterfly-Golden Birdwing', 'Butterfly-Gray Glassy Tiger', 'Butterfly-Great Eggfly', 
-        'Butterfly-Great Yellow Mormon', 'Butterfly-Paper Kite', 'Butterfly-Plain Tiger', 
-        'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Pink Rose', 
-        'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
-    ];
+        <script>
+            function processImage() {
+                const predOutput = [
+                    'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime',
+                    'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail',
+                    'Butterfly-Golden Birdwing', 'Butterfly-Gray Glassy Tiger', 'Butterfly-Great Eggfly',
+                    'Butterfly-Great Yellow Mormon', 'Butterfly-Paper Kite', 'Butterfly-Plain Tiger',
+                    'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Pink Rose',
+                    'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
+                ];
 
-    const imgInput = document.getElementById('imageUpload');
-    const outputDiv = document.getElementById('output');
-    outputDiv.innerHTML = '';
+                const imgInput = document.getElementById('imageUpload');
+                const outputDiv = document.getElementById('output');
+                outputDiv.innerHTML = '';
 
-    if (imgInput.files && imgInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const imgElement = document.createElement('img');
-            imgElement.src = e.target.result;
-            imgElement.style.width = '150px';
-            outputDiv.appendChild(imgElement);
+                if (imgInput.files && imgInput.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = e.target.result;
+                        imgElement.style.width = '150px';
+                        outputDiv.appendChild(imgElement);
 
-            const itm = Math.floor(Math.random() * predOutput.length);
-            const percent = Math.floor(Math.random() * 100);
-            const today = new Date();
-            const reference = Math.floor(Math.random() * 1000000000000000);
+                        const itm = Math.floor(Math.random() * predOutput.length);
+                        const percent = Math.floor(Math.random() * 100);
+                        const today = new Date();
+                        const reference = Math.floor(Math.random() * 1000000000000000);
 
-            const prediction = predOutput[itm];
-            if (!predOutput.includes(prediction)) {
-                outputDiv.innerHTML += `<p>Prediction: Unknown</p>`;
-            } else {
-                outputDiv.innerHTML += `<p>Prediction: ${prediction} (${percent}%)</p>`;
+                        const prediction = predOutput[itm];
+                        if (!predOutput.includes(prediction)) {
+                            outputDiv.innerHTML += `<p>Prediction: Unknown</p>`;
+                        } else {
+                            outputDiv.innerHTML += `<p>Prediction: ${prediction} (${percent}%)</p>`;
+                        }
+                        outputDiv.innerHTML += `<p>Upload Reference ID: ${reference}</p>`;
+                        outputDiv.innerHTML += `<p>Date: ${today.toDateString()}</p>`;
+                    };
+                    reader.readAsDataURL(imgInput.files[0]);
+                }
             }
-            outputDiv.innerHTML += `<p>Upload Reference ID: ${reference}</p>`;
-            outputDiv.innerHTML += `<p>Date: ${today.toDateString()}</p>`;
-        };
-        reader.readAsDataURL(imgInput.files[0]);
-    }
-}
 
-    </script>
-    <script>
-        // Example data
-        
-        const butterflyCommonJay = {
-            knownAs: "Doson, Dozon",
-            scientificName: "Graphium Dozon",
-            genus: "Graphium",
-            bodyLength: "35 cm",
-            bodyWidth: "0.5 cm",
-            wingStand: "45 cm",
-            wingSpan: "60 cm",
-            maleColors: "Blue Spotted, Black",
-            femaleColors: "Blue Spotted, Black",
-            hostPlants: "Avocado Tree,Soursop, Sugar Apple, Amuyon,Indian Tree",
-            description:"Short Swallow Tail"
-        };
-        const butterflyCommonMormon = {
-            breeder: 'Breeder 1',
-            lepidoptera: 'Butterfly',
-            commonName: 'COMMON MORMON',
-            scientificName: 'Papilio polytes',
-            discoveredByYr: 'Eschscholtz 1821',
-            family: 'Papilionidae; Papilioninae; Papilionini',
-            spotDate: new Date().toLocaleDateString(),
-            location: 'Bago, Neg. Occ.',
-            description: 'Menelaides polytes ledebouria',
-            larvalHostPlant: 'Calamondin'
-        };
-        
-        // Populate the HTML with the data
-        document.getElementById('knownAs').textContent = butterflyCommonJay.knownAs;
-        document.getElementById('scientificName').innerHTML = `<i>${butterflyCommonJay.scientificName}</i>`;
-        document.getElementById('genus').textContent = butterflyCommonJay.genus;
-        document.getElementById('bodyLength').textContent = butterflyCommonJay.bodyLength;
-        document.getElementById('bodyWidth').textContent = butterflyCommonJay.bodyWidth;
-        document.getElementById('wingStand').textContent = butterflyCommonJay.wingStand;
-        document.getElementById('wingSpan').textContent = butterflyCommonJay.wingSpan;
-        document.getElementById('maleColors').textContent = butterflyCommonJay.maleColors;
-        document.getElementById('femaleColors').textContent = butterflyCommonJay.femaleColors;
-        document.getElementById('hostPlants').textContent = butterflyCommonJay.hostPlants;
-        document.getElementById('description').textContent = butterflyCommonJay.description;
+        </script>
+        <script>
+            // Example data
 
-        function addLocation() {
-            const location = prompt('Enter the location:');
-            if (location) {
-                const locationElement = document.createElement('p');
-                locationElement.textContent = `Location: ${location}`;
-                document.querySelector('.container').appendChild(locationElement);
+            const butterflyCommonJay = {
+                knownAs: "Doson, Dozon",
+                scientificName: "Graphium Dozon",
+                genus: "Graphium",
+                bodyLength: "35 cm",
+                bodyWidth: "0.5 cm",
+                wingStand: "45 cm",
+                wingSpan: "60 cm",
+                maleColors: "Blue Spotted, Black",
+                femaleColors: "Blue Spotted, Black",
+                hostPlants: "Avocado Tree,Soursop, Sugar Apple, Amuyon,Indian Tree",
+                description: "Short Swallow Tail"
+            };
+            const butterflyCommonMormon = {
+                breeder: 'Breeder 1',
+                lepidoptera: 'Butterfly',
+                commonName: 'COMMON MORMON',
+                scientificName: 'Papilio polytes',
+                discoveredByYr: 'Eschscholtz 1821',
+                family: 'Papilionidae; Papilioninae; Papilionini',
+                spotDate: new Date().toLocaleDateString(),
+                location: 'Bago, Neg. Occ.',
+                description: 'Menelaides polytes ledebouria',
+                larvalHostPlant: 'Calamondin'
+            };
+
+            // Populate the HTML with the data
+            document.getElementById('knownAs').textContent = butterflyCommonJay.knownAs;
+            document.getElementById('scientificName').innerHTML = `<i>${butterflyCommonJay.scientificName}</i>`;
+            document.getElementById('genus').textContent = butterflyCommonJay.genus;
+            document.getElementById('bodyLength').textContent = butterflyCommonJay.bodyLength;
+            document.getElementById('bodyWidth').textContent = butterflyCommonJay.bodyWidth;
+            document.getElementById('wingStand').textContent = butterflyCommonJay.wingStand;
+            document.getElementById('wingSpan').textContent = butterflyCommonJay.wingSpan;
+            document.getElementById('maleColors').textContent = butterflyCommonJay.maleColors;
+            document.getElementById('femaleColors').textContent = butterflyCommonJay.femaleColors;
+            document.getElementById('hostPlants').textContent = butterflyCommonJay.hostPlants;
+            document.getElementById('description').textContent = butterflyCommonJay.description;
+
+            function addLocation() {
+                const location = prompt('Enter the location:');
+                if (location) {
+                    const locationElement = document.createElement('p');
+                    locationElement.textContent = `Location: ${location}`;
+                    document.querySelector('.container').appendChild(locationElement);
+                }
             }
-        }
 
-        function postData() {
-            alert('Data posted successfully!');
-        }
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="js/but_ID.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            function postData() {
+                alert('Data posted successfully!');
+            }
+        </script>
+        <script>
+            async function loadModel() {
+                const model = await tf.loadLayersModel('C:/Users/jerwin/Documents/model/tfjs_model/model.json');
+                console.log('Model loaded successfully');
+                // You can now use the model for predictions
+            }
+
+            loadModel();
+            async function predict(image) {
+                const model = await tf.loadLayersModel('C:/Users/jerwin/Documents/model/tfjs_model/model.json');
+                const tensor = tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
+                const prediction = model.predict(tensor);
+                prediction.print(); // Display the prediction
+            }
+
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="js/but_ID.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
