@@ -78,22 +78,23 @@
         
         <div>
             <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
-            <button class="btn-reset"  onclick="myReset()">
-                <a href="classification.html"> Camera</a></button>
+            <button class="btn-submit" onclick="myReset()">
+                <a href="classification.html"> Camera</a>
+            </button>
                 
         </div> 
         <div class="col-xl-12 text-center"> 
             <div id="output" class="uploadedImage"></div>
         </div>
-        <button onclick="addLocation()">Add Location</button>
-        <button onclick="postData()">Post</button>
+        <button class="btn-submit" onclick="addLocation()">Add Location</button>
+        <button class="btn-submit" onclick="postData()">Post</button>
     </div>
 
     <div class="container">
         <h5>Butterfly Image Data</h5>
-        <button onclick="uploadImage()">Post</button>
+        <!-- <button onclick="uploadImage()">Post</button> -->
         <div class="text-center">
-            <button class="btn-submit">Search</button>
+            <!-- <button class="btn-submit">Search</button> -->
             <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for names..">
         </div>
         <div class="table-wrapper">
@@ -110,7 +111,7 @@
                             <th>Size</th>
                             <th>Mime Type</th>
                             <th>Last Modified</th>
-                            <th>Life Stages</th>
+                            <th>Lepidoptera</th>
                             <th>Date</th>
                             <th>Location</th>
                             <th>Actions</th>
