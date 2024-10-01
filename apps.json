@@ -1,60 +1,53 @@
-{
-    "id":"1",
-    "title":"Explore Butterfly Classification",
-    "image":".jpg",
-    "apps":"Butterfly Identifier Apps",
-    "imageA":"A",
-    "imageB":"B",
-    "imageC":"C",
-    
-},
-{
-    "id":"2",
-    "title":"Explore Stages of Butterfly",
-    "image":".jpg",
-    "apps":"Butterfly Stages Apps",
-    "imageA":"",
-    "imageB":"",
-    "imageC":"",
-    
-},
-{
-    "id":"3",
-    "title":"Explore Larval Diseases",
-    "image":".jpg",
-    "apps":"Larval Disease Apps",
-    "imageA":,
-    "imageB":,
-    "imageC":,
-    
-},
-{
-    "id":"4",
-    "title":"Explore Pupae Defects",
-    "image":".jpg",
-    "apps":"Pupae Defects Apps",
-    "imageA":,
-    "imageB":,
-    "imageC":,
-    
-},
-{
-    "id":"5",
-    "title":"Explore Hostplants Classification",
-    "image":".jpg",
-    "apps":"Hostplants Identifier Apps",
-    "imageA":,
-    "imageB":,
-    "imageC":,
-    
-},
-{
-    "id":"6",
-    "title":"Explore Predators Classification",
-    "image":".jpg",
-    "apps":"Predators Identifier Apps",
-    "imageA":,
-    "imageB":,
-    "imageC":,
-    
-},
+const express = require('express');
+const multer = require('multer');
+const tf = require('@tensorflow/tfjs-node');
+const fs = require('fs');
+const path = require('path');
+
+const app = express();
+
+// Set up Multer storage and destination for uploaded files
+const storage = multer.diskStorage({
+  destination: 'collections', // Specify the destination folder
+  filename: function (req, file, cb) {
+    // Use a timestamp or unique ID for the filename to avoid conflicts
+    cb(null, Date.now() + '-' + file.originalname);
+  }
+});
+
+// Create an instance of the Multer middleware
+const upload = multer({ storage: storage });
+
+// Load the TensorFlow model
+let model;
+(async () => {
+  model = await tf.loadLayersModel('file://path/to/your/model/model.json');
+  console.log('Model loaded successfully');
+})();
+
+// Define the endpoint to handle the file upload and make predictions
+app.post('/api/upload', upload.single('photo'), async (req, res) => {
+  try {
+    const filePath = path.join(__dirname, 'collections', req.file.filename);
+    const imageBuffer = fs.readFileSync(filePath);
+    const imageTensor = tf.node.decodeImage(imageBuffer);
+
+    // Preprocess the image to match the input shape of the model
+    const resizedImage = tf.image.resizeBilinear(imageTensor, [224, 224]);
+    const normalizedImage = resizedImage.div(255.0).expandDims();
+
+    // Make a prediction
+    const prediction = model.predict(normalizedImage);
+    const predictedClass = prediction.argMax(-1).dataSync()[0];
+
+    res.status(200).json({ message: 'Photo saved successfully', predictedClass });
+  } catch (error) {
+    res.status(500).json({ message: 'Error processing image', error: error.message });
+  }
+});
+
+// Start the server
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});
+
