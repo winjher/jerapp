@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/ss-style.css">
+    <!-- <link rel="stylesheet" href="css/ss-style.css"> -->
     <link rel="butterfly" href="manifest.json" />
     <title>Butterfly</title>
 
@@ -15,59 +15,191 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/iconbar.css">
     <link rel="stylesheet" href="css/style.css">
-  
+
 </head>
 <style>
-    body {
+    /* body {
         background-image: url("icon/bgbutterfly.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         min-height: 400px;
         background-size: cover;
+    } */
+    .main-hero-image {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('icon/bgbutterfly.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        height: 500px;
+
+    }
+
+    .service-hero-title {
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 60px;
+        letter-spacing: 0.02em;
+        color: var(--color-white);
+        width: 496px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 100px;
+        text-align: center;
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-40%, 0%);
+
+    }
+
+    .service-button-cta {
+        position: relative;
+        top: 100%;
+        /* left: 44%; */
+        transform: translate(0%, -10%);
+        background-color: var(--color-ocean);
+        color: var(--color-white);
+        height: 56px;
+        width: 169px;
+        box-shadow: none;
+        border-radius: 4px;
+        border: unset;
+        margin: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-button-cta:hover {
+        cursor: pointer;
+        color: var(--color-white);
+        background-color: var(--color-iris);
     }
 </style>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand">
-              <img src="icon/8i8.png" alt="" srcset="">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">
-                            Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                          About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="icon-size">
-                            <a class="nav-link" href="LogIn.html">
-                              Logout
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                    <img src="icon/8i8.png" alt="" srcset="">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">
+                                Dashboard
                             </a>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="icon-size">
+                                <a class="nav-link" href="LogIn.html">
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="main-hero">
+            <div class="container main-hero-image">
+                <div class="imgbck">
+                    <h1 class="service-hero-title text-center">Effective Solutions for Your Buterfly Business</h1>
+                    <div class="col-xl-12 text-center">
+                        <button type="button" class="service-button-cta" data-modal-open>
+                            <a href="home.html">Explore</a>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- <section class="main">
+            <h1>We Make Butterfly Farm Simple</h1>
+
+            <p>Effective Solution for  Butterflies Integrate Farm into your Life</p>
+            <button id="myBtn">
+                <a href="home.html">Explore</a>
+            </button>
+        </section> -->
+    </main>
+    <!-- Modal -->
+    <div class="modal fade is-hidden" data-modal id="Modal" tabindex="-1" aria-labelledby="ModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-close " id="img-close" data-modal-close>
+                    <img src="images/icons/close.svg" alt="close">
+                </div>
+                <div class="modal-header">
+                    <h4 class="modal-title" id="ModalLabel">
+                        Leave your information and we'll call you back.
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="user-contact" action="post" method="get" accept-charset="utf-8">
+
+                        <label for="fullname" class="user-info">Name</label>
+                        <img src="images/icons/user.svg" alt="" class="user-icons">
+                        <input type="text" class="input-field" placeholder="">
+                        <label for="phone" class="user-info">Telephone</label>
+                        <img src="images/icons/user-phone.svg" alt="" class="user-icons">
+                        <input type="number" class="input-field" required="">
+                        <label for="email" class="user-info">Email</label>
+                        <img src="images/icons/user-email.svg" alt="" class="user-icons">
+                        <input type="email" class="input-field" required>
+
+                        <label for="username" class="user-info">Comment</label>
+                        <!-- <img src="images/icons/user-check.svg" alt="" class="user-icons"> -->
+                        <textarea name="comments" id=comments rows="8" cols="20" class="user-info-comments"></textarea>
+
+                        <input type="checkbox" name="" id="" class="user-checkox-icon" />
+
+                        <p class="info-terms">
+                            I agree with the newsletter and the Terms and Conditions
+                        </p>
+                        <button type="button" class="button-send">
+                            Send
+                        </button>
+
+                    </form>
+                </div>
+
             </div>
         </div>
-    </nav>
-    <hr>
-    <section class="main">
-        <h1>We Make Butterfly Farm Simple</h1>
+    </div>
+    <script>
+        (() => {
+            const refs = {
+                openModalBtn: document.querySelector("[data-modal-open]"),
+                closeModalBtn: document.querySelector("[data-modal-close]"),
+                modal: document.querySelector("[data-modal]"),
+            };
 
-        <p>The Best Culture of Butterflies Integrate Farm into your Life</p>
-        <button id="myBtn">
-            <a href="home.html">Explore</a>
-        </button>
-    </section>
+            refs.openModalBtn.addEventListener("click", toggleModal);
+            refs.closeModalBtn.addEventListener("click", toggleModal);
+
+            function toggleModal() {
+                refs.modal.classList.toggle("is-hidden");
+            }
+        })();
+    </script>
     <script src="./jquery-3.6.0.slim.min.js"> </script>
-  <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
