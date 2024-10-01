@@ -1,12 +1,12 @@
  function processImage() {
-            const predOutput = [
-                'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime',
-                'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail',
-                'Butterfly-Golden Birdwing', 'Butterfly-Gray Glassy Tiger', 'Butterfly-Great Eggfly',
-                'Butterfly-Great Yellow Mormon', 'Butterfly-Paper Kite', 'Butterfly-Plain Tiger',
-                'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Pink Rose',
-                'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
-            ];
+            // const predOutput = [
+            //     'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime',
+            //     'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail',
+            //     'Butterfly-Golden Birdwing', 'Butterfly-Gray Glassy Tiger', 'Butterfly-Great Eggfly',
+            //     'Butterfly-Great Yellow Mormon', 'Butterfly-Paper Kite', 'Butterfly-Plain Tiger',
+            //     'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 'Butterfly-Pink Rose',
+            //     'Butterfly-Tailed Jay', 'Moth-Giant Silk', 'Moth-Atlas'
+            // ];
             const predLabel = [
                 { commonName: 'Butterfly-Clippers', scientificName: 'Parthenos sylvia', discoveredBy: 'Cramer', year: '1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia', lepidoptera:'Butterfly' },
                 { commonName: 'Butterfly-Common Jay', scientificName: 'Graphium doson', discoveredBy: 'C. & R. Felder', year: '1864', family: 'Papilionidae', larvalHostPlant: 'Annona',lepidoptera:'Butterfly' },
@@ -26,7 +26,7 @@
             const lifecycleStages = [
                 { stage: 'Egg hatching', duration: '3-5 days' },
                 { stage: 'Molting', duration: '24-36 hrs' },
-                { stage: 'Larva', duration: '10-14 days' },
+                { stage: 'Larva instar', duration: '10-14 days' },
                 { stage: 'Pre-pupa hanged', duration: '12-24 hrs' },
                 { stage: 'Pupating', duration: '3-10 minutes to 1 hour' },
                 { stage: 'Chrysalis', duration: '10-12 days' },
@@ -38,7 +38,8 @@
             const defects=['Defects Broken Wings Atlas', 'Defects Crumpled Wings Butterfly-Common Lime', 'Defects Crumpled Wings Butterfly-Tailed Jay', 'Defects Deformed Pupae-Common Lime', 'Defects Overbend Pupae-Common Lime', 'Defects Overbend Pupae-Common Mormon', 'Defects Pupae-Golden Birdwing', 'Defects Stretchedmark-Common Mormon'];
             const larvae=['Larvae Common Jay', 'Larvae Instar-Common Lime', 'Larvae Instar-Golden Birdwing', 'Larvae-Atlas', 'Larvae-Clippers', 'Larvae-Common Jay', 'Larvae-Common Lime', 'Larvae-Eggs-Golden Birdwing', 'Larvae-Giant Silk Moth', 'Larvae-Golden Birdwing', 'Larvae-Paper Kite', 'Larvae-Pink Rose', 'Larvae-Plain Tiger', 'Larvae-Red Lacewing', 'Larvae-Tailed Jay'];
             const eggs =['Eggs-Common Jay', 'Eggs-Common Lime', 'Eggs-Golden Birdwing', 'Eggs-Pink Rose', 'Eggs-Plain Tiger', 'Eggs-Tailed Jay', 'Egs-Red Lacewing', 'Healthy Larvae-Golden Birdwing', 'Healthy Pupae-Common Lime', 'Healthy Pupae-Golden Birdwing', 'Moth-Atlas', 'Moth-Giant Silk', 'Old Pupae-Plain Tiger', 'Ovipositing-Tailed Jay', 'Predators Ants-Golden Birdwing', 'Prepupae Larvae-Golden Birdwing', 'Pupae-Common Jay', 'Pupae-Common Lime', 'Pupae-Golden Birdwing', 'Pupae-Golding Brdwing', 'Pupae-Paper Kite', 'Pupae-Pink Rose', 'Pupae-Plain Tiger', 'Pupae-Tailed Jay', 'Skipper-Club Silverline'];
-            const diseases=['Disease Larvae Golden Birdwing', 'Disease Larvae Tachinids fly', 'Disease Larvae-Plain Tiger'];
+            const diseases=['Disease Larvae Atlas','Disease Larvae Golden Birdwing','Disease Larvae Plain Tiger'];
+            const diseasesType=['Disease Type','Disease Type Tachinids Fly', '']
             const predLep = ['Butterfly','Moth','Skipper'];
             const fname=['ryan','christian','malik','james','she', 'Jao','ming','allan'];
             const spotlocation= ['Manila Philippines','Bago Negros Occ.','Baguio City'];
