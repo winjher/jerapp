@@ -1953,3 +1953,10 @@
  #webcam-container {
    margin-top: 20px;
  }
+
+ #output img {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+}

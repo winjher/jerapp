@@ -104,10 +104,10 @@
     <br>
     <div class="container my-2">
         <div class="row mb-5">
-            <div class="col-sm" style="margin-bottom: 23px;">
+            <div class="col-sm text-center" style="margin-bottom: 23px;">
                 <span class="border border-primary">
                     <img id="imagebackground" src="images/butterfly_plaintiger.jpg" alt="User Image"
-                        style="width:500px;height:500px;">
+                        style="width:400px;height:400px;">
                 </span>
             </div>
             <div class="col-sm">
@@ -116,16 +116,186 @@
                         class="text-center mb-5 content-h1 rounded">
                         <div id="predictionLabel"></div>
                     </h1>
+                    <div class="container">
+                        <h1 id="output"></h1>
+                        <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
+                    </div>
                 </div>
+
                 <div class="text-center">
                     <input type="range" min="0" max="4" value="0" step="1" class="slider" id="predictionSlider">
                     <!-- <div id="predictionLabel"></div> -->
                     <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
-
+                    <div class="container mt-3">
+                        <div class="accordion" id="example">
+                            <div class="card bg-primary">
+                                <div class="card-header">
+                                    <a class="text-light" data-toggle="collapse" href="#basicInfo">
+                                        <h6 class="acordionItemHeading">Basic Information <span>+</span></h6>
+                                    </a>
+                                </div>
+                                <div id="basicInfo" class="collapse show" data-parent="#example">
+                                    <div class="card-body">
+                                        <div class="card-app-classification">
+                                            <h6 class="key-name">Marinduque known as:<span class="val-name"> Doson,
+                                                    Ivory</span></h6>
+                                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">Graphium
+                                                        Danaus Chryssipus</i></span>
+                                            </h6>
+                                            <h6 class="key-name">Genus:<span> <b class="genus">Danaus</b></span>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="accordion" id="example">
+                            <div class="card bg-primary">
+                                <div class="card-header">
+                                    <a class="text-light" data-toggle="collapse" href="#desc">
+                                        <h6 class="acordionItemHeading">Description <span>+</span></h6>
+                                    </a>
+                                </div>
+                                <div id="desc" class="collapse show" data-parent="#example">
+                                    <div class="card-body">
+                                        <div class="card-app-classification">
+                                            <table style:border="1">
+                                                <tr>
+                                                    <th>Property</th>
+                                                    <th>Value</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Body Length</td>
+                                                    <td id="size"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Body Width</td>
+                                                    <td id="width"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Wing Stand</td>
+                                                    <td id="stand"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Wingspan</td>
+                                                    <td id="span"></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="card bg-success">
+                                <div class="card-header">
+                                    <a class="text-light" data-toggle="collapse" href="#sciClass">
+                                        <h6 class="acordionItemHeading">Scientific Classification <span>+</span>
+                                        </h6>
+                                    </a>
+                                </div>
+                                <div id="sciClass" class="collapse" data-parent="#example">
+                                    <div class="card-body text-white">
+                                        <div class="card-app-classification">
+                                            <ul>
+                                                <li>
+                                                    <h6 class="key-name">Scientific Name: <b
+                                                            class="val-name">{{Scientific
+                                                            Name}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Year discovered: <b class="val-name">{{Year
+                                                            discovered}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Sub-family: <b
+                                                            class="val-name">{{Sub-family}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Class: <b class="val-name">{{Class}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Family:<b class="val-name">{{Family}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Species: <b class="val-name">{{Species}}</b>
+                                                    </h6>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card bg-success">
+                            <div class="card-header">
+                                <a class="text-light" data-toggle="collapse" href="#hostplants">
+                                    <h6 class="acordionItemHeading">Hostplants Classification <span>+</span></h6>
+                                </a>
+                            </div>
+                            <div id="hostplants" class="collapse" data-parent="#example">
+                                <div class="card-body">
+                                    <div class="card-app-classification">
+                                        <ul>
+                                            <li>
+                                                <h6 class="key-name">Common Name: <b class="val-name">{{Hostplant}}</b>
+                                                </h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Scientific Name: <b class="val-name">{{Scientific
+                                                        Name}}</b>
+                                                </h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Sub-family: <b class="val-name">{{Sub-family}}</b>
+                                                </h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b></h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                </h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b></h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Class: <b class="val-name">{{Class}}</b></h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Family: <b class="val-name">{{Family}}</b></h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <hr>
                 <div class="card-app-list">
                     <div class="details-commonjay">
-                        <h4><b> Butterfly-Plain Tiger </b> </h4>
+                        <h4><b> Butterfly-Clippers</b> </h4>
                         <div class="panel-body">
                             <div class="col-sm">
                                 <ul>
@@ -166,100 +336,82 @@
                             </div>
 
                         </div>
-
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias
+                            nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus
+                            reiciendis aperiam iure itaque maxime quos?</p>
+                        <div class="text-center">
+                            <a href="home.html" class="notification">
+                                <i class="fas fa-home"></i><span> Home</span>
+                            </a>
+                            <a href="www.facebook.com" class="notification">
+                                <i class="fas fa-share"></i><span> Share</span>
+                            </a>
+                            <a href="uploader.html" class="notification">
+                                <i class="fas fa-step-forward"></i><span> Continue</span>
+                            </a>
+                        </div>
                     </div>
-                    <p>Appearance Features</p>
-                    <table style:border="1">
-                        <tr>
-                            <th>Property</th>
-                            <th>Value</th>
-                        </tr>
-                        <tr>
-                            <td>Body Length</td>
-                            <td id="size"></td>
-                        </tr>
-                        <tr>
-                            <td>Body Width</td>
-                            <td id="width"></td>
-                        </tr>
-                        <tr>
-                            <td>Wing Stand</td>
-                            <td id="stand"></td>
-                        </tr>
-                        <tr>
-                            <td>Wingspan</td>
-                            <td id="span"></td>
-                        </tr>
-                    </table>
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias nulla
-                        cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus reiciendis
-                        aperiam iure itaque maxime quos?</p>
-                    <div class="text-center">
-                        <a href="home.html" class="notification">
-                            <i class="fas fa-home"></i><span> Home</span>
-                        </a>
-                        <a href="www.facebook.com" class="notification">
-                            <i class="fas fa-share"></i><span> Share</span>
-                        </a>
-                        <a href="uploader.html" class="notification">
-                            <i class="fas fa-step-forward"></i><span> Continue</span>
-                        </a>
-                    </div>
-
                 </div>
             </div>
-        </div>
-        </main>
-        <hr>
-        <footer>
 
-        </footer>
-        <script>
-            class PlainTiger {
-                constructor() {
-                    this.size = 3;
-                    this.width = .5;
-                    this.stand = 4;
-                    this.span = 6;
+            </main>
+
+            <script>
+                class Clippers {
+                    constructor() {
+                        this.size = 3;
+                        this.width = .5;
+                        this.stand = 4;
+                        this.span = 6;
+                    }
                 }
-            }
 
-            const butterfly = new PlainTiger();
+                const butterfly = new Clippers();
 
-            document.getElementById("size").innerText = butterfly.size; // 3
-            document.getElementById("width").innerText = butterfly.width; // .5
-            document.getElementById("stand").innerText = butterfly.stand; // 4
-            document.getElementById("span").innerText = butterfly.span; // 6
-        </script>
-        <div class="container">
-            <h1 id="output"></h1>
-            <ul id="lifecycle-list"></ul>
-        </div>
-        <script type="text/javascript" charset="utf-8">
-            document.addEventListener('DOMContentLoaded', () => {
-                const lifecycleStages = [
-                    { stage: 'Egg hatching', duration: '3-5 days' },
-                    { stage: 'Molting', duration: '24-36 hrs' },
-                    { stage: 'Larva', duration: '10-14 days' },
-                    { stage: 'Pre-pupa hanged', duration: '12-24 hrs' },
-                    { stage: 'Pupating', duration: '3-10 minutes to 1 hour' },
-                    { stage: 'Chrysalis', duration: '10-12 days' },
-                    { stage: 'Eclosion', duration: '1 to 5 minutes' },
-                    { stage: 'Drying wings', duration: '2-4 hrs' },
-                    { stage: 'Adult', duration: '2-6 weeks' }
-                ];
+                document.getElementById("size").innerText = butterfly.size; // 3
+                document.getElementById("width").innerText = butterfly.width; // .5
+                document.getElementById("stand").innerText = butterfly.stand; // 4
+                document.getElementById("span").innerText = butterfly.span; // 6
+            </script>
 
-                const list = document.getElementById('lifecycle-list');
+            <script type="text/javascript" charset="utf-8">
+                document.addEventListener('DOMContentLoaded', () => {
+                    const lifecycleStages = [
+                        { stage: 'Egg hatching', duration: '3-5 days' },
+                        { stage: 'Molting', duration: '24-36 hrs' },
+                        { stage: 'Larva', duration: '10-14 days' },
+                        { stage: 'Pre-pupa hanged', duration: '12-24 hrs' },
+                        { stage: 'Pupating', duration: '3-10 minutes to 1 hour' },
+                        { stage: 'Chrysalis', duration: '10-12 days' },
+                        { stage: 'Eclosion', duration: '1 to 5 minutes' },
+                        { stage: 'Drying wings', duration: '2-4 hrs' },
+                        { stage: 'Adult', duration: '2-6 weeks' }
+                    ];
+                    const style = document.createElement('style');
+                    style.textContent = `
+                                .lifecycle-list-item {
+                                    font-family: Arial, sans-serif;
+                                    font-size: 16px;
+                                    background-color: #e0f7fa;
+                                        margin: 10px 0;
+                                        padding: 10px;
+                                        border-radius: 5px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 5px;
+                                    // background-color: #f9f9f9;
+                                    list-style-type: none;
+                                }
+                            `;
+                    document.head.appendChild(style);
+                    const list = document.getElementById('lifecycle-list');
 
-                lifecycleStages.forEach(stage => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `${stage.stage}: ${stage.duration}`;
-                    list.appendChild(listItem);
+                    lifecycleStages.forEach(stage => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `${stage.stage}: ${stage.duration}`;
+                        list.appendChild(listItem);
+                    });
                 });
-            });
-        </script>
-
+            </script>
         <script src="./jquery-3.6.0.slim.min.js"> </script>
         <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
