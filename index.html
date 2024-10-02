@@ -80,6 +80,189 @@
         color: var(--color-white);
         background-color: var(--color-iris);
     }
+
+    .explore {
+        color: #f6fdfc;
+        text-decoration: none;
+        font-size: x-large;
+    }
+
+/* 
+    .our-team-name,
+    .section-features-list {
+        color: var(--color-navyblue);
+
+    }
+
+    .ourteam-work,
+    .section-features-item {
+        color: var(--color-slate);
+    }
+
+    .section-features-list,
+    .section-gallery-list,
+    .ourteam-list {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+        width: 224px;
+    } */
+
+    .social-media-link {
+        list-style: none;
+        display: inline-flex;
+        height: 40px;
+        margin: 10px;
+        border-radius: 50px 50px;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .social-text-footer,
+    .social-link-footer {
+        flex-wrap: wrap;
+    }
+
+    .social-text-footer,
+    .social-link-footer {
+        flex-wrap: wrap;
+    }
+
+    .container-footer {
+        display: flex;
+
+    }
+
+
+    .footer-link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-iris);
+        border-radius: 50px 50px;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        transition: .1s ease;
+        background-color: var(--color-iris);
+        /*  */
+        transform: translateY(100%);
+        transition: transform 1s;
+        box-shadow: 0 0.1px;
+
+        object-fit: cover;
+        object-position: center;
+
+    }
+
+    .card-team:hover .text {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: transform 1s;
+        box-shadow: 0 0.1px;
+        width: 264;
+        height: 260px;
+        /* overflow: hidden; */
+        position: absolute;
+        overflow: hidden;
+
+
+    }
+
+    #shrink {
+        flex-shrink: 3;
+    }
+
+    .text {
+        color: var(--color-cloud);
+        text-align: center;
+        letter-spacing: 0.32px;
+        font-family: Roboto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 40px 32px 40px 32px;
+        position: absolute;
+        transform: translateY(10%);
+        overflow: hidden;
+        background-color: #404BBF;
+        position: absolute;
+        width: 264px;
+        height: 260px;
+        opacity: 0;
+        transform: translateY(0%);
+    }
+
+
+    .card-figure {
+        position: relative;
+        width: 360px;
+        /* check overflow: hidden */
+        overflow: hidden;
+        height: 100%;
+        transition: .5s;
+
+    }
+
+    .card-apps-image,
+    .figcaption-cashless-text {
+        display: block;
+        width: 360px;
+        /* height: 100%; */
+        opacity: 1;
+        box-shadow: 0px 2px 18px 0px #2E2F4214;
+        box-shadow: 0px 1px 1px 0px #2E2F4229;
+        box-shadow: 0px 1px 24px 0px #2E2F4214;
+
+    }
+
+    .figure-cashless-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transform: translateY(100%);
+        transition: transform .1s;
+        box-shadow: 0px 2px 1px 0px #2E2F4214;
+        box-shadow: 0px 1px 1px 0px #2E2F4229;
+        box-shadow: 0px 1px 6px 0px #2E2F4214;
+
+    }
+
+    .figcaption-cashless-text {
+        color: var(--color-cloud);
+        background-color: var(--color-iris);
+        text-align: left;
+        letter-spacing: 0.32px;
+        font-family: Roboto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 40px 32px 40px 32px;
+        width: 360px;
+        height: 300px;
+        /* overflow: hidden; */
+        position: absolute;
+        opacity: 1;
+    }
+   .team-flex{
+    flex-direction: column;
+   }
 </style>
 
 <body>
@@ -120,21 +303,232 @@
                     <h1 class="service-hero-title text-center">Effective Solutions for Your Buterfly Business</h1>
                     <div class="col-xl-12 text-center">
                         <button type="button" class="service-button-cta" data-modal-open>
-                            <a href="home.html">Explore</a>
+                            <a class="explore" href="home.html">Explore</a>
                         </button>
                     </div>
 
                 </div>
             </div>
+        </section><br>
+        <section class="container">
+            <div id="intro-section" class="row">
+                <div class="col-xl-3 text-center">
+                    <img src="icon/icon-1.webp">
+                    <h2 class="display-6">Purpose</h2>
+                    <p>To address these challenges, the complex, multivariate and unpredictable agricultural ecosystems
+                        need
+                        to be better understood by monitoring, measuring and analyzing continuously various physical
+                        aspects
+                        and phenomena.</p>
+                </div>
+                <div class="col-xl-3 text-center">
+                    <img src="icon/quality.png">
+                    <h2 class="display-6">Quality</h2>
+                    <p>As a farmer its task is to culture butterflies with extra care management by maintaining the
+                        indicator host plant for sustainability needs in butterfly farming or propagation.</p>
+                </div>
+                <div class="col-xl-3 text-center">
+                    <img src="icon/dtask.png">
+                    <h2 class="display-6">Function</h2>
+                    <p>In order to have knowledge about the lepidoptera, the cultured species are examined sequentially
+                        and
+                        adaptively identified by the researcher. The system should decide on the precise tasks,and
+                        predicting model such as segmenting images, detecting objects in images, or classifying images.
+                    </p>
+                </div>
+                <div class="col-xl-3 text-center">
+                    <img src="icon/jewels.png">
+                    <h2 class="display-6">Elegant</h2>
+                    <p>With the ability to adapt and learn from new data, machine learning models can refine their
+                        breeding
+                        strategies and improve quality performance, helping breeders stay ahead in an ever-evolving and
+                        dynamic biodiversity. As markets become more data-driven and sophisticated, the integration of
+                        machine learning in breeding is no longer a luxury but a necessity for those seeking a
+                        competitive
+                        edge.
+                    </p>
+                </div>
+            </div>
         </section>
-        <!-- <section class="main">
-            <h1>We Make Butterfly Farm Simple</h1>
+        <section class="section section-ourteam">
+            <div class="col-xl-12 team">
+                <h2 class="our-team-title">Our Team</h2>
+                <ul class="ourteam-list team-flex">
+                    <li class="ourteam-item">
+                        <div class="card col-xl-3 text-center">
+                            <figure class="card-overlay " id="shrink">
+                                <figcaption class="text"> 14 Stylish and User-Friendly App Design Concepts · Task
+                                    Manager App · Calorie Tracker
+                                    App · Exotic Fruit Ecommerce App · Cloud Storage App
+                                </figcaption>
+                                <img src="./images/img1.jpg" alt="Mark Guerrero" width="264">
+                                <h3 class="our-team-name">Mark Guerrero</h3>
+                                <p class="ourteam-work">Product Designer</p>
+                            </figure>
+                            <ul class="social-media-list">
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/instagram.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-instagram" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/twitter.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-twitter" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/facebook.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-facebook" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/linkedin2.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-linkedin" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-            <p>Effective Solution for  Butterflies Integrate Farm into your Life</p>
-            <button id="myBtn">
-                <a href="home.html">Explore</a>
-            </button>
-        </section> -->
+                    </li>
+                    <li class="ourteam-item">
+                        <div class="card col-xl-3 text-center ">
+                            <img src="./images/img2.jpg" alt="Tom Ford" width="264">
+                            <h3 class="our-team-name">Tom Ford</h3>
+                            <p class="ourteam-work">Fronted Designer</p>
+                            <ul class="social-media-list">
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/instagram.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-instagram" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/twitter.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-twitter" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/facebook.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-facebook" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/linkedin2.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-linkedin" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="ourteam-item">
+                        <div class="card col-xl-3 text-center">
+                            <img src="./images/img3.jpg" alt="Camila Garcia" width="264">
+                            <h3 class="our-team-name">Camila Garcia</h3>
+                            <p class="ourteam-work">Marketing</p>
+                            <ul class="social-media-list">
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/instagram.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-instagram" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/twitter.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-twitter" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/facebook.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-facebook" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/linkedin2.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-linkedin" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="ourteam-item">
+                        <div class="card col-xl-3 text-center">
+                            <img src="./images/img4.jpg" alt="Daniel Wilson" width="264">
+                            <h3 class="our-team-name">Daniel Wilson</h3>
+                            <p class="ourteam-work">UI Designer</p>
+                            <ul class="social-media-list">
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/instagram.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-instagram" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/twitter.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-twitter" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/facebook.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-facebook" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-media-link">
+                                    <a class="footer-link" href="#">
+                                        <!-- <img src="images/icons/linkedin2.svg" alt=""> -->
+                                        <svg class="social-svg">
+                                            <use href="images/icons/icons.svg#icon-linkedin" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
     <!-- Modal -->
     <div class="modal fade is-hidden" data-modal id="Modal" tabindex="-1" aria-labelledby="ModalLabel"
