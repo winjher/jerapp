@@ -1111,12 +1111,12 @@
    color: #ffc107;
    height: 50px;
    /* background-color:#d63384; */
-   border-color: #fd7401;
+   border-color: #f3eeeb;
    border-radius: 50px;
    width: 200px;
    text-align: center;
    font-weight: 300px;
-   font-size: 10px;
+   font-size: larger;
  }
 
  .h3,
@@ -1136,8 +1136,7 @@
  .premium-weekly,
  .premium-monthly,
  .premium-yearly,
- .premium-lifetime,
- btn:hover {
+ .premium-lifetime:hover {
    background-color: yellow;
  }
 
@@ -1558,11 +1557,6 @@
  .farm {
    text-decoration: none;
    color: var(--color-cornflower);
- }
-
- a {
-   color: #0ee2c5;
-   text-decoration: none;
  }
 
  .home-card-title:hover {
@@ -2024,6 +2018,11 @@
   padding: 5px;
 }
 
-a{
-  color:#f3f4f5;
+.a-trial{
+  color: var(--color-white);
+  text-decoration: none;
+}
+.apps-text{
+  color: var(--color-white);
+  text-decoration: none;
 }

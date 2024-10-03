@@ -104,7 +104,7 @@
                         <td>${uploadReferenceID}</td>
                         <td><a href="${link}" target="_blank">${prediction.commonName}</a></td>           
                         <td>${percent}</td>
-                        <td>${uploadImage}</td>
+                        <td><a href="${uploadImage}" download>Download Image</a></td>
                         <td>${size}</td>
                         <td>${mimeType}</td>
                         <td>${lastModified}</td>
