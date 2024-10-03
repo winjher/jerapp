@@ -76,14 +76,18 @@
         <input type="file" id="imageUpload" accept="image/*">
         <div id="output"></div>
         <div>
+            <div class="col-xl-12 text-center">
+                <div id="output" class="uploadedImage"></div>
+            </div>
             <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
-            <button class="btn-reset" onclick="myReset()">
-                <a href="classification.html"> Camera</a></button>
-        </div>
+            <button class="btn-submit" onclick="myReset()">
+                <a href="classification.html"> Camera</a>
+            </button>
 
-        <!-- <button onclick="addLocation()">Add Location</button>
-        <button onclick="postData()">Post</button> -->
-    </div>
+            <button class="btn-submit" onclick="addLocation()">Add Location</button>
+            <button class="btn-submit" onclick="postData()">Post</button>
+        </div>
+    
 
     <div class="container">
         <h5>Butterfly Image Data</h5>
