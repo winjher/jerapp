@@ -73,40 +73,62 @@
         background-color: var(--color-iris);
     }
 
-    .explore, .footer-link {
+    .explore,
+    .footer-link {
         color: #f6fdfc;
         text-decoration: none;
         font-size: x-large;
         margin: 2px;
     }
 
-    .card-banner{
+    .card-banner {
         margin-top: 40px;
         background-color: cornsilk;
     }
 
-    .banner{
-    margin-top: -60px;
-    height: 100px;
-    width: 100px;
+    .banner {
+    height: 90px;
+    width: 90px;
     background-color: rgb(196, 255, 211);
-    padding-top: 32px;
+    padding-top: 22px;
     border-radius: 50%;
     margin-right: auto;
     margin-left: auto;
-    border-color: var(--color-iris);
- 
+    border: 1px solid;
+    /* The image used */
+    animation: bounce 2s infinite;
+    cursor: pointer; /* Makes it clear that it's clickable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds the shadow */
+}
 
-       /* The image used */
-    
-  }
+.banner:hover {
+    border: 1px solid;
+    background-image: linear-gradient(to bottom right, #d3dae0, #6DFC6B);
+}
 
-  .p-index {
-    margin-top: 100px;
-    margin: 0px;
-    padding-bottom: 35px;
-  }
-/* 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+
+    .p-index {
+        margin-top: 10px;
+        margin: 10px;
+        padding: 0 25px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 15px;
+    }
+
+    /* 
     .our-team-name,
     .section-features-list {
         color: var(--color-navyblue);
@@ -279,9 +301,34 @@
         position: absolute;
         opacity: 1;
     }
-   .team-flex{
-    flex-direction: column;
-   }
+
+    .team-flex {
+        flex-direction: column;
+    }
+
+    .card-app-banner {
+        margin: -10px;
+        width: auto;
+        text-align: center;
+        border: 1px solid;
+        border-color: var(--bs-white);
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        background-image: linear-gradient(to bottom right, #d3dae0, #6DFC6B);
+        padding-bottom: 0px;
+    }
+    .card-app-banner:hover{
+        background-color: #fff;
+        width: auto;
+        height:auto;
+    }
+    .title-banner{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+    }
+    
 </style>
 
 <body>
@@ -333,48 +380,75 @@
             <div id="intro-section" class="row card-banner">
                 <div class="col-xl-3 text-center p-index">
                     <div class="banner">
-                        <img  src="icon/icon-1.webp">
+                        <img src="icon/icon-1.webp">
                     </div>
-                    
-                    <h2 class="display-6">Purpose</h2>
-                    <p class="p-index">To address these challenges, the complex, multivariate and unpredictable agricultural ecosystems
-                        need
-                        to be better understood by monitoring, measuring and analyzing continuously various physical
-                        aspects
-                        and phenomena.</p>
+                    <div class="card-app-banner">
+                        <h2 class="display-6 title-banner">Purpose</h2>
+                        <p class="p-index">To address these challenges, the complex, multivariate and unpredictable
+                            agricultural ecosystems
+                            need
+                            to be better understood by monitoring, measuring and analyzing continuously various physical
+                            aspects
+                            and phenomena.
+                        </p>
+                    </div>
                 </div>
+
                 <div class="col-xl-3 text-center p-index">
-                    <div class="banner"><img src="icon/quality.png"></div>
-                    <h2 class="display-6">Quality</h2>
-                    <p class="p-index">As a farmer its task is to culture butterflies with extra care management by maintaining the
-                        indicator host plant for sustainability needs in butterfly farming or propagation.</p>
+                    <div class="banner">
+                        <img src="icon/quality.png">
+                    </div>
+                    <div class="card-app-banner">
+                        <h2 class="display-6 title-banner">Quality</h2>
+                        <p class="p-index">As a farmer its task is to culture butterflies with extra care management by
+                            maintaining the
+                            indicator host plant for sustainability needs in butterfly farming or propagation.</p>
+                    </div>
                 </div>
-                <div class="col-xl-3 text-center p-index">
-                    <div class="banner"><img src="icon/dtask.png"></div>
-                    <h2 class="display-6">Function</h2>
-                    <p class="p-index">In order to have knowledge about the lepidoptera, the cultured species are examined sequentially
-                        and
-                        adaptively identified by the researcher. The system should decide on the precise tasks,and
-                        predicting model such as segmenting images, detecting objects in images, or classifying images.
-                    </p>
+                    <div class="col-xl-3 text-center p-index">
+                        <div class="banner">
+                            <img src="icon/dtask.png">
+                        </div>
+                        <div class="card-app-banner">
+                            <h2 class="display-6 title-banner">Function</h2>
+                            <p class="p-index">In order to have knowledge about the lepidoptera, the cultured species
+                                are
+                                examined sequentially
+                                and
+                                adaptively identified by the researcher. The system should decide on the precise
+                                tasks,and
+                                predicting model such as segmenting images, detecting objects in images, or classifying
+                                images.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 text-center p-index">
+                        <div class="banner">
+                            <img src="icon/jewels.png">
+                        </div>
+                        <div class="card-app-banner">
+                            <h2 class="display-6 title-banner">Elegant</h2>
+                            <p class="p-index">With the ability to adapt and learn from new data, machine learning
+                                models
+                                can refine their
+                                breeding
+                                strategies and improve quality performance, helping breeders stay ahead in an
+                                ever-evolving
+                                and
+                                dynamic biodiversity. As markets become more data-driven and sophisticated, the
+                                integration
+                                of
+                                machine learning in breeding is no longer a luxury but a necessity for those seeking a
+                                competitive
+                                edge.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xl-3 text-center p-index">
-                    <div class="banner"><img src="icon/jewels.png"></div>
-                    <h2 class="display-6">Elegant</h2>
-                    <p class="p-index">With the ability to adapt and learn from new data, machine learning models can refine their
-                        breeding
-                        strategies and improve quality performance, helping breeders stay ahead in an ever-evolving and
-                        dynamic biodiversity. As markets become more data-driven and sophisticated, the integration of
-                        machine learning in breeding is no longer a luxury but a necessity for those seeking a
-                        competitive
-                        edge.
-                    </p>
-                </div>
-            </div>
         </section>
         <section class="container card">
             <h2 class="our-team-title">Our Team</h2>
-            <div id="intro-section" class="row" >
+            <div id="intro-section" class="row">
                 <div class="col-xl-3 text-center card-app-gardenlist-item">
                     <br>
                     <img src="./images/profileimage.jpg" alt="Mark Guerrero" class=" img-lep">
@@ -564,19 +638,19 @@
             </div>
         </div>
     </div>
-    <footer class="section section-footer">
+    <!-- <footer class="section section-footer">
         <div class="container container-content-footer">
-        <div class="social-text-footer">
-            <p class="subscribe"> Subscribe</p><br>
-            <label for="email_add"></label>
-            <input type="email" class="footer-email" placeholder="Email" required>
-            <button type="button" class="subscribe-btn">
-                Subscribe
-                <img src="images/icons/arrow.svg" alt="" srcset="">
-            </button>
+            <div class="social-text-footer">
+                <p class="subscribe"> Subscribe</p><br>
+                <label for="email_add"></label>
+                <input type="email" class="footer-email" placeholder="Email" required>
+                <button type="button" class="subscribe-btn">
+                    Subscribe
+                    <img src="images/icons/arrow.svg" alt="" srcset="">
+                </button>
+            </div>
         </div>
-    </div>
-    </footer>
+    </footer> -->
     <script>
         (() => {
             const refs = {
