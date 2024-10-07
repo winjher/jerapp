@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/iconbar.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Moth Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <title>Butterfly Prediction</title>
 
     <style>
         *,
@@ -37,6 +40,22 @@
             background-position: center;
             min-height: 600px;
         }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .lifecycle-list-item {
+            background-color: #e0f7fa;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -44,7 +63,7 @@
     <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
-                <!-- <a href="add garden.html">
+                <!-- <a href="butterfly_house.html">
                     <img src="icon/back-icon.png" alt="" srcset="" class="img-back-icon">
                 </a> -->
                 <a class="navbar-brand" href="plan.html">Premium</a>
@@ -52,7 +71,6 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -81,47 +99,363 @@
         </nav>
     </section>
     <div>
-        <h1 style="text-align:center;font-size:4rem;margin-top: 12px;">Disease Prediction</h1>
+        <h1 style="text-align:center;font-size:4rem;margin-top: 12px;">Butterfly Prediction</h1>
     </div>
+    <br>
+    <br>
     <div class="container my-2">
         <div class="row mb-5">
-
             <div class="col-sm text-center" style="margin-bottom: 23px;">
                 <span class="border border-primary">
-                    <img src="images/disease_tachinidflies.jpg" alt="User Image" style="width:400px;height:400px;">
+                    <img id="imagePreview" src="images/butterfly_giantsilk.jpg" alt="User Image"
+                        style="width:400px;height:400px;">
                 </span>
+                <h2 id="names">Giant Silkmoth</h2>
+                <button id="samiaLocal" class="btn-hatchery">Local Name</button>
+                <button id="samiaCommon" class="btn-hatchery">Common Name</button>
+                <button id="samiaScientific" class="btn-hatchery">Scientific Name</button>
+                <div class="container">
+                    <h1 id="output"></h1>
+                    <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
+                </div>
             </div>
-
             <div class="col-sm">
-
                 <div>
                     <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
                         class="text-center mb-5 content-h1 rounded">
-                        {{pred_output}} </h1>
+                        <div id="predictionLabel">Giant Silk Moth</div>
+                    </h1>
                 </div>
-                <div class="card-app-list">
-                    <div class="details-commonjay">
-                        <h4><b> Disease Information </b> </h4>
-                        <div class="panel-body">
-                            <div class="col-sm">
-                                <ul>
-                                    <li>
-                                        <h6>Care:{{care}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Cure:{{cure}}</h6>
-                                    </li>
-                                </ul>
+                <div class="text-center">
+                    <input type="range" min="0" max="4" value="0" step="1" class="slider" id="predictionSlider">
+                    <!-- <div id="predictionLabel"></div> -->
+                    <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
+                    <div class="container mt-3">
+                        <div class="accordion" id="example">
+                            <div class="card bg-primary">
+                                <div class="card-header">
+                                    <a class="text-light" data-toggle="collapse" href="#basicInfo">
+                                        <h6 class="acordionItemHeading">Basic Information <span>+</span></h6>
+                                    </a>
+                                </div>
+                                <div id="basicInfo" class="collapse show" data-parent="#example">
+                                    <div class="card-body">
+                                        <div class="card-app-classification">
+                                            <h6 class="key-name">Marinduque known as:<span class="val-name">Glassy Tiger
+                                                </span></h6>
+                                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">Parantica
+                                                        aglea
+                                                    </i></span>
+                                            </h6>
+                                            <h6 class="key-name">Genus:<span> <b class="genus">Parantica</b></span>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="accordion" id="example">
+                            <div class="card bg-primary">
+                                <div class="card-header">
+                                    <a class="text-light" data-toggle="collapse" href="#desc">
+                                        <h6 class="acordionItemHeading">Description <span>+</span></h6>
+                                    </a>
+                                </div>
+                                <div id="desc" class="collapse show" data-parent="#example">
+                                    <div class="card-body">
+                                        <div class="card-app-classification">
+                                            <table style:border="1">
+                                                <tr>
+                                                    <th>Property</th>
+                                                    <th>Value</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Body Length</td>
+                                                    <td id="size"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Body Width</td>
+                                                    <td id="width"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Wing Stand</td>
+                                                    <td id="stand"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Wingspan</td>
+                                                    <td id="span"></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="card bg-success">
+                                <div class="card-header">
+                                    <a class="text-light" data-toggle="collapse" href="#sciClass">
+                                        <h6 class="acordionItemHeading">Scientific Classification <span>+</span>
+                                        </h6>
+                                    </a>
+                                </div>
+                                <div id="sciClass" class="collapse" data-parent="#example">
+                                    <div class="card-body text-white">
+                                        <div class="card-app-classification">
+                                            <ul>
+                                                <li>
+                                                    <h6 class="key-name">Scientific Name: <b
+                                                            class="val-name">{{Scientific
+                                                            Name}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Year discovered: <b class="val-name">{{Year
+                                                            discovered}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Sub-family: <b
+                                                            class="val-name">{{Sub-family}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Class: <b class="val-name">{{Class}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Family:<b class="val-name">{{Family}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Species: <b class="val-name">{{Species}}</b>
+                                                    </h6>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card bg-success">
+                            <div class="card-header">
+                                <a class="text-light" data-toggle="collapse" href="#hostplants">
+                                    <h6 class="acordionItemHeading">Hostplants Classification <span>+</span></h6>
+                                </a>
+                            </div>
+                            <div id="hostplants" class="collapse" data-parent="#example">
+                                <div class="card-body">
+                                    <div class="card-app-classification">
+                                        <ul>
+                                            <li>
+                                                <h6 class="key-name">Common Name: <b class="val-name">{{Hostplant}}</b>
+                                                </h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Scientific Name: <b class="val-name">{{Scientific
+                                                        Name}}</b>
+                                                </h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Sub-family: <b class="val-name">{{Sub-family}}</b>
+                                                </h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b></h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                </h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b></h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Class: <b class="val-name">{{Class}}</b></h6>
+                                            </li>
+                                            <li>
+                                                <h6 class="key-name">Family: <b class="val-name">{{Family}}</b></h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <h6>
-                    <a href="butterfly_house.html">Learn more</a>
-                </h6>
+
+                <hr>
+                <div class="card-app-list">
+                    <div class="details-commonjay">
+                        <h4><b> Butterfly-Giant Silkmoth </b> </h4>
+                        <div class="panel-body">
+                            <div class="col-sm">
+                                <ul>
+                                    <li>
+                                        <div class="stages-icon-list">
+                                            <button type="button" class="stages-icon-btn">
+                                                <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
+                                            </button>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider1">
+                                            <div id="commonName"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="stages-icon-list">
+                                            <button type="button" class="stages-icon-btn">
+                                                <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
+                                            </button>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider2">
+                                            <div id="predictionLabel2"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="stages-icon-list">
+                                            <button type="button" class="stages-icon-btn">
+                                                <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
+                                            </button>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider3">
+                                            <div id="predictionLabel3"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <p>Appearance Features</p>
+                    <table style:border="1">
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>Body Length</td>
+                            <td id="size"></td>
+                        </tr>
+                        <tr>
+                            <td>Body Width</td>
+                            <td id="width"></td>
+                        </tr>
+                        <tr>
+                            <td>Wing Stand</td>
+                            <td id="stand"></td>
+                        </tr>
+                        <tr>
+                            <td>Wingspan</td>
+                            <td id="span"></td>
+                        </tr>
+                    </table>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias nulla
+                        cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus reiciendis
+                        aperiam iure itaque maxime quos?</p>
+                    <div class="text-center">
+                        <a href="home.html" class="notification">
+                            <i class="fas fa-home"></i><span> Home</span>
+                        </a>
+                        <a href="www.facebook.com" class="notification">
+                            <i class="fas fa-share"></i><span> Share</span>
+                        </a>
+                        <a href="uploader.html" class="notification">
+                            <i class="fas fa-step-forward"></i><span> Continue</span>
+                        </a>
+                    </div>
+
+                </div>
             </div>
-            <script src="./jquery-3.6.0.slim.min.js"> </script>
-            <script src="./js/bootstrap.bundle.min.js"></script>
+        </div>
+        </main>
+        <hr>
+        <footer>
+
+        </footer>
+        <script>
+            class GiantSilkmoth {
+                constructor() {
+                    this.size = 3;
+                    this.width = .5;
+                    this.stand = 4;
+                    this.span = 6;
+                }
+            }
+
+            const butterfly = new GiantSilkmoth();
+
+            document.getElementById("size").innerText = butterfly.size; // 3
+            document.getElementById("width").innerText = butterfly.width; // .5
+            document.getElementById("stand").innerText = butterfly.stand; // 4
+            document.getElementById("span").innerText = butterfly.span; // 6
+        </script>
+        <div class="container">
+            <h1 id="output"></h1>
+            <ul id="lifecycle-list"></ul>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            document.addEventListener('DOMContentLoaded', () => {
+                const lifecycleStages = [
+                    { stage: 'Egg hatching', duration: '3-5 days' },
+                    { stage: 'Molting', duration: '24-36 hrs' },
+                    { stage: 'Larva', duration: '10-14 days' },
+                    { stage: 'Pre-pupa hanged', duration: '12-24 hrs' },
+                    { stage: 'Pupating', duration: '3-10 minutes to 1 hour' },
+                    { stage: 'Chrysalis', duration: '10-12 days' },
+                    { stage: 'Eclosion', duration: '1 to 5 minutes' },
+                    { stage: 'Drying wings', duration: '2-4 hrs' },
+                    { stage: 'Adult', duration: '2-6 weeks' }
+                ];
+
+                const list = document.getElementById('lifecycle-list');
+
+                lifecycleStages.forEach(stage => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${stage.stage}: ${stage.duration}`;
+                    list.appendChild(listItem);
+                });
+            });
+        </script>
+        <script type="text/javascript" charset="utf-8">
+            const samia = { localName: 'Samia', commonName: 'Giant Silk Moth', scientificName: 'Samia Luzonica' };
+
+            function changeNames(nameType, data) {
+                let targetLabel = document.getElementById("names");
+                targetLabel.textContent = `'${data[nameType]}'`;
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                // document.getElementById("biblisLocal").addEventListener("click", () => changeNames('localName', biblis));
+                // document.getElementById("biblisCommon").addEventListener("click", () => changeNames('commonName', biblis));
+                // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
+
+                document.getElementById("samiaLocal").addEventListener("click", () => changeNames('localName', samia));
+                document.getElementById("samiaCommon").addEventListener("click", () => changeNames('commonName', samia));
+                document.getElementById("samiaScientific").addEventListener("click", () => changeNames('scientificName', samia));
+            });
+
+        </script>
+
+        <script src="./jquery-3.6.0.slim.min.js"> </script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
