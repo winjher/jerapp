@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="css/iconbar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
     <title>Butterfly Prediction</title>
 
     <style>
@@ -103,17 +101,22 @@
                     <img id="imagePreview" src="images/butterfly_clippers.jpg" alt="User Image"
                         style="width:400px;height:400px;">
                 </span>
+                <h2 id="names">Clipper</h2>
+                <button id="clipperLocal" class="btn-hatchery">Local Name</button>
+                <button id="clipperCommon" class="btn-hatchery">Common Name</button>
+                <button id="clipperScientific" class="btn-hatchery">Scientific Name</button>
+                <div class="container">
+                    <h1 id="output"></h1>
+                    <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
+                </div>
             </div>
             <div class="col-sm">
                 <div>
                     <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
                         class="text-center mb-5 content-h1 rounded">
-                        <div id="predictionLabel">Clippers</div>
+                        <div id="predictionLabel">Clipper</div>
                     </h1>
-                    <div class="container">
-                        <h1 id="output"></h1>
-                        <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
-                    </div>
+   
                 </div>
 
                 <div class="text-center">
@@ -131,12 +134,11 @@
                                 <div id="basicInfo" class="collapse show" data-parent="#example">
                                     <div class="card-body">
                                         <div class="card-app-classification">
-                                            <h6 class="key-name">Marinduque known as:<span class="val-name"> Doson,
-                                                    Dozon</span></h6>
-                                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">Graphium
-                                                        Dozon</i></span>
+                                            <h6 class="key-name">Marinduque known as:<span class="val-name"> Sylvia
+                                                    </span></h6>
+                                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">Partheno sylvia</i></span>
                                             </h6>
-                                            <h6 class="key-name">Genus:<span> <b class="genus">Graphium</b></span>
+                                            <h6 class="key-name">Genus:<span> <b class="genus">Partheno</b></span>
                                             </h6>
                                         </div>
                                     </div>
@@ -405,6 +407,25 @@
                         list.appendChild(listItem);
                     });
                 });
+            </script>
+             <script type="text/javascript" charset="utf-8">
+                const clipper = { localName: 'Sylvia', commonName: 'Clipper', scientificName: 'Partheno Sylvia' };
+
+                function changeNames(nameType, data) {
+                    let targetLabel = document.getElementById("names");
+                    targetLabel.textContent = `'${data[nameType]}'`;
+                }
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    // document.getElementById("biblisLocal").addEventListener("click", () => changeNames('localName', biblis));
+                    // document.getElementById("biblisCommon").addEventListener("click", () => changeNames('commonName', biblis));
+                    // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
+
+                    document.getElementById("clipperLocal").addEventListener("click", () => changeNames('localName', clipper));
+                    document.getElementById("clipperCommon").addEventListener("click", () => changeNames('commonName', clipper));
+                    document.getElementById("clipperScientific").addEventListener("click", () => changeNames('scientificName', clipper));
+                });
+
             </script>
 
             <script src="./jquery-3.6.0.slim.min.js"> </script>

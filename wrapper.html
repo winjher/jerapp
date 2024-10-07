@@ -2,43 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-<style>
-  .flex-wrapper {
-    display: flex;
-  }
-  .item {
-    width: 2000px;
-  }
-  .row {
-    display: flex;
-    gap: 16px;
-  }
-  .raised.item {
-    z-index: 2;
-    background: hotpink;
-  }
-
-</style>
-
+    <title>Butterfly Classes</title>
+    <style>
+        .banner {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(196, 255, 211);
+            padding-top: 32px;
+            border-radius: 50%;
+            margin-right: auto;
+            margin-left: auto;
+            border: 1px solid;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .banner:hover {
+            border: 1px solid;
+            background-image: linear-gradient(to bottom right, #d3dae0, #6DFC6B);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="item">
-<img src="picture.png">
-</div>
 
-<div class="flex-wrapper">
-  <div class="item">
- 
-  </div>
-</div>
-   <ul class="row">
-  <li class="item"><img src="picture.png"> </li>
-  <li class="raised item"><img src="./picture.png"> </li>
-  <li class="item"><img src="./picture.png"> </li>
-</ul>
+<div class="banner" onclick="bounceBanner()">Click me to Bounce!</div>
+<ul id="classList"></ul>
+
+<script>
+    const jsonData = {
+        "classes": [
+            "Butterfly", "Pupae", "Larvae", "Eggs", "Disease", "Defects", "Atlas", "Batwing", "Clippers", "Common Jay", 
+            "Common Lime", "Common Mime", "Common Mormon", "Emerald Swallow Tail", "Giant Silk Moth", "Golden Birdwing", 
+            "Grey Glassy Tiger", "Great Eggfly", "Great Yellow Mormon", "Paper Kite", "Pink Rose", "Plain Tiger", 
+            "Red Lacewing", "Scarlet Mormon", "Tailed Jay", "Antbite", "Deformed", "Old", "Overbend", "Stetched", 
+            "Healthy Pupae", "Nuclear Polyhedrosis Virus", "Baculo Viruses", "Ophryocystis  Elektroscirrah", "Tachinids Flies", 
+            "Trichogramma Wasps", "Healthy Larvae", "Ants", "Birds", "Chicken", "Lizard", "Mantis", "Spider", 
+            "Fruit Flies", "Gnats", "Wasps"
+        ]
+    };
+
+    const classList = document.getElementById('classList');
+
+    jsonData.classes.forEach(className => {
+        const li = document.createElement('li');
+        li.textContent = className;
+        classList.appendChild(li);
+    });
+
+    function bounceBanner() {
+        const banner = document.querySelector('.banner');
+        banner.style.animation = 'bounce 2s';
+        banner.addEventListener('animationend', () => {
+            banner.style.animation = '';
+        }, { once: true });
+    }
+</script>
 
 </body>
 </html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Name Changer</title>
+</head>
+
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+ integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/iconbar.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<title>Butterfly Prediction</title>
+
+<style>
+ *,
+ *::before,
+ *::after {
+     margin: 0px;
+     padding: 0px;
+     box-sizing: border-box;
+ }
+
+ .border img {
+     border-radius: 15px;
+     border: 2px solid black;
+ }
+
+ body {
+     /* background-image: url("icon/bgbutterfly.jpg"); */
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     min-height: 600px;
+ }
+
+ h1 {
+     color: #333;
+ }
+
+ ul {
+     list-style-type: none;
+     padding: 0;
+ }
+
+ .lifecycle-list-item {
+     background-color: #e0f7fa;
+     margin: 10px 0;
+     padding: 10px;
+     border-radius: 5px;
+ }
+</style>
+</head>
+
+<body style="height: 500;">
+<section>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+     <div class="container-fluid">
+         <!-- <a href="butterfly_house.html">
+             <img src="icon/back-icon.png" alt="" srcset="" class="img-back-icon">
+         </a> -->
+         <a class="navbar-brand" href="plan.html">Premium</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+             <ul class="navbar-nav ms-auto">
+                 <li class="nav-item">
+                     <a class="nav-link" href="https://forms.gle/TRxTVfNoX9tgo3Ma6">
+                         Rate this apps
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="about.html">About
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <div class="icon-size">
+                         <a class="nav-link" href="LogIn.html">Logout
+                         </a>
+                     </div>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="add garden.html">
+                         Version 1.0
+                     </a>
+                 </li>
+             </ul>
+         </div>
+     </div>
+ </nav>
+</section>
+<div>
+ <h1 style="text-align:center;font-size:4rem;margin-top: 12px;">Butterfly Prediction</h1>
+</div>
+<br>
+<br>
+<div class="container my-2">
+ <div class="row mb-5">
+     <div class="col-sm text-center" style="margin-bottom: 23px;">
+         <span class="border border-primary">
+             <img id="imagePreview" src="images/butterfly_commonlime.jpg" alt="User Image"
+                 style="width:400px;height:400px;">
+         </span>
+    <!-- <h2>Biblis:</h2>
+    <button id="biblisLocal">Local Name</button>
+    <button id="biblisCommon">Common Name</button>
+    <button id="biblisScientific">Scientific Name</button> -->
+
+    <h2 id="names">Demoleus</h2>
+    <button id="demoleusLocal">Local Name</button>
+    <button id="demoleusCommon">Common Name</button>
+    <button id="demoleusScientific">Scientific Name</button>
+
+    <script type="text/javascript" charset="utf-8">
+        const biblis = { localName: 'Biblis', commonnName: 'Red Lacewing', scientificName: 'Cethosia biblis' };
+        const demoleus = { localName: 'demloyos', commonnName: 'Common Lime', scientificName: 'Papilio demoleus' };
+        const roman = { localName: 'Roman', commonnName: 'Common Scarlet Mormon', scientificName: 'Papilio Romansovia' };
+
+        function changeNames(nameType, data) {
+            let targetLabel = document.getElementById("names");
+            targetLabel.textContent = `${nameType}: ‘${data[nameType]}’`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // document.getElementById("biblisLocal").addEventListener("click", () => changeNames('localName', biblis));
+            // document.getElementById("biblisCommon").addEventListener("click", () => changeNames('commonName', biblis));
+            // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
+
+            document.getElementById("demoleusLocal").addEventListener("click", () => changeNames('localName', demoleus));
+            document.getElementById("demoleusCommon").addEventListener("click", () => changeNames('commonName', demoleus));
+            document.getElementById("demoleusScientific").addEventListener("click", () => changeNames('scientificName', demoleus));
+        });
+
+    </script>
+</body>
+
+</html>

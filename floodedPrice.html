@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Butterfly Pupae Sales</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const pupaeSalesData = {
+      'Butterfly-Batwing': [],
+      'Butterfly-Clippers': [],
+      'Butterfly-Common Jay': [],
+      'Butterfly-Common Lime': [],
+      'Butterfly-Common Mime': [],
+      'Butterfly-Common Mormon': [],
+      'Butterfly-Emerald Swallowtail': [],
+      'Butterfly-Giant Silk Moth': [],
+      'Butterfly-Golden Birdwing': [],
+      'Butterfly-Great Eggfly': [],
+      'Butterfly-Great Yellow Mormon': [],
+      'Butterfly-Grey Glassy Tiger': [],
+      'Butterfly-Paper Kite': [],
+      'Butterfly-Pink Rose': [],
+      'Butterfly-Plain Tiger': [],
+      'Butterfly-Red Lacewing': [],
+      'Butterfly-Scarlet Mormon': [],
+      'Butterfly-Tailed Jay': []
+    };
+
+    function updateSales() {
+      const species = document.getElementById('speciesSelect').value;
+      const date = document.getElementById('dateInput').value;
+      const flooded = parseInt(document.getElementById('floodedInput').value, 10);
+      const normal = parseInt(document.getElementById('normalInput').value, 10);
+
+      pupaeSalesData[species].push({ date, flooded, normal });
+      renderChart();
+      updateSalesTable();
+      clearInputs();
+    }
+
+    function clearInputs() {
+      document.getElementById('dateInput').value = '';
+      document.getElementById('floodedInput').value = '';
+      document.getElementById('normalInput').value = '';
+    }
+
+    function renderChart() {
+      // ... (same chart rendering code as before) ...
+    }
+
+    function updateSalesTable() {
+      const salesTable = document.getElementById('salesTable').getElementsByTagName('tbody')[0];
+      salesTable.innerHTML = ''; // Clear existing table rows
+
+      for (const species in pupaeSalesData) {
+        if (pupaeSalesData.hasOwnProperty(species)) {
+          for (const sale of pupaeSalesData[species]) {
+            const row = salesTable.insertRow();
+            const speciesCell = row.insertCell();
+            const dateCell = row.insertCell();
+            const floodedCell = row.insertCell();
+            const normalCell = row.insertCell();
+
+            speciesCell.textContent = species;
+            dateCell.textContent = sale.date;
+            floodedCell.textContent = sale.flooded;
+            normalCell.textContent = sale.normal;
+          }
+        }
+      }
+    }
+
+    // Example initial data
+    updateSales('Butterfly-Red Lacewing', '2023-10-26', 12, 18);
+    updateSales('Butterfly-Common Lime', '2023-10-26', 10, 15);
+    renderChart();
+    updateSalesTable();
+  </script>
+</head>
+<body>
+  <h1>Butterfly Pupae Sales</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Species</th>
+        <th>Date</th>
+        <th>Flooded Price</th>
+        <th>Normal Normal</th>
+        <th>Add</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <select id="speciesSelect">
+            <option value="Butterfly-Batwing">Butterfly-Batwing</option>
+            <option value="Butterfly-Clippers">Butterfly-Clippers</option>
+            <option value="Butterfly-Common Jay">Butterfly-Common Jay</option>
+            <option value="Butterfly-Common Lime">Butterfly-Common Lime</option>
+            <option value="Butterfly-Common Mime">Butterfly-Common Mime</option>
+            <option value="Butterfly-Common Mormon">Butterfly-Common Mormon</option>
+            <option value="Butterfly-Emerald Swallowtail">Butterfly-Emerald Swallowtail</option>
+            <option value="Butterfly-Giant Silk Moth">Butterfly-Giant Silk Moth</option>
+            <option value="Butterfly-Golden Birdwing">Butterfly-Golden Birdwing</option>
+            <option value="Butterfly-Great Eggfly">Butterfly-Great Eggfly</option>
+            <option value="Butterfly-Great Yellow Mormon">Butterfly-Great Yellow Mormon</option>
+            <option value="Butterfly-Grey Glassy Tiger">Butterfly-Grey Glassy Tiger</option>
+            <option value="Butterfly-Paper Kite">Butterfly-Paper Kite</option>
+            <option value="Butterfly-Pink Rose">Butterfly-Pink Rose</option>
+            <option value="Butterfly-Plain Tiger">Butterfly-Plain Tiger</option>
+            <option value="Butterfly-Red Lacewing">Butterfly-Red Lacewing</option>
+            <option value="Butterfly-Scarlet Mormon">Butterfly-Scarlet Mormon</option>
+            <option value="Butterfly-Tailed Jay">Butterfly-Tailed Jay</option>
+          </select>
+        </td>
+        <td><input type="date" id="dateInput"></td>
+        <td><input type="number" id="floodedInput"></td>
+        <td><input type="number" id="normalInput"></td>
+        <td><button onclick="updateSales()">Update Sale</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table id="salesTable">
+    <thead>
+      <tr>
+        <th><span> Species</span></th>
+        <th><span> Date</span></th>
+        <th><span> Flooded</span></th>
+        <th><span> Normal</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Sales data will be populated here dynamically -->
+    </tbody>
+  </table>
+
+  <canvas id="pupaeSalesChart"></canvas>
+</body>
+</html>
+

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -13,9 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/iconbar.css">
-    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
- 
-  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
     <title>Butterfly Prediction</title>
 
     <style>
@@ -49,7 +50,7 @@
             padding: 0;
         }
 
-          .lifecycle-list-item {
+        .lifecycle-list-item {
             background-color: #e0f7fa;
             margin: 10px 0;
             padding: 10px;
@@ -109,6 +110,15 @@
                     <img id="imagePreview" src="images/butterfly_commonlime.jpg" alt="User Image"
                         style="width:400px;height:400px;">
                 </span>
+                <h2  id="names">Demoleus</h2>
+
+                <button id="demoleusLocal" class="btn-hatchery">Local Name</button>
+                <button id="demoleusCommon" class="btn-hatchery">Common Name</button>
+                <button id="demoleusScientific" class="btn-hatchery">Scientific Name</button>
+                <div class="container">
+                    <h1 id="output"></h1>
+                    <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
+                </div>
             </div>
             <div class="col-sm">
                 <div>
@@ -117,6 +127,7 @@
                         <div id="predictionLabel"></div>
                         <div id="predictLabel"></div>
                     </h1>
+
                     <div class="container">
                         <h1 id="output"></h1>
                         <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
@@ -141,7 +152,7 @@
                                             <h6 class="key-name">Marinduque known as:<span class="val-name"> Doson,
                                                     Demolyos</span></h6>
                                             <h6 class="key-name">Scientific Name:<span> <i class="val-name">Graphium
-                                                       Papilio Demoleus</i></span>
+                                                        Papilio Demoleus</i></span>
                                             </h6>
                                             <h6 class="key-name">Genus:<span> <b class="genus">Papilio</b></span>
                                             </h6>
@@ -357,8 +368,29 @@
 
             </main>
 
+            <script type="text/javascript" charset="utf-8">
+                const biblis = { localName: 'Biblis', commonName: 'Red Lacewing', scientificName: 'Cethosia biblis' };
+                const demoleus = { localName: 'Demolyos', commonName: 'Common Lime', scientificName: 'Papilio demoleus' };
+
+                function changeNames(nameType, data) {
+                    let targetLabel = document.getElementById("names");
+                    targetLabel.textContent = ` '${data[nameType]}'`;
+                }
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                    // document.getElementById("biblisLocal").addEventListener("click", () => changeNames('localName', biblis));
+                    // document.getElementById("biblisCommon").addEventListener("click", () => changeNames('commonName', biblis));
+                    // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
+
+                    document.getElementById("demoleusLocal").addEventListener("click", () => changeNames('localName', demoleus));
+                    document.getElementById("demoleusCommon").addEventListener("click", () => changeNames('commonName', demoleus));
+                    document.getElementById("demoleusScientific").addEventListener("click", () => changeNames('scientificName', demoleus));
+                });
+
+            </script>
+
             <script>
-                class Clippers {
+                class Commonlime {
                     constructor() {
                         this.size = 3;
                         this.width = .5;
@@ -367,7 +399,7 @@
                     }
                 }
 
-                const butterfly = new Clippers();
+                const butterfly = new Commonlime();
 
                 document.getElementById("size").innerText = butterfly.size; // 3
                 document.getElementById("width").innerText = butterfly.width; // .5
@@ -413,10 +445,11 @@
                     });
                 });
             </script>
-    <script src="js/predictionslider.js"></script>
-        <script src="./jquery-3.6.0.slim.min.js"> </script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
-        <script src="js/BClasses.js"></script>
+            <script src="js/predictionslider.js"></script>
+            <script src="./jquery-3.6.0.slim.min.js"> </script>
+            <script src="./js/bootstrap.bundle.min.js"></script>
+            <script src="js/BClasses.js"></script>
+            <!-- <script src="js/upload.js"></script> -->
 </body>
 
 </html>

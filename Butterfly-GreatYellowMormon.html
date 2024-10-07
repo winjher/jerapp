@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -13,9 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/iconbar.css">
-    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
- 
-  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
     <title>Butterfly Prediction</title>
 
     <style>
@@ -49,7 +50,7 @@
             padding: 0;
         }
 
-          .lifecycle-list-item {
+        .lifecycle-list-item {
             background-color: #e0f7fa;
             margin: 10px 0;
             padding: 10px;
@@ -109,6 +110,10 @@
                     <img id="imagePreview" src="images/butterfly_greatyellowmormon.jpg" alt="User Image"
                         style="width:400px;height:400px;">
                 </span>
+                <h2 id="names">Great Yellow Mormon</h2>
+                <button id="lowiLocal" class="btn-hatchery">Local Name</button>
+                <button id="lowiCommon" class="btn-hatchery">Common Name</button>
+                <button id="lowiScientific" class="btn-hatchery">Scientific Name</button>
             </div>
             <div class="col-sm">
                 <div>
@@ -137,12 +142,12 @@
                                 <div id="basicInfo" class="collapse show" data-parent="#example">
                                     <div class="card-body">
                                         <div class="card-app-classification">
-                                            <h6 class="key-name">Marinduque known as:<span class="val-name"> Doson,
-                                                    Dozon</span></h6>
-                                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">Graphium
-                                                        Dozon</i></span>
+                                            <h6 class="key-name">Marinduque known as:<span class="val-name">
+                                                    Lowi</span></h6>
+                                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">Papilio
+                                                        Lowi</i></span>
                                             </h6>
-                                            <h6 class="key-name">Genus:<span> <b class="genus">Graphium</b></span>
+                                            <h6 class="key-name">Genus:<span> <b class="genus">Papilio</b></span>
                                             </h6>
                                         </div>
                                     </div>
@@ -412,10 +417,28 @@
                     });
                 });
             </script>
+            <script type="text/javascript" charset="utf-8">
+                const lowi = { localName: 'Lowi', commonName: 'Great Yellow Mormoon', scientificName: 'Papilio lowi' };
 
+                function changeNames(nameType, data) {
+                    let targetLabel = document.getElementById("names");
+                    targetLabel.textContent = `'${data[nameType]}'`;
+                }
 
-        <script src="./jquery-3.6.0.slim.min.js"> </script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // document.getElementById("biblisLocal").addEventListener("click", () => changeNames('localName', biblis));
+                    // document.getElementById("biblisCommon").addEventListener("click", () => changeNames('commonName', biblis));
+                    // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
+
+                    document.getElementById("lowiLocal").addEventListener("click", () => changeNames('localName', lowi));
+                    document.getElementById("lowiCommon").addEventListener("click", () => changeNames('commonName', lowi));
+                    document.getElementById("lowiScientific").addEventListener("click", () => changeNames('scientificName', lowi));
+                });
+
+            </script>
+
+            <script src="./jquery-3.6.0.slim.min.js"> </script>
+            <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

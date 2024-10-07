@@ -103,17 +103,22 @@
                     <img id="imagePreview" src="images/butterfly_pinkrose.jpeg" alt="User Image"
                         style="width:400px;height:400px;">
                 </span>
+                <h2 id="names">Pink Rose</h2>
+                <button id="pinkroseLocal" class="btn-hatchery">Local Name</button>
+                <button id="pinkroseCommon" class="btn-hatchery">Common Name</button>
+                <button id="pinkroseScientific" class="btn-hatchery">Scientific Name</button>
+                <div class="container">
+                    <h1 id="output"></h1>
+                    <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
+                </div>
             </div>
             <div class="col-sm">
                 <div>
                     <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
                         class="text-center mb-5 content-h1 rounded">
-                        <div id="predictionLabel"></div>
+                        <div id="predictionLabel">Pink Rose</div>
                     </h1>
-                    <div class="container">
-                        <h1 id="output"></h1>
-                        <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
-                    </div>
+          
                 </div>
 
                 <div class="text-center">
@@ -133,7 +138,7 @@
                                         <div class="card-app-classification">
                                             <h6 class="key-name">Marinduque known as:<span class="val-name"> Doson,
                                                     Kotsebuya</span></h6>
-                                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">Graphium
+                                            <h6 class="key-name">Scientific Name:<span> <i class="val-name">
                                                 Pachliopta kotzebuea</i></span>
                                             </h6>
                                             <h6 class="key-name">Genus:<span> <b class="genus">Pachliopta</b></span>
@@ -351,7 +356,7 @@
             </main>
 
             <script>
-                class Clippers {
+                class PinkRose {
                     constructor() {
                         this.size = 3;
                         this.width = .5;
@@ -360,7 +365,7 @@
                     }
                 }
 
-                const butterfly = new Clippers();
+                const butterfly = new PinkRose();
 
                 document.getElementById("size").innerText = butterfly.size; // 3
                 document.getElementById("width").innerText = butterfly.width; // .5
@@ -405,6 +410,25 @@
                         list.appendChild(listItem);
                     });
                 });
+            </script>
+             <script type="text/javascript" charset="utf-8">
+                const pinkrose = { localName: 'Kotsebuya', commonName: 'Pink Rose', scientificName: 'Pachliopta kotzebuea' };
+
+                function changeNames(nameType, data) {
+                    let targetLabel = document.getElementById("names");
+                    targetLabel.textContent = `'${data[nameType]}'`;
+                }
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    // document.getElementById("biblisLocal").addEventListener("click", () => changeNames('localName', biblis));
+                    // document.getElementById("biblisCommon").addEventListener("click", () => changeNames('commonName', biblis));
+                    // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
+
+                    document.getElementById("pinkroseLocal").addEventListener("click", () => changeNames('localName', pinkrose));
+                    document.getElementById("pinkroseCommon").addEventListener("click", () => changeNames('commonName',pinkrose));
+                    document.getElementById("pinkroseScientific").addEventListener("click", () => changeNames('scientificName',pinkrose));
+                });
+
             </script>
         <script src="./jquery-3.6.0.slim.min.js"> </script>
         <script src="./js/bootstrap.bundle.min.js"></script>

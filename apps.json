@@ -1,53 +1,392 @@
-const express = require('express');
-const multer = require('multer');
-const tf = require('@tensorflow/tfjs-node');
-const fs = require('fs');
-const path = require('path');
-
-const app = express();
-
-// Set up Multer storage and destination for uploaded files
-const storage = multer.diskStorage({
-  destination: 'collections', // Specify the destination folder
-  filename: function (req, file, cb) {
-    // Use a timestamp or unique ID for the filename to avoid conflicts
-    cb(null, Date.now() + '-' + file.originalname);
-  }
-});
-
-// Create an instance of the Multer middleware
-const upload = multer({ storage: storage });
-
-// Load the TensorFlow model
-let model;
-(async () => {
-  model = await tf.loadLayersModel('file://path/to/your/model/model.json');
-  console.log('Model loaded successfully');
-})();
-
-// Define the endpoint to handle the file upload and make predictions
-app.post('/api/upload', upload.single('photo'), async (req, res) => {
-  try {
-    const filePath = path.join(__dirname, 'collections', req.file.filename);
-    const imageBuffer = fs.readFileSync(filePath);
-    const imageTensor = tf.node.decodeImage(imageBuffer);
-
-    // Preprocess the image to match the input shape of the model
-    const resizedImage = tf.image.resizeBilinear(imageTensor, [224, 224]);
-    const normalizedImage = resizedImage.div(255.0).expandDims();
-
-    // Make a prediction
-    const prediction = model.predict(normalizedImage);
-    const predictedClass = prediction.argMax(-1).dataSync()[0];
-
-    res.status(200).json({ message: 'Photo saved successfully', predictedClass });
-  } catch (error) {
-    res.status(500).json({ message: 'Error processing image', error: error.message });
-  }
-});
-
-// Start the server
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
-});
+{
+  "apps": [
+    {
+      "name": "Butterfly",
+      "description": "A beautiful insect with wings that are often brightly colored.",
+      "icon": "butterfly.png",
+      "categories": [
+        "Insects",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Pupae",
+      "description": "The inactive stage of a butterfly's life cycle, where it undergoes metamorphosis.",
+      "icon": "pupae.png",
+      "categories": [
+        "Insects",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Larvae",
+      "description": "The caterpillar stage of a butterfly's life cycle, where it eats and grows.",
+      "icon": "larvae.png",
+      "categories": [
+        "Insects",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Eggs",
+      "description": "The first stage of a butterfly's life cycle, laid by the female butterfly.",
+      "icon": "eggs.png",
+      "categories": [
+        "Insects",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Disease",
+      "description": "A condition that can affect butterflies and their development.",
+      "icon": "disease.png",
+      "categories": [
+        "Insects",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Defects",
+      "description": "Physical abnormalities that can occur in butterflies.",
+      "icon": "defects.png",
+      "categories": [
+        "Insects",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Atlas",
+      "description": "A type of butterfly with large, distinctive wings.",
+      "icon": "atlas.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Batwing",
+      "description": "A type of butterfly with wings that resemble bat wings.",
+      "icon": "batwing.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Clippers",
+      "description": "A type of butterfly with fast, darting flight.",
+      "icon": "clippers.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Common Jay",
+      "description": "A type of butterfly with a common, widespread distribution.",
+      "icon": "common_jay.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Common Lime",
+      "description": "A type of butterfly that is often found in lime trees.",
+      "icon": "common_lime.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Common Mime",
+      "description": "A type of butterfly that mimics other species to avoid predators.",
+      "icon": "common_mime.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Common Mormon",
+      "description": "A type of butterfly that is common in Southeast Asia.",
+      "icon": "common_mormon.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Emerald SwallowTail",
+      "description": "A type of butterfly with emerald green wings.",
+      "icon": "emerald_swallowtail.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Giant Silk Moth",
+      "description": "A type of moth with a large wingspan.",
+      "icon": "giant_silk_moth.png",
+      "categories": [
+        "Moths",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Golden Birdwing",
+      "description": "A type of butterfly with golden wings.",
+      "icon": "golden_birdwing.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Grey Glassy Tiger",
+      "description": "A type of butterfly with grey and glassy wings.",
+      "icon": "grey_glassy_tiger.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Great Eggfly",
+      "description": "A type of butterfly with large, egg-shaped markings on its wings.",
+      "icon": "great_eggfly.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Great Yellow Mormon",
+      "description": "A type of butterfly with yellow wings.",
+      "icon": "great_yellow_mormon.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Paper Kite",
+      "description": "A type of butterfly with wings that resemble a paper kite.",
+      "icon": "paper_kite.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Pink Rose",
+      "description": "A type of butterfly with pink wings.",
+      "icon": "pink_rose.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Plain Tiger",
+      "description": "A type of butterfly with plain, tiger-striped wings.",
+      "icon": "plain_tiger.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Red Lacewing",
+      "description": "A type of butterfly with red wings.",
+      "icon": "red_lacewing.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Scarlet Mormon",
+      "description": "A type of butterfly with scarlet wings.",
+      "icon": "scarlet_mormon.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Tailed Jay",
+      "description": "A type of butterfly with tails on its wings.",
+      "icon": "tailed_jay.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Ant Bite",
+      "description": "A type of damage that can occur to a butterfly's wings.",
+      "icon": "ant_bite.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Deformed",
+      "description": "A butterfly with physical abnormalities.",
+      "icon": "deformed.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Old",
+      "description": "A butterfly that is nearing the end of its lifespan.",
+      "icon": "old.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Overbend",
+      "description": "A type of damage that can occur to a butterfly's wings.",
+      "icon": "overbend.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Stretched",
+      "description": "A type of damage that can occur to a butterfly's wings.",
+      "icon": "stretched.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Healthy Pupae",
+      "description": "A pupae that is healthy and developing normally.",
+      "icon": "healthy_pupae.png",
+      "categories": [
+        "Pupae",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Nuclear Polyhedrosis Virus",
+      "description": "A virus that can infect butterflies.",
+      "icon": "nuclear_polyhedrosis_virus.png",
+      "categories": [
+        "Diseases",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Baculoviruses",
+      "description": "A type of virus that can infect butterflies.",
+      "icon": "baculoviruses.png",
+      "categories": [
+        "Diseases",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Ophryocystis  Elektroscirrha",
+      "description": "A parasite that can infect butterflies.",
+      "icon": "ophryocystis_elektroscirrha.png",
+      "categories": [
+        "Parasites",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Tachinid Flies",
+      "description": "A type of fly that can parasitize butterflies.",
+      "icon": "tachinid_flies.png",
+      "categories": [
+        "Parasites",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Trichogramma Wasps",
+      "description": "A type of wasp that can parasitize butterflies.",
+      "icon": "trichogramma_wasps.png",
+      "categories": [
+        "Parasites",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Healthy Larvae",
+      "description": "A larvae that is healthy and developing normally.",
+      "icon": "healthy_larvae.png",
+      "categories": [
+        "Larvae",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Molting",
+      "description": "The process of shedding skin as a larvae grows.",
+      "icon": "molting.png",
+      "categories": [
+        "Larvae",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Munching",
+      "description": "The act of a larvae eating.",
+      "icon": "munching.png",
+      "categories": [
+        "Larvae",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Nectaring",
+      "description": "The act of a butterfly feeding on nectar.",
+      "icon": "nectaring.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Ovipositing",
+      "description": "The act of a female butterfly laying eggs.",
+      "icon": "ovipositing.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Pudding",
+      "description": "A type of food that can be used to attract butterflies.",
+      "icon": "pudding.png",
+      "categories": [
+        "Butterflies",
+        "Nature"
+      ]
+    },
+    {
+      "name": "Pupating",
+      "description": "The process of a larvae transforming into a pupae.",
+      "icon": "pupating.png",
+      "categories": [
+        "Larvae",
+        "Nature"
+      ]
+    }
+  ]
+}
 
