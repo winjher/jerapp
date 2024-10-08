@@ -343,7 +343,7 @@ li {
   justify-content: center;
 }
 
-input[type=button],
+/* input[type=button],
 input[type=btn] {
   background-color: #007bff;
   border: none;
@@ -353,7 +353,7 @@ input[type=btn] {
   text-decoration: none;
   margin: 2px 2px;
   cursor: pointer;
-}
+} */
 
 .row {
   --bs-gutter-x: 1.5rem;
@@ -510,12 +510,12 @@ body {
   font-weight: bold;
 }
 
-.close:hover,
+/* .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 
 .modal-header {
   padding: 2px 16px;

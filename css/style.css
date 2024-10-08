@@ -69,12 +69,8 @@
       rgba(6, 14, 101, 1) 100%);  */
 
  }
- 
-  .main-hero {
-    padding-top: 800px;
-  }
 
-
+/* 
  .main-hero-image {
    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('icon/bgbutterfly.jpg');
    background-position: center;
@@ -85,7 +81,7 @@
    height: 500px;
    background-color: #cccccc;
    opacity: 0.9;
- }
+ } */
 
  .service-hero-title {
    font-size: 56px; 
@@ -1024,9 +1020,9 @@
 
 
  form:focus-within {
-   background: #aeb2a8;
+  
    color: black;
-   padding: 10px;
+ 
  }
 
 
@@ -1038,7 +1034,7 @@
 
  label:focus-within {
    font-weight: bold;
-   color: var(--bs-teal);
+   color: var(--bs-orange);
    font-size: 1.6em;
  }
 
@@ -1982,10 +1978,10 @@
    margin-bottom: 20px;
  }
 
- input[type="file"] {
+ /* input[type="file"] {
    display: block;
    margin: 10px auto;
- }
+ } */
 
  .btn-snapshot {
    padding: 6px 15px;

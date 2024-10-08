@@ -26,19 +26,20 @@
         background-size: cover;
         position: relative;
         width: 100%;
-        height: 500px;
+        /* height: 500px; */
     }
 
-    /* .main-hero {
-    padding-top: 1200px;
-} */
-    body {
+    .main-hero {
+        padding-top: 20px;
+}
+    .modal-body {
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 90vh;
+        height: 70vh;
         background-color: #f5f5f5;
+        padding-bottom: 12px;
     }
 
     .modal {
@@ -52,7 +53,8 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        padding-bottom: 4px;
+        /* padding: 40px 0px 5px; */
+
     }
 
     .modal.show {
@@ -75,26 +77,33 @@
 
     .modal-close {
         position: absolute;
+
+        width: 18px;
         top: 2px;
-        right: 2px;
+        right: -18px;
         cursor: pointer;
+
+    }
+    .user-close{
+        background-color: #ddd;
+        border-radius: 50%;
     }
 
     .modal-header {
         margin-bottom: 4px;
     }
+    .modal-title{
+    padding-bottom: 4px;
+    }
 
-    .user-contact {
+    .user-contacts {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .user-info {
-        margin-bottom: 4px;
-    }
-
-    .user-icons {
+    .user-icons
+     {
         width: 18px;
         height: 18px;
         flex-shrink: 0;
@@ -102,27 +111,38 @@
         top: 2rem;
         position: relative;
     }
-
+    .user-info {
+        top: 2rem;
+        position: relative;
+        }
+    .user-comment {
+        top: 1rem;
+        position: relative;
+        }
     .user-input-field,
-    .user-info-comments,
-    .user-checkox-icon {
+    .user-info-comments
+     {
         width: 100%;
-        margin-bottom: 8px;
+        margin-bottom: 1px;
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 4px;
     }
 
-    .btn-hatchery {
+    .btn-send {
         background-color: #007bff;
         color: white;
         border: none;
         padding: 10px;
+        width: 125px;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 4px;
         cursor: pointer;
+
     }
 
-    .btn-hatchery:hover {
+    .btn-send:hover {
         background-color: #0056b3;
     }
 
@@ -132,37 +152,85 @@
 
     /* Mobile Devices */
     @media only screen and (max-width: 600px) {
+        .modal-body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            background-color: #f5f5f5;
+            padding-bottom: 28px;
+
+        }
+        .modal-content{
+            background-color: white;
+            /* padding-top: 10px; */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(65, 55, 55, 0.1);
+            position: relative;
+        }
+
+
         .modal-dialog {
             margin: 10px;
         }
 
         .user-input-field,
-        .user-info-comments,
-        .user-checkox-icon {
+        .user-info-comments
+        {
             width: 100%;
+            margin: 1px;
         }
+        .user-icons{
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-left: 24px;
+            top: 2rem;
+            position: relative;
+        }
+        .user-info {
+            top: 2rem;
+            position: relative;
+        }
+        .btn-send {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        width: 125px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+
+    }
+
+    .btn-send:hover {
+        background-color: #0056b3;
+    }
     }
 
     /* Tablets */
-    @media only screen and (min-width: 601px) and (max-width: 768px) {
+    /* @media only screen and (min-width: 601px) and (max-width: 768px) {
         .modal-dialog {
             margin: 15px;
         }
-    }
+    } */
 
     /* Small Laptops */
-    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* @media only screen and (min-width: 769px) and (max-width: 1024px) {
         .modal-dialog {
             margin: 20px;
         }
     }
 
     /* Large Screens */
-    @media only screen and (min-width: 1025px) {
+    /* @media only screen and (min-width: 1025px) {
         .modal-dialog {
             margin: 20px;
         }
-    }
+    } */ */
 </style>
 
 <body>
@@ -443,32 +511,35 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-close" id="img-close" data-modal-close>
-                    <img src="images/icons/close.svg" alt="close">
+                    <img src="images/icons/close.svg" alt="close" class="user-close">
                 </div>
                 <div class="modal-header">
                     <h3 class="modal-title" id="ModalLabel">
                         Leave your information and we'll call you back.
                     </h3>
                 </div>
+                <br>
+
                 <div class="modal-body">
-                    <form class="user-contact" action="post" method="get" accept-charset="utf-8">
-                        <label for="fullname" class="user-info">Name</label>
+                    <form class="user-contacts" action="post" method="get" accept-charset="utf-8">
+                        <label for="phone" class="user-info">Name</label>
                         <img src="images/icons/user.svg" alt="" class="user-icons">
-                        <input type="text" class="user-input-field" placeholder="">
+                        <input type="number" class="user-input-field" required="">
                         <label for="phone" class="user-info">Telephone</label>
                         <img src="images/icons/telephone.svg" alt="" class="user-icons">
                         <input type="number" class="user-input-field" required="">
                         <label for="email" class="user-info">Email</label>
                         <img src="images/icons/email.svg" alt="" class="user-icons">
                         <input type="email" class="user-input-field" required>
-                        <label for="username" class="user-info">Comment</label>
+                        <label for="username" class="user-comment">Comment</label>
+                     
                         <textarea name="comments" id="comments" rows="4" cols="37" class="user-info-comments">
                         </textarea>
-                        <br><input type="checkbox" name="" id="" class="user-checkox-icon" />
+                        <br>
                         <span>
-                            <p class="info-terms">I agree with the newsletter and the Terms and Conditions</p>
+                            <p class="info-terms"><input type="checkbox" name="" id="" class="user-checkox-icon" /> I agree with the newsletter and the Terms and Conditions</p>
                         </span>
-                        <button type="button" class="btn-hatchery" href="home.html">Send</button>
+                        <button type="button" class="btn-send" href="home.html">Send</button>
                     </form>
                 </div>
             </div>
@@ -560,7 +631,7 @@
                 document.getElementById('message').textContent = 'Form submitted successfully!';
                 document.getElementById('message').style.color = 'green';
                 // Here you would typically send the data to the server
-                // For example: 
+                // For example:
                 // fetch('/submit', {
                 //     method: 'POST',
                 //     body: new URLSearchParams(new FormData(event.target))
