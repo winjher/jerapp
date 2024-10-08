@@ -27,8 +27,79 @@
         position: relative;
         width: 100%;
         height: 500px;
-
     }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+    }
+
+    .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+    .modal.show {
+        display: flex;
+    }
+
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: auto;
+    }
+
+    .modal-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+.modal-header{
+    margin-top: 30px;
+}
+
+    .is-hidden {
+        display: none;
+    }
+    @media only screen and (max-width: 600px) {
+  .main-hero {
+    padding-top: 800px;
+
+  }
+  body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 320vh;
+        background-color: #f5f5f5;
+    }
+    .btn-service{
+        padding-bottom: 20px
+    }
+    
+}
+
+.user-icons{
+    width: 28px;
+}
 </style>
 
 <body>
@@ -42,24 +113,24 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
 
                     <ul class="navbar-nav ms-auto">
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li id="home-item" class="nav-item">
                             <a class="nav-link menu-apps-home " href="home.html">
                                 <i class="fas fa-home"></i><span> Home</span>
                             </a>
                         </li>
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li id="home-item" class="nav-item">
                             <a class="nav-link menu-apps-home" href="about.html">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i><span>
                                     About</span>
                             </a>
                         </li>
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li id="home-item" class="nav-item">
                             <a class="nav-link menu-apps-home" href="setting.html">
                                 <i class="fas fa-cog" aria-hidden="true"></i><span>
                                     Setting</span>
                             </a>
                         </li>
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li id="home-item" class="nav-item">
                             <a class="nav-link menu-apps-home" href="logout.html">
                                 <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
                                 Log out</span>
@@ -75,9 +146,9 @@
             <div class="container main-hero-image">
                 <div class="imgbck">
                     <h1 class="service-hero-title text-center">Effective Solutions for Your Butterfly Business</h1>
-                    <div class="col-xl-12 text-center">
+                    <div class="col-xl-12 text-center btn-service">
                         <button type="button" class="service-button-cta" data-modal-open>
-                            <a class="explore" href="home.html">Explore</a>
+                            <a class="explore" id="openModal">Explore</a>
                         </button>
                     </div>
 
@@ -300,84 +371,126 @@
             </div>
         </section>
     </main>
-   
+
     <!-- Modal -->
     <div class="modal fade is-hidden" data-modal id="Modal" tabindex="-1" aria-labelledby="ModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-close " id="img-close" data-modal-close>
+                <div class="modal-close" id="img-close" data-modal-close>
                     <img src="images/icons/close.svg" alt="close">
                 </div>
                 <div class="modal-header">
-                    <h4 class="modal-title" id="ModalLabel">
+                    <h3 class="modal-title" id="ModalLabel">
                         Leave your information and we'll call you back.
-                    </h4>
+                    </h3>
                 </div>
                 <div class="modal-body">
-
                     <form class="user-contact" action="post" method="get" accept-charset="utf-8">
-
                         <label for="fullname" class="user-info">Name</label>
                         <img src="images/icons/user.svg" alt="" class="user-icons">
                         <input type="text" class="input-field" placeholder="">
                         <label for="phone" class="user-info">Telephone</label>
-                        <img src="images/icons/user-phone.svg" alt="" class="user-icons">
+                        <img src="images/icons/telephone.svg" alt="" class="user-icons">
                         <input type="number" class="input-field" required="">
                         <label for="email" class="user-info">Email</label>
-                        <img src="images/icons/user-email.svg" alt="" class="user-icons">
+                        <img src="images/icons/email.svg" alt="" class="user-icons">
                         <input type="email" class="input-field" required>
-
                         <label for="username" class="user-info">Comment</label>
-                        <!-- <img src="images/icons/user-check.svg" alt="" class="user-icons"> -->
-                        <textarea name="comments" id=comments rows="8" cols="20" class="user-info-comments"></textarea>
-
-                        <input type="checkbox" name="" id="" class="user-checkox-icon" />
-
-                        <p class="info-terms">
-                            I agree with the newsletter and the Terms and Conditions
+                        <textarea name="comments" id="comments" rows="4" cols="37"
+                            class="user-info-comments">
+                        </textarea>
+                        <br><input type="checkbox" name="" id="" class="user-checkox-icon" />
+                        <p class="info-terms"><span>I agree with the newsletter and the Terms and Conditions</span>
+                            
                         </p>
-                        <button type="button" class="button-send">
-                            Send
-                        </button>
-
+                        <button type="button" class="btn-hatchery" href="home.html">Send</button>
                     </form>
                 </div>
-
             </div>
         </div>
-    </div>
 
+        <script src="js/03-feedback.js" type="module"></script>
+        <script>
+            (() => {
+                const refs = {
+                    openModalBtn: document.querySelector("[data-modal-open]"),
+                    closeModalBtn: document.querySelector("[data-modal-close]"),
+                    modal: document.querySelector("[data-modal]"),
+                };
 
+                refs.openModalBtn.addEventListener("click", toggleModal);
+                refs.closeModalBtn.addEventListener("click", toggleModal);
 
-    <script src="js/03-feedback.js" type="module"></script>
-    <script>
-        (() => {
-            const refs = {
-                openModalBtn: document.querySelector("[data-modal-open]"),
-                closeModalBtn: document.querySelector("[data-modal-close]"),
-                modal: document.querySelector("[data-modal]"),
-            };
-
-            refs.openModalBtn.addEventListener("click", toggleModal);
-            refs.closeModalBtn.addEventListener("click", toggleModal);
-
-            function toggleModal() {
-                refs.modal.classList.toggle("is-hidden");
+                function toggleModal() {
+                    refs.modal.classList.toggle("is-hidden");
+                }
+            })();
+        </script>
+        <script>
+            function bounceBanner() {
+                const banner = document.querySelector('.banner');
+                banner.style.animation = 'bounce 2s';
+                banner.addEventListener('animationend', () => {
+                    banner.style.animation = '';
+                }, { once: true });
             }
-        })();
-    </script>
-    <script>
-        function bounceBanner() {
-            const banner = document.querySelector('.banner');
-            banner.style.animation = 'bounce 2s';
-            banner.addEventListener('animationend', () => {
-                banner.style.animation = '';
-            }, { once: true });
-        }
-    </script>
-    <script src="./jquery-3.6.0.slim.min.js"> </script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const openModalButton = document.getElementById('openModal');
+                const modal = document.getElementById('Modal');
+                const closeModalButton = document.getElementById('img-close');
+
+                openModalButton.addEventListener('click', () => {
+                    modal.classList.add('show');
+                    modal.classList.remove('is-hidden');
+                });
+
+                closeModalButton.addEventListener('click', () => {
+                    modal.classList.remove('show');
+                    modal.classList.add('is-hidden');
+                });
+
+                window.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        modal.classList.remove('show');
+                        modal.classList.add('is-hidden');
+                    }
+                });
+            });
+
+        </script>
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const fullname = document.getElementById('fullname').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const comments = document.getElementById('comments').value;
+                const terms = document.getElementById('terms').checked;
+    
+                if (terms) {
+                    console.log(`Name: ${fullname}`);
+                    console.log(`Telephone: ${phone}`);
+                    console.log(`Email: ${email}`);
+                    console.log(`Comments: ${comments}`);
+                    document.getElementById('message').textContent = 'Form submitted successfully!';
+                    document.getElementById('message').style.color = 'green';
+                    // Here you would typically send the data to the server
+                    // For example: 
+                    // fetch('/submit', {
+                    //     method: 'POST',
+                    //     body: new URLSearchParams(new FormData(event.target))
+                    // });
+                } else {
+                    document.getElementById('message').textContent = 'You must agree to the terms and conditions.';
+                    document.getElementById('message').style.color = 'red';
+                }
+            });
+        </script>
+        <script src="./jquery-3.6.0.slim.min.js"> </script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,194 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/iconbar.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <title>Login</title>
-  <style>
-    #login {
-      flex: 1 0 auto;
-      overflow: hidden;
-      width: 100%;
-      max-width: 20em;
-      background: #b7e4aa;
-      border-radius: 0.5em;
-      box-shadow: 0.1em 0.25em 0.5em #0004;
-    }
-
-    #login h2 {
-      padding: 0.4em 0.8em;
-      font-size: 1.25em;
-      background-color: orange;
-      color: #FFF;
-    }
-
-    #login fieldset {
-      padding: 1em;
-      border: none;
-    }
-
-    #login label {
-      display: block;
-      padding-bottom: 1em;
-    }
-
-    #login input {
-      box-sizing: border-box;
-      float: left;
-      width: 100%;
-      padding: 0.25em 0.5em;
-      margin: 0.25em 0 1em;
-      border: 1px solid rgb(240, 238, 233);
-      border-radius: 0.25em;
-    }
-
-    #login .submitsAndHiddens {
-      padding: 0 1em;
-    }
-
-    #login .submitsAndHiddens button {
-      /* float: right; */
-      box-sizing: border-box;
-      padding: 0.25em 1em;
-      margin-top: -0.25em;
-      background: rgb(233, 226, 132);
-      border: 1px solid rgb(237, 64, 21);
-      border-radius: 0.25em;
-      box-shadow: inset 0 1em 1em rgba(239, 242, 227, 0.533);
-      transition: 0.3s;
-    }
-
-    #login .submitsAndHiddens button:focus,
-    #login .submitsAndHiddens button:hover {
-      background: rgb(200, 179, 165);
-    }
-
-    #login p {
-      clear: both;
-      text-align: center;
-      padding: 1em 0;
-    }
-
-    @media screen {
-      .passwordShowHide+button {
-        position: relative;
-        float: left;
-        width: 1.6em;
-        margin-left: -1.6em;
-        padding: 0.45em 0;
-        font-size: 1.25em;
-        line-height: 1.2em;
-        text-align: center;
-        border: none;
-        background: transparent;
-        transition: transform 0.3s;
-        transform-origin: center;
-      }
-
-      .passwordShowHide+button:focus {
-        outline: none;
-        font-weight: bold;
-        text-shadow:
-          0 0 0.2em #5AF;
-      }
-
-      .passwordShowHide+button:hover {
-        transform: scale(1.5);
-      }
-
-      .passwordShowHide[type="text"]+button:after {
-        content: "\\2215";
-        position: absolute;
-        left: 0;
-        top: 0.45em;
-        width: 1.6em;
-        text-align: center;
-        text-shadow:
-          -0.1em 0 0 #FFF,
-          0.1em 0 0 #FFF;
-        color: #F00;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
 </head>
-
-<body style="height:1500px">
-  <header>
-    <div class="col-lg-12 head text-center">
-        <img class="img-head" src="icon/8butterfly.png" alt="">
-        <img class="img-pcms" src="icon/backPCMS.png" alt="" srcset="">
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <div id="message" class="message"></div>
     </div>
 
-</header>
-  <hr>
-  <div class="container">
-    <div class="col-lg-12 text-center ">
-     
-      <fieldset>
+    <script>
+        // Simulated user data
+        const users = [
+            { username: 'breeder', password: 'password123', role: 'BREEDER' },
+            { username: 'purchaser', password: 'password456', role: 'PURCHASER' },
+            { username: 'enthusiast', password: 'password789', role: 'ENTHUSIAST' },
+            { username: 'buyer', password: 'password012', role: 'BUYER' }
+        ];
 
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
 
-      <form action="#" method="GET" id="login" class="form-control">
-        <h2>Login</h2> <br>
- 
-          <input type="text" name="username" required>
-          <label>
-            Username:
-          </label>
+            const user = users.find(user => user.username === username && user.password === password);
 
-          <input type="password" name="password" required>
-          <label>
-            Password:
-          </label><br>
-          <div class="submitsAndHiddens">
-            <button class="btn-puparium">Submit</button>
-            <br>
-            <a href="forgot.html">
-              <h6>Forgot Password?</h6>
-            </a>
-            <p>
-              If you do not have an existing account,
-              <a class="nav-link" href="create_Account.html">Create account
-              </a>
-            </p>
-      </form>
-    </fieldset>
-  </div>
-</div>
+            if (user) {
+                messageDiv.textContent = `Welcome, ${user.role}!`;
+                messageDiv.style.color = 'green';
+                // Redirect to index.html
+                window.location.href = 'index.html';
+            } else {
+                messageDiv.textContent = 'Invalid username or password';
+                messageDiv.style.color = 'red';
+            }
+        }
+        // function login() {
+        //     const username = document.getElementById('username').value;
+        //     const password = document.getElementById('password').value;
+        //     const messageDiv = document.getElementById('message');
 
+        //     const user = users.find(user => user.username === username && user.password === password);
 
-
-  <hr>
-  <script>
-    (function (d) {
-      "use strict"
-    })(document);
-
-    for (var input of d.querySelectorAll('input[type="password"]')) {
-      input.classList.add('passwordShowHide');
-      var button = input.parentNode.insertBefore(
-        d.createElement('button'),
-        input.nextElementSibling
-      );
-      button.textContent = "\uD83D\uDC41";
-      button.title = "Show / Hide Password";
-      button.type = "button"; // remember, default is SUBMIT!
-      button.onclick = passwordShowHide;
-    }
-
-    //WALK THE BLOODY DOM!
-    function passwordShowHide(event) {
-      var input = event.currentTarget.previousElementSibling;
-      input.type = input.type === "text" ? "password" : "text";
-      input.focus();
-    } 
-  </script>
+        //     if (user) {
+        //         messageDiv.textContent = `Welcome, ${user.role}!`;
+        //         messageDiv.style.color = 'green';
+                
+        //     } else {
+        //         messageDiv.textContent = 'Invalid username or password';
+        //         messageDiv.style.color = 'red';
+        //     }
+        // }
+    </script>
 </body>
-
 </html>
