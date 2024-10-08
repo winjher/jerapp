@@ -29,12 +29,15 @@
         height: 500px;
     }
 
+    /* .main-hero {
+    padding-top: 1200px;
+} */
     body {
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 90vh;
         background-color: #f5f5f5;
     }
 
@@ -49,11 +52,17 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        padding-bottom: 4px;
     }
-
 
     .modal.show {
         display: flex;
+    }
+
+    .modal-dialog {
+        width: 100%;
+        max-width: 500px;
+        margin: 20px;
     }
 
     .modal-content {
@@ -61,87 +70,98 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: auto;
+        position: relative;
     }
 
     .modal-close {
         position: absolute;
-        top: 4px;
-        right: 4px;
-        padding-bottom: 5px;
+        top: 2px;
+        right: 2px;
         cursor: pointer;
     }
 
     .modal-header {
-        margin-top: 30px;
+        margin-bottom: 4px;
     }
 
-    .is-hidden {
-        display: none;
+    .user-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .input-field, textarea{
-        width: 410px;
-    }
-
-    @media only screen and (max-width: 768px) {
-        .main-hero {
-            padding-top: 800px;
-        }
-        .modal-body{
-            /* height: auto; */
-            justify-content: center;
-            align-items: center;
-            
-        }
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300vh;
-            background-color: #f5f5f5;
-        }
-
-        .btn-service {
-            padding-bottom: 20px
-        }
-
-        .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        margin: 15px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 28px;
-    }
-        .modal-header {
-        margin-top: 50px;
-    }
-        .input-field, .textarea{
-        width: 340px;
-    }
-    .modal-close {
-        position: absolute;
-        top: 4px;
-        right: 4px;
-        padding-bottom: 5px;
-        cursor: pointer;
-        width: 40px;
-    }
-
+    .user-info {
+        margin-bottom: 4px;
     }
 
     .user-icons {
-        width: 28px;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        margin-left: 24px;
+        top: 2rem;
+        position: relative;
+    }
+
+    .user-input-field,
+    .user-info-comments,
+    .user-checkox-icon {
+        width: 100%;
+        margin-bottom: 8px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .btn-hatchery {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-hatchery:hover {
+        background-color: #0056b3;
+    }
+
+    .info-terms {
+        margin-bottom: 10px;
+    }
+
+    /* Mobile Devices */
+    @media only screen and (max-width: 600px) {
+        .modal-dialog {
+            margin: 10px;
+        }
+
+        .user-input-field,
+        .user-info-comments,
+        .user-checkox-icon {
+            width: 100%;
+        }
+    }
+
+    /* Tablets */
+    @media only screen and (min-width: 601px) and (max-width: 768px) {
+        .modal-dialog {
+            margin: 15px;
+        }
+    }
+
+    /* Small Laptops */
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        .modal-dialog {
+            margin: 20px;
+        }
+    }
+
+    /* Large Screens */
+    @media only screen and (min-width: 1025px) {
+        .modal-dialog {
+            margin: 20px;
+        }
     }
 </style>
 
@@ -169,8 +189,10 @@
                         </li>
                         <li id="home-item" class="nav-item">
                             <a class="nav-link menu-apps-home" href="setting.html">
-                                <i class="fas fa-cog" aria-hidden="true"></i><span>
-                                    Setting</span>
+                                <i class="fas fa-cog" aria-hidden="true"></i>
+                                <span>
+                                    Setting
+                                </span>
                             </a>
                         </li>
                         <li id="home-item" class="nav-item">
@@ -432,107 +454,170 @@
                     <form class="user-contact" action="post" method="get" accept-charset="utf-8">
                         <label for="fullname" class="user-info">Name</label>
                         <img src="images/icons/user.svg" alt="" class="user-icons">
-                        <input type="text" class="input-field" placeholder="">
+                        <input type="text" class="user-input-field" placeholder="">
                         <label for="phone" class="user-info">Telephone</label>
                         <img src="images/icons/telephone.svg" alt="" class="user-icons">
-                        <input type="number" class="input-field" required="">
+                        <input type="number" class="user-input-field" required="">
                         <label for="email" class="user-info">Email</label>
                         <img src="images/icons/email.svg" alt="" class="user-icons">
-                        <input type="email" class="input-field" required>
+                        <input type="email" class="user-input-field" required>
                         <label for="username" class="user-info">Comment</label>
                         <textarea name="comments" id="comments" rows="4" cols="37" class="user-info-comments">
                         </textarea>
                         <br><input type="checkbox" name="" id="" class="user-checkox-icon" />
-                        <p class="info-terms"><span>I agree with the newsletter and the Terms and Conditions</span>
-
-                        </p>
+                        <span>
+                            <p class="info-terms">I agree with the newsletter and the Terms and Conditions</p>
+                        </span>
                         <button type="button" class="btn-hatchery" href="home.html">Send</button>
                     </form>
                 </div>
             </div>
         </div>
+    </div>
+    <script src="js/03-feedback.js" type="module"></script>
+    <script>
+        (() => {
+            const refs = {
+                openModalBtn: document.querySelector("[data-modal-open]"),
+                closeModalBtn: document.querySelector("[data-modal-close]"),
+                modal: document.querySelector("[data-modal]"),
+            };
 
-        <script src="js/03-feedback.js" type="module"></script>
-        <script>
-            (() => {
-                const refs = {
-                    openModalBtn: document.querySelector("[data-modal-open]"),
-                    closeModalBtn: document.querySelector("[data-modal-close]"),
-                    modal: document.querySelector("[data-modal]"),
-                };
+            refs.openModalBtn.addEventListener("click", toggleModal);
+            refs.closeModalBtn.addEventListener("click", toggleModal);
 
-                refs.openModalBtn.addEventListener("click", toggleModal);
-                refs.closeModalBtn.addEventListener("click", toggleModal);
-
-                function toggleModal() {
-                    refs.modal.classList.toggle("is-hidden");
-                }
-            })();
-        </script>
-        <script>
-            function bounceBanner() {
-                const banner = document.querySelector('.banner');
-                banner.style.animation = 'bounce 2s';
-                banner.addEventListener('animationend', () => {
-                    banner.style.animation = '';
-                }, { once: true });
+            function toggleModal() {
+                refs.modal.classList.toggle("is-hidden");
             }
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const openModalButton = document.getElementById('openModal');
-                const modal = document.getElementById('Modal');
-                const closeModalButton = document.getElementById('img-close');
+        })();
+    </script>
+    <script>
+        function bounceBanner() {
+            const banner = document.querySelector('.banner');
+            banner.style.animation = 'bounce 2s';
+            banner.addEventListener('animationend', () => {
+                banner.style.animation = '';
+            }, { once: true });
+        }
+    </script>
+    <script>
+        (() => {
+            const refs = {
+                openModalBtn: document.querySelector("[data-modal-open]"),
+                closeModalBtn: document.querySelector("[data-modal-close]"),
+                modal: document.querySelector("[data-modal]"),
+            };
 
-                openModalButton.addEventListener('click', () => {
-                    modal.classList.add('show');
-                    modal.classList.remove('is-hidden');
-                });
+            refs.openModalBtn.addEventListener("click", toggleModal);
+            refs.closeModalBtn.addEventListener("click", toggleModal);
 
-                closeModalButton.addEventListener('click', () => {
+            function toggleModal() {
+                refs.modal.classList.toggle("is-hidden");
+            }
+        })();
+
+    </script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const openModalButton = document.getElementById('openModal');
+            const modal = document.getElementById('Modal');
+            const closeModalButton = document.getElementById('img-close');
+
+            openModalButton.addEventListener('click', () => {
+                modal.classList.add('show');
+                modal.classList.remove('is-hidden');
+            });
+
+            closeModalButton.addEventListener('click', () => {
+                modal.classList.remove('show');
+                modal.classList.add('is-hidden');
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
                     modal.classList.remove('show');
                     modal.classList.add('is-hidden');
+                }
+            });
+        });
+
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const fullname = document.getElementById('fullname').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            const terms = document.getElementById('terms').checked;
+
+            if (terms) {
+                console.log(`Name: ${fullname}`);
+                console.log(`Telephone: ${phone}`);
+                console.log(`Email: ${email}`);
+                console.log(`Comments: ${comments}`);
+                document.getElementById('message').textContent = 'Form submitted successfully!';
+                document.getElementById('message').style.color = 'green';
+                // Here you would typically send the data to the server
+                // For example: 
+                // fetch('/submit', {
+                //     method: 'POST',
+                //     body: new URLSearchParams(new FormData(event.target))
+                // });
+            } else {
+                document.getElementById('message').textContent = 'You must agree to the terms and conditions.';
+                document.getElementById('message').style.color = 'red';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openModalButton = document.getElementById('openModal');
+            const modal = document.getElementById('Modal');
+            const closeModalButton = document.getElementById('img-close');
+
+            openModalButton.addEventListener('click', () => {
+                modal.classList.add('show');
+                modal.classList.remove('is-hidden');
+            });
+
+            closeModalButton.addEventListener('click', () => {
+                modal.classList.remove('show');
+                modal.classList.add('is-hidden');
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.classList.remove('show');
+                    modal.classList.add('is-hidden');
+                }
+            });
+
+            // Hide icons when typing
+            const inputFields = document.querySelectorAll('.user-input-field');
+            inputFields.forEach(field => {
+                field.addEventListener('focus', () => {
+                    const icon = field.previousElementSibling;
+                    if (icon && icon.classList.contains('user-icons')) {
+                        icon.style.visibility = 'hidden';
+                    }
                 });
 
-                window.addEventListener('click', (event) => {
-                    if (event.target === modal) {
-                        modal.classList.remove('show');
-                        modal.classList.add('is-hidden');
+                field.addEventListener('blur', () => {
+                    const icon = field.previousElementSibling;
+                    if (icon && icon.classList.contains('user-icons')) {
+                        icon.style.visibility = 'visible';
                     }
                 });
             });
+        });
 
-        </script>
-        <script>
-            document.getElementById('contactForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-                const fullname = document.getElementById('fullname').value;
-                const phone = document.getElementById('phone').value;
-                const email = document.getElementById('email').value;
-                const comments = document.getElementById('comments').value;
-                const terms = document.getElementById('terms').checked;
+        document.getElementById('contactForm').add
 
-                if (terms) {
-                    console.log(`Name: ${fullname}`);
-                    console.log(`Telephone: ${phone}`);
-                    console.log(`Email: ${email}`);
-                    console.log(`Comments: ${comments}`);
-                    document.getElementById('message').textContent = 'Form submitted successfully!';
-                    document.getElementById('message').style.color = 'green';
-                    // Here you would typically send the data to the server
-                    // For example: 
-                    // fetch('/submit', {
-                    //     method: 'POST',
-                    //     body: new URLSearchParams(new FormData(event.target))
-                    // });
-                } else {
-                    document.getElementById('message').textContent = 'You must agree to the terms and conditions.';
-                    document.getElementById('message').style.color = 'red';
-                }
-            });
-        </script>
-        <script src="./jquery-3.6.0.slim.min.js"> </script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
+    </script>
+    <script src="./jquery-3.6.0.slim.min.js"> </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
