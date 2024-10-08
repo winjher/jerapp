@@ -67,7 +67,9 @@
 
         function login() {
             const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            const telephone = document.getElementById('telephone').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
             const messageDiv = document.getElementById('message');
 
             const user = users.find(user => user.username === username && user.password === password);
@@ -82,9 +84,10 @@
                 messageDiv.style.color = 'red';
             }
         }
-        // function login() {
+        // function send() {
         //     const username = document.getElementById('username').value;
-        //     const password = document.getElementById('password').value;
+        //     const telephone = document.getElementById('telephone').value;
+            // const email = document.getElementById('email').value;
         //     const messageDiv = document.getElementById('message');
 
         //     const user = users.find(user => user.username === username && user.password === password);
@@ -92,7 +95,8 @@
         //     if (user) {
         //         messageDiv.textContent = `Welcome, ${user.role}!`;
         //         messageDiv.style.color = 'green';
-                
+                  // Redirect to index.html
+                  window.location.href = 'index.html';
         //     } else {
         //         messageDiv.textContent = 'Invalid username or password';
         //         messageDiv.style.color = 'red';

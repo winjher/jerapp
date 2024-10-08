@@ -31,7 +31,8 @@
 
     .main-hero {
         padding-top: 20px;
-}
+    }
+
     .modal-body {
         font-family: Arial, sans-serif;
         display: flex;
@@ -84,7 +85,8 @@
         cursor: pointer;
 
     }
-    .user-close{
+
+    .user-close {
         background-color: #ddd;
         border-radius: 50%;
     }
@@ -92,8 +94,9 @@
     .modal-header {
         margin-bottom: 4px;
     }
-    .modal-title{
-    padding-bottom: 4px;
+
+    .modal-title {
+        padding-bottom: 4px;
     }
 
     .user-contacts {
@@ -102,8 +105,7 @@
         align-items: flex-start;
     }
 
-    .user-icons
-     {
+    .user-icons {
         width: 18px;
         height: 18px;
         flex-shrink: 0;
@@ -111,17 +113,19 @@
         top: 2rem;
         position: relative;
     }
+
     .user-info {
         top: 2rem;
         position: relative;
-        }
+    }
+
     .user-comment {
         top: 1rem;
         position: relative;
-        }
+    }
+
     .user-input-field,
-    .user-info-comments
-     {
+    .user-info-comments {
         width: 100%;
         margin-bottom: 1px;
         padding: 10px;
@@ -157,31 +161,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70vh;
+            height: 75vh;
             background-color: #f5f5f5;
-            padding-bottom: 28px;
+            /* padding-bottom: 28px; */
 
         }
-        .modal-content{
+
+        .modal-content {
             background-color: white;
-            /* padding-top: 10px; */
+            padding-top: 10px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(65, 55, 55, 0.1);
             position: relative;
         }
 
-
-        .modal-dialog {
-            margin: 10px;
-        }
-
         .user-input-field,
-        .user-info-comments
-        {
+        .user-info-comments {
             width: 100%;
             margin: 1px;
         }
-        .user-icons{
+
+        .user-icons {
             width: 18px;
             height: 18px;
             flex-shrink: 0;
@@ -189,25 +189,35 @@
             top: 2rem;
             position: relative;
         }
+
         .user-info {
             top: 2rem;
             position: relative;
         }
+
         .btn-send {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        width: 125px;
-        margin-left: auto;
-        margin-right: auto;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            width: 125px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+
+        .btn-send:hover {
+            background-color: #0056b3;
+        }
+        .user-input-field,
+        .user-info-comments {
+        width: 100%;
+        margin-bottom: 0px;
         padding: 10px;
+        border: 1px solid #ddd;
         border-radius: 4px;
-        cursor: pointer;
-
-    }
-
-    .btn-send:hover {
-        background-color: #0056b3;
     }
     }
 
@@ -230,7 +240,8 @@
         .modal-dialog {
             margin: 20px;
         }
-    } */ */
+    } */
+    */
 </style>
 
 <body>
@@ -522,46 +533,67 @@
 
                 <div class="modal-body">
                     <form class="user-contacts" action="post" method="get" accept-charset="utf-8">
-                        <label for="phone" class="user-info">Name</label>
+                        <label for="name" class="user-info">Name</label>
                         <img src="images/icons/user.svg" alt="" class="user-icons">
-                        <input type="number" class="user-input-field" required="">
+                        <input type="text" class="user-input-field" required="" id="username">
                         <label for="phone" class="user-info">Telephone</label>
                         <img src="images/icons/telephone.svg" alt="" class="user-icons">
-                        <input type="number" class="user-input-field" required="">
+                        <input type="number" class="user-input-field" required="" id="telephone">
                         <label for="email" class="user-info">Email</label>
                         <img src="images/icons/email.svg" alt="" class="user-icons">
-                        <input type="email" class="user-input-field" required>
+                        <input type="email" class="user-input-field" required="" id="email">
                         <label for="username" class="user-comment">Comment</label>
-                     
-                        <textarea name="comments" id="comments" rows="4" cols="37" class="user-info-comments">
+
+                        <textarea name="comments" id="comments" rows="2" cols="37" class="user-info-comments">
                         </textarea>
                         <br>
                         <span>
-                            <p class="info-terms"><input type="checkbox" name="" id="" class="user-checkox-icon" /> I agree with the newsletter and the Terms and Conditions</p>
+                            <p class="info-terms"><input type="checkbox" name="" id="confirm"
+                                    class="user-checkox-icon" /> I agree with the newsletter and the Terms and
+                                Conditions</p>
                         </span>
-                        <button type="button" class="btn-send" href="home.html">Send</button>
+                        <button type="button" class="btn-send" onclick="send()">Send</button>
+                        <div id="message" class="message"></div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/03-feedback.js" type="module"></script>
     <script>
-        (() => {
-            const refs = {
-                openModalBtn: document.querySelector("[data-modal-open]"),
-                closeModalBtn: document.querySelector("[data-modal-close]"),
-                modal: document.querySelector("[data-modal]"),
-            };
 
-            refs.openModalBtn.addEventListener("click", toggleModal);
-            refs.closeModalBtn.addEventListener("click", toggleModal);
+        function send() {
+            const username = document.getElementById('username').value;
+            const telephone = document.getElementById('telephone').value;
+            const email = document.getElementById('email').value;
+            const comments = document.getElementById('comments').value;
+            const confirm = document.getElementById('confirm').checked;
 
-            function toggleModal() {
-                refs.modal.classList.toggle("is-hidden");
+            const messageDiv = document.getElementById('message');
+
+
+            if (confirm) {
+                console.log(`Name: ${username}`);
+                console.log(`Telephone: ${telephone}`);
+                console.log(`Email: ${email}`);
+                console.log(`Comments: ${comments}`);
+                messageDiv.textContent = 'Form submitted successfully!';
+                messageDiv.style.color = 'green';
+                // Redirect to index.html
+                window.location.href = 'home.html';
+                // Here you would typically send the data to the server
+                // fetch('/submit', {
+                //     method: 'POST',
+                //     body: new URLSearchParams(new FormData(event.target))
+                // });
+            } else {
+                messageDiv.textContent = 'You must agree to the terms and conditions.';
+                messageDiv.style.color = 'red';
             }
-        })();
+        }
+
     </script>
+  
     <script>
         function bounceBanner() {
             const banner = document.querySelector('.banner');
@@ -571,77 +603,7 @@
             }, { once: true });
         }
     </script>
-    <script>
-        (() => {
-            const refs = {
-                openModalBtn: document.querySelector("[data-modal-open]"),
-                closeModalBtn: document.querySelector("[data-modal-close]"),
-                modal: document.querySelector("[data-modal]"),
-            };
-
-            refs.openModalBtn.addEventListener("click", toggleModal);
-            refs.closeModalBtn.addEventListener("click", toggleModal);
-
-            function toggleModal() {
-                refs.modal.classList.toggle("is-hidden");
-            }
-        })();
-
-    </script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const openModalButton = document.getElementById('openModal');
-            const modal = document.getElementById('Modal');
-            const closeModalButton = document.getElementById('img-close');
-
-            openModalButton.addEventListener('click', () => {
-                modal.classList.add('show');
-                modal.classList.remove('is-hidden');
-            });
-
-            closeModalButton.addEventListener('click', () => {
-                modal.classList.remove('show');
-                modal.classList.add('is-hidden');
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    modal.classList.remove('show');
-                    modal.classList.add('is-hidden');
-                }
-            });
-        });
-
-    </script>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const fullname = document.getElementById('fullname').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const comments = document.getElementById('comments').value;
-            const terms = document.getElementById('terms').checked;
-
-            if (terms) {
-                console.log(`Name: ${fullname}`);
-                console.log(`Telephone: ${phone}`);
-                console.log(`Email: ${email}`);
-                console.log(`Comments: ${comments}`);
-                document.getElementById('message').textContent = 'Form submitted successfully!';
-                document.getElementById('message').style.color = 'green';
-                // Here you would typically send the data to the server
-                // For example:
-                // fetch('/submit', {
-                //     method: 'POST',
-                //     body: new URLSearchParams(new FormData(event.target))
-                // });
-            } else {
-                document.getElementById('message').textContent = 'You must agree to the terms and conditions.';
-                document.getElementById('message').style.color = 'red';
-            }
-        });
-    </script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const openModalButton = document.getElementById('openModal');
@@ -678,7 +640,7 @@
                 field.addEventListener('blur', () => {
                     const icon = field.previousElementSibling;
                     if (icon && icon.classList.contains('user-icons')) {
-                        icon.style.visibility = 'visible';
+                        icon.style.visibility = 'none';
                     }
                 });
             });
