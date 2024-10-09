@@ -618,6 +618,7 @@
             var username = document.getElementById("username").value;
             var telephone = document.getElementById("telephone").value;
             var email = document.getElementById("email").value;
+            var comments = document.getElementById("comments").value;
             var confirm = document.getElementById("confirm").checked;
 
             if (username == "" || telephone == "" || email == "" || !confirm) {
@@ -652,37 +653,6 @@
             };
 
             localStorage.setItem('userData', JSON.stringify(userData));
-        }
-
-
-        function send() {
-            const username = document.getElementById('username').value;
-            const telephone = document.getElementById('telephone').value;
-            const email = document.getElementById('email').value;
-            const comments = document.getElementById('comments').value;
-            const confirm = document.getElementById('confirm').checked;
-
-            const messageDiv = document.getElementById('message');
-
-
-            if (confirm) {
-                console.log(`Name: ${username}`);
-                console.log(`Telephone: ${telephone}`);
-                console.log(`Email: ${email}`);
-                console.log(`Comments: ${comments}`);
-                messageDiv.textContent = 'Form submitted successfully!';
-                messageDiv.style.color = 'green';
-                // Redirect to index.html
-                window.location.href = 'home.html';
-                // Here you would typically send the data to the server
-                // fetch('/submit', {
-                //     method: 'POST',
-                //     body: new URLSearchParams(new FormData(event.target))
-                // });
-            } else {
-                messageDiv.textContent = 'You must agree to the terms and conditions.';
-                messageDiv.style.color = 'red';
-            }
         }
 
     </script>
