@@ -49,14 +49,34 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>Login/ <a href="signup.html">Signup</a> </h2>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
         <button onclick="login()">Login</button>
         <div id="message" class="message"></div>
     </div>
-
+    
     <script>
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+    
+        if (username === "" || password === "") {
+            alert("Please fill in both fields.");
+            return;
+        }
+    
+        // Save username to local storage
+        localStorage.setItem('username', username);
+    
+        // Display a message or redirect the user
+        document.getElementById("message").innerHTML = "Logged in successfully!";
+        window.location.href = 'index.html';
+    }
+    </script>
+    
+
+    <!-- <script>
         // Simulated user data
         const users = [
             { username: 'breeder', password: 'password123', role: 'BREEDER' },
@@ -84,24 +104,23 @@
                 messageDiv.style.color = 'red';
             }
         }
-        // function send() {
-        //     const username = document.getElementById('username').value;
-        //     const telephone = document.getElementById('telephone').value;
-            // const email = document.getElementById('email').value;
-        //     const messageDiv = document.getElementById('message');
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+         
 
-        //     const user = users.find(user => user.username === username && user.password === password);
+            const user = users.find(user => user.username === username && user.password === password);
 
-        //     if (user) {
-        //         messageDiv.textContent = `Welcome, ${user.role}!`;
-        //         messageDiv.style.color = 'green';
-                  // Redirect to index.html
-                  //window.location.href = 'index.html';
-        //     } else {
-        //         messageDiv.textContent = 'Invalid username or password';
-        //         messageDiv.style.color = 'red';
-        //     }
-        // }
-    </script>
+            if (user) {
+                messageDiv.textContent = `Welcome, ${user.role}!`;
+                messageDiv.style.color = 'green';
+                  //Redirect to index.html
+                  window.location.href = 'index.html';
+            } else {
+                messageDiv.textContent = 'Invalid username or password';
+                messageDiv.style.color = 'red';
+            }
+        }
+    </script> -->
 </body>
 </html>
