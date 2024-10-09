@@ -99,7 +99,8 @@
                     const location = spotlocation[Math.floor(Math.random() * spotlocation.length)];
 
                      // Create the link based on the commonName
-                    const link = prediction.commonName.replace(/ /g, '') + '.html';
+                    const link = prediction.commonName.replace(/ /g, '') +  '.html';
+                    window.location.href = link;
                     newRow.innerHTML = `
                         <td>${uploaderName}</td>
                         <td>${uploadReferenceID}</td>
