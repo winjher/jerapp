@@ -96,38 +96,72 @@
                 <div>
                     <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
                         class="text-center mb-5 content-h1 rounded">
-                        {{pred_output}} </h1>
-                </div>
-                <div class="card-app-list">
-                    <div class="details-commonjay">
-                        <h4><b> Hostplant Preparation of Leaves </b> </h4>
-                        <div class="panel-body">
-                            <div class="col-sm">
-                                <ul>
-                                    <li>
-                                        <h6>Number of leaves:{{leaves}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Instar Type: {{instar}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Type of Leaves:{{type_of_leaves}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Estimate capacity of larvae:{{number_of_larvae}}</h6>
-                                    </li>
-                                    <li>
-                                        <h6>Health of leaves:{{health_of_leaves}}</h6>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        {{pred_output}} 
+                    </h1>
+                    <div class="col-xl-12 text-center">
+                        <button id="leafDataGoldenBirdwing" class="btn-classify">Leaf Preparation</button>
+                          <button id="planningGoldenBirdwing" class="btn-classify">Planning</button>
+                          <button id="feedingGoldenBirdwing" class="btn-classify">Feeding</button>
+                          <button id="harvestingGoldenBirdwing" class="btn-classify">Harvesting</button>
+                          <button id="managingGoldenBirdwing" class="btn-classify">Managing</button>
+                          <h2 >Golden Birdwing</h2>
+                          <div class="data-container" id="names"></div>
+
                     </div>
                 </div>
-                <h6>
-                    <a href="butterfly_house.html">Learn more</a>
-                </h6>
+                <div class="card-app-list">
+
+                            <div class="col-sm">
+                                <div class="data-container">
+                                    <p><span class="data-label">Number of leaves:</span> <span id="no_of_leaves"></span></p>
+                                    <p><span class="data-label">Instar Type:</span> <span id="instar_status"></span></p>
+                                    <p><span class="data-label">Type of Leaves:</span> <span id="type_of_leaves"></span></p>
+                                    <p><span class="data-label">Estimated capacity of larvae:</span> <span id="number_of_larvae"></span></p>
+                                    <p><span class="data-label">Health of leaves:</span> <span id="health_of_leaves"></span></p>
+                                </div>
+                                <h6>
+                                    <a href="sleeving-boxes.html">Learn more</a>
+                                </h6>
+                            </div>
+                        </div>
+                 
+                </div>
+               
             </div>
+
+            <script type="text/javascript" charset="utf-8">
+
+                const leafData = {hostplant:'Dutchman pipe, Indian Birthwort',no_of_leaves: 42,instar_status: 'Third Instar',type_of_leaves: 'Broadleaf',number_of_larvae: 15,health_of_leaves: 'Healthy'};
+                const planning = { planning: 'First', feeding: 'Once a day', harvesting: 'weekly',managing:'managing' }
+                const feeding = { planning: 'First', feeding: 'Once a day', harvesting: 'weekly',managing:'managing' }
+                const harvesting = { planning: 'First', feeding: 'Once a day', harvesting: 'weekly',managing:'managing' }
+                const managing = { planning: 'First', feeding: 'Once a day', harvesting: 'weekly',managing:'managing' }
+
+                function changeNames(nameType, data) {
+                    let targetLabel = document.getElementById("names");
+                 
+                    targetLabel.textContent = ` '${data[nameType]}'`;
+                    
+                    document.getElementById('no_of_leaves').textContent = leafData.no_of_leaves;
+                    document.getElementById('instar_status').textContent = leafData.instar_status;
+                    document.getElementById('type_of_leaves').textContent = leafData.type_of_leaves;
+                    document.getElementById('number_of_larvae').textContent = leafData.number_of_larvae;
+                    document.getElementById('health_of_leaves').textContent = leafData.health_of_leaves;
+                }
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.getElementById("leafDataGoldenBirdwing").addEventListener("click", () => changeNames('hostplant', leafData));
+                    document.getElementById("planningGoldenBirdwing").addEventListener("click", () => changeNames('planning', planning));
+                    document.getElementById("feedingGoldenBirdwing").addEventListener("click", () => changeNames('feeding', feeding));
+                    document.getElementById("harvestingGoldenBirdwing").addEventListener("click", () => changeNames('harvesting', harvesting));
+                    document.getElementById("managingGoldenBirdwing").addEventListener("click", () => changeNames('managing', managing));
+
+                });
+
+            </script>
+            <script>
+      
+            </script>
             <script src="./jquery-3.6.0.slim.min.js"> </script>
             <script src="./js/bootstrap.bundle.min.js"></script>
 </body>

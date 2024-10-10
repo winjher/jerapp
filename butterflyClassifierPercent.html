@@ -1,0 +1,162 @@
+Butterfly Classification Percent 
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Classifier</title>
+    <style>
+        /* Include the CSS code here */
+        .login-container, #uploadForm {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* input[type="text"], input[type="password"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        } */
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #result img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #predictions p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .prediction-slider {
+            width: 100%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="login-container">
+        <h2>Login/ <a href="signup.html">Signup</a> </h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <div id="message" class="message"></div>
+    </div> -->
+
+    <h1>Upload Butterfly Image</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="imageUpload" accept="image/*">
+        <button type="button" onclick="uploadImage()">Upload Image</button>
+    </form>
+    <div id="result" style="display: none;">
+        <h2>Prediction Result</h2>
+        <img id="uploadedImage" src="" alt="Uploaded Image">
+        <div class="col-xl-12">
+            <div id="predictions" class="card-app-banner"></div>
+        </div>
+        
+    </div>
+    <script>
+        async function uploadImage() {
+    const input = document.getElementById('imageUpload');
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const img = document.getElementById('uploadedImage');
+            img.src = e.target.result;
+            document.getElementById('result').style.display = 'block';
+
+            const predictions = predictImage(e.target.result); // Replace with actual prediction function
+            if (predictions.length > 0) {
+                displayPredictions(predictions);
+            } else {
+                displayNoResults();
+            }
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        alert('Please select an image to upload.');
+    }
+}
+
+function predictImage(imageData) {
+    // Placeholder for actual model prediction logic
+    // This should return an array of predictions with labels and confidence scores
+    return [
+        { label: 'Common Mormon', confidence: 0.85 },
+        { label: 'Blue Mormon', confidence: 0.10 },
+        { label: 'Swallowtail', confidence: 0.05 }
+    ];
+}
+
+function displayPredictions(predictions) {
+    const predictionsDiv = document.getElementById('predictions');
+    predictionsDiv.innerHTML = '';
+
+    predictions.forEach(prediction => {
+        const p = document.createElement('p');
+        p.textContent = `${prediction.label}: ${(prediction.confidence * 100).toFixed(2)}%`;
+
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.className = 'prediction-slider';
+        slider.min = 0;
+        slider.max = 100;
+        slider.value = (prediction.confidence * 100).toFixed(2);
+        slider.disabled = true;
+
+        predictionsDiv.appendChild(p);
+        predictionsDiv.appendChild(slider);
+    });
+}
+
+function displayNoResults() {
+    const predictionsDiv = document.getElementById('predictions');
+    predictionsDiv.innerHTML = '<p>No results found. Please try again with a different image.</p>';
+}
+    </script>
+</body>
+</html>
