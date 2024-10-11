@@ -1885,69 +1885,136 @@
    background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
  }
 
+
+ @media only screen and (max-width: 600px) {
+   .card-app-dashboard {
+     text-align: center;
+     border-color: rgb(234, 234, 238);
+     border-radius: 5px;
+     display: flex;
+     flex-wrap: wrap;
+     padding-bottom: 5px;
+     margin-top: 4px;
+   }
+
+   .card-dashboard {
+     margin: 0px;
+     width: 100%;
+     text-align: center;
+     border-radius: 5px;
+     display: flex;
+     position: relative;
+     /* padding: 10px 10px 10px 10px; */
+     backdrop-filter: blur(10px);
+     position: relative;
+     width: 100%;
+     padding-right: 1px;
+     padding-left: 1px;
+   }
+
+   .card-dashboard-list-item {
+     /* width: 200px; */
+     border: 1px solid;
+     border-color: orange;
+     /* background-color: #ffc; */
+     border-radius: 15px;
+     margin: 5px 5px 5px 5px;
+     background-color: #fff;
+     margin-left: auto;
+     margin-right: auto;
+     color: var(--bs-teal);
+     text-align: center;
+     background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+   }
+
+   .img-btn-apps-menu-dashboard {
+     height: 8vmin;
+     width: fit-content;
+     aspect-ratio: 1;
+     cursor: pointer;
+     transition: .5s;
+     mix-blend-mode: multiply;
+     text-align: center;
+     padding: 10px;
+   }
+
+   .label-text-dashboard {
+     text-align: center;
+     margin-right: auto;
+     margin-left: auto;
+     margin: 0px;
+     background-color: hsl(135, 71%, 43%);
+     border-radius: 0 0 15px 15px;
+   }
+
+   button:hover {
+     background-color: #0056b3;
+   }
+ }
+
  .card-app-dashboard {
-   text-align: center;
-   border-color: rgb(234, 234, 238);
-   border-radius: 5px;
-   display: flex;
-   flex-wrap: wrap;
-   padding-bottom: 5px;
-   margin-top: 4px;
- }
+  text-align: center;
+  border-color: rgb(234, 234, 238);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5px;
+  margin-top: 4px;
+}
 
- .card-dashboard {
-   margin: 0px;
-   width: 100%;
-   text-align: center;
-   border-radius: 5px;
-   display: flex;
-   position: relative;
-   /* padding: 10px 10px 10px 10px; */
-   backdrop-filter: blur(10px);
-   position: relative;
-   width: 100%;
-   padding-right: 1px;
-   padding-left: 1px;
- }
+.card-dashboard {
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  /* padding: 10px 10px 10px 10px; */
+  backdrop-filter: blur(10px);
+  position: relative;
+  width: 100%;
+  padding-right: 1px;
+  padding-left: 1px;
+}
 
- .card-dashboard-list-item {
-   /* width: 200px; */
-   border: 1px solid;
-   border-color: orange;
-   /* background-color: #ffc; */
-   border-radius: 15px;
-   margin: 5px 5px 5px 5px;
-   background-color: #fff;
-   margin-left: auto;
-   margin-right: auto;
-   color: var(--bs-teal);
-   text-align: center;
-   background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
- }
+.card-dashboard-list-item {
+  /* width: 200px; */
+  border: 1px solid;
+  border-color: orange;
+  /* background-color: #ffc; */
+  border-radius: 15px;
+  margin: 5px 5px 5px 5px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--bs-teal);
+  text-align: center;
+  background-color: linear-gradient(to bottom right, #305170, #6DFC6B);
+}
 
- .img-btn-apps-menu-dashboard {
-   height: 8vmin;
-   width: fit-content;
-   aspect-ratio: 1;
-   cursor: pointer;
-   transition: .5s;
-   mix-blend-mode: multiply;
-   text-align: center;
-   padding: 10px;
- }
+.img-btn-apps-menu-dashboard {
+  height: 16vmin;
+  width: fit-content;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .5s;
+  mix-blend-mode: multiply;
+  text-align: center;
+  padding: 10px;
+}
 
- .label-text-dashboard {
-   text-align: center;
-   margin-right: auto;
-   margin-left: auto;
-   margin: 0px;
-   background-color: hsl(135, 71%, 43%);
-   border-radius: 0 0 15px 15px;
- }
+.label-text-dashboard {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin: 0px;
+  background-color: hsl(135, 71%, 43%);
+  border-radius: 0 0 15px 15px;
+}
 
- button:hover {
-   background-color: #0056b3;
- }
+button:hover {
+  background-color: #0056b3;
+}
 
  /* body {
   font-family: Arial, sans-serif;
