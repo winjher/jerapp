@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Butterfly Adult Care Management</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .section-header {
+      background-color: #f2f2f2;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .section-content {
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Butterfly Adult Care Management</h1>
+
+<div id="names"></div>
+<button onclick="changeNames()">Add</button>
+
+    <div class="section">
+      <div class="section-header">
+        <h2>Foraging</h2>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li>Provide a variety of flowering plants inside the butterfly house.</li>
+          <li>Supplement with fresh petals and sugar syrup.</li>
+          <li>Use a water-filled plate to prevent ants from accessing the food.</li>
+          <li>Regularly check and replace spoiled flowers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section image-container">
+      <img src="images/butterfly_atlasmoth.jpg" alt="Butterfly Feeding">
+    </div>
+
+  </div>
+<script type="text/javascript" charset="utf-8">
+    function changeNames() {
+  let localName = prompt("Enter Local Name:");
+  let commonName = prompt("Enter Common Name:");
+  let scientificName = prompt("Enter Scientific Name:");
+  let place = prompt("Enter place:");
+
+  document.getElementById("names").innerHTML = `Local Name: ‘${localName}’, Common Name : ‘${commonName}’, Scientific Name:’${scientificName}’,Place: ‘${place}’`;
+}
+
+</script>
+</body>
+</html>

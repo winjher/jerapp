@@ -72,7 +72,11 @@
                     outputDiv.appendChild(imgElement);
                 };
                 reader.readAsDataURL(imgInput.files[0]);
+            }else {
+                alert('Please select an image to upload.');
             }
+        
+        
  
             if (file) {
                 const reader = new FileReader();
@@ -163,5 +167,40 @@
                 }
             }
         }
-
+        function predictImage(imageData) {
+            // Placeholder for actual model prediction logic
+            // This should return an array of predictions with labels and confidence scores
+            return [
+                { commonName: 'Common Mormon', confidence: 0.85 },
+                { commonName: 'Blue Mormon', confidence: 0.10 },
+                { commonName: 'Swallowtail', confidence: 0.05 }
+            ];
+        }
+        
+        function displayPredictions(predictions) {
+            const predictionsDiv = document.getElementById('predictions');
+            predictionsDiv.innerHTML = '';
+        
+            predictions.forEach(prediction => {
+                const p = document.createElement('p');
+                p.textContent = `${prediction.commonName}: ${(prediction.confidence * 100).toFixed(2)}%`;
+        
+                const slider = document.createElement('input');
+                slider.type = 'range';
+                slider.className = 'prediction-slider';
+                slider.min = 0;
+                slider.max = 100;
+                slider.value = (prediction.confidence * 100).toFixed(2);
+                slider.disabled = true;
+        
+                predictionsDiv.appendChild(p);
+                predictionsDiv.appendChild(slider);
+            });
+        }
+        
+        function displayNoResults() {
+            const predictionsDiv = document.getElementById('predictions');
+            predictionsDiv.innerHTML = '<p>No results found. Please try again with a different image.</p>';
+        }
+        
    

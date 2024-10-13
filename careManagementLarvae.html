@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Butterfly Larvae Care Management</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .section-header {
+      background-color: #f2f2f2;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .section-content {
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Butterfly Larvae Care Management</h1>
+
+    <div class="section">
+      <div class="section-header">
+        <h2>Larval Diseases</h2>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li>Address any signs of larval disease promptly.</li>
+          <li>Thoroughly dissect diseased larvae to prevent viral infections.</li>
+          <li>Isolate healthy larvae from diseased larvae.</li>
+          <li>Clean the larval cabinet regularly.</li>
+          <li>Move diseased larvae to a separate, safe location for propagation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <h2>Specific Disease Instructions</h2>
+      </div>
+      <div class="section-content">
+        <button class="accordion">Tachinid Flies</button>
+        <div class="panel">
+          <p>Symptoms: ... [Insert symptoms here]</p>
+          <p>Treatment: ... [Insert treatment instructions here]</p>
+        </div>
+
+        <button class="accordion">Ophryocystis Disease</button>
+        <div class="panel">
+          <p>Symptoms: ... [Insert symptoms here]</p>
+          <p>Treatment: ... [Insert treatment instructions here]</p>
+        </div>
+
+        <button class="accordion">Nuclear Polyhedrosis Disease</button>
+        <div class="panel">
+          <p>Symptoms: ... [Insert symptoms here]</p>
+          <p>Treatment: ... [Insert treatment instructions here]</p>
+        </div>
+
+        <button class="accordion">Trichogramma Disease</button>
+        <div class="panel">
+          <p>Symptoms: ... [Insert symptoms here]</p>
+          <p>Treatment: ... [Insert treatment instructions here]</p>
+        </div>
+
+        <button class="accordion">Baculoviruses Disease</button>
+        <div class="panel">
+          <p>Symptoms: ... [Insert symptoms here]</p>
+          <p>Treatment: ... [Insert treatment instructions here]</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <h2>Larval Care</h2>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li>Keep detailed records of larvae health.</li>
+          <li>Provide fresh, clean host plant leaves with sturdy stems.</li>
+          <li>Ensure larvae have access to adequate food.</li>
+          <li>Use a light stick or other appropriate tools to handle larvae gently.</li>
+          <li>Remove feces and waste from the larval cabinet regularly.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section image-container">
+      <img src="images/larvae_atlas.jpg" alt="Butterfly Larvae">
+    </div>
+
+  </div>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
