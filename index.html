@@ -260,6 +260,15 @@
             padding-top: 46px;
         }
 
+        .img-banner {
+            height: 10vmin;
+            width: fit-content;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: .5s;
+            /* mix-blend-mode: multiply; */
+        }
+
         .modal-content {
             background-color: white;
             border-radius: 8px;
@@ -417,7 +426,7 @@
             <div id="intro-section" class="row card-banner">
                 <div class="col-xl-3 text-center p-index">
                     <div class="banner" onclick="bounceBanner()">
-                        <img src="icon/icon-1.webp">
+                        <img src="icon/icon-1.webp" class="img-banner">
                     </div>
                     <div class="card-app-banner">
                         <h2 class="title-banner">Purpose</h2>
@@ -433,7 +442,7 @@
 
                 <div class="col-xl-3 text-center p-index">
                     <div class="banner" onclick="bounceBanner()">
-                        <img src="icon/quality.png">
+                        <img src="icon/quality.png" class="img-banner">
                     </div>
                     <div class="card-app-banner">
                         <h2 class="title-banner">Quality</h2>
@@ -444,7 +453,7 @@
                 </div>
                 <div class="col-xl-3 text-center p-index">
                     <div class="banner" onclick="bounceBanner()">
-                        <img src="icon/dtask.png">
+                        <img src="icon/dtask.png" class="img-banner">
                     </div>
                     <div class="card-app-banner">
                         <h2 class="title-banner">Function</h2>
@@ -461,7 +470,7 @@
                 </div>
                 <div class="col-xl-3 text-center p-index">
                     <div class="banner" onclick="bounceBanner()">
-                        <img src="icon/jewels.png">
+                        <img src="icon/jewels.png" class="img-banner">
                     </div>
                     <div class="card-app-banner">
                         <h2 class="title-banner">Elegant</h2>
@@ -666,7 +675,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7 text-center text-md-left">
-                    <p class="mb-md-0">(C) 2022 Insects Connection Corp. All rights reserved. </p>
+                    <p class="mb-md-0">All rights reserved.(C) 2024 Insects Connection Corp.  </p>
                 </div>
                 <div class="col-md-5 text-center text-md-right">
                     <p class="mb-0">ICON Landing Page by <a href="#" class="external text-white">Insects Connection</a> </p>
