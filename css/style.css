@@ -1766,7 +1766,7 @@
    aspect-ratio: 1;
    cursor: pointer;
    transition: .5s;
-   mix-blend-mode: multiply;
+   /* mix-blend-mode: multiply; */
  }
 
  .img-classes-result-icon {
@@ -1775,7 +1775,7 @@
    aspect-ratio: 1;
    cursor: pointer;
    transition: .5s;
-   mix-blend-mode: multiply;
+   /* mix-blend-mode: multiply; */
  }
 
  .stages-result-icon-btn {
