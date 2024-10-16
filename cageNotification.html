@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Butterfly Cage Notification</title>
+</head>
+<body>
+    <h1>Proper Care Management System for Adults</h1>
+    <h2>Foraging</h2>
+
+    <div id="floral-sources">
+        <h3>Floral Sources</h3>
+        <p>Provide a variety of flowering plants inside the butterfly house or supplement with fresh petals and sugar syrup.</p>
+    </div>
+
+    <div id="ant-prevention">
+        <h3>Ant Prevention</h3>
+        <p>Use a water-filled plate to prevent ants from accessing the food.</p>
+    </div>
+
+    <div id="flower-maintenance">
+        <h3>Flower Maintenance</h3>
+        <p>Regularly check and replace spoiled flowers.</p>
+        <button onclick="replaceFlowers()">Replace Spoiled Flowers</button>
+    </div>
+
+    <div id="daily-changes">
+        <h3>Daily Changes</h3>
+        <p id="daily-message"></p>
+        <p id="last-change-date"></p>
+        <p id="countdown"></p>
+    </div>
+
+    <script>
+        // Function to replace spoiled flowers (placeholder)
+function replaceFlowers() {
+    alert("Spoiled flowers have been replaced!");
+}
+
+// Function to set daily change (placeholder)
+function setDailyChange() {
+    const dailyMessage = document.getElementById('daily-message');
+    dailyMessage.innerText = "Today's change: Refresh the sugar syrup.";
+    const currentDate = new Date();
+    localStorage.setItem('lastChangeDate', currentDate);
+
+    document.getElementById('last-change-date').innerText = "Last change: " + currentDate.toDateString();
+    startCountdown();
+}
+
+// Function to start the countdown timer
+function startCountdown() {
+    const countdownElement = document.getElementById('countdown');
+    const lastChangeDate = new Date(localStorage.getItem('lastChangeDate'));
+    const nextChangeDate = new Date(lastChangeDate.getTime() + 24 * 60 * 60 * 1000);
+
+    const countdown = setInterval(() => {
+        const now = new Date();
+        const timeLeft = nextChangeDate - now;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            countdownElement.innerText = "Time for the next change!";
+        } else {
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            countdownElement.innerText = "Next change in: " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+    }, 1000);
+}
+
+// Function to schedule a custom change
+function scheduleCustomChange() {
+    const customChangeDateInput = document.getElementById('custom-change-date');
+    const customChangeMessageInput = document.getElementById('custom-change-message');
+
+    const customChangeDate = new Date(customChangeDateInput.value);
+    const customChangeMessage = customChangeMessageInput.value;
+
+    // Validate input (you might want to add more validation here)
+    if (customChangeDate.toString() === 'Invalid Date' || customChangeMessage === "") {
+        alert("Please enter a valid date and message.");
+        return;
+    }
+
+    // Store the custom change in local storage
+    const customChanges = JSON.parse(localStorage.getItem('customChanges')) || [];
+    customChanges.push({ date: customChangeDate, message: customChangeMessage });
+    localStorage.setItem('customChanges', JSON.stringify(customChanges));
+
+    // Clear the input fields
+    customChangeDateInput.value = '';
+    customChangeMessageInput.value = '';
+
+    // Display a success message (you can customize this)
+    alert("Custom change scheduled successfully!");
+}
+
+// Function to check for scheduled custom changes
+function checkCustomChanges() {
+    const customChanges = JSON.parse(localStorage.getItem('customChanges')) || [];
+    const currentDate = new Date();
+
+    customChanges.forEach(change => {
+        if (change.date.getTime() <= currentDate.getTime()) {
+            // Display the custom change message
+            alert(change.message);
+
+            // Remove the completed custom change from local storage
+            customChanges.splice(customChanges.indexOf(change), 1);
+            localStorage.setItem('customChanges', JSON.stringify(customChanges));
+        }
+    });
+}
+
+// Event listener for DOMContentLoaded to initialize daily changes and check custom changes
+document.addEventListener('DOMContentLoaded', () => {
+    const lastChangeDate = new Date(localStorage.getItem('lastChangeDate'));
+    const currentDate = new Date();
+
+    if (!lastChangeDate || currentDate - lastChangeDate >= 24 * 60 * 60 * 1000) {
+        setDailyChange();
+    } else {
+        document.getElementById('last-change-date').innerText = "Last change: " + lastChangeDate.toDateString();
+        startCountdown();
+    }
+
+    checkCustomChanges(); // Check for any scheduled custom changes on page load
+});
+
+    </script>
+</body>
+</html>
