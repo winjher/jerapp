@@ -202,7 +202,7 @@
                     const randomIndex = Math.floor(Math.random() *predLabel.length);
                     const prediction =predLabel[randomIndex];
                     const uploaderName = fname[Math.floor(Math.random() * fname.length)]; // Replace with dynamic data if needed
-                    const uploadReferenceID = Date.now().toString();
+                    const imgID = Date.now().toString();
                     //const lifeStages= lifecycleStages[Math.floor(Math.random() * lifecycleStages.length[0])];
                     //const commonName = predOutput[Math.floor(Math.random() * predOutput.length)]; // Replace with dynamic data if needed
                     
@@ -217,8 +217,8 @@
                     const date = new Date().toLocaleDateString();
                     const location = spotlocation[Math.floor(Math.random() * spotlocation.length)];
                     const imgData = e.target.result;
-                    // const imgId = new Date().getTime();
-                    //localStorage.setItem(imgId, imgData);
+                    const uploadReferenceID = new Date().getTime();
+                    //localStorage.setItem(uploadReferenceID, imgData);
                     // alert(`Image uploaded successfully with ID: ${imgId}`);
                     // Create the link based on the commonName in the same tab window
                     // const link = prediction.commonName.replace(/ /g, '') +  '.html';
@@ -231,7 +231,7 @@
                         <td>${uploadReferenceID}</td>
                         <td><a href="${link}" target="_blank">${prediction.commonName}</a></td>           
                         <td>${percent}</td>
-                        <td><a href="${imgData}" download>Download Image</a></td>
+                        <td id="uniqueID"><a href="${imgData}" download>Download Image</a></td>
                         <td>${size}</td>
                         <td>${mimeType}</td>
                         <td>${lastModified}</td>
