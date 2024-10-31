@@ -16,6 +16,7 @@
 
 
 </head>
+
 <body class="body-apps">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
@@ -71,64 +72,64 @@
                 </ul>
             </div>
     </nav>
-   
-    <div class="container">
-        <h5>Upload Image</h5>
-        <input type="file" id="imageUpload" accept="image/*">
-        <div>
-            <div class="col-xl-12 text-center">
-                <div id="output" class="uploadedImage"></div>
-            </div>
-            <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
-            <button class="btn-submit" onclick="myReset()">Reset</button><span></span>
-              
-            <a href="classification.html"> <button class="btn-submit"><span></span>Camera</button></a>
-         
-
-            <button class="btn-submit" onclick="addLocation()">Add Location</button>
-            <button class="btn-submit" onclick="postData()">Post</button>
-        </div>
-
+    <section>
         <div class="container">
-            <h5>Butterfly Image Data</h5>
-            <!-- <button onclick="uploadImage()">Post</button> -->
-            <div class="text-center">
-                <!-- <button class="btn-submit">Search</button> -->
-                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for names..">
-            </div>
-            <div class="table-wrapper">
-                <form action="" method="get" accept-charset="utf-8" id="uploadForm">
-                    <!-- <form action="" id="uploadForm"> -->
-                    <table id="butterflyTable">
-                        <thead>
-                            <tr>
-                               
-                                
-                                <th>Uploader Name</th>
-                                <th>Image ID</th>
-                                <!-- <th>Upload Reference ID</th> -->
-                                <th>Common Name</th>
-                                <th>Confidence</th>
-                                <th>Image Data</th>
-                                <!-- <th>Upload Image</th> -->
-                                <th>Size</th>
-                                <th>Mime Type</th>
-                                <th>Last Modified</th>
-                                <th>Lepidoptera</th>
-                                <th>Date</th>
-                                <th>Location</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="imageTableBody">
-                            <!-- Rows will be added here by JavaScript -->
-                        </tbody>
-                    </table>
-                </form>
-                <!-- <button onclick="redirectToOtherPage()" class="btn-puparium">Go</button> -->
+            <h5>Upload Image</h5>
+            <input type="file" id="imageUpload" accept="image/*">
+            <div>
+                <div class="col-xl-12 text-center">
+                    <div id="output" class="uploadedImage"></div>
+                </div>
+                <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
+                <button class="btn-submit" onclick="myReset()">Reset</button><span></span>
 
+                <a href="classification.html"> <button class="btn-submit"><span></span>Camera</button></a>
+
+
+                <button class="btn-submit" onclick="addLocation()">Add Location</button>
+                <button class="btn-submit" onclick="postData()">Post</button>
             </div>
-        </div>
+
+            <div class="container">
+                <h5>Butterfly Image Data</h5>
+                <!-- <button onclick="uploadImage()">Post</button> -->
+                <div class="text-center">
+                    <!-- <button class="btn-submit">Search</button> -->
+                    <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for names..">
+                </div>
+                <div class="table-wrapper">
+                    <form action="" method="get" accept-charset="utf-8" id="uploadForm">
+                        <!-- <form action="" id="uploadForm"> -->
+                        <table id="butterflyTable">
+                            <thead>
+                                <tr>
+
+
+                                    <th>Uploader Name</th>
+                                    <th>Image ID</th>
+                                    <!-- <th>Upload Reference ID</th> -->
+                                    <th>Common Name</th>
+                                    <th>Confidence</th>
+                                    <th>Image Data</th>
+                                    <!-- <th>Upload Image</th> -->
+                                    <th>Size</th>
+                                    <th>Mime Type</th>
+                                    <th>Last Modified</th>
+                                    <th>Lepidoptera</th>
+                                    <th>Date</th>
+                                    <th>Location</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="imageTableBody">
+                                <!-- Rows will be added here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </form>
+                    <!-- <button onclick="redirectToOtherPage()" class="btn-puparium">Go</button> -->
+
+                </div>
+            </div>
     </section>
     <!-- <script>
         function redirectToOtherPage() {
@@ -139,11 +140,11 @@
     </script> -->
 
 
-        <script src="js/labelInfo.js"></script>
-        <script src="js/upload.js"></script>
-        <script src="jquery-3.6.0.slim.min.js"> </script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/slider.js"></script>
+    <script src="js/labelInfo.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="jquery-3.6.0.slim.min.js"> </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 
 </html>
