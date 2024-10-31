@@ -231,14 +231,14 @@
                         <td>${uploadReferenceID}</td>
                         <td><a href="${link}" target="_blank">${prediction.commonName}</a></td>           
                         <td>${percent}</td>
-                        <td><a href="${uploadImage}" download>Download Image</a></td>
+                        <td><a href="${imgData}" download>Download Image</a></td>
                         <td>${size}</td>
                         <td>${mimeType}</td>
                         <td>${lastModified}</td>
                         <td>${prediction.lepidoptera}</td>
                         <td>${date}</td>
                         <td>${location}</td>
-                        <td><button onclick="deleteRow(this, ${uploadReferenceID})">Delete</button></td>
+                        <button onclick="deleteRow(this, ${uploadReferenceID})">Delete</button>
                     `;
 
                     tableBody.appendChild(newRow);
@@ -280,7 +280,7 @@
             tr = table.getElementsByTagName("tr");
 
 
-            for (i = 0; i < tr.length; i++) {
+            for (i = 0; i <tr.length; i++) {
                 td = tr[i].getElementsByTagName("td")[0];
                 if (td) {
                     txtValue = td.textContent || td.innerText;
@@ -414,7 +414,7 @@
               // Check if the data in this row is expired
               // For this example, we'll assume data older than a certain date is expired
               const dataDate = new Date(row.cells[4].textContent); // Assuming the date is in the 4th cell
-              if (dataDate < currentDate) {
+              if (dataDate <currentDate) {
                 tableBody.removeChild(row);
               }
             }
