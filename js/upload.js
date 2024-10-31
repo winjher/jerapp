@@ -331,14 +331,28 @@
             predictionsDiv.innerHTML = '<p>No results found. Please try again with a different image.</p>';
         }
         
+        // function addLocation() {
+        //     const location = prompt('Enter the location:');
+        //     if (location) {
+        //         const locationElement = document.createElement('p');
+        //         locationElement.textContent = `Location: ${location}`;
+        //         document.querySelector('.container').appendChild(locationElement);
+        //     }
+        // }
+
         function addLocation() {
-            const location = prompt('Enter the location:');
-            if (location) {
-                const locationElement = document.createElement('p');
-                locationElement.textContent = `Location: ${location}`;
-                document.querySelector('.container').appendChild(locationElement);
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+              alert("Geolocation is not supported by this browser.");
             }
-        }
+          }
+        
+          function showPosition(position) {
+            alert("Latitude: " + position.coords.latitude + 
+            "\nLongitude: " + position.coords.longitude);
+          }
+        
 
         function postData() {
             alert('Data posted successfully!');
