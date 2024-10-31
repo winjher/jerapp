@@ -2392,3 +2392,8 @@
    padding: 10px;
    border-radius: 5px;
  }
+.body-apps{
+  background:url('images/background/giphy.webp');
+  background-blend-mode: color-burn;
+}
+ 
