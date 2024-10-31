@@ -28,9 +28,9 @@ const butterflyCommonLime={
     bodyWidth: "0.5 cm",
     wingStand: "45 cm",
     wingSpan: "60 cm",
-    maleColors: "Black Spotted, Black",
-    femaleColors: "Black Spotted, Black",
-    hostPlants: "Avocado Tree,Soursop, Sugar Apple, Amuyon,Indian Tree",
+    maleColors: "Black Spotted, Yellow",
+    femaleColors: "Black Spotted, Yellow",
+    hostPlants: "Calamondin, Lemoncito, Pomelo, ",
 };
 // Populate the HTML with the data
     document.getElementById('knownAs').textContent = butterflyCommonLime.knownAs;

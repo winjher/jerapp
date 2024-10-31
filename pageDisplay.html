@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butterfly Image Data</title>
+  <style>
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    .text-center {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+     h5 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+        display: block;
+        margin: 0 auto 20px auto;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    div {
+        text-align: center;
+    }
+
+    .btn-submit {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+        text-decoration: none;
+    }
+
+    .btn-submit:hover {
+        background-color: #45a049;
+    }
+
+    .btn-submit a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-submit a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="container">
+    <h1>Display Image</h1>
+    <input type="text" id="image-id" placeholder="Enter Image ID" />
+    <button onclick="displayImage()">Display</button>
+    <div id="image-container"></div>
+    <h5>Upload Image</h5>
+    <input type="file" id="imageUpload" accept="image/*">
+    <div>
+      <div class="col-xl-12 text-center">
+        <div id="output" class="uploadedImage"></div>
+      </div>
+      <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
+      <button class="btn-submit" onclick="myReset()">Reset</button><span></span>
+      <!-- <a href="classification.html">  -->
+        <button class="btn-submit" onclick="capture()"><span></span>Camera</button>
+      <!-- </a> -->
+      
+      <button class="btn-submit" onclick="addLocation()">Add Location</button>
+      <button class="btn-submit" onclick="postData()">Post</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h5>Butterfly Image Data</h5>
+    <div class="text-center">
+      <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for names..">
+    </div>
+    <div class="table-wrapper">
+      <form action="" method="get" accept-charset="utf-8" id="uploadForm">
+        <table id="butterflyTable">
+          <thead>
+            <tr>
+              <!-- <th>Image ID</th>
+           -->
+              <th>Uploader Name</th>
+              <th>Upload Reference ID</th>
+              <th>Common Name</th>
+              <th>Confidence</th>
+              <th>Uploaded Image</th>
+              <th>Size</th>
+              <th>Mime Type</th>
+              <th>Last Modified</th>
+              <th>Lepidoptera</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="imageTableBody">
+            <!-- Rows will be added here by JavaScript -->
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function processImage() {
+      const fileInput = document.getElementById('imageUpload');
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function(event) {
+        const imgData = event.target.result;
+        const imgId = new Date().getTime();
+        const uploaderName = "Uploader Name"; // Replace with dynamic data
+        const uploadRefId = "12345"; // Replace with dynamic data
+        const commonName = "Butterfly Common Name"; // Replace with dynamic data
+        const confidence = "98%"; // Replace with dynamic data
+
+        addImageToTable(imgId, imgData, uploaderName, uploadRefId, commonName, confidence, file);
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    function addImageToTable(imgId, imgData, uploaderName, uploadRefId, commonName, confidence, file) {
+      const tableBody = document.getElementById('imageTableBody');
+      const newRow = tableBody.insertRow();
+
+      const cells = [
+        imgId,
+        `<img src="${imgData}" width="100">`,
+        uploaderName,
+        uploadRefId,
+        commonName,
+        confidence,
+        // '<button onclick="uploadImage()">Upload Image</button>',
+        file.size,
+        file.type,
+        new Date(file.lastModified).toLocaleDateString(),
+        'Lepidoptera', // Placeholder, replace with dynamic data
+        new Date().toLocaleDateString(),
+        'Location', // Placeholder, replace with dynamic data
+        '<button onclick="deleteRow(this)">Delete</button>'
+      ];
+
+      cells.forEach(cellContent => {
+        const cell = newRow.insertCell();
+        cell.innerHTML = cellContent;
+      });
+    }
+
+    function deleteRow(button) {
+      const row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+
+    function filterTable() {
+      const input = document.getElementById('myInput');
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById('butterflyTable');
+      const trs = table.tBodies[0].getElementsByTagName('tr');
+
+      for (let i = 0; i < trs.length; i++) {
+        const tds = trs[i].getElementsByTagName('td');
+        let showRow = false;
+        
+        for (let j = 0; j < tds.length; j++) {
+          if (tds[j].innerText.toLowerCase().includes(filter)) {
+            showRow = true;
+            break;
+          }
+        }
+
+        trs[i].style.display = showRow ? '' : 'none';
+      }
+    }
+
+    function myReset() {
+      document.getElementById('uploadForm').reset();
+      document.getElementById('imageTableBody').innerHTML = '';
+    }
+
+    function addLocation() {
+      // Function to add location
+      alert('Add location functionality to be implemented.');
+    }
+
+    function postData() {
+      // Function to post data
+      alert('Post data functionality to be implemented.');
+    }
+    function capture() {
+  constraints.video = {
+      width: {
+      min: 192,
+      ideal: 192,
+      max: 192,
+    },
+    height: {
+      min: 192,
+      ideal: 192,
+      max: 192
+    },
+    facingMode: shouldFaceUser ? 'user' : 'environment'
+  }
+  navigator.mediaDevices.getUserMedia(constraints)
+    .then(function(mediaStream) {
+      stream  = mediaStream;
+      on_stream_video.srcObject = stream;
+      on_stream_video.play();
+    })
+    .catch(function(err) {
+      console.log(err)
+    });
+}
+  </script>
+  <script src="js/upload.js"></script>
+</body>
+</html>

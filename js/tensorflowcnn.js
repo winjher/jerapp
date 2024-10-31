@@ -47,7 +47,7 @@ const accuracy = tf.metrics.categoricalAccuracy(trueLabels, predictions);
 console.log(`Accuracy: ${accuracy.dataSync()[0]}`);
 
 // Make predictions on new images
-const newImage = await loadImage('C:/Users/jerwin/Documents/Butterfly/new/image.jpg');
+const newImage = await loadImage('C:/Users/jerwin/Documents/Butterfly/Butterfly-Clippers/Clippers Butterfly SYLIVIA1.jpg');
 const preprocessedImage = preprocessImage(newImage);
 const prediction = model.predict(preprocessedImage);
 console.log(prediction);

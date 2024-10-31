@@ -1950,6 +1950,29 @@
    button:hover {
      background-color: #0056b3;
    }
+
+   /* butterfly prediction */accor
+   .output-butterfly{
+    width: 300px;
+    height: 300px;
+   }
+
+   .butterfly-prediction{
+    text-align:center;
+    font-size:2rem;
+    margin-top: 20px;
+   }
+ }
+
+ .output-butterfly{
+  width:600px;
+  height:600px;
+ }
+
+ .butterfly-prediction{
+  text-align:center;
+  font-size:4rem;
+  margin-top: 20px;
  }
 
  .card-app-dashboard {
@@ -2278,3 +2301,10 @@ button:hover {
  }
 
  /*  */
+
+
+ .accordion>.card>.card-header {
+  border-radius: 0;
+  margin-bottom: -1px;
+  width: 250px;
+}

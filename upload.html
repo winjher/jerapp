@@ -124,9 +124,9 @@
             </div>
             <button class="btn-submit" onclick="processImage()">Upload</button><span></span>
             <button class="btn-submit" onclick="myReset()">Reset</button><span></span>
-           <button class="btn-submit"><span></span>   
-            <a href="classification.html"> Camera</a>
-            </button>
+              
+            <a href="classification.html"> <button class="btn-submit"><span></span>Camera</button></a>
+         
 
             <button class="btn-submit" onclick="addLocation()">Add Location</button>
             <button class="btn-submit" onclick="postData()">Post</button>
@@ -145,11 +145,15 @@
                     <table id="butterflyTable">
                         <thead>
                             <tr>
+                               
+                                
                                 <th>Uploader Name</th>
-                                <th>Upload Reference ID</th>
+                                <th>Image ID</th>
+                                <!-- <th>Upload Reference ID</th> -->
                                 <th>Common Name</th>
                                 <th>Confidence</th>
-                                <th>Upload Image</th>
+                                <th>Image Data</th>
+                                <!-- <th>Upload Image</th> -->
                                 <th>Size</th>
                                 <th>Mime Type</th>
                                 <th>Last Modified</th>
@@ -168,26 +172,15 @@
 
             </div>
         </div>
-        <!-- <script>
+    </section>
+    <!-- <script>
         function redirectToOtherPage() {
+            const link = prediction.commonName.replace(/ /g, '') + '.html';
+                    window.open(link, '_blank');
             window.location.href = "BCommonJay.html";
         }
     </script> -->
-        <script type="text/javascript" charset="utf-8">
-            function addLocation() {
-                const location = prompt('Enter the location:');
-                if (location) {
-                    const locationElement = document.createElement('p');
-                    locationElement.textContent = `Location: ${location}`;
-                    document.querySelector('.container').appendChild(locationElement);
-                }
-            }
 
-            function postData() {
-                alert('Data posted successfully!');
-            }
-
-        </script>
 
         <script src="js/labelInfo.js"></script>
         <script src="js/upload.js"></script>

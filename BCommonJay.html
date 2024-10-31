@@ -16,6 +16,24 @@
 
 </head>
 <style>
+            .container {
+            width: 80%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .butterfly-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .butterfly-info h2 {
+            color: #007BFF;
+        }
     .button-upload {
         padding: 10px 20px;
         background-color: #007BFF;
@@ -270,41 +288,19 @@
                                 <div id="desc" class="collapse" data-parent="#example">
                                     <div class="card-body">
                                         <div class="card-app-classification">
-                                            <ul>
-                                                <li>
-                                                    <h6 class="key-name">Body Length: <b class="val-name"
-                                                            id="bodyLength"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Body Width: <b class="val-name"
-                                                            id="bodyWidth"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Wing Stand: <b class="val-name"
-                                                            id="wingStand"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Wing Span: <b class="val-name"
-                                                            id="wingSpan"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Male Colors: <b class="val-name"
-                                                            id="maleColors"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Female Colors: <b class="val-name"
-                                                            id="femaleColors"></b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Hostplants: <b class="val-name"
-                                                            id="hostPlants"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Descriptions: <b class="val-name"
-                                                            id="description"></b></h6>
-                                                </li>
-                                            </ul>
+                                            <div class="container">
+                                                <h1>Butterfly Information</h1>
+                                                <div class="butterfly-info">
+                                                    <h2 id="knownAs"></h2>
+                                                    <p><strong>Body Length:</strong> <span id="bodyLength"></span></p>
+                                                    <p><strong>Body Width:</strong> <span id="bodyWidth"></span></p>
+                                                    <p><strong>Wing Stand:</strong> <span id="wingStand"></span></p>
+                                                    <p><strong>Wing Span:</strong> <span id="wingSpan"></span></p>
+                                                    <p><strong>Male Colors:</strong> <span id="maleColors"></span></p>
+                                                    <p><strong>Female Colors:</strong> <span id="femaleColors"></span></p>
+                                                    <p><strong>Host Plants:</strong> <span id="hostPlants"></span></p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -521,42 +517,7 @@
                                 <div id="desc" class="collapse" data-parent="#example">
                                     <div class="card-body">
                                         <div class="card-app-classification">
-                                            <ul>
-                                                <li>
-                                                    <h6 class="key-name">Body Length: <b class="val-name"
-                                                            id="bodyLength"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Body Width: <b class="val-name"
-                                                            id="bodyWidth"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Wing Stand: <b class="val-name"
-                                                            id="wingStand"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Wing Span: <b class="val-name"
-                                                            id="wingSpan"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Male Colors: <b class="val-name"
-                                                            id="maleColors"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Female Colors: <b class="val-name"
-                                                            id="femaleColors"></b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Hostplants: <b class="val-name"
-                                                            id="hostPlants"></b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Descriptions: <b class="val-name"
-                                                            id="description"></b>
-                                                    </h6>
-                                                </li>
-                                            </ul>
+                                            larvalHostPlant
                                         </div>
                                     </div>
 
@@ -926,9 +887,14 @@
     </script>
     <script>
         // Example data
-        const butterflyCommonJay = {
-            knownAs: "Doson, Dozon",
-            scientificName: "Graphium Dozon",
+        const butterflyCommonJay = 
+        {   LocalName:'Doson',
+            commonName: 'Butterfly-Common Jay', 
+            scientificName: 'Graphium doson', 
+            discoveredBy: 'C. & R. Felder', 
+            year: '1864', family: 'Papilionidae', 
+            larvalHostPlant: "Avocado Tree,Soursop, Sugar Apple, Amuyon,Indian Tree",
+            lepidoptera:'Butterfly',
             genus: "Graphium",
             bodyLength: "35 cm",
             bodyWidth: "0.5 cm",
@@ -936,11 +902,11 @@
             wingSpan: "60 cm",
             maleColors: "Blue Spotted, Black",
             femaleColors: "Blue Spotted, Black",
-            hostPlants: "Avocado Tree,Soursop, Sugar Apple, Amuyon,Indian Tree",
+           
         };
 
         // Populate the HTML with the data
-        document.getElementById('knownAs').textContent = butterflyCommonJay.knownAs;
+        document.getElementById('LocalName').textContent = butterflyCommonJay.LocalName;
         document.getElementById('scientificName').innerHTML = `<i>${butterflyCommonJay.scientificName}</i>`;
         document.getElementById('genus').textContent = butterflyCommonJay.genus;
         document.getElementById('bodyLength').textContent = butterflyCommonJay.bodyLength;
@@ -949,7 +915,23 @@
         document.getElementById('wingSpan').textContent = butterflyCommonJay.wingSpan;
         document.getElementById('maleColors').textContent = butterflyCommonJay.maleColors;
         document.getElementById('femaleColors').textContent = butterflyCommonJay.femaleColors;
-        document.getElementById('hostPlants').textContent = butterflyCommonJay.hostPlants;
+        document.getElementById('hostPlants').textContent = butterflyCommonJay.larvalHostPlant;
+
+        function populateButterflyInfo(data) {
+            document.getElementById('knownAs').textContent = data.LocalName;
+            document.getElementById('scientificName').innerHTML = `<i>${data.scientificName}</i>`;
+            document.getElementById('genus').textContent = data.genus;
+            document.getElementById('bodyLength').textContent = data.bodyLength;
+            document.getElementById('bodyWidth').textContent = data.bodyWidth;
+            document.getElementById('wingStand').textContent = data.wingStand;
+            document.getElementById('wingSpan').textContent = data.wingSpan;
+            document.getElementById('maleColors').textContent = data.maleColors;
+            document.getElementById('femaleColors').textContent = data.femaleColors;
+            document.getElementById('hostPlants').textContent = data.larvalHostPlant;
+        }
+
+        // Populate the page with data
+        populateButterflyInfo(butterflyCommonJay);
     </script>
     <script>
         function shuffleList() {

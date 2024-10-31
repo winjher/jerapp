@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Image</title>
+</head>
+<body>
+  <h1>Upload Image</h1>
+  <input type="file" id="image-upload" accept="image/*" />
+  <button onclick="uploadImage()">Upload</button>
+
+  <script>
+    function uploadImage() {
+      const fileInput = document.getElementById('image-upload');
+      const file = fileInput.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const imgData = event.target.result;
+          const imgId = new Date().getTime();
+          localStorage.setItem(imgId, imgData);
+          alert(`Image uploaded successfully with ID: ${imgId}`);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert('Please select an image to upload.');
+      }
+    }
+  </script>
+</body>
+</html>

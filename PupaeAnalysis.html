@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pupae Defect Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        canvas {
+            width: 800px;
+            height: 400px;
+        }
+        #imageUpload {
+            margin-top: 20px;
+        }
+        #imagePreview {
+            margin-top: 10px;
+            text-align: center;
+        }
+        #imagePreview img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pupae Defect Analysis</h1>
+
+    <div id="imageUpload">
+        <h2>Upload Images</h2>
+        <input type="file" id="imageInput" accept="image/*">
+        <div id="imagePreview"></div>
+    </div>
+
+<h2 class="">Chart</h2>
+
+    <canvas id="myChart"></canvas>
+    <script>
+        const pupaeSalesData = {
+    // ... your data structure
+    'Butterfly-Batwing': { defects: { 'old': { severity: ['low', 'medium', 'high'] }, 'over bend': { severity: ['low', 'medium', 'high'] }, 'stretch abdomen': { severity: ['low', 'medium', 'high'] }, 'deformed': { severity: ['low', 'medium', 'high'] }, 'undersized': { severity: ['low', 'medium', 'high'] } } },
+    'Butterfly-Clippers': { defects: { 'old': { severity: ['low', 'medium', 'high'] }, 'over bend': { severity: ['low', 'medium', 'high'] }, 'stretch abdomen': { severity: ['low', 'medium', 'high'] }, 'deformed': { severity: ['low', 'medium', 'high'] }, 'undersized': { severity: ['low', 'medium', 'high'] } } },
+    'Butterfly-Common Jay': { defects: { 'old': ['low', 'medium', 'high'], 'over bend': {severity:['low', 'medium', 'high']}, 'stretch abdomen':{ severity:['low', 'medium', 'high']}, 'deformed':{severity: ['low', 'medium', 'high']}, 'undersized': {severity:['low', 'medium', 'high'] } }},
+};
+
+const imageInput = document.getElementById('imageInput');
+const imagePreview = document.getElementById('imagePreview');
+
+imageInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            imagePreview.innerHTML = ''; // Clear previous image
+            imagePreview.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// Function to calculate defect frequencies
+function calculateDefectFrequencies(data) {
+    const defectFrequencies = {};
+    for (const species in data) {
+        defectFrequencies[species] = {};
+        for (const defect in data[species].defects) {
+            defectFrequencies[species][defect] = data[species].defects[defect].severity;
+        }
+    }
+    return defectFrequencies;
+}
+
+// Function to create a bar chart using Chart.js
+function createBarChart(defectFrequencies) {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(defectFrequencies['Butterfly-Batwing']),
+            datasets: [{
+                label: 'Defect Frequency',
+                data: Object.values(defectFrequencies['Butterfly-Batwing']),
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+// Calculate defect frequencies
+const defectFrequencies = calculateDefectFrequencies(pupaeSalesData);
+
+// Create a bar chart
+createBarChart(defectFrequencies);
+</script>
+
+<script type="text/javascript" charset="utf-8">
+// Get the canvas element
+const chartCanvas = document.getElementById('myChart');
+
+// Define chart data
+const chartData = {
+  labels: Object.keys(pupaeSalesData),
+  datasets: [{
+    label: 'Pupae Sales',
+    data: Object.values(pupaeSalesData).map(data => {
+      // Calculate total sales for each pupae type
+      const totalSales = Object.values(data.defects).reduce((sum, defect) => sum + Object.values(defect.severity).length, 0);
+      return totalSales;
+    }),
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+    ],
+    borderColor: [
+      'rgba(255, 99, 132, 1)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+    ],
+    borderWidth: 1
+  }]
+};
+
+// Create the chart
+const myChart = new Chart(chartCanvas, {
+  type: 'bar',
+  data: chartData,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+
+</script>
+</body>
+</html>

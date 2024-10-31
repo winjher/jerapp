@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .butterfly-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .butterfly-info h2 {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Butterfly Information</h1>
+        <div class="butterfly-info">
+            <h2 id="knownAs"></h2>
+            <p><strong>Scientific Name:</strong> <span id="scientificName"></span></p>
+            <p><strong>Genus:</strong> <span id="genus"></span></p>
+            <p><strong>Body Length:</strong> <span id="bodyLength"></span></p>
+            <p><strong>Body Width:</strong> <span id="bodyWidth"></span></p>
+            <p><strong>Wing Stand:</strong> <span id="wingStand"></span></p>
+            <p><strong>Wing Span:</strong> <span id="wingSpan"></span></p>
+            <p><strong>Male Colors:</strong> <span id="maleColors"></span></p>
+            <p><strong>Female Colors:</strong> <span id="femaleColors"></span></p>
+            <p><strong>Host Plants:</strong> <span id="hostPlants"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Example data
+        const butterflyCommonJay = {
+            knownAs: "Doson, Dozon",
+            scientificName: "Graphium Dozon",
+            genus: "Graphium",
+            bodyLength: "35 cm",
+            bodyWidth: "0.5 cm",
+            wingStand: "45 cm",
+            wingSpan: "60 cm",
+            maleColors: "Blue Spotted, Black",
+            femaleColors: "Blue Spotted, Black",
+            hostPlants: "Avocado Tree, Soursop, Sugar Apple, Amuyon, Indian Tree"
+        };
+
+        const butterflyCommonLime = {
+            bodyLength: "35 cm",
+            bodyWidth: "0.5 cm",
+            wingStand: "45 cm",
+            wingSpan: "60 cm",
+            maleColors: "Black Spotted, Yellow",
+            femaleColors: "Black Spotted, Yellow",
+            hostPlants: "Calamondin, Lemoncito, Pomelo"
+        };
+
+        // Function to populate the HTML with the data
+        function populateButterflyInfo(data) {
+            document.getElementById('knownAs').textContent = data.knownAs;
+            document.getElementById('scientificName').innerHTML = `<i>${data.scientificName}</i>`;
+            document.getElementById('genus').textContent = data.genus;
+            document.getElementById('bodyLength').textContent = data.bodyLength;
+            document.getElementById('bodyWidth').textContent = data.bodyWidth;
+            document.getElementById('wingStand').textContent = data.wingStand;
+            document.getElementById('wingSpan').textContent = data.wingSpan;
+            document.getElementById('maleColors').textContent = data.maleColors;
+            document.getElementById('femaleColors').textContent = data.femaleColors;
+            document.getElementById('hostPlants').textContent = data.hostPlants;
+        }
+
+        // Populate the page with data
+        populateButterflyInfo(butterflyCommonJay);
+        // Uncomment the line below to populate with butterflyCommonLime data instead
+        // populateButterflyInfo(butterflyCommonLime);
+    </script>
+</body>
+</html>

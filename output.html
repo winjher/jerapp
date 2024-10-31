@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        window.onload = function() {
+            const fields = [
+                "uploaderName", "uploadRefId", "commonName", "percent", 
+                "uploadImage", "size", "mimeType", "lastModified", 
+                "content", "date"
+            ];
+            const table = document.getElementById("outputTable");
+
+            fields.forEach(field => {
+                const value = getQueryParam(field);
+                const row = table.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                cell1.innerHTML = field.replace(/([A-Z])/g, ' $1').trim();
+                cell2.innerHTML = value ? value : "No data provided.";
+            });
+
+            // Add Actions row
+            // const actionsRow = table.insertRow();
+            // const actionsCell1 = actionsRow.insertCell(0);
+            // const actionsCell2 = actionsRow.insertCell(1);
+            // actionsCell1.innerHTML = "Actions";
+            // actionsCell2.innerHTML = `<button onclick="alert('Action performed!')">Perform Action</button>`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Output Page</h1>
+    <table id="outputTable">
+        <tr>
+            <th>Field</th>
+            <th>Value</th>
+        </tr>
+    </table>
+</body>
+</html>
