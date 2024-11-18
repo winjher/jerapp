@@ -102,18 +102,13 @@
         <div class="container my-2">
             <div class="row mb-5">
                 <div class="col-sm text-center" style="margin-bottom: 23px;">
-                    <ul>
-                        <li class="text-center">
-                            <!-- <div id="BclassesLabel">
-
-                            </div> -->
                             <span class="border border-primary">
                                 <img id="imagePreview" src="images/butterfly_atlas.jpg" alt="User Image"
-                                    style="width:380px;height:380px;" class="output-butterfly">
+                                    style="width:360px;height:360px;" class="output-butterfly">
                             </span>
                             <div class="col-sm">
                                 <div><br />
-                                    <h2 id="names" class="text-center mb-5 content-h1 rounded"
+                                    <h2 id="names" class="text-center mb-5 content-h1 rounded species""
                                         style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);">
                                         Atlas
                                     </h2>
@@ -126,150 +121,219 @@
                                         <h1 id="output"></h1>
                                         <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
                                     </div>
-                        </li>
-
-                        <br>
-                        <div>
-                            <h4 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
-                                class="text-center mb-5 content-h1 rounded">
-                                <div id="predictionLabel"></div>
-                                <div class="text-center">
-                                    <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                        id="predictionSlider">
-                                    <!-- <div id="predictionLabel"></div> -->
-                                    <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
+                                    <div class="container">
+                                        <h1 id="output"></h1>
+                                        <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
+                                    </div>
                                 </div>
-                        </div>
-                        </h4>
-
-                        <li class="text-center">
-                            <form id="uploadForm" action="" method="post">
-                                <h3>Completed Upload</h3>
-                                <label for="name">Name</label>
-                                <input type="text" id="name">
-
-                                <label for="uploadRefId">Upload Reference Id</label>
-                                <input type="text" id="uploadRefId">
-
-                                <label for="percent">Percent</label>
-                                <input type="text" id="percent">
-
-                                <label for="image">Image</label>
-                                <input type="text" id="image">
-
-                                <label for="size">Size</label>
-                                <input type="text" id="size">
-
-                                <label for="mimeType">Mime Type</label>
-                                <input type="text" id="mimeType">
-
-                                <label for="lastModified">Last Modified</label>
-                                <input type="text" id="lastModified">
-
-                                <label for="content">Content</label>
-                                <input type="text" id="content">
-
-                                <label for="date">Date</label>
-                                <input type="text" id="date">
-
-                                <label for="commonName">Common Name</label>
-                                <input type="text" id="commonName">
-                                <br>
-                                <button type="submit" class="btn-hatchery">Submit</button>
-                            </form>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-                <div class="col-sm">
-
-                    <div class="card-app-list">
-                        <div class="details-commonjay">
-                            <h2><b> Moth Atlas </b> </h2>
-                            <div class="panel-body">
                                 <div class="col-sm">
-                                    <ul>
-                                        <li>
-                                            <div class="stages-icon-list">
-                                                <button type="button" class="stages-icon-btn">
-                                                    <img src="icon/pupa.png" alt="" srcset="" width="30px"
-                                                        class="img-btn-apps-menu stages-icon-btn">
-                                                </button>
-                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                    id="predictionSlider1">
-                                                <div id="commonName"></div>
+                                    <div>
+                                        <div class="text-center">
+                                            <div class="accordion" id="example">
+                                                <div class="card bg-primary">
+                                                    <div class="card-header">
+                                                        <a class="text-light" data-toggle="collapse" href="#desc">
+                                                            <h6 class="acordionItemHeading">Description <span>+</span></h6>
+                                                        </a>
+                                                    </div>
+                                                    <div id="desc" class="collapse show" data-parent="#example">
+                                                        <div class="card-body">
+                                                            <div class="card-app-classification">
+                                                                <table style:border="1">
+                                                                    <tr>
+                                                                        <th>Property</th>
+                                                                        <th>Value</th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Body Length</td>
+                                                                        <td id="size"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Body Width</td>
+                                                                        <td id="width"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Wing Stand</td>
+                                                                        <td id="stand"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Wingspan</td>
+                                                                        <td id="span"></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                                                <div class="card bg-success">
+                                                    <div class="card-header">
+                                                        <a class="text-light" data-toggle="collapse" href="#sciClass">
+                                                            <h6 class="acordionItemHeading">Scientific Classification <span>+</span>
+                                                            </h6>
+                                                        </a>
+                                                    </div>
+                                                    <div id="sciClass" class="collapse" data-parent="#example">
+                                                        <div class="card-body text-white">
+                                                            <div class="card-app-classification">
+                                                                <ul>
+                                                                    <li>
+                                                                        <h6 class="key-name">Scientific Name: <b
+                                                                                class="val-name">{{Scientific
+                                                                                Name}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Year discovered: <b class="val-name">{{Year
+                                                                                discovered}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Sub-family: <b
+                                                                                class="val-name">{{Sub-family}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Class: <b class="val-name">{{Class}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Family:<b class="val-name">{{Family}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Species: <b class="val-name">{{Species}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                                                <div class="card bg-success">
+                                                    <div class="card-header">
+                                                        <a class="text-light" data-toggle="collapse" href="#hostplants">
+                                                            <h6 class="acordionItemHeading">Hostplants Classification <span>+</span></h6>
+                                                        </a>
+                                                    </div>
+                                                    <div id="hostplants" class="collapse" data-parent="#example">
+                                                        <div class="card-body">
+                                                            <div class="card-app-classification">
+                                                                <ul>
+                                                                    <li>
+                                                                        <h6 class="key-name">Common Name: <b
+                                                                                class="val-name">{{Hostplant}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Scientific Name: <b
+                                                                                class="val-name">{{Scientific
+                                                                                Name}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Sub-family: <b
+                                                                                class="val-name">{{Sub-family}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b></h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                                        </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b></h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Class: <b class="val-name">{{Class}}</b></h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h6 class="key-name">Family: <b class="val-name">{{Family}}</b></h6>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div class="stages-icon-list">
-                                                <button type="button" class="stages-icon-btn">
-                                                    <img src="icon/larvae.png" alt="" srcset="" width="30px"
-                                                        class="img-btn-apps-menu stages-icon-btn">
-                                                </button>
-                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                    id="predictionSlider2">
-                                                <div id="predictionLabel2"></div>
+                                        </div>
+                    
+                                    <hr>
+                                    <div class="card-app-list">
+                                        <div class="details-commonjay">
+                                            <h4><b> Moth Atlas</b> </h4>
+                                            <div class="panel-body">
+                                                <div class="col-sm">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="stages-icon-list">
+                                                                <button type="button" class="stages-icon-btn">
+                                                                    <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                                                        class="img-btn-apps-menu stages-icon-btn">
+                                                                </button>
+                                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                                    id="predictionSlider1">
+                                                                <div id="commonName"></div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="stages-icon-list">
+                                                                <button type="button" class="stages-icon-btn">
+                                                                    <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                                                        class="img-btn-apps-menu stages-icon-btn">
+                                                                </button>
+                                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                                    id="predictionSlider2">
+                                                                <div id="predictionLabel2"></div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="stages-icon-list">
+                                                                <button type="button" class="stages-icon-btn">
+                                                                    <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                                                        class="img-btn-apps-menu stages-icon-btn">
+                                                                </button>
+                                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                                    id="predictionSlider3">
+                                                                <div id="predictionLabel3"></div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                    
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div class="stages-icon-list">
-                                                <button type="button" class="stages-icon-btn">
-                                                    <img src="icon/eggs.png" alt="" srcset="" width="30px"
-                                                        class="img-btn-apps-menu stages-icon-btn">
-                                                </button>
-                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                    id="predictionSlider3">
-                                                <div id="predictionLabel3"></div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias
+                                                nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus
+                                                reiciendis aperiam iure itaque maxime quos?</p>
+                                            <div class="text-center">
+                                                <a href="home.html" class="notification">
+                                                    <i class="fas fa-home"></i><span> Home</span>
+                                                </a>
+                                                <a href="www.facebook.com" class="notification">
+                                                    <i class="fas fa-share"></i><span> Share</span>
+                                                </a>
+                                                <a href="uploader.html" class="notification">
+                                                    <i class="fas fa-step-forward"></i><span> Continue</span>
+                                                </a>
                                             </div>
-                                        </li>
-                                    </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <p>Appearance Features</p>
-                        <table style:border="1">
-                            <tr>
-                                <th>Property</th>
-                                <th>Value</th>
-                            </tr>
-                            <tr>
-                                <td>Body Length</td>
-                                <td id="size"></td>
-                            </tr>
-                            <tr>
-                                <td>Body Width</td>
-                                <td id="width"></td>
-                            </tr>
-                            <tr>
-                                <td>Wing Stand</td>
-                                <td id="stand"></td>
-                            </tr>
-                            <tr>
-                                <td>Wingspan</td>
-                                <td id="span"></td>
-                            </tr>
-                        </table>
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias
-                            nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus
-                            reiciendis aperiam iure itaque maxime quos?</p>
-                        <div class="text-center">
-
-                            <a href="home.html" class="notification">
-                                <i class="fas fa-home"></i><span> Home</span>
-                            </a>
-                            <a href="www.facebook.com" class="notification">
-                                <i class="fas fa-share"></i><span> Share</span>
-                            </a>
-                            <a href="uploader.html" class="notification">
-                                <i class="fas fa-step-forward"></i><span> Continue</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </main>
     <hr>
     <footer>

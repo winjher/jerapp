@@ -1957,10 +1957,10 @@
      height: 380px;
    }
 
-   .butterfly-prediction {
+   h3,.butterfly-prediction {
      text-align: center;
-     font-size: 2rem;
-     margin-top: 20px;
+     font-size: small;
+     margin-top: 40px;
    }
    video {
     border: 2px solid #000;
@@ -2310,7 +2310,7 @@
  .accordion>.card>.card-header {
    border-radius: 0;
    margin-bottom: -1px;
-   width: 250px;
+   width: auto;
  }
 
 
@@ -2387,7 +2387,7 @@
 
  ul {
    list-style-type: none;
-   padding: 0;
+   padding: 10px;
  }
 
  .lifecycle-list-item {
@@ -2395,7 +2395,16 @@
    margin: 10px 0;
    padding: 10px;
    border-radius: 5px;
+   width: 360px;
  }
+
+ .species{
+    padding: 15px;
+    background-color: rgb(237, 230, 230);
+    color: rgb(216, 15, 15);
+    border-color: rgb(196, 89, 12);
+}
+ 
 .body-apps{
   background:url('images/background/giphy.webp');
   background-blend-mode: color-burn;
