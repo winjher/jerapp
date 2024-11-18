@@ -105,6 +105,23 @@
                 };
                 reader.readAsDataURL(file);
             });
+           
+            const file = fileInput.files[0];
+
+            if (imgInput.files && imgInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = e.target.result;
+                    imgElement.style.width = '200px';
+                    imgElement.style.height = '200px';
+                    outputDiv.appendChild(imgElement);
+                    
+                };
+                reader.readAsDataURL(imgInput.files[0]);
+            }else {
+                alert('Please select an image to upload.');
+            }
         }
     </script>
     <script>

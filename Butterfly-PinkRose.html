@@ -43,7 +43,7 @@
             padding: 0;
         }
 
-          .lifecycle-list-item {
+        .lifecycle-list-item {
             background-color: #e0f7fa;
             margin: 10px 0;
             padding: 10px;
@@ -109,6 +109,10 @@
                     <h1 id="output"></h1>
                     <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
                 </div>
+
+                <div class="col-xl-12 text-center">
+                    <div id="output-list" class="butterfly-list-item"></div>
+                </div>
             </div>
             <div class="col-sm">
                 <div>
@@ -116,7 +120,7 @@
                         class="text-center mb-5 content-h1 rounded">
                         <div id="predictionLabel">Pink Rose</div>
                     </h1>
-          
+
                 </div>
 
                 <div class="text-center">
@@ -137,7 +141,7 @@
                                             <h6 class="key-name">Marinduque known as:<span class="val-name"> Doson,
                                                     Kotsebuya</span></h6>
                                             <h6 class="key-name">Scientific Name:<span> <i class="val-name">
-                                                Pachliopta kotzebuea</i></span>
+                                                        Pachliopta kotzebuea</i></span>
                                             </h6>
                                             <h6 class="key-name">Genus:<span> <b class="genus">Pachliopta</b></span>
                                             </h6>
@@ -190,6 +194,9 @@
                                         <h6 class="acordionItemHeading">Scientific Classification <span>+</span>
                                         </h6>
                                     </a>
+                                </div>
+                                <div class="col-xl-12 text-center">
+                                    <div id="output" class="uploadedImage"></div>
                                 </div>
                                 <div id="sciClass" class="collapse" data-parent="#example">
                                     <div class="card-body text-white">
@@ -409,7 +416,7 @@
                     });
                 });
             </script>
-             <script type="text/javascript" charset="utf-8">
+            <script type="text/javascript" charset="utf-8">
                 const pinkrose = { localName: 'Kotsebuya', commonName: 'Pink Rose', scientificName: 'Pachliopta kotzebuea' };
 
                 function changeNames(nameType, data) {
@@ -423,13 +430,58 @@
                     // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
 
                     document.getElementById("pinkroseLocal").addEventListener("click", () => changeNames('localName', pinkrose));
-                    document.getElementById("pinkroseCommon").addEventListener("click", () => changeNames('commonName',pinkrose));
-                    document.getElementById("pinkroseScientific").addEventListener("click", () => changeNames('scientificName',pinkrose));
+                    document.getElementById("pinkroseCommon").addEventListener("click", () => changeNames('commonName', pinkrose));
+                    document.getElementById("pinkroseScientific").addEventListener("click", () => changeNames('scientificName', pinkrose));
                 });
 
             </script>
-        <script src="./jquery-3.6.0.slim.min.js"> </script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const predInfo = [
+                        { commonName: 'Butterfly-Batwing', scientificName: 'Atrophaneura semperi', discoveredBy: 'Cramer', year: '1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Clippers', scientificName: 'Parthenos sylvia', discoveredBy: 'Cramer', year: '1775', family: 'Nymphalidae', larvalHostPlant: 'Adenia', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Common Jay', scientificName: 'Graphium doson', discoveredBy: 'C. & R. Felder', year: '1864', family: 'Papilionidae', larvalHostPlant: 'Annona', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Common Lime', scientificName: 'Papilio demoleus', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Calamondin,Citrus Lemoncito', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Common Mime', scientificName: 'Chilasa clytia', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Calamondin,Citrus Lemoncito', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Common Mormon', scientificName: 'Papilio polytes', discoveredBy: 'Eschscholtz', year: '1821', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Calamondin,Citrus Lemoncito', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Emerald Swallow Tail', scientificName: 'Papilio palinurus', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae Papilionidae Lepto Circini', larvalHostPlant: 'Soursop,SUgar Apple, Amuyon', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Golden Birdwing', scientificName: 'Throides radhamantus', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae Papilionidae Lepto Circini', larvalHostPlant: 'Soursop,SUgar Apple, Amuyon', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Gray Glassy Tiger', scientificName: 'Parantica aglea', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae Papilionidae Lepto Circini', larvalHostPlant: 'Soursop,SUgar Apple, Amuyon', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Great Eggfly', scientificName: 'Hypolimnas bolina philippensis', discoveredBy: 'Butler', year: '1874', family: 'Nymphalidae Nymphalinae Nymphaliini', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Great Yellow Mormon', scientificName: 'Papilio lowi', discoveredBy: 'Butler', year: '1874', family: 'Nymphalidae Nymphalinae Nymphaliini', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Paper Kite', scientificName: 'Idea Leucono', discoveredBy: 'Butler', year: '1874', family: 'Nymphalidae Nymphalinae Nymphaliini', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Pink Rose', scientificName: 'Pachliopta kutzebuea', discoveredBy: 'Linnaeus', year: '1758', family: 'Nymphalidae Danainae Danaini', larvalHostPlant: 'Cornflower', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Plain Tiger', scientificName: 'Danaus chrysippus', discoveredBy: 'Linnaeus', year: '1758', family: 'Nymphalidae Danainae Danaini', larvalHostPlant: 'Cornflower', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Red Lacewing', scientificName: 'Cethosia biblis', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Calamondin,Citrus Lemoncito', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Scarlet Mormon', scientificName: 'Papilio romansovia', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Calamondin,Citrus Lemoncito', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Tailed Jay', scientificName: '𝘎𝘳𝘢𝘱𝘩𝘪𝘶𝘮 𝘢𝘨𝘢𝘮𝘦𝘮𝘯𝘰𝘯', discoveredBy: 'Linnaeus', year: '1758', family: 'Papilionidae Papilionidae Lepto Circini', larvalHostPlant: 'Soursop,SUgar Apple, Amuyon', lepidoptera: 'Butterfly' },
+                        { commonName: 'Butterfly-Three-Spot Grass Yellow', scientificName: 'Eurema blanda visellia', discoveredBy: 'Fruhstorfer', year: '1910', family: 'Pieridae; Coliadinae', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera: 'Butterfly' },
+                        { commonName: 'Skipper-Grass Skipper', scientificName: 'Prusiana prusias martinus', discoveredBy: 'Fruhstorfer', year: '1911', family: 'Hesperiidae; Hesperiinae', larvalHostPlant: 'Sweet Potato, Water Spinach', lepidoptera: 'Skipper' },
+                        { commonName: 'Butterfly-Helenus Hystaspe', scientificName: 'Menelaides helenus hystaspes', discoveredBy: 'C.& R. Felder', year: '1862', family: 'Papilionidae; Papilioninae; Papilionini', larvalHostPlant: 'Calamondin,Citrus Lemoncito', lepidoptera: 'Butterfly' },
+                        { commonName: 'Moth-Atlas', scientificName: 'Attacus Atlas', discoveredBy: 'Linnaeus', year: '1767', family: 'Saturniidae', larvalHostPlant: 'Sugar Apple, Soursop', lepidoptera: 'Moth' }
+                        // Add more species here...
+                    ];
+                    // Simulate a prediction
+                    const randomIndex = Math.floor(Math.random() * predInfo.length);
+                    const prediction = predInfo[randomIndex];
+                    const firstElement = predInfo[0];
+                    console.log(firstElement);
+
+                    // Display prediction details
+                    const details = `
+                  <p>Common Name: ${prediction.commonName}</p>
+                  <p>Scientific Name: ${prediction.scientificName}</p>
+                  <p>Discovered By: ${prediction.discoveredBy}</p>
+                  <p>Year: ${prediction.year}</p>
+                  <p>Family: ${prediction.family}</p>
+                  <p>Larval Host Plant: ${prediction.larvalHostPlant}</p>
+              `;
+                    outputDiv.innerHTML += details;
+                });
+            </script>
+            <script src="./jquery-3.6.0.slim.min.js"> </script>
+            <script src="./js/bootstrap.bundle.min.js"></script>
+            <script src="js/labelInfo.js"></script>
 </body>
 
 </html>

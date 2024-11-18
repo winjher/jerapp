@@ -1738,8 +1738,8 @@
  }
 
  #canvas {
-   width: 240px;
-   height: 224px;
+   width: 380px;
+   height: 480px;
    -webkit-transform: scaleX(-1);
    /* mirror effect while using front cam */
    transform: scaleX(-1);
@@ -1849,7 +1849,7 @@
  .img-cam {
    width: 60px;
    height: 60px;
-   padding: 4px;
+   /* padding: 4px; */
  }
 
  .card-app-home-list {
@@ -1962,6 +1962,10 @@
      font-size: 2rem;
      margin-top: 20px;
    }
+   video {
+    border: 2px solid #000;
+    border-radius: 8px;
+  }
  }
 
  .output-butterfly {
@@ -2072,7 +2076,7 @@
    margin: 10px auto;
  } */
 
- .btn-snapshot {
+ .btn-snapshot, .btn-main-camera {
    padding: 6px 15px;
    margin: 5px;
    border: none;
@@ -2094,7 +2098,7 @@
    border-radius: 5px;
  }
 
- button:hover {
+ button:hover, .btn-snapshot:hover {
    background-color: #0056b3;
  }
 
@@ -2104,7 +2108,7 @@
  }
 
  #webcam-container {
-   margin-top: 20px;
+   margin-top: 0px;
  }
 
  #output img {
