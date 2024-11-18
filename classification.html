@@ -5,25 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Classification</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/iconbar.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/upload.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/iconbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/upload.css">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ml5@latest/dist/ml5.min.js"></script>
 
     <style>
         body {
@@ -90,67 +88,13 @@
     </style>
 
 <body background="images/background/giphy.webp" style="background-blend-mode: color-burn;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Upload</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item font-weight-bold">
-                        <a class="nav-link menu-apps-home " href="home.html">
-                            <i class="fas fa-home"></i><span> Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item font-weight-bold">
-                        <a class="nav-link menu-apps-home" href="userprofile.html">
-                            <i class="fas fa-user"></i><span> Profile</span>
-                        </a>
-                    </li>
-                    <li class="nav-item font-weight-bold">
-                        <a href="#" class="nav-link menu-apps-home">
-                            <i class="fa fa-inbox" aria-hidden="true"></i><span> Inbox</span>
-                        </a>
-                    </li>
-                    <li class="nav-item font-weight-bold">
-                        <a href="#" class="nav-link menu-apps-home">
-                            <i class="fas fa-user-friends" aria-hidden="true"></i><span>
-                                Social</span>
-                        </a>
-                    </li>
-                    <li class="nav-item font-weight-bold">
-                        <a class="nav-link menu-apps-home" href="about.html">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i><span>
-                                About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item font-weight-bold">
-                        <a class="nav-link menu-apps-home" href="setting.html">
-                            <i class="fas fa-cog" aria-hidden="true"></i><span>
-                                Setting</span>
-                        </a>
-                    </li>
-                    <li id="home-item" class="nav-item font-weight-bold">
-                        <a class="nav-link menu-apps-home" href="logout.html">
-                            <i class='fas fa-sign-out-alt' style='font-size:10px'></i><span>
-                                Log out</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
     <section>
 
         <div class="jumbotron">
             <div class="card-app-list">
 
-                <div class="container-img mt-3">
+                <div class="container mt-3">
                     <!-- <h6 class="display-12" style="text-align:center;font-size:larger"> Classify Image of Butterfly</h6> -->
 
                     <form id="myForm">
@@ -158,14 +102,14 @@
 
                         <div id="imageResult"></div>
                         <div id="webcam-container">
-                            <video id="webcam" autoplay playsinline width="380" height="480"></video>
+                            <video id="webcam" autoplay playsinline width="380" height="380"></video>
                         </div>
                         <button type="button" class="btn-snapshot" onclick="startImageScan()">Scan Image</button>
-                        <button type="button" class="btn-snapshot" onclick="">Upload</button>
-                        <button id="flip-btn" class="btn-snapshot" onclick="flipButton">Flip Camera</button>
+                        <button type="button" class="btn-snapshot" onclick="myReset()">Reset</button>
+
                         <button id="saveSnapshot" class="btn-snapshot">Save Snapshot</button>
-                        <button id="saveSnapshot" class="btn-snapshot">Photos</button>
-             
+                        <button id="flip-btn" class="btn-snapshot" onclick="flipButton()">Flip Camera</button>
+                    </form>
                     <div class="card-app-list">
                         <br>
                         <h5 class="btn-butterfly h5">Please Add Butterfly Image</h5>
@@ -175,9 +119,14 @@
                         <button id="eggs" class="btn-house">+ Eggs</button>
                         <button id="disease" class="btn-house">+ Disease</button>
                         <button id="defects" class="btn-house">+ Defects</button>
+                        <br>
 
-                      
-                    </form>
+
+                    </div>
+                    <div class="text-center">
+                        <a href="upload.html">
+                            <button>Upload</button>
+                        </a>
                     </div>
                 </div>
     </section>
@@ -205,25 +154,12 @@
                     console.error('Error accessing media devices.', error);
                 });
         }
-
         function startImageScan() {
-            // Example usage of ml5.js
-            const classifier = ml5.imageClassifier('MobileNet', modelReady);
-
-            function modelReady() {
-                console.log('Model Loaded!');
-                // You can start using the model here
-            }
+            const classifier = ml5.imageClassifier('MobileNet', () => {
+                classifier.classify(document.getElementById("uploadedImage"), imageScanResult);
+                element.innerHTML = "Loading...";
+            });
         }
-
-        startImageScan(); // Call the function to start the scan
-
-        // function startImageScan() {
-        //     const classifier = ml5.imageClassifier('MobileNet', () => {
-        //         classifier.classify(document.getElementById("uploadedImage"), imageScanResult);
-        //         element.innerHTML = "Loading...";
-        //     });
-        // }
 
         function imageScanResult(error, results) {
             if (error) {
@@ -234,10 +170,10 @@
             }
         }
 
-        // function myReset() {
-        //     document.getElementById("myForm").reset();
-        //     element.innerHTML = "";
-        // }
+        function myReset() {
+            document.getElementById("myForm").reset();
+            element.innerHTML = "";
+        }
 
         const classifier = knnClassifier.create();
         const webcamElement = document.getElementById("webcam");
@@ -303,7 +239,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/but_ID.js"></script>
     <script src="js/flipCamera.js"></script>
-
 </body>
 
 </html>

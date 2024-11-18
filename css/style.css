@@ -1953,8 +1953,8 @@
 
    /* butterfly prediction */
    accor .output-butterfly {
-     width: 300px;
-     height: 300px;
+     width: 380px;
+     height: 380px;
    }
 
    .butterfly-prediction {
@@ -2501,3 +2501,5 @@ h1 {
     display: flex;
     margin-left: 4px;
 }
+
+

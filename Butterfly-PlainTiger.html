@@ -105,9 +105,15 @@
             <div class="col-sm text-center" style="margin-bottom: 23px;">
                 <span class="border border-primary">
                     <img id="imagebackground" src="images/butterfly_plaintiger.jpg" alt="User Image"
-                        style="width:600px;height:600px;" class="output-butterfly">
+                        style="width:380px;height:380px;" class="output-butterfly">
                 </span>
-                <h2 id="names">Plain Tiger</h2>
+                 <div class="col-sm">
+                    <div><br/>
+                        <h2 id="names" class="text-center mb-5 content-h1 rounded"
+                            style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);">Plain Tiger
+                        </h2>
+                    </div>
+                </div>
                 <button id="plaintigerLocal" class="btn-hatchery">Local Name</button>
                 <button id="plaintigerCommon" class="btn-hatchery">Common Name</button>
                 <button id="plaintigerScientific" class="btn-hatchery">Scientific Name</button>
@@ -153,6 +159,21 @@
                             </div>
                         </div>
                         <hr>
+                         <div class="col-sm">
+                <div>
+                    <!-- <div>
+                        <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
+                            class="text-center mb-5 content-h1 rounded">
+                            <div id="predictionLabel">Golden Birdwing</div>
+                        </h1>
+
+                    </div> -->
+                    <div class="text-center">
+                        <!-- <input type="range" min="0" max="4" value="0" step="1" class="slider" id="predictionSlider"> -->
+                        <!-- <div id="predictionLabel"></div> -->
+                        <!-- <img id="imagePreview" src="images/pupae_goldenbirdwing.jpg" width="224" height="224"> -->
+                        <!-- <div class="card-app-list"> -->
+
                         <div class="accordion" id="example">
                             <div class="card bg-primary">
                                 <div class="card-header">
@@ -189,7 +210,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="card bg-success">
                                 <div class="card-header">
                                     <a class="text-light" data-toggle="collapse" href="#sciClass">
@@ -246,54 +267,56 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="card bg-success">
-                            <div class="card-header">
-                                <a class="text-light" data-toggle="collapse" href="#hostplants">
-                                    <h6 class="acordionItemHeading">Hostplants Classification <span>+</span></h6>
-                                </a>
-                            </div>
-                            <div id="hostplants" class="collapse" data-parent="#example">
-                                <div class="card-body">
-                                    <div class="card-app-classification">
-                                        <ul>
-                                            <li>
-                                                <h6 class="key-name">Common Name: <b class="val-name">{{Hostplant}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Scientific Name: <b class="val-name">{{Scientific
-                                                        Name}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Sub-family: <b class="val-name">{{Sub-family}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b></h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b></h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Class: <b class="val-name">{{Class}}</b></h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Family: <b class="val-name">{{Family}}</b></h6>
-                                            </li>
-                                        </ul>
+
+                            <div class="card bg-success">
+                                <div class="card-header">
+                                    <a class="text-light" data-toggle="collapse" href="#hostplants">
+                                        <h6 class="acordionItemHeading">Hostplants Classification <span>+</span></h6>
+                                    </a>
+                                </div>
+                                <div id="hostplants" class="collapse" data-parent="#example">
+                                    <div class="card-body">
+                                        <div class="card-app-classification">
+                                            <ul>
+                                                <li>
+                                                    <h6 class="key-name">Common Name: <b
+                                                            class="val-name">{{Hostplant}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Scientific Name: <b
+                                                            class="val-name">{{Scientific
+                                                            Name}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Sub-family: <b
+                                                            class="val-name">{{Sub-family}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b></h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                    </h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b></h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Class: <b class="val-name">{{Class}}</b></h6>
+                                                </li>
+                                                <li>
+                                                    <h6 class="key-name">Family: <b class="val-name">{{Family}}</b></h6>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                 <hr>
                 <div class="card-app-list">
