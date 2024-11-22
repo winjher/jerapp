@@ -90,7 +90,9 @@
         </nav>
     </section>
     <div>
-        <h3 class="butterfly-prediction">Butterfly Prediction</h3>
+        <div class="butterfly-prediction">
+            <h3>Butterfly Prediction</h3>
+        </div>
     </div>
     <div class="container my-2">
         <div class="row mb-5">
@@ -99,173 +101,39 @@
                     <img id="imagePreview" src="images/butterfly_clippers.jpg" alt="User Image"
                         style="width:360px;height:360px;" class="output-butterfly">
                 </span>
-                 <div class="col-sm">
-                    <div><br/>
+                <div class="col-sm">
+                    <div><br />
                         <h2 id="names" class="text-center mb-5 content-h1 rounded species""
-                            style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);">Clipper
+                            style=" padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15);
+                            border-color: rgb(196, 89, 12);">Clipper
                         </h2>
                     </div>
                 </div>
                 <button id="clipperLocal" class="btn-hatchery">Local Name</button>
                 <button id="clipperCommon" class="btn-hatchery">Common Name</button>
                 <button id="clipperScientific" class="btn-hatchery">Scientific Name</button>
-                <div class="container">
-                    <h1 id="output"></h1>
-                    <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div>
-                    <div class="text-center">
-                        <div class="accordion" id="example">
-                            <div class="card bg-primary">
-                                <div class="card-header">
-                                    <a class="text-light" data-toggle="collapse" href="#desc">
-                                        <h6 class="acordionItemHeading">Description <span>+</span></h6>
-                                    </a>
-                                </div>
-                                <div id="desc" class="collapse show" data-parent="#example">
-                                    <div class="card-body">
-                                        <div class="card-app-classification">
-                                            <table style:border="1">
-                                                <tr>
-                                                    <th>Property</th>
-                                                    <th>Value</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Body Length</td>
-                                                    <td id="size"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Body Width</td>
-                                                    <td id="width"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Wing Stand</td>
-                                                    <td id="stand"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Wingspan</td>
-                                                    <td id="span"></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card bg-success">
-                                <div class="card-header">
-                                    <a class="text-light" data-toggle="collapse" href="#sciClass">
-                                        <h6 class="acordionItemHeading">Scientific Classification <span>+</span>
-                                        </h6>
-                                    </a>
-                                </div>
-                                <div id="sciClass" class="collapse" data-parent="#example">
-                                    <div class="card-body text-white">
-                                        <div class="card-app-classification">
-                                            <ul>
-                                                <li>
-                                                    <h6 class="key-name">Scientific Name: <b
-                                                            class="val-name">{{Scientific
-                                                            Name}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Year discovered: <b class="val-name">{{Year
-                                                            discovered}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Sub-family: <b
-                                                            class="val-name">{{Sub-family}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Class: <b class="val-name">{{Class}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Family:<b class="val-name">{{Family}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Species: <b class="val-name">{{Species}}</b>
-                                                    </h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card bg-success">
-                                <div class="card-header">
-                                    <a class="text-light" data-toggle="collapse" href="#hostplants">
-                                        <h6 class="acordionItemHeading">Hostplants Classification <span>+</span></h6>
-                                    </a>
-                                </div>
-                                <div id="hostplants" class="collapse" data-parent="#example">
-                                    <div class="card-body">
-                                        <div class="card-app-classification">
-                                            <ul>
-                                                <li>
-                                                    <h6 class="key-name">Common Name: <b
-                                                            class="val-name">{{Hostplant}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Scientific Name: <b
-                                                            class="val-name">{{Scientific
-                                                            Name}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Sub-family: <b
-                                                            class="val-name">{{Sub-family}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
-                                                    </h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Class: <b class="val-name">{{Class}}</b></h6>
-                                                </li>
-                                                <li>
-                                                    <h6 class="key-name">Family: <b class="val-name">{{Family}}</b></h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                <hr>
                 <div class="card-app-list">
                     <div class="details-commonjay">
                         <h4><b> Butterfly-Clippers</b> </h4>
                         <div class="panel-body">
+                            <h6>
+                                The Clipper (Parthenos sylvia), also known locally as "slivia," is a captivating
+                                butterfly species found throughout South and Southeast Asia, particularly in forested
+                                areas. Its name, "Clipper," is aptly chosen, as it is known for its rapid, almost
+                                gliding flight, with its wings flapping stiffly between a horizontal position and a few
+                                degrees below. This butterfly species, like many others, undergoes a fascinating
+                                metamorphosis, transitioning through four distinct stages: egg, larva, pupa, and adult.
+                            </h6>
+                            <h5>The Clipper's Life Cycle</h5>
+                            <h6>
+                                The final stage of the Clipper's life cycle is the adult stage, lasting for
+                                approximately 30 days. This stage marks the emergence of the butterfly, allowing it to
+                                reproduce and continue the cycle. The adult Clipper has large, broad wings with a
+                                distinctive shape. Its forewings are triangular, while its hindwings are short and very
+                                broad, giving it a somewhat quadrate appearance. The wings are adorned with a pattern of
+                                black, white, and orange, with blue or green hues depending on the subspecies. The
+                                Clipper's wings have a distinctive scalloped edge, adding to its unique appearance.
+                            </h6>
                             <div class="col-sm">
                                 <ul>
                                     <li>
@@ -278,6 +146,14 @@
                                                 id="predictionSlider1">
                                             <div id="commonName"></div>
                                         </div>
+                                        <h6>Pupae Stage</h6>
+                                        <p>
+                                            The pupa stage, where the transformation occurs within the chrysalis, lasts
+                                            for about 10 days. The pupa is described as "brown, boat-shaped." This stage
+                                            is crucial for the butterfly's development, as it undergoes a complete
+                                            metamorphosis, transforming from a caterpillar into a winged adult.
+
+                                        </p>
                                     </li>
                                     <li>
                                         <div class="stages-icon-list">
@@ -289,6 +165,15 @@
                                                 id="predictionSlider2">
                                             <div id="predictionLabel2"></div>
                                         </div>
+                                        <h6> Larvae Stage</h6>
+                                        <p>
+                                            The larva stage, or caterpillar stage, is characterized by rapid feeding and
+                                            growth, lasting for approximately 14 days. The larvae are cylindrical with
+                                            short, simple spines on their head and anal segment. Segments three to
+                                            twelve have longer, branched spines, giving them a distinctive appearance.
+                                            The larvae are pale green with yellowish-white lateral stripes, one on each
+                                            side.
+                                        </p>
                                     </li>
                                     <li>
                                         <div class="stages-icon-list">
@@ -300,64 +185,250 @@
                                                 id="predictionSlider3">
                                             <div id="predictionLabel3"></div>
                                         </div>
+                                        <h6>Egg Stage</h6>
+                                        <p>
+                                            The life cycle begins with the egg stage, which typically lasts for 5 days.
+                                            The eggs are laid singly, and their appearance and exact placement have not
+                                            been detailed in the provided search results.
+                                        </p>
                                     </li>
                                 </ul>
                             </div>
-
+                            <h6>
+                                Conservation Status
+                            </h6>
+                            <p>
+                                The Clipper is legally protected in India under Schedule II of the Wildlife (Protection)
+                                Act, 1972. This designation highlights its importance as a species worthy of
+                                conservation efforts. While its overall conservation status is not explicitly mentioned
+                                in the provided search results, its legal protection in India suggests that it is likely
+                                considered a species of concern.
+                            </p>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias
-                            nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus
-                            reiciendis aperiam iure itaque maxime quos?</p>
-                        <div class="text-center">
-                            <a href="home.html" class="notification">
-                                <i class="fas fa-home"></i><span> Home</span>
-                            </a>
-                            <a href="www.facebook.com" class="notification">
-                                <i class="fas fa-share"></i><span> Share</span>
-                            </a>
-                            <a href="uploader.html" class="notification">
-                                <i class="fas fa-step-forward"></i><span> Continue</span>
-                            </a>
+                        <div class="container">
+                            <h1 id="output"></h1>
+                            <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div>
+                            <div class="text-center">
+                                <div class="accordion" id="example">
+                                    <div class="card bg-primary">
+                                        <div class="card-header">
+                                            <a class="text-light" data-toggle="collapse" href="#desc">
+                                                <h6 class="acordionItemHeading">Description <span>+</span></h6>
+                                            </a>
+                                        </div>
+                                        <div id="desc" class="collapse show" data-parent="#example">
+                                            <div class="card-body">
+                                                <div class="card-app-classification">
+                                                    <table style:border="1">
+                                                        <tr>
+                                                            <th>Property</th>
+                                                            <th>Value</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Body Length</td>
+                                                            <td id="size"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Body Width</td>
+                                                            <td id="width"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Wing Stand</td>
+                                                            <td id="stand"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Wingspan</td>
+                                                            <td id="span"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-success">
+                                        <div class="card-header">
+                                            <a class="text-light" data-toggle="collapse" href="#sciClass">
+                                                <h6 class="acordionItemHeading">Scientific Classification <span>+</span>
+                                                </h6>
+                                            </a>
+                                        </div>
+                                        <div id="sciClass" class="collapse" data-parent="#example">
+                                            <div class="card-body text-white">
+                                                <div class="card-app-classification">
+                                                    <ul>
+                                                        <li>
+                                                            <h6 class="key-name">Scientific Name: <b
+                                                                    class="val-name">{{Scientific
+                                                                    Name}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Year discovered: <b
+                                                                    class="val-name">{{Year
+                                                                    discovered}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Sub-family: <b
+                                                                    class="val-name">{{Sub-family}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Domain: <b
+                                                                    class="val-name">{{Domain}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Kingdom: <b
+                                                                    class="val-name">{{Kingdom}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Phylum: <b
+                                                                    class="val-name">{{Phylum}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Class: <b
+                                                                    class="val-name">{{Class}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Family:<b
+                                                                    class="val-name">{{Family}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Species: <b
+                                                                    class="val-name">{{Species}}</b>
+                                                            </h6>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-success">
+                                        <div class="card-header">
+                                            <a class="text-light" data-toggle="collapse" href="#hostplants">
+                                                <h6 class="acordionItemHeading">Hostplants Classification <span>+</span>
+                                                </h6>
+                                            </a>
+                                        </div>
+                                        <div id="hostplants" class="collapse" data-parent="#example">
+                                            <div class="card-body">
+                                                <div class="card-app-classification">
+                                                    <ul>
+                                                        <li>
+                                                            <h6 class="key-name">Common Name: <b
+                                                                    class="val-name">{{Hostplant}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Scientific Name: <b
+                                                                    class="val-name">{{Scientific
+                                                                    Name}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Sub-family: <b
+                                                                    class="val-name">{{Sub-family}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Domain: <b
+                                                                    class="val-name">{{Domain}}</b></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Kingdom: <b
+                                                                    class="val-name">{{Kingdom}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Phylum: <b
+                                                                    class="val-name">{{Phylum}}</b></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Class: <b
+                                                                    class="val-name">{{Class}}</b></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Family: <b
+                                                                    class="val-name">{{Family}}</b></h6>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <p>
+                                The Clipper (Parthenos sylvia) is a striking and agile butterfly species with a
+                                captivating life cycle and diverse subspecies. Its rapid flight and distinctive wing
+                                patterns make it a fascinating subject for butterfly enthusiasts. The Clipper's
+                                widespread distribution across South and Southeast Asia underscores the importance of
+                                preserving its habitats and ensuring its continued presence in the region's diverse
+                                ecosystems.
+                            </p>
+                            <div class="text-center">
+                                <a href="home.html" class="notification">
+                                    <i class="fas fa-home"></i><span> Home</span>
+                                </a>
+                                <a href="www.facebook.com" class="notification">
+                                    <i class="fas fa-share"></i><span> Share</span>
+                                </a>
+                                <a href="uploader.html" class="notification">
+                                    <i class="fas fa-step-forward"></i><span> Continue</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            </main>
+                </main>
 
-            <script>
-                class Clippers {
-                    constructor() {
-                        this.size = 3;
-                        this.width = .5;
-                        this.stand = 4;
-                        this.span = 6;
+                <script>
+                    class Clippers {
+                        constructor() {
+                            this.size = 3;
+                            this.width = .5;
+                            this.stand = 4;
+                            this.span = 6;
+                        }
                     }
-                }
 
-                const butterfly = new Clippers();
+                    const butterfly = new Clippers();
 
-                document.getElementById("size").innerText = butterfly.size; // 3
-                document.getElementById("width").innerText = butterfly.width; // .5
-                document.getElementById("stand").innerText = butterfly.stand; // 4
-                document.getElementById("span").innerText = butterfly.span; // 6
-            </script>
+                    document.getElementById("size").innerText = butterfly.size; // 3
+                    document.getElementById("width").innerText = butterfly.width; // .5
+                    document.getElementById("stand").innerText = butterfly.stand; // 4
+                    document.getElementById("span").innerText = butterfly.span; // 6
+                </script>
 
-            <script type="text/javascript" charset="utf-8">
-                document.addEventListener('DOMContentLoaded', () => {
-                    const lifecycleStages = [
-                        { stage: 'Egg hatching', duration: '3-5 days' },
-                        { stage: 'Molting', duration: '24-36 hrs' },
-                        { stage: 'Larva', duration: '10-14 days' },
-                        { stage: 'Pre-pupa hanged', duration: '12-24 hrs' },
-                        { stage: 'Pupating', duration: '3-10 minutes to 1 hour' },
-                        { stage: 'Chrysalis', duration: '10-12 days' },
-                        { stage: 'Eclosion', duration: '1 to 5 minutes' },
-                        { stage: 'Drying wings', duration: '2-4 hrs' },
-                        { stage: 'Adult', duration: '2-6 weeks' }
-                    ];
-                    const style = document.createElement('style');
-                    style.textContent = `
+                <script type="text/javascript" charset="utf-8">
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const lifecycleStages = [
+                            { stage: 'Egg hatching', duration: '3-5 days' },
+                            { stage: 'Molting', duration: '24-36 hrs' },
+                            { stage: 'Larva', duration: '10-14 days' },
+                            { stage: 'Pre-pupa hanged', duration: '12-24 hrs' },
+                            { stage: 'Pupating', duration: '3-10 minutes to 1 hour' },
+                            { stage: 'Chrysalis', duration: '10-12 days' },
+                            { stage: 'Eclosion', duration: '1 to 5 minutes' },
+                            { stage: 'Drying wings', duration: '2-4 hrs' },
+                            { stage: 'Adult', duration: '2-6 weeks' }
+                        ];
+                        const style = document.createElement('style');
+                        style.textContent = `
                                     .lifecycle-list-item {
                                         font-family: Arial, sans-serif;
                                         font-size: 16px;
@@ -371,38 +442,38 @@
                                         list-style-type: none;
                                     }
                                 `;
-                    document.head.appendChild(style);
-                    const list = document.getElementById('lifecycle-list');
+                        document.head.appendChild(style);
+                        const list = document.getElementById('lifecycle-list');
 
-                    lifecycleStages.forEach(stage => {
-                        const listItem = document.createElement('li');
-                        listItem.textContent = `${stage.stage}: ${stage.duration}`;
-                        list.appendChild(listItem);
+                        lifecycleStages.forEach(stage => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = `${stage.stage}: ${stage.duration}`;
+                            list.appendChild(listItem);
+                        });
                     });
-                });
-            </script>
-             <script type="text/javascript" charset="utf-8">
-                const clipper = { localName: 'Sylvia', commonName: 'Clipper', scientificName: 'Partheno Sylvia' };
+                </script>
+                <script type="text/javascript" charset="utf-8">
+                    const clipper = { localName: 'Sylvia', commonName: 'Clipper', scientificName: 'Partheno Sylvia' };
 
-                function changeNames(nameType, data) {
-                    let targetLabel = document.getElementById("names");
-                    targetLabel.textContent = `'${data[nameType]}'`;
-                }
+                    function changeNames(nameType, data) {
+                        let targetLabel = document.getElementById("names");
+                        targetLabel.textContent = `'${data[nameType]}'`;
+                    }
 
-                document.addEventListener('DOMContentLoaded', () => {
-                    // document.getElementById("biblisLocal").addEventListener("click", () => changeNames('localName', biblis));
-                    // document.getElementById("biblisCommon").addEventListener("click", () => changeNames('commonName', biblis));
-                    // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
+                    document.addEventListener('DOMContentLoaded', () => {
+                        // document.getElementById("biblisLocal").addEventListener("click", () => changeNames('localName', biblis));
+                        // document.getElementById("biblisCommon").addEventListener("click", () => changeNames('commonName', biblis));
+                        // document.getElementById("biblisScientific").addEventListener("click", () => changeNames('scientificName', biblis));
 
-                    document.getElementById("clipperLocal").addEventListener("click", () => changeNames('localName', clipper));
-                    document.getElementById("clipperCommon").addEventListener("click", () => changeNames('commonName', clipper));
-                    document.getElementById("clipperScientific").addEventListener("click", () => changeNames('scientificName', clipper));
-                });
+                        document.getElementById("clipperLocal").addEventListener("click", () => changeNames('localName', clipper));
+                        document.getElementById("clipperCommon").addEventListener("click", () => changeNames('commonName', clipper));
+                        document.getElementById("clipperScientific").addEventListener("click", () => changeNames('scientificName', clipper));
+                    });
 
-            </script>
+                </script>
 
-            <script src="./jquery-3.6.0.slim.min.js"> </script>
-            <script src="./js/bootstrap.bundle.min.js"></script>
+                <script src="./jquery-3.6.0.slim.min.js"> </script>
+                <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

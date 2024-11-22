@@ -61,7 +61,9 @@
         </nav>
     </section>
     <div>
-        <h3 class="butterfly-prediction">Butterfly Prediction</h3>
+          <div class="butterfly-prediction">
+        <h3 >Butterfly Prediction</h3>
+    </div>
     </div>
     <div class="container my-2">
         <div class="row mb-5">
@@ -80,6 +82,56 @@
                 <button id="glassytigerLocal" class="btn-hatchery">Local Name</button>
                 <button id="glassytigerCommon" class="btn-hatchery">Common Name</button>
                 <button id="glassytigerScientific" class="btn-hatchery">Scientific Name</button>
+                <div class="panel-body">
+                    <h5>The Gray Glassy Tiger's Life Cycle</h5>
+                    <div class="col-sm">
+                        <ul>
+                            <li>
+                                <div class="stages-icon-list">
+                                    <button type="button" class="stages-icon-btn">
+                                        <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                            class="img-btn-apps-menu stages-icon-btn">
+                                    </button>
+                                    <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                        id="predictionSlider1">
+                                    <div id="commonName"></div>
+                                </div>
+                                <h6>Pupae Stage</h6>
+                                <p>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="stages-icon-list">
+                                    <button type="button" class="stages-icon-btn">
+                                        <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                            class="img-btn-apps-menu stages-icon-btn">
+                                    </button>
+                                    <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                        id="predictionSlider2">
+                                    <div id="predictionLabel2"></div>
+                                </div>
+                                <h6>Larvae Stage</h6>
+                                <p>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="stages-icon-list">
+                                    <button type="button" class="stages-icon-btn">
+                                        <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                            class="img-btn-apps-menu stages-icon-btn">
+                                    </button>
+                                    <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                        id="predictionSlider3">
+                                    <div id="predictionLabel3"></div>
+                                </div>
+                                <h6>Egg Stage</h6>
+                                <p>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
                 <div class="container">
                     <h1 id="output"></h1>
                     <ul id="lifecycle-list" class="lifecycle-list-item"></ul>

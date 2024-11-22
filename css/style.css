@@ -302,6 +302,7 @@
      margin-right: auto;
      border-radius: 8px;
    }
+
  }
 
  /* This is for Profile Page */
@@ -1957,10 +1958,10 @@
      height: 380px;
    }
 
-   h3,.butterfly-prediction {
+   .butterfly-prediction {
      text-align: center;
      font-size: small;
-     margin-top: 40px;
+     margin-top: 100px;
    }
    video {
     border: 2px solid #000;
@@ -1975,8 +1976,9 @@
 
  .butterfly-prediction {
    text-align: center;
-   font-size: 4rem;
-   margin-top: 20px;
+   font-size: xx-large;
+   margin-top: 50px;
+   padding: 50px;
  }
 
  .card-app-dashboard {
@@ -2512,3 +2514,6 @@ h1 {
 }
 
 
+.butterfly-prediction{
+  margin-top: 50px;
+}

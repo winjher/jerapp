@@ -61,7 +61,9 @@
         </nav>
     </section>
     <div>
-        <h3 class="butterfly-prediction">Butterfly Prediction</h3>
+          <div class="butterfly-prediction">
+        <h3 >Butterfly Prediction</h3>
+    </div>
     </div>
     <div class="container my-2">
         <div class="row mb-5">
@@ -80,19 +82,71 @@
                 <button id="tailedjayLocal" class="btn-hatchery">Local Name</button>
                 <button id="tailedjayCommon" class="btn-hatchery">Common Name</button>
                 <button id="tailedjayScientific" class="btn-hatchery">Scientific Name</button>
-                <div class="container">
-                    <h1 id="output"></h1>
-                    <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
+                <div class="panel-body">
+                    <h5>The Tailed Jay's Life Cycle</h5>
+                    <p>
+                        The final stage of the Tailed Jay's life cycle is the adult stage, lasting for approximately 30 days . This stage marks the emergence of the butterfly, allowing it to reproduce and continue the cycle. The adult Tailed Jay exhibits a wingspan ranging from 75 to 100 mm . The butterfly is predominantly green and black with a series of translucent green spots on its wings . The upper hindwing has a red tornal spot with blue edging around it .
+                    </p>
+                    <div class="col-sm">
+                        <ul>
+                            <li>
+                                <div class="stages-icon-list">
+                                    <button type="button" class="stages-icon-btn">
+                                        <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                            class="img-btn-apps-menu stages-icon-btn">
+                                    </button>
+                                    <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                        id="predictionSlider1">
+                                    <div id="commonName"></div>
+                                </div>
+                                <h6>Pupae Stage</h6>
+                                <p>
+                                    The pupa stage, where the transformation occurs within the chrysalis, lasts for about 10 days . The chrysalis of Graphium agamemnon is pale green or light brown, with a brown-tipped thoracic horn . It is attached by the cremaster and a silken girdle to the underside of a leaf.                                </p>
+                            </li>
+                            <li>
+                                <div class="stages-icon-list">
+                                    <button type="button" class="stages-icon-btn">
+                                        <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                            class="img-btn-apps-menu stages-icon-btn">
+                                    </button>
+                                    <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                        id="predictionSlider2">
+                                    <div id="predictionLabel2"></div>
+                                </div>
+                                <h6>Larvae Stage</h6>
+                                <p>
+                                    The larva stage, also known as the caterpillar stage, is characterized by rapid feeding and growth, lasting for approximately 14 days . The young caterpillar is ochreous-brown with a white saddle on the rear segments.  Each thoracic segment and the anal segment are adorned with a pair of short, multi-branched spines . Throughout its life, the caterpillar habitually rests on the upper side of a leaf, along the midrib, and feeds by nibbling large chunks from the tip of the leaf, leaving the midrib intact . The mature caterpillar is plump, mid-green in color, with small suffused blotches of darker green.  The spines by this stage are much reduced, becoming nothing more than a set of tiny black spikes.
+                                </p>
+                            </li>
+                            <li>
+                                <div class="stages-icon-list">
+                                    <button type="button" class="stages-icon-btn">
+                                        <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                            class="img-btn-apps-menu stages-icon-btn">
+                                    </button>
+                                    <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                        id="predictionSlider3">
+                                    <div id="predictionLabel3"></div>
+                                </div>
+                                <h6>Egg Stage</h6>
+                                <p>
+                                    The Tailed Jay's life cycle begins with the egg stage, which typically lasts for 5 days . The eggs are smooth, spherical, and pale green, laid singly on the upper side of young leaves of sapling trees in the Annonaceae family .
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
+                <h6>Economic Significance</h6>
+                <p>
+                    The Tailed Jay is classified as Least Concern by the International Union for Conservation of Nature (IUCN). This designation indicates that the species is not currently facing significant threats to its survival. However, it is important to continue monitoring its populations and habitat to ensure its long-term conservation.
+                </p>
+               
             </div>
-            <div class="col-sm">
-                <div>
-                    <h1 style="padding: 15px; background-color: rgb(237, 230, 230); color: rgb(216, 15, 15); border-color: rgb(196, 89, 12);"
-                        class="text-center mb-5 content-h1 rounded species"">
-                        <div id="predictionLabel">Tailed Jay</div>
-                    </h1>
-                </div>
-            
+            </div>
+            <div class="container">
+                <h1 id="output"></h1>
+                <ul id="lifecycle-list" class="lifecycle-list-item"></ul>
             </div>
 
             <div class="text-center">
@@ -123,207 +177,172 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="accordion" id="example">
-                        <div class="card bg-primary">
-                            <div class="card-header">
-                                <a class="text-light" data-toggle="collapse" href="#desc">
-                                    <h6 class="acordionItemHeading">Description <span>+</span></h6>
-                                </a>
-                            </div>
-                            <div id="desc" class="collapse show" data-parent="#example">
-                                <div class="card-body">
-                                    <div class="card-app-classification">
-                                        <table style:border="1">
-                                            <tr>
-                                                <th>Property</th>
-                                                <th>Value</th>
-                                            </tr>
-                                            <tr>
-                                                <td>Body Length</td>
-                                                <td id="size"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Body Width</td>
-                                                <td id="width"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Wing Stand</td>
-                                                <td id="stand"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Wingspan</td>
-                                                <td id="span"></td>
-                                            </tr>
-                                        </table>
+                    <div class="col-sm">
+                        <div>
+                            <div class="text-center">
+                                <div class="accordion" id="example">
+                                    <div class="card bg-primary">
+                                        <div class="card-header">
+                                            <a class="text-light" data-toggle="collapse" href="#desc">
+                                                <h6 class="acordionItemHeading">Description <span>+</span></h6>
+                                            </a>
+                                        </div>
+                                        <div id="desc" class="collapse show" data-parent="#example">
+                                            <div class="card-body">
+                                                <div class="card-app-classification">
+                                                    <table style:border="1">
+                                                        <tr>
+                                                            <th>Property</th>
+                                                            <th>Value</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Body Length</td>
+                                                            <td id="size"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Body Width</td>
+                                                            <td id="width"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Wing Stand</td>
+                                                            <td id="stand"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Wingspan</td>
+                                                            <td id="span"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="card bg-success">
+                                        <div class="card-header">
+                                            <a class="text-light" data-toggle="collapse" href="#sciClass">
+                                                <h6 class="acordionItemHeading">Scientific Classification <span>+</span>
+                                                </h6>
+                                            </a>
+                                        </div>
+                                        <div id="sciClass" class="collapse" data-parent="#example">
+                                            <div class="card-body text-white">
+                                                <div class="card-app-classification">
+                                                    <ul>
+                                                        <li>
+                                                            <h6 class="key-name">Scientific Name: <b
+                                                                    class="val-name">{{Scientific
+                                                                    Name}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Year discovered: <b class="val-name">{{Year
+                                                                    discovered}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Sub-family: <b
+                                                                    class="val-name">{{Sub-family}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Class: <b class="val-name">{{Class}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Family:<b class="val-name">{{Family}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Species: <b class="val-name">{{Species}}</b>
+                                                            </h6>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="card bg-success">
+                                        <div class="card-header">
+                                            <a class="text-light" data-toggle="collapse" href="#hostplants">
+                                                <h6 class="acordionItemHeading">Hostplants Classification <span>+</span></h6>
+                                            </a>
+                                        </div>
+                                        <div id="hostplants" class="collapse" data-parent="#example">
+                                            <div class="card-body">
+                                                <div class="card-app-classification">
+                                                    <ul>
+                                                        <li>
+                                                            <h6 class="key-name">Common Name: <b
+                                                                    class="val-name">{{Hostplant}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Scientific Name: <b
+                                                                    class="val-name">{{Scientific
+                                                                    Name}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Sub-family: <b
+                                                                    class="val-name">{{Sub-family}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
+                                                            </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Class: <b class="val-name">{{Class}}</b></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="key-name">Family: <b class="val-name">{{Family}}</b></h6>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="card bg-success">
-                            <div class="card-header">
-                                <a class="text-light" data-toggle="collapse" href="#sciClass">
-                                    <h6 class="acordionItemHeading">Scientific Classification <span>+</span>
-                                    </h6>
-                                </a>
-                            </div>
-                            <div id="sciClass" class="collapse" data-parent="#example">
-                                <div class="card-body text-white">
-                                    <div class="card-app-classification">
-                                        <ul>
-                                            <li>
-                                                <h6 class="key-name">Scientific Name: <b class="val-name">{{Scientific
-                                                        Name}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Year discovered: <b class="val-name">{{Year
-                                                        discovered}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Sub-family: <b class="val-name">{{Sub-family}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Class: <b class="val-name">{{Class}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Family:<b class="val-name">{{Family}}</b>
-                                                </h6>
-                                            </li>
-                                            <li>
-                                                <h6 class="key-name">Species: <b class="val-name">{{Species}}</b>
-                                                </h6>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="card bg-success">
-                        <div class="card-header">
-                            <a class="text-light" data-toggle="collapse" href="#hostplants">
-                                <h6 class="acordionItemHeading">Hostplants Classification <span>+</span></h6>
-                            </a>
-                        </div>
-                        <div id="hostplants" class="collapse" data-parent="#example">
-                            <div class="card-body">
-                                <div class="card-app-classification">
-                                    <ul>
-                                        <li>
-                                            <h6 class="key-name">Common Name: <b class="val-name">{{Hostplant}}</b>
-                                            </h6>
-                                        </li>
-                                        <li>
-                                            <h6 class="key-name">Scientific Name: <b class="val-name">{{Scientific
-                                                    Name}}</b>
-                                            </h6>
-                                        </li>
-                                        <li>
-                                            <h6 class="key-name">Sub-family: <b class="val-name">{{Sub-family}}</b>
-                                            </h6>
-                                        </li>
-                                        <li>
-                                            <h6 class="key-name">Domain: <b class="val-name">{{Domain}}</b></h6>
-                                        </li>
-                                        <li>
-                                            <h6 class="key-name">Kingdom: <b class="val-name">{{Kingdom}}</b>
-                                            </h6>
-                                        </li>
-                                        <li>
-                                            <h6 class="key-name">Phylum: <b class="val-name">{{Phylum}}</b></h6>
-                                        </li>
-                                        <li>
-                                            <h6 class="key-name">Class: <b class="val-name">{{Class}}</b></h6>
-                                        </li>
-                                        <li>
-                                            <h6 class="key-name">Family: <b class="val-name">{{Family}}</b></h6>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
 
             <hr>
-            <div class="card-app-list">
-                <div class="details-commonjay">
-                    <h4><b> Butterfly-Tailed Jay</b> </h4>
-                    <div class="panel-body">
-                        <div class="col-sm">
-                            <ul>
-                                <li>
-                                    <div class="stages-icon-list">
-                                        <button type="button" class="stages-icon-btn">
-                                            <img src="icon/pupa.png" alt="" srcset="" width="30px"
-                                                class="img-btn-apps-menu stages-icon-btn">
-                                        </button>
-                                        <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                            id="predictionSlider1">
-                                        <div id="commonName"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="stages-icon-list">
-                                        <button type="button" class="stages-icon-btn">
-                                            <img src="icon/larvae.png" alt="" srcset="" width="30px"
-                                                class="img-btn-apps-menu stages-icon-btn">
-                                        </button>
-                                        <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                            id="predictionSlider2">
-                                        <div id="predictionLabel2"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="stages-icon-list">
-                                        <button type="button" class="stages-icon-btn">
-                                            <img src="icon/eggs.png" alt="" srcset="" width="30px"
-                                                class="img-btn-apps-menu stages-icon-btn">
-                                        </button>
-                                        <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                            id="predictionSlider3">
-                                        <div id="predictionLabel3"></div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci beatae alias
-                        nulla cum ullam ad optio debitis, enim saepe laudantium architecto suscipit doloribus
-                        reiciendis aperiam iure itaque maxime quos?</p>
-                    <div class="text-center">
-                        <a href="home.html" class="notification">
-                            <i class="fas fa-home"></i><span> Home</span>
-                        </a>
-                        <a href="www.facebook.com" class="notification">
-                            <i class="fas fa-share"></i><span> Share</span>
-                        </a>
-                        <a href="uploader.html" class="notification">
-                            <i class="fas fa-step-forward"></i><span> Continue</span>
-                        </a>
-                    </div>
-                </div>
+            <p>
+                The Tailed Jay (Graphium agamemnon) is a beautiful and widespread butterfly species with a fascinating life cycle. Its adaptability to diverse habitats and its ability to thrive in both natural and human-modified environments contribute to its success. Understanding the intricacies of its life cycle and the ecological factors that influence its survival is crucial for ensuring its continued presence in the diverse ecosystems it inhabits.
+            </p>
+            <div class="text-center">
+                <a href="home.html" class="notification">
+                    <i class="fas fa-home"></i><span> Home</span>
+                </a>
+                <a href="www.facebook.com" class="notification">
+                    <i class="fas fa-share"></i><span> Share</span>
+                </a>
+                <a href="uploader.html" class="notification">
+                    <i class="fas fa-step-forward"></i><span> Continue</span>
+                </a>
             </div>
         </div>
+    </div>
+</div>
         </main>
 
         <script>

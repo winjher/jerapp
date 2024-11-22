@@ -61,7 +61,9 @@
         </nav>
     </section>
     <div>
-        <h3 class="butterfly-prediction">Butterfly Prediction</h3>
+          <div class="butterfly-prediction">
+        <h3 >Butterfly Prediction</h3>
+    </div>
     </div>
     <div class="container my-2">
         <div class="row mb-5">
@@ -85,11 +87,76 @@
                     <button id="goldenbirdwingLocal" class="btn-hatchery">Local Name</button>
                     <button id="goldenbirdwingCommon" class="btn-hatchery">Common Name</button>
                     <button id="goldenbirdwingScientific" class="btn-hatchery">Scientific Name</button>
+                    <div class="panel-body">
+                        <p>
+                            The Golden Birdwing (Troides rhadamantus), known locally as "cajava," is a captivating butterfly species found exclusively in the Philippines.  This magnificent insect is a member of the swallowtail family, Papilionidae, and is renowned for its striking appearance and impressive size.  The Golden Birdwing, like all butterflies, undergoes a remarkable metamorphosis, transitioning through four distinct stages: egg, larva, pupa, and adult.
+                        </p>
+                        <h5>The Golden Birdwing's Life Cycle</h5>
+                        <p>
+                            The final stage of the Golden Birdwing's life cycle is the adult stage, lasting for approximately 30 days. This stage marks the emergence of the butterfly, allowing it to reproduce and continue the cycle. The adult Golden Birdwing is a large butterfly with a wingspan of 4.0 to 8.0 inches.  The males are black with yellow hindwings, while the females are larger and have dark brown or black wings.  Both sexes have distinctive markings on their wings, including prominent streaks on the forewings and black cone-shaped markings on the hindwings.  The Golden Birdwing is a striking and impressive butterfly that is a true symbol of the beauty and diversity of the Philippines' natural world.
 
+                        </p>
+                        <div class="col-sm">
+                            <ul>
+                                <li>
+                                    <div class="stages-icon-list">
+                                        <button type="button" class="stages-icon-btn">
+                                            <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                                class="img-btn-apps-menu stages-icon-btn">
+                                        </button>
+                                        <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                            id="predictionSlider1">
+                                        <div id="commonName"></div>
+                                    </div>
+                                    <h6>Pupae Stage</h6>
+                                    <p>
+                                        The pupa stage, where the transformation occurs within the chrysalis, lasts for about 10 days.  The pupa is not described in detail in the provided search results.  This stage is crucial for the butterfly's development, as it undergoes a complete metamorphosis, transforming from a caterpillar into a winged adult.
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="stages-icon-list">
+                                        <button type="button" class="stages-icon-btn">
+                                            <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                                class="img-btn-apps-menu stages-icon-btn">
+                                        </button>
+                                        <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                            id="predictionSlider2">
+                                        <div id="predictionLabel2"></div>
+                                    </div>
+                                    <h6>Larvae Stage</h6>
+                                    <p>
+                                        The larva stage, or caterpillar stage, is characterized by rapid feeding and growth, lasting for approximately 14 days.  The larvae are described as "pale brown" with "long thorny protrusions with pink tips."  These protrusions serve as a defense mechanism, deterring predators.  The larvae primarily feed on plants from the Aristolochiaceae family, which contain aristolochic acid, a toxic substance that makes the caterpillars themselves poisonous.  This toxin accumulates in the adult butterflies, making them unpalatable to predators.
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="stages-icon-list">
+                                        <button type="button" class="stages-icon-btn">
+                                            <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                                class="img-btn-apps-menu stages-icon-btn">
+                                        </button>
+                                        <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                            id="predictionSlider3">
+                                        <div id="predictionLabel3"></div>
+                                    </div>
+                                    <h6>Egg Stage</h6>
+                                    <p>
+                                        The life cycle begins with the egg stage, which typically lasts for 5 days.  The eggs are laid singly, and their appearance and exact placement have not been detailed in the provided search results.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
 
                     <!-- <h1 id="output"></h1> -->
                     <!-- <ul id="lifecycle-list" class="lifecycle-list-item"></ul> -->
                 </div>
+                <h6>
+                    Conservation Status
+                </h6>
+                <p>
+                    The Golden Birdwing is listed as Appendix II of CITES, meaning it is considered a species of concern that may require protection to prevent overexploitation.  While its overall conservation status is not explicitly mentioned in the provided search results, its CITES listing suggests that it is likely considered a species of concern.
+                </p>
             </div>
             <div class="col-sm">
                 <div>
@@ -253,45 +320,55 @@
                         <!-- <div class="details-commonjay">
                             <h4><b> Butterfly-Golden Birdwing </b> </h4>
                             <div class="panel-body">
-                                <div class="col-sm">
-                                    <ul>
-                                        <li>
-                                            <div class="stages-icon-list">
-                                                <button type="button" class="stages-icon-btn">
-                                                    <img src="icon/pupa.png" alt="" srcset="" width="30px"
-                                                        class="img-btn-apps-menu stages-icon-btn">
-                                                </button>
-                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                    id="predictionSlider1">
-                                                <div id="commonName"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="stages-icon-list">
-                                                <button type="button" class="stages-icon-btn">
-                                                    <img src="icon/larvae.png" alt="" srcset="" width="30px"
-                                                        class="img-btn-apps-menu stages-icon-btn">
-                                                </button>
-                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                    id="predictionSlider2">
-                                                <div id="predictionLabel2"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="stages-icon-list">
-                                                <button type="button" class="stages-icon-btn">
-                                                    <img src="icon/eggs.png" alt="" srcset="" width="30px"
-                                                        class="img-btn-apps-menu stages-icon-btn">
-                                                </button>
-                                                <input type="range" min="0" max="4" value="0" step="1" class="slider"
-                                                    id="predictionSlider3">
-                                                <div id="predictionLabel3"></div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
+                            <h5>The Common Jay's Life Cycle</h5>
+                            <div class="col-sm">
+                                <ul>
+                                    <li>
+                                        <div class="stages-icon-list">
+                                            <button type="button" class="stages-icon-btn">
+                                                <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
+                                            </button>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider1">
+                                            <div id="commonName"></div>
+                                        </div>
+                                        <h6>Pupae Stage</h6>
+                                        <p>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <div class="stages-icon-list">
+                                            <button type="button" class="stages-icon-btn">
+                                                <img src="icon/larvae.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
+                                            </button>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider2">
+                                            <div id="predictionLabel2"></div>
+                                        </div>
+                                        <h6>Larvae Stage</h6>
+                                        <p>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <div class="stages-icon-list">
+                                            <button type="button" class="stages-icon-btn">
+                                                <img src="icon/eggs.png" alt="" srcset="" width="30px"
+                                                    class="img-btn-apps-menu stages-icon-btn">
+                                            </button>
+                                            <input type="range" min="0" max="4" value="0" step="1" class="slider"
+                                                id="predictionSlider3">
+                                            <div id="predictionLabel3"></div>
+                                        </div>
+                                        <h6>Egg Stage</h6>
+                                        <p>
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
+
+                        </div>
 
                         </div> -->
                         <!-- <p>Appearance Features</p>
@@ -343,7 +420,10 @@
                             interrupted by an inner triangular and an outer small yellow spot.
 
                             Antennae, head, thorax and abdomen as in cerebrus, but the abdomen beneath with two lateral
-                            and two median rows of black spots.[4]
+                            and two median rows of black spots.
+                            
+                            The Golden Birdwing (Troides rhadamantus) is a striking and impressive butterfly species found only in the Philippines.  Its large size, vibrant coloration, and unique markings make it a captivating creature.  The Golden Birdwing's conservation status underscores the importance of protecting its habitats and ensuring its continued presence in the Philippines' diverse ecosystems.  Further research is needed to understand the specific threats to the Golden Birdwing and develop effective conservation strategies to protect this magnificent species.
+
                         </p>
                         <div class="text-center">
                             <a href="home.html" class="notification">

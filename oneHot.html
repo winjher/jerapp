@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Image Classification</title>
+</head>
+<body>
+    <h1>Butterfly Image Classification</h1>
+    <form id="imageForm">
+        <input type="file" id="imageInput" accept="image/*">
+        <button type="button" onclick="startImageScan()">Upload and Scan Image</button>
+    </form>
+    <div id="imageResult">Result will appear here...</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ml5@latest/dist/ml5.min.js"></script>
+    <script>
+        const element = document.getElementById("imageResult");
+
+        // Define your class labels
+        const classes = ["Butterfly", "Pupae", "Larvae", "Eggs", "Disease", "Defects"];
+        const numClasses = classes.length;
+
+        // Create a mapping from class names to integers
+        const classToIndex = {};
+        classes.forEach((className, index) => {
+            classToIndex[className] = index;
+        });
+
+        // Function to start image scan
+        function startImageScan() {
+            const imageInput = document.getElementById("imageInput");
+            if (imageInput.files && imageInput.files[0]) {
+                const classifier = ml5.imageClassifier('MobileNet', modelReady);
+                element.innerHTML = "Loading...";
+
+                function modelReady() {
+                    classifier.classify(imageInput.files[0], imageScanResult);
+                }
+            }
+        }
+
+        // Check for errors and display the results if there aren't any
+        function imageScanResult(error, results) {
+            if (error) {
+                element.innerHTML = error;
+            } else {
+                let num = results[0].confidence * 100;
+                const labelIndex = classToIndex[results[0].label] !== undefined ? classToIndex[results[0].label] : -1;
+                
+                if (labelIndex > -1) {
+                    const oneHotEncoded = oneHotEncode(labelIndex, numClasses);
+                    element.innerHTML = `${results[0].label} <br> Confidence: ${num.toFixed(0)} % <br> One-Hot Encoded: ${oneHotEncoded.join(', ')}`;
+                } else {
+                    element.innerHTML = `Unrecognized label: ${results[0].label}`;
+                }
+            }
+        }
+
+        // Function to one-hot encode labels
+        function oneHotEncode(label, numClasses) {
+            const oneHot = new Array(numClasses).fill(0);
+            oneHot[label] = 1;
+            return oneHot;
+        }
+    </script>
+</body>
+</html>
