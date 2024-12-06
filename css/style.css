@@ -2389,7 +2389,7 @@
 
  ul {
    list-style-type: none;
-   padding: 10px;
+   padding: 1px;
  }
 
  .lifecycle-list-item {
@@ -2520,4 +2520,18 @@ h1 {
 
 p>.conserve{
   padding: 5px;
+}
+
+.btn-names{
+  margin: 8px;
+  background-color: #0fc63a;
+  border-radius: 20px;
+  border: none;
+  height: 35px;
+  min-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-items: center;
+  color: var(--bs-light);
 }

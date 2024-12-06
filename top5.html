@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Image Classification</title>
+</head>
+<body>
+    <h1>Butterfly Image Classification</h1>
+    <form id="imageForm">
+        <input type="file" id="imageInput" accept="image/*">
+        <button type="button" onclick="startImageScan()">Upload and Scan Image</button>
+    </form>
+    <div id="imageResult">Result will appear here...</div>
+
+    <!-- Include TensorFlow.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+    <script>
+        let model;
+        const classes = [
+            'Butterfly-Clippers', 'Butterfly-Common Jay', 'Butterfly-Common Lime', 
+            'Butterfly-Common Mime', 'Butterfly-Common Mormon', 'Butterfly-Emerald Swallowtail', 
+            'Butterfly-Golden Birdwing', 'Butterfly-Gray Glassy Tiger', 'Butterfly-Great Eggfly', 
+            'Butterfly-Great Yellow Mormon', 'Butterfly-Paper Kite', 'Butterfly-Pink Rose', 
+            'Butterfly-Plain Tiger', 'Butterfly-Red Lacewing', 'Butterfly-Scarlet Mormon', 
+            'Butterfly-Tailed Jay', 'Moth-Atlas', 'Moth-Giant Silk'
+        ];
+
+        async function loadModel() {
+            model = await tf.loadLayersModel('C:/Users/jerwin/Documents/GitHub/jerapp/model_architecture.json');  // Adjust the path to your model JSON file
+            console.log('Model loaded');
+        }
+
+        async function startImageScan() {
+            const imageInput = document.getElementById("imageInput");
+            if (imageInput.files && imageInput.files[0]) {
+                const image = document.createElement('img');
+                image.src = URL.createObjectURL(imageInput.files[0]);
+                image.onload = async () => {
+                    const tensor = tf.browser.fromPixels(image)
+                        .resizeNearestNeighbor([224, 224])
+                        .toFloat()
+                        .expandDims();
+                    const predictions = await model.predict(tensor).data();
+                    displayResults(predictions);
+                };
+            }
+        }
+
+        function displayResults(predictions) {
+            const top_5_indices = Array.from(predictions)
+                .map((p, i) => [p, i])  // create an array of [probability, index] pairs
+                .sort(([p1], [p2]) => p2 - p1)  // sort by probability in descending order
+                .slice(0, 5)  // get the top 5
+                .map(([_, i]) => i);  // extract the indices
+            
+            const top_5_predictions = top_5_indices.map(index => ({
+                class: classes[index],
+                probability: (predictions[index] * 100).toFixed(2)
+            }));
+
+            const resultElement = document.getElementById("imageResult");
+            resultElement.innerHTML = top_5_predictions.map(
+                pred => `Class: ${pred.class}, Probability: ${pred.probability}%`
+            ).join('<br>');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadModel();
+        });
+    </script>
+</body>
+</html>
