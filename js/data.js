@@ -26,7 +26,7 @@ function loadImages(dataDir) {
     images.push(imageTensor);
     
     // here we assume every folder has file with name n_flower.png
-    var butterfly = files[i].toLocaleLowerCase().endsWith("butterfly.png");
+    var butterfly = files[i].toLocaleLowerCase().endsWith("n_butterfly.png");
     var pupae = files[i].toLocaleLowerCase().endsWith("pupae.png");
     var prepupae = files[i].toLocaleLowerCase().endsWith("prepupae.png");
     var larvae = files[i].toLocaleLowerCase().endsWith("larvae.png");
