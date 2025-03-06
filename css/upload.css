@@ -65,7 +65,8 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
-.btn-submit {
+.btn-submit 
+.camera-btn{
     color: var(--color-cloud);
     background-color: #0808e1;
     border-style: none;
@@ -73,9 +74,13 @@ tr:hover {
     padding: 6px;
     margin-right: 1px;
 }
+
+.camera-btn:hover{
+    color: #ddd;
+}
 a{
     text-decoration: none;
-    color: black;
+    color:  #f1f1f1;
 }
 a.download-link {
     color: #007bff;
