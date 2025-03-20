@@ -1,4 +1,6 @@
- /* :root {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+ :root {
    --color-iris: #4D5AE5;
    --color-navyblue: #2E2F42;
    --color-white: #FFFFFF;
