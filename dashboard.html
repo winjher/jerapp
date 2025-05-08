@@ -8,38 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/iconbar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/03-feedback.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .categoriesSideBar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 120px;
+            background-color: #548235;
+            color: white;
+        }
+
+        .categoriesSideBar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .categoriesSideBar ul li {
+            margin: 4px 0;
+        }
+    </style>
 </head>
-<style>
-    .categoriesSideBar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        width: 120px;
-        background-color: #548235;
-        color: white;
-    }
-
-    .categoriesSideBar ul {
-        list-style-type: none;
-    }
-
-    .categoriesSideBar ul li {
-        margin: 4px;
-    }
-</style>
 
 <body>
-
-    <!-------------------------------Nav bar section-------------------------------------------->
     <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
@@ -50,177 +46,116 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
-
                     <ul class="navbar-nav ms-auto">
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li class="nav-item font-weight-bold">
                             <a class="nav-link notification text-center" href="home.html">
                                 <i class="fas fa-home"></i><span> Home</span>
                             </a>
                         </li>
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li class="nav-item font-weight-bold">
                             <a class="nav-link notification text-center" href="userprofile.html">
                                 <i class="fas fa-user"></i><span> Profile</span>
                             </a>
                         </li>
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li class="nav-item font-weight-bold">
                             <a href="#" class="nav-link notification text-center">
                                 <i class="fa fa-inbox" aria-hidden="true"></i><span> Inbox</span>
                             </a>
                         </li>
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li class="nav-item font-weight-bold">
                             <a href="#" class="nav-link notification text-center">
-                                <i class="fas fa-user-friends" aria-hidden="true"></i><span>
-                                    Social</span>
+                                <i class="fas fa-user-friends" aria-hidden="true"></i><span> Social</span>
                             </a>
                         </li>
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li class="nav-item font-weight-bold">
                             <a class="nav-link notification text-center" href="setting.html">
-                                <i class="fas fa-cog" aria-hidden="true"></i><span>
-                                    Setting</span>
+                                <i class="fas fa-cog" aria-hidden="true"></i><span> Setting</span>
                             </a>
                         </li>
-                        <li id="home-item" class="nav-item font-weight-bold">
+                        <li class="nav-item font-weight-bold">
                             <a class="nav-link notification text-center" href="logout.html">
-                                <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
-                                Log out</span>
+                                <i class='fas fa-sign-out-alt' style='font-size:10px'></i><span> Log out</span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Lepidoptera apps</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="butterfly.html">Butterfly</a>
-                                <a class="dropdown-item" href="moth.html">Moth</a>
-                                <a class="dropdown-item" href="skipper.html">Skipper</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Object measurements apps</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="pupae_size.html">Pupae Size</a>
-                                <a class="dropdown-item" href="pupae_gender.html">Pupae Gender</a>
-                                <a class="dropdown-item" href="pupae_defects.html">Pupae Defects</a>
-                                <a class="dropdown-item" href="pupae_dayold.html">Pupae Day Old</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Object Identification apps</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="lepidoptera.html">Lepidoptera</a>
-                                <a class="dropdown-item" href="hostplantidentifier.html">Host Plants</a>
-                                <a class="dropdown-item" href="predators.html">Predators</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-content" href="#" id="navbarDropdownMenuLink"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Match Identifier Apps</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="objectidentifier.html">Butterfly and Hosplants</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="setting.html">Setting</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://forms.gle/p4E9jNPqczh8cwVS6">Rate</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="weather.html">Weather</a>
-                        </li>
-                        <li>
-                            <h6 id="name">{{name}}</h6>
-                        </li> -->
-                    </ul>
+                        </ul>
                 </div>
+            </div>
         </nav>
     </section>
-    <!-----------------------------Category section--------------------------------------------->
+
     <hr>
     <section>
         <div class="card-app-dashboard">
-            <ul class="card-dashboard col-lg-12">
+            <ul class="card-dashboard col-lg-12 d-flex">
                 <li>
-                    <div class="categoriesSideBar" id="categoriesSideBar">
+                    <div class="categoriesSideBar">
                         <ul class="nav flex-column">
-                            <li class="nav-item" id="categoriesSideBar">
+                            <li class="nav-item">
                                 <a class="nav-link notification" href="home.html">
                                     <i class="fas fa-home"></i><span> Home</span>
                                 </a>
                             </li>
-                            <li class="nav-item" id="categoriesSideBar">
+                            <li class="nav-item">
                                 <a class="nav-link notification" href="userprofile.html">
                                     <i class="fas fa-user"></i><span> Profile</span>
                                     <span class="badge">3</span>
                                 </a>
                             </li>
-                            <li class="nav-item" id="categoriesSideBar">
+                            <li class="nav-item">
                                 <a href="#" class="nav-link notification">
                                     <i class="fa fa-inbox" aria-hidden="true"></i><span> Inbox</span>
                                     <span class="badge">3</span>
                                 </a>
                             </li>
-                            <li class="nav-item" id="categoriesSideBar">
+                            <li class="nav-item">
                                 <a href="#" class="nav-link notification">
-                                    <i class="fas fa-user-friends" aria-hidden="true"></i><span>
-                                        Social</span>
+                                    <i class="fas fa-user-friends" aria-hidden="true"></i><span> Social</span>
                                     <span class="badge">3</span>
                                 </a>
                             </li>
-                            <li> <a href="#" class="nav-link notification">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link notification">
                                     <i class="fas fa-bullseye" aria-hidden="true"></i><span> Updates</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="nav-item">
                                 <a href="#" class="nav-link notification">
-                                    <i class="	fas fa-bullhorn" aria-hidden="true"></i><span>
-                                        Promotions</span>
+                                    <i class=" fas fa-bullhorn" aria-hidden="true"></i><span> Promotions</span>
                                     <span class="badge">3</span>
                                 </a>
                             </li>
-                            <li class="nav-item" id="categoriesSideBar">
+                            <li class="nav-item">
                                 <a href="#" class="nav-link notification">
                                     <i class="far fa-comment" aria-hidden="true"></i><span> Outbox</span>
                                     <span class="badge">3</span>
                                 </a>
                             </li>
-                            <li class="nav-item" id="categoriesSideBar">
+                            <li class="nav-item">
                                 <a href="upload.html" class="nav-link notification">
                                     <i class="fa fa-upload" aria-hidden="true"></i><span> My Upload</span>
                                 </a>
                             </li>
-                            <li id="home-item" class="nav-item font-weight-bold">
+                            <li class="nav-item font-weight-bold">
                                 <a class="nav-link notification" href="setting.html">
-                                    <i class="fas fa-cog" aria-hidden="true"></i><span>
-                                        Setting</span>
+                                    <i class="fas fa-cog" aria-hidden="true"></i><span> Setting</span>
                                 </a>
                             </li>
-                            <li id="home-item" class="nav-item font-weight-bold">
+                            <li class="nav-item font-weight-bold">
                                 <a class="nav-link notification" href="logout.html">
-                                    <i class='fas fa-sign-out-alt' style='font-size:10px'></i>
-                                    Log out</span>
+                                    <i class='fas fa-sign-out-alt' style='font-size:10px'></i><span> Log out</span>
                                 </a>
                             </li>
-
-                            <!-- Add more menu items with icons here -->
-                        </ul>
+                            </ul>
                     </div>
-
                 </li>
                 <li>
-
                     <div class="col-xl-12 text-center">
                         <div class="stages-icon-list-home ">
-                            <ul class="card-app-list col-xl-12 text-center">
+                            <ul class="card-app-list col-xl-12 text-center d-flex flex-wrap justify-content-center">
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="addgarden.html">
-                                            <img src="icon/Garden Icon_files/2081066-200.png" alt="" srcset=""
+                                            <img src="icon/Garden Icon_files/2081066-200.png" alt="Garden Icon"
                                                 width="20px" class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -231,7 +166,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="hatchery.html">
-                                            <img src="icon/eggs.png" alt="" srcset="" width="20px"
+                                            <img src="icon/eggs.png" alt="Eggs Icon" width="20px"
                                                 class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -242,7 +177,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="sleeving-boxes.html">
-                                            <img src="icon/larvae.png" alt="" srcset="" width="20px"
+                                            <img src="icon/larvae.png" alt="Larvae Icon" width="20px"
                                                 class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -253,7 +188,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="puparium.html">
-                                            <img src="icon/pupa.png" alt="" srcset="" width="30px"
+                                            <img src="icon/pupa.png" alt="Pupae Icon" width="30px"
                                                 class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -264,7 +199,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="butterfly_house.html">
-                                            <img src="icon/butterfly3.png" alt="" srcset="" width="20px"
+                                            <img src="icon/butterfly3.png" alt="Butterfly Icon" width="20px"
                                                 class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -275,7 +210,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="Hostplants.html">
-                                            <img src="icon/plants.png" alt="" srcset="" width="20px"
+                                            <img src="icon/plants.png" alt="Hostplants Icon" width="20px"
                                                 class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -286,7 +221,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="larvaeStages.html">
-                                            <img src="icon/disease.png" alt="" srcset="" width="30px"
+                                            <img src="icon/disease.png" alt="Disease Icon" width="30px"
                                                 class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -297,7 +232,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="addDefectsPupae.html">
-                                            <img src="icon/defects.png" alt="" srcset="" width="20px"
+                                            <img src="icon/defects.png" alt="Defects Icon" width="20px"
                                                 class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -308,7 +243,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="predators.html">
-                                            <img src="icon/spider.png" alt="" srcset="" width="20px"
+                                            <img src="icon/spider.png" alt="Predators Icon" width="20px"
                                                 class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -319,7 +254,7 @@
                                 <li class="card-dashboard-list-item">
                                     <button type="button" class="stages-icon-btn img-stages-home-icon ">
                                         <a href="task_harvesting.html">
-                                            <img src="icon/stocks Icon_files/6986217-200.png" alt="" srcset=""
+                                            <img src="icon/stocks Icon_files/6986217-200.png" alt="Harvest Icon"
                                                 width="20px" class="img-btn-apps-menu-dashboard">
                                         </a>
                                     </button>
@@ -329,12 +264,14 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
                 </li>
             </ul>
             <hr>
         </div>
     </section>
     <hr>
+
     <div class="col-lg-12 text-center">
         <form class="feedback-form" autocomplete="off">
             <label>
@@ -347,20 +284,9 @@
             </label>
             <button type="submit">Submit</button>
         </form>
-
     </div>
 
-    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
-    <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-light fixed-bottom">
-            <div class="icon-bar">
-                <a href="lepidoptera.html"><img src="icon/butterfly2.png"></a>
-                <a href="Butterfly-Hostplants.html"><img src="icon/plants.png"></a>
-                <a class="active " href="index.html"><img src="icon/home2.png"></a>
-                <a href="classify.html"><img src="icon/detect.png"></a>
-               <a href="userprofile.html"><img src="icon/user.png"></a>
-            </div>
-        </nav> -->
-    <!----------------------------- Fixed Bottom Menu section--------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
     <script src="./jquery-3.6.0.slim.min.js"> </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
 
