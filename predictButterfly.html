@@ -135,55 +135,55 @@
     <title>Butterfly Classification</title>
     <link rel="stylesheet" href="style.css">
     <style>
-.container {
-        max-width: 500px;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    h1 {
-        color: #333;
-    }
+        h1 {
+            color: #333;
+        }
 
-    input [type="file"] {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+        input [type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-    button {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: none;
-        border-radius: 5px;
-        background-color: #4CAF50;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-    }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-    button:hover {
-        background-color: #45a049;
-    }
+        button:hover {
+            background-color: #45a049;
+        }
 
-    #result {
-        display: none;
-        margin-top: 20px;
-    }
+        #result {
+            display: none;
+            margin-top: 20px;
+        }
 
-    #result img {
-        max-width: 100%;
-        border-radius: 10px;
-        max-width: 300px;
-    }
-</style>
+        #result img {
+            max-width: 100%;
+            border-radius: 10px;
+            max-width: 300px;
+        }
+    </style>
 </head>
 
 <body>
@@ -195,88 +195,106 @@
         </form>
 
         <div id="result">
-        <h2>Prediction Result</h2>
-        <img id="uploadedImage" src="" alt="Uploaded Image">
-        <p id="classification"></p>
+            <h2>Prediction Result</h2>
+            <img id="uploadedImage" src="" alt="Uploaded Image">
+            <p id="classification"></p>
+        </div>
     </div>
-</div>
 
-<script src="[https://cdn.jsdelivr.net/npm/@tensorflow/tfjs](https://cdn.jsdelivr.net/npm/@tensorflow/tfjs)"></script>
-<script>
-    async function uploadAndClassify() {
-        const input = document.getElementById('imageUpload');
-        if (input.files && input.files.length > 0) {
-            const file = input.files [0];
-            const reader = new FileReader();
+    <script
+        src="[https://cdn.jsdelivr.net/npm/@tensorflow/tfjs](https://cdn.jsdelivr.net/npm/@tensorflow/tfjs)"></script>
+    <script>
+        // This function will be called when the user uploads an image
+        async function uploadAndClassify() {
+            const input = document.getElementById('imageUpload');
 
-            reader.onload = async function (e) {
-                document.getElementById('uploadedImage').src = e.target.result;
-                document.getElementById('result').style.display = 'block';
+            // Check if a file was selected
+            if (input.files && input.files.length > 0) {
+                const file = input.files[0];
+                const reader = new FileReader();
 
-                try {
-                    // **Corrected Path to Load Model**
-                    const model = await tf.loadLayersModel('http://localhost:8000/model/butterfly.json');
+                // When the file is loaded (as a data URL)
+                reader.onload = async function (e) {
+                    // Display the uploaded image
+                    document.getElementById('uploadedImage').src = e.target.result;
+                    document.getElementById('result').style.display = 'block'; // Show the results section
 
-                    const img = new Image();
-                    img.onload = async () => {
-                        const tensor = tf.browser.fromPixels(img)
-                            .resizeNearestNeighbor([180, 180])
-                            .toFloat()
-                            .expandDims(0);
+                    try {
+                        // Load the TensorFlow.js model from your local server
+                        // Make sure your web server is running and serving files from the 'model' directory
+                        const model = await tf.loadLayersModel('http://localhost:8000/model/butterfly.json');
+                        console.log('Model loaded successfully!');
 
-                        const prediction = model.predict(tensor);
-                        const probabilities = await prediction.data();
-                        const predictedClassIndex = tf.argMax(prediction, 1).dataSync()[0];
+                        const img = new Image();
+                        img.onload = async () => {
+                            // Preprocess the image for the model
+                            const tensor = tf.browser.fromPixels(img)
+                                .resizeNearestNeighbor([180, 180]) // Resize to your model's expected input size
+                                .toFloat() // Convert to float type
+                                .expandDims(0); // Add a batch dimension
 
-                        const butterflyNames = [
-                            'Butterfly-Clippers',
-                            'Butterfly-Common Jay',
-                            'Butterfly-Common Lime',
-                            'Butterfly-Common Mime',
-                            'Butterfly-Common Mormon',
-                            'Butterfly-Emerald Swallowtail',
-                            'Butterfly-Golden Birdwing',
-                            'Butterfly-Gray Glassy Tiger',
-                            'Butterfly-Great Eggfly',
-                            'Butterfly-Great Yellow Mormon',
-                            'Butterfly-Paper Kite',
-                            'Butterfly-Pink Rose',
-                            'Butterfly-Plain Tiger',
-                            'Butterfly-Red Lacewing',
-                            'Butterfly-Scarlet Mormon',
-                            'Butterfly-Tailed Jay',
-                            'Moth-Atlas',
-                            'Moth-Giant Silk'
-                        ];
+                            // Make a prediction using the loaded model
+                            const prediction = model.predict(tensor);
+                            const probabilities = await prediction.data(); // Get prediction probabilities
+                            const predictedClassIndex = tf.argMax(prediction, 1).dataSync()[0]; // Get the index of the highest probability
 
-                        if (predictedClassIndex < butterflyNames.length) {
-                            const predictedClassName = butterflyNames [predictedClassIndex];
-                            const confidence = (probabilities [predictedClassIndex] * 100).toFixed(2);
+                            // Define the names of your butterfly classes in the correct order
+                            const butterfly_names = [
+                                'Butterfly-Clippers',
+                                'Butterfly-Common Jay',
+                                'Butterfly-Common Lime',
+                                'Butterfly-Common Mime',
+                                'Butterfly-Common Mormon',
+                                'Butterfly-Emerald Swallowtail',
+                                'Butterfly-Golden Birdwing',
+                                'Butterfly-Gray Glassy Tiger',
+                                'Butterfly-Great Eggfly',
+                                'Butterfly-Great Yellow Mormon',
+                                'Butterfly-Paper Kite',
+                                'Butterfly-Pink Rose',
+                                'Butterfly-Plain Tiger',
+                                'Butterfly-Red Lacewing',
+                                'Butterfly-Scarlet Mormon',
+                                'Butterfly-Tailed Jay',
+                                'Moth-Atlas',
+                                'Moth-Giant Silk'
+                            ];
 
-                            document.getElementById('classification').innerText =
-                                `The image belongs to ${predictedClassName} with a confidence of ${confidence}%`;
-                        } else {
-                            document.getElementById('classification').innerText = 'Error: Predicted class index out of bounds.';
-                            console.error('Predicted class index:', predictedClassIndex);
-                            console.error('Butterfly names array:', butterflyNames);
-                        }
+                            // Check if the predicted index is within the bounds of your class names
+                            if (predictedClassIndex >= 0 && predictedClassIndex < butterfly_names.length) {
+                                const predictedClassName = butterfly_names[predictedClassIndex];
+                                const confidence = (probabilities[predictedClassIndex] * 100).toFixed(2);
 
-                        tensor.dispose();
-                        prediction.dispose();
-                    };
-                    img.src = e.target.result;
+                                // Display the classification result
+                                document.getElementById('classification').innerText =
+                                    `The image belongs to ${predictedClassName} with a confidence of ${confidence}%`;
+                            } else {
+                                // Handle cases where the predicted index is out of bounds
+                                document.getElementById('classification').innerText = 'Error: Predicted class index out of bounds.';
+                                console.error('Predicted class index:', predictedClassIndex);
+                                console.error('Butterfly names array:', butterfly_names);
+                            }
 
-                } catch (error) {
-                    console.error('Error loading or predicting with the model:', error);
-                    document.getElementById('classification').innerText = 'Error during classification.';
-                }
-            };
-            reader.readAsDataURL(file);
-        } else {
-            alert('Please select an image.');
+                            // Dispose of tensors to free up memory
+                            tensor.dispose();
+                            prediction.dispose();
+                        };
+                        img.src = e.target.result; // Set the image source to trigger img.onload
+
+                    } catch (error) {
+                        // Catch any errors during model loading or prediction
+                        console.error('Error loading or predicting with the model:', error);
+                        document.getElementById('classification').innerText = 'Error during classification. Check console for details.';
+                    }
+                };
+
+                // Read the image file as a data URL
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image to classify.');
+            }
         }
-    }
-</script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 </body>
 
