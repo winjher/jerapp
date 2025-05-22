@@ -136,9 +136,11 @@
  p {
    margin: 0px;
  }
-
+ 
+.text-apps,
  li {
    list-style: none;
+   text-decoration: none;
  }
 
 
