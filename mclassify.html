@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Training Model</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+</head>
+<style type="text/css" media="all">
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        text-align: center;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #videoContainer {
+        margin-bottom: 20px;
+    }
+
+    #buttons button {
+        margin: 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+    #buttons button:hover {
+        background-color: #0056b3;
+    }
+
+    #labelContainer {
+        margin-top: 20px;
+    }
+
+    #label {
+        font-size: 24px;
+        color: #333;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Butterfly Classification Trainer</h1>
+        <div id="videoContainer">
+            <video id="video" width="320" height="240" autoplay></video>
+        </div>
+        <div id="buttons">
+            <button id="butterflyButton">Butterfly</button>
+            <button id="larvaeButton">Larvae</button>
+            <button id="pupaeButton">Pupae</button>
+            <button id="eggsButton">Eggs</button>
+            <button id="pupaedefectsButton">Pupae Defects</button>
+            <button id="healthypupaeButton">Healthy Pupae</button>
+            <button id="larvaldiseaseButton">Larval Disease</button>
+            <button id="healthylarvaeButton">Healthy Larvae</button>
+            <button id="trainButton">Train Model</button>
+            <button id="predictButton">Start Prediction</button>
+        </div>
+        <div id="labelContainer">
+            <h2 id="label">Waiting for training...</h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+
+<script>
+    let featureExtractor;
+    let classifier;
+    let video;
+    let label = "Loading model..."; // Initial label for display
+    let predictionActive = false; // Flag to control continuous prediction
+
+    // Define your server endpoint for saving images
+    const SAVE_IMAGE_ENDPOINT = '/save_image'; // This needs to be handled by your server
+
+    // Function to draw video frame to canvas and get image data
+    function getImageDataFromVideo(videoElement) {
+        const canvas = document.createElement('canvas');
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+        // You can get data as a Data URL (Base64) or Blob
+        // For simplicity, we'll use Data URL here. For larger images/performance, Blob is better.
+        return canvas.toDataURL('image/jpeg', 0.9); // Adjust quality as needed
+    }
+
+    // Function to send image data to the server
+    async function sendImageToServer(imageData, className) {
+        try {
+            const response = await fetch(SAVE_IMAGE_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    image: imageData,
+                    label: className,
+                    timestamp: new Date().toISOString() // Add a timestamp
+                }),
+            });
+            const result = await response.json();
+            if (response.ok) {
+                console.log('Image saved successfully:', result.message);
+                return true;
+            } else {
+                console.error('Failed to save image:', result.error);
+                return false;
+            }
+        } catch (error) {
+            console.error('Network or server error:', error);
+            return false;
+        }
+    }
+
+
+    // Callback when the MobileNet feature extractor is ready
+    function modelReady() {
+        console.log("Feature Extractor Model is Ready!");
+        select('#label').html('Model ready. Start adding examples!'); // Update UI label
+    }
+
+    // Callback when the video stream is ready
+    function videoReady() {
+        console.log("Video is Ready!");
+    }
+
+    // Callback during training (loss is not null) or after training (loss is null)
+    function whileTraining(loss) {
+        if (loss == null) {
+            console.log("Training Complete.");
+            select('#label').html('Training Complete! Click "Start Prediction".'); // Update UI label
+        } else {
+            console.log("Training Loss:", loss);
+            select('#label').html(`Training Loss: ${loss.toFixed(4)}`); // Display current loss
+        }
+    }
+
+    // Callback for classification results
+    function gotResults(error, results) {
+        if (error) {
+            console.error(error);
+            select('#label').html('Error during prediction.');
+        } else {
+            label = results[0].label;
+            select('#label').html(`Prediction: ${label} (${(results[0].confidence * 100).toFixed(2)}%)`); // Update UI label with confidence
+            // Continue classifying if prediction is active
+            if (predictionActive) {
+                classifier.classify(video, gotResults);
+            }
+        }
+    }
+
+    // p5.js setup function - runs once
+    function setup() {
+        noCanvas(); // Don't create a p5 canvas, use the <video> element directly
+
+        video = select('#video');
+        video.elt.onloadeddata = () => { // Ensure video is loaded before ml5 uses it
+            featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
+            classifier = featureExtractor.classification(video, videoReady); // Associate classifier with video stream
+
+            // Attach event listeners to buttons for adding images AND saving to server
+            const setupButton = (buttonId, className) => {
+                select(buttonId).mousePressed(async () => {
+                    classifier.addImage(video, className); // Add to ML5 classifier
+                    select('#label').html(`Added example for ${className}.`);
+
+                    const imageData = getImageDataFromVideo(video.elt); // Get image data
+                    const saved = await sendImageToServer(imageData, className); // Send to server
+                    if (saved) {
+                        console.log(`Image for ${className} sent to server.`);
+                    } else {
+                        console.error(`Failed to send image for ${className} to server.`);
+                    }
+                });
+            };
+
+            setupButton('#butterflyButton', 'Butterfly');
+            setupButton('#larvaeButton', 'Larvae');
+            setupButton('#pupaeButton', 'Pupae');
+            setupButton('#eggsButton', 'Eggs');
+            setupButton('#pupaedefectsButton', 'Pupae Defects');
+            setupButton('#healthypupaeButton', 'Healthy Pupae');
+            setupButton('#larvaldiseaseButton', 'Larval Disease');
+            setupButton('#healthylarvaeButton', 'Healthy Larvae');
+
+            select('#trainButton').mousePressed(() => {
+                select('#label').html('Training started...');
+                classifier.train(whileTraining);
+            });
+
+            select('#predictButton').mousePressed(() => {
+                if (classifier.getNumLabels() > 0) { // Check if any labels have been added
+                    predictionActive = true;
+                    select('#label').html('Predicting...');
+                    classifier.classify(video, gotResults);
+                } else {
+                    select('#label').html('Please add examples and train the model first!');
+                }
+            });
+        };
+        video.elt.srcObject = navigator.mediaDevices.getUserMedia({ video: true }); // Get video stream from webcam
+        video.size(320, 240); // Set desired video size
+    }
+
+</script>
+
+</html>
