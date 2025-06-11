@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lepi App 🦋</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TensorFlow.js library for in-browser machine learning -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.2.0/dist/tf.min.js"></script>
+    <style>
+        /* General body styling for a clean look */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7fa; /* Light background for the page */
+        }
+        /* Header styling */
+        header {
+            background: #1a1833; /* Dark header background */
+            color: #fff; /* White text color */
+            padding: 1.5rem; /* Padding around header content */
+            text-align: center; /* Center align text */
+            border-bottom-left-radius: 10px; /* Rounded corners for the bottom */
+            border-bottom-right-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+        /* Main content container */
+        main {
+            max-width: 640px; /* Max width for readability */
+            margin: 2rem auto; /* Center main content with vertical margin */
+            background: #fff; /* White background for the main card */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06); /* Deeper shadow */
+            padding: 2rem; /* Inner padding */
+        }
+        /* Section styling for clear separation */
+        .section {
+            margin-bottom: 2rem; /* Space between sections */
+        }
+        /* Result display area styling */
+        .result {
+            background: #e9fbe9; /* Light green background for success */
+            border: 1px solid #b0e2b0; /* Green border */
+            padding: 1rem; /* Inner padding */
+            border-radius: 6px; /* Rounded corners */
+            margin-top: 1rem; /* Space above */
+        }
+        /* Error message styling */
+        .error {
+            background: #fbe9e9; /* Light red background for errors */
+            border: 1px solid #e2b0b0; /* Red border */
+            color: #b70000; /* Dark red text */
+            padding: 1rem; /* Inner padding */
+            border-radius: 6px; /* Rounded corners */
+            margin-top: 1rem; /* Space above */
+        }
+        /* Input and select common styling */
+        label, select, input {
+            font-size: 1rem; /* Standard font size */
+            margin-bottom: 0.5rem; /* Space below for labels */
+            display: block; /* Make them block elements for better layout */
+            width: 100%; /* Full width for better responsiveness */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        select, input[type="file"] {
+            padding: 0.6em; /* Padding for select and file input */
+            border: 1px solid #ccc; /* Light grey border */
+            border-radius: 4px; /* Slightly rounded corners */
+            margin-top: 0.5em; /* Space above */
+        }
+        /* Button styling */
+        button {
+            padding: 0.6em 1.2em; /* Padding for button size */
+            background: #1a1833; /* Dark button background */
+            color: #fff; /* White text color */
+            border: none; /* No border */
+            border-radius: 4px; /* Rounded corners */
+            margin-top: 1em; /* Space above */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 1rem; /* Standard font size */
+            transition: background 0.3s ease; /* Smooth background transition */
+        }
+        /* Disabled button styling */
+        button:disabled {
+            background: #aaa; /* Greyed out when disabled */
+            cursor: not-allowed; /* Not-allowed cursor */
+        }
+        /* File input specific styling */
+        input[type="file"] {
+            margin-top: 1em; /* Space above file input */
+        }
+        /* Image preview styling */
+        img#preview {
+            max-width: 100%; /* Ensures image fits container */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 1em; /* Space above */
+            border-radius: 6px; /* Rounded corners */
+            display: block; /* Ensures it takes up its own line */
+        }
+        /* Information table styling */
+        .info-table {
+            margin: 1em 0; /* Vertical margin */
+            width: 100%; /* Full width */
+            border-collapse: collapse; /* Collapse table borders */
+            font-size: 0.95em; /* Slightly smaller text */
+        }
+        .info-table td {
+            padding: 0.5em; /* Cell padding */
+            border-bottom: 1px solid #eee; /* Bottom border for separation */
+        }
+        .info-table td:first-child {
+            font-weight: bold; /* Bold first column (labels) */
+            color: #1a1833; /* Dark text for labels */
+            width: 160px; /* Fixed width for labels */
+        }
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            main {
+                margin: 1rem auto; /* Less vertical margin on small screens */
+                padding: 1rem; /* Less padding */
+            }
+            .section {
+                margin-bottom: 1.5rem; /* Less space between sections */
+            }
+            button {
+                width: 100%; /* Full width buttons */
+                margin-top: 0.5em;
+            }
+            select, input[type="file"] {
+                margin-top: 0.5em;
+            }
+            label {
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🦋 Lepi App</h1>
+        <p>Classify butterflies, life stages, pupae defects, and larval diseases.<br>
+        <small>Upload an image or use your webcam!</small></p>
+    </header>
+    <main>
+        <div class="section">
+            <label for="classifier">Choose Classifier Type:</label>
+            <select id="classifier">
+                <option value="Butterfly Species">Butterfly Species</option>
+                <option value="Life Stages">Life Stages</option>
+                <option value="Pupae Defects">Pupae Defects</option>
+                <option value="Larval Diseases">Larval Diseases</option>
+            </select>
+        </div>
+
+        <div class="section">
+            <label>Choose input method:</label>
+            <select id="input-method">
+                <option value="upload">Upload Image</option>
+                <option value="webcam">Capture from Webcam</option>
+            </select>
+        </div>
+
+        <div class="section" id="input-section">
+            <input type="file" id="file-input" accept="image/*">
+            <div id="webcam-section" style="display:none;">
+                <video id="webcam" width="320" height="240" autoplay playsinline style="border-radius:8px;"></video>
+                <br>
+                <button id="capture-btn" type="button">Capture Image</button>
+                <canvas id="webcam-canvas" width="180" height="180" style="display:none;"></canvas>
+            </div>
+            <div>
+                <img id="preview" src="" alt="" style="display:none;">
+            </div>
+        </div>
+
+        <div class="section">
+            <button id="classify-btn" disabled>Classify</button>
+        </div>
+
+        <div id="result"></div>
+    </main>
+
+    <script>
+    // --- Class Names and Info Dictionaries ---
+    // These arrays define the class names and associated information for each classifier type.
+    // The order of elements in these arrays MUST match the output order of your TensorFlow.js models.
+    const butterfly_species_info = [
+        {name: "Butterfly-Clippers", scientific_name: "Parthenos sylvia", family: "Nymphalidae"},
+        {name: "Butterfly-Common Jay", scientific_name: "Graphium doson", family: "Papilionidae"},
+        {name: "Butterfly-Common Lime", scientific_name: "Papilio demoleus", family: "Papilionidae"},
+        {name: "Butterfly-Common Mime", scientific_name: "Papilio clytia", family: "Papilionidae"},
+        {name: "Butterfly-Common Mormon", scientific_name: "Papilio polytes", family: "Papilionidae"},
+        {name: "Butterfly-Emerald Swallowtail", scientific_name: "Papilio palinurus", family: "Papilionidae"},
+        {name: "BUtterfly-Golden Birdwing", scientific_name: "Troides aeacus", family: "Papilionidae"},
+        {name: "Butterfly-Gray Glassy Tiger", scientific_name: "Ideopsis vulgaris", family: "Nymphalidae"},
+        {name: "Butterfly-Great Eggfly", scientific_name: "Hypolimnas bolina", family: "Nymphalidae"},
+        {name: "Butterfly-Great Yellow Mormon", scientific_name: "Papilio lowi", family: "Papilionidae"},
+        {name: "Butterfly-Paper Kite", scientific_name: "Idea leuconoe", family: "Nymphalidae"},
+        {name: "Butterfly-Pink Rose", scientific_name: "Pachliopta kotzebuea", family: "Papilionidae"},
+        {name: "Butterfly-Plain Tiger", scientific_name: "Danaus chrysippus", family: "Nymphalidae"},
+        {name: "Butterfly-Red Lacewing", scientific_name: "Cethosia biblis", family: "Nymphalidae"},
+        {name: "Butterfly-Scarlet Mormon", scientific_name: "Papilio rumanzovia", family: "Papilionidae"},
+        {name: "Butterfly-Tailed Jay", scientific_name: "Graphium agamemnon", family: "Papilionidae"},
+        {name: "Moth-Atlas", scientific_name: "Attacus atlas", family: "Saturniidae"},
+        {name: "Moth-Giant Silk", scientific_name: "Samia cynthia", family: "Saturniidae"}
+    ];
+    const lifestages_info = [
+        {name: "Butterfly", stages_info: "Reproductive stage, winged insect capable of flight."},
+        {name: "Eggs", stages_info: "Early developmental stage, typically laid on host plants."},
+        {name: "Larvae", stages_info: "Caterpillar stage, primary feeding and growth phase."},
+        {name: "Pupae", stages_info: "Chrysalis (butterfly) or cocoon (moth) stage, metamorphosis occurs."}
+    ];
+    const pupaedefects_info = [
+        {name: "Ant bites", quality_info: "Indicates ant damage, can lead to pupae death or malformation."},
+        {name: "Deformed body", quality_info: "Physical deformities, may indicate poor health or environmental stress."},
+        {name: "Healthy Pupae", quality_info: "No visible defects, good potential for adult emergence."},
+        {name: "Old Pupa", quality_info: "Pupae nearing emergence or past its prime, may be discolored or shriveled."},
+        {name: "Overbend", quality_info: "Abnormal curvature, can impede proper development."},
+        {name: "Stretch abdomen", quality_info: "Abdomen appears stretched or elongated, potentially due to stress or disease."}
+    ];
+    const larvaldiseases_info = [
+        {name: "Anaphylaxis Infection", treatment_info: "Seek veterinary advice; isolate infected larvae. No specific treatment for severe cases."},
+        {name: "Gnathostomiasis", treatment_info: "Parasitic infection. Isolate, remove parasites if visible, improve hygiene."},
+        {name: "Healthy", treatment_info: "Larva appears healthy with no signs of disease."},
+        {name: "Nucleopolyhedrosis", treatment_info: "Highly contagious viral disease. Isolate and destroy infected larvae to prevent spread. Disinfect rearing areas."}
+    ];
+
+    // Model URLs for TensorFlow.js format
+    // IMPORTANT: These paths are relative to where your HTML file is served.
+    // Ensure your `model` folder containing `json` folder is correctly placed.
+    const MODEL_URLS = {
+        "Butterfly Species": "model/json/model_Butterfly_Species.json",
+        "Life Stages": "model/json/model_Life_Stages.json",
+        "Pupae Defects": "model/json/model_Pupae_Defects.json",
+        "Larval Diseases": "model/json/model_Larval_Diseases.json"
+    };
+
+    // Consolidated class information lookup
+    const CLASS_INFO = {
+        "Butterfly Species": butterfly_species_info,
+        "Life Stages": lifestages_info,
+        "Pupae Defects": pupaedefects_info,
+        "Larval Diseases": larvaldiseases_info
+    };
+
+    const IMAGE_SIZE = 180; // Standard image size for model input (180x180 pixels)
+
+    // --- DOM Elements ---
+    // Get references to all necessary HTML elements by their IDs.
+    const classifierEl = document.getElementById('classifier');
+    const inputMethodEl = document.getElementById('input-method');
+    const fileInputEl = document.getElementById('file-input');
+    const webcamSection = document.getElementById('webcam-section');
+    const webcamVideo = document.getElementById('webcam');
+    const webcamCanvas = document.getElementById('webcam-canvas');
+    const captureBtn = document.getElementById('capture-btn');
+    const previewEl = document.getElementById('preview');
+    const classifyBtn = document.getElementById('classify-btn');
+    const resultEl = document.getElementById('result');
+
+    // --- Global State Variables ---
+    let selectedImage = null; // Stores the Data URL of the image selected for classification
+    let tfModel = null;       // Stores the currently loaded TensorFlow.js model
+    let modelLoadedFor = null; // Keeps track of which classifier type the current model is for
+
+    // --- Event Listener: Input Method Selection ---
+    // Toggles between file upload and webcam input sections.
+    inputMethodEl.addEventListener('change', () => {
+        if (inputMethodEl.value === 'upload') {
+            fileInputEl.style.display = '';     // Show file input
+            webcamSection.style.display = 'none'; // Hide webcam section
+            previewEl.style.display = 'none';   // Hide image preview
+            classifyBtn.disabled = true;        // Disable classify button
+            if (webcamVideo.srcObject) { // Stop webcam stream if it's active
+                webcamVideo.srcObject.getTracks().forEach(track => track.stop());
+            }
+        } else { // Webcam selected
+            fileInputEl.style.display = 'none'; // Hide file input
+            webcamSection.style.display = '';     // Show webcam section
+            previewEl.style.display = 'none';   // Hide image preview
+            classifyBtn.disabled = true;        // Disable classify button
+            // Start webcam stream
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: { width: 320, height: 240 } }) // Request video stream
+                    .then(stream => {
+                        webcamVideo.srcObject = stream; // Assign stream to video element
+                    })
+                    .catch(err => {
+                        // Display error if webcam access fails
+                        resultEl.innerHTML = `<div class="error">Webcam not accessible: ${err.name || err.message}. Please allow camera access.</div>`;
+                        console.error("Webcam access error:", err);
+                    });
+            } else {
+                resultEl.innerHTML = `<div class="error">Your browser does not support webcam access.</div>`;
+            }
+        }
+        resultEl.innerHTML = ''; // Clear previous classification results
+    });
+
+    // --- Event Listener: File Input Change (for image upload) ---
+    // Handles reading the selected image file and displaying its preview.
+    fileInputEl.addEventListener('change', (e) => {
+        const file = e.target.files[0]; // Get the first selected file
+        if (!file) {
+            previewEl.style.display = 'none'; // Hide preview if no file selected
+            classifyBtn.disabled = true;      // Disable classify button
+            return;
+        }
+        const reader = new FileReader(); // Create a FileReader to read file content
+        reader.onload = function(ev) {
+            previewEl.src = ev.target.result;      // Set preview image source to Data URL
+            previewEl.style.display = '';          // Show the preview image
+            classifyBtn.disabled = false;          // Enable classify button
+            selectedImage = ev.target.result;      // Store Data URL for classification
+        };
+        reader.readAsDataURL(file); // Read the file as a Data URL
+        resultEl.innerHTML = ''; // Clear previous classification results
+    });
+
+    // --- Event Listener: Webcam Capture Button ---
+    // Captures the current frame from the webcam video, processes it, and sets it as the image for classification.
+    captureBtn.addEventListener('click', () => {
+        // Ensure canvas matches desired image size before drawing
+        webcamCanvas.width = IMAGE_SIZE;
+        webcamCanvas.height = IMAGE_SIZE;
+        const ctx = webcamCanvas.getContext('2d');
+        // Draw the current video frame onto the hidden canvas, scaling it to IMAGE_SIZE
+        ctx.drawImage(webcamVideo, 0, 0, IMAGE_SIZE, IMAGE_SIZE);
+        const dataURL = webcamCanvas.toDataURL('image/jpeg'); // Get image data as JPEG Data URL
+        previewEl.src = dataURL;           // Set preview image source
+        previewEl.style.display = '';      // Show preview
+        classifyBtn.disabled = false;      // Enable classify button
+        selectedImage = dataURL;           // Store for classification
+        resultEl.innerHTML = ''; // Clear previous classification results
+    });
+
+    // --- Model Loader Function ---
+    // Loads the TensorFlow.js model for the specified classifier type.
+    // Caches the model to avoid re-loading if it's already loaded for the current type.
+    async function loadModel(type) {
+        // If the model is already loaded for the requested type, return it immediately
+        if (tfModel && modelLoadedFor === type) {
+            return tfModel;
+        }
+        resultEl.innerHTML = 'Loading model...'; // Show loading message
+        try {
+            // Load the model from the specified URL
+            tfModel = await tf.loadLayersModel(MODEL_URLS[type]);
+            modelLoadedFor = type; // Update the state to reflect the loaded model type
+            resultEl.innerHTML = ''; // Clear loading message on success
+            return tfModel;
+        } catch (e) {
+            // Display error if model loading fails
+            resultEl.innerHTML = `<div class="error">Could not load model for ${type}: ${e.message || e}. Ensure model files are correctly placed.</div>`;
+            tfModel = null;       // Reset model reference
+            modelLoadedFor = null; // Reset loaded model type
+            console.error(`Error loading model for ${type}:`, e);
+            throw e; // Re-throw error for higher-level error handling
+        }
+    }
+
+    // --- Event Listener: Classify Button ---
+    // Initiates the classification process.
+    classifyBtn.addEventListener('click', async () => {
+        resultEl.innerHTML = '';          // Clear previous results
+        classifyBtn.disabled = true;      // Disable button to prevent multiple clicks
+
+        const classifierType = classifierEl.value; // Get the selected classifier type
+        if (!selectedImage) {
+            resultEl.innerHTML = `<div class="error">No image selected for classification.</div>`;
+            classifyBtn.disabled = false; // Re-enable button
+            return;
+        }
+
+        // Load the appropriate model before classification
+        let model;
+        try {
+            model = await loadModel(classifierType);
+        } catch (e) {
+            classifyBtn.disabled = false; // Re-enable button on model load failure
+            return;
+        }
+
+        // Preprocess the selected image into a TensorFlow.js tensor
+        let imgTensor;
+        try {
+            // imageToTensor handles loading, resizing, and normalizing the image
+            imgTensor = await imageToTensor(selectedImage, IMAGE_SIZE, IMAGE_SIZE);
+        } catch (e) {
+            resultEl.innerHTML = `<div class="error">Image processing error: ${e.message || e}. Please try a different image.</div>`;
+            console.error("Image processing error:", e);
+            classifyBtn.disabled = false; // Re-enable button
+            return;
+        }
+
+        // Perform prediction
+        try {
+            // Add a batch dimension to the tensor before predicting
+            const prediction = model.predict(imgTensor.expandDims(0));
+            const probs = await prediction.data(); // Get prediction probabilities
+            const maxIdx = probs.indexOf(Math.max(...probs)); // Find index of highest probability
+            const confidence = (probs[maxIdx] * 100).toFixed(2); // Calculate confidence percentage
+
+            // Retrieve class information based on the classifier type and predicted index
+            const infoList = CLASS_INFO[classifierType];
+            const classInfo = infoList[maxIdx] || {}; // Get the info object for the predicted class
+            const className = classInfo.name || "Unknown Class"; // Get class name
+
+            // Construct HTML to display results
+            let resultHTML = `<div class="result"><strong>${classifierType} Prediction:</strong> <b>${className}</b> (Confidence: ${confidence}%)`;
+
+            // Add additional information in a table format if available
+            resultHTML += `<table class="info-table">`;
+            if (classInfo.scientific_name) resultHTML += `<tr><td>Scientific Name</td><td>${classInfo.scientific_name}</td></tr>`;
+            if (classInfo.family) resultHTML += `<tr><td>Family</td><td>${classInfo.family}</td></tr>`;
+            if (classInfo.stages_info) resultHTML += `<tr><td>Stages Info</td><td>${classInfo.stages_info}</td></tr>`;
+            if (classInfo.quality_info) resultHTML += `<tr><td>Quality Info</td><td>${classInfo.quality_info}</td></tr>`;
+            if (classInfo.treatment_info) resultHTML += `<tr><td>Treatment Info</td><td>${classInfo.treatment_info}</td></tr>`;
+            resultHTML += `</table>`;
+            resultHTML += `</div>`;
+            resultEl.innerHTML = resultHTML; // Display the results
+
+            // --- Basic Logging to Console ---
+            // For a production app, you might want to save this to a database or download.
+            const now = new Date();
+            const logEntry = {
+                class_name: className,
+                score: confidence,
+                date_time: now.toLocaleString('en-GB'),
+                location: "Manila, Metro Manila, Philippines", // Static location for demonstration
+                image_path: selectedImage.substring(0,30) + "...", // Truncate image data URL for log brevity
+                ...classInfo // Spread additional class info into the log entry
+            };
+            console.log("Classification Log Entry:", logEntry);
+
+        } catch (e) {
+            resultEl.innerHTML = `<div class="error">Classification error: ${e.message || e}.</div>`;
+            console.error("Classification error:", e);
+        } finally {
+            classifyBtn.disabled = false; // Always re-enable button after classification attempt
+        }
+    });
+
+    // --- Helper Function: imageToTensor ---
+    // Converts an image (from Data URL) into a TensorFlow.js tensor, resizing and normalizing it.
+    function imageToTensor(imageDataUrl, width, height) {
+        return new Promise((resolve, reject) => {
+            const img = new window.Image();
+            img.crossOrigin = ""; // Required for loading images from different origins (if applicable)
+            img.onload = () => {
+                const canvas = document.createElement('canvas'); // Create a temporary canvas
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height); // Draw image onto canvas, resizing it
+                const imageData = ctx.getImageData(0, 0, width, height); // Get pixel data from canvas
+                // Convert pixel data to a float tensor and normalize to [0, 1]
+                const imgTensor = tf.browser.fromPixels(imageData).toFloat().div(255.0);
+                resolve(imgTensor);
+            };
+            img.onerror = (err) => {
+                console.error("Error loading image for tensor conversion:", err);
+                reject("Failed to load image for processing.");
+            };
+            img.src = imageDataUrl; // Set image source to the provided Data URL
+        });
+    }
+
+    // --- Event Listener: Classifier Type Change ---
+    // Resets the UI and clears previous selections/results when a different classifier type is chosen.
+    classifierEl.addEventListener('change', () => {
+        previewEl.style.display = 'none'; // Hide image preview
+        fileInputEl.value = '';           // Clear file input selection
+        classifyBtn.disabled = true;      // Disable classify button
+        selectedImage = null;             // Clear selected image
+        resultEl.innerHTML = '';          // Clear results
+        if (webcamVideo.srcObject) { // Stop webcam if active
+             webcamVideo.srcObject.getTracks().forEach(track => track.stop());
+        }
+        // Ensure input method is reset to default (upload) when classifier type changes
+        inputMethodEl.value = 'upload';
+        fileInputEl.style.display = '';
+        webcamSection.style.display = 'none';
+    });
+
+    // --- Initial State Setup ---
+    // Set initial display states for the UI elements when the page loads.
+    fileInputEl.style.display = '';     // Show file input by default
+    webcamSection.style.display = 'none'; // Hide webcam section by default
+    classifyBtn.disabled = true;        // Classify button starts disabled
+    </script>
+</body>
+</html>
