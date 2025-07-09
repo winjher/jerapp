@@ -60,7 +60,48 @@
             </div>
         </div>
     </nav>
-
+<div class="container mt-5">
+  <!-- Card Section -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <!-- Card Content Here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Table Section -->
+  <div class="row">
+    <div class="col-12">
+      <div class="table-wrapper">
+            <form id="uploadForm" method="get" accept-charset="utf-8">
+                <table id="butterflyTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Uploader Name</th>
+                            <th>Upload Reference ID</th>
+                            <th>Activity</th>
+                            <th>Percent %</th>
+                            <th>Upload Image</th>
+                            <th>Size</th>
+                            <th>Mime Type</th>
+                            <th>Last Modified</th>
+                            <th>Content</th>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="imageTableBody">
+                        <!-- Rows will be added here by JavaScript -->
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
     <div class="container mt-5 pt-5">
         <h5>Upload Image</h5>
         <input type="file" id="imageUpload" accept="image/*">
