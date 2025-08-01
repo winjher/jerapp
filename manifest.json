@@ -1,14 +1,40 @@
 {
-    "name": "Butterfly Application",
-    "short_name": "My Butterflies",
-    "description": "A butterfly application for creating awesome culture butterflies",
-    "start_url": "/",
-    "theme_color": "#000000",
-    "background_color": "#ffffff",
-    "display": "standalone",
-    "icons": [
-        {   "src": "./images/batwing02.jpg",
-            "sizes": "192x192",
-            "type": "image/png"
-        }]
-  }
+  "name": "Butterfly Application",
+  "short_name": "Butterflies",
+  "description": "A butterfly application for creating awesome culture butterflies",
+  "start_url": "/",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "./images/butterfly192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/butterfly512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/butterfly384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/butterfly128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "splash_screens": [
+    {
+      "src": "./images/splash.png",
+      "sizes": "1920x1080",
+      "type": "image/png"
+    }
+  ]
+}
