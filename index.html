@@ -6,7 +6,6 @@
     <title>Butterfly Apps</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/03-feedback.css">
     <style>
@@ -51,6 +50,7 @@
         }
         .btn-send:hover { background: #0056b3; }
         .info-terms { margin-bottom: 10px; }
+        .service-button-cta { background: none; border: none; padding: 0; cursor: pointer; }
 
         @media only screen and (max-width: 600px) {
             .card-app-team-item { width: 160px; }
@@ -66,6 +66,10 @@
             <div class="container-fluid">
                 <a class="navbar-brand"><img src="icon/BB.png"></a>
                 <a class="navbar-brand" href="weather.html"><img src="icon/weather.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -91,9 +95,7 @@
                 <div class="imgbck">
                     <h1 class="service-hero-title text-center">Effective Solutions for Your Butterfly Business</h1>
                     <div class="col-xl-12 text-center btn-service">
-                        <button type="button" class="service-button-cta" data-modal-open>
-                            <a class="explore" id="openModal">Explore</a>
-                        </button>
+                        <button type="button" class="service-button-cta explore" id="openModal">Explore</button>
                     </div>
                 </div>
             </div>
@@ -103,7 +105,7 @@
             <div id="intro-section" class="row card-banner">
                 <!-- Four purpose/quality/function/elegant banners -->
                 <div class="col-xl-3 text-center p-index">
-                    <div class="banner" onclick="bounceBanner()">
+                    <div class="banner" onclick="bounceBanner(this)">
                         <img src="icon/icon-1.webp" class="img-banner" alt="purpose">
                     </div>
                     <div class="card-app-banner">
@@ -112,7 +114,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 text-center p-index">
-                    <div class="banner" onclick="bounceBanner()">
+                    <div class="banner" onclick="bounceBanner(this)">
                         <img src="icon/quality.png" class="img-banner" alt="quality">
                     </div>
                     <div class="card-app-banner">
@@ -121,7 +123,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 text-center p-index">
-                    <div class="banner" onclick="bounceBanner()">
+                    <div class="banner" onclick="bounceBanner(this)">
                         <img src="icon/dtask.png" class="img-banner" alt="function">
                     </div>
                     <div class="card-app-banner">
@@ -130,7 +132,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 text-center p-index">
-                    <div class="banner" onclick="bounceBanner()">
+                    <div class="banner" onclick="bounceBanner(this)">
                         <img src="icon/jewels.png" class="img-banner" alt="elegant">
                     </div>
                     <div class="card-app-banner">
@@ -274,13 +276,13 @@
                 </div>
                 <br>
                 <div class="modal-body">
-                    <form class="user-contacts" action="post" method="get" accept-charset="utf-8">
-                        <label for="name" class="user-info">Name</label>
+                    <form class="user-contacts" accept-charset="utf-8" onsubmit="return false;">
+                        <label for="username" class="user-info">Name</label>
                         <img src="images/icons/user.svg" alt="" class="user-icons">
                         <input type="text" class="user-input-field" required id="username">
-                        <label for="phone" class="user-info">Telephone</label>
+                        <label for="telephone" class="user-info">Telephone</label>
                         <img src="images/icons/telephone.svg" alt="" class="user-icons">
-                        <input type="number" class="user-input-field" required id="telephone">
+                        <input type="tel" class="user-input-field" required id="telephone">
                         <label for="email" class="user-info">Email</label>
                         <img src="images/icons/email.svg" alt="" class="user-icons">
                         <input type="email" class="user-input-field" required id="email">
@@ -302,7 +304,6 @@
 
     <!-- JS Libraries (only one of each) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Local JS -->
@@ -318,8 +319,8 @@
             var username = document.getElementById("username").value;
             var telephone = document.getElementById("telephone").value;
             var email = document.getElementById("email").value;
-            var confirm = document.getElementById("confirm").checked;
-            if (!username || !telephone || !email || !confirm) {
+            var agreed = document.getElementById("confirm").checked;
+            if (!username || !telephone || !email || !agreed) {
                 alert("All fields must be filled out and terms must be agreed to.");
                 return false;
             }
@@ -342,11 +343,10 @@
             };
             localStorage.setItem('userData', JSON.stringify(userData));
         }
-        function bounceBanner() {
-            const banner = document.querySelector('.banner');
-            banner.style.animation = 'bounce 2s';
-            banner.addEventListener('animationend', () => {
-                banner.style.animation = '';
+        function bounceBanner(el) {
+            el.style.animation = 'bounce 2s';
+            el.addEventListener('animationend', () => {
+                el.style.animation = '';
             }, { once: true });
         }
         document.addEventListener('DOMContentLoaded', () => {
